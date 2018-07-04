@@ -17,7 +17,7 @@ export default class AppRoute extends Component {
         const history = createHistory();
         return (
             <Router history={history}>
-                <Route path="/" component={Dashboard}/>
+                <Route path="${process.env.PUBLIC_URL}/" component={Dashboard}/>
             </Router>
         );
     }
