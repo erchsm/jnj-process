@@ -24966,6 +24966,7 @@ var App = function (_Component) {
 exports.default = App;
 
 },{"./AppRoute":231,"react":225}],231:[function(require,module,exports){
+(function (process){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24983,6 +24984,10 @@ var _reactRouter = require('react-router');
 var _createBrowserHistory = require('history/createBrowserHistory');
 
 var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+
+var _createHashHistory = require('history/createHashHistory');
+
+var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
 
 var _Dashboard = require('./Dashboard');
 
@@ -25008,7 +25013,9 @@ var AppRoute = function (_Component) {
     _createClass(AppRoute, [{
         key: 'render',
         value: function render() {
-            var history = (0, _createBrowserHistory2.default)();
+            var history = (0, _createBrowserHistory2.default)({ basename: process.env.PUBLIC_URL });
+            var hashHistory = (0, _createHashHistory2.default)({ basename: process.env.PUBLIC_URL });
+
             return _react2.default.createElement(
                 _reactRouter.Router,
                 { history: history },
@@ -25023,7 +25030,9 @@ var AppRoute = function (_Component) {
 AppRoute.propTypes = {};
 exports.default = AppRoute;
 
-},{"./Dashboard":232,"history/createBrowserHistory":28,"react":225,"react-router":196}],232:[function(require,module,exports){
+}).call(this,require('_process'))
+
+},{"./Dashboard":232,"_process":38,"history/createBrowserHistory":28,"history/createHashHistory":29,"react":225,"react-router":196}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25074,7 +25083,7 @@ var Dashboard = function (_Component) {
                         { className: 'title is-4 logo' },
                         _react2.default.createElement(
                             _reactRouterDom.NavLink,
-                            { to: 'home' },
+                            { to: '' },
                             _react2.default.createElement('img', { src: '/assets/img/JnJ_MDC-Horizontal.svg' })
                         )
                     ),
@@ -25198,12 +25207,10 @@ var DashboardRouter = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
-                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/home', component: _Home2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/orders', component: _Orders2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/prototypes', component: _Prototypes2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/transactions',
-                    component: _Transactions2.default })
+                _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/orders', component: _Orders2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/prototypes', component: _Prototypes2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/transactions', component: _Transactions2.default })
             );
         }
     }]);
