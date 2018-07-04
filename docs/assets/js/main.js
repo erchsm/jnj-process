@@ -25789,7 +25789,7 @@ var Prototypes = function (_Component) {
                     { className: "tile is-ancestor" },
                     _react2.default.createElement(
                         "a",
-                        { href: "https://vmware.github.io/clarity/", className: "tile is-parent", target: "_blank" },
+                        { href: "prototypes/company-page.html", className: "tile is-parent", target: "_blank" },
                         _react2.default.createElement(
                             "div",
                             { className: "tile is-child card" },
