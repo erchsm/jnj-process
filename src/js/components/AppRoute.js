@@ -16,7 +16,7 @@ export default class AppRoute extends Component {
 
 	 render() {
         const history = createHistory({ basename: process.env.PUBLIC_URL });
-        const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+        // const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 
         return (
             <Router history={history}>

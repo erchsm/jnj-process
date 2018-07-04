@@ -25014,7 +25014,7 @@ var AppRoute = function (_Component) {
         key: 'render',
         value: function render() {
             var history = (0, _createBrowserHistory2.default)({ basename: process.env.PUBLIC_URL });
-            var hashHistory = (0, _createHashHistory2.default)({ basename: process.env.PUBLIC_URL });
+            // const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
 
             return _react2.default.createElement(
                 _reactRouter.Router,
@@ -25084,7 +25084,7 @@ var Dashboard = function (_Component) {
                         _react2.default.createElement(
                             _reactRouterDom.NavLink,
                             { to: '' },
-                            _react2.default.createElement('img', { src: '/assets/img/JnJ_MDC-Horizontal.svg' })
+                            _react2.default.createElement('img', { src: 'assets/img/JnJ_MDC-Horizontal.svg' })
                         )
                     ),
                     _react2.default.createElement(
