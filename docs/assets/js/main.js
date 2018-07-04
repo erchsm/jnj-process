@@ -25199,10 +25199,10 @@ var DashboardRouter = function (_Component) {
                 'div',
                 null,
                 _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/orders', component: _Orders2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/prototypes', component: _Prototypes2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/transactions',
+                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/home', component: _Home2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/orders', component: _Orders2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/prototypes', component: _Prototypes2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '${process.env.PUBLIC_URL}/transactions',
                     component: _Transactions2.default })
             );
         }

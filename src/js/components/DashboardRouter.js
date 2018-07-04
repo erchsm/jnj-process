@@ -20,10 +20,10 @@ export default class DashboardRouter extends Component {
         return (
             <div>
                 <Redirect from="/" to="/home" />
-                <Route path="/home" component={Home} />                
-                <Route path="/orders" component={Orders}/>
-                <Route path="/prototypes" component={Prototypes}/>
-                <Route path="/transactions" 
+                <Route path="${process.env.PUBLIC_URL}/home" component={Home} />                
+                <Route path="${process.env.PUBLIC_URL}/orders" component={Orders}/>
+                <Route path="${process.env.PUBLIC_URL}/prototypes" component={Prototypes}/>
+                <Route path="${process.env.PUBLIC_URL}/transactions" 
                     component={Transactions}/>
             </div>
         );
