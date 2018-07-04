@@ -1,0 +1,38 @@
+.title, .subtitle, .menu {
+  font-family: "Circular Std";
+}
+
+.title {
+    font-weight: 800;
+    letter-spacing: -0.006em;
+}
+
+.subtitle {
+  letter-spacing: -0.012em;
+  font-weight: 400;
+}
+
+a {
+  // color: lighten(#000099, 18%);
+}
+
+// overflow: hidden;
+// animation: hideMenu 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+// /* animation: hideMenu cubic-bezier(0.19, 1, 0.22, 1) 1.8s; */
+// animation-fill-mode: forwards;
+
+@keyframes hideMenu {
+  0% {
+    transform: translateX(0);
+    width: 25%;
+  }
+  50% {
+    transform: translateX(-100%);
+    width: 25%;
+  }
+  100% {
+    transform: translateX(-100%);
+    width: 0px;
+    padding: 0px;
+  }
+}

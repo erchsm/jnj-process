@@ -1,0 +1,25 @@
+.article-header {
+	position: absolute;
+	height: 90px;
+	width: 100%;
+	justify-content: flex-end;
+
+	.grid__item {
+		align-items: center;
+		justify-content: flex-end;
+		flex-direction: row;			
+	}
+
+	.iconcss {
+		font-size: 15px;
+	}
+
+	.icon-logo {
+		color: $brand-white;
+		margin-right: 18px;
+	}
+
+	.icon-hamburger {
+		color: $brand-tan;
+	}
+}

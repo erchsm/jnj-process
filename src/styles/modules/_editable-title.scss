@@ -1,0 +1,78 @@
+.editable-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-left: -34px;
+	height: 360px;
+
+	&__controls {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__main {
+		margin-left: 30px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	&__editor {
+		display: none;
+		flex-direction: column;
+		background-color: white;
+		padding: 12px;
+	}
+
+	&__slug {
+		margin: 12px 0 0 9px;
+
+		h4 {
+			display: inline;
+			font-family: $font-secondary;
+			font-weight: 300;
+			font-size: 14px;
+			text-transform: lowercase;
+			color: $brand-grey-light;
+
+			~ h4 {
+				margin-left: 3px;
+				color: $brand-grey;				
+			}
+		}
+	}
+
+	h1 {
+		span {
+			background-color: white;
+			color: black;
+			line-height: 1.1em;
+			mix-blend-mode: screen;
+
+			&::-moz-selection {
+				background-color: white;
+				color: black;
+			}
+
+			&::selection {
+				background-color: white;
+				color: black;
+			}
+		}
+	}
+
+	&--is-editing {
+		.article-button {
+			&:last-child {
+				margin-top: 1px;
+			}
+		}
+		.editable-title__editor {
+			display: flex;
+		}
+		h1 {
+			display: none;
+		}
+	}
+}
