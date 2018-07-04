@@ -25001,6 +25001,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// import Home from './Home';
+
 var AppRoute = function (_Component) {
     _inherits(AppRoute, _Component);
 
@@ -25083,7 +25085,7 @@ var Dashboard = function (_Component) {
                         { className: 'title is-4 logo' },
                         _react2.default.createElement(
                             _reactRouterDom.NavLink,
-                            { to: '' },
+                            { to: '/home' },
                             _react2.default.createElement('img', { src: 'assets/img/JnJ_MDC-Horizontal.svg' })
                         )
                     ),
@@ -25098,7 +25100,7 @@ var Dashboard = function (_Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.NavLink,
-                                    { to: 'transactions' },
+                                    { to: '/transactions' },
                                     _react2.default.createElement(
                                         'svg',
                                         { className: 'svg-inline--fa fa-universal-access fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'universal-access', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
@@ -25112,7 +25114,7 @@ var Dashboard = function (_Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.NavLink,
-                                    { to: 'prototypes' },
+                                    { to: '/prototypes' },
                                     _react2.default.createElement(
                                         'svg',
                                         { className: 'svg-inline--fa fa-code fa-w-20', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'code', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 640 512', 'data-fa-i2svg': '' },
@@ -25126,7 +25128,7 @@ var Dashboard = function (_Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.NavLink,
-                                    { to: 'orders' },
+                                    { to: '/orders' },
                                     _react2.default.createElement(
                                         'svg',
                                         { className: 'svg-inline--fa fa-magic fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'magic', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
@@ -25207,7 +25209,8 @@ var DashboardRouter = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Home2.default }),
+                _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
                 _react2.default.createElement(_reactRouter.Route, { path: '/orders', component: _Orders2.default }),
                 _react2.default.createElement(_reactRouter.Route, { path: '/prototypes', component: _Prototypes2.default }),
                 _react2.default.createElement(_reactRouter.Route, { path: '/transactions', component: _Transactions2.default })

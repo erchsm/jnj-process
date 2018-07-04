@@ -19,8 +19,8 @@ export default class DashboardRouter extends Component {
 	render() {
         return (
             <div>
-                {/*<Redirect from="" to="/home" />*/}
-                <Route path="/" component={Home} />                
+                <Redirect from="/" to="/home" />
+                <Route path="/home" component={Home} />
                 <Route path="/orders" component={Orders}/>
                 <Route path="/prototypes" component={Prototypes}/>
                 <Route path="/transactions" component={Transactions}/>

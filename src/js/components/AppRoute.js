@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import {Router, Route} from 'react-router';
 import createHistory from 'history/createBrowserHistory';
 import createHashHistory from 'history/createHashHistory';
-import Dashboard from './Dashboard'
+import Dashboard from './Dashboard';
+// import Home from './Home';
 
 export default class AppRoute extends Component {
 
