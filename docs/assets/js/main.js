@@ -25789,7 +25789,7 @@ var Prototypes = function (_Component) {
                     { className: "tile is-ancestor" },
                     _react2.default.createElement(
                         "a",
-                        { href: "prototypes/company-page.html", className: "tile is-parent", target: "_blank" },
+                        { href: "//erchsm.github.io/jnj-process/prototypes/company-page.html", className: "tile is-parent", target: "_blank" },
                         _react2.default.createElement(
                             "div",
                             { className: "tile is-child card" },

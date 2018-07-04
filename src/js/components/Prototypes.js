@@ -19,7 +19,7 @@ export default class Prototypes extends Component {
                 {/*<h3 className="title is-3">Resources</h3>*/}
 
                 <div className="tile is-ancestor">
-                    <a href="prototypes/company-page.html" className="tile is-parent" target="_blank">
+                    <a href="//erchsm.github.io/jnj-process/prototypes/company-page.html" className="tile is-parent" target="_blank">
                         <div className="tile is-child card">
                             <img src="/assets/img/clarity.jpg"></img>
                             <h3 className="title is-3 is-spaced">Companies Page</h3>
