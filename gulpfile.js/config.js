@@ -54,6 +54,7 @@ module.exports = {
             dest: 'assets/css',
             sources: [
             { input: 'styles.scss', output: 'styles.css'},
+            { input: 'company-page.scss', output: 'company-page.css'},
             ],
             extensions: ['scss','sass','css']
         },
