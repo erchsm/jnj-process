@@ -28,11 +28,9 @@
 	@include iconcss();
 }
 
-.icon-hamburger:before { content: "\EA01" }
-.icon-logo:before { content: "\EA02" }
-.icon-pencil:before { content: "\EA03" }
-.icon-check:before { content: "\EA04" }
-.icon-close:before { content: "\EA05" }
+.icon-search:before { content: "\EA01" }
+.icon-arrow-right:before { content: "\EA02" }
+.icon-download:before { content: "\EA03" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {

@@ -30,7 +30,9 @@ module.exports = {
             dest: 'assets/js',
             output: 'app.js',
             sources: [
-            { input: 'main.js', output: 'main.js'}
+                { input: 'main.js', output: 'main.js'},
+                { input: 'mdc-nav.js', output: 'mdc-nav.js'},
+                { input: 'mdc-buttons.js', output: 'mdc-buttons.js'}
             ],
             extensions: ['js']
         },

@@ -1,0 +1,97 @@
+// $curve: cubic-bezier(.19,1,.22,1);
+
+
+.mdc-nav {
+	&--scrolled {
+		.mdc-nav__topbar {
+			height: 60px;
+		}
+
+		.mdc-nav__logo {
+			transform: scale(0.72);
+		}
+		.mdc-nav__right {
+			transform: scale(0.72);
+		}
+		.mdc-nav__center ul li{
+			transform: translateY(-90px);
+			opacity: 0;
+		}
+	}
+
+	&__topbar {
+		position: fixed;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		height: 90px;
+		min-width: 100%;
+		background: white;
+		transition: all 0.9s $easing2;
+	}
+
+	&__left, &__center ul, &__right {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100%;
+	}
+
+	&__left {
+	    width: 240px;
+	}
+
+	&__logo {
+		transition: all 0.6s $easing4;
+	}
+
+	&__center {
+		flex: 1;
+
+		ul {
+			li {
+				margin-right: 40px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	&__right {
+		transition: all 0.9s $easing2;
+		width: 240px;
+	}
+	.icon-search {
+		font-size: 28px;
+		color: $brand-black;
+	}
+	hr {
+		margin: 0 30px;
+		background: $brand-grey-dark;
+		width: 1px;
+		border: none;
+		height: 30px;
+	}
+	li {
+		font-size: 16px;
+		font-weight: 800;
+		letter-spacing: -0.06;
+		transition: all 0.9s $easing2;
+
+		@for $i from 1 through 4 {
+			&:nth-child(4n + #{$i}) {
+				transition-delay: #{$i * 0.09s};
+			}
+		}
+  
+
+	}
+}
+
+.test-page {
+	section {
+		border-bottom: solid 1px $brand-black;
+		height: 90vh;
+	}
+}

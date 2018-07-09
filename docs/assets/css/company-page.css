@@ -8,6 +8,8 @@
     background: linear-gradient(to bottom, #50738C 0%, #1E5789 80%, #1E5789 100%); }
   .depuy-synthes h1, .depuy-synthes h2, .depuy-synthes h3, .depuy-synthes h4, .depuy-synthes h5, .depuy-synthes h6 {
     color: #FFF; }
+  .depuy-synthes p {
+    margin-right: 3%; }
   .depuy-synthes .typography-intro {
     font-family: "Circular Std";
     color: #FFF; }
@@ -39,28 +41,31 @@
       color: #1E5789 !important;
       opacity: 1; }
   .depuy-synthes .sticky-nav ul {
-    border-left: solid 2px #D8D8D8; }
+    border-left: solid 1px #D8D8D8; }
   .depuy-synthes .sticky-nav li {
     padding: 6px 0 6px 0; }
   .depuy-synthes .sticky-nav .line {
     background: #1E5789;
     padding: 6px 0;
-    width: 2px;
-    left: -2px; }
+    width: 1px;
+    left: -1px; }
   .depuy-synthes .header-sticky .header-sticky-color, .depuy-synthes .header-sticky p {
     color: #5A6771;
     font-weight: 400; }
   .depuy-synthes .tile-group-competitions .tile-header, .depuy-synthes .tile-group-competitions .typography-tile-subheader {
     color: #A99A69; }
   .depuy-synthes button {
-    color: #A99A69 !important;
+    color: #A99A69;
     border: solid 1px;
     text-transform: uppercase;
-    padding: 9px 21px;
-    margin: 40px 12px 0 0;
+    padding: 12px 24px;
+    margin: 60px 9px 0 0;
     font-size: 14px; }
-  .depuy-synthes .sticky-nav-container .sticky-nav-bg {
-    background: none; }
+    .depuy-synthes button:last-child {
+      background: #A99A69;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold; }
   .depuy-synthes .tile {
     border-radius: 0px; }
     .depuy-synthes .tile .figure-container {
@@ -87,8 +92,8 @@
   .depuy-synthes .typography-line {
     background: #A99A69;
     height: 9px;
-    width: 80px;
-    margin-bottom: 12px; }
+    width: 120px;
+    margin-bottom: 24px; }
   .depuy-synthes .image-bands {
     display: none; }
 

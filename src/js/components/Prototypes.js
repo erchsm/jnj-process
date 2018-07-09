@@ -12,14 +12,17 @@ export default class Prototypes extends Component {
 	}
 
 	render() {
+
+        console.log(process.env.PUBLIC_URL);
+
         return (
-            <div className="column is-two-thirds top">
+            <div className="column is-three-quarters top">
 
                 <h1 className="title is-1">Prototypes</h1>
                 {/*<h3 className="title is-3">Resources</h3>*/}
 
                 <div className="tile is-ancestor">
-                    <a href="//erchsm.github.io/jnj-process/prototypes/company-page.html" className="tile is-parent" target="_blank">
+                    <a href="/prototypes/company-page.html" className="tile is-parent" target="_blank">
                         <div className="tile is-child card">
                             <img src="/assets/img/clarity.jpg"></img>
                             <h3 className="title is-3 is-spaced">Companies Page</h3>
@@ -32,8 +35,8 @@ export default class Prototypes extends Component {
                             </span>
                         </div>
                     </a>
-                    <a href="http://carbondesignsystem.com/" className="tile is-parent" target="_blank">
-                        {/*<div className="tile is-child card">
+                    <a href="/prototypes/mdc-nav.html" className="tile is-parent" target="_blank">
+                        <div className="tile is-child card">
                             <img src="/assets/img/carbon.jpg"></img>
                             <h3 className="title is-3 is-spaced">Carbon</h3>
                             <p className="subtitle is-5">Individual styles and components for beautiful designs</p>
@@ -42,7 +45,7 @@ export default class Prototypes extends Component {
                                     <span className="tag">HTML</span>
                             <span className="tag">Design Kit</span>
                             </span>
-                        </div>*/}
+                        </div>
                     </a>
                 </div>
 
