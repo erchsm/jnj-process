@@ -32,29 +32,22 @@ export default class MdcNav extends Component {
     handleScroll = (event) => {
         let scrollTop = event.srcElement.body.scrollTop
 
-            // this.setState({
-            //     isScrolledTop: scrollTop < 90
-            // });
+        // this.setState({
+        //     isScrolledTop: scrollTop < 90
+        // });
     }
 
-    openTakeover = (event) => {
+    handleMouseOver = (event) => {
         this.setState({
-            takeoverOpen: true
-        });
-    }
-
-    setIndexHovered = (event) => {
-        this.setState({
+            takeoverOpen: true,
             indexHovered: this.getChildIndex(event.target)
         });
     }
 
-    closeTakeover = (event) => {
-        // setTimeout(() => {
-            this.setState({
-                takeoverOpen: false
-            });
-        // }, 0);
+    handleMouseOut = (event) => {
+        this.setState({
+            takeoverOpen: false
+        });
     }
 
     getChildIndex = (elem) => {
@@ -78,7 +71,7 @@ export default class MdcNav extends Component {
         })
 
         const navItems = NavItems.data.map((item, i) =>
-            <li key={i} onMouseOver={(e) => { this.openTakeover(e); this.setIndexHovered(e) }} onMouseOut={this.closeTakeover}>
+            <li key={i} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
                 <a>{item.name}</a>
             </li>
         );
@@ -136,27 +129,27 @@ export default class MdcNav extends Component {
                 </div>
                 <div className="mdc-nav__hoverbar">
                     <div className="mdc-nav__hoverlines">
-                        <div style={ (takeoverOpen) ? lineAnimation : null } className="mdc-nav__hoverline"></div>
+                        <div style={(takeoverOpen) ? lineAnimation : null} className="mdc-nav__hoverline"></div>
                     </div>
                 </div>
-                    <div className="mdc-nav__hovermain" onMouseOver={ this.openTakeover } onMouseOut={this.closeTakeover}>
-                        <div className="mdc-nav__hovermainfeatured">
-                            <h3>Featured Content</h3>
-                            <ul>
-                                <li>Laminoscopy</li>
-                                <li>Morter Breadfist</li>
-                                <li>Pentultimate Bigness</li>
-                                <li>Laminoscopy</li>
-                                <li>Morter Breadfist</li>
-                                <li>Pentultimate Bigness</li>
-                            </ul>
-                        </div>
-                        <div className="mdc-nav__hovermaincolumn">
-                            <ul>
-                                { specialtiesItems }
-                            </ul>
-                        </div>
+                <div className="mdc-nav__hovermain">
+                    <div className="mdc-nav__hovermainfeatured">
+                        <h3>Featured Content</h3>
+                        <ul>
+                            <li>Laminoscopy</li>
+                            <li>Morter Breadfist</li>
+                            <li>Pentultimate Bigness</li>
+                            <li>Laminoscopy</li>
+                            <li>Morter Breadfist</li>
+                            <li>Pentultimate Bigness</li>
+                        </ul>
                     </div>
+                    <div className="mdc-nav__hovermaincolumn">
+                        <ul>
+                            { specialtiesItems }
+                        </ul>
+                    </div>
+                </div>
             </nav>
         );
     }

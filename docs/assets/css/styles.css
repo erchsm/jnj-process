@@ -14110,6 +14110,11 @@ body {
 .mdc-nav--scrolled .mdc-nav__topbar {
   height: 60px; }
 
+.mdc-nav--scrolled .mdc-nav__hoverbar {
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+  transition: all 0.9s 0s cubic-bezier(0.19, 1, 0.22, 1); }
+
 .mdc-nav--scrolled .mdc-nav__logo {
   -ms-transform: scale(0.72);
   transform: scale(0.72); }
@@ -14123,6 +14128,40 @@ body {
   transform: translateY(-90px);
   opacity: 0; }
 
+.mdc-nav--takeover .mdc-nav__hoverline {
+  -ms-transform: none;
+  transform: none; }
+
+.mdc-nav--takeover .mdc-nav__hovermain {
+  opacity: 1;
+  pointer-events: auto; }
+
+.mdc-nav__hoverbar {
+  height: 4px;
+  background: white;
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  top: 90px;
+  width: 100%;
+  border-bottom: solid 1px #D8D8D8;
+  transition: all 0.9s 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
+
+.mdc-nav__hoverline {
+  background: #CA001B;
+  height: 4px;
+  width: 112px;
+  transform: translate3d(-50vw, 0, 0);
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
+
+.mdc-nav__hoverlines {
+  display: -ms-flexbox;
+  display: flex;
+  width: 672px;
+  display: flex; }
+
 .mdc-nav__topbar {
   position: fixed;
   display: -ms-flexbox;
@@ -14134,7 +14173,9 @@ body {
   height: 90px;
   min-width: 100%;
   background: white;
-  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
+  -ms-transform-origin: top;
+  transform-origin: top;
+  transition: all 0.9s 0s cubic-bezier(0.19, 1, 0.22, 1); }
 
 .mdc-nav__left, .mdc-nav__center ul, .mdc-nav__right {
   display: -ms-flexbox;
@@ -14154,31 +14195,42 @@ body {
 .mdc-nav__center {
   -ms-flex: 1;
   flex: 1; }
-  .mdc-nav__center ul li {
-    margin-right: 40px; }
-    .mdc-nav__center ul li:last-child {
-      margin-right: 0; }
 
 .mdc-nav__right {
   transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
   width: 240px; }
 
 .mdc-nav .icon-search {
-  font-size: 28px;
+  font-size: 24px;
   color: #212121; }
 
 .mdc-nav hr {
   margin: 0 30px;
-  background: #888B8D;
+  background: #D8D8D8;
   width: 1px;
   border: none;
   height: 30px; }
 
 .mdc-nav li {
+  min-width: 112px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100%;
   font-size: 16px;
+  cursor: pointer;
   font-weight: 800;
-  letter-spacing: -0.06;
+  color: #212121;
   transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
+  .mdc-nav li a {
+    transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: none;
+    color: #212121; }
+  .mdc-nav li:hover a {
+    color: #CA001B; }
   .mdc-nav li:nth-child(4n + 1) {
     transition-delay: 0.09s; }
   .mdc-nav li:nth-child(4n + 2) {
@@ -14187,6 +14239,64 @@ body {
     transition-delay: 0.27s; }
   .mdc-nav li:nth-child(4n + 4) {
     transition-delay: 0.36s; }
+
+.mdc-nav__hovermain {
+  background: white;
+  width: 100%;
+  top: 94px;
+  height: 72vh;
+  width: 80vw;
+  right: 0;
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  pointer-events: none; }
+
+.mdc-nav__hovermaincolumn {
+  padding: 32px 40px;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 32px 112px;
+  overflow: hidden;
+  overflow-y: scroll; }
+  .mdc-nav__hovermaincolumn li {
+    height: auto;
+    width: auto;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    font-weight: 400;
+    margin: 24px 0;
+    font-size: 18px; }
+
+.mdc-nav__hovermainfeatured {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #F9FAFB;
+  width: 280px;
+  height: auto;
+  margin: 24px 18px;
+  padding: 18px 32px;
+  border-radius: 2px; }
+  .mdc-nav__hovermainfeatured h3, .mdc-nav__hovermainfeatured li {
+    color: #888B8D; }
+  .mdc-nav__hovermainfeatured h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px; }
+  .mdc-nav__hovermainfeatured li {
+    height: auto;
+    width: auto;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    font-weight: 400;
+    margin: 18px 0;
+    font-size: 16px; }
 
 .test-page section {
   border-bottom: solid 1px #212121;
