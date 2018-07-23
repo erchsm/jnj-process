@@ -2,7 +2,11 @@
   height: 4em; }
 
 .video-js .vjs-time-control {
-  line-height: 4em; }
+  font-size: 14px;
+  line-height: 40px; }
+
+.video-js .vjs-volume-bar {
+  margin: 18px 0.48em; }
 
 .video-js button {
   outline: none; }
