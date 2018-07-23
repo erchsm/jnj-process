@@ -33,10 +33,10 @@
 			}
 		}
 	}
+	&.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
+		transition: all 0.6s $easing3;
+		transform: translateY(4em);
+	}
 }
 
-.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
-.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
-	transition: all 0.6s $easing3;
-	transform: translateY(4em);
-}

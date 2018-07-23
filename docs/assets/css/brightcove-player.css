@@ -24,8 +24,8 @@
 .video-js:hover button.vjs-big-play-button {
   background-color: rgba(0, 0, 0, 0.6); }
 
-.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
-.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
+.video-js.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
   transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
   -ms-transform: translateY(4em);
   transform: translateY(4em); }
