@@ -10,12 +10,16 @@
   margin: 18px 0.48em; }
 
 .video-js .vjs-fullscreen-control {
-  -ms-flex-order: 1;
-  order: 1; }
+  -ms-flex-order: 2;
+  order: 2; }
 
 .video-js .vjs-play-control {
   -ms-flex-order: 0;
   order: 0; }
+
+.video-js .vjs-volume-panel {
+  -ms-flex-order: 1;
+  order: 1; }
 
 .video-js button {
   outline: none; }

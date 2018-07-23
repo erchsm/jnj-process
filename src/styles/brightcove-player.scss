@@ -13,10 +13,13 @@
 		margin: 18px 0.48em;
 	}
 	.vjs-fullscreen-control {
-		order: 1;
+		order: 2;
 	}
 	.vjs-play-control {
 		order: 0;
+	}
+	.vjs-volume-panel {
+		order: 1;
 	}
 	button {
 		outline: none;
