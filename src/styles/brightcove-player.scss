@@ -1,13 +1,21 @@
 @import 'variables.scss';
+@import 'fonts.scss';
+
+$height: 48px;
 
 .video-js  {
 	.vjs-control-bar {
-		height: 4em;
+		height: $height;
+	}
+	.vjs-control {
+		font-size: 14px;
 	}
 	.vjs-time-control {
-		font-size: 14px;
+		font-family: $font-primary;
+		font-weight: 400;
+		font-size: 16px;
 		line-height: 40px;
-		padding: 0;
+		padding: 0 ;
 	}
 	.vjs-volume-bar {
 		margin: 18px 0.48em;
@@ -57,7 +65,7 @@
 	&.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
 	&.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
 		transition: all 0.9s $easing3;
-		transform: translateY(4em);
+		transform: translateY($height);
 	}
 
 	& .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal, 
@@ -67,7 +75,7 @@
 	& .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal, 
 	& .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal, 
 	& .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
-		height: 4em;
+		height: $height;
 	}
 
 	.vjs-button > .vjs-icon-placeholder:before {
