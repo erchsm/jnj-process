@@ -42,5 +42,9 @@
 		transition: all 0.9s $easing3;
 		transform: translateY(4em);
 	}
+
+	.vjs-button > .vjs-icon-placeholder:before {
+		position: relative;
+	}
 }
 

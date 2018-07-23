@@ -34,4 +34,7 @@
   -ms-transform: translateY(4em);
   transform: translateY(4em); }
 
+.video-js .vjs-button > .vjs-icon-placeholder:before {
+  position: relative; }
+
 /*# sourceMappingURL=brightcove-player.css.map */
