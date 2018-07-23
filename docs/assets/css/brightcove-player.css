@@ -96,7 +96,7 @@
   height: 48px; }
 
 .video-js .vjs-progress-control {
-  transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1) !important; }
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important; }
 
 .video-js .vjs-button > .vjs-icon-placeholder:before {
   position: relative; }
