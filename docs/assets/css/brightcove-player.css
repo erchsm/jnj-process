@@ -1,18 +1,18 @@
-.video-js button.vjs-big-play-button {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  margin-right: auto;
-  margin-left: .25em;
-  margin-bottom: .25em;
-  margin-top: auto;
-  border: solid 3px;
-  width: 1.5em;
-  height: 1.5em; }
-
-.video-js span.vjs-big-play-button {
-  line-height: 1.4em;
-  font-size: 3.24em; }
+.video-js button {
+  outline: none; }
+  .video-js button.vjs-big-play-button {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-right: auto;
+    margin-left: .25em;
+    margin-bottom: .25em;
+    margin-top: auto;
+    border: solid 3px;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.4em;
+    font-size: 3.24em; }
 
 .video-js:hover button.vjs-big-play-button {
   background-color: rgba(0, 0, 0, 0.6); }
