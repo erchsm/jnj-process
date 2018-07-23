@@ -14,6 +14,9 @@
     line-height: 1.4em;
     font-size: 3.24em; }
 
+.video-js .vjs-dock-text {
+  display: none; }
+
 .video-js:hover button.vjs-big-play-button {
   background-color: rgba(0, 0, 0, 0.6); }
 

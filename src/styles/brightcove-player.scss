@@ -17,6 +17,9 @@
 			font-size: 3.24em;
 		}
 	}
+	.vjs-dock-text {
+		display: none;
+	}
 	&:hover {
 		button {
 			&.vjs-big-play-button {
