@@ -25,8 +25,12 @@
   background-color: rgba(0, 0, 0, 0.6); }
 
 .video-js.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
-.video-js.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
-  transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+.video-js.vjs-has-started.vjs-playing.vjs-user-active:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
+.video-js.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
+  transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1);
   -ms-transform: translateY(4em);
   transform: translateY(4em); }
 

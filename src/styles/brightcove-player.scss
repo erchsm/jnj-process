@@ -34,8 +34,12 @@
 		}
 	}
 	&.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
-	&.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
-		transition: all 0.6s $easing3;
+	&.vjs-has-started.vjs-playing.vjs-user-active:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-control-bar,
+	&.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
+	&.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
+		transition: all 0.9s $easing3;
 		transform: translateY(4em);
 	}
 }
