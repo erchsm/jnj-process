@@ -1,4 +1,9 @@
+@import 'variables.scss';
+
 .video-js  {
+	.vjs-control-bar {
+		height: 4em;
+	}
 	button {
 		outline: none;
 
@@ -7,10 +12,11 @@
 			left: 0;
 			position: absolute;
 			margin-right: auto;
-			margin-left: .25em;
-			margin-bottom: .25em;
+			transition: all 0.6s $easing3;
+			margin-left: .48em;
+			margin-bottom: .48em;
 			margin-top: auto;
-			border: solid 3px;
+			border: solid 2px;
 			width: 1.5em;
 			height: 1.5em;
 			line-height: 1.4em;
@@ -27,4 +33,10 @@
 			}
 		}
 	}
+}
+
+.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
+.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
+	transition: all 0.6s $easing3;
+	transform: translateY(4em);
 }

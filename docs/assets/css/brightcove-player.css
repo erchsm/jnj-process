@@ -1,3 +1,6 @@
+.video-js .vjs-control-bar {
+  height: 4em; }
+
 .video-js button {
   outline: none; }
   .video-js button.vjs-big-play-button {
@@ -5,10 +8,11 @@
     left: 0;
     position: absolute;
     margin-right: auto;
-    margin-left: .25em;
-    margin-bottom: .25em;
+    transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+    margin-left: .48em;
+    margin-bottom: .48em;
     margin-top: auto;
-    border: solid 3px;
+    border: solid 2px;
     width: 1.5em;
     height: 1.5em;
     line-height: 1.4em;
@@ -19,5 +23,11 @@
 
 .video-js:hover button.vjs-big-play-button {
   background-color: rgba(0, 0, 0, 0.6); }
+
+.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
+.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-control-bar {
+  transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+  -ms-transform: translateY(4em);
+  transform: translateY(4em); }
 
 /*# sourceMappingURL=brightcove-player.css.map */
