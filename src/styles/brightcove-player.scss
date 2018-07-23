@@ -1,6 +1,10 @@
-.vjs-big-play-button {
-    top: 100%;
-    left: 0%;
-    margin-right: -1em;
-    margin-bottom: 1em;
+.video-js  {
+	button {
+		&.vjs-big-play-button {
+			top: 100%;
+			left: 0%;
+			margin-right: -1em;
+			margin-bottom: 1em;
+		}
+	}
 }
