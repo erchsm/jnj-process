@@ -19,6 +19,9 @@
   src: url("../fonts/CircularStd/CircularStd-Medium.eot");
   src: url("../fonts/CircularStd/CircularStd-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/CircularStd/CircularStd-Medium.woff2") format("woff2"), url("../fonts/CircularStd/CircularStd-Medium.woff") format("woff"), url("../fonts/CircularStd/CircularStd-Medium.ttf") format("truetype"), url("../fonts/CircularStd/CircularStd-Medium.svg#codropsicons") format("svg"); }
 
+.video-js .vjs-progress-control .vjs-mouse-display {
+  background-color: white; }
+
 .video-js .vjs-control-bar {
   height: 48px; }
 
@@ -29,7 +32,7 @@
   font-family: "Circular Std", sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 48px;
   padding: 0; }
 
 .video-js .vjs-volume-bar {
