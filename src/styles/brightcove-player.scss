@@ -84,13 +84,8 @@ $height: 48px;
 		height: $height;
 	}
 
-	&.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-progress-control,
-	&.vjs-has-started.vjs-playing.vjs-user-active:not(:hover) .vjs-progress-control, 
-	&.vjs-has-started.vjs-paused.vjs-user-inactive:not(:hover) .vjs-progress-control, 
-	&.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-progress-control, 
-	&.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control, 
-	&.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control {
-		transition: all 0.9s $easing3;
+	.vjs-progress-control {
+		transition: all 0.9s $easing3 !important;
 	}
 
 	.vjs-button > .vjs-icon-placeholder:before {
