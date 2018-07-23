@@ -3,10 +3,19 @@
 
 .video-js .vjs-time-control {
   font-size: 14px;
-  line-height: 40px; }
+  line-height: 40px;
+  padding: 0; }
 
 .video-js .vjs-volume-bar {
   margin: 18px 0.48em; }
+
+.video-js .vjs-fullscreen-control {
+  -ms-flex-order: 1;
+  order: 1; }
+
+.video-js .vjs-play-control {
+  -ms-flex-order: 0;
+  order: 0; }
 
 .video-js button {
   outline: none; }
