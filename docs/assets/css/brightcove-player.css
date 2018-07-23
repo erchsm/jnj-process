@@ -1,6 +1,9 @@
 .video-js .vjs-control-bar {
   height: 4em; }
 
+.video-js .vjs-time-control {
+  height: 4em; }
+
 .video-js button {
   outline: none; }
   .video-js button.vjs-big-play-button {
@@ -33,6 +36,15 @@
   transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1);
   -ms-transform: translateY(4em);
   transform: translateY(4em); }
+
+.video-js.vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal,
+.video-js.vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal,
+.video-js.vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal,
+.video-js.vjs-volume-panel .vjs-volume-control:hover.vjs-volume-horizontal,
+.video-js.vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal,
+.video-js.vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal,
+.video-js.vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
+  height: 4em; }
 
 .video-js .vjs-button > .vjs-icon-placeholder:before {
   position: relative; }

@@ -4,6 +4,9 @@
 	.vjs-control-bar {
 		height: 4em;
 	}
+	.vjs-time-control {
+		height: 4em;
+	}
 	button {
 		outline: none;
 
@@ -41,6 +44,16 @@
 	&.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
 		transition: all 0.9s $easing3;
 		transform: translateY(4em);
+	}
+
+	&.vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal, 
+	&.vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal, 
+	&.vjs-volume-panel:focus .vjs-volume-control.vjs-volume-horizontal, 
+	&.vjs-volume-panel .vjs-volume-control:hover.vjs-volume-horizontal, 
+	&.vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal, 
+	&.vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal, 
+	&.vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
+		height: 4em;
 	}
 
 	.vjs-button > .vjs-icon-placeholder:before {
