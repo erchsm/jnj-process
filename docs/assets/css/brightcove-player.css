@@ -29,9 +29,11 @@
   font-size: 14px;
   text-shadow: none !important; }
 
-.video-js .vjs-time-control {
+.video-js .vjs-time-tooltip, .video-js .vjs-time-control {
   font-family: "Circular Std", sans-serif;
-  font-weight: 400;
+  font-weight: 400; }
+
+.video-js .vjs-time-control {
   font-size: 16px;
   line-height: 48px;
   padding: 0; }

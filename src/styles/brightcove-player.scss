@@ -14,9 +14,11 @@ $height: 48px;
 		font-size: 14px;
 		text-shadow: none !important;
 	}
-	.vjs-time-control {
+	.vjs-time-tooltip, .vjs-time-control {
 		font-family: $font-primary;
 		font-weight: 400;
+	}
+	.vjs-time-control {
 		font-size: 16px;
 		line-height: $height;
 		padding: 0 ;
