@@ -57,6 +57,7 @@ module.exports = {
             sources: [
             { input: 'styles.scss', output: 'styles.css'},
             { input: 'company-page.scss', output: 'company-page.css'},
+            { input: 'brightcove-player.scss', output: 'brightcove-player.css'},
             ],
             extensions: ['scss','sass','css']
         },
