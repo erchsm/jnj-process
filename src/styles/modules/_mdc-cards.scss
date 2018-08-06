@@ -62,7 +62,7 @@
 		font-size: 16px;
 	}
 
-	a {
+	.link {
 		font-size: 16px;
 		outline: none;
 		border: none;
@@ -111,7 +111,7 @@
 			object-position: 0% 40%;
 		}
 
-		h4, p, a, span, .mdc-card__topbar {
+		h4, p, .link, span, .mdc-card__topbar {
 			margin-left: 60px;
 			position: relative;
 			transition: all 0.9s $easing3;
@@ -134,7 +134,7 @@
 			padding-right: 24%;
 		}
 
-		h4, p, a, span {
+		h4, p, .link, span {
 			color: #5A6771;
 		}
 
@@ -149,7 +149,7 @@
 		}
 
 		&:hover {
-			h4, p, a, span {
+			h4, p, .link, span {
 				color: white;
 			}
 			.mdc-card__topbar {
@@ -167,7 +167,7 @@
 		img {
 			opacity: 0.12;
 		}
-		a {
+		.link {
 			color: $brand-primary-bwi;
 		}
 		.mdc-card__bar {
@@ -188,7 +188,7 @@
 			object-fit: contain;
 			// margin-bottom: 12px;
 		}
-		a {
+		.link {
 			color: $brand-secondary-dps;
 		}
 		.mdc-card__bar {
@@ -211,7 +211,7 @@
 			object-position: 0% 40%;
 		}
 
-		a {
+		.link {
 			color: $brand-primary-ethicon;
 		}
 
@@ -236,7 +236,7 @@
 			// margin-bottom: 12px;
 		}
 
-		a {
+		.link {
 			color: $brand-primary-acclarent;
 		}
 
@@ -260,7 +260,7 @@
 			object-position: 0% 40%;
 		}
 
-		a {
+		.link {
 			color: $brand-primary-cerenovus;
 		}
 
@@ -287,7 +287,7 @@
 			margin-bottom: 18px;
 		}
 
-		a {
+		.link {
 			color: $brand-primary-mentor;
 		}
 
