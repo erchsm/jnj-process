@@ -1,0 +1,282 @@
+.mdc-cards {
+
+	&__grid {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;		
+	}
+
+	&__tile {
+		position: relative;
+		background: transparent;
+		margin: 0px;
+		width: 50%;
+		border: solid 1px darken($brand-blue-light, 6%);
+		min-height: 440px;
+		padding: 60px 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+
+		&:nth-child(n+4) {
+			// margin-top: 0;
+		}
+	}
+
+	&__label {
+		position: absolute;
+		// margin-bottom: 12px;
+		left: 18px;
+		top: 12px;
+	}
+
+}
+
+.mdc-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align: left;
+	font-size: 16px;
+	background-color: white;
+	border-radius: 2px;
+	// margin-top: 40px;
+	border: none;
+	cursor: pointer;
+	letter-spacing: -0.006em;
+	padding: 60px 40px;
+	outline: none;
+	overflow: hidden;
+	position: relative;
+
+	h4 {
+		margin-top: 18px;
+		font-size: 24px;
+		font-weight: 800;
+		line-height: 1.2em;
+		margin-bottom: 18px;
+	}
+
+	p {
+		font-size: 16px;
+	}
+
+	button {
+		font-size: 16px;
+		outline: none;
+		border: none;
+		background: none;
+		padding: 0;
+		margin: 0;
+		margin-top: 18px;
+		font-weight: 800;
+	}
+
+	&__bar {
+		position: absolute;
+		background: black;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		min-height: 9px;
+	}
+
+	&__topbar {
+		background: black;
+		width: 60px;
+		min-height: 9px;
+		margin-bottom: 9px;
+	}
+
+	&__news {
+		min-height: 640px;
+		max-width: 600px;
+		
+
+		img {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		h4, p, button, span, .mdc-card__topbar {
+			position: relative;
+			transition: all 0.9s $easing3;
+
+			// @for $i from 1 through 10 {
+			//   &:nth-child(#{$i}) {
+			// 	transition-delay: 0.09s * $i;
+			//   }
+			// }
+
+		}
+
+		h4, p {
+			padding-right: 32%;
+		}
+
+		h4, p, button, span {
+			color: #5A6771;
+		}
+
+		span {
+			position: absolute;
+			top: 9px;
+			right: 18px;
+			font-weight: 800;
+		}
+
+		.mdc-card__bar {
+			transition: all 0.9s $easing3;
+			transform-origin: bottom;
+		}
+
+		&:hover {
+			h4, p, button, span {
+				color: white;
+			}
+			.mdc-card__topbar {
+				background-color: white;
+			}
+			.mdc-card__bar {
+				transform: scale3d(1,72,1);
+			}
+		}
+	}
+
+	&__news--bwi {
+		$brand-primary-bwi: #E57310;
+
+		img {
+			opacity: 0.12;
+		}
+		button {
+			color: $brand-primary-bwi;
+		}
+		.mdc-card__bar {
+			background-color: $brand-primary-bwi;
+		}
+		.mdc-card__topbar {
+			background-color: $brand-primary-bwi;
+		}
+	}
+
+	&__news--dps {
+		$brand-primary-dps: #053C61;
+		$brand-secondary-dps: #A99A69;
+
+		img {
+			opacity: 78%;
+			mix-blend-mode: darken;
+			// max-width: 400px;
+			margin-bottom: 12px;
+		}
+		button {
+			color: $brand-secondary-dps;
+		}
+		.mdc-card__bar {
+			background-color: $brand-primary-dps;
+		}
+		.mdc-card__topbar {
+			background-color: $brand-secondary-dps;
+		}
+	}
+
+
+	&__news--ethicon {
+		$brand-primary-ethicon: #ED1C23;
+		$brand-secondary-ethicon: #D9EAE3;
+
+		img {
+			width: 100%;
+			height: 240px;
+			object-fit: cover;
+			object-position: 0% 40%;
+		}
+
+		button {
+			color: $brand-primary-ethicon;
+		}
+
+		.mdc-card__bar {
+			background-color: $brand-primary-ethicon;
+		}
+
+		.mdc-card__topbar {
+			background-color: $brand-primary-ethicon;
+		}
+	}
+
+	&__news--acclarent {
+		$brand-primary-acclarent: #9D5AA7;
+
+		img {
+			opacity: 78%;
+			mix-blend-mode: darken;
+			// max-width: 400px;
+			margin-bottom: 12px;
+		}
+
+		button {
+			color: $brand-primary-acclarent;
+		}
+
+		.mdc-card__bar {
+			background-color: $brand-primary-acclarent;
+		}
+
+		.mdc-card__topbar {
+			background-color: $brand-primary-acclarent;
+		}
+
+	}
+
+	&__news--cerenovus {
+		$brand-primary-cerenovus: #CC0099;
+
+		img {
+			width: 100%;
+			height: 240px;
+			object-fit: cover;
+			object-position: 0% 40%;
+		}
+
+		button {
+			color: $brand-primary-cerenovus;
+		}
+
+		.mdc-card__bar {
+			background-color: $brand-primary-cerenovus;
+		}
+
+		.mdc-card__topbar {
+			background-color: $brand-primary-cerenovus;
+		}
+	}
+
+	&__news--mentor {
+		$brand-primary-mentor: #30689E;
+		$brand-secondary-mentor: #F5A623;
+
+		img {
+			opacity: 78%;
+			mix-blend-mode: darken;
+			max-width: 340px;
+			margin-bottom: 18px;
+		}
+
+		button {
+			color: $brand-primary-mentor;
+		}
+
+		.mdc-card__bar {
+			background-color: $brand-primary-mentor;
+		}
+
+		.mdc-card__topbar {
+			background-color: $brand-secondary-mentor;
+		}
+	}
+}

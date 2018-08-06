@@ -32,7 +32,8 @@ module.exports = {
             sources: [
                 { input: 'main.js', output: 'main.js'},
                 { input: 'mdc-nav.js', output: 'mdc-nav.js'},
-                { input: 'mdc-buttons.js', output: 'mdc-buttons.js'}
+                { input: 'mdc-buttons.js', output: 'mdc-buttons.js'},
+                { input: 'mdc-cards.js', output: 'mdc-cards.js'}
             ],
             extensions: ['js']
         },
