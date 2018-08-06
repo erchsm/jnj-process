@@ -46,7 +46,6 @@
 	border: none;
 	cursor: pointer;
 	letter-spacing: -0.006em;
-	padding: 60px 40px;
 	outline: none;
 	overflow: hidden;
 	position: relative;
@@ -63,7 +62,7 @@
 		font-size: 16px;
 	}
 
-	button {
+	a {
 		font-size: 16px;
 		outline: none;
 		border: none;
@@ -72,6 +71,12 @@
 		margin: 0;
 		margin-top: 18px;
 		font-weight: 800;
+
+		i {
+			font-weight: normal;
+			font-size: 14px;
+			margin-left: 6px;
+		}
 	}
 
 	&__bar {
@@ -87,7 +92,8 @@
 		background: black;
 		width: 60px;
 		min-height: 9px;
-		margin-bottom: 9px;
+		margin-top: 40px;
+		margin-bottom: 12px;
 	}
 
 	&__news {
@@ -96,12 +102,17 @@
 		
 
 		img {
-			position: absolute;
-			bottom: 0;
-			right: 0;
+			// position: absolute;
+			// top: 0;
+			// right: 0;
+			width: 100%;
+			height: 240px;
+			object-fit: cover;
+			object-position: 0% 40%;
 		}
 
-		h4, p, button, span, .mdc-card__topbar {
+		h4, p, a, span, .mdc-card__topbar {
+			margin-left: 60px;
 			position: relative;
 			transition: all 0.9s $easing3;
 
@@ -113,18 +124,22 @@
 
 		}
 
-		h4, p {
-			padding-right: 32%;
+		h4 {
+			margin-top: 12px;
+			margin-bottom: 12px;
+			line-height: 1.25;
 		}
 
-		h4, p, button, span {
+		h4, p {
+			padding-right: 24%;
+		}
+
+		h4, p, a, span {
 			color: #5A6771;
 		}
 
 		span {
-			position: absolute;
-			top: 9px;
-			right: 18px;
+			margin-bottom: 12px;
 			font-weight: 800;
 		}
 
@@ -134,7 +149,7 @@
 		}
 
 		&:hover {
-			h4, p, button, span {
+			h4, p, a, span {
 				color: white;
 			}
 			.mdc-card__topbar {
@@ -152,7 +167,7 @@
 		img {
 			opacity: 0.12;
 		}
-		button {
+		a {
 			color: $brand-primary-bwi;
 		}
 		.mdc-card__bar {
@@ -168,12 +183,12 @@
 		$brand-secondary-dps: #A99A69;
 
 		img {
-			opacity: 78%;
-			mix-blend-mode: darken;
-			// max-width: 400px;
-			margin-bottom: 12px;
+			// opacity: 78%;
+			// mix-blend-mode: darken;
+			object-fit: contain;
+			// margin-bottom: 12px;
 		}
-		button {
+		a {
 			color: $brand-secondary-dps;
 		}
 		.mdc-card__bar {
@@ -196,7 +211,7 @@
 			object-position: 0% 40%;
 		}
 
-		button {
+		a {
 			color: $brand-primary-ethicon;
 		}
 
@@ -215,11 +230,13 @@
 		img {
 			opacity: 78%;
 			mix-blend-mode: darken;
+			// object-fit: contain;
+			object-position: 100% 100%;
 			// max-width: 400px;
-			margin-bottom: 12px;
+			// margin-bottom: 12px;
 		}
 
-		button {
+		a {
 			color: $brand-primary-acclarent;
 		}
 
@@ -243,7 +260,7 @@
 			object-position: 0% 40%;
 		}
 
-		button {
+		a {
 			color: $brand-primary-cerenovus;
 		}
 
@@ -263,11 +280,12 @@
 		img {
 			opacity: 78%;
 			mix-blend-mode: darken;
-			max-width: 340px;
+			object-position: 100% 0%;
+			object-fit: contain;
 			margin-bottom: 18px;
 		}
 
-		button {
+		a {
 			color: $brand-primary-mentor;
 		}
 

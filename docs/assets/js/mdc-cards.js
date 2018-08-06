@@ -21199,14 +21199,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
 			_react2.default.createElement(
-				'span',
-				null,
-				'June 1, 2018'
-			),
-			_react2.default.createElement(
 				'h4',
 				null,
 				'SmartTouch\xAE SF Catheter For Treatment or Persistant Atrial Fibrillation'
+			),
+			_react2.default.createElement(
+				'span',
+				null,
+				'June 1, 2018'
 			),
 			_react2.default.createElement(
 				'p',
@@ -21214,9 +21214,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				'Explore our non-navigational solutions developed to give you optimal control, allowing for more confident access and validation when diagnosing and treating arrhythmias.'
 			),
 			_react2.default.createElement(
-				'button',
-				null,
-				'Read More'
+				'a',
+				{ href: '#' },
+				'Read More ',
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			)
 		)
 	),
@@ -21233,26 +21234,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			{ className: 'mdc-card mdc-card__news mdc-card__news--dps' },
 			_react2.default.createElement('img', { src: '../assets/img/dps-ray.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
+			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
+			_react2.default.createElement(
+				'h4',
+				null,
+				'New Dynacord\xAE Suture Helps Address Challenges with Rotator Cuff Surgery.'
+			),
 			_react2.default.createElement(
 				'span',
 				null,
 				'June 1, 2018'
 			),
-			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
-			_react2.default.createElement(
-				'h4',
-				null,
-				'DePuy Synthes Launches Innovative Nailing System Aimed at Improving Treatment of Femoral Shaft Fractures in the U.S.'
-			),
 			_react2.default.createElement(
 				'p',
 				null,
-				'The CONCORDE LIFT Implant is designed to treat patients suffering from degenerative disc disease as part of the new offering called UNLEASH MIS TLIF (Transforaminal Lumbar Interbody Fusion) Procedural Solution.'
+				'Johnson & Johnson Medical Devices Companies through the DePuy Synthes franchise announces the U.S. launch of Dynacord\xAE Suture to repair soft tissue such as the rotator cuff in the shoulder.'
 			),
 			_react2.default.createElement(
-				'button',
-				null,
-				'Read More'
+				'a',
+				{ href: '#' },
+				'Read More ',
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			)
 		)
 	),
@@ -21269,16 +21271,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			{ className: 'mdc-card mdc-card__news mdc-card__news--ethicon' },
 			_react2.default.createElement('img', { src: '../assets/img/ethicon-people2.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
-			_react2.default.createElement(
-				'span',
-				null,
-				'June 1, 2018'
-			),
 			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
 			_react2.default.createElement(
 				'h4',
 				null,
-				'Losing weight between young adulthood and middle age significantly reduces diabetes risk.'
+				'Losing weight between young adulthood and middle age reduces diabetes risk.'
+			),
+			_react2.default.createElement(
+				'span',
+				null,
+				'June 1, 2018'
 			),
 			_react2.default.createElement(
 				'p',
@@ -21286,9 +21288,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				'New Study Suggests Nearly Two-Thirds of Diabetes Cases Could be Avoided if U.S. Adults Were to Maintain a Healthy Weight Between their mid-20s and 40s.'
 			),
 			_react2.default.createElement(
-				'button',
-				null,
-				'Read More'
+				'a',
+				{ href: '#' },
+				'Read More ',
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			)
 		)
 	),
@@ -21305,26 +21308,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			{ className: 'mdc-card mdc-card__news mdc-card__news--acclarent' },
 			_react2.default.createElement('img', { src: '../assets/img/acclarent-rib.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
+			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
+			_react2.default.createElement(
+				'h4',
+				null,
+				'New Study Demonstrates Safety of Balloon Sinuplasty in Patients suffering from  Sinusitis'
+			),
 			_react2.default.createElement(
 				'span',
 				null,
 				'June 1, 2018'
 			),
-			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
-			_react2.default.createElement(
-				'h4',
-				null,
-				'Acclarent Announces U.S. Launch of RELIEVA SCOUT\xAE Multi-Sinus Dilation System'
-			),
 			_react2.default.createElement(
 				'p',
 				null,
-				'Acclarent, Inc., today announced the U.S. availability of the ACCLARENT AERA\xAE Eustachian Tube Balloon Dilation System, the first balloon dilation intervention approved by the U.S. Food and Drug Administration (FDA) for Eustachian Tube Dysfunction (ETD). ACCLARENT AERA\xAE.'
+				'ADVANCE Anchors and adds to DePuy Synthes\u2019 innovative solutions designed to help address unmet patient needs in soft tissue repair.'
 			),
 			_react2.default.createElement(
-				'button',
-				null,
-				'Read More'
+				'a',
+				{ href: '#' },
+				'Read More ',
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			)
 		)
 	),
@@ -21341,11 +21345,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			{ className: 'mdc-card mdc-card__news mdc-card__news--cerenovus' },
 			_react2.default.createElement('img', { src: '../assets/img/cerenovus-surgeon.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
-			_react2.default.createElement(
-				'span',
-				null,
-				'June 1, 2018'
-			),
 			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
 			_react2.default.createElement(
 				'h4',
@@ -21353,14 +21352,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				'First general surgery virtual residency program to allow training anytime, anywhere launched in collaboration'
 			),
 			_react2.default.createElement(
+				'span',
+				null,
+				'June 1, 2018'
+			),
+			_react2.default.createElement(
 				'p',
 				null,
 				'New Health Partner for Weight Loss Digital Platform and App Among Latest Innovations that are Paving the Way for Bariatric Surgery Success'
 			),
 			_react2.default.createElement(
-				'button',
-				null,
-				'Read More'
+				'a',
+				{ href: '#' },
+				'Read More ',
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			)
 		)
 	),
@@ -21377,11 +21382,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			{ className: 'mdc-card mdc-card__news mdc-card__news--mentor' },
 			_react2.default.createElement('img', { src: '../assets/img/mentor-hand.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
-			_react2.default.createElement(
-				'span',
-				null,
-				'June 1, 2018'
-			),
 			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
 			_react2.default.createElement(
 				'h4',
@@ -21389,14 +21389,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 				'Mentor Announces Collabortion Agreement with Valeant Pharmaceuticals'
 			),
 			_react2.default.createElement(
+				'span',
+				null,
+				'June 1, 2018'
+			),
+			_react2.default.createElement(
 				'p',
 				null,
 				'Mentor Worldwide LLC today announced a new educational campaign featuring mom, actress and entrepreneur Brooke Burke-Charvet. As part of the campaign.'
 			),
 			_react2.default.createElement(
-				'button',
-				null,
-				'Read More'
+				'a',
+				{ href: '#' },
+				'Read More ',
+				_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 			)
 		)
 	)
