@@ -1,7 +1,7 @@
 {
 	data: [
 		{ 
-			name: 'Specialties',
+			name: 'Spezialitäten',
 			data: [
 				{ name: 'Specialties Overview' },
 				{ name: 'Bariatric' },
@@ -86,10 +86,10 @@
 				{ name: 'Vision' }
 			]
 		},
-		{ name: 'Products' },
-		{ name: 'Services' },
-		{ name: 'Companies' },
-		{ name: 'Support' },
-		{ name: 'About Us' }
+		{ name: 'Produkte' },
+		{ name: 'Dienstleistungen' },
+		{ name: 'Firmen' },
+		{ name: 'Unterstützung' },
+		{ name: 'Über uns' }
 	]
 }

@@ -1,5 +1,5 @@
 // $curve: cubic-bezier(.19,1,.22,1);
-$item-width: 112px;
+$item-width: 140px;
 
 .mdc-nav {
 	&--scrolled {
@@ -163,7 +163,7 @@ $item-width: 112px;
 	&__hovermaincolumn {
 		padding: 32px 40px;
 	    flex: 1;
-	    padding: 32px 112px;
+	    padding: 32px 140px;
 	    overflow: hidden;
 	    overflow-y: scroll;
 

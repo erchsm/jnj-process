@@ -14038,7 +14038,8 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  max-width: 380px; }
   .mdc-buttons__group button:first-child {
     min-width: 370px; }
   .mdc-buttons__group button:nth-child(2) {
@@ -14152,14 +14153,14 @@ body {
 .mdc-nav__hoverline {
   background: #CA001B;
   height: 4px;
-  width: 112px;
+  width: 140px;
   transform: translate3d(-50vw, 0, 0);
   transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
 
 .mdc-nav__hoverlines {
   display: -ms-flexbox;
   display: flex;
-  width: 672px;
+  width: 840px;
   display: flex; }
 
 .mdc-nav__topbar {
@@ -14212,7 +14213,7 @@ body {
   height: 30px; }
 
 .mdc-nav li {
-  min-width: 112px;
+  min-width: 140px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -14260,7 +14261,7 @@ body {
   padding: 32px 40px;
   -ms-flex: 1;
   flex: 1;
-  padding: 32px 112px;
+  padding: 32px 140px;
   overflow: hidden;
   overflow-y: scroll; }
   .mdc-nav__hovermaincolumn li {

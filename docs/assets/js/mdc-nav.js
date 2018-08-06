@@ -21384,7 +21384,7 @@ var MdcNav = function (_Component) {
             });
 
             var lineAnimation = {
-                transform: 'translate3d(' + 112 * (indexHovered + 0) + 'px, 0, 0)'
+                transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)'
             };
 
             return _react2.default.createElement(
@@ -21532,7 +21532,7 @@ exports.default = MdcNav;
 module.exports={
 	data: [
 		{ 
-			name: 'Specialties',
+			name: 'Spezialitäten',
 			data: [
 				{ name: 'Specialties Overview' },
 				{ name: 'Bariatric' },
@@ -21617,11 +21617,11 @@ module.exports={
 				{ name: 'Vision' }
 			]
 		},
-		{ name: 'Products' },
-		{ name: 'Services' },
-		{ name: 'Companies' },
-		{ name: 'Support' },
-		{ name: 'About Us' }
+		{ name: 'Produkte' },
+		{ name: 'Dienstleistungen' },
+		{ name: 'Firmen' },
+		{ name: 'Unterstützung' },
+		{ name: 'Über uns' }
 	]
 }
 },{}],188:[function(require,module,exports){
