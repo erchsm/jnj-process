@@ -72,7 +72,7 @@ render(
 				<div className="mdc-card__topbar"></div>
 				<h4>Mentor Announces Collabortion Agreement with Valeant Pharmaceuticals</h4>
 				<span>June 1, 2018</span>
-				<p>Mentor Worldwide LLC today announced a new educational campaign featuring mom, actress and entrepreneur Brooke Burke-Charvet. As part of the campaign.</p>
+				<p>Mentor Worldwide LLC today announced a new educational campaign featuring mom, actress and entrepreneur Brooke Burke-Charvet.</p>
 				<a href="#">Read More <i className="iconcss icon-arrow-right"></i></a>
 			</div>
 		</div>

@@ -21396,7 +21396,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 			_react2.default.createElement(
 				'p',
 				null,
-				'Mentor Worldwide LLC today announced a new educational campaign featuring mom, actress and entrepreneur Brooke Burke-Charvet. As part of the campaign.'
+				'Mentor Worldwide LLC today announced a new educational campaign featuring mom, actress and entrepreneur Brooke Burke-Charvet.'
 			),
 			_react2.default.createElement(
 				'a',

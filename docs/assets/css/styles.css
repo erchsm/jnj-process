@@ -14281,12 +14281,13 @@ body {
   .mdc-card__news--cerenovus .mdc-card__topbar {
     background-color: #CC0099; }
   .mdc-card__news--mentor img {
+    -ms-flex-item-align: end;
+    align-self: flex-end;
     opacity: 78%;
     mix-blend-mode: darken;
-    -o-object-position: 100% 0%;
-    object-position: 100% 0%;
-    -o-object-fit: contain;
-    object-fit: contain;
+    max-width: 320px;
+    -o-object-position: 100% 80%;
+    object-position: 100% 80%;
     margin-bottom: 18px; }
   .mdc-card__news--mentor a {
     color: #30689E; }

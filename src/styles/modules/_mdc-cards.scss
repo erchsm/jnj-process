@@ -278,10 +278,12 @@
 		$brand-secondary-mentor: #F5A623;
 
 		img {
+			align-self: flex-end;
 			opacity: 78%;
 			mix-blend-mode: darken;
-			object-position: 100% 0%;
-			object-fit: contain;
+			max-width: 320px;
+			object-position: 100% 80%;
+			// object-fit: contain;
 			margin-bottom: 18px;
 		}
 
