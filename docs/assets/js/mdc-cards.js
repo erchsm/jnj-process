@@ -21195,7 +21195,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		_react2.default.createElement(
 			'div',
 			{ className: 'mdc-card mdc-card__news mdc-card__news--bwi' },
-			_react2.default.createElement('img', { src: '/assets/img/waves.png' }),
+			_react2.default.createElement('img', { src: '../assets/img/waves.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement('div', { className: 'mdc-card__topbar' }),
 			_react2.default.createElement(
@@ -21231,7 +21231,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		_react2.default.createElement(
 			'div',
 			{ className: 'mdc-card mdc-card__news mdc-card__news--dps' },
-			_react2.default.createElement('img', { src: '/assets/img/dps-ray.png' }),
+			_react2.default.createElement('img', { src: '../assets/img/dps-ray.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement(
 				'span',
@@ -21267,7 +21267,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		_react2.default.createElement(
 			'div',
 			{ className: 'mdc-card mdc-card__news mdc-card__news--ethicon' },
-			_react2.default.createElement('img', { src: '/assets/img/ethicon-people2.png' }),
+			_react2.default.createElement('img', { src: '../assets/img/ethicon-people2.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement(
 				'span',
@@ -21303,7 +21303,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		_react2.default.createElement(
 			'div',
 			{ className: 'mdc-card mdc-card__news mdc-card__news--acclarent' },
-			_react2.default.createElement('img', { src: '/assets/img/acclarent-rib.png' }),
+			_react2.default.createElement('img', { src: '../assets/img/acclarent-rib.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement(
 				'span',
@@ -21339,7 +21339,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		_react2.default.createElement(
 			'div',
 			{ className: 'mdc-card mdc-card__news mdc-card__news--cerenovus' },
-			_react2.default.createElement('img', { src: '/assets/img/cerenovus-surgeon.png' }),
+			_react2.default.createElement('img', { src: '../assets/img/cerenovus-surgeon.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement(
 				'span',
@@ -21375,7 +21375,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 		_react2.default.createElement(
 			'div',
 			{ className: 'mdc-card mdc-card__news mdc-card__news--mentor' },
-			_react2.default.createElement('img', { src: '/assets/img/mentor-hand.png' }),
+			_react2.default.createElement('img', { src: '../assets/img/mentor-hand.png' }),
 			_react2.default.createElement('div', { className: 'mdc-card__bar' }),
 			_react2.default.createElement(
 				'span',
