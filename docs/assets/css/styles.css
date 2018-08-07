@@ -14161,10 +14161,11 @@ body {
     margin-top: 18px;
     font-size: 24px;
     font-weight: 800;
-    line-height: 1.2em;
+    line-height: 30px;
     margin-bottom: 18px; }
   .mdc-card p {
-    font-size: 16px; }
+    font-size: 16px;
+    line-height: 24px; }
   .mdc-card .link {
     font-size: 16px;
     outline: none;
@@ -14190,7 +14191,7 @@ body {
     width: 60px;
     min-height: 9px;
     margin-top: 40px;
-    margin-bottom: 12px; }
+    margin-bottom: 9px; }
   .mdc-card__news {
     min-height: 640px;
     max-width: 600px; }
@@ -14202,7 +14203,7 @@ body {
       object-fit: cover;
       -o-object-position: 0% 40%;
       object-position: 0% 40%; }
-    .mdc-card__news h4, .mdc-card__news p, .mdc-card__news .link, .mdc-card__news span, .mdc-card__news .mdc-card__topbar {
+    .mdc-card__news h4, .mdc-card__news p, .mdc-card__news .link, .mdc-card__news span, .mdc-card__news i, .mdc-card__news .mdc-card__topbar {
       margin-left: 60px;
       position: relative;
       transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1); }

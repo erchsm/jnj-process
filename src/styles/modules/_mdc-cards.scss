@@ -54,12 +54,13 @@
 		margin-top: 18px;
 		font-size: 24px;
 		font-weight: 800;
-		line-height: 1.2em;
+		line-height: 30px;
 		margin-bottom: 18px;
 	}
 
 	p {
 		font-size: 16px;
+		line-height: 24px;
 	}
 
 	.link {
@@ -93,7 +94,7 @@
 		width: 60px;
 		min-height: 9px;
 		margin-top: 40px;
-		margin-bottom: 12px;
+		margin-bottom: 9px;
 	}
 
 	&__news {
@@ -112,7 +113,7 @@
 			object-position: 0% 40%;
 		}
 
-		h4, p, .link, span, .mdc-card__topbar {
+		h4, p, .link, span, i, .mdc-card__topbar {
 			margin-left: 60px;
 			position: relative;
 			transition: all 0.9s $easing3;
