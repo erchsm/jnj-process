@@ -105,6 +105,7 @@
 			// position: absolute;
 			// top: 0;
 			// right: 0;
+			mix-blend-mode: multiply;
 			width: 100%;
 			height: 240px;
 			object-fit: cover;
@@ -140,7 +141,7 @@
 
 		span {
 			margin-bottom: 12px;
-			font-weight: 800;
+			// font-weight: 800;
 		}
 
 		.mdc-card__bar {
@@ -149,7 +150,7 @@
 		}
 
 		&:hover {
-			h4, p, .link, span {
+			h4, p, .link, i, span {
 				color: white;
 			}
 			.mdc-card__topbar {
@@ -167,7 +168,7 @@
 		img {
 			opacity: 0.12;
 		}
-		.link {
+		i , span {
 			color: $brand-primary-bwi;
 		}
 		.mdc-card__bar {
@@ -188,7 +189,7 @@
 			object-fit: contain;
 			// margin-bottom: 12px;
 		}
-		.link {
+		i , span {
 			color: $brand-secondary-dps;
 		}
 		.mdc-card__bar {
@@ -206,12 +207,13 @@
 
 		img {
 			width: 100%;
+			mix-blend-mode: multiply;
 			height: 240px;
 			object-fit: cover;
 			object-position: 0% 40%;
 		}
 
-		.link {
+		i , span {
 			color: $brand-primary-ethicon;
 		}
 
@@ -229,14 +231,14 @@
 
 		img {
 			opacity: 78%;
-			mix-blend-mode: darken;
+			mix-blend-mode: multiply;
 			// object-fit: contain;
 			object-position: 100% 100%;
 			// max-width: 400px;
 			// margin-bottom: 12px;
 		}
 
-		.link {
+		i , span {
 			color: $brand-primary-acclarent;
 		}
 
@@ -260,7 +262,7 @@
 			object-position: 0% 40%;
 		}
 
-		.link {
+		i , span {
 			color: $brand-primary-cerenovus;
 		}
 
@@ -280,14 +282,13 @@
 		img {
 			align-self: flex-end;
 			opacity: 78%;
-			mix-blend-mode: darken;
 			max-width: 320px;
 			object-position: 100% 80%;
 			// object-fit: contain;
 			margin-bottom: 18px;
 		}
 
-		.link {
+		i , span {
 			color: $brand-primary-mentor;
 		}
 

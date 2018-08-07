@@ -7,8 +7,8 @@ render(
 		<div className="mdc-cards__tile">
 			<p className="mdc-cards__label">Companies News/Events Card (BWI)</p>
 			<div className="mdc-card mdc-card__news mdc-card__news--bwi">
-				<img src="../assets/img/waves.png"></img>
 				<div className="mdc-card__bar"></div>
+				<img src="../assets/img/waves.png"></img>
 				<a href="#" className="mdc-card__topbar"></a>
 				<h4>SmartTouch® SF Catheter For Treatment or Persistant Atrial Fibrillation</h4>
 				<span>June 1, 2018</span>
@@ -19,8 +19,8 @@ render(
 		<div className="mdc-cards__tile">
 			<p className="mdc-cards__label">Companies News/Events Card (DPS)</p>
 			<div className="mdc-card mdc-card__news mdc-card__news--dps">
-				<img src="../assets/img/dps-ray.png"></img>
 				<div className="mdc-card__bar"></div>
+				<img src="../assets/img/dps-ray.png"></img>
 				<a href="#" className="mdc-card__topbar"></a>
 				<h4>New Dynacord® Suture Helps Address Challenges with Rotator Cuff Surgery.</h4>
 				<span>June 1, 2018</span>
@@ -31,8 +31,8 @@ render(
 		<div className="mdc-cards__tile">
 			<p className="mdc-cards__label">Companies News/Events Card (Ethicon)</p>
 			<div className="mdc-card mdc-card__news mdc-card__news--ethicon">
-				<img src="../assets/img/ethicon-people2.png"></img>
 				<div className="mdc-card__bar"></div>
+				<img src="../assets/img/ethicon-people2.png"></img>
 				<a href="#" className="mdc-card__topbar"></a>
 				<h4>Losing weight between young adulthood and middle age reduces diabetes risk.</h4>
 				<span>June 1, 2018</span>
@@ -43,8 +43,8 @@ render(
 		<div className="mdc-cards__tile">
 			<p className="mdc-cards__label">Companies News/Events Card (Acclarent)</p>
 			<div className="mdc-card mdc-card__news mdc-card__news--acclarent">
-				<img src="../assets/img/acclarent-rib.png"></img>
 				<div className="mdc-card__bar"></div>
+				<img src="../assets/img/acclarent-rib.png"></img>
 				<a href="#" className="mdc-card__topbar"></a>
 				<h4>New Study Demonstrates Safety of Balloon Sinuplasty in Patients suffering from  Sinusitis</h4>
 				<span>June 1, 2018</span>
@@ -55,8 +55,8 @@ render(
 		<div className="mdc-cards__tile">
 			<p className="mdc-cards__label">Companies News/Events Card (Cerenovus)</p>
 			<div className="mdc-card mdc-card__news mdc-card__news--cerenovus">
-				<img src="../assets/img/cerenovus-surgeon.png"></img>
 				<div className="mdc-card__bar"></div>
+				<img src="../assets/img/cerenovus-surgeon.png"></img>
 				<a href="#" className="mdc-card__topbar"></a>
 				<h4>First general surgery virtual residency program to allow training anytime, anywhere launched in collaboration</h4>
 				<span>June 1, 2018</span>
@@ -67,8 +67,8 @@ render(
 		<div className="mdc-cards__tile">
 			<p className="mdc-cards__label">Companies News/Events Card (Mentor)</p>
 			<div className="mdc-card mdc-card__news mdc-card__news--mentor">
-				<img src="../assets/img/mentor-hand.png"></img>
 				<div className="mdc-card__bar"></div>
+				<img src="../assets/img/mentor-hand.png"></img>
 				<a href="#" className="mdc-card__topbar"></a>
 				<h4>Mentor Announces Collabortion Agreement with Valeant Pharmaceuticals</h4>
 				<span>June 1, 2018</span>
