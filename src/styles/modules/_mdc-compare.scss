@@ -1,0 +1,47 @@
+// $curve: cubic-bezier(.19,1,.22,1);
+$item-width: 140px;
+
+.mdc-compare {
+	background: $brand-blue-light;
+	padding: 60px;
+	display: flex;
+	justify-content: center;
+
+	> div {
+		flex: 1;
+	}
+
+	&__content {
+		// min-width: 500px;
+
+		.mainphoto {
+			margin: 0 48px;
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		h2, p {
+			padding: 0 60px;
+		}
+	}
+
+	&__thumbnails {
+		display: flex;
+		justify-content: center;
+		margin-top: 24px;
+
+		> a {
+			max-width: 24%;
+			margin: 0 24px;
+
+			&:first-child, &:last-child {
+				margin: 0;
+			}
+			// flex: 1;
+		}
+	}
+}

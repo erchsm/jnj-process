@@ -116,7 +116,7 @@
 		h4, p, .link, span, i, .mdc-card__topbar {
 			margin-left: 60px;
 			position: relative;
-			transition: all 0.9s $easing3;
+			transition: all 0.6s $easing1;
 
 			// @for $i from 1 through 10 {
 			//   &:nth-child(#{$i}) {
@@ -146,7 +146,7 @@
 		}
 
 		.mdc-card__bar {
-			transition: all 0.9s $easing3;
+			transition: all 0.6s $easing1;
 			transform-origin: bottom;
 		}
 
@@ -164,16 +164,16 @@
 	}
 
 	&__news--bwi {
-		$brand-primary-bwi: #E57310;
-
 		img {
 			opacity: 0.12;
+			// background-image: linear-gradient($brand-primary-bwi, #7912E6);
 		}
 		i , span {
 			color: $brand-primary-bwi;
 		}
 		.mdc-card__bar {
 			background-color: $brand-primary-bwi;
+			// background: linear-gradient(to top right, $brand-primary-bwi, $brand-secondary-bwi);
 		}
 		.mdc-card__topbar {
 			background-color: $brand-primary-bwi;
@@ -181,8 +181,7 @@
 	}
 
 	&__news--dps {
-		$brand-primary-dps: #053C61;
-		$brand-secondary-dps: #A99A69;
+
 
 		img {
 			// opacity: 78%;
@@ -203,8 +202,7 @@
 
 
 	&__news--ethicon {
-		$brand-primary-ethicon: #ED1C23;
-		$brand-secondary-ethicon: #D9EAE3;
+
 
 		img {
 			width: 100%;
@@ -277,8 +275,7 @@
 	}
 
 	&__news--mentor {
-		$brand-primary-mentor: #30689E;
-		$brand-secondary-mentor: #F5A623;
+
 
 		img {
 			align-self: flex-end;

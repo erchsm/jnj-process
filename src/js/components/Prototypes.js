@@ -38,12 +38,12 @@ export default class Prototypes extends Component {
                     <a href="/prototypes/mdc-nav.html" className="tile is-parent" target="_blank">
                         <div className="tile is-child card">
                             <img src="/assets/img/carbon.jpg"></img>
-                            <h3 className="title is-3 is-spaced">Carbon</h3>
-                            <p className="subtitle is-5">Individual styles and components for beautiful designs</p>
+                            <h3 className="title is-3 is-spaced">Primary Navigation</h3>
+                            <p className="subtitle is-5">Interactions and Taxonomy for Navigation.</p>
                             <br />
                             <span className="tag-container">
-                                    <span className="tag">HTML</span>
-                            <span className="tag">Design Kit</span>
+                                <span className="tag">HTML</span>
+                                <span className="tag">Design Kit</span>
                             </span>
                         </div>
                     </a>

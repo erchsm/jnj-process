@@ -2,6 +2,9 @@
 $item-width: 140px;
 
 .mdc-nav {
+	position: relative;
+	height: 94px;
+
 	&--scrolled {
 		.mdc-nav__topbar {
 			height: 60px;
@@ -49,7 +52,8 @@ $item-width: 140px;
 		background: $brand-red;
 		height: 4px;
 		width: $item-width;
-		transform: translate3d(-50vw,0,0);
+		transform: translate3d(-($item-width / 2),0,0);
+		opacity: 0;
 		transition: all 0.9s $easing2;
 	}
 
@@ -151,6 +155,7 @@ $item-width: 140px;
 		top: 94px;
 		height: 72vh;
 		width: 80vw;
+		z-index: 1;
 	    right: 0;
 		position: fixed;
 		display: flex;

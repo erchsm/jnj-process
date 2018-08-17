@@ -90,7 +90,8 @@ export default class MdcNav extends Component {
         );
 
         const lineAnimation = {
-            transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)'
+            transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)',
+            opacity: 1
         }
 
         return (

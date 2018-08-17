@@ -1,0 +1,153 @@
+@mixin transition() {
+	transition: all 0.9s $easing2;
+}
+
+.mdc-switcher {
+	// padding-top: 94px;
+	display: flex;
+	flex-direction: column;
+	
+	section {
+		background-image: 
+		linear-gradient(to top right, rgba(#1E1E1E, .60), rgba(#B1B1B1, .12)),
+		url('../img/Running-Man.jpg');
+		background-size: cover;
+		background-position: left top;
+		color: white;
+		height: 72vh;
+		border-bottom: none;
+
+		h1 {
+			margin-top: 60px;
+		}
+	}
+
+
+	h1, h2, h3, i {
+		color: white;
+	}
+
+	&__tiles {
+		position: relative;
+		// width: calc(100% - 120px);
+		// display: block;
+		transform: translateY(-60px);
+	}
+
+	&__tile {
+		cursor: pointer;
+		color: white;
+		margin: 0;
+		// position: absolute;
+		// width: 50%;
+		display: flex;
+		flex-direction: column;
+		// justify-content: center;
+		padding: 72px;
+		min-height: 72vh;
+		@include transition();
+
+		i {
+			font-size: 60px;
+			margin-bottom: 18px;
+		}
+
+		h1 i {
+			font-size: 40px;
+		}
+
+		&:hover {
+			width: 100%;
+			// z-index: 1;		
+
+			.mdc-switcher__searchbox, .mdc-button, .search-bar {
+				opacity: 1;
+			}
+		}
+
+		&:first-child {
+			background-color: $brand-magenta;			
+
+			&:hover {
+				background-color: darken($brand-magenta, 2%);
+			}
+		}
+
+		&:last-child {
+			background-color: $brand-blue;
+
+			&:hover {
+				background-color: darken($brand-blue, 2%);
+			}
+		}
+	}
+
+	&__searchbox, .search-bar {
+		@include transition();
+		opacity: 0;
+		display: flex;
+		align-items: center;
+		margin-top: 24px;
+
+		input {
+			flex: 1;
+			outline: none;
+			border: none;
+			background: none;
+			border-bottom: solid 1px white;
+			color: white;
+			padding: 9px 12px;
+			margin-right: 12px;
+		}
+
+		i {
+			font-size: 32px;
+			margin: 0;
+		}
+
+		@mixin placeholder-style() {
+			color: white;
+			opacity: 0.72;
+		}
+
+		::-webkit-input-placeholder {
+			@include placeholder-style();
+		}
+
+		::-moz-placeholder {
+			@include placeholder-style();
+		}
+
+		:-ms-input-placeholder {
+			@include placeholder-style();
+		}
+
+		:-moz-placeholder {
+			@include placeholder-style();
+		}
+	}
+
+	.mdc-button {
+		position: absolute;
+		bottom: 48px;
+		justify-content: flex-start;
+		background-color: transparent;
+		color: white;
+		padding-left: 0;
+		margin-top: 12px;
+		opacity: 0;
+
+
+		i {
+			margin: 0;
+			margin-left: 9px;
+			font-size: 16px;
+		}
+	}
+
+	.search-bar {
+		opacity: 0;
+		align-items: flex-start;
+		@include transition();
+	}
+}

@@ -31,6 +31,8 @@
 .icon-search:before { content: "\EA01" }
 .icon-arrow-right:before { content: "\EA02" }
 .icon-download:before { content: "\EA03" }
+.icon-patient:before { content: "\EA04" }
+.icon-hcp:before { content: "\EA05" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {

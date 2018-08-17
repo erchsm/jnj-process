@@ -25487,7 +25487,8 @@ var MdcNav = function (_Component) {
             });
 
             var lineAnimation = {
-                transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)'
+                transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)',
+                opacity: 1
             };
 
             return _react2.default.createElement(
@@ -26178,12 +26179,12 @@ var Prototypes = function (_Component) {
                             _react2.default.createElement(
                                 "h3",
                                 { className: "title is-3 is-spaced" },
-                                "Carbon"
+                                "Primary Navigation"
                             ),
                             _react2.default.createElement(
                                 "p",
                                 { className: "subtitle is-5" },
-                                "Individual styles and components for beautiful designs"
+                                "Interactions and Taxonomy for Navigation."
                             ),
                             _react2.default.createElement("br", null),
                             _react2.default.createElement(
@@ -26288,7 +26289,7 @@ exports.default = Transations;
 module.exports={
 	data: [
 		{ 
-			name: 'Spezialitäten',
+			name: 'Specialties',
 			data: [
 				{ name: 'Specialties Overview' },
 				{ name: 'Bariatric' },
@@ -26373,11 +26374,11 @@ module.exports={
 				{ name: 'Vision' }
 			]
 		},
-		{ name: 'Produkte' },
-		{ name: 'Dienstleistungen' },
-		{ name: 'Firmen' },
-		{ name: 'Unterstützung' },
-		{ name: 'Über uns' }
+		{ name: 'Products' },
+		{ name: 'Services' },
+		{ name: 'Companies' },
+		{ name: 'Support' },
+		{ name: 'About Us' }
 	]
 }
 },{}],241:[function(require,module,exports){
