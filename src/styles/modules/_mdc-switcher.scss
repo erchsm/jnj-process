@@ -1,11 +1,12 @@
 @mixin transition() {
-	transition: all 0.9s $easing2;
+	transition: all 1.2s $easing2;
 }
 
 .mdc-switcher {
 	// padding-top: 94px;
 	display: flex;
 	flex-direction: column;
+	background-color: white;
 	
 	section {
 		background-image: 
@@ -27,24 +28,39 @@
 		color: white;
 	}
 
+	&__tile-container {
+		position: relative;
+		transform: translateY(-60px);
+	}
+
 	&__tiles {
 		position: relative;
-		// width: calc(100% - 120px);
-		// display: block;
-		transform: translateY(-60px);
+		flex-direction: row;
+		background: $brand-black;
+
+		&:hover {
+			.mdc-switcher__tile {
+				width: 15%;
+				opacity: 0.6;
+
+				h1, h3 {
+					opacity: 0;
+				}
+			}
+		}
 	}
 
 	&__tile {
 		cursor: pointer;
 		color: white;
 		margin: 0;
-		// position: absolute;
-		// width: 50%;
+		width: 50%;
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		// justify-content: center;
 		padding: 72px;
-		min-height: 72vh;
+		min-height: 80vh;
 		@include transition();
 
 		i {
@@ -57,11 +73,11 @@
 		}
 
 		&:hover {
-			width: 100%;
-			// z-index: 1;		
+			width: 85% !important;
+			opacity: 1 !important;		
 
-			.mdc-switcher__searchbox, .mdc-button, .search-bar {
-				opacity: 1;
+			h1, h3, .mdc-switcher__searchbox, .mdc-button, .search-bar {
+				opacity: 1 !important;
 			}
 		}
 
@@ -69,7 +85,7 @@
 			background-color: $brand-magenta;			
 
 			&:hover {
-				background-color: darken($brand-magenta, 2%);
+				background-color: darken($brand-magenta, 1%) !important;
 			}
 		}
 
@@ -77,7 +93,7 @@
 			background-color: $brand-blue;
 
 			&:hover {
-				background-color: darken($brand-blue, 2%);
+				background-color: darken($brand-blue, 1%) !important;
 			}
 		}
 	}

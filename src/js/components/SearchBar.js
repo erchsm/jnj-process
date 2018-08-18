@@ -118,8 +118,10 @@ export default class ExistingTitles extends Component {
 
   render() {
     const { value, suggestions } = this.state;
+    const { placeholder } = this.props;
+
     const inputProps = {
-      placeholder: "Search For A Specialty",
+      placeholder: placeholder ? placeholder : "Search For A Specialty",
       value,
       onChange: this.onChange
     };

@@ -52,9 +52,9 @@ $item-width: 140px;
 		background: $brand-red;
 		height: 4px;
 		width: $item-width;
-		transform: translate3d(-($item-width / 2),0,0);
+		transform: translate3d(-($item-width),0,0);
 		opacity: 0;
-		transition: all 0.9s $easing2;
+		transition: transform 0.9s $easing2;
 	}
 
 	&__hoverlines {
@@ -84,6 +84,19 @@ $item-width: 140px;
 
 	&__left {
 		width: 240px;
+		display: flex;
+		flex-direction: column;
+
+		img {
+			width: 180px;
+		}
+
+		h5 {
+			text-transform: uppercase;
+			font-size: 10px;
+			line-height: 1.5em;
+			color: $brand-grey-dark;
+		}
 	}
 
 	&__logo {
@@ -155,7 +168,6 @@ $item-width: 140px;
 		top: 94px;
 		height: 72vh;
 		width: 80vw;
-		z-index: 1;
 	    right: 0;
 		position: fixed;
 		display: flex;

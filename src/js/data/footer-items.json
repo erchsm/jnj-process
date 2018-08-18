@@ -1,0 +1,62 @@
+{
+	data: [
+		{ 
+			name: 'About Us',
+			data: [
+				{ name: 'Our Credo' },
+				{ name: 'Who We Are' },
+				{ name: 'News & Events' },
+				{ name: 'Careers' },
+				{ name: 'Investor Information' },
+				{ name: 'Press Releases' }
+			]
+		},
+		{ 
+			name: 'Companies',
+			data: [
+				{ name: 'Acclarent' },
+				{ name: 'Biosence Webster' },
+				{ name: 'Cerenovus' },
+				{ name: 'DePuy Synthes' },
+				{ name: 'Ethicon' },
+				{ name: 'Mentor' }
+			]
+		},
+		{ 
+			name: 'Support',
+			data: [
+				{ name: 'Contact Us' },
+				{ name: 'Customer Service' },
+				{ name: 'Education Resources' },
+				{ name: 'Patient Services' },
+				{ name: 'Reimbursement' },
+				{ name: 'Media Resources' },
+				{ name: 'Compliance Notice' }				
+			]
+		},
+		{ 
+			name: 'Quick Links',
+			data: [
+				{ name: 'Physician Locator' },
+				{ name: 'Medical Information Request' },
+				{ name: 'J&J Institute' },
+				{ name: 'J&J Home' },
+				{ name: 'Investigator Initiated Study' }
+			]
+		},
+		{ 
+			name: 'Connect With Us',
+			data: [
+				{ name: 'This information is intended for use by customers, patients, and healthcare professionals in the United States only. We recognize that the Internet is a global communications medium; however, laws, regulatory requirements, and product information for medical products can vary from country to country. The product information included here may not be appropriate for use outside the United States, and the information from other sites you visit may not be appropriate for use in the United States' }
+			]
+		},
+		{ data: [
+			{ name: 'Terms & Conditions' },
+			{ name: 'Privacy Policy' },
+			{ name: 'Legal Notice' },
+			{ name: 'Cookie Policy' },
+			{ name: 'Cookie Settings' },
+			{ name: 'CA State Requirements' }
+		]}
+	]
+}

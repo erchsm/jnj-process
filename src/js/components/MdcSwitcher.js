@@ -74,35 +74,27 @@ export default class Switcher extends Component {
               <section className="grid">
                 <h1 className="long grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
               </section>
-              <div className="grid mdc-switcher__tiles">
-                <div className="mdc-switcher__tile grid__item grid__item--col-6">
-                  <i className="iconcss icon-hcp"></i>                
-                  <h3>I’m a</h3>
-                  <h1 className="long">
-                    Health Care Professional 
-                    {/*<i className="iconcss icon-arrow-right"></i>*/}
-                  </h1>
-                  {/*<div className="mdc-switcher__searchbox">
-                    <input placeholder="Search for a Specialty"></input>
-                    <i className="iconcss icon-search"></i>
-                  </div>*/}
-                  <SearchBar/>
-                  <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
-                </div>
-                <div className="mdc-switcher__tile grid__item grid__item--col-6">
-                  <i className="iconcss icon-patient"></i>
-                  <h3>I’m a</h3>
-                  <h1 className="long">
-                    Patient <br/><br/>
-                    {/*<i className="iconcss icon-arrow-right"></i>*/}
-                  </h1>
-                  <div className="mdc-switcher__searchbox">
-                    <input placeholder="Search for Your Symptoms"></input>
-                    <i className="iconcss icon-search"></i>
+              <div className="grid mdc-switcher__tile-container">
+                <div className="mdc-switcher__tiles grid__item grid__item--col-12">
+                  <div className="mdc-switcher__tile">
+                    <i className="iconcss icon-hcp"></i>                
+                    <h3>I’m a</h3>
+                    <h1 className="long grid__item grid__item--col-8">
+                      Healthcare Professional 
+                    </h1>
+                    <SearchBar/>
+                    <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
-                  <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
+                  <div className="mdc-switcher__tile">
+                    <i className="iconcss icon-patient"></i>
+                    <h3>I’m a</h3>
+                    <h1 className="long">
+                      Patient <br/><br/>
+                    </h1>
+                    <SearchBar placeholder="Search For Your Symptoms"/>
+                    <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
+                  </div>
                 </div>
-                
               </div>
              </div>  
         );

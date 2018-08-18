@@ -2,7 +2,6 @@ export const titles = [
   {
     title: 'Specialties',
     titles: [
-      { name: 'Specialties Overview' },
       { name: 'Bariatric' },
       { name: 'Cardiology' },
       { name: 'Cardiac Electrophysiology' },
@@ -28,31 +27,6 @@ export const titles = [
       { name: 'Urology' },
       { name: 'Vetinary' },
       { name: 'Vision' }
-    ]
-  },
-  {
-    title: 'Events',
-    titles: [
-      {
-        name: 'I, Robot',
-      },
-      {
-        name: 'Robots',
-      },
-      {
-        name: 'Robo Cop',
-      }
-    ]
-  },
-  {
-    title: 'Promos',
-    titles: [
-      {
-        name: 'Season 2 Mr. Robot',
-      },
-      {
-        name: 'Season 3 Mr. Robot',
-      }
     ]
   }
 ];

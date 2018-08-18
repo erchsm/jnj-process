@@ -1,0 +1,125 @@
+$footer-bg: #F5F5F2;
+$footer-text: #4A4A4A;
+$share-bg-color: #211D1E;
+
+.mdc-footer {
+	background: $footer-bg;
+
+	p {
+		font-size: 9px;
+		color: $brand-grey-dark;
+	}
+
+	&__top, &__bottom {
+		padding: 60px;
+	}
+
+	&__bottom {
+		padding: 18px 60px;
+		border-top: solid 1px $brand-grey-light;
+	}
+
+	&__location {
+		display: flex;
+		align-items: center;
+		height: 24px;
+
+		img {
+			height: 16px;
+		}
+
+		p {
+			color: $brand-grey-darkest;
+			font-size: 12px;
+			margin-left: 12px;
+		}
+	}
+
+	&__links {
+		display: flex;
+		// justify-content: space-evenly;
+
+		li {
+			border-left: solid 1px $brand-grey-dark;
+			border-top: 0;
+			border-bottom: 0;
+			text-align: center;
+			min-width: 132px;
+
+			// &:first-child, &:last-child {
+			// 	border: none;
+			// }
+
+			&:last-child {
+				text-align: right;
+			}
+
+			&:first-child {
+				border: none;
+				text-align: left;
+			}
+
+			&:nth-last-child(2) {
+				// border-right: solid 1px $brand-grey-dark;
+			}
+
+			a {	
+				font-size: 9px;
+				text-transform: uppercase;
+				font-weight: 800;
+				color: $footer-text;
+			}
+		}
+	}
+
+	.mdc-logo {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		width: 140px;
+		// align-items: center;
+
+		h5 {
+			font-size: 8px;
+			line-height: 1.5em;
+			text-transform: uppercase;
+			color: $brand-grey-dark;
+		}
+	}
+
+	&__top {
+		ul {
+			margin-top: 18px;
+		}
+
+		h5, li a {
+			line-height: 40px;
+			color: $footer-text;
+		}
+
+		li a {
+			font-size: 14px;
+			line-height: 40px;
+		}
+
+		.mdc-share {
+			display: flex;
+			// justify-content: space-between;
+			margin: 24px 0 40px;
+
+			.mdc-share-item {
+				background: $share-bg-color;
+				color: white;
+				border-radius: 50%;
+				margin-right: 18px;
+				font-size: 12px;
+				display: flex;
+				align-items: center;
+				text-align: center;
+				justify-content: center;
+				width: 32px;
+				height: 32px; 
+			}
+		}
+	}
+}

@@ -2,9 +2,14 @@
 	display: flex;
 }
 
+.react-autosuggest__section-title {
+	display: none;
+}
+
 .react-autosuggest__container {
 	position: relative;
 	width: 100%;
+	margin-right: 24px;
 
 	@mixin placeholder-style() {
 			color: white;
@@ -83,7 +88,7 @@
 
 .react-autosuggest__suggestion {
 	cursor: pointer;
-	padding: 6px 18px;
+	padding: 9px 18px;
 }
 
 .react-autosuggest__suggestion--highlighted {

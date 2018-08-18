@@ -33,6 +33,10 @@
 .icon-download:before { content: "\EA03" }
 .icon-patient:before { content: "\EA04" }
 .icon-hcp:before { content: "\EA05" }
+.icon-facebook:before { content: "\EA06" }
+.icon-twitter:before { content: "\EA07" }
+.icon-youtube:before { content: "\EA08" }
+.icon-linkedin:before { content: "\EA09" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {
