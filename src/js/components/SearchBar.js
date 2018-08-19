@@ -4,50 +4,7 @@ import Autosuggest from 'react-autosuggest';
 
 import classNames from "classnames";
 
-function escapeRegexCharacters(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-function getSuggestions(value) {
-  const escapedValue = escapeRegexCharacters(value.trim());
-  
-  if (escapedValue === '') {
-    return [];
-  }
-
-  const regex = new RegExp('^' + escapedValue, 'i');
-
-  return titles
-    .map(section => {
-      return {
-        title: section.title,
-        titles: section.titles.filter(item => regex.test(item.name))
-      };
-    })
-    .filter(section => section.titles.length > 0);
-}
-
-function getSuggestionValue(suggestion) {
-  return suggestion.name;
-}
-
-function renderSuggestion(suggestion) {
-  return (
-    <span>{suggestion.name}</span>
-  );
-}
-
-function renderSectionTitle(section) {
-  return (
-    <strong>{section.title}</strong>
-  );
-}
-
-function getSectionSuggestions(section) {
-  return section.titles;
-}
-
-export default class ExistingTitles extends Component {
+export default class SearchBar extends Component {
  constructor() {
     super();
 
@@ -60,6 +17,49 @@ export default class ExistingTitles extends Component {
     };  
 
     this.handleClickOutside = this.handleClickOutside.bind(this);  
+  }
+
+  escapeRegexCharacters(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  getSuggestions(value) {
+    const escapedValue = this.escapeRegexCharacters(value.trim());
+    
+    if (escapedValue === '') {
+      return [];
+    }
+
+    const regex = new RegExp('^' + escapedValue, 'i');
+
+    return titles
+      .map(section => {
+        return {
+          title: section.title,
+          titles: section.titles.filter(item => regex.test(item.name))
+        };
+      })
+      .filter(section => section.titles.length > 0);
+  }
+
+  getSuggestionValue(suggestion) {
+    return suggestion.name;
+  }
+
+  renderSuggestion(suggestion) {
+    return (
+      <span>{suggestion.name}</span>
+    );
+  }
+
+  renderSectionTitle(section) {
+    return (
+      <strong>{section.title}</strong>
+    );
+  }
+
+  getSectionSuggestions(section) {
+    return section.titles;
   }
 
   componentDidMount() {
@@ -88,7 +88,7 @@ export default class ExistingTitles extends Component {
   
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
-      suggestions: getSuggestions(value)
+      suggestions: this.getSuggestions(value)
     });
   };
 
@@ -118,10 +118,10 @@ export default class ExistingTitles extends Component {
 
   render() {
     const { value, suggestions } = this.state;
-    const { placeholder } = this.props;
+    const { placeholder, data } = this.props;
 
     const inputProps = {
-      placeholder: placeholder ? placeholder : "Search For A Specialty",
+      placeholder: placeholder ? placeholder : "Search Everything",
       value,
       onChange: this.onChange
     };
@@ -135,21 +135,19 @@ export default class ExistingTitles extends Component {
     const { newTitle } = this.props;
 
     return (
-      <div>
     	<div ref="wrapper" className={classnames}>
-	    	
 	      <Autosuggest 
-		        multiSection={true}
-		        suggestions={suggestions}
-		        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-		        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-		        getSuggestionValue={getSuggestionValue}
-		        renderSuggestion={renderSuggestion}
-		        renderSectionTitle={renderSectionTitle}
-		        getSectionSuggestions={getSectionSuggestions}
-		        inputProps={inputProps} />
+        multiSection={true}
+        suggestions={suggestions}
+        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        getSuggestionValue={this.getSuggestionValue}
+        renderSuggestion={this.renderSuggestion}
+        renderSectionTitle={this.renderSectionTitle}
+        getSectionSuggestions={this.getSectionSuggestions}
+        inputProps={inputProps} />
+
         <i className="iconcss icon-search"></i>
-      </div>
       </div>
     );
   }

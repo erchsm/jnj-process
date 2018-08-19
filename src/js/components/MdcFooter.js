@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import classNames from "classnames";
 
 import FooterItems from "../data/footer-items";
+import MdcLogo from "./MdcLogo";
 
 
 export default class MdcNav extends Component {
@@ -93,35 +94,7 @@ export default class MdcNav extends Component {
             <nav className={classnames}>
                 <div className="grid mdc-footer__top">
                     <div className="grid__item grid__item--col-2">
-                        <div className="mdc-logo">
-                            <img src="../assets/img/JnJ_MDC-Horizontal.svg"></img>
-                            <h5>
-                            <span>M</span>
-                            <span>e</span>
-                            <span>d</span>
-                            <span>i</span>
-                            <span>c</span>
-                            <span>a</span>
-                            <span>l</span>
-                            <span> </span>                        
-                            <span>D</span>
-                            <span>e</span>
-                            <span>v</span>
-                            <span>i</span>
-                            <span>c</span>
-                            <span>e</span>
-                            <span> </span>                        
-                            <span>C</span>
-                            <span>o</span>
-                            <span>m</span>
-                            <span>p</span>
-                            <span>a</span>
-                            <span>n</span>
-                            <span>i</span>
-                            <span>e</span>
-                            <span>s</span>
-                            </h5>
-                        </div>
+                        <MdcLogo/>
                     </div>
                     <div className="grid__item grid__item--col-2">
                         <h5>{FooterItems.data[0].name}</h5>

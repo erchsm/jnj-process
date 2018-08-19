@@ -72,6 +72,17 @@
 			font-size: 40px;
 		}
 
+		h1, h3, i {
+			// @include transition();
+			// transition-duration: 0.6s;
+
+			// @for $i from 1 through 4 {
+			// 	&:nth-child(#{$i}) {
+			// 		transition-delay: 0.12s * $i; 
+			// 	}
+			// }
+		}
+
 		&:hover {
 			width: 85% !important;
 			opacity: 1 !important;		
@@ -98,50 +109,11 @@
 		}
 	}
 
-	&__searchbox, .search-bar {
+	.search-bar {
 		@include transition();
 		opacity: 0;
-		display: flex;
-		align-items: center;
-		margin-top: 24px;
-
-		input {
-			flex: 1;
-			outline: none;
-			border: none;
-			background: none;
-			border-bottom: solid 1px white;
-			color: white;
-			padding: 9px 12px;
-			margin-right: 12px;
-		}
-
-		i {
-			font-size: 32px;
-			margin: 0;
-		}
-
-		@mixin placeholder-style() {
-			color: white;
-			opacity: 0.72;
-		}
-
-		::-webkit-input-placeholder {
-			@include placeholder-style();
-		}
-
-		::-moz-placeholder {
-			@include placeholder-style();
-		}
-
-		:-ms-input-placeholder {
-			@include placeholder-style();
-		}
-
-		:-moz-placeholder {
-			@include placeholder-style();
-		}
 	}
+
 
 	.mdc-button {
 		position: absolute;

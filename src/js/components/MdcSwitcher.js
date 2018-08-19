@@ -82,7 +82,7 @@ export default class Switcher extends Component {
                     <h1 className="long grid__item grid__item--col-8">
                       Healthcare Professional 
                     </h1>
-                    <SearchBar/>
+                    <SearchBar placeholder="Search For A Specialty"/>
                     <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
                   <div className="mdc-switcher__tile">
@@ -91,7 +91,7 @@ export default class Switcher extends Component {
                     <h1 className="long">
                       Patient <br/><br/>
                     </h1>
-                    <SearchBar placeholder="Search For Your Symptoms"/>
+                    <SearchBar placeholder="Search For Your Symptoms" data="../data/symptoms-search.js"/>
                     <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
                 </div>

@@ -1,19 +1,40 @@
 .search-bar {
 	display: flex;
+	opacity: 0;
+	display: flex;
+	align-items: center;
+	margin: 36px 0 40px;
+
+	input {
+		flex: 1;
+		outline: none;
+		border: none;
+		background: none;
+		border-bottom: solid 1px white;
+		color: white;
+		padding: 9px 12px;
+		margin-right: 12px;
+	}
+
+	i {
+		font-size: 32px;
+		margin: 0;
+	}
 }
 
 .react-autosuggest__section-title {
 	display: none;
 }
 
+
 .react-autosuggest__container {
 	position: relative;
 	width: 100%;
-	margin-right: 24px;
+	margin-right: 12px;
 
 	@mixin placeholder-style() {
 			color: white;
-			opacity: 0.72;
+			opacity: 0.6;
 		}
 
 		::-webkit-input-placeholder {
@@ -31,6 +52,7 @@
 		:-moz-placeholder {
 			@include placeholder-style();
 		}
+
 }
 
 .react-autosuggest__input {
