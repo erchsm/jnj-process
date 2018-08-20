@@ -80,10 +80,10 @@ export default class Switcher extends Component {
                     <i className="iconcss icon-hcp"></i>                
                     <h3>I’m a</h3>
                     <h1 className="long grid__item grid__item--col-8">
-                      Healthcare Professional 
+                      Healthcare <br/>Professional 
                     </h1>
                     <SearchBar placeholder="Search For A Specialty"/>
-                    <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
+                    <button className="mdc-button mdc-button--text-link"><span>Continue to HCP Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
                   <div className="mdc-switcher__tile">
                     <i className="iconcss icon-patient"></i>

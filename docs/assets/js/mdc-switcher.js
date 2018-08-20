@@ -24231,7 +24231,9 @@ var Switcher = function (_Component) {
                             _react2.default.createElement(
                                 'h1',
                                 { className: 'long grid__item grid__item--col-8' },
-                                'Healthcare Professional'
+                                'Healthcare ',
+                                _react2.default.createElement('br', null),
+                                'Professional'
                             ),
                             _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For A Specialty' }),
                             _react2.default.createElement(
@@ -24240,7 +24242,7 @@ var Switcher = function (_Component) {
                                 _react2.default.createElement(
                                     'span',
                                     null,
-                                    'Continue to Patients Home'
+                                    'Continue to HCP Home'
                                 ),
                                 _react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
                             )
