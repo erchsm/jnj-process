@@ -21,6 +21,7 @@
 	i {
 		position: absolute;
 		right: 0;
+		top: 6px;
 		font-size: 32px;
 		margin: 0;
 	}
@@ -37,7 +38,7 @@
 
 	@mixin placeholder-style() {
 			color: white;
-			opacity: 0.6;
+			opacity: 0.4;
 		}
 
 		::-webkit-input-placeholder {

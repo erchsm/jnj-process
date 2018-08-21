@@ -15,7 +15,7 @@
 		background-size: cover;
 		background-position: left top;
 		color: white;
-		height: 72vh;
+		height: 90vh;
 		border-bottom: none;
 
 		h1 {
@@ -60,11 +60,11 @@
 		flex-direction: column;
 		// justify-content: center;
 		padding: 72px;
-		min-height: 80vh;
+		height: 90vh;
 		@include transition();
 
 		i {
-			font-size: 72px;
+			font-size: 60px;
 			margin-bottom: 24px;
 		}
 
