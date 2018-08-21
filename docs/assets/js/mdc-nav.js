@@ -21249,7 +21249,190 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	_react2.default.createElement('section', null)
 ), document.getElementById('root'));
 
-},{"../components/MdcNav":186,"react":184,"react-dom":32}],186:[function(require,module,exports){
+},{"../components/MdcNav":187,"react":184,"react-dom":32}],186:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MdcLogo = function (_Component) {
+    _inherits(MdcLogo, _Component);
+
+    function MdcLogo(props) {
+        _classCallCheck(this, MdcLogo);
+
+        var _this = _possibleConstructorReturn(this, (MdcLogo.__proto__ || Object.getPrototypeOf(MdcLogo)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(MdcLogo, [{
+        key: "render",
+        value: function render() {
+
+            var classnames = (0, _classnames2.default)({
+                "mdc-logo": true
+            });
+
+            return _react2.default.createElement(
+                "div",
+                { className: classnames },
+                _react2.default.createElement("img", { src: "../assets/img/JnJ_MDC-Horizontal.svg" }),
+                _react2.default.createElement(
+                    "h5",
+                    null,
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "M"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "e"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "d"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "i"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "c"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "a"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "l"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        " "
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "D"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "e"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "v"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "i"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "c"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "e"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        " "
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "C"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "o"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "m"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "p"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "a"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "n"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "i"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "e"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        null,
+                        "s"
+                    )
+                )
+            );
+        }
+    }]);
+
+    return MdcLogo;
+}(_react.Component);
+
+MdcLogo.propTypes = {};
+exports.default = MdcLogo;
+
+},{"classnames":1,"react":184}],187:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21273,6 +21456,10 @@ var _navItems2 = _interopRequireDefault(_navItems);
 var _specialtiesItems = require("../data/specialties-items");
 
 var _specialtiesItems2 = _interopRequireDefault(_specialtiesItems);
+
+var _MdcLogo = require("./MdcLogo");
+
+var _MdcLogo2 = _interopRequireDefault(_MdcLogo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21397,131 +21584,7 @@ var MdcNav = function (_Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "mdc-nav__left" },
-                        _react2.default.createElement("img", { src: "../assets/img/JnJ_MDC-Horizontal.svg" }),
-                        _react2.default.createElement(
-                            "h5",
-                            null,
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "M"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "d"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "i"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "c"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "a"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "l"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                " "
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "D"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "v"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "i"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "c"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                " "
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "C"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "o"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "m"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "p"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "a"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "n"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "i"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "s"
-                            )
-                        )
+                        _react2.default.createElement(_MdcLogo2.default, null)
                     ),
                     _react2.default.createElement(
                         "div",
@@ -21640,7 +21703,7 @@ var MdcNav = function (_Component) {
 MdcNav.propTypes = {};
 exports.default = MdcNav;
 
-},{"../data/nav-items":187,"../data/specialties-items":188,"classnames":1,"react":184}],187:[function(require,module,exports){
+},{"../data/nav-items":188,"../data/specialties-items":189,"./MdcLogo":186,"classnames":1,"react":184}],188:[function(require,module,exports){
 module.exports={
 	data: [
 		{ 
@@ -21736,7 +21799,7 @@ module.exports={
 		{ name: 'About Us' }
 	]
 }
-},{}],188:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 module.exports={
 	data: [
 		{ name: 'Specialties Overview' },

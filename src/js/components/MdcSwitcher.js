@@ -72,14 +72,14 @@ export default class Switcher extends Component {
         return (
             <div className={classnames}> 
               <section className="grid">
-                <h1 className="long grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
+                <h1 className="medium grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
               </section>
               <div className="grid mdc-switcher__tile-container">
                 <div className="mdc-switcher__tiles grid__item grid__item--col-12">
                   <div className="mdc-switcher__tile">
                     <i className="iconcss icon-hcp"></i>                
-                    <h3>I’m a</h3>
-                    <h1 className="long grid__item grid__item--col-8">
+                    <h2>I’m a</h2>
+                    <h1 className="medium">
                       Healthcare <br/>Professional 
                     </h1>
                     <SearchBar placeholder="Search For A Specialty"/>
@@ -87,11 +87,11 @@ export default class Switcher extends Component {
                   </div>
                   <div className="mdc-switcher__tile">
                     <i className="iconcss icon-patient"></i>
-                    <h3>I’m a</h3>
-                    <h1 className="long">
-                      Patient <br/><br/>
+                    <h2>I’m a</h2>
+                    <h1 className="medium">
+                      Patient<br/><br/>
                     </h1>
-                    <SearchBar placeholder="Search For Your Symptoms" data="../data/symptoms-search.js"/>
+                    <SearchBar placeholder="Search For Your Symptoms"/>
                     <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
                 </div>

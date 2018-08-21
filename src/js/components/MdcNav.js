@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import NavItems from "../data/nav-items";
 import SpecialtiesItems from "../data/specialties-items";
+import MdcLogo from "./MdcLogo";
 
 
 export default class MdcNav extends Component {
@@ -98,33 +99,7 @@ export default class MdcNav extends Component {
             <nav className={classnames}>
                 <div className="mdc-nav__topbar">
                     <div className="mdc-nav__left">
-                        <img src="../assets/img/JnJ_MDC-Horizontal.svg"></img>
-                        <h5>
-                        <span>M</span>
-                        <span>e</span>
-                        <span>d</span>
-                        <span>i</span>
-                        <span>c</span>
-                        <span>a</span>
-                        <span>l</span>
-                        <span> </span>                        
-                        <span>D</span>
-                        <span>e</span>
-                        <span>v</span>
-                        <span>i</span>
-                        <span>c</span>
-                        <span>e</span>
-                        <span> </span>                        
-                        <span>C</span>
-                        <span>o</span>
-                        <span>m</span>
-                        <span>p</span>
-                        <span>a</span>
-                        <span>n</span>
-                        <span>i</span>
-                        <span>e</span>
-                        <span>s</span>
-                        </h5>
+                        <MdcLogo/>
                     </div>
                     <div className="mdc-nav__center">
                         <ul>

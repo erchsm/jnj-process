@@ -43,7 +43,7 @@
 				width: 15%;
 				opacity: 0.6;
 
-				h1, h3 {
+				h1, h2, h3 {
 					opacity: 0;
 				}
 			}
@@ -51,7 +51,7 @@
 	}
 
 	&__tile {
-		cursor: pointer;
+		// cursor: pointer;
 		color: white;
 		margin: 0;
 		width: 50%;
@@ -64,15 +64,15 @@
 		@include transition();
 
 		i {
-			font-size: 60px;
-			margin-bottom: 18px;
+			font-size: 72px;
+			margin-bottom: 24px;
 		}
 
 		h1 i {
 			font-size: 40px;
 		}
 
-		h1, h3, i {
+		h1, h2, h3, i {
 			// @include transition();
 			// transition-duration: 0.6s;
 
@@ -87,24 +87,40 @@
 			width: 85% !important;
 			opacity: 1 !important;		
 
-			h1, h3, .mdc-switcher__searchbox, .mdc-button, .search-bar {
+			h1, h2, h3, .mdc-switcher__searchbox, .mdc-button, .search-bar {
 				opacity: 1 !important;
 			}
 		}
 
 		&:first-child {
-			background-color: $brand-magenta;			
+			background-color: $brand-blue;			
+
+			// .search-bar {
+			// 	li {
+			// 		&[id*='section-1'] {
+			// 			display: none;
+			// 		}
+			// 	}
+			// }
 
 			&:hover {
-				background-color: darken($brand-magenta, 1%) !important;
+				background-color: darken($brand-blue, 1%) !important;
 			}
 		}
 
 		&:last-child {
-			background-color: $brand-blue;
+			background-color: $brand-magenta;
+
+			// .search-bar {
+			// 	li {
+			// 		&[id*='section-0'] {
+			// 			display: none;
+			// 		}
+			// 	}
+			// }
 
 			&:hover {
-				background-color: darken($brand-blue, 1%) !important;
+				background-color: darken($brand-magenta, 1%) !important;
 			}
 		}
 	}
@@ -113,7 +129,6 @@
 		@include transition();
 		opacity: 0;
 	}
-
 
 	.mdc-button {
 		position: absolute;

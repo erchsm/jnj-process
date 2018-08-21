@@ -23739,6 +23739,10 @@ var _specialtiesItems = require("../data/specialties-items");
 
 var _specialtiesItems2 = _interopRequireDefault(_specialtiesItems);
 
+var _MdcLogo = require("./MdcLogo");
+
+var _MdcLogo2 = _interopRequireDefault(_MdcLogo);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23862,131 +23866,7 @@ var MdcNav = function (_Component) {
                     _react2.default.createElement(
                         "div",
                         { className: "mdc-nav__left" },
-                        _react2.default.createElement("img", { src: "../assets/img/JnJ_MDC-Horizontal.svg" }),
-                        _react2.default.createElement(
-                            "h5",
-                            null,
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "M"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "d"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "i"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "c"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "a"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "l"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                " "
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "D"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "v"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "i"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "c"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                " "
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "C"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "o"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "m"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "p"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "a"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "n"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "i"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "e"
-                            ),
-                            _react2.default.createElement(
-                                "span",
-                                null,
-                                "s"
-                            )
-                        )
+                        _react2.default.createElement(_MdcLogo2.default, null)
                     ),
                     _react2.default.createElement(
                         "div",
@@ -24105,7 +23985,7 @@ var MdcNav = function (_Component) {
 MdcNav.propTypes = {};
 exports.default = MdcNav;
 
-},{"../data/nav-items":207,"../data/specialties-items":208,"classnames":1,"react":197}],204:[function(require,module,exports){
+},{"../data/nav-items":207,"../data/specialties-items":208,"./MdcLogo":202,"classnames":1,"react":197}],204:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24209,7 +24089,7 @@ var Switcher = function (_Component) {
                     { className: 'grid' },
                     _react2.default.createElement(
                         'h1',
-                        { className: 'long grid__item grid__item--col-7' },
+                        { className: 'medium grid__item grid__item--col-7' },
                         'Welcome to the New Johnson & Johnson Medical Device Companies.'
                     )
                 ),
@@ -24224,13 +24104,13 @@ var Switcher = function (_Component) {
                             { className: 'mdc-switcher__tile' },
                             _react2.default.createElement('i', { className: 'iconcss icon-hcp' }),
                             _react2.default.createElement(
-                                'h3',
+                                'h2',
                                 null,
                                 'I\u2019m a'
                             ),
                             _react2.default.createElement(
                                 'h1',
-                                { className: 'long grid__item grid__item--col-8' },
+                                { className: 'medium' },
                                 'Healthcare ',
                                 _react2.default.createElement('br', null),
                                 'Professional'
@@ -24252,18 +24132,18 @@ var Switcher = function (_Component) {
                             { className: 'mdc-switcher__tile' },
                             _react2.default.createElement('i', { className: 'iconcss icon-patient' }),
                             _react2.default.createElement(
-                                'h3',
+                                'h2',
                                 null,
                                 'I\u2019m a'
                             ),
                             _react2.default.createElement(
                                 'h1',
-                                { className: 'long' },
-                                'Patient ',
+                                { className: 'medium' },
+                                'Patient',
                                 _react2.default.createElement('br', null),
                                 _react2.default.createElement('br', null)
                             ),
-                            _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For Your Symptoms', data: '../data/symptoms-search.js' }),
+                            _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For Your Symptoms' }),
                             _react2.default.createElement(
                                 'button',
                                 { className: 'mdc-button mdc-button--text-link' },
@@ -24326,6 +24206,19 @@ var SearchBar = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this));
 
+    _this.componentDidMount = function () {
+      // fetch(this.props.searchData)
+      //   .then(response => {
+      //     return response.json();
+      //   })
+      //   .then(data => {
+      //     console.log(data);
+      //   })
+      //   .catch(error => {
+      //     console.error(error);
+      //   });
+    };
+
     _this.onChange = function (event, _ref) {
       var newValue = _ref.newValue,
           method = _ref.method;
@@ -24375,7 +24268,6 @@ var SearchBar = function (_Component) {
       suggestions: []
     };
 
-    _this.handleClickOutside = _this.handleClickOutside.bind(_this);
     return _this;
   }
 
@@ -24435,26 +24327,8 @@ var SearchBar = function (_Component) {
       return section.titles;
     }
   }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      document.addEventListener('mousedown', this.handleClickOutside);
-    }
-  }, {
     key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      document.removeEventListener('mousedown', this.handleClickOutside);
-    }
-  }, {
-    key: 'handleClickOutside',
-    value: function handleClickOutside(event) {
-      if (!this.refs.wrapper.contains(event.target)) {
-        this.setState({
-          dropdownOpen: false,
-          searchOpen: false,
-          value: ''
-        });
-      }
-    }
+    value: function componentWillUnmount() {}
   }, {
     key: 'render',
     value: function render() {
@@ -24463,8 +24337,10 @@ var SearchBar = function (_Component) {
           suggestions = _state.suggestions;
       var _props = this.props,
           placeholder = _props.placeholder,
-          data = _props.data;
+          searchData = _props.searchData;
 
+      // console.log(searchData);
+      // const importedData = searchData ? require('searchData') : titles;
 
       var inputProps = {
         placeholder: placeholder ? placeholder : "Search Everything",
@@ -24699,11 +24575,14 @@ module.exports={
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 var titles = exports.titles = [{
-  title: 'Specialties',
-  titles: [{ name: 'Bariatric' }, { name: 'Cardiology' }, { name: 'Cardiac Electrophysiology' }, { name: 'Colorectal' }, { name: 'Craniomaxillofacial' }, { name: 'Dermatology' }, { name: 'Ear, Nose & Throat / Otolaryngology' }, { name: 'Dermatology' }, { name: 'Endocrinology' }, { name: 'Gastric Surgery' }, { name: 'General Surgery' }, { name: 'Gynecology' }, { name: 'Hepatobillary Surgery' }, { name: 'Interventional Oncology' }, { name: 'Neurovascular' }, { name: 'Orthopaedic Surgery' }, { name: 'Otolaryngology' }, { name: 'Sports Medicine' }, { name: 'Sterlization, Antisepsis' }, { name: 'Thoracic Surgery' }, { name: 'Trauma' }, { name: 'Urogynecology' }, { name: 'Urology' }, { name: 'Vetinary' }, { name: 'Vision' }]
+	title: 'Specialties',
+	titles: [{ name: 'Bariatric' }, { name: 'Cardiology' }, { name: 'Cardiac Electrophysiology' }, { name: 'Colorectal' }, { name: 'Craniomaxillofacial' }, { name: 'Dermatology' }, { name: 'Ear, Nose & Throat / Otolaryngology' }, { name: 'Dermatology' }, { name: 'Endocrinology' }, { name: 'Gastric Surgery' }, { name: 'General Surgery' }, { name: 'Gynecology' }, { name: 'Hepatobillary Surgery' }, { name: 'Interventional Oncology' }, { name: 'Neurovascular' }, { name: 'Orthopaedic Surgery' }, { name: 'Otolaryngology' }, { name: 'Sports Medicine' }, { name: 'Sterlization, Antisepsis' }, { name: 'Thoracic Surgery' }, { name: 'Trauma' }, { name: 'Urogynecology' }, { name: 'Urology' }, { name: 'Vetinary' }, { name: 'Vision' }]
+}, {
+	title: 'Sympotoms',
+	titles: [{ "name": "Abdominal Pains" }, { "name": "Joint Pain" }, { "name": "Back Ache" }, { "name": "Bruising" }, { "name": "Cough" }, { "name": "Diarrhea" }, { "name": "Difficulty Breathing" }, { "name": "Difficulty Swallowing" }, { "name": "Fever" }, { "name": "Headache" }, { "name": "Hiccups" }, { "name": "Intense Fatigue or Weakness" }, { "name": "Jaundice" }, { "name": "Loss of Appetite" }, { "name": "Muscles or Joints" }, { "name": "Nausea Vomiting" }, { "name": "Neck Rigidity" }, { "name": "Sore Throat or Swallowing" }, { "name": "Chest Pain" }, { "name": "Unexplained Bleedings" }, { "name": "Rash" }, { "name": "Red Eyes" }, { "name": "Other Symptoms" }]
 }];
 
 },{}]},{},[200])

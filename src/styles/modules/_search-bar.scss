@@ -3,6 +3,7 @@
 	opacity: 0;
 	display: flex;
 	align-items: center;
+	position: relative;
 	margin: 36px 0 40px;
 
 	input {
@@ -13,10 +14,13 @@
 		border-bottom: solid 1px white;
 		color: white;
 		padding: 9px 12px;
-		margin-right: 12px;
+		font-size: 24px;
+		margin-right: 0px;
 	}
 
 	i {
+		position: absolute;
+		right: 0;
 		font-size: 32px;
 		margin: 0;
 	}
@@ -30,7 +34,6 @@
 .react-autosuggest__container {
 	position: relative;
 	width: 100%;
-	margin-right: 12px;
 
 	@mixin placeholder-style() {
 			color: white;
@@ -105,12 +108,14 @@
 .react-autosuggest__suggestions-list {
 	margin: 0;
 	padding: 0;
+	margin-top: 9px;
 	list-style-type: none;
 }
 
 .react-autosuggest__suggestion {
 	cursor: pointer;
-	padding: 9px 18px;
+	padding: 9px 12px;
+	font-size: 24px;
 }
 
 .react-autosuggest__suggestion--highlighted {

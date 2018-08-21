@@ -16,7 +16,6 @@ export default class SearchBar extends Component {
       suggestions: []
     };  
 
-    this.handleClickOutside = this.handleClickOutside.bind(this);  
   }
 
   escapeRegexCharacters(str) {
@@ -62,23 +61,23 @@ export default class SearchBar extends Component {
     return section.titles;
   }
 
-  componentDidMount() {
-      document.addEventListener('mousedown', this.handleClickOutside);
+  componentDidMount = () => {
+    // fetch(this.props.searchData)
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    //   .catch(error => {
+    //     console.error(error);
+    //   });
   }
 
   componentWillUnmount() {
-      document.removeEventListener('mousedown', this.handleClickOutside);
+      
   }
 
-  handleClickOutside(event) {
-    if (!this.refs.wrapper.contains(event.target)) {
-      this.setState({
-        dropdownOpen: false,
-        searchOpen: false,
-        value: ''
-      });
-    }
-  }
 
   onChange = (event, { newValue, method }) => {
     this.setState({
@@ -118,7 +117,10 @@ export default class SearchBar extends Component {
 
   render() {
     const { value, suggestions } = this.state;
-    const { placeholder, data } = this.props;
+    const { placeholder, searchData } = this.props;
+
+    // console.log(searchData);
+    // const importedData = searchData ? require('searchData') : titles;
 
     const inputProps = {
       placeholder: placeholder ? placeholder : "Search Everything",

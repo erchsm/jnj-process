@@ -14161,8 +14161,7 @@ h1 {
 
 h2 {
   font-size: 48px;
-  line-height: 60px;
-  margin-bottom: 24px; }
+  line-height: 60px; }
 
 h3 {
   font-size: 36px;
@@ -14683,7 +14682,8 @@ body {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
-    flex-direction: column; }
+    flex-direction: column;
+    text-align: center; }
     .mdc-nav__left img {
       width: 180px; }
     .mdc-nav__left h5 {
@@ -14825,10 +14825,9 @@ body {
     .mdc-switcher__tiles:hover .mdc-switcher__tile {
       width: 15%;
       opacity: 0.6; }
-      .mdc-switcher__tiles:hover .mdc-switcher__tile h1, .mdc-switcher__tiles:hover .mdc-switcher__tile h3 {
+      .mdc-switcher__tiles:hover .mdc-switcher__tile h1, .mdc-switcher__tiles:hover .mdc-switcher__tile h2, .mdc-switcher__tiles:hover .mdc-switcher__tile h3 {
         opacity: 0; }
   .mdc-switcher__tile {
-    cursor: pointer;
     color: white;
     margin: 0;
     width: 50%;
@@ -14841,23 +14840,23 @@ body {
     min-height: 80vh;
     transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
     .mdc-switcher__tile i {
-      font-size: 60px;
-      margin-bottom: 18px; }
+      font-size: 72px;
+      margin-bottom: 24px; }
     .mdc-switcher__tile h1 i {
       font-size: 40px; }
     .mdc-switcher__tile:hover {
       width: 85% !important;
       opacity: 1 !important; }
-      .mdc-switcher__tile:hover h1, .mdc-switcher__tile:hover h3, .mdc-switcher__tile:hover .mdc-switcher__searchbox, .mdc-switcher__tile:hover .mdc-button, .mdc-switcher__tile:hover .search-bar {
+      .mdc-switcher__tile:hover h1, .mdc-switcher__tile:hover h2, .mdc-switcher__tile:hover h3, .mdc-switcher__tile:hover .mdc-switcher__searchbox, .mdc-switcher__tile:hover .mdc-button, .mdc-switcher__tile:hover .search-bar {
         opacity: 1 !important; }
     .mdc-switcher__tile:first-child {
-      background-color: #CC0099; }
-      .mdc-switcher__tile:first-child:hover {
-        background-color: #c70095 !important; }
-    .mdc-switcher__tile:last-child {
       background-color: #1724A9; }
-      .mdc-switcher__tile:last-child:hover {
+      .mdc-switcher__tile:first-child:hover {
         background-color: #1623a5 !important; }
+    .mdc-switcher__tile:last-child {
+      background-color: #CC0099; }
+      .mdc-switcher__tile:last-child:hover {
+        background-color: #c70095 !important; }
   .mdc-switcher .search-bar {
     transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
     opacity: 0; }
@@ -14888,6 +14887,7 @@ body {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
   margin: 36px 0 40px; }
   .search-bar input {
     -ms-flex: 1;
@@ -14898,8 +14898,11 @@ body {
     border-bottom: solid 1px white;
     color: white;
     padding: 9px 12px;
-    margin-right: 12px; }
+    font-size: 24px;
+    margin-right: 0px; }
   .search-bar i {
+    position: absolute;
+    right: 0;
     font-size: 32px;
     margin: 0; }
 
@@ -14908,8 +14911,7 @@ body {
 
 .react-autosuggest__container {
   position: relative;
-  width: 100%;
-  margin-right: 12px; }
+  width: 100%; }
   .react-autosuggest__container ::-webkit-input-placeholder {
     color: white;
     opacity: 0.6; }
@@ -14960,11 +14962,13 @@ body {
 .react-autosuggest__suggestions-list {
   margin: 0;
   padding: 0;
+  margin-top: 9px;
   list-style-type: none; }
 
 .react-autosuggest__suggestion {
   cursor: pointer;
-  padding: 9px 18px; }
+  padding: 9px 12px;
+  font-size: 24px; }
 
 .react-autosuggest__suggestion--highlighted {
   font-weight: 800; }
