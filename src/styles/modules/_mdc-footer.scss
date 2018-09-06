@@ -6,16 +6,16 @@ $share-bg-color: #211D1E;
 	background: $footer-bg;
 
 	p {
-		font-size: 9px;
+		font-size: 8px;
 		color: $brand-grey-dark;
 	}
 
 	&__top, &__bottom {
-		padding: 60px;
+		padding: 60px 60px 40px;
 	}
 
 	&__bottom {
-		padding: 18px 60px;
+		padding: 32px 60px;
 		border-top: solid 1px $brand-grey-light;
 	}
 
@@ -35,32 +35,41 @@ $share-bg-color: #211D1E;
 		}
 	}
 
+	&__main {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		> div {
+			width: 16%;
+			margin: 0 3%;
+		}
+	}
+
 	&__links {
 		display: flex;
-		// justify-content: space-evenly;
 
 		li {
-			border-left: solid 1px $brand-grey-dark;
+			border-left: solid 1px $brand-grey-light;
 			border-top: 0;
 			border-bottom: 0;
+			// min-width: $width;
+			padding: 0 30px;
+			min-height: 24px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			text-align: center;
-			min-width: 132px;
-
-			// &:first-child, &:last-child {
-			// 	border: none;
-			// }
 
 			&:last-child {
-				text-align: right;
 			}
 
 			&:first-child {
 				border: none;
-				text-align: left;
+				padding-left: 0px;
 			}
 
 			&:nth-last-child(2) {
-				// border-right: solid 1px $brand-grey-dark;
 			}
 
 			a {	
@@ -93,13 +102,17 @@ $share-bg-color: #211D1E;
 		}
 
 		h5, li a {
-			line-height: 40px;
+			line-height: 18px;
 			color: $footer-text;
 		}
 
 		li a {
 			font-size: 14px;
-			line-height: 40px;
+			display: block;
+		}
+
+		li {
+			margin: 24px 0;
 		}
 
 		.mdc-share {
@@ -117,8 +130,12 @@ $share-bg-color: #211D1E;
 				align-items: center;
 				text-align: center;
 				justify-content: center;
-				width: 32px;
-				height: 32px; 
+				min-width: 32px;
+				min-height: 32px; 
+
+				.icon-facebook {
+					font-size: 14px;
+				}
 			}
 		}
 	}

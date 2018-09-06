@@ -73,9 +73,12 @@ $brand-gold: #A99A69;
 
 		.line {
 			background: #1E5789;
-			padding: 6px 0;
-			width: 1px;
-			left: -1px;
+			// padding: 6px 0;
+			margin-top: 12px;
+			height: 5px;
+			width: 9px;
+			border-radius: 12px;
+			left: -4.5px;
 		}	
 	}
 	

@@ -51,12 +51,12 @@
 			]
 		},
 		{ data: [
-			{ name: 'Terms & Conditions' },
 			{ name: 'Privacy Policy' },
+			{ name: 'Terms & Conditions' },
 			{ name: 'Legal Notice' },
 			{ name: 'Cookie Policy' },
 			{ name: 'Cookie Settings' },
-			{ name: 'CA State Requirements' }
+			{ name: 'CA State Requirements' },
 		]}
 	]
 }

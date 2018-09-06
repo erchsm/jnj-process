@@ -96,7 +96,7 @@ export default class MdcNav extends Component {
                     <div className="grid__item grid__item--col-2">
                         <MdcLogo/>
                     </div>
-                    <div className="grid__item grid__item--col-2">
+                    {/*<div className="grid__item grid__item--col-2">
                         <h5>{FooterItems.data[0].name}</h5>
                         <ul>
                             {footerItems0}
@@ -119,6 +119,32 @@ export default class MdcNav extends Component {
                         <ul>
                             {footerItems0}
                         </ul>
+                    </div>*/}
+                    <div className="grid__item grid__item--col-8 mdc-footer__main">
+                        <div>
+                            <h5>{FooterItems.data[0].name}</h5>
+                            <ul>
+                                {footerItems0}
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>{FooterItems.data[1].name}</h5>
+                            <ul>
+                                {footerItems1}
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>{FooterItems.data[2].name}</h5>
+                            <ul>
+                                {footerItems2}
+                            </ul>
+                        </div>
+                        <div>
+                            <h5>{FooterItems.data[3].name}</h5>
+                            <ul>
+                                {footerItems3}
+                            </ul>
+                        </div>
                     </div>
                     <div className="grid__item grid__item--col-2">
                         <h5>{FooterItems.data[4].name}</h5>

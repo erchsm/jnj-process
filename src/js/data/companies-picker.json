@@ -1,0 +1,34 @@
+{
+	data: [
+		{ 
+			name: "Acclarent",
+			imgSrc: "../assets/img/dps-picker-image.jpg",
+			description: "<p>Today, DePuy Synthes Companies employs approximately 18,000 people across 60 countries and generates $10 billion in annual sales. Most importantly, its deep and broad portfolio supports nearly one million orthopaedic and neuro procedures worldwide annually.</p><br/><p>Working together, we can deliver innovative solutions to today's healthcare challenges to advance patient care and deliver clinical and economic value to health care systems throughout the world.</p>",
+		},
+		{ 
+			name: "Biosense Webster",
+			imgSrc: "../assets/img/dps-picker-image.jpg",
+			description: "<p>Today, DePuy Synthes Companies employs approximately 18,000 people across 60 countries and generates $10 billion in annual sales. Most importantly, its deep and broad portfolio supports nearly one million orthopaedic and neuro procedures worldwide annually.</p><br/><p>Working together, we can deliver innovative solutions to today's healthcare challenges to advance patient care and deliver clinical and economic value to health care systems throughout the world.</p>",
+		},
+		{ 
+			name: "Cerenovus",
+			imgSrc: "../assets/img/dps-picker-image.jpg",
+			description: "<p>Today, DePuy Synthes Companies employs approximately 18,000 people across 60 countries and generates $10 billion in annual sales. Most importantly, its deep and broad portfolio supports nearly one million orthopaedic and neuro procedures worldwide annually.</p><br/><p>Working together, we can deliver innovative solutions to today's healthcare challenges to advance patient care and deliver clinical and economic value to health care systems throughout the world.</p>",
+		},
+		{ 
+			name: "Depuy Synthes",
+			imgSrc: "../assets/img/dps-picker-image.jpg",
+			description: "<p>Today, DePuy Synthes Companies employs approximately 18,000 people across 60 countries and generates $10 billion in annual sales. Most importantly, its deep and broad portfolio supports nearly one million orthopaedic and neuro procedures worldwide annually.</p><br/><p>Working together, we can deliver innovative solutions to today's healthcare challenges to advance patient care and deliver clinical and economic value to health care systems throughout the world.</p>",
+		},
+		{ 
+			name: "Ethicon",
+			imgSrc: "../assets/img/ethicon-picker-image.jpg",
+			description: "<p>Today, DePuy Synthes Companies employs approximately 18,000 people across 60 countries and generates $10 billion in annual sales. Most importantly, its deep and broad portfolio supports nearly one million orthopaedic and neuro procedures worldwide annually.</p><br/><p>Working together, we can deliver innovative solutions to today's healthcare challenges to advance patient care and deliver clinical and economic value to health care systems throughout the world.</p>",
+		},
+		{ 
+			name: "Mentor",
+			imgSrc: "../assets/img/dps-picker-image.jpg",
+			description: "<p>Today, DePuy Synthes Companies employs approximately 18,000 people across 60 countries and generates $10 billion in annual sales. Most importantly, its deep and broad portfolio supports nearly one million orthopaedic and neuro procedures worldwide annually.</p><br/><p>Working together, we can deliver innovative solutions to today's healthcare challenges to advance patient care and deliver clinical and economic value to health care systems throughout the world.</p>",
+		},
+	]
+}

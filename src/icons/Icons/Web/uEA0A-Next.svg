@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/ Web / Next</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M39.3553495,26.0540855 L6.516399,26.1962454 C5.68797964,26.1998317 5.01350584,25.5311723 5.00991961,24.7027529 C5.00633338,23.8743336 5.67499275,23.1998598 6.50341211,23.1962736 L39.6846916,23.0526317 L30.8694514,14.2302593 C30.2839018,13.644236 30.2842859,12.6944886 30.8703092,12.1089391 C31.4563324,11.5233896 32.4060798,11.5237737 32.9916293,12.1097969 L44.2032704,23.3305089 C44.788817,23.9165293 44.7884363,24.866271 44.20242,25.4518217 L32.8887524,36.7565002 C32.3027332,37.3420538 31.3529858,37.3416763 30.7674322,36.7556571 C30.1818786,36.1696379 30.1822561,35.2198905 30.7682753,34.6343369 L39.3553495,26.0540855 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/-Web-/-Next" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#2B2D2F" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Colors/-Black" mask="url(#mask-2)" fill="#212121">
+            <rect id="Rectangle" x="0" y="0" width="50" height="50"></rect>
+        </g>
+    </g>
+</svg>

@@ -65,7 +65,7 @@
 	text-align: center;
 	font-size: 16px;
 	font-weight: 800;
-	color: white;
+	color: $brand-black;
 	border-radius: 2px;
 	border: none;
 	cursor: pointer;
@@ -86,6 +86,7 @@
 
 	&--primary {
 		transition: all 0.6s $easing4;
+		color: white;
 		background: $brand-red;
 
 		&:hover {
@@ -105,7 +106,9 @@
 	}
 
 	&--text-link {
-		color: $brand-black;
+		background: none;
+		border: none;
+		// color: $brand-black;
 		transition: all 0.6s $easing4;
 
 		span {
@@ -128,6 +131,16 @@
 			i {
 				transform: translateX(9px);
 			}
+		}
+	}
+
+	&--white {
+		background: transparent;
+		border-color: white;
+		color: white;
+
+		i {
+			color: white;
 		}
 	}
 
