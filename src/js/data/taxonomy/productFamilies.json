@@ -1,0 +1,50 @@
+{
+	"nodes": [
+		{
+		 	"id": "Compression Implants",
+		 	"group": "Product Family"
+		 },
+	],
+	"links": [
+		{
+			"source": "Compression Implants",
+			"target": "BME ELITE® Nitinol Memory Implant",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "HAMMERLOCK® 2 Nitinol Implant",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "HAMMERSPLINT™ Brace",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "SPEEDARC™ Nitinol Compression Implant",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "SPEEDTITAN™ Nitinol Compression Implant",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "SPEEDTRIAD™ Nitinol Compression Implant",
+			"value": 1
+		},
+		{
+			"source": "Compression Implants",
+			"target": "SPEED™ Nitinol Memory Implant",
+			"value": 1
+		},
+	]
+}

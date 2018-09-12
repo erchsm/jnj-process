@@ -1,0 +1,61 @@
+{
+	"nodes": [
+		{
+			"id": "Fractures",
+			"group": "Condition"
+		},
+		{
+			"id": "Bone Defects",
+			"group": "Condition"
+		},
+		{
+			"id": "Calcaneocuboid Fusions",
+			"group": "Condition"
+		},
+		{
+			"id": "Fixation of Small Bones",
+			"group": "Condition"
+		},
+		{
+			"id": "Small Bone Reconstruction and Fusion",
+			"group": "Condition"
+		},
+	],
+	"links": [
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Fractures",
+			"value": 1
+		},
+		{
+			"source": "HAMMERLOCK® 2 Nitinol Implant",
+			"target": "Small Bone Reconstruction and Fusion",
+			"value": 1
+		},
+		{
+			"source": "HAMMERSPLINT™ Brace",
+			"target": "Bone Defects",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Calcaneocuboid Fusions",
+			"value": 1
+		},
+		{
+			"source": "SPEEDARC™ Nitinol Compression Implant",
+			"target": "Fixation of Small Bones",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTRIAD™ Nitinol Compression Implant",
+			"target": "Fixation of Small Bones",
+			"value": 1
+		},
+		{
+			"source": "SPEED™ Nitinol Memory Implant",
+			"target": "Fractures",
+			"value": 1
+		},
+	]
+}

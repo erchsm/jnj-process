@@ -1,0 +1,26 @@
+{
+	"nodes": [
+		{
+			"id": "Fracture Repair",
+			"group": "Procedure"
+		},
+		{
+			"id": "Arthrodesis",
+			"group": "Procedure"
+		},
+		{
+			"id": "Calcaneal Osteotomies",
+			"group": "Procedure"
+		},
+		{
+			"id": "Osteotomies",
+			"group": "Procedure"
+		},
+		{
+			"id": "Hammertoe Repair",
+			"group": "Procedure"
+		},
+	],
+	"links": [
+	]
+}

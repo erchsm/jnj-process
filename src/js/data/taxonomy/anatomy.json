@@ -1,0 +1,146 @@
+{
+	"nodes": [
+		{
+			"id": "Foot",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Femur",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Fibula",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Tibia",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Humurus",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Ulna",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Radius",
+			"group": "Anatomy"
+		},
+		{
+			"id": "Hand",
+			"group": "Anatomy"
+		},
+	],
+	"links": [
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Foot",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Femur",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Fibula",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Tibia",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Humurus",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Ulna",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Radius",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Hand",
+			"value": 1
+		},
+		{
+			"source": "HAMMERLOCK® 2 Nitinol Implant",
+			"target": "Foot",
+			"value": 1
+		},
+
+		{
+			"source": "HAMMERLOCK® 2 Nitinol Implant",
+			"target": "Hand",
+			"value": 1
+		},
+		{
+			"source": "HAMMERSPLINT™ Brace",
+			"target": "Foot",
+			"value": 1
+		},
+
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Foot",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Femur",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Fibula",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Tibia",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Humurus",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Ulna",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Radius",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Hand",
+			"value": 1
+		},
+
+		{
+			"source": "SPEEDTITAN™ Nitinol Compression Implant",
+			"target": "Hand",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTITAN™ Nitinol Compression Implant",
+			"target": "Foot",
+			"value": 1
+		},
+	]
+}

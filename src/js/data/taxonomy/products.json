@@ -1,0 +1,138 @@
+{
+	"nodes": [
+		{
+			"id": "BME ELITE® Nitinol Memory Implant",
+			"group": "Product"
+		},
+		{
+			"id": "HAMMERLOCK® 2 Nitinol Implant",
+			"group": "Product"
+		},
+		{
+			"id": "HAMMERSPLINT™ Brace",
+			"group": "Product"
+		},
+		{
+			"id": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"group": "Product"
+		},
+		{
+			"id": "SPEEDTITAN™ Nitinol Compression Implant",
+			"group": "Product"
+		},
+		{
+			"id": "SPEEDARC™ Nitinol Compression Implant",
+			"group": "Product"
+		},
+		{
+			"id": "SPEEDTRIAD™ Nitinol Compression Implant",
+			"group": "Product"
+		},
+		{
+			"id": "SPEED™ Nitinol Memory Implant",
+			"group": "Product"
+		},
+	],
+	"links": [
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "BME ELITE® Nitinol Memory Implant",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "HAMMERLOCK® 2 Nitinol Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "HAMMERSPLINT™ Brace",
+			"target": "Hammertoe Repair",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Arthrodesis",
+			"value": 1
+		},
+		{
+			"source": "SPEEDSHIFT™ Nitinol Compression Implant",
+			"target": "Calcaneal Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTITAN™ Nitinol Compression Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTITAN™ Nitinol Compression Implant",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTITAN™ Nitinol Compression Implant",
+			"target": "Arthrodesis",
+			"value": 1
+		},
+		{
+			"source": "SPEEDARC™ Nitinol Compression Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "SPEEDARC™ Nitinol Compression Implant",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "SPEEDARC™ Nitinol Compression Implant",
+			"target": "Arthrodesis",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTRIAD™ Nitinol Compression Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTRIAD™ Nitinol Compression Implant",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "SPEEDTRIAD™ Nitinol Compression Implant",
+			"target": "Arthrodesis",
+			"value": 1
+		},
+		{
+			"source": "SPEED™ Nitinol Memory Implant",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "SPEED™ Nitinol Memory Implant",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "SPEED™ Nitinol Memory Implant",
+			"target": "Arthrodesis",
+			"value": 1
+		},
+	]
+}

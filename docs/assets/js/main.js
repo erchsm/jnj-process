@@ -21206,8 +21206,6 @@ exports.default = _matchPath2.default; // Written in this round about way for ba
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- *
- * @providesModule warning
  */
 
 'use strict';
@@ -22306,8 +22304,6 @@ exports.default = matchPath;
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- *
- * @providesModule warning
  */
 
 'use strict';
@@ -25105,6 +25101,10 @@ var _DashboardRouter = require('./DashboardRouter');
 
 var _DashboardRouter2 = _interopRequireDefault(_DashboardRouter);
 
+var _MdcLogo = require('./MdcLogo');
+
+var _MdcLogo2 = _interopRequireDefault(_MdcLogo);
+
 var _reactRouterDom = require('react-router-dom');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -25135,12 +25135,12 @@ var Dashboard = function (_Component) {
                     'div',
                     { className: 'column is-one-fifth sidebar', style: { margin: '0px' } },
                     _react2.default.createElement(
-                        'h3',
+                        'div',
                         { className: 'title is-4 logo' },
                         _react2.default.createElement(
                             _reactRouterDom.NavLink,
                             { to: '/home' },
-                            _react2.default.createElement('img', { src: 'assets/img/JnJ_MDC-Horizontal.svg' })
+                            _react2.default.createElement(_MdcLogo2.default, null)
                         )
                     ),
                     _react2.default.createElement(
@@ -25209,7 +25209,7 @@ var Dashboard = function (_Component) {
 Dashboard.propTypes = {};
 exports.default = Dashboard;
 
-},{"./DashboardRouter":234,"react":226,"react-router-dom":185}],234:[function(require,module,exports){
+},{"./DashboardRouter":234,"./MdcLogo":236,"react":226,"react-router-dom":185}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

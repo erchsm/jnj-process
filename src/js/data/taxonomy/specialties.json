@@ -1,0 +1,35 @@
+{
+	"nodes": [
+		{
+			"id": "Orthopaedic",
+			"group": "Specialty"
+		},
+	],
+	"links": [
+		{
+			"source": "Orthopaedic",
+			"target": "Fracture Repair",
+			"value": 1
+		},
+		{
+			"source": "Orthopaedic",
+			"target": "Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "Orthopaedic",
+			"target": "Arthrodesis",
+			"value": 1
+		},
+		{
+			"source": "Orthopaedic",
+			"target": "Calcaneal Osteotomies",
+			"value": 1
+		},
+		{
+			"source": "Orthopaedic",
+			"target": "Hammertoe Repair",
+			"value": 1
+		},
+	]
+}

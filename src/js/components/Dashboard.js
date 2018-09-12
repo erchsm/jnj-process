@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import DashboardRouter from './DashboardRouter';
+import MdcLogo from './MdcLogo';
 import {NavLink} from 'react-router-dom';
 
 
@@ -20,12 +21,12 @@ export default class Dashboard extends Component {
 
                 <div className="column is-one-fifth sidebar" style={{margin: '0px'}}>
 
-                    <h3 className="title is-4 logo">
+                    <div className="title is-4 logo">
                        <NavLink to="/home">
                        {/*<svg className="svg-inline--fa fa-heart fa-w-18" aria-hidden="true" data-prefix="far" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M257.3 475.4L92.5 313.6C85.4 307 24 248.1 24 174.8 24 84.1 80.8 24 176 24c41.4 0 80.6 22.8 112 49.8 31.3-27 70.6-49.8 112-49.8 91.7 0 152 56.5 152 150.8 0 52-31.8 103.5-68.1 138.7l-.4.4-164.8 161.5a43.7 43.7 0 0 1-61.4 0zM125.9 279.1L288 438.3l161.8-158.7c27.3-27 54.2-66.3 54.2-104.8C504 107.9 465.8 72 400 72c-47.2 0-92.8 49.3-112 68.4-17-17-64-68.4-112-68.4-65.9 0-104 35.9-104 102.8 0 37.3 26.7 78.9 53.9 104.3z"></path>
                        </svg> */}
-                       <img src="assets/img/JnJ_MDC-Horizontal.svg"></img>
-                    </NavLink></h3>
+                       <MdcLogo/>
+                    </NavLink></div>
                 
 {/*                    <p className="is-size-6 tagline">A directory of UI resources</p>
                     <a className="button is-small is-info is-outlined tagline" href="https://docs.google.com/forms/d/e/1FAIpQLSdqYkt7o-6bWo-PxXdoP_kPkPlUkyvKKTj-9Wa_djl1BIkeNA/viewform" target="_blank" style={{marginLeft: "32px"}}>Submit Link</a>

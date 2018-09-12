@@ -36,7 +36,8 @@ module.exports = {
                 { input: 'mdc-cards.js', output: 'mdc-cards.js'},
                 { input: 'mdc-compare-module.js', output: 'mdc-compare-module.js'},
                 { input: 'mdc-switcher.js', output: 'mdc-switcher.js'},
-                { input: 'mdc-companies-picker.js', output: 'mdc-companies-picker.js'}
+                { input: 'mdc-companies-picker.js', output: 'mdc-companies-picker.js'},
+                { input: 'mdc-taxonomy-diagram.js', output: 'mdc-taxonomy-diagram.js'}
             ],
             extensions: ['js']
         },
