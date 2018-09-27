@@ -113,14 +113,14 @@ export default class MdcTaxonomyDiagram extends Component {
 					{this.createNodes(procedures)}
 					{this.createNodes(conditions)}
 					{this.createNodes(specialties)}
-					{this.createNodes(anatomy)}
+					{/*this.createNodes(anatomy)*/}
 
 					{this.createNodeLinks(productFamilies)}
 					{this.createNodeLinks(products)}
 					{this.createNodeLinks(procedures)}
 					{this.createNodeLinks(conditions)}
 					{this.createNodeLinks(specialties)}
-					{this.createNodeLinks(anatomy)}
+					{/*this.createNodeLinks(anatomy)*/}
 				</InteractiveForceGraph>
 
 				<div className='mdc-taxonomy-diagram__legend'>
@@ -139,9 +139,9 @@ export default class MdcTaxonomyDiagram extends Component {
 					<div className="mdc-taxonomy-diagram__legend-item">
 						<h5>Condition</h5><div className="mdc-taxonomy-diagram__legend-swatch" style={{backgroundColor: colors['Condition']}}></div>
 					</div>
-					<div className="mdc-taxonomy-diagram__legend-item">
+					{/*<div className="mdc-taxonomy-diagram__legend-item">
 						<h5>Anatomy</h5><div className="mdc-taxonomy-diagram__legend-swatch" style={{backgroundColor: colors['Anatomy']}}></div>
-					</div>
+					</div>*/}
 				</div>
 			</div>
 		);

@@ -42,6 +42,26 @@
 .icon-caret-down-lg:before { content: "\EA12" }
 .icon-caret-down-sm:before { content: "\EA13" }
 .icon-close-lg:before { content: "\EA14" }
+.icon-refresh:before { content: "\EA15" }
+.icon-plus:before { content: "\EA16" }
+.icon-minus:before { content: "\EA17" }
+.icon-play:before { content: "\EA18" }
+.icon-mail:before { content: "\EA19" }
+.icon-link:before { content: "\EA20" }
+.icon-share:before { content: "\EA21" }
+.icon-science-water:before { content: "\EA22" }
+.icon-facilities-hospital:before { content: "\EA23" }
+.icon-core-Heart:before { content: "\EA24" }
+.icon-products-bandage:before { content: "\EA25" }
+.icon-people-environment:before { content: "\EA26" }
+.icon-health-stethoscope:before { content: "\EA27" }
+.icon-science-brain:before { content: "\EA28" }
+.icon-communication-calendar:before { content: "\EA29" }
+.icon-innovation-idea:before { content: "\EA30" }
+.icon-innovation-partnership:before { content: "\EA31" }
+.icon-people-community:before { content: "\EA32" }
+.icon-health-cross:before { content: "\EA33" }
+.icon-hearing-impaired:before { content: "\EA34" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {

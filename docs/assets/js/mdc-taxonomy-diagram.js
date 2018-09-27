@@ -21433,13 +21433,11 @@ var MdcTaxonomyDiagram = function (_Component) {
 					this.createNodes(_procedures2.default),
 					this.createNodes(_conditions2.default),
 					this.createNodes(_specialties2.default),
-					this.createNodes(_anatomy2.default),
 					this.createNodeLinks(_productFamilies2.default),
 					this.createNodeLinks(_products2.default),
 					this.createNodeLinks(_procedures2.default),
 					this.createNodeLinks(_conditions2.default),
-					this.createNodeLinks(_specialties2.default),
-					this.createNodeLinks(_anatomy2.default)
+					this.createNodeLinks(_specialties2.default)
 				),
 				_react2.default.createElement(
 					'div',
@@ -21493,16 +21491,6 @@ var MdcTaxonomyDiagram = function (_Component) {
 							'Condition'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Condition'] } })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'mdc-taxonomy-diagram__legend-item' },
-						_react2.default.createElement(
-							'h5',
-							null,
-							'Anatomy'
-						),
-						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Anatomy'] } })
 					)
 				)
 			);

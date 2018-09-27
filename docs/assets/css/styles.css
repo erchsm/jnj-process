@@ -4,6 +4,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -14096,6 +14097,66 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-close-lg:before {
   content: "\EA14"; }
 
+.icon-refresh:before {
+  content: "\EA15"; }
+
+.icon-plus:before {
+  content: "\EA16"; }
+
+.icon-minus:before {
+  content: "\EA17"; }
+
+.icon-play:before {
+  content: "\EA18"; }
+
+.icon-mail:before {
+  content: "\EA19"; }
+
+.icon-link:before {
+  content: "\EA20"; }
+
+.icon-share:before {
+  content: "\EA21"; }
+
+.icon-science-water:before {
+  content: "\EA22"; }
+
+.icon-facilities-hospital:before {
+  content: "\EA23"; }
+
+.icon-core-Heart:before {
+  content: "\EA24"; }
+
+.icon-products-bandage:before {
+  content: "\EA25"; }
+
+.icon-people-environment:before {
+  content: "\EA26"; }
+
+.icon-health-stethoscope:before {
+  content: "\EA27"; }
+
+.icon-science-brain:before {
+  content: "\EA28"; }
+
+.icon-communication-calendar:before {
+  content: "\EA29"; }
+
+.icon-innovation-idea:before {
+  content: "\EA30"; }
+
+.icon-innovation-partnership:before {
+  content: "\EA31"; }
+
+.icon-people-community:before {
+  content: "\EA32"; }
+
+.icon-health-cross:before {
+  content: "\EA33"; }
+
+.icon-hearing-impaired:before {
+  content: "\EA34"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -14194,7 +14255,8 @@ h5 {
   box-sizing: border-box; }
 
 body {
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: subpixel-antialiased; }
 
 .logo {
   margin-left: 0;
@@ -14826,6 +14888,13 @@ body {
 
 .mdc-logo img {
   width: 180px; }
+
+.mdc-logo h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #CA001B;
+  text-transform: lowercase;
+  white-space: nowrap;
+  margin: 0; }
 
 .mdc-logo h5 {
   text-transform: uppercase;
