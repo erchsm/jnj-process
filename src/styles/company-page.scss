@@ -21,8 +21,11 @@ $brand-gold: #A99A69;
 		margin-right: 3%;
 	}
 
-	.typography-intro {
+	* {
 		font-family: "Circular Std";
+	}
+
+	.typography-intro {
 		color: #FFF;
 	}
 
@@ -83,9 +86,15 @@ $brand-gold: #A99A69;
 	}
 	
 
-	.header-sticky .header-sticky-color, .header-sticky p {
+	.header-sticky, .header-sticky-color, .header-sticky p {
 		color: #5A6771;
 		font-weight: 400;
+	}
+
+	h1, h2, h3, h4, h5 {
+		&.typography-headline span {
+			font-weight: 700;
+		}
 	}
 
 	.tile-group-competitions .tile-header, .tile-group-competitions .typography-tile-subheader {

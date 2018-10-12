@@ -25400,11 +25400,7 @@ var MdcLogo = function (_Component) {
             return _react2.default.createElement(
                 "div",
                 { className: classnames },
-                _react2.default.createElement(
-                    "h3",
-                    null,
-                    "Hold For Logo"
-                ),
+                _react2.default.createElement("img", { src: "../assets/img/JnJ_MDC-Horizontal.svg" }),
                 _react2.default.createElement(
                     "h5",
                     null,
@@ -26314,11 +26310,10 @@ var Prototypes = function (_Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "tile is-child card" },
-                            _react2.default.createElement("img", { src: "/assets/img/clarity.jpg" }),
                             _react2.default.createElement(
                                 "h3",
                                 { className: "title is-3 is-spaced" },
-                                "Companies Page"
+                                "Product Carousel"
                             ),
                             _react2.default.createElement(
                                 "p",
@@ -26353,7 +26348,6 @@ var Prototypes = function (_Component) {
                         _react2.default.createElement(
                             "div",
                             { className: "tile is-child card" },
-                            _react2.default.createElement("img", { src: "/assets/img/carbon.jpg" }),
                             _react2.default.createElement(
                                 "h3",
                                 { className: "title is-3 is-spaced" },
@@ -26371,12 +26365,177 @@ var Prototypes = function (_Component) {
                                 _react2.default.createElement(
                                     "span",
                                     { className: "tag" },
-                                    "HTML"
+                                    "Nav"
                                 ),
                                 _react2.default.createElement(
                                     "span",
                                     { className: "tag" },
-                                    "Design Kit"
+                                    "Interactive"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Animation"
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "tile is-ancestor" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "/prototypes/mdc-switcher.html", className: "tile is-parent", target: "_blank" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "tile is-child card" },
+                            _react2.default.createElement(
+                                "h3",
+                                { className: "title is-3 is-spaced" },
+                                "Homepage Flipper"
+                            ),
+                            _react2.default.createElement(
+                                "p",
+                                { className: "subtitle is-5" },
+                                "Interaction for flipping between the Patient and HCP Experience."
+                            ),
+                            _react2.default.createElement("br", null),
+                            _react2.default.createElement(
+                                "span",
+                                { className: "tag-container" },
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "UX"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Interactive"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Animation"
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "a",
+                        { href: "/prototypes/mdc-taxonomy-diagram.html", className: "tile is-parent", target: "_blank" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "tile is-child card" },
+                            _react2.default.createElement(
+                                "h3",
+                                { className: "title is-3 is-spaced" },
+                                "Taxonomy Diagram"
+                            ),
+                            _react2.default.createElement(
+                                "p",
+                                { className: "subtitle is-5" },
+                                "Consolidated our Content type Taxonomy into a single diagram."
+                            ),
+                            _react2.default.createElement("br", null),
+                            _react2.default.createElement(
+                                "span",
+                                { className: "tag-container" },
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Content Strategy"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Discovery"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "UX"
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "tile is-ancestor" },
+                    _react2.default.createElement(
+                        "a",
+                        { href: "/prototypes/mdc-buttons.html", className: "tile is-parent", target: "_blank" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "tile is-child card" },
+                            _react2.default.createElement(
+                                "h3",
+                                { className: "title is-3 is-spaced" },
+                                "MDC Buttons"
+                            ),
+                            _react2.default.createElement(
+                                "p",
+                                { className: "subtitle is-5" },
+                                "Comprehensive list of button styles."
+                            ),
+                            _react2.default.createElement("br", null),
+                            _react2.default.createElement(
+                                "span",
+                                { className: "tag-container" },
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "UX"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Interactive"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Animation"
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "a",
+                        { href: "/prototypes/mdc-companies-picker.html", className: "tile is-parent", target: "_blank" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "tile is-child card" },
+                            _react2.default.createElement(
+                                "h3",
+                                { className: "title is-3 is-spaced" },
+                                "Homepage Companies Picker"
+                            ),
+                            _react2.default.createElement(
+                                "p",
+                                { className: "subtitle is-5" },
+                                "Module for browsing all Medical Device Companies on the homepage."
+                            ),
+                            _react2.default.createElement("br", null),
+                            _react2.default.createElement(
+                                "span",
+                                { className: "tag-container" },
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "UX"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "UX"
+                                ),
+                                _react2.default.createElement(
+                                    "span",
+                                    { className: "tag" },
+                                    "Diagraming"
                                 )
                             )
                         )

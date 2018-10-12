@@ -21343,6 +21343,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 		_this.createNodes = function (dataset) {
 			return dataset.nodes.map(function (node) {
 				return _react2.default.createElement(_reactVisForceMin.ForceGraphNode, {
+					showLabel: true,
 					key: node.id,
 					fill: _this.state.colors[node.group],
 					node: _extends({}, node, { radius: node.size || 6 })
@@ -21359,24 +21360,79 @@ var MdcTaxonomyDiagram = function (_Component) {
 			});
 		};
 
+		_this.createMasterNode = function (name, group, dataset) {
+			return _react2.default.createElement(_reactVisForceMin.ForceGraphNode, {
+				showLabel: true,
+				key: name,
+				fill: _this.state.colors[group],
+				node: {
+					id: name,
+					group: group,
+					radius: 12
+				}
+			});
+		};
+
+		_this.createMasterLinks = function (masterId, dataset) {
+			return dataset.nodes.map(function (node) {
+				return _react2.default.createElement(_reactVisForceMin.ForceGraphLink, {
+					key: masterId + '=>' + node.id,
+					link: {
+						source: masterId,
+						target: node.id,
+						value: 1
+					}
+				});
+			});
+		};
+
+		_this.selectNode = function (event, node) {
+			_this.setState(function (prevState) {
+				return {
+					selectedNode: node,
+					popoutOpen: true,
+					popout: _extends({}, prevState.popout, {
+						heading: node.id
+					})
+				};
+			});
+		};
+
+		_this.closePopout = function (event, node) {
+			_this.setState({
+				popoutOpen: false
+			});
+		};
+
 		_this.state = {
 			width: 0,
 			height: 0,
-			// colors: {
-			// 	'Procedure' : '#8CB369',
-			// 	'Product' : '#F4E285',
-			// 	'Specialty' : '#F4A259',
-			// 	'Product Family' : '#3A87C1',
-			// 	'Condition' : '#51A3A3',
-			// 	'Anatomy' : '#E08DAC',
-			// },
 			colors: {
-				'Procedure': '#9D96B8',
-				'Product': '#BDD7EE',
-				'Specialty': '#EBEFBF',
-				'Product Family': '#CEB5A7',
-				'Condition': '#92828D',
-				'Anatomy': '#2274A5'
+				'Procedure': '#8CB369',
+				'Product': '#F4E285',
+				'Specialty': '#F4A259',
+				'Product Family': '#3A87C1',
+				'Condition': '#51A3A3',
+				'Anatomy': '#E08DAC'
+			},
+			// colors: {
+			// 	'Procedure' : '#9D96B8',
+			// 	'Product' : '#BDD7EE',
+			// 	'Specialty' : '#EBEFBF',
+			// 	'Product Family' : '#CEB5A7',
+			// 	'Condition' : '#92828D',
+			// 	'Anatomy' : '#2274A5',
+			// },
+			selectedNode: {
+				id: 'Conditions',
+				group: 'Condition',
+				radius: 12
+			},
+			popoutOpen: true,
+			popout: {
+				eyebrow: 'Content Type',
+				heading: 'Conditions',
+				body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper est pulvinar lacus lobortis, at faucibus enim fermentum. In tincidunt tellus et sem mattis laoreet. Phasellus aliquet lectus tempus lorem aliquam, id suscipit ligula consequat. Phasellus eget ornare orci, eu bibendum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tincidunt mollis commodo. Donec quis ipsum in odio blandit vestibulum.'
 			}
 		};
 		return _this;
@@ -21384,31 +21440,21 @@ var MdcTaxonomyDiagram = function (_Component) {
 
 	_createClass(MdcTaxonomyDiagram, [{
 		key: 'render',
-
-
-		/*createMasterNode = (name, color, dataset) => (
-  	<ForceGraphNode
-  		key={name}
-  		fill={color}
-  		node={{ ...node, radius: node.size || 6 }}
-  	/>
-  	dataset.links.map(link => (
-  		 <ForceGraphLink
-  			key={`${link.source}=>${link.target}`}
-  			link={{ ...link, value: 1 }}
-  		 />
-  	))
-  )*/
-
 		value: function render() {
+			var _this2 = this;
+
 			var _state = this.state,
 			    width = _state.width,
 			    height = _state.height,
-			    colors = _state.colors;
+			    colors = _state.colors,
+			    popoutOpen = _state.popoutOpen,
+			    popout = _state.popout,
+			    selectedNode = _state.selectedNode;
 
 
 			var classnames = (0, _classnames2.default)({
-				"mdc-taxonomy-diagram": true
+				"mdc-taxonomy-diagram": true,
+				"mdc-taxonomy-diagram--popoutOpen": popoutOpen
 			});
 
 			return _react2.default.createElement(
@@ -21417,27 +21463,43 @@ var MdcTaxonomyDiagram = function (_Component) {
 				_react2.default.createElement(
 					_reactVisForceMin.InteractiveForceGraph,
 					{
+						selectedNode: selectedNode,
+						onSelectNode: function onSelectNode(event, node) {
+							return _this2.selectNode(event, node);
+						},
 						zoom: true,
 						zoomOptions: {
-							minScale: 0.6,
+							minScale: 1,
 							maxScale: 8
 						},
 						highlightDependencies: true,
 						simulationOptions: {
 							animate: true,
 							width: width,
-							height: height
+							height: height,
+							radiusMargin: 6,
+							strength: {
+								charge: -120
+							}
 						} },
+					this.createMasterNode('Product Categories', 'Product Family', _productFamilies2.default),
+					this.createMasterNode('Procedures', 'Procedure', _procedures2.default),
+					this.createMasterNode('Conditions', 'Condition', _conditions2.default),
+					this.createMasterNode('Specialties', 'Specialty', _specialties2.default),
+					this.createMasterNode('Anatomy', 'Anatomy', _anatomy2.default),
 					this.createNodes(_productFamilies2.default),
 					this.createNodes(_products2.default),
 					this.createNodes(_procedures2.default),
 					this.createNodes(_conditions2.default),
 					this.createNodes(_specialties2.default),
-					this.createNodeLinks(_productFamilies2.default),
-					this.createNodeLinks(_products2.default),
-					this.createNodeLinks(_procedures2.default),
-					this.createNodeLinks(_conditions2.default),
-					this.createNodeLinks(_specialties2.default)
+					this.createNodes(_anatomy2.default),
+					this.createMasterLinks('Procedures', _procedures2.default),
+					this.createMasterLinks('Product Categories', _productFamilies2.default),
+					this.createMasterLinks('Procedures', _procedures2.default),
+					this.createMasterLinks('Conditions', _conditions2.default),
+					this.createMasterLinks('Specialties', _specialties2.default),
+					this.createMasterLinks('Anatomy', _anatomy2.default),
+					this.createNodeLinks(_productFamilies2.default)
 				),
 				_react2.default.createElement(
 					'div',
@@ -21448,7 +21510,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Procedure'
+							'Procedures'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Procedure'] } })
 					),
@@ -21458,7 +21520,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Product'
+							'Products'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Product'] } })
 					),
@@ -21468,7 +21530,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Specialty'
+							'Specialties'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Specialty'] } })
 					),
@@ -21478,7 +21540,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Product Family'
+							'Product Categories'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Product Family'] } })
 					),
@@ -21488,9 +21550,39 @@ var MdcTaxonomyDiagram = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Condition'
+							'Conditions'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Condition'] } })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'mdc-taxonomy-diagram__legend-item' },
+						_react2.default.createElement(
+							'h5',
+							null,
+							'Anatomy'
+						),
+						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: colors['Anatomy'] } })
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'mdc-taxonomy-diagram__popout' },
+					_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-close-lg' }),
+					_react2.default.createElement(
+						'h5',
+						{ className: 'eyebrow' },
+						popout.eyebrow
+					),
+					_react2.default.createElement(
+						'h2',
+						null,
+						popout.heading
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						popout.body
 					)
 				)
 			);

@@ -21297,11 +21297,7 @@ var MdcLogo = function (_Component) {
             return _react2.default.createElement(
                 "div",
                 { className: classnames },
-                _react2.default.createElement(
-                    "h3",
-                    null,
-                    "Hold For Logo"
-                ),
+                _react2.default.createElement("img", { src: "../assets/img/JnJ_MDC-Horizontal.svg" }),
                 _react2.default.createElement(
                     "h5",
                     null,

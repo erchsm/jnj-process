@@ -24,8 +24,8 @@ export default class Prototypes extends Component {
                 <div className="tile is-ancestor">
                     <a href="/prototypes/company-page.html" className="tile is-parent" target="_blank">
                         <div className="tile is-child card">
-                            <img src="/assets/img/clarity.jpg"></img>
-                            <h3 className="title is-3 is-spaced">Companies Page</h3>
+                            {/*<img src="/assets/img/clarity.jpg"></img>*/}
+                            <h3 className="title is-3 is-spaced">Product Carousel</h3>
                             <p className="subtitle is-5">Demonstrates the scrolling page experience on the companies page.</p>
                             <br />
                             <span className="tag-container">
@@ -37,13 +37,70 @@ export default class Prototypes extends Component {
                     </a>
                     <a href="/prototypes/mdc-nav.html" className="tile is-parent" target="_blank">
                         <div className="tile is-child card">
-                            <img src="/assets/img/carbon.jpg"></img>
+                            {/*<img src="/assets/img/carbon.jpg"></img>*/}
                             <h3 className="title is-3 is-spaced">Primary Navigation</h3>
                             <p className="subtitle is-5">Interactions and Taxonomy for Navigation.</p>
                             <br />
                             <span className="tag-container">
-                                <span className="tag">HTML</span>
-                                <span className="tag">Design Kit</span>
+                                <span className="tag">Nav</span>
+                                <span className="tag">Interactive</span>
+                                <span className="tag">Animation</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div className="tile is-ancestor">
+                    <a href="/prototypes/mdc-switcher.html" className="tile is-parent" target="_blank">
+                        <div className="tile is-child card">
+                            {/*<img src="/assets/img/carbon.jpg"></img>*/}
+                            <h3 className="title is-3 is-spaced">Homepage Flipper</h3>
+                            <p className="subtitle is-5">Interaction for flipping between the Patient and HCP Experience.</p>
+                            <br />
+                            <span className="tag-container">
+                                <span className="tag">UX</span>
+                                <span className="tag">Interactive</span>
+                                <span className="tag">Animation</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="/prototypes/mdc-taxonomy-diagram.html" className="tile is-parent" target="_blank">
+                        <div className="tile is-child card">
+                            {/*<img src="/assets/img/carbon.jpg"></img>*/}
+                            <h3 className="title is-3 is-spaced">Taxonomy Diagram</h3>
+                            <p className="subtitle is-5">Consolidated our Content type Taxonomy into a single diagram.</p>
+                            <br />
+                            <span className="tag-container">
+                                <span className="tag">Content Strategy</span>
+                                <span className="tag">Discovery</span>
+                                <span className="tag">UX</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div className="tile is-ancestor">
+                    <a href="/prototypes/mdc-buttons.html" className="tile is-parent" target="_blank">
+                        <div className="tile is-child card">
+                            {/*<img src="/assets/img/carbon.jpg"></img>*/}
+                            <h3 className="title is-3 is-spaced">MDC Buttons</h3>
+                            <p className="subtitle is-5">Comprehensive list of button styles.</p>
+                            <br />
+                            <span className="tag-container">
+                                <span className="tag">UX</span>
+                                <span className="tag">Interactive</span>
+                                <span className="tag">Animation</span>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="/prototypes/mdc-companies-picker.html" className="tile is-parent" target="_blank">
+                        <div className="tile is-child card">
+                            {/*<img src="/assets/img/carbon.jpg"></img>*/}
+                            <h3 className="title is-3 is-spaced">Homepage Companies Picker</h3>
+                            <p className="subtitle is-5">Module for browsing all Medical Device Companies on the homepage.</p>
+                            <br />
+                            <span className="tag-container">
+                                <span className="tag">UX</span>
+                                <span className="tag">UX</span>
+                                <span className="tag">Diagraming</span>
                             </span>
                         </div>
                     </a>

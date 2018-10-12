@@ -27,7 +27,8 @@ export default class MdcLogo extends Component {
 
         return (
             <div className={classnames}>
-                <h3>Hold For Logo</h3>
+                <img src="../assets/img/JnJ_MDC-Horizontal.svg"></img>
+                {/*<h3>Hold For Logo</h3>*/}
                 <h5>
                     <span>M</span>
                     <span>e</span>

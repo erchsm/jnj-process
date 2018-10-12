@@ -14241,7 +14241,7 @@ h2 {
 
 h3 {
   font-size: 36px;
-  line-height: 48px; }
+  line-height: 40px; }
 
 h4 {
   font-size: 24px;
@@ -14251,12 +14251,17 @@ h5 {
   font-size: 16px;
   line-height: 24px; }
 
+h1.eyebrow, h2.eyebrow, h3.eyebrow, h4.eyebrow, h5.eyebrow, h6.eyebrow {
+  text-transform: uppercase; }
+
+.tag {
+  margin-right: 0.75em; }
+
 * {
   box-sizing: border-box; }
 
 body {
-  -webkit-overflow-scrolling: touch;
-  -webkit-font-smoothing: subpixel-antialiased; }
+  -webkit-overflow-scrolling: touch; }
 
 .logo {
   margin-left: 0;
@@ -14898,7 +14903,7 @@ body {
 
 .mdc-logo h5 {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5em;
   color: #888B8D; }
 
@@ -15169,37 +15174,72 @@ body {
     align-items: flex-start;
     transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
 
-.mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link, .mdc-taxonomy-diagram .rv-force__label {
-  cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
-
-.mdc-taxonomy-diagram__legend {
-  position: absolute;
-  bottom: 18px;
-  right: 18px;
-  padding: 18px;
-  background: white;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-pack: center;
-  justify-content: center; }
-
-.mdc-taxonomy-diagram__legend-item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin: 3px 0; }
-
-.mdc-taxonomy-diagram__legend-swatch {
-  margin-left: 24px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%; }
+.mdc-taxonomy-diagram {
+  overflow: hidden; }
+  .mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link, .mdc-taxonomy-diagram .rv-force__label {
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
+  .mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link {
+    cursor: pointer; }
+  .mdc-taxonomy-diagram .rv-force__labels, .mdc-taxonomy-diagram .rv-force__label {
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .mdc-taxonomy-diagram__legend {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    padding: 18px;
+    background: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .mdc-taxonomy-diagram__legend-item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 3px 0; }
+  .mdc-taxonomy-diagram__legend-swatch {
+    margin-left: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%; }
+  .mdc-taxonomy-diagram__popout {
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 12px 18px 0;
+    height: 100%;
+    width: 25%;
+    background: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+    transform: translate3d(-100%, 0, 0); }
+    .mdc-taxonomy-diagram__popout h1, .mdc-taxonomy-diagram__popout h2, .mdc-taxonomy-diagram__popout h3, .mdc-taxonomy-diagram__popout h4, .mdc-taxonomy-diagram__popout h5 {
+      margin-bottom: 24px;
+      word-break: break-word;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto; }
+    .mdc-taxonomy-diagram__popout .icon-close-lg {
+      font-size: 30px;
+      cursor: pointer;
+      margin-bottom: 40px; }
+  .mdc-taxonomy-diagram--popoutOpen .mdc-taxonomy-diagram__popout {
+    transform: translate3d(0, 0, 0); }
 
 .search-bar {
   display: -ms-flexbox;

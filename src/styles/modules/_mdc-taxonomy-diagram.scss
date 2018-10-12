@@ -2,9 +2,19 @@
 
 
 .mdc-taxonomy-diagram {
+	overflow: hidden;
+
 	.rv-force__node, .rv-force__link, .rv-force__label {
-		cursor: pointer;
 		transition: all 0.6s $easing2;
+	}
+
+	.rv-force__node, .rv-force__link {
+		cursor: pointer;
+	}
+
+	.rv-force__labels, .rv-force__label {
+		pointer-events: none;  
+		user-select: none;  
 	}	
 
 	&__legend {
@@ -30,6 +40,40 @@
 		width: 16px;
 		height: 16px;
 		border-radius: 50%;
+	}
+
+	&__popout {
+		overflow: hidden;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		padding: 12px 18px 0;
+		height: 100%;
+		width: 25%;
+		background: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		transition: all 0.6s $easing3;
+		transform: translate3d(-100%,0,0);
+
+		h1, h2, h3, h4, h5 {
+			margin-bottom: 24px;
+			word-break: break-word;
+			hyphens: auto;
+		}
+
+		.icon-close-lg {
+			font-size: 30px;
+			cursor: pointer;
+			margin-bottom: 40px;
+		}
+	}
+
+	&--popoutOpen {
+		.mdc-taxonomy-diagram__popout {
+			transform: translate3d(0,0,0);			
+		}
 	}
 }
 

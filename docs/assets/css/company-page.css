@@ -10,8 +10,9 @@
     color: #FFF; }
   .depuy-synthes p {
     margin-right: 3%; }
+  .depuy-synthes * {
+    font-family: "Circular Std"; }
   .depuy-synthes .typography-intro {
-    font-family: "Circular Std";
     color: #FFF; }
   .depuy-synthes .typography-tile-copy, .depuy-synthes .typography-tile-subheader {
     font-family: "Circular Std";
@@ -51,9 +52,11 @@
     width: 9px;
     border-radius: 12px;
     left: -4.5px; }
-  .depuy-synthes .header-sticky .header-sticky-color, .depuy-synthes .header-sticky p {
+  .depuy-synthes .header-sticky, .depuy-synthes .header-sticky-color, .depuy-synthes .header-sticky p {
     color: #5A6771;
     font-weight: 400; }
+  .depuy-synthes h1.typography-headline span, .depuy-synthes h2.typography-headline span, .depuy-synthes h3.typography-headline span, .depuy-synthes h4.typography-headline span, .depuy-synthes h5.typography-headline span {
+    font-weight: 700; }
   .depuy-synthes .tile-group-competitions .tile-header, .depuy-synthes .tile-group-competitions .typography-tile-subheader {
     color: #A99A69; }
   .depuy-synthes button {
