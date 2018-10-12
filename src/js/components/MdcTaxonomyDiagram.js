@@ -43,7 +43,7 @@ export default class MdcTaxonomyDiagram extends Component {
 			},
 			popoutOpen: true,
 			popout: {
-				eyebrow: 'Content Type',
+				eyebrow: 'Condition',
 				heading: 'Conditions',
 				body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper est pulvinar lacus lobortis, at faucibus enim fermentum. In tincidunt tellus et sem mattis laoreet. Phasellus aliquet lectus tempus lorem aliquam, id suscipit ligula consequat. Phasellus eget ornare orci, eu bibendum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tincidunt mollis commodo. Donec quis ipsum in odio blandit vestibulum.'
 			}
@@ -115,7 +115,8 @@ export default class MdcTaxonomyDiagram extends Component {
 			popoutOpen: true,
 			popout: {
 				...prevState.popout,
-				heading: node.id
+				heading: node.id,
+				eyebrow: node.group
 			}
 		}));
 	}

@@ -21392,7 +21392,8 @@ var MdcTaxonomyDiagram = function (_Component) {
 					selectedNode: node,
 					popoutOpen: true,
 					popout: _extends({}, prevState.popout, {
-						heading: node.id
+						heading: node.id,
+						eyebrow: node.group
 					})
 				};
 			});
