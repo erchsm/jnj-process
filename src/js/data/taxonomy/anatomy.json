@@ -2,35 +2,91 @@
 	"nodes": [
 		{
 			"id": "Foot",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Femur",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Fibula",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Tibia",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Humurus",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Ulna",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Radius",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Hand",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 	],
 	"links": [

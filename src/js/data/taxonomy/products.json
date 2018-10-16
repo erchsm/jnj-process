@@ -2,35 +2,163 @@
 	"nodes": [
 		{
 			"id": "BME ELITE® Nitinol Memory Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+					]
+				},
+			]
 		},
 		{
 			"id": "HAMMERLOCK® 2 Nitinol Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "HAMMERSPLINT™ Brace",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Hammertoe Repair" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDSHIFT™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDTITAN™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDARC™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDTRIAD™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEED™ Nitinol Memory Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+					]
+				},
+			]
+
 		},
 	],
 	"links": [

@@ -1,9 +1,25 @@
 {
 	"nodes": [
 		{
-		 	"id": "Compression Implants",
-		 	"group": "Product Family"
-		 },
+			"id": "Compression Implants",
+			"group": "Product Family",
+			"description": "Compression Implants are designed to provide continuous, active compression throughout the healing process to treat a variety of reconstructive foot and ankle procedures, and provide more solutions for our patients and customers.",
+			"lists": [
+				{
+					"title": "Products In This Category",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant" },
+						{ "id": "HAMMERSPLINT™ Brace" },
+						{ "id": "SPEEDSHIFT™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTRIAD™ Nitinol Compression Implant" },
+						{ "id": "SPEED™ Nitinol Memory Implant" },
+					]
+				}
+			]
+		},
 	],
 	"links": [
 		{

@@ -2,23 +2,70 @@
 	"nodes": [
 		{
 			"id": "Fractures",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "SPEED™ Nitinol Memory Implant" },
+					]
+				}
+			]
 		},
 		{
 			"id": "Bone Defects",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "HAMMERSPLINT™ Brace" }
+					]
+				}
+			]
 		},
 		{
 			"id": "Calcaneocuboid Fusions",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "Calcaneocuboid Fusions" }
+					]
+				}
+			]
 		},
 		{
 			"id": "Fixation of Small Bones",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTRIAD™ Nitinol Compression Implant" },
+					]
+				}
+			]
 		},
 		{
 			"id": "Small Bone Reconstruction and Fusion",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant"},
+					]
+				}
+			]
 		},
 	],
 	"links": [

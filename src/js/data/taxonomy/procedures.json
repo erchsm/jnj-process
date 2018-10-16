@@ -2,23 +2,63 @@
 	"nodes": [
 		{
 			"id": "Fracture Repair",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant" },
+						{ "id": "SPEEDSHIFT™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+					]
+				}
+			]
 		},
 		{
 			"id": "Arthrodesis",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Calcaneal Osteotomies",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Osteotomies",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Hammertoe Repair",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 	],
 	"links": [

@@ -2,7 +2,10 @@ import React, {Component, cloneElement} from 'react';
 import classNames from "classnames";
 import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis-force/dist/react-vis-force.min.js';
 
-import productFamilies from '../data/taxonomy/productFamilies.json';
+import Accordion2 from './Accordion2';
+
+import contentTypes from '../data/taxonomy/content-types.json';
+import productFamilies from '../data/taxonomy/product-families.json';
 import products from '../data/taxonomy/products.json';
 import procedures from '../data/taxonomy/procedures.json';
 import conditions from '../data/taxonomy/conditions.json';
@@ -36,16 +39,15 @@ export default class MdcTaxonomyDiagram extends Component {
 			// 	'Condition' : '#92828D',
 			// 	'Anatomy' : '#2274A5',
 			// },
-			selectedNode: { 
-				id: 'Conditions',
-				group: 'Condition',
-				radius: 12 
-			},
-			popoutOpen: true,
+			// selectedNode: { 
+			// 	id: 'Conditions',
+			// },
+			popoutOpen: false,
 			popout: {
-				eyebrow: 'Condition',
-				heading: 'Conditions',
-				body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper est pulvinar lacus lobortis, at faucibus enim fermentum. In tincidunt tellus et sem mattis laoreet. Phasellus aliquet lectus tempus lorem aliquam, id suscipit ligula consequat. Phasellus eget ornare orci, eu bibendum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tincidunt mollis commodo. Donec quis ipsum in odio blandit vestibulum.'
+				eyebrow: '',
+				heading: '',
+				description: '',
+				lists: [],
 			}
 		};
 	}
@@ -53,6 +55,13 @@ export default class MdcTaxonomyDiagram extends Component {
 	componentDidMount = () => {
 		this.updateWindowDimensions();
 		window.addEventListener('resize', this.updateWindowDimensions);
+
+		contentTypes.nodes[0].lists[0].items = productFamilies.nodes;
+		contentTypes.nodes[1].lists[0].items = products.nodes;
+		contentTypes.nodes[2].lists[0].items = procedures.nodes;
+		contentTypes.nodes[3].lists[0].items = specialties.nodes;
+		contentTypes.nodes[4].lists[0].items = conditions.nodes;
+		contentTypes.nodes[5].lists[0].items = anatomy.nodes;
 	}
 
 	componentWillUnmount = () => {
@@ -83,18 +92,6 @@ export default class MdcTaxonomyDiagram extends Component {
 		))
 	)
 
-	createMasterNode = (name, group, dataset) => (
-		<ForceGraphNode
-			showLabel
-			key={name}
-			fill={this.state.colors[group]}
-			node={{ 
-				id: name,
-				group: group,
-				radius: 12 
-			}}
-		/>
-	)
 
 	createMasterLinks = (masterId, dataset) => (
 		dataset.nodes.map(node => (
@@ -109,27 +106,50 @@ export default class MdcTaxonomyDiagram extends Component {
 		))
 	)
 
-	selectNode = (event, node) => {
-		this.setState((prevState) => ({ 
+	generateLists = (lists) => (
+		lists.map((list, i) => (
+			<Accordion2 key={i}
+				title={list.title}
+				items={list.items}
+				defaultOpen={false}
+				click={this.selectNode}
+			/>
+		))
+	)
+
+	selectNode = (node) => {
+		this.setState({ 
 			selectedNode: node,
 			popoutOpen: true,
+		});
+		document.getElementsByClassName('mdc-taxonomy-diagram__popout')[0].scrollTo(0,0);
+		setTimeout(() => { this.updatePopout() }, 10);
+	}
+
+	updatePopout = () => {
+		const db = contentTypes.nodes.concat(productFamilies.nodes, products.nodes, procedures.nodes, conditions.nodes, specialties.nodes, anatomy.nodes);
+		const result = db.find(item => item.id == this.state.selectedNode.id);
+
+		this.setState((prevState) => ({ 
 			popout: {
 				...prevState.popout,
-				heading: node.id,
-				eyebrow: node.group
+				heading: result.id,
+				eyebrow: result.eyebrow || result.group,
+				description: result.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper est pulvinar lacus lobortis, at faucibus enim fermentum. In tincidunt tellus et sem mattis laoreet. Phasellus aliquet lectus tempus lorem aliquam, id suscipit ligula consequat. Phasellus eget ornare orci, eu bibendum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tincidunt mollis commodo. Donec quis ipsum in odio blandit vestibulum.',
+				lists: result.lists,
 			}
 		}));
 	}
 
-	closePopout = (event, node) => {
+	closePopout = () => {
 		this.setState({ 
 			popoutOpen: false,
+			selectedNode: null
 		});
 	}
 
 	render() {
-		const { width, height, colors, popoutOpen, popout, selectedNode} = this.state;
-
+		const { width, height, colors, popoutOpen, popout, selectedNode } = this.state;
 
 		const classnames = classNames({
 			"mdc-taxonomy-diagram": true,
@@ -140,8 +160,8 @@ export default class MdcTaxonomyDiagram extends Component {
 		return (
 			<div className={classnames}>
 				<InteractiveForceGraph
-					selectedNode={selectedNode}
-					onSelectNode={(event, node) => this.selectNode(event, node)}
+					selectedNode={selectedNode || null}
+					onSelectNode={(event, node) => this.selectNode(node)}
 					zoom={true}
 					zoomOptions={{
 						minScale: 1, 
@@ -157,13 +177,7 @@ export default class MdcTaxonomyDiagram extends Component {
 							charge: -120
 						}
 					}}>
-					{this.createMasterNode('Product Categories', 'Product Family', productFamilies)}
-					{/*this.createMasterNode('Products', 'Product', products)*/}
-					{this.createMasterNode('Procedures', 'Procedure', procedures)}
-					{this.createMasterNode('Conditions', 'Condition', conditions)}
-					{this.createMasterNode('Specialties', 'Specialty', specialties)}
-					{this.createMasterNode('Anatomy', 'Anatomy', anatomy)}
-
+					{this.createNodes(contentTypes)}
 					{this.createNodes(productFamilies)}
 					{this.createNodes(products)}
 					{this.createNodes(procedures)}
@@ -171,14 +185,14 @@ export default class MdcTaxonomyDiagram extends Component {
 					{this.createNodes(specialties)}
 					{this.createNodes(anatomy)}
 
-					{this.createMasterLinks('Procedures', procedures)}
 					{this.createMasterLinks('Product Categories', productFamilies)}
+					{this.createMasterLinks('Products', products)}
 					{this.createMasterLinks('Procedures', procedures)}
 					{this.createMasterLinks('Conditions', conditions)}
 					{this.createMasterLinks('Specialties', specialties)}
 					{this.createMasterLinks('Anatomy', anatomy)}
 
-					{this.createNodeLinks(productFamilies)}
+					{/*this.createNodeLinks(productFamilies)*/}
 					{/*this.createNodeLinks(products)*/}
 					{/*this.createNodeLinks(procedures)*/}
 					{/*this.createNodeLinks(conditions)*/}
@@ -208,10 +222,11 @@ export default class MdcTaxonomyDiagram extends Component {
 				</div>
 
 				<div className='mdc-taxonomy-diagram__popout'>
-					<i onClick={this.closePopout} className="iconcss icon-close-lg"></i>
+					<i onClick={this.closePopout} className="iconcss icon-arrow-long-right"></i>
 					<h5 className="eyebrow">{popout.eyebrow}</h5>
 					<h2>{popout.heading}</h2>
-					<p>{popout.body}</p>
+					<p>{popout.description}</p>
+					{this.generateLists(popout.lists)}
 				</div>
 			</div>
 		);

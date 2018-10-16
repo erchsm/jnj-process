@@ -21266,7 +21266,129 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _reactDom.render)(_react2.default.createElement(_MdcTaxonomyDiagram2.default, null), document.getElementById('root'));
 
-},{"../components/MdcTaxonomyDiagram":187,"react":185,"react-dom":32}],187:[function(require,module,exports){
+},{"../components/MdcTaxonomyDiagram":188,"react":185,"react-dom":32}],187:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _newid = require('../services/newid');
+
+var _newid2 = _interopRequireDefault(_newid);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Accordion2 = function (_Component) {
+    _inherits(Accordion2, _Component);
+
+    function Accordion2(props) {
+        _classCallCheck(this, Accordion2);
+
+        var _this = _possibleConstructorReturn(this, (Accordion2.__proto__ || Object.getPrototypeOf(Accordion2)).call(this, props));
+
+        _this.componentDidMount = function () {};
+
+        _this.componentWillUnmount = function () {};
+
+        _this.toggleOpen = function (event) {
+            _this.setState({
+                isOpen: !_this.state.isOpen
+            });
+        };
+
+        _this.state = {
+            isOpen: false
+        };
+        return _this;
+    }
+
+    _createClass(Accordion2, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            this.id = (0, _newid2.default)('Accordion');
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var isOpen = this.state.isOpen;
+            var _props = this.props,
+                title = _props.title,
+                items = _props.items,
+                click = _props.click,
+                defaultOpen = _props.defaultOpen;
+
+
+            var classnames = (0, _classnames2.default)({
+                "mdc-accordion": true,
+                "mdc-accordion--open": isOpen
+            });
+
+            var accordionItems = items.map(function (item, i) {
+                return _react2.default.createElement(
+                    'li',
+                    { key: i, onClick: function onClick() {
+                            click(item);_this2.toggleOpen();
+                        } },
+                    _react2.default.createElement(
+                        'a',
+                        null,
+                        item.id
+                    )
+                );
+            });
+
+            return _react2.default.createElement(
+                'div',
+                { id: this.id, className: classnames },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'mdc-accordion__header', onClick: this.toggleOpen },
+                    _react2.default.createElement(
+                        'h5',
+                        { className: 'eyebrow' },
+                        title
+                    ),
+                    isOpen ? _react2.default.createElement('i', { className: 'iconcss icon-minus' }) : _react2.default.createElement('i', { className: 'iconcss icon-plus' })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'mdc-accordion__content' },
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        accordionItems
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Accordion2;
+}(_react.Component);
+
+Accordion2.propTypes = {};
+exports.default = Accordion2;
+
+},{"../services/newid":196,"classnames":1,"react":185}],188:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21287,7 +21409,15 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactVisForceMin = require('react-vis-force/dist/react-vis-force.min.js');
 
-var _productFamilies = require('../data/taxonomy/productFamilies.json');
+var _Accordion = require('./Accordion2');
+
+var _Accordion2 = _interopRequireDefault(_Accordion);
+
+var _contentTypes = require('../data/taxonomy/content-types.json');
+
+var _contentTypes2 = _interopRequireDefault(_contentTypes);
+
+var _productFamilies = require('../data/taxonomy/product-families.json');
 
 var _productFamilies2 = _interopRequireDefault(_productFamilies);
 
@@ -21330,6 +21460,13 @@ var MdcTaxonomyDiagram = function (_Component) {
 		_this.componentDidMount = function () {
 			_this.updateWindowDimensions();
 			window.addEventListener('resize', _this.updateWindowDimensions);
+
+			_contentTypes2.default.nodes[0].lists[0].items = _productFamilies2.default.nodes;
+			_contentTypes2.default.nodes[1].lists[0].items = _products2.default.nodes;
+			_contentTypes2.default.nodes[2].lists[0].items = _procedures2.default.nodes;
+			_contentTypes2.default.nodes[3].lists[0].items = _specialties2.default.nodes;
+			_contentTypes2.default.nodes[4].lists[0].items = _conditions2.default.nodes;
+			_contentTypes2.default.nodes[5].lists[0].items = _anatomy2.default.nodes;
 		};
 
 		_this.componentWillUnmount = function () {
@@ -21360,19 +21497,6 @@ var MdcTaxonomyDiagram = function (_Component) {
 			});
 		};
 
-		_this.createMasterNode = function (name, group, dataset) {
-			return _react2.default.createElement(_reactVisForceMin.ForceGraphNode, {
-				showLabel: true,
-				key: name,
-				fill: _this.state.colors[group],
-				node: {
-					id: name,
-					group: group,
-					radius: 12
-				}
-			});
-		};
-
 		_this.createMasterLinks = function (masterId, dataset) {
 			return dataset.nodes.map(function (node) {
 				return _react2.default.createElement(_reactVisForceMin.ForceGraphLink, {
@@ -21386,22 +21510,50 @@ var MdcTaxonomyDiagram = function (_Component) {
 			});
 		};
 
-		_this.selectNode = function (event, node) {
+		_this.generateLists = function (lists) {
+			return lists.map(function (list, i) {
+				return _react2.default.createElement(_Accordion2.default, { key: i,
+					title: list.title,
+					items: list.items,
+					defaultOpen: false,
+					click: _this.selectNode
+				});
+			});
+		};
+
+		_this.selectNode = function (node) {
+			_this.setState({
+				selectedNode: node,
+				popoutOpen: true
+			});
+			document.getElementsByClassName('mdc-taxonomy-diagram__popout')[0].scrollTo(0, 0);
+			setTimeout(function () {
+				_this.updatePopout();
+			}, 10);
+		};
+
+		_this.updatePopout = function () {
+			var db = _contentTypes2.default.nodes.concat(_productFamilies2.default.nodes, _products2.default.nodes, _procedures2.default.nodes, _conditions2.default.nodes, _specialties2.default.nodes, _anatomy2.default.nodes);
+			var result = db.find(function (item) {
+				return item.id == _this.state.selectedNode.id;
+			});
+
 			_this.setState(function (prevState) {
 				return {
-					selectedNode: node,
-					popoutOpen: true,
 					popout: _extends({}, prevState.popout, {
-						heading: node.id,
-						eyebrow: node.group
+						heading: result.id,
+						eyebrow: result.eyebrow || result.group,
+						description: result.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper est pulvinar lacus lobortis, at faucibus enim fermentum. In tincidunt tellus et sem mattis laoreet. Phasellus aliquet lectus tempus lorem aliquam, id suscipit ligula consequat. Phasellus eget ornare orci, eu bibendum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tincidunt mollis commodo. Donec quis ipsum in odio blandit vestibulum.',
+						lists: result.lists
 					})
 				};
 			});
 		};
 
-		_this.closePopout = function (event, node) {
+		_this.closePopout = function () {
 			_this.setState({
-				popoutOpen: false
+				popoutOpen: false,
+				selectedNode: null
 			});
 		};
 
@@ -21424,16 +21576,15 @@ var MdcTaxonomyDiagram = function (_Component) {
 			// 	'Condition' : '#92828D',
 			// 	'Anatomy' : '#2274A5',
 			// },
-			selectedNode: {
-				id: 'Conditions',
-				group: 'Condition',
-				radius: 12
-			},
-			popoutOpen: true,
+			// selectedNode: { 
+			// 	id: 'Conditions',
+			// },
+			popoutOpen: false,
 			popout: {
-				eyebrow: 'Content Type',
-				heading: 'Conditions',
-				body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper est pulvinar lacus lobortis, at faucibus enim fermentum. In tincidunt tellus et sem mattis laoreet. Phasellus aliquet lectus tempus lorem aliquam, id suscipit ligula consequat. Phasellus eget ornare orci, eu bibendum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse tincidunt mollis commodo. Donec quis ipsum in odio blandit vestibulum.'
+				eyebrow: '',
+				heading: '',
+				description: '',
+				lists: []
 			}
 		};
 		return _this;
@@ -21464,9 +21615,9 @@ var MdcTaxonomyDiagram = function (_Component) {
 				_react2.default.createElement(
 					_reactVisForceMin.InteractiveForceGraph,
 					{
-						selectedNode: selectedNode,
+						selectedNode: selectedNode || null,
 						onSelectNode: function onSelectNode(event, node) {
-							return _this2.selectNode(event, node);
+							return _this2.selectNode(node);
 						},
 						zoom: true,
 						zoomOptions: {
@@ -21483,24 +21634,19 @@ var MdcTaxonomyDiagram = function (_Component) {
 								charge: -120
 							}
 						} },
-					this.createMasterNode('Product Categories', 'Product Family', _productFamilies2.default),
-					this.createMasterNode('Procedures', 'Procedure', _procedures2.default),
-					this.createMasterNode('Conditions', 'Condition', _conditions2.default),
-					this.createMasterNode('Specialties', 'Specialty', _specialties2.default),
-					this.createMasterNode('Anatomy', 'Anatomy', _anatomy2.default),
+					this.createNodes(_contentTypes2.default),
 					this.createNodes(_productFamilies2.default),
 					this.createNodes(_products2.default),
 					this.createNodes(_procedures2.default),
 					this.createNodes(_conditions2.default),
 					this.createNodes(_specialties2.default),
 					this.createNodes(_anatomy2.default),
-					this.createMasterLinks('Procedures', _procedures2.default),
 					this.createMasterLinks('Product Categories', _productFamilies2.default),
+					this.createMasterLinks('Products', _products2.default),
 					this.createMasterLinks('Procedures', _procedures2.default),
 					this.createMasterLinks('Conditions', _conditions2.default),
 					this.createMasterLinks('Specialties', _specialties2.default),
-					this.createMasterLinks('Anatomy', _anatomy2.default),
-					this.createNodeLinks(_productFamilies2.default)
+					this.createMasterLinks('Anatomy', _anatomy2.default)
 				),
 				_react2.default.createElement(
 					'div',
@@ -21569,7 +21715,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'mdc-taxonomy-diagram__popout' },
-					_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-close-lg' }),
+					_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-arrow-long-right' }),
 					_react2.default.createElement(
 						'h5',
 						{ className: 'eyebrow' },
@@ -21583,8 +21729,9 @@ var MdcTaxonomyDiagram = function (_Component) {
 					_react2.default.createElement(
 						'p',
 						null,
-						popout.body
-					)
+						popout.description
+					),
+					this.generateLists(popout.lists)
 				)
 			);
 		}
@@ -21596,40 +21743,96 @@ var MdcTaxonomyDiagram = function (_Component) {
 MdcTaxonomyDiagram.propTypes = {};
 exports.default = MdcTaxonomyDiagram;
 
-},{"../data/taxonomy/anatomy.json":188,"../data/taxonomy/conditions.json":189,"../data/taxonomy/procedures.json":190,"../data/taxonomy/productFamilies.json":191,"../data/taxonomy/products.json":192,"../data/taxonomy/specialties.json":193,"classnames":1,"react":185,"react-vis-force/dist/react-vis-force.min.js":159}],188:[function(require,module,exports){
+},{"../data/taxonomy/anatomy.json":189,"../data/taxonomy/conditions.json":190,"../data/taxonomy/content-types.json":191,"../data/taxonomy/procedures.json":192,"../data/taxonomy/product-families.json":193,"../data/taxonomy/products.json":194,"../data/taxonomy/specialties.json":195,"./Accordion2":187,"classnames":1,"react":185,"react-vis-force/dist/react-vis-force.min.js":159}],189:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
 			"id": "Foot",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Femur",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Fibula",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Tibia",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Humurus",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Ulna",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Radius",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Hand",
-			"group": "Anatomy"
+			"group": "Anatomy",
+			"lists": [
+				{
+					"title": "Related Procedures",
+					"items": [
+					]
+				}
+			]
 		},
 	],
 	"links": [
@@ -21743,28 +21946,75 @@ module.exports={
 		},
 	]
 }
-},{}],189:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
 			"id": "Fractures",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "SPEED™ Nitinol Memory Implant" },
+					]
+				}
+			]
 		},
 		{
 			"id": "Bone Defects",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "HAMMERSPLINT™ Brace" }
+					]
+				}
+			]
 		},
 		{
 			"id": "Calcaneocuboid Fusions",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "Calcaneocuboid Fusions" }
+					]
+				}
+			]
 		},
 		{
 			"id": "Fixation of Small Bones",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTRIAD™ Nitinol Compression Implant" },
+					]
+				}
+			]
 		},
 		{
 			"id": "Small Bone Reconstruction and Fusion",
-			"group": "Condition"
+			"group": "Condition",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant"},
+					]
+				}
+			]
 		},
 	],
 	"links": [
@@ -21805,40 +22055,173 @@ module.exports={
 		},
 	]
 }
-},{}],190:[function(require,module,exports){
+},{}],191:[function(require,module,exports){
+module.exports={
+	"nodes": [
+		{
+			"id": "Product Categories",
+			"group": "Product Family",
+			"size": 12,
+			"eyebrow": "Content Type",
+			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
+			"lists": [
+				{
+					"title": "All Product Categories",
+				}
+			]
+		},
+		{
+			"id": "Products",
+			"group": "Product",
+			"size": 12,
+			"eyebrow": "Content Type",
+			"description": "The J&J Medical device portfolio features a diverse cast of devices dedicated to aid in surgery across a wide array of technologies. Solutions comprise innovative, biologically based products for surgical conditions that are often difficult or expensive to manage.",
+			"lists": [
+				{
+					"title": "All Products",
+				}
+			]
+		},
+		{
+			"id": "Procedures",
+			"group": "Procedure",
+			"size": 12,
+			"eyebrow": "Content Type",
+			"description": "A medical procedure with the intention of determining, measuring, or diagnosing a patient condition or parameter is also called a medical test.",
+			"lists": [
+				{
+					"title": "All Procedures",
+				}
+			]
+		},
+		{
+			"id": "Specialties",
+			"group": "Specialty",
+			"size": 12,
+			"eyebrow": "Content Type",
+			"description": "A specialty, or speciality, in medicine is a branch of medical practice.",
+			"lists": [
+				{
+					"title": "All Specialties",
+				}
+			]
+		},
+		{
+			"id": "Conditions",
+			"group": "Condition",
+			"size": 12,
+			"eyebrow": "Content Type",
+			"description": "A condition or disease is a particular abnormal condition that negatively affects the structure or function, and that is not due to any external injury. Diseases are often construed as medical conditions that are associated with specific symptoms and signs. A disease may be caused by external factors such as pathogens or by internal dysfunctions. For example, internal dysfunctions of the immune system can produce a variety of different diseases, including various forms of immunodeficiency, hypersensitivity, allergies and autoimmune disorders.",
+			"lists": [
+				{
+					"title": "All Conditions",
+				}
+			]
+		},
+		{
+			"id": "Anatomy",
+			"group": "Anatomy",
+			"size": 12,
+			"eyebrow": "Content Type",
+			"description": "Anatomy relates to the structure and function of organisms and their parts. It includes the appearance and position of the various parts, the materials from which they are composed, their locations and their relationships with other parts.",
+			"lists": [
+				{
+					"title": "All Anatomy",
+				}
+			]
+		},
+	]
+}
+},{}],192:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
 			"id": "Fracture Repair",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant" },
+						{ "id": "SPEEDSHIFT™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+					]
+				}
+			]
 		},
 		{
 			"id": "Arthrodesis",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Calcaneal Osteotomies",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Osteotomies",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 		{
 			"id": "Hammertoe Repair",
-			"group": "Procedure"
+			"group": "Procedure",
+			"lists": [
+				{
+					"title": "Related Products",
+					"items": [
+					]
+				}
+			]
 		},
 	],
 	"links": [
 	]
 }
-},{}],191:[function(require,module,exports){
+},{}],193:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
-		 	"id": "Compression Implants",
-		 	"group": "Product Family"
-		 },
+			"id": "Compression Implants",
+			"group": "Product Family",
+			"description": "Compression Implants are designed to provide continuous, active compression throughout the healing process to treat a variety of reconstructive foot and ankle procedures, and provide more solutions for our patients and customers.",
+			"lists": [
+				{
+					"title": "Products In This Category",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant" },
+						{ "id": "HAMMERSPLINT™ Brace" },
+						{ "id": "SPEEDSHIFT™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTRIAD™ Nitinol Compression Implant" },
+						{ "id": "SPEED™ Nitinol Memory Implant" },
+					]
+				}
+			]
+		},
 	],
 	"links": [
 		{
@@ -21883,40 +22266,168 @@ module.exports={
 		},
 	]
 }
-},{}],192:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
 			"id": "BME ELITE® Nitinol Memory Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+					]
+				},
+			]
 		},
 		{
 			"id": "HAMMERLOCK® 2 Nitinol Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "HAMMERSPLINT™ Brace",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Hammertoe Repair" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDSHIFT™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDTITAN™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDARC™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEEDTRIAD™ Nitinol Compression Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+					]
+				},
+			]
+
 		},
 		{
 			"id": "SPEED™ Nitinol Memory Implant",
-			"group": "Product"
+			"group": "Product",
+			"lists": [
+				{
+					"title": "Product Category",
+					"items": [
+						{ "id": "Compression Implants" },
+					]
+				},
+				{
+					"title": "Related Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+					]
+				},
+			]
+
 		},
 	],
 	"links": [
@@ -22022,12 +22533,25 @@ module.exports={
 		},
 	]
 }
-},{}],193:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
 			"id": "Orthopaedic",
-			"group": "Specialty"
+			"group": "Specialty",
+			"description": "Orthopedic surgery is the branch of surgery concerned with conditions involving the musculoskeletal system. Orthopedic surgeons use both surgical and nonsurgical means to treat musculoskeletal trauma, spine diseases, sports injuries, degenerative diseases, infections, tumors, and congenital disorders.",
+			"lists": [
+				{
+					"title": "Orthopaedic Products",
+					"items": [
+						{ "id": "BME ELITE® Nitinol Memory Implant" },
+						{ "id": "HAMMERLOCK® 2 Nitinol Implant" },
+						{ "id": "SPEEDSHIFT™ Nitinol Compression Implant" },
+						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
+						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
+					]
+				}
+			]
 		},
 	],
 	"links": [
@@ -22058,6 +22582,22 @@ module.exports={
 		},
 	]
 }
+},{}],196:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'PreviewStar';
+
+    lastId++;
+    return '' + prefix + lastId;
+};
+
+var lastId = 0;
+
 },{}]},{},[186])
 
 //# sourceMappingURL=mdc-taxonomy-diagram.js.map
