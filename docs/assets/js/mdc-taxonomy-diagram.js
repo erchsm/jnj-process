@@ -21462,11 +21462,11 @@ var MdcTaxonomyDiagram = function (_Component) {
 			window.addEventListener('resize', _this.updateWindowDimensions);
 
 			_contentTypes2.default.nodes[0].lists[0].items = _productFamilies2.default.nodes;
-			_contentTypes2.default.nodes[1].lists[0].items = _products2.default.nodes;
-			_contentTypes2.default.nodes[2].lists[0].items = _procedures2.default.nodes;
-			_contentTypes2.default.nodes[3].lists[0].items = _specialties2.default.nodes;
-			_contentTypes2.default.nodes[4].lists[0].items = _conditions2.default.nodes;
-			_contentTypes2.default.nodes[5].lists[0].items = _anatomy2.default.nodes;
+			// contentTypes.nodes[1].lists[0].items = products.nodes;
+			// contentTypes.nodes[2].lists[0].items = procedures.nodes;
+			_contentTypes2.default.nodes[1].lists[0].items = _specialties2.default.nodes;
+			_contentTypes2.default.nodes[2].lists[0].items = _conditions2.default.nodes;
+			_contentTypes2.default.nodes[3].lists[0].items = _anatomy2.default.nodes;
 		};
 
 		_this.componentWillUnmount = function () {
@@ -21561,8 +21561,8 @@ var MdcTaxonomyDiagram = function (_Component) {
 			width: 0,
 			height: 0,
 			colors: {
-				'Procedure': '#8CB369',
-				'Product': '#F4E285',
+				'Procedure': '#F4E285',
+				'Product': '#8CB369',
 				'Specialty': '#F4A259',
 				'Product Family': '#3A87C1',
 				'Condition': '#51A3A3',
@@ -21642,11 +21642,11 @@ var MdcTaxonomyDiagram = function (_Component) {
 					this.createNodes(_specialties2.default),
 					this.createNodes(_anatomy2.default),
 					this.createMasterLinks('Product Categories', _productFamilies2.default),
-					this.createMasterLinks('Products', _products2.default),
-					this.createMasterLinks('Procedures', _procedures2.default),
 					this.createMasterLinks('Conditions', _conditions2.default),
 					this.createMasterLinks('Specialties', _specialties2.default),
-					this.createMasterLinks('Anatomy', _anatomy2.default)
+					this.createMasterLinks('Anatomy', _anatomy2.default),
+					this.createNodeLinks(_productFamilies2.default),
+					this.createNodeLinks(_specialties2.default)
 				),
 				_react2.default.createElement(
 					'div',
@@ -21715,23 +21715,43 @@ var MdcTaxonomyDiagram = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'mdc-taxonomy-diagram__popout' },
-					_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-arrow-long-right' }),
 					_react2.default.createElement(
-						'h5',
-						{ className: 'eyebrow' },
-						popout.eyebrow
+						'div',
+						{ className: 'mdc-taxonomy-diagram__popout-main' },
+						_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-close-lg' }),
+						_react2.default.createElement(
+							'h5',
+							{ className: 'eyebrow' },
+							popout.eyebrow
+						),
+						_react2.default.createElement(
+							'h2',
+							null,
+							popout.heading
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							popout.description
+						)
 					),
-					_react2.default.createElement(
-						'h2',
-						null,
-						popout.heading
-					),
+					this.generateLists(popout.lists)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'mdc-taxonomy-diagram__help' },
+					_react2.default.createElement('i', { className: 'iconcss icon-scroll' }),
 					_react2.default.createElement(
 						'p',
 						null,
-						popout.description
+						'Scroll to zoom'
 					),
-					this.generateLists(popout.lists)
+					_react2.default.createElement('i', { className: 'iconcss icon-pan' }),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Drag to pan'
+					)
 				)
 			);
 		}
@@ -22070,30 +22090,30 @@ module.exports={
 				}
 			]
 		},
-		{
-			"id": "Products",
-			"group": "Product",
-			"size": 12,
-			"eyebrow": "Content Type",
-			"description": "The J&J Medical device portfolio features a diverse cast of devices dedicated to aid in surgery across a wide array of technologies. Solutions comprise innovative, biologically based products for surgical conditions that are often difficult or expensive to manage.",
-			"lists": [
-				{
-					"title": "All Products",
-				}
-			]
-		},
-		{
-			"id": "Procedures",
-			"group": "Procedure",
-			"size": 12,
-			"eyebrow": "Content Type",
-			"description": "A medical procedure with the intention of determining, measuring, or diagnosing a patient condition or parameter is also called a medical test.",
-			"lists": [
-				{
-					"title": "All Procedures",
-				}
-			]
-		},
+		// {
+		// 	"id": "Products",
+		// 	"group": "Product",
+		// 	"size": 12,
+		// 	"eyebrow": "Content Type",
+		// 	"description": "The J&J Medical device portfolio features a diverse cast of devices dedicated to aid in surgery across a wide array of technologies. Solutions comprise innovative, biologically based products for surgical conditions that are often difficult or expensive to manage.",
+		// 	"lists": [
+		// 		{
+		// 			"title": "All Products",
+		// 		}
+		// 	]
+		// },
+		// {
+		// 	"id": "Procedures",
+		// 	"group": "Procedure",
+		// 	"size": 12,
+		// 	"eyebrow": "Content Type",
+		// 	"description": "A medical procedure with the intention of determining, measuring, or diagnosing a patient condition or parameter is also called a medical test.",
+		// 	"lists": [
+		// 		{
+		// 			"title": "All Procedures",
+		// 		}
+		// 	]
+		// },
 		{
 			"id": "Specialties",
 			"group": "Specialty",
@@ -22542,6 +22562,16 @@ module.exports={
 			"description": "Orthopedic surgery is the branch of surgery concerned with conditions involving the musculoskeletal system. Orthopedic surgeons use both surgical and nonsurgical means to treat musculoskeletal trauma, spine diseases, sports injuries, degenerative diseases, infections, tumors, and congenital disorders.",
 			"lists": [
 				{
+					"title": "Orthopaedic Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+						{ "id": "Calcaneal Osteotomies" },
+						{ "id": "Hammertoe Repair" },
+					]
+				},
+				{
 					"title": "Orthopaedic Products",
 					"items": [
 						{ "id": "BME ELITE® Nitinol Memory Implant" },
@@ -22550,7 +22580,7 @@ module.exports={
 						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
 						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
 					]
-				}
+				},
 			]
 		},
 	],
@@ -22590,7 +22620,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'PreviewStar';
+    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Item';
 
     lastId++;
     return '' + prefix + lastId;

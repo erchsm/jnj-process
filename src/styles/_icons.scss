@@ -62,6 +62,8 @@
 .icon-people-community:before { content: "\EA32" }
 .icon-health-cross:before { content: "\EA33" }
 .icon-hearing-impaired:before { content: "\EA34" }
+.icon-scroll:before { content: "\EA35" }
+.icon-pan:before { content: "\EA36" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {

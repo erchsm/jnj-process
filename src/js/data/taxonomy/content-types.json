@@ -12,30 +12,30 @@
 				}
 			]
 		},
-		{
-			"id": "Products",
-			"group": "Product",
-			"size": 12,
-			"eyebrow": "Content Type",
-			"description": "The J&J Medical device portfolio features a diverse cast of devices dedicated to aid in surgery across a wide array of technologies. Solutions comprise innovative, biologically based products for surgical conditions that are often difficult or expensive to manage.",
-			"lists": [
-				{
-					"title": "All Products",
-				}
-			]
-		},
-		{
-			"id": "Procedures",
-			"group": "Procedure",
-			"size": 12,
-			"eyebrow": "Content Type",
-			"description": "A medical procedure with the intention of determining, measuring, or diagnosing a patient condition or parameter is also called a medical test.",
-			"lists": [
-				{
-					"title": "All Procedures",
-				}
-			]
-		},
+		// {
+		// 	"id": "Products",
+		// 	"group": "Product",
+		// 	"size": 12,
+		// 	"eyebrow": "Content Type",
+		// 	"description": "The J&J Medical device portfolio features a diverse cast of devices dedicated to aid in surgery across a wide array of technologies. Solutions comprise innovative, biologically based products for surgical conditions that are often difficult or expensive to manage.",
+		// 	"lists": [
+		// 		{
+		// 			"title": "All Products",
+		// 		}
+		// 	]
+		// },
+		// {
+		// 	"id": "Procedures",
+		// 	"group": "Procedure",
+		// 	"size": 12,
+		// 	"eyebrow": "Content Type",
+		// 	"description": "A medical procedure with the intention of determining, measuring, or diagnosing a patient condition or parameter is also called a medical test.",
+		// 	"lists": [
+		// 		{
+		// 			"title": "All Procedures",
+		// 		}
+		// 	]
+		// },
 		{
 			"id": "Specialties",
 			"group": "Specialty",

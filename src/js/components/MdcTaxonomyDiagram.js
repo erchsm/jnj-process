@@ -24,8 +24,8 @@ export default class MdcTaxonomyDiagram extends Component {
 			width: 0, 
 			height: 0,
 			colors: {
-				'Procedure' : '#8CB369',
-				'Product' : '#F4E285',
+				'Procedure' : '#F4E285',
+				'Product' : '#8CB369',
 				'Specialty' : '#F4A259',
 				'Product Family' : '#3A87C1',
 				'Condition' : '#51A3A3',
@@ -57,11 +57,11 @@ export default class MdcTaxonomyDiagram extends Component {
 		window.addEventListener('resize', this.updateWindowDimensions);
 
 		contentTypes.nodes[0].lists[0].items = productFamilies.nodes;
-		contentTypes.nodes[1].lists[0].items = products.nodes;
-		contentTypes.nodes[2].lists[0].items = procedures.nodes;
-		contentTypes.nodes[3].lists[0].items = specialties.nodes;
-		contentTypes.nodes[4].lists[0].items = conditions.nodes;
-		contentTypes.nodes[5].lists[0].items = anatomy.nodes;
+		// contentTypes.nodes[1].lists[0].items = products.nodes;
+		// contentTypes.nodes[2].lists[0].items = procedures.nodes;
+		contentTypes.nodes[1].lists[0].items = specialties.nodes;
+		contentTypes.nodes[2].lists[0].items = conditions.nodes;
+		contentTypes.nodes[3].lists[0].items = anatomy.nodes;
 	}
 
 	componentWillUnmount = () => {
@@ -186,17 +186,17 @@ export default class MdcTaxonomyDiagram extends Component {
 					{this.createNodes(anatomy)}
 
 					{this.createMasterLinks('Product Categories', productFamilies)}
-					{this.createMasterLinks('Products', products)}
-					{this.createMasterLinks('Procedures', procedures)}
+					{/*this.createMasterLinks('Products', products)*/}
+					{/*this.createMasterLinks('Procedures', procedures)*/}
 					{this.createMasterLinks('Conditions', conditions)}
 					{this.createMasterLinks('Specialties', specialties)}
 					{this.createMasterLinks('Anatomy', anatomy)}
 
-					{/*this.createNodeLinks(productFamilies)*/}
+					{this.createNodeLinks(productFamilies)}
 					{/*this.createNodeLinks(products)*/}
 					{/*this.createNodeLinks(procedures)*/}
 					{/*this.createNodeLinks(conditions)*/}
-					{/*this.createNodeLinks(specialties)*/}
+					{this.createNodeLinks(specialties)}
 					{/*this.createNodeLinks(anatomy)*/}
 				</InteractiveForceGraph>
 
@@ -222,11 +222,20 @@ export default class MdcTaxonomyDiagram extends Component {
 				</div>
 
 				<div className='mdc-taxonomy-diagram__popout'>
-					<i onClick={this.closePopout} className="iconcss icon-arrow-long-right"></i>
-					<h5 className="eyebrow">{popout.eyebrow}</h5>
-					<h2>{popout.heading}</h2>
-					<p>{popout.description}</p>
+					<div className="mdc-taxonomy-diagram__popout-main">
+						<i onClick={this.closePopout} className="iconcss icon-close-lg"></i>
+						<h5 className="eyebrow">{popout.eyebrow}</h5>
+						<h2>{popout.heading}</h2>
+						<p>{popout.description}</p>
+					</div>
 					{this.generateLists(popout.lists)}
+				</div>
+
+				<div className='mdc-taxonomy-diagram__help'>
+					<i className="iconcss icon-scroll"></i>
+					<p>Scroll to zoom</p>
+					<i className="iconcss icon-pan"></i>
+					<p>Drag to pan</p>
 				</div>
 			</div>
 		);

@@ -6,6 +6,16 @@
 			"description": "Orthopedic surgery is the branch of surgery concerned with conditions involving the musculoskeletal system. Orthopedic surgeons use both surgical and nonsurgical means to treat musculoskeletal trauma, spine diseases, sports injuries, degenerative diseases, infections, tumors, and congenital disorders.",
 			"lists": [
 				{
+					"title": "Orthopaedic Procedures",
+					"items": [
+						{ "id": "Fracture Repair" },
+						{ "id": "Osteotomies" },
+						{ "id": "Arthrodesis" },
+						{ "id": "Calcaneal Osteotomies" },
+						{ "id": "Hammertoe Repair" },
+					]
+				},
+				{
 					"title": "Orthopaedic Products",
 					"items": [
 						{ "id": "BME ELITE® Nitinol Memory Implant" },
@@ -14,7 +24,7 @@
 						{ "id": "SPEEDTITAN™ Nitinol Compression Implant" },
 						{ "id": "SPEEDARC™ Nitinol Compression Implant" },
 					]
-				}
+				},
 			]
 		},
 	],

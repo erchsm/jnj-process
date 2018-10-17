@@ -14157,6 +14157,12 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-hearing-impaired:before {
   content: "\EA34"; }
 
+.icon-scroll:before {
+  content: "\EA35"; }
+
+.icon-pan:before {
+  content: "\EA36"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -15241,6 +15247,25 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%; }
+  .mdc-taxonomy-diagram__help {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 48px;
+    pointer-events: none; }
+    .mdc-taxonomy-diagram__help p, .mdc-taxonomy-diagram__help i {
+      color: #888B8D; }
+    .mdc-taxonomy-diagram__help i {
+      font-size: 32px;
+      margin-left: 24px; }
   .mdc-taxonomy-diagram__popout {
     overflow-y: scroll;
     position: absolute;
@@ -15262,16 +15287,20 @@ body {
       word-break: break-word;
       -webkit-hyphens: auto;
       -ms-hyphens: auto;
-      hyphens: auto; }
+      hyphens: auto;
+      line-height: 1.1em; }
     .mdc-taxonomy-diagram__popout p {
       margin: 24px 0; }
     .mdc-taxonomy-diagram__popout .icon-close-lg, .mdc-taxonomy-diagram__popout .icon-arrow-long-right {
-      font-size: 24px;
+      display: block;
+      font-size: 32px;
       width: 30px;
       cursor: pointer;
       margin-bottom: 40px;
       -ms-transform: scaleX(-1);
       transform: scaleX(-1); }
+  .mdc-taxonomy-diagram__popout-main .eyebrow {
+    margin-bottom: 12px; }
   .mdc-taxonomy-diagram--popoutOpen .mdc-taxonomy-diagram__popout {
     transform: translate3d(0, 0, 0); }
 
