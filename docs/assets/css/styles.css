@@ -14163,6 +14163,9 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-pan:before {
   content: "\EA36"; }
 
+.icon-click:before {
+  content: "\EA37"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -15233,7 +15236,13 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    pointer-events: none; }
+    .mdc-taxonomy-diagram__legend h1, .mdc-taxonomy-diagram__legend h2, .mdc-taxonomy-diagram__legend h3, .mdc-taxonomy-diagram__legend h4, .mdc-taxonomy-diagram__legend h5 {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
   .mdc-taxonomy-diagram__legend-item {
     display: -ms-flexbox;
     display: flex;

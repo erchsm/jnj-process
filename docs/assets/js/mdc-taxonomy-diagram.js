@@ -21483,7 +21483,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 					showLabel: true,
 					key: node.id,
 					fill: _this.state.colors[node.group],
-					node: _extends({}, node, { radius: node.size || 6 })
+					node: _extends({}, node, { radius: node.size || 9 })
 				});
 			});
 		};
@@ -21629,9 +21629,9 @@ var MdcTaxonomyDiagram = function (_Component) {
 							animate: true,
 							width: width,
 							height: height,
-							radiusMargin: 6,
+							radiusMargin: 12,
 							strength: {
-								charge: -120
+								charge: -600
 							}
 						} },
 					this.createNodes(_contentTypes2.default),
@@ -21740,6 +21740,12 @@ var MdcTaxonomyDiagram = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'mdc-taxonomy-diagram__help' },
+					_react2.default.createElement('i', { className: 'iconcss icon-click' }),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Click a node to expand'
+					),
 					_react2.default.createElement('i', { className: 'iconcss icon-scroll' }),
 					_react2.default.createElement(
 						'p',
@@ -22081,7 +22087,7 @@ module.exports={
 		{
 			"id": "Product Categories",
 			"group": "Product Family",
-			"size": 12,
+			"size": 18,
 			"eyebrow": "Content Type",
 			"description": "A product category is a type of product or service. Product categories are typically created by a firm or industry organization to organize products. This can include a hierarchy of categories that resemble a tree structure",
 			"lists": [
@@ -22093,7 +22099,7 @@ module.exports={
 		// {
 		// 	"id": "Products",
 		// 	"group": "Product",
-		// 	"size": 12,
+		// 	"size": 18,
 		// 	"eyebrow": "Content Type",
 		// 	"description": "The J&J Medical device portfolio features a diverse cast of devices dedicated to aid in surgery across a wide array of technologies. Solutions comprise innovative, biologically based products for surgical conditions that are often difficult or expensive to manage.",
 		// 	"lists": [
@@ -22105,7 +22111,7 @@ module.exports={
 		// {
 		// 	"id": "Procedures",
 		// 	"group": "Procedure",
-		// 	"size": 12,
+		// 	"size": 18,
 		// 	"eyebrow": "Content Type",
 		// 	"description": "A medical procedure with the intention of determining, measuring, or diagnosing a patient condition or parameter is also called a medical test.",
 		// 	"lists": [
@@ -22117,7 +22123,7 @@ module.exports={
 		{
 			"id": "Specialties",
 			"group": "Specialty",
-			"size": 12,
+			"size": 18,
 			"eyebrow": "Content Type",
 			"description": "A specialty, or speciality, in medicine is a branch of medical practice.",
 			"lists": [
@@ -22129,7 +22135,7 @@ module.exports={
 		{
 			"id": "Conditions",
 			"group": "Condition",
-			"size": 12,
+			"size": 18,
 			"eyebrow": "Content Type",
 			"description": "A condition or disease is a particular abnormal condition that negatively affects the structure or function, and that is not due to any external injury. Diseases are often construed as medical conditions that are associated with specific symptoms and signs. A disease may be caused by external factors such as pathogens or by internal dysfunctions. For example, internal dysfunctions of the immune system can produce a variety of different diseases, including various forms of immunodeficiency, hypersensitivity, allergies and autoimmune disorders.",
 			"lists": [
@@ -22141,7 +22147,7 @@ module.exports={
 		{
 			"id": "Anatomy",
 			"group": "Anatomy",
-			"size": 12,
+			"size": 18,
 			"eyebrow": "Content Type",
 			"description": "Anatomy relates to the structure and function of organisms and their parts. It includes the appearance and position of the various parts, the materials from which they are composed, their locations and their relationships with other parts.",
 			"lists": [

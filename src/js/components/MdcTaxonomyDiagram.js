@@ -78,7 +78,7 @@ export default class MdcTaxonomyDiagram extends Component {
 				showLabel
 				key={node.id}
 				fill={this.state.colors[node.group]}
-				node={{ ...node, radius: node.size || 6 }}
+				node={{ ...node, radius: node.size || 9 }}
 			/>
 		))
 	)
@@ -172,9 +172,9 @@ export default class MdcTaxonomyDiagram extends Component {
 						animate: true,
 						width: width,
 						height: height,
-						radiusMargin: 6,
+						radiusMargin: 12,
 						strength: {
-							charge: -120
+							charge: -600
 						}
 					}}>
 					{this.createNodes(contentTypes)}
@@ -232,6 +232,8 @@ export default class MdcTaxonomyDiagram extends Component {
 				</div>
 
 				<div className='mdc-taxonomy-diagram__help'>
+					<i className="iconcss icon-click"></i>
+					<p>Click a node to expand</p>
 					<i className="iconcss icon-scroll"></i>
 					<p>Scroll to zoom</p>
 					<i className="iconcss icon-pan"></i>
