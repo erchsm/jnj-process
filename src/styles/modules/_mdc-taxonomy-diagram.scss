@@ -68,6 +68,12 @@
 		}
 	}
 
+	&__search {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
 	&__popout {
 		overflow-y: scroll;
 		position: absolute;
@@ -101,17 +107,6 @@
 			margin-bottom: 40px;
 			transform: scaleX(-1);
 		}
-
-		// &::-webkit-scrollbar {
-		// 	width: 9px;
-		// 	background: transparent;
-		// }
-
-
-		// &::-webkit-scrollbar-thumb {
-		// 	background: rgba($brand-black, 0.12);
-		// 	border-radius: 6px;
-		// }
 	}
 
 	&__popout-main {
@@ -123,6 +118,18 @@
 	&--popoutOpen {
 		.mdc-taxonomy-diagram__popout {
 			transform: translate3d(0,0,0);			
+		}
+	}
+
+	@media screen and (max-width: $bp-medium) {
+		.mdc-taxonomy-diagram__popout {
+			width: 80vw;
+		}
+		.mdc-taxonomy-diagram__help {
+			width: 100%;
+		}
+		.mdc-taxonomy-diagram__legend {
+			display: none;
 		}
 	}
 }

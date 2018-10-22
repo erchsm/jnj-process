@@ -2,6 +2,7 @@ import React, {Component, cloneElement} from 'react';
 import classNames from "classnames";
 import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis-force/dist/react-vis-force.min.js';
 
+import SearchBar from './SearchBar';
 import Accordion from './Accordion';
 
 import contentTypes from '../data/taxonomy/content-types.json';
@@ -250,6 +251,11 @@ export default class MdcTaxonomyDiagram extends Component {
 					<i className="iconcss icon-pan"></i>
 					<p>Drag to pan</p>
 				</div>
+
+				<div className='mdc-taxonomy-diagram__search'>
+	                <SearchBar placeholder="Search for anything"/>
+				</div>
+
 			</div>
 		);
 	}

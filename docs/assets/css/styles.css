@@ -15304,6 +15304,10 @@ body {
     .mdc-taxonomy-diagram__help i {
       font-size: 32px;
       margin-left: 24px; }
+  .mdc-taxonomy-diagram__search {
+    position: absolute;
+    top: 0;
+    right: 0; }
   .mdc-taxonomy-diagram__popout {
     overflow-y: scroll;
     position: absolute;
@@ -15341,6 +15345,13 @@ body {
     margin-bottom: 12px; }
   .mdc-taxonomy-diagram--popoutOpen .mdc-taxonomy-diagram__popout {
     transform: translate3d(0, 0, 0); }
+  @media screen and (max-width: 800px) {
+    .mdc-taxonomy-diagram .mdc-taxonomy-diagram__popout {
+      width: 80vw; }
+    .mdc-taxonomy-diagram .mdc-taxonomy-diagram__help {
+      width: 100%; }
+    .mdc-taxonomy-diagram .mdc-taxonomy-diagram__legend {
+      display: none; } }
 
 .search-bar {
   display: -ms-flexbox;
