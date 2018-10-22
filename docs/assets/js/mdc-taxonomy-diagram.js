@@ -21409,7 +21409,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _reactVisForceMin = require('react-vis-force/dist/react-vis-force.min.js');
 
-var _Accordion = require('./Accordion2');
+var _Accordion = require('./Accordion');
 
 var _Accordion2 = _interopRequireDefault(_Accordion);
 
@@ -21457,9 +21457,17 @@ var MdcTaxonomyDiagram = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (MdcTaxonomyDiagram.__proto__ || Object.getPrototypeOf(MdcTaxonomyDiagram)).call(this, props));
 
+		_this.handleClickOutside = function (event) {
+			!_this.refs.wrapper.contains(event.target) ? _this.setState({
+				popoutOpen: false,
+				selectedNode: null
+			}) : null;
+		};
+
 		_this.componentDidMount = function () {
 			_this.updateWindowDimensions();
 			window.addEventListener('resize', _this.updateWindowDimensions);
+			window.addEventListener('mousedown', _this.handleClickOutside);
 
 			_contentTypes2.default.nodes[0].lists[0].items = _productFamilies2.default.nodes;
 			// contentTypes.nodes[1].lists[0].items = products.nodes;
@@ -21471,6 +21479,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 
 		_this.componentWillUnmount = function () {
 			window.removeEventListener('resize', _this.updateWindowDimensions);
+			window.removeEventListener('mousedown', _this.handleClickOutside);
 		};
 
 		_this.updateWindowDimensions = function () {
@@ -21714,7 +21723,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'mdc-taxonomy-diagram__popout' },
+					{ className: 'mdc-taxonomy-diagram__popout', ref: 'wrapper' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'mdc-taxonomy-diagram__popout-main' },
@@ -21769,7 +21778,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 MdcTaxonomyDiagram.propTypes = {};
 exports.default = MdcTaxonomyDiagram;
 
-},{"../data/taxonomy/anatomy.json":189,"../data/taxonomy/conditions.json":190,"../data/taxonomy/content-types.json":191,"../data/taxonomy/procedures.json":192,"../data/taxonomy/product-families.json":193,"../data/taxonomy/products.json":194,"../data/taxonomy/specialties.json":195,"./Accordion2":187,"classnames":1,"react":185,"react-vis-force/dist/react-vis-force.min.js":159}],189:[function(require,module,exports){
+},{"../data/taxonomy/anatomy.json":189,"../data/taxonomy/conditions.json":190,"../data/taxonomy/content-types.json":191,"../data/taxonomy/procedures.json":192,"../data/taxonomy/product-families.json":193,"../data/taxonomy/products.json":194,"../data/taxonomy/specialties.json":195,"./Accordion":187,"classnames":1,"react":185,"react-vis-force/dist/react-vis-force.min.js":159}],189:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{

@@ -2,7 +2,7 @@ import React, {Component, cloneElement} from 'react';
 import classNames from "classnames";
 import { InteractiveForceGraph, ForceGraphNode, ForceGraphLink } from 'react-vis-force/dist/react-vis-force.min.js';
 
-import Accordion2 from './Accordion2';
+import Accordion from './Accordion';
 
 import contentTypes from '../data/taxonomy/content-types.json';
 import productFamilies from '../data/taxonomy/product-families.json';
@@ -52,9 +52,19 @@ export default class MdcTaxonomyDiagram extends Component {
 		};
 	}
 
+	handleClickOutside = (event) => {
+		(!this.refs.wrapper.contains(event.target)) ? (
+			this.setState({
+				popoutOpen: false,
+				selectedNode: null
+			})
+		) : null;
+	}
+
 	componentDidMount = () => {
 		this.updateWindowDimensions();
 		window.addEventListener('resize', this.updateWindowDimensions);
+		window.addEventListener('mousedown', this.handleClickOutside);
 
 		contentTypes.nodes[0].lists[0].items = productFamilies.nodes;
 		// contentTypes.nodes[1].lists[0].items = products.nodes;
@@ -66,6 +76,7 @@ export default class MdcTaxonomyDiagram extends Component {
 
 	componentWillUnmount = () => {
 		window.removeEventListener('resize', this.updateWindowDimensions);
+		window.removeEventListener('mousedown', this.handleClickOutside);
 	}
 
 	updateWindowDimensions = () => {
@@ -108,7 +119,7 @@ export default class MdcTaxonomyDiagram extends Component {
 
 	generateLists = (lists) => (
 		lists.map((list, i) => (
-			<Accordion2 key={i}
+			<Accordion key={i}
 				title={list.title}
 				items={list.items}
 				defaultOpen={false}
@@ -221,7 +232,7 @@ export default class MdcTaxonomyDiagram extends Component {
 					</div>}
 				</div>
 
-				<div className='mdc-taxonomy-diagram__popout'>
+				<div className='mdc-taxonomy-diagram__popout' ref='wrapper'>
 					<div className="mdc-taxonomy-diagram__popout-main">
 						<i onClick={this.closePopout} className="iconcss icon-close-lg"></i>
 						<h5 className="eyebrow">{popout.eyebrow}</h5>

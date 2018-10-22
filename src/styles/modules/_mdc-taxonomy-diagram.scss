@@ -5,7 +5,7 @@
 	overflow: hidden;
 
 	.rv-force__node, .rv-force__link, .rv-force__label {
-		transition: all 0.6s $easing2;
+		transition: all 0.4s $easing2;
 	}
 
 	.rv-force__node, .rv-force__link {
@@ -80,7 +80,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		transition: all 0.6s $easing3;
+		transition: all 0.6s 0.1s $easing3;
 		transform: translate3d(-100%,0,0);
 
 		h1, h2, h3, h4, h5 {
@@ -101,6 +101,17 @@
 			margin-bottom: 40px;
 			transform: scaleX(-1);
 		}
+
+		// &::-webkit-scrollbar {
+		// 	width: 9px;
+		// 	background: transparent;
+		// }
+
+
+		// &::-webkit-scrollbar-thumb {
+		// 	background: rgba($brand-black, 0.12);
+		// 	border-radius: 6px;
+		// }
 	}
 
 	&__popout-main {

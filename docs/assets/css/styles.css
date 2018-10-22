@@ -14313,16 +14313,45 @@ body {
     margin: 0; }
 
 .mdc-accordion__content {
-  overflow: hidden;
+  height: 0;
   max-height: 0; }
   .mdc-accordion__content li {
+    transform: translate3d(-25%, 0, 0);
+    opacity: 0;
     display: -ms-flexbox;
     display: flex;
     line-height: 1.2;
-    margin: 24px 0; }
+    padding: 12px 0; }
 
 .mdc-accordion--open .mdc-accordion__content {
+  height: auto;
   max-height: 100%; }
+  .mdc-accordion--open .mdc-accordion__content ul {
+    margin-bottom: 12px; }
+  .mdc-accordion--open .mdc-accordion__content li {
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
+    opacity: 1;
+    transform: translate3d(0, 0, 0); }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(1) {
+      transition-delay: 0.09s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(2) {
+      transition-delay: 0.18s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(3) {
+      transition-delay: 0.27s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(4) {
+      transition-delay: 0.36s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(5) {
+      transition-delay: 0.45s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(6) {
+      transition-delay: 0.54s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(7) {
+      transition-delay: 0.63s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(8) {
+      transition-delay: 0.72s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(9) {
+      transition-delay: 0.81s; }
+    .mdc-accordion--open .mdc-accordion__content li:nth-child(10) {
+      transition-delay: 0.9s; }
 
 .mdc-buttons__grid {
   display: -ms-flexbox;
@@ -15216,7 +15245,7 @@ body {
 .mdc-taxonomy-diagram {
   overflow: hidden; }
   .mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link, .mdc-taxonomy-diagram .rv-force__label {
-    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
   .mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link {
     cursor: pointer; }
   .mdc-taxonomy-diagram .rv-force__labels, .mdc-taxonomy-diagram .rv-force__label {
@@ -15290,7 +15319,7 @@ body {
     flex-direction: column;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.6s 0.1s cubic-bezier(0.86, 0, 0.07, 1);
     transform: translate3d(-100%, 0, 0); }
     .mdc-taxonomy-diagram__popout h1, .mdc-taxonomy-diagram__popout h2, .mdc-taxonomy-diagram__popout h3, .mdc-taxonomy-diagram__popout h4, .mdc-taxonomy-diagram__popout h5 {
       word-break: break-word;
