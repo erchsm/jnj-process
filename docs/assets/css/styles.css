@@ -15347,10 +15347,10 @@ body {
     transform: translate3d(0, 0, 0); }
   @media screen and (max-width: 800px) {
     .mdc-taxonomy-diagram .mdc-taxonomy-diagram__popout {
-      width: 80vw; }
+      width: 85vw; }
     .mdc-taxonomy-diagram .mdc-taxonomy-diagram__help {
       width: 100%; }
-    .mdc-taxonomy-diagram .mdc-taxonomy-diagram__legend {
+    .mdc-taxonomy-diagram .mdc-taxonomy-diagram__legend, .mdc-taxonomy-diagram .mdc-taxonomy-diagram__help {
       display: none; } }
 
 .search-bar {

@@ -23759,31 +23759,6 @@ var MdcTaxonomyDiagram = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'mdc-taxonomy-diagram__popout', ref: 'wrapper' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'mdc-taxonomy-diagram__popout-main' },
-						_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-close-lg' }),
-						_react2.default.createElement(
-							'h5',
-							{ className: 'eyebrow' },
-							popout.eyebrow
-						),
-						_react2.default.createElement(
-							'h2',
-							null,
-							popout.heading
-						),
-						_react2.default.createElement(
-							'p',
-							null,
-							popout.description
-						)
-					),
-					this.generateLists(popout.lists)
-				),
-				_react2.default.createElement(
-					'div',
 					{ className: 'mdc-taxonomy-diagram__help' },
 					_react2.default.createElement('i', { className: 'iconcss icon-click' }),
 					_react2.default.createElement(
@@ -23808,6 +23783,31 @@ var MdcTaxonomyDiagram = function (_Component) {
 					'div',
 					{ className: 'mdc-taxonomy-diagram__search' },
 					_react2.default.createElement(_SearchBar2.default, { placeholder: 'Search for anything' })
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'mdc-taxonomy-diagram__popout', ref: 'wrapper' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'mdc-taxonomy-diagram__popout-main' },
+						_react2.default.createElement('i', { onClick: this.closePopout, className: 'iconcss icon-close-lg' }),
+						_react2.default.createElement(
+							'h5',
+							{ className: 'eyebrow' },
+							popout.eyebrow
+						),
+						_react2.default.createElement(
+							'h2',
+							null,
+							popout.heading
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							popout.description
+						)
+					),
+					this.generateLists(popout.lists)
 				)
 			);
 		}

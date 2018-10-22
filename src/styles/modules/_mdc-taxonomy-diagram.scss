@@ -123,12 +123,12 @@
 
 	@media screen and (max-width: $bp-medium) {
 		.mdc-taxonomy-diagram__popout {
-			width: 80vw;
+			width: 85vw;
 		}
 		.mdc-taxonomy-diagram__help {
 			width: 100%;
 		}
-		.mdc-taxonomy-diagram__legend {
+		.mdc-taxonomy-diagram__legend, .mdc-taxonomy-diagram__help {
 			display: none;
 		}
 	}

@@ -233,16 +233,6 @@ export default class MdcTaxonomyDiagram extends Component {
 					</div>}
 				</div>
 
-				<div className='mdc-taxonomy-diagram__popout' ref='wrapper'>
-					<div className="mdc-taxonomy-diagram__popout-main">
-						<i onClick={this.closePopout} className="iconcss icon-close-lg"></i>
-						<h5 className="eyebrow">{popout.eyebrow}</h5>
-						<h2>{popout.heading}</h2>
-						<p>{popout.description}</p>
-					</div>
-					{this.generateLists(popout.lists)}
-				</div>
-
 				<div className='mdc-taxonomy-diagram__help'>
 					<i className="iconcss icon-click"></i>
 					<p>Click a node to expand</p>
@@ -255,6 +245,17 @@ export default class MdcTaxonomyDiagram extends Component {
 				<div className='mdc-taxonomy-diagram__search'>
 	                <SearchBar placeholder="Search for anything"/>
 				</div>
+
+				<div className='mdc-taxonomy-diagram__popout' ref='wrapper'>
+					<div className="mdc-taxonomy-diagram__popout-main">
+						<i onClick={this.closePopout} className="iconcss icon-close-lg"></i>
+						<h5 className="eyebrow">{popout.eyebrow}</h5>
+						<h2>{popout.heading}</h2>
+						<p>{popout.description}</p>
+					</div>
+					{this.generateLists(popout.lists)}
+				</div>
+
 
 			</div>
 		);
