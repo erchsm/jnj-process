@@ -65,6 +65,9 @@
 .icon-scroll:before { content: "\EA35" }
 .icon-pan:before { content: "\EA36" }
 .icon-click:before { content: "\EA37" }
+.icon-home-logo:before { content: "\EA38" }
+.icon-checkmark:before { content: "\EA39" }
+.icon-camera:before { content: "\EA40" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {

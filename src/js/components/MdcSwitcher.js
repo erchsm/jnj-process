@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import classNames from "classnames";
 
-import specialties from '../data/specialties-search.json';
-import symptoms from '../data/symptoms-search.json';
+import specialties from '../data/specialties-search';
+import symptoms from '../data/symptoms-search';
+import homeProfileSetupData from '../data/home-profile-setup';
 
 import SearchBar from './SearchBar';
+import SelectBox from './SelectBox';
 
 export default class Switcher extends Component {
 
@@ -76,6 +78,12 @@ export default class Switcher extends Component {
             <div className={classnames}> 
               <section className="grid">
                 <h1 className="medium grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
+                <SelectBox
+                                value={null}
+                                label="Company/Franchise"
+                                onChange={() => console.log('')}
+                                items={homeProfileSetupData.franchises}
+                                />
               </section>
               <div className="grid mdc-switcher__tile-container">
                 <div className="mdc-switcher__tiles grid__item grid__item--col-12">

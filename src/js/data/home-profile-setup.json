@@ -1,0 +1,56 @@
+{
+	franchises: [
+		{
+			title: "Consumer",
+			id: 0
+		},
+		{
+			title: "Consumer Medical",
+			id: 1
+		},
+		{
+			title: "Corporate",
+			id: 2
+		},
+		{
+			title: "Medical Devices - All",
+			id: 3
+		},
+		{
+			title: "Medical Devices - Asp",
+			id: 4
+		},
+		{
+			title: "Medical Devices - Acclarent",
+			id: 5
+		},
+		{
+			title: "Medical Devices - BWI",
+			id: 6
+		},
+		{
+			title: "Medical Devices - Cerenovus",
+			id: 7
+		},
+		{
+			title: "Medical Devices - Depuy Synthes",
+			id: 8
+		},
+		{
+			title: "Medical Devices - Ethicon",
+			id: 9
+		},
+		{
+			title: "Medical Devices - Mentor",
+			id: 10
+		},
+		{
+			title: "Pharmaceuticals",
+			id: 11
+		},
+		{
+			title: "Supply Chain",
+			id: 12
+		},
+	]
+}
