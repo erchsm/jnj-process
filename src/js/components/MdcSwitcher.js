@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import classNames from "classnames";
 
+import specialties from '../data/specialties-search.json';
+import symptoms from '../data/symptoms-search.json';
+
 import SearchBar from './SearchBar';
 
 export default class Switcher extends Component {
@@ -82,7 +85,7 @@ export default class Switcher extends Component {
                     <h1 className="medium">
                       Healthcare <br/>Professional 
                     </h1>
-                    <SearchBar placeholder="Search For A Specialty"/>
+                    <SearchBar placeholder="Search For A Specialty" searchData={specialties.groups}/>
                     <button className="mdc-button mdc-button--text-link"><span>Continue to HCP Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
                   <div className="mdc-switcher__tile">
@@ -91,7 +94,7 @@ export default class Switcher extends Component {
                     <h1 className="medium">
                       Patient<br/><br/>
                     </h1>
-                    <SearchBar placeholder="Search For Your Symptoms"/>
+                    {<SearchBar placeholder="Search For Your Symptoms" searchData={symptoms.groups}/>}
                     <button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
                   </div>
                 </div>

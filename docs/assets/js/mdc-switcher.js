@@ -24043,6 +24043,14 @@ var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
+var _specialtiesSearch = require('../data/specialties-search.json');
+
+var _specialtiesSearch2 = _interopRequireDefault(_specialtiesSearch);
+
+var _symptomsSearch = require('../data/symptoms-search.json');
+
+var _symptomsSearch2 = _interopRequireDefault(_symptomsSearch);
+
 var _SearchBar = require('./SearchBar');
 
 var _SearchBar2 = _interopRequireDefault(_SearchBar);
@@ -24156,7 +24164,7 @@ var Switcher = function (_Component) {
                                 _react2.default.createElement('br', null),
                                 'Professional'
                             ),
-                            _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For A Specialty' }),
+                            _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For A Specialty', searchData: _specialtiesSearch2.default.groups }),
                             _react2.default.createElement(
                                 'button',
                                 { className: 'mdc-button mdc-button--text-link' },
@@ -24184,7 +24192,7 @@ var Switcher = function (_Component) {
                                 _react2.default.createElement('br', null),
                                 _react2.default.createElement('br', null)
                             ),
-                            _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For Your Symptoms' }),
+                            _react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For Your Symptoms', searchData: _symptomsSearch2.default.groups }),
                             _react2.default.createElement(
                                 'button',
                                 { className: 'mdc-button mdc-button--text-link' },
@@ -24208,7 +24216,7 @@ var Switcher = function (_Component) {
 Switcher.propTypes = {};
 exports.default = Switcher;
 
-},{"./SearchBar":205,"classnames":1,"react":197}],205:[function(require,module,exports){
+},{"../data/specialties-search.json":209,"../data/symptoms-search.json":210,"./SearchBar":205,"classnames":1,"react":197}],205:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24220,8 +24228,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
-
-var _specialtiesSearch = require('../data/specialties-search.js');
 
 var _reactAutosuggest = require('react-autosuggest');
 
@@ -24247,19 +24253,6 @@ var SearchBar = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this));
 
-    _this.componentDidMount = function () {
-      // fetch(this.props.searchData)
-      //   .then(response => {
-      //     return response.json();
-      //   })
-      //   .then(data => {
-      //     console.log(data);
-      //   })
-      //   .catch(error => {
-      //     console.error(error);
-      //   });
-    };
-
     _this.onChange = function (event, _ref) {
       var newValue = _ref.newValue,
           method = _ref.method;
@@ -24275,6 +24268,16 @@ var SearchBar = function (_Component) {
       _this.setState({
         suggestions: _this.getSuggestions(value)
       });
+    };
+
+    _this.onSuggestionSelected = function (event, _ref3) {
+      var suggestion = _ref3.suggestion,
+          suggestionValue = _ref3.suggestionValue,
+          suggestionIndex = _ref3.suggestionIndex,
+          sectionIndex = _ref3.sectionIndex,
+          method = _ref3.method;
+
+      _this.props.onClick ? _this.props.onClick(suggestion) : null;
     };
 
     _this.onSuggestionsClearRequested = function () {
@@ -24308,7 +24311,6 @@ var SearchBar = function (_Component) {
       showPrompt: false,
       suggestions: []
     };
-
     return _this;
   }
 
@@ -24328,21 +24330,21 @@ var SearchBar = function (_Component) {
 
       var regex = new RegExp('^' + escapedValue, 'i');
 
-      return _specialtiesSearch.titles.map(function (section) {
+      return this.props.searchData.map(function (section) {
         return {
           title: section.title,
-          titles: section.titles.filter(function (item) {
-            return regex.test(item.name);
+          data: section.data.filter(function (item) {
+            return regex.test(item.id);
           })
         };
       }).filter(function (section) {
-        return section.titles.length > 0;
+        return section.data.length > 0;
       });
     }
   }, {
     key: 'getSuggestionValue',
     value: function getSuggestionValue(suggestion) {
-      return suggestion.name;
+      return suggestion.id;
     }
   }, {
     key: 'renderSuggestion',
@@ -24350,7 +24352,7 @@ var SearchBar = function (_Component) {
       return _react2.default.createElement(
         'span',
         null,
-        suggestion.name
+        suggestion.id
       );
     }
   }, {
@@ -24365,11 +24367,18 @@ var SearchBar = function (_Component) {
   }, {
     key: 'getSectionSuggestions',
     value: function getSectionSuggestions(section) {
-      return section.titles;
+      return section.data;
     }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {}
+
+    // componentDidMount = () => {
+    //   window.addEventListener('mousedown', this.handleClickOutside);
+    // }
+
+    // componentWillUnmount = () => {
+    //   window.removeEventListener('mousedown', this.handleClickOutside);
+    // }
+
+
   }, {
     key: 'render',
     value: function render() {
@@ -24395,9 +24404,6 @@ var SearchBar = function (_Component) {
         "search-bar--show-search": this.state.searchOpen
       });
 
-      var newTitle = this.props.newTitle;
-
-
       return _react2.default.createElement(
         'div',
         { ref: 'wrapper', className: classnames },
@@ -24406,6 +24412,7 @@ var SearchBar = function (_Component) {
           suggestions: suggestions,
           onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
           onSuggestionsClearRequested: this.onSuggestionsClearRequested,
+          onSuggestionSelected: this.onSuggestionSelected,
           getSuggestionValue: this.getSuggestionValue,
           renderSuggestion: this.renderSuggestion,
           renderSectionTitle: this.renderSectionTitle,
@@ -24421,7 +24428,7 @@ var SearchBar = function (_Component) {
 
 exports.default = SearchBar;
 
-},{"../data/specialties-search.js":209,"classnames":1,"react":197,"react-autosuggest":35}],206:[function(require,module,exports){
+},{"classnames":1,"react":197,"react-autosuggest":35}],206:[function(require,module,exports){
 module.exports={
 	data: [
 		{ 
@@ -24613,18 +24620,76 @@ module.exports={
 	]
 }
 },{}],209:[function(require,module,exports){
-'use strict';
+module.exports={
+  groups: [
+    {
+      title: 'Specialties',
+      data: [
+        { "id": "Bariatric" },
+        { "id": "Cardiology" },
+        { "id": "Cardiac Electrophysiology" },
+        { "id": "Colorectal" },
+        { "id": "Craniomaxillofacial" },
+        { "id": "Dermatology" },
+        { "id": "Ear, Nose & Throat / Otolaryngology" },
+        { "id": "Dermatology" },
+        { "id": "Endocrinology" },
+        { "id": "Gastric Surgery" },
+        { "id": "General Surgery" },
+        { "id": "Gynecology" },
+        { "id": "Hepatobillary Surgery" },
+        { "id": "Interventional Oncology" },
+        { "id": "Neurovascular" },
+        { "id": "Orthopaedic Surgery" },
+        { "id": "Otolaryngology" },
+        { "id": "Sports Medicine" },
+        { "id": "Sterlization, Antisepsis" },
+        { "id": "Thoracic Surgery" },
+        { "id": "Trauma" },
+        { "id": "Urogynecology" },
+        { "id": "Urology" },
+        { "id": "Vetinary" },
+        { "id": "Vision" },
+      ]
+    }
+  ]
+}
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-var titles = exports.titles = [{
-	title: 'Specialties',
-	titles: [{ name: 'Bariatric' }, { name: 'Cardiology' }, { name: 'Cardiac Electrophysiology' }, { name: 'Colorectal' }, { name: 'Craniomaxillofacial' }, { name: 'Dermatology' }, { name: 'Ear, Nose & Throat / Otolaryngology' }, { name: 'Dermatology' }, { name: 'Endocrinology' }, { name: 'Gastric Surgery' }, { name: 'General Surgery' }, { name: 'Gynecology' }, { name: 'Hepatobillary Surgery' }, { name: 'Interventional Oncology' }, { name: 'Neurovascular' }, { name: 'Orthopaedic Surgery' }, { name: 'Otolaryngology' }, { name: 'Sports Medicine' }, { name: 'Sterlization, Antisepsis' }, { name: 'Thoracic Surgery' }, { name: 'Trauma' }, { name: 'Urogynecology' }, { name: 'Urology' }, { name: 'Vetinary' }, { name: 'Vision' }]
-}, {
-	title: 'Sympotoms',
-	titles: [{ "name": "Abdominal Pains" }, { "name": "Joint Pain" }, { "name": "Back Ache" }, { "name": "Bruising" }, { "name": "Cough" }, { "name": "Diarrhea" }, { "name": "Difficulty Breathing" }, { "name": "Difficulty Swallowing" }, { "name": "Fever" }, { "name": "Headache" }, { "name": "Hiccups" }, { "name": "Intense Fatigue or Weakness" }, { "name": "Jaundice" }, { "name": "Loss of Appetite" }, { "name": "Muscles or Joints" }, { "name": "Nausea Vomiting" }, { "name": "Neck Rigidity" }, { "name": "Sore Throat or Swallowing" }, { "name": "Chest Pain" }, { "name": "Unexplained Bleedings" }, { "name": "Rash" }, { "name": "Red Eyes" }, { "name": "Other Symptoms" }]
-}];
+},{}],210:[function(require,module,exports){
+module.exports={
+  groups: [
+    {
+      title: 'Symptoms',
+      data: [
+        { "id": "Abdominal Pains" },
+        { "id": "Back Ache" },
+        { "id": "Bloating" },
+        { "id": "Bruising" },
+        { "id": "Cough" },
+        { "id": "Diarrhea" },
+        { "id": "Difficulty Breathing" },
+        { "id": "Difficulty Swallowing" },
+        { "id": "Fever" },
+        { "id": "Headache" },
+        { "id": "Hiccups" },
+        { "id": "Intense Fatigue or Weakness" },
+        { "id": "Jaundice" },
+        { "id": "Joint Pain" },
+        { "id": "Loss of Appetite" },
+        { "id": "Muscles or Joints" },
+        { "id": "Nausea Vomiting" },
+        { "id": "Neck Rigidity" },
+        { "id": "Stiffness"},
+        { "id": "Sore Throat or Swallowing" },
+        { "id": "Chest Pain" },
+        { "id": "Unexplained Bleedings" },
+        { "id": "Rash" },
+        { "id": "Red Eyes" },
+        { "id": "Other Symptoms" }
+      ]
+    }
+  ]
+}
 
 },{}]},{},[200])
 

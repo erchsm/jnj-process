@@ -49,7 +49,8 @@ export default class MdcTaxonomyDiagram extends Component {
 				heading: '',
 				description: '',
 				lists: [],
-			}
+			},
+			db: this.createSearchDatabase()
 		};
 	}
 
@@ -82,6 +83,15 @@ export default class MdcTaxonomyDiagram extends Component {
 
 	updateWindowDimensions = () => {
 		this.setState({ width: window.innerWidth, height: window.innerHeight });
+	}
+
+	createSearchDatabase = () => {
+		const combined = [productFamilies, products, procedures, conditions, specialties, anatomy];
+		let database = { groups: [] };
+		combined.map(dataset => (
+			database.groups.push( { title: dataset.nodes[0].group, data: dataset.nodes })
+		))
+		return database;
 	}
 
 	createNodes = (dataset) => (
@@ -161,7 +171,7 @@ export default class MdcTaxonomyDiagram extends Component {
 	}
 
 	render() {
-		const { width, height, colors, popoutOpen, popout, selectedNode } = this.state;
+		const { width, height, colors, popoutOpen, popout, selectedNode, db } = this.state;
 
 		const classnames = classNames({
 			"mdc-taxonomy-diagram": true,
@@ -243,7 +253,7 @@ export default class MdcTaxonomyDiagram extends Component {
 				</div>
 
 				<div className='mdc-taxonomy-diagram__search'>
-	                <SearchBar placeholder="Search for anything"/>
+	                <SearchBar placeholder="Search for anything" searchData={this.state.db.groups} onClick={this.selectNode}/>
 				</div>
 
 				<div className='mdc-taxonomy-diagram__popout' ref='wrapper'>

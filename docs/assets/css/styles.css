@@ -15219,9 +15219,6 @@ body {
       background-color: #CC0099; }
       .mdc-switcher__tile:last-child:hover {
         background-color: #c70095 !important; }
-  .mdc-switcher .search-bar {
-    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
-    opacity: 0; }
   .mdc-switcher .mdc-button {
     position: absolute;
     bottom: 48px;
@@ -15241,10 +15238,30 @@ body {
     -ms-flex-align: start;
     align-items: flex-start;
     transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1); }
+    .mdc-switcher .search-bar input :-ms-input-placeholder {
+      color: white; }
+    .mdc-switcher .search-bar input ::placeholder {
+      color: white; }
+  .mdc-switcher .react-autosuggest__section-title {
+    display: none; }
+  .mdc-switcher .react-autosuggest__input {
+    border-bottom: solid 1px white;
+    color: white; }
+  .mdc-switcher .react-autosuggest__container {
+    position: relative;
+    width: 100%; }
+    .mdc-switcher .react-autosuggest__container ::-webkit-input-placeholder {
+      color: white; }
+    .mdc-switcher .react-autosuggest__container ::-moz-placeholder {
+      color: white; }
+    .mdc-switcher .react-autosuggest__container :-ms-input-placeholder {
+      color: white; }
+    .mdc-switcher .react-autosuggest__container :-moz-placeholder {
+      color: white; }
 
 .mdc-taxonomy-diagram {
   overflow: hidden; }
-  .mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link, .mdc-taxonomy-diagram .rv-force__label {
+  .mdc-taxonomy-diagram .rv-force__label {
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1); }
   .mdc-taxonomy-diagram .rv-force__node, .mdc-taxonomy-diagram .rv-force__link {
     cursor: pointer; }
@@ -15254,6 +15271,32 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; }
+  .mdc-taxonomy-diagram__search {
+    margin-right: 18px;
+    width: 350px; }
+    .mdc-taxonomy-diagram__search ul li {
+      line-height: 1.2em; }
+    .mdc-taxonomy-diagram__search .search-bar {
+      margin: 18px 0;
+      opacity: 1; }
+      .mdc-taxonomy-diagram__search .search-bar i {
+        font-size: 28px;
+        top: 9px; }
+      .mdc-taxonomy-diagram__search .search-bar .react-autosuggest__section-container {
+        margin-bottom: 3px; }
+      .mdc-taxonomy-diagram__search .search-bar .react-autosuggest__suggestions-container {
+        background: white;
+        border-radius: 0;
+        max-height: 60vh; }
+      .mdc-taxonomy-diagram__search .search-bar .react-autosuggest__input {
+        padding-right: 38px; }
+      .mdc-taxonomy-diagram__search .search-bar .react-autosuggest__suggestion--first {
+        padding-top: 0; }
+      .mdc-taxonomy-diagram__search .search-bar .react-autosuggest__section-title {
+        font-weight: 800; }
+      .mdc-taxonomy-diagram__search .search-bar input {
+        color: #888B8D;
+        border-bottom: solid 1px #888B8D; }
   .mdc-taxonomy-diagram__legend {
     position: absolute;
     bottom: 18px;
@@ -15380,23 +15423,16 @@ body {
     font-size: 32px;
     margin: 0; }
 
-.react-autosuggest__section-title {
-  display: none; }
-
 .react-autosuggest__container {
   position: relative;
   width: 100%; }
   .react-autosuggest__container ::-webkit-input-placeholder {
-    color: white;
     opacity: 0.4; }
   .react-autosuggest__container ::-moz-placeholder {
-    color: white;
     opacity: 0.4; }
   .react-autosuggest__container :-ms-input-placeholder {
-    color: white;
     opacity: 0.4; }
   .react-autosuggest__container :-moz-placeholder {
-    color: white;
     opacity: 0.4; }
 
 .react-autosuggest__input {
@@ -15456,8 +15492,6 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #999; }
-  .react-autosuggest__section-title strong {
-    font-weight: 300 !important; }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

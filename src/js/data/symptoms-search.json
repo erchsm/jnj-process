@@ -1,28 +1,34 @@
 {
-  title: 'Sympotoms',
-  titles: [
-      { "name": "Abdominal Pains" },
-      { "name": "Joint Pain" },
-      { "name": "Back Ache" },
-      { "name": "Bruising" },
-      { "name": "Cough" },
-      { "name": "Diarrhea" },
-      { "name": "Difficulty Breathing" },
-      { "name": "Difficulty Swallowing" },
-      { "name": "Fever" },
-      { "name": "Headache" },
-      { "name": "Hiccups" },
-      { "name": "Intense Fatigue or Weakness" },
-      { "name": "Jaundice" },
-      { "name": "Loss of Appetite" },
-      { "name": "Muscles or Joints" },
-      { "name": "Nausea Vomiting" },
-      { "name": "Neck Rigidity" },
-      { "name": "Sore Throat or Swallowing" },
-      { "name": "Chest Pain" },
-      { "name": "Unexplained Bleedings" },
-      { "name": "Rash" },
-      { "name": "Red Eyes" },
-      { "name": "Other Symptoms" }
+  groups: [
+    {
+      title: 'Symptoms',
+      data: [
+        { "id": "Abdominal Pains" },
+        { "id": "Back Ache" },
+        { "id": "Bloating" },
+        { "id": "Bruising" },
+        { "id": "Cough" },
+        { "id": "Diarrhea" },
+        { "id": "Difficulty Breathing" },
+        { "id": "Difficulty Swallowing" },
+        { "id": "Fever" },
+        { "id": "Headache" },
+        { "id": "Hiccups" },
+        { "id": "Intense Fatigue or Weakness" },
+        { "id": "Jaundice" },
+        { "id": "Joint Pain" },
+        { "id": "Loss of Appetite" },
+        { "id": "Muscles or Joints" },
+        { "id": "Nausea Vomiting" },
+        { "id": "Neck Rigidity" },
+        { "id": "Stiffness"},
+        { "id": "Sore Throat or Swallowing" },
+        { "id": "Chest Pain" },
+        { "id": "Unexplained Bleedings" },
+        { "id": "Rash" },
+        { "id": "Red Eyes" },
+        { "id": "Other Symptoms" }
+      ]
+    }
   ]
 }

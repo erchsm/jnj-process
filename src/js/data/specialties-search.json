@@ -1,0 +1,34 @@
+{
+  groups: [
+    {
+      title: 'Specialties',
+      data: [
+        { "id": "Bariatric" },
+        { "id": "Cardiology" },
+        { "id": "Cardiac Electrophysiology" },
+        { "id": "Colorectal" },
+        { "id": "Craniomaxillofacial" },
+        { "id": "Dermatology" },
+        { "id": "Ear, Nose & Throat / Otolaryngology" },
+        { "id": "Dermatology" },
+        { "id": "Endocrinology" },
+        { "id": "Gastric Surgery" },
+        { "id": "General Surgery" },
+        { "id": "Gynecology" },
+        { "id": "Hepatobillary Surgery" },
+        { "id": "Interventional Oncology" },
+        { "id": "Neurovascular" },
+        { "id": "Orthopaedic Surgery" },
+        { "id": "Otolaryngology" },
+        { "id": "Sports Medicine" },
+        { "id": "Sterlization, Antisepsis" },
+        { "id": "Thoracic Surgery" },
+        { "id": "Trauma" },
+        { "id": "Urogynecology" },
+        { "id": "Urology" },
+        { "id": "Vetinary" },
+        { "id": "Vision" },
+      ]
+    }
+  ]
+}

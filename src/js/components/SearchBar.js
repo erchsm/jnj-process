@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import { titles } from '../data/specialties-search.js';
 import Autosuggest from 'react-autosuggest';
 
 import classNames from "classnames";
@@ -15,7 +14,6 @@ export default class SearchBar extends Component {
       showPrompt: false,
       suggestions: []
     };  
-
   }
 
   escapeRegexCharacters(str) {
@@ -31,23 +29,23 @@ export default class SearchBar extends Component {
 
     const regex = new RegExp('^' + escapedValue, 'i');
 
-    return titles
+    return this.props.searchData
       .map(section => {
         return {
           title: section.title,
-          titles: section.titles.filter(item => regex.test(item.name))
+          data: section.data.filter(item => regex.test(item.id))
         };
       })
-      .filter(section => section.titles.length > 0);
+      .filter(section => section.data.length > 0);
   }
 
   getSuggestionValue(suggestion) {
-    return suggestion.name;
+    return suggestion.id;
   }
 
   renderSuggestion(suggestion) {
     return (
-      <span>{suggestion.name}</span>
+      <span>{suggestion.id}</span>
     );
   }
 
@@ -58,25 +56,16 @@ export default class SearchBar extends Component {
   }
 
   getSectionSuggestions(section) {
-    return section.titles;
+    return section.data;
   }
 
-  componentDidMount = () => {
-    // fetch(this.props.searchData)
-    //   .then(response => {
-    //     return response.json();
-    //   })
-    //   .then(data => {
-    //     console.log(data);
-    //   })
-    //   .catch(error => {
-    //     console.error(error);
-    //   });
-  }
+  // componentDidMount = () => {
+  //   window.addEventListener('mousedown', this.handleClickOutside);
+  // }
 
-  componentWillUnmount() {
-      
-  }
+  // componentWillUnmount = () => {
+  //   window.removeEventListener('mousedown', this.handleClickOutside);
+  // }
 
 
   onChange = (event, { newValue, method }) => {
@@ -89,6 +78,10 @@ export default class SearchBar extends Component {
     this.setState({
       suggestions: this.getSuggestions(value)
     });
+  };
+
+  onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
+    this.props.onClick ? this.props.onClick(suggestion) : null;
   };
 
   onSuggestionsClearRequested = () => {
@@ -134,8 +127,6 @@ export default class SearchBar extends Component {
       "search-bar--show-search": this.state.searchOpen
     })
 
-    const { newTitle } = this.props;
-
     return (
     	<div ref="wrapper" className={classnames}>
 	      <Autosuggest 
@@ -143,6 +134,7 @@ export default class SearchBar extends Component {
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+        onSuggestionSelected={this.onSuggestionSelected}
         getSuggestionValue={this.getSuggestionValue}
         renderSuggestion={this.renderSuggestion}
         renderSectionTitle={this.renderSectionTitle}

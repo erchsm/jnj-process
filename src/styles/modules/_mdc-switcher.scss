@@ -95,14 +95,6 @@
 		&:first-child {
 			background-color: $brand-blue;			
 
-			// .search-bar {
-			// 	li {
-			// 		&[id*='section-1'] {
-			// 			display: none;
-			// 		}
-			// 	}
-			// }
-
 			&:hover {
 				background-color: darken($brand-blue, 1%) !important;
 			}
@@ -111,23 +103,10 @@
 		&:last-child {
 			background-color: $brand-magenta;
 
-			// .search-bar {
-			// 	li {
-			// 		&[id*='section-0'] {
-			// 			display: none;
-			// 		}
-			// 	}
-			// }
-
 			&:hover {
 				background-color: darken($brand-magenta, 1%) !important;
 			}
 		}
-	}
-
-	.search-bar {
-		@include transition();
-		opacity: 0;
 	}
 
 	.mdc-button {
@@ -152,5 +131,46 @@
 		opacity: 0;
 		align-items: flex-start;
 		@include transition();
+
+		input {
+			::placeholder {
+				color: white;
+			}
+		}
+	}
+
+	.react-autosuggest__section-title {
+		display: none;
+	}
+
+	.react-autosuggest__input {
+		border-bottom: solid 1px white;
+		color: white;
+	}
+
+	.react-autosuggest__container {
+		position: relative;
+		width: 100%;
+
+		@mixin placeholder-style() {
+			color: white;
+		}
+
+		::-webkit-input-placeholder {
+			@include placeholder-style();
+		}
+
+		::-moz-placeholder {
+			@include placeholder-style();
+		}
+
+		:-ms-input-placeholder {
+			@include placeholder-style();
+		}
+
+		:-moz-placeholder {
+			@include placeholder-style();
+		}
+
 	}
 }

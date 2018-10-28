@@ -27,9 +27,7 @@
 	}
 }
 
-.react-autosuggest__section-title {
-	display: none;
-}
+
 
 
 .react-autosuggest__container {
@@ -37,25 +35,24 @@
 	width: 100%;
 
 	@mixin placeholder-style() {
-			color: white;
-			opacity: 0.4;
-		}
+		opacity: 0.4;
+	}
 
-		::-webkit-input-placeholder {
-			@include placeholder-style();
-		}
+	::-webkit-input-placeholder {
+		@include placeholder-style();
+	}
 
-		::-moz-placeholder {
-			@include placeholder-style();
-		}
+	::-moz-placeholder {
+		@include placeholder-style();
+	}
 
-		:-ms-input-placeholder {
-			@include placeholder-style();
-		}
+	:-ms-input-placeholder {
+		@include placeholder-style();
+	}
 
-		:-moz-placeholder {
-			@include placeholder-style();
-		}
+	:-moz-placeholder {
+		@include placeholder-style();
+	}
 
 }
 
@@ -140,6 +137,6 @@
 	color: #999;
 
 	strong {
-		font-weight: 300 !important;
+		// font-weight: 300 !important;
 	}
 }

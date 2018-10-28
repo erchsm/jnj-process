@@ -5,6 +5,10 @@
 	overflow: hidden;
 
 	.rv-force__node, .rv-force__link, .rv-force__label {
+		// transition: all 0.4s $easing2;
+	}
+
+	.rv-force__label {
 		transition: all 0.4s $easing2;
 	}
 
@@ -16,6 +20,60 @@
 		pointer-events: none;  
 		user-select: none;  
 	}	
+
+	&__search {
+		margin-right: 18px;
+		width: 350px;
+
+		ul li {
+			line-height: 1.2em;
+		}
+
+
+		.search-bar {
+		    margin: 18px 0;
+			opacity: 1;
+
+			i {
+				font-size: 28px;
+				top: 9px;
+			}
+
+			.react-autosuggest__section-container {
+				margin-bottom: 3px;
+			}
+
+			.react-autosuggest__suggestions-container {
+				background: white;
+				border-radius: 0;
+				max-height: 60vh;
+			}
+
+			.react-autosuggest__input {
+				padding-right: 38px;
+			}
+
+
+			.react-autosuggest__suggestion--first {
+				padding-top: 0;
+			}
+
+
+			.react-autosuggest__section-title {
+				font-weight: 800;
+			}
+
+			input {
+				color: $brand-grey-dark;
+				border-bottom: solid 1px $brand-grey-dark;
+
+				// ::placeholder {
+				// 	color: $brand-grey-dark;
+				// }
+			}
+
+		}
+	}
 
 	&__legend {
 		position: absolute;
