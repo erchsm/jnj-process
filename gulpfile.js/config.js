@@ -39,6 +39,7 @@ module.exports = {
                 { input: 'mdc-companies-picker.js', output: 'mdc-companies-picker.js'},
                 { input: 'mdc-taxonomy-diagram.js', output: 'mdc-taxonomy-diagram.js'},
                 { input: 'home-profile-setup.js', output: 'home-profile-setup.js'},
+                { input: 'home-sitemap.js', output: 'home-sitemap.js'},
             ],
             extensions: ['js']
         },

@@ -1,0 +1,32 @@
+.home-sitemap {
+	min-height: 100%;
+	min-width: 100%;
+	// background: linear-gradient(90deg,$brand-red,darken($brand-red, 2%));
+
+	.nodeNameBase {
+		fill: $brand-black;
+		stroke: none;
+	}
+
+	.nodeBase {
+		cursor: pointer;
+		fill: $brand-black;
+		stroke: $brand-black;
+		stroke-width: 2;
+	}
+
+	.leafNodeBase {
+		cursor: auto;
+		fill: white;
+	}
+
+	.linkBase {
+		stroke: $brand-grey-dark;
+	}
+
+	.nodeAttributesBase {
+		fill: $brand-grey-dark;
+		stroke: none;
+		font-size: smaller;
+	}
+}

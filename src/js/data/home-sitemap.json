@@ -1,0 +1,123 @@
+{
+	"name": "Home Page",
+	"attributes": {},
+	"children": [
+		{
+			"name": "Links",
+			"attributes": {},
+			"children": [
+				{
+					"name": "My Favorites",
+					"attributes": {},
+					"children": []
+				},
+				{
+					"name": "Employee Resources",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "Arts and Culture Discounts" },
+						{ "name": "Talent For Good" },
+						{ "name": "ASKGS Portal" },
+						{ "name": "Center for Leadership & Learning" },
+						{ "name": "Compensation" },
+						{ "name": "Corporate Art Program" },
+						{ "name": "Corporate Payroll Calendar 2018" },
+						{ "name": "Corporate Payroll Calendar 2019" },
+						{ "name": "Diversity & Inclusion Portal" },
+						{ "name": "Employee Classified Ads" },
+						{ "name": "Employee Health & Wellbeing Resources" },
+						{ "name": "Enterprise Spend Optimization" },
+						{ "name": "For Your Benefit Website--U.S. & P.R." },
+						{ "name": "Healthy & Me" },
+						{ "name": "Lactation Support" },
+						{ "name": "Leadership Resource Center" },
+						{ "name": "Matching Gifts Program" },
+						{ "name": "OUR SOURCE®" },
+						{ "name": "SUMMIT" },
+						{ "name": "Volunteer Support Program" },
+						{ "name": "Workday" },
+					]
+				},
+				{
+					"name": "Functional Portals",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+				{
+					"name": "J&J Corporate Resources",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+				{
+					"name": "Locations & Campuses",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+				{
+					"name": "Our Company",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+				{
+					"name": "Sector Portals",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+				{
+					"name": "Work Tools",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+			],
+			"_collapsed": true
+		},
+		{
+			"name": "Talent For Good",
+			"attributes": {},
+			"children": []
+		},
+		// {
+		// 	"name": "Campuses",
+		// 	"attributes": {},
+		// 	"children": []
+		// },
+		{
+			"name": "My News",
+			"attributes": {},
+			"children": []
+		},
+		{
+			"name": "My Events",
+			"attributes": {},
+			"children": []
+		},
+		{
+			"name": "Credo",
+			"attributes": {},
+			"children": []
+		},
+		// {
+		// 	"name": "Privacy Policy",
+		// 	"attributes": {},
+		// 	"children": []
+		// },
+		// {
+		// 	"name": "Legal Notice",
+		// 	"attributes": {},
+		// 	"children": []
+		// },
+	]
+}

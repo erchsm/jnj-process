@@ -14397,6 +14397,27 @@ body {
   100% {
     opacity: 1; } }
 
+.home-sitemap {
+  min-height: 100%;
+  min-width: 100%; }
+  .home-sitemap .nodeNameBase {
+    fill: #212121;
+    stroke: none; }
+  .home-sitemap .nodeBase {
+    cursor: pointer;
+    fill: #212121;
+    stroke: #212121;
+    stroke-width: 2; }
+  .home-sitemap .leafNodeBase {
+    cursor: auto;
+    fill: white; }
+  .home-sitemap .linkBase {
+    stroke: #888B8D; }
+  .home-sitemap .nodeAttributesBase {
+    fill: #888B8D;
+    stroke: none;
+    font-size: smaller; }
+
 .image-upload form {
   position: relative;
   width: 220px;
