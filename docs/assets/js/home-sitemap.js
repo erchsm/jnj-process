@@ -34678,7 +34678,9 @@ var HomeSitemap = function (_Component) {
 					shouldCollapseNeighborNodes: true,
 					useCollapseData: true,
 					transitionDuration: 600,
-					separation: { siblings: .3, nonSiblings: 200 }
+					separation: { siblings: .3, nonSiblings: 200 },
+					nodeSize: { x: 240, y: 140 },
+					textLayout: { textAnchor: "start", x: 18, y: 0 }
 				})
 			);
 		}

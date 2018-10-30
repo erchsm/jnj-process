@@ -7,6 +7,7 @@
 		fill: $brand-black;
 		stroke: none;
 		font-size: 14px;
+		font-weight: 500;
 	}
 
 	.nodeBase {
@@ -22,7 +23,7 @@
 	}
 
 	.linkBase {
-		stroke: rgba($brand-grey-dark, .8);
+		stroke: rgba($brand-grey-dark, .25);
 	}
 
 	.nodeAttributesBase {
