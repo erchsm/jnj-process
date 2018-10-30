@@ -34681,7 +34681,23 @@ var HomeSitemap = function (_Component) {
 					separation: { siblings: .3, nonSiblings: 200 },
 					nodeSize: { x: 240, y: 140 },
 					textLayout: { textAnchor: "start", x: 18, y: 0 }
-				})
+				}),
+				_react2.default.createElement(
+					'div',
+					{ className: 'home-sitemap__help' },
+					_react2.default.createElement('i', { className: 'iconcss icon-scroll' }),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Scroll to zoom'
+					),
+					_react2.default.createElement('i', { className: 'iconcss icon-pan' }),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Drag to pan'
+					)
+				)
 			);
 		}
 	}]);
@@ -34738,6 +34754,16 @@ module.exports={
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "Global Corporate Affairs Portal"},
+						{ "name": "Global Finance"},
+						{ "name": "Global Health Services"},
+						{ "name": "Global HR Portal"},
+						{ "name": "Global Procurement"},
+						{ "name": "Global Services – The Learning EDGE"},
+						{ "name": "Hire.jnj.com"},
+						{ "name": "J&J Citizenship & Sustainability"},
+						{ "name": "J&J Design Portal"},
+						{ "name": "JJT Finance"},
 					]
 				},
 				{
@@ -34752,6 +34778,15 @@ module.exports={
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "Cafeteria Menus - US" },
+						{ "name": "GS Bogota" },
+						{ "name": "GS Manila Home" },
+						{ "name": "GS Prague Home" },
+						{ "name": "GS Suzhou Home" },
+						{ "name": "GS Tampa Home" },
+						{ "name": "NYC Facilities Management, EH&S and Global Health & Wellness Contact List" },
+						{ "name": "NYC Facilities Work Request System" },
+						{ "name": "The Corporate Pulse" },
 					]
 				},
 				{
@@ -34759,6 +34794,11 @@ module.exports={
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "Code of Business Conduct" },
+						{ "name": "Credo Hotline" },
+						{ "name": "Jnj.com" },
+						{ "name": "News From Alex" },
+						{ "name": "Our Credo" },
 					]
 				},
 				{
@@ -34766,6 +34806,10 @@ module.exports={
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "Medical Devices - Organization" },
+						{ "name": "Square" },
+						{ "name": "The Link" },
+						{ "name": "Touchpoint" },
 					]
 				},
 				{
@@ -34773,6 +34817,20 @@ module.exports={
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "Application Services Order Entry"},
+						{ "name": "Ariba Buyer"},
+						{ "name": "Concur"},
+						{ "name": "Corporate Identity"},
+						{ "name": "eMarketplace (open in Chrome)"},
+						{ "name": "Enterprise Stock Photography"},
+						{ "name": "Instantis"},
+						{ "name": "IRIS"},
+						{ "name": "JDE Login"},
+						{ "name": "Johnson & Johnson Diagnostic Tool for Recognition Submissions"},
+						{ "name": "Privacy"},
+						{ "name": "Pulse Links"},
+						{ "name": "SMART Desk"},
+						{ "name": "Taleo"},
 					]
 				},
 			],
@@ -34783,11 +34841,6 @@ module.exports={
 			"attributes": {},
 			"children": []
 		},
-		// {
-		// 	"name": "Campuses",
-		// 	"attributes": {},
-		// 	"children": []
-		// },
 		{
 			"name": "News",
 			"attributes": {},
@@ -34796,12 +34849,68 @@ module.exports={
 		{
 			"name": "Events",
 			"attributes": {},
-			"children": []
+			"_collapsed": true,
+			"children": [
+				{
+					"name": "By Company / Franchise",
+					"_collapsed": true,
+					"children": [],
+				},
+				{
+					"name": "By Function",
+					"_collapsed": true,
+					"children": [],
+				},
+				{ 
+					"name": "By Location",
+					"_collapsed": true,
+					"children": [
+						{ "name": "Aguadilla, PRI" },
+						{ "name": "Albuquerque, NM" },
+						{ "name": "Amersfoort, NLD" },
+						{ "name": "Añasco, PRI" },
+						{ "name": "Asunción, PY" },
+						{ "name": "Athens, GA" },
+						{ "name": "Athens, GRC" },
+						{ "name": "Auckland, NZL" },
+						{ "name": "Baddi, IND" },
+						{ "name": "Bangkok, THA" },
+						{ "name": "Barcarena, PRT" },
+						{ "name": "Beerse, BEL" },
+						{ "name": "Beijing, CHN" },
+						{ "name": "Berlin, DEU" },
+						{ "name": "Bern, CHE" },
+						{ "name": "Birkerød, DNK" },
+						{ "name": "Bogota / LATAM Region" },
+						{ "name": "Bogotá, COL" },
+						{ "name": "Brazil Comercial" },
+						{ "name": "Brazil Industrial" },
+						{ "name": "..." },	
+					]
+				}
+			]		
 		},
 		{
-			"name": "People",
+			"name": "Campuses",
 			"attributes": {},
-			"children": []
+			"_collapsed": true,
+			"children": [
+				{ "name": "Consumer" },
+				{ "name": "Medical Devices" },
+				{ "name": "Pharmaceuticals" },
+				{ "name": "Supply Chain" },
+			]
+		},
+		{
+			"name": "Organizations",
+			"attributes": {},
+			"_collapsed": true,
+			"children": [
+				{ "name": "Consumer" },
+				{ "name": "Medical Devices" },
+				{ "name": "Pharmaceuticals" },
+				{ "name": "Supply Chain" },
+			]
 		},
 		{
 			"name": "Credo",

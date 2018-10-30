@@ -14419,6 +14419,25 @@ body {
     fill: #888B8D;
     stroke: none;
     font-size: smaller; }
+  .home-sitemap__help {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 48px;
+    pointer-events: none; }
+    .home-sitemap__help p, .home-sitemap__help i {
+      color: #888B8D; }
+    .home-sitemap__help i {
+      font-size: 32px;
+      margin-left: 24px; }
 
 .image-upload form {
   position: relative;

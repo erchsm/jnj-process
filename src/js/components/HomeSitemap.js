@@ -52,6 +52,12 @@ export default class HomeSitemap extends Component {
 		        nodeSize={{x: 240, y: 140}}
 		        textLayout={{textAnchor: "start", x: 18, y: 0 }}
 		        />
+		        <div className='home-sitemap__help'>
+					<i className="iconcss icon-scroll"></i>
+					<p>Scroll to zoom</p>
+					<i className="iconcss icon-pan"></i>
+					<p>Drag to pan</p>
+				</div>
 			</div>
 		)
 	}

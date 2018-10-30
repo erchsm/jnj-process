@@ -68,13 +68,13 @@ export default class HomeProfileSetup extends Component {
 								value={null}
 								label="Function"
 								onChange={() => console.log('')}
-								items={homeProfileSetupData.franchises}
+								items={homeProfileSetupData.functions}
 								/>
 								<SelectBox
 								value={null}
 								label="Location"
 								onChange={() => console.log('')}
-								items={homeProfileSetupData.franchises}
+								items={homeProfileSetupData.locations}
 								/>
 							</div>
 					</section>

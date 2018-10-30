@@ -35470,6 +35470,104 @@ module.exports={
 			title: "Supply Chain",
 			id: 12
 		},
+	],
+	functions: [
+		{
+			title: "Customer & Logistics Services",
+			id: 0
+		},
+		{
+			title: "Design",
+			id: 1
+		},
+		{
+			title: "Engineering & Property Services",
+			id: 2
+		},
+		{
+			title: "Environment, Health & Safety",
+			id: 3
+		},
+		{
+			title: "Finance",
+			id: 4
+		},
+		{
+			title: "Global External Innovation",
+			id: 5,
+		},
+		{
+			title: "Global Services - Finance",
+			id: 6,
+		},
+		{
+			title: "Global Services - Human Resources",
+			id: 7,
+		},
+		{
+			title: "Global Services - Procurement",
+			id: 8,
+		},
+		{
+			title: "Global Services - Service Infrastructure",
+			id: 9,
+		},
+		{
+			title: "Global Corporate Affairs",
+			id: 10
+		},
+		{
+			title: "Human Resources",
+			id: 11,
+		},
+		{
+			title: "Legal",
+			id: 12,
+		},
+		{
+			title: "Marketing",
+			id: 13,
+		},
+		{
+			title: "Office of the Chief Medical Officer",
+			id: 14,
+		},
+		{
+			title: "Procurement",
+			id: 15,
+		},
+		{
+			title: "Professional Education",
+			id: 16,
+		},
+		{
+			title: "Quality & Compliance",
+			id: 17,
+		},
+		{
+			title: "Regulatory Affairs",
+			id: 18,
+		},
+		{
+			title: "Research & Development",
+			id: 19,
+		},
+		{
+			title: "Sales",
+			id: 20,
+		},
+		{
+			title: "Sales Training",
+			id: 21,
+		},
+		{
+			title: "Strategy & Deployment",
+			id: 22,
+		},
+		{
+			title: "Technology",
+			id: 23,
+		}
 	]
 }
 },{}],210:[function(require,module,exports){
