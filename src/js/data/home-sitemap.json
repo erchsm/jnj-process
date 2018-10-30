@@ -95,12 +95,17 @@
 		// 	"children": []
 		// },
 		{
-			"name": "My News",
+			"name": "News",
 			"attributes": {},
 			"children": []
 		},
 		{
-			"name": "My Events",
+			"name": "Events",
+			"attributes": {},
+			"children": []
+		},
+		{
+			"name": "People",
 			"attributes": {},
 			"children": []
 		},

@@ -14402,7 +14402,8 @@ body {
   min-width: 100%; }
   .home-sitemap .nodeNameBase {
     fill: #212121;
-    stroke: none; }
+    stroke: none;
+    font-size: 14px; }
   .home-sitemap .nodeBase {
     cursor: pointer;
     fill: #212121;
@@ -14412,7 +14413,7 @@ body {
     cursor: auto;
     fill: white; }
   .home-sitemap .linkBase {
-    stroke: #888B8D; }
+    stroke: rgba(136, 139, 141, 0.8); }
   .home-sitemap .nodeAttributesBase {
     fill: #888B8D;
     stroke: none;

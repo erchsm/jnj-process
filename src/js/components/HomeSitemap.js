@@ -45,9 +45,10 @@ export default class HomeSitemap extends Component {
 		        orientation={'horizontal'}
 		        translate={{x: this.state.width, y: this.state.height}} 
 		        zoom={1} 
+		        shouldCollapseNeighborNodes={true}
 		        useCollapseData={true}
 		        transitionDuration={600}
-		        separation={{siblings: .3, nonSiblings: .6}}
+		        separation={{siblings: .3, nonSiblings: 200}}
 		        />
 			</div>
 		)
