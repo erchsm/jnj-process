@@ -78,12 +78,6 @@ export default class Switcher extends Component {
             <div className={classnames}> 
               <section className="grid">
                 <h1 className="medium grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
-                <SelectBox
-                                value={null}
-                                label="Company/Franchise"
-                                onChange={() => console.log('')}
-                                items={homeProfileSetupData.franchises}
-                                />
               </section>
               <div className="grid mdc-switcher__tile-container">
                 <div className="mdc-switcher__tiles grid__item grid__item--col-12">

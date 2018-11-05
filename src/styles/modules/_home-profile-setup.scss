@@ -21,10 +21,10 @@
 
 	section {
 		opacity: 1;
-		padding: 120px 60px;
+		padding: 210px 60px 120px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		// justify-content: center;
 
 		&.moving {
 			animation: fadeInUp 1.6s $easing3;
@@ -37,6 +37,16 @@
 
 			.selectbox__wrapper {
 				margin-right: 24px;
+			}
+		}
+
+		.mdc-button {
+			margin-top: 40px;
+			padding-left: 0;
+			font-size: 21px;
+
+			i {
+				font-size: 16px;
 			}
 		}
 	}
@@ -56,6 +66,7 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			width: 90px;
 
 			i {
 				display: flex;
@@ -67,6 +78,7 @@
 				width: 30px;
 				height: 30px;
 				font-size: 24px;
+				color: transparent;
 			}
 
 			span {
@@ -74,10 +86,17 @@
 				color: white;
 				font-weight: 500;
 			}
+
+			&.completed {
+				i {
+					color: white;
+				}
+			}
 		}
 	}
 
 	&__nav-line {
+		display: flex;
 		position: absolute;
 		top: 14px;
 		left: 0;
@@ -89,13 +108,22 @@
 	&__nav-line-inner {
 		transform-origin: left;
 		transition: all 1.6s $easing2;
-		transform: scaleX(0);
-		position: absolute;
-		top: 0;
-		left: 0;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
 		background: white;
+		width: 90px;
 		height: 100%;
+
+		&:last-child {
+			background: transparent;
+		}
+	}
+
+	&__nav-line-main {
 		width: 100%;
+		flex: 1;
+		transform: scaleX(0);
 	}
 
 	@keyframes fadeInUp {
@@ -104,6 +132,23 @@
 		}
 		100% {
 			opacity: 1;
+		}
+	}
+
+	.search-bar {
+		opacity: 1;
+
+		.react-autosuggest__section-title {
+			display: none;
+		}
+
+		i {
+			left: 0;
+			right: auto;
+		}
+
+		input {
+			padding-left: 48px;
 		}
 	}
 

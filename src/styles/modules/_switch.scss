@@ -1,0 +1,51 @@
+.switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  label {
+    color: $brand-grey-light;
+    cursor: pointer;
+
+    .field-wrapper--locked & {
+      color: #bbb;
+    }
+  }
+}
+
+.switch-toggle {
+    webkit-appearance: none;
+    margin: 0 5px 0 0;
+    width: 26px;
+    height: 16px;
+    font-size: 10px;
+    background: #dddddd;
+    border: 1px solid #dddddd;
+    border-radius: 100px;
+    background-position: left;
+    background-size: contain;
+    background-image: url(img/icons/circle.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    transition: background 0.3s, border 0.3s;
+    margin-right: 10px;
+    &:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #FFF;
+      position: absolute;
+      left: 1px;
+      top: 1px;
+      transition: left 0.3s;
+    }
+
+    .switch--on & {
+      background: $brand-red !important;
+      border: 1px solid $brand-red !important;
+      &:before {
+        left: 11px;
+      }
+    }
+}

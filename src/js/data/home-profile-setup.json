@@ -1,4 +1,48 @@
-{
+{	
+	"skills": [
+		{
+			"title": "Skills",
+			"data": [
+				{ "id": "Data Analysis" },
+				{ "id": "Copywriting" },
+				{ "id": "Foreign Languages" },
+				{ "id": "Accounting" },
+				{ "id": "Computer Languages" },
+				{ "id": "Mathematics" },
+				{ "id": "Graphic Design" },
+				{ "id": "Planning / Event Planning" },
+				{ "id": "Javascript" },
+				{ "id": "SEO / SEM Marketing" },
+				{ "id": "Bookkeeping" },
+				{ "id": "Communication" },
+				{ "id": "Ability to Work Under Pressure" },
+				{ "id": "Decision Making" },
+				{ "id": "Time Management" },
+				{ "id": "Self-motivation" },
+				{ "id": "Conflict Resolution" },
+				{ "id": "Leadership" },
+				{ "id": "Adaptability" },
+				{ "id": "Teamwork" },
+				{ "id": "Creativity" },
+				{ "id": "Analytical" },
+				{ "id": "Adaptable" },
+				{ "id": "Quick Learner" },
+				{ "id": "Able to Build Relationships" },
+				{ "id": "Loyal and Discreet (maintain confidentiality)" },
+				{ "id": "Flexible" },
+				{ "id": "Responsible" },
+				{ "id": "Able to Operate Under Pressure" },
+				{ "id": "Efficient" },
+				{ "id": "Typography" },
+				{ "id": "Detail-oriented" },
+				{ "id": "Computer and Internet Skills" },
+				{ "id": "Written and Verbal Communication" },
+				{ "id": "Organizational Skills" },
+				{ "id": "Multi-tasking" },
+				{ "id": "Time Management" },
+			]
+		}
+	],
 	franchises: [
 		{
 			title: "Consumer",

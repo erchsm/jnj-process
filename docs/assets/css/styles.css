@@ -14245,7 +14245,7 @@ p, input {
 
 h1 {
   font-size: 72px;
-  line-height: 80px; }
+  line-height: 1; }
   h1.long {
     font-size: 60px;
     line-height: 72px; }
@@ -14319,13 +14319,11 @@ body {
     left: 60px; }
   .home-profile-setup section {
     opacity: 1;
-    padding: 120px 60px;
+    padding: 210px 60px 120px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    flex-direction: column; }
     .home-profile-setup section.moving {
       animation: fadeInUp 1.6s cubic-bezier(0.86, 0, 0.07, 1);
       animation-fill-mode: forwards; }
@@ -14335,6 +14333,12 @@ body {
       margin-top: 24px; }
       .home-profile-setup section .contents .selectbox__wrapper {
         margin-right: 24px; }
+    .home-profile-setup section .mdc-button {
+      margin-top: 40px;
+      padding-left: 0;
+      font-size: 21px; }
+      .home-profile-setup section .mdc-button i {
+        font-size: 16px; }
   .home-profile-setup__nav {
     display: -ms-flexbox;
     display: flex;
@@ -14353,7 +14357,8 @@ body {
       -ms-flex-direction: column;
       flex-direction: column;
       -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+      width: 90px; }
       .home-profile-setup__nav li a i {
         display: -ms-flexbox;
         display: flex;
@@ -14366,12 +14371,17 @@ body {
         border: solid 2px white;
         width: 30px;
         height: 30px;
-        font-size: 24px; }
+        font-size: 24px;
+        color: transparent; }
       .home-profile-setup__nav li a span {
         margin-top: 6px;
         color: white;
         font-weight: 500; }
+      .home-profile-setup__nav li a.completed i {
+        color: white; }
   .home-profile-setup__nav-line {
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
     top: 14px;
     left: 0;
@@ -14382,20 +14392,32 @@ body {
     -ms-transform-origin: left;
     transform-origin: left;
     transition: all 1.6s cubic-bezier(0.19, 1, 0.22, 1);
-    -ms-transform: scaleX(0);
-    transform: scaleX(0);
-    position: absolute;
-    top: 0;
-    left: 0;
     background: white;
-    height: 100%;
-    width: 100%; }
+    width: 90px;
+    height: 100%; }
+    .home-profile-setup__nav-line-inner:last-child {
+      background: transparent; }
+  .home-profile-setup__nav-line-main {
+    width: 100%;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-transform: scaleX(0);
+    transform: scaleX(0); }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0.4; }
   100% {
     opacity: 1; } }
+  .home-profile-setup .search-bar {
+    opacity: 1; }
+    .home-profile-setup .search-bar .react-autosuggest__section-title {
+      display: none; }
+    .home-profile-setup .search-bar i {
+      left: 0;
+      right: auto; }
+    .home-profile-setup .search-bar input {
+      padding-left: 48px; }
 
 .home-sitemap {
   min-height: 100%;
@@ -15582,80 +15604,30 @@ body {
     .mdc-taxonomy-diagram .mdc-taxonomy-diagram__legend, .mdc-taxonomy-diagram .mdc-taxonomy-diagram__help {
       display: none; } }
 
-.Select-control {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  transition: 0.3s ease-out;
-  border-bottom: 1px solid #ddd; }
-  .cnbc-modal .Select-control {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
-  .Select-control:hover {
-    border-color: #bbb; }
-  .Select--multi.is-open .Select-control {
-    background: transparent;
-    border-color: #CA001B;
-    box-shadow: 0 1px 0 0 #CA001B; }
+.field--multi-selectbox .field__label {
+  padding: 0 1px; }
 
-.Select-placeholder {
+.field--multi-selectbox.field__focused .field__label, .field--multi-selectbox.field__not-empty .field__label {
   color: #999;
-  padding: 0;
-  visibility: hidden; }
-  .is-focused .Select-placeholder {
-    visibility: visible; }
+  top: -14px;
+  font-weight: 300; }
 
-.Select-arrow-zone {
-  text-align: right;
-  vertical-align: bottom;
-  padding-bottom: 7px;
-  padding-right: 0px; }
+.field--multi-selectbox .is-focused .Select-control,
+.field--multi-selectbox .is-focused .Select-input {
+  height: 35px; }
 
-.Select-arrow {
-  border-color: rgba(255, 255, 255, 0.3) transparent transparent;
-  border-width: 5px 5px 2px; }
+.field--multi-selectbox .has-value .Select-control,
+.field--multi-selectbox .has-value .Select-input {
+  height: 36px; }
 
-.Select-clear-zone {
-  display: none; }
-
-.Select--multi .Select-value {
-  background-color: #eee;
-  border-radius: 2px;
-  border: none;
-  color: #000;
-  font-size: 12px;
-  margin: 1px 4px 0px 0px; }
-
-.Select--multi .Select-value-icon {
-  padding: 0px 5px 1px;
-  opacity: 0.3;
-  font-size: 15px;
-  font-weight: bold;
-  border: none; }
-  .Select--multi .Select-value-icon:hover, .Select--multi .Select-value-icon:focus {
-    background: transparent;
-    color: inherit;
-    opacity: 0.8; }
-
-.Select-menu-outer {
-  border-radius: 0;
-  background-color: white;
-  border: none;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-  margin-top: 3px;
-  max-height: 200px;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  -webkit-overflow-scrolling: touch; }
-
-.Select-option {
-  padding: 10px 12px;
-  background-color: white;
-  font-weight: 400;
-  color: #000000; }
-
-.field--tags-input input {
-  color: #666; }
+.field--multi-selectbox input {
+  padding: 4px 0 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: .42px;
+  line-height: 1.2;
+  color: white; }
 
 .search-bar {
   display: -ms-flexbox;
@@ -16074,6 +16046,50 @@ body {
 
 .is-mvp .selectbox__field ~ .selectbox__err-msg {
   display: none; }
+
+.switch {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer; }
+  .switch label {
+    color: #D8D8D8;
+    cursor: pointer; }
+    .field-wrapper--locked .switch label {
+      color: #bbb; }
+
+.switch-toggle {
+  webkit-appearance: none;
+  margin: 0 5px 0 0;
+  width: 26px;
+  height: 16px;
+  font-size: 10px;
+  background: #dddddd;
+  border: 1px solid #dddddd;
+  border-radius: 100px;
+  background-position: left;
+  background-size: contain;
+  background-image: url(img/icons/circle.svg);
+  background-repeat: no-repeat;
+  position: relative;
+  transition: background 0.3s, border 0.3s;
+  margin-right: 10px; }
+  .switch-toggle:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FFF;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    transition: left 0.3s; }
+  .switch--on .switch-toggle {
+    background: #CA001B !important;
+    border: 1px solid #CA001B !important; }
+    .switch--on .switch-toggle:before {
+      left: 11px; }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

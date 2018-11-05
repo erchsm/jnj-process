@@ -34917,6 +34917,16 @@ module.exports={
 			"attributes": {},
 			"children": []
 		},
+		{
+			"name": "Profile",
+			"attributes": {},
+			"children": []
+		},
+		{
+			"name": "Preferences",
+			"attributes": {},
+			"children": []
+		},
 		// {
 		// 	"name": "Privacy Policy",
 		// 	"attributes": {},
