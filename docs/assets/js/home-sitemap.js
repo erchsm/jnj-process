@@ -35233,9 +35233,9 @@ module.exports={
 	"children": []
 },
 {
-	"name": "About",
+	"name": "About Home",
 	"attributes": {
-		"Note": "About Home"
+		// "Note": "About Home"
 	},
 	"children": []
 },
