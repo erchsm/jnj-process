@@ -20,6 +20,9 @@
 						{ "name": "Your Benefits Resources" },
 						{ "name": "Your Equity Awards" },
 						{ "name": "Exercise Reimbursement" },
+						{ "name": "For Your Benefit Website" },
+						{ "name": "HR Policies"},
+						{ "name": "..." },
 					]
 				},
 				{
@@ -32,6 +35,7 @@
 						{ "name": "Media Monitoring/Retriever" },
 						{ "name": "AC Nielsen" },
 						{ "name": "iMedical Review" },
+						{ "name": "..." },
 					]
 				},
 				// {
@@ -55,6 +59,7 @@
 						{ "name": "TrainR" },
 						// { "name": "My WebEx" }, //legacy
 						{ "name": "Global Service Desk" },
+						{ "name": "..." },
 					]
 				},
 				{
@@ -67,6 +72,7 @@
 						{ "name": "Hype" },
 						{ "name": "COSAT" },
 						{ "name": "Transparent Factory" },
+						{ "name": "..." },
 					]
 				},
 				// {
@@ -96,6 +102,7 @@
 						{ "name": "DocuSphere (Synthes - U.S.)" },
 						{ "name": "EMA" },
 						{ "name": "Unity" },
+						{ "name": "..." },
 					]
 				},
 				{
@@ -103,6 +110,7 @@
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "My Sharepoint"},
 						{ "name": "Yammer"},
 						{ "name": "Fieldglass"},
 						{ "name": "DocSpace System"},
@@ -111,6 +119,8 @@
 						{ "name": "JDE Production"},
 						{ "name": "COMPASS Enterprise Remote Access"},
 						{ "name": "trüVAULT Viewer"},
+						{ "name": "J&J Blog"},
+						{ "name": "..." },
 						// { "name": "Common Document Repository (CDR)"},
 						// { "name": "Maximo 7.6 CMMS"},
 						// { "name": "EDM 2 Login"},
@@ -190,17 +200,18 @@
 						{ "name": "Henry Stewart Talks" },
 						{ "name": "Bridges Program" },
 						{ "name": "Janssen Learn" },
+						{ "name": "..." },
 					]
 				},
-				{
-					"name": "Time & Attendance",
-					"attributes": {},
-					"_collapsed": true,
-					"children": [
-						{ "name": "OUR SOURCE®" },
-						{ "name": "Kronos 6.3" },
-					]
-				},
+				// {
+				// 	"name": "Time & Attendance",
+				// 	"attributes": {},
+				// 	"_collapsed": true,
+				// 	"children": [
+				// 		{ "name": "OUR SOURCE®" },
+				// 		{ "name": "Kronos 6.3" },
+				// 	]
+				// },
 				{
 					"name": "Time, Travel & Expenses",
 					"attributes": {},
@@ -215,6 +226,7 @@
 						{ "name": "Global Travel & Entertainment" },
 						// { "name": "Ariba Spend Management" },
 						{ "name": "2018 Janssen Holiday Schedule (US)" },
+						{ "name": "..." },
 					]
 				},
 				{
@@ -227,6 +239,7 @@
 						{ "name": "Employee Referral Program" },
 						{ "name": "My Next Step" },
 						{ "name": "Hire.jnj.com"},
+						{ "name": "..." },
 					]
 				},
 				{
@@ -240,6 +253,7 @@
 						{ "name": "Sprint" },
 						{ "name": "Lojinha J&J" },
 						{ "name": "Plum Benefits" },
+						{ "name": "..." },
 					]
 				},
 				{
@@ -251,6 +265,7 @@
 						{ "name": "FMsystems Interact Portal - Work Order Request" },
 						{ "name": "Catering & Cafeteria -- U.S. & PR" },
 						{ "name": "iVisitor" },
+						{ "name": "..." },
 					]
 				},
 				{
@@ -262,16 +277,17 @@
 						{ "name": "Ariba" },
 						{ "name": "e-Marketplace" },
 						{ "name": "Janssen R&D Procurement Contract Request Form (CRF)" },
+						{ "name": "..." },
 					]
 				},
-				{
-					"name": "Security & Facilities",
-					"attributes": {},
-					"_collapsed": true,
-					"children": [
-						{ "name": "iVisitor" },
-					]
-				},
+				// {
+				// 	"name": "Security & Facilities",
+				// 	"attributes": {},
+				// 	"_collapsed": true,
+				// 	"children": [
+				// 		{ "name": "iVisitor" },
+				// 	]
+				// },
 			],
 },
 {
@@ -473,20 +489,14 @@
 	"children": []
 },
 {
-	"name": "Profile",
-	"attributes": {
-	},
-	"children": []
-},
-{
 	"name": "Preferences",
 	"attributes": {},
 	"children": []
 },
 {
-	"name": "About Home",
+	"name": "About",
 	"attributes": {
-		// "Note": "About Home"
+		"Note": "About Home"
 	},
 	"children": []
 },
@@ -496,6 +506,14 @@
 	},
 	"children": []
 },
+{
+	"name": "Profile",
+	"attributes": {
+		"Note": "Does not appear in the nav."
+	},
+	"children": []
+},
+
 		// {
 		// 	"name": "Privacy Policy",
 		// 	"attributes": {},

@@ -29,7 +29,8 @@
 	.nodeAttributesBase {
 		fill: $brand-grey-dark;
 		stroke: none;
-		font-size: smaller;
+		font-size: 12px;
+		transform: translateY(-6px);
 	}
 
 	&__help {
