@@ -14234,10 +14234,10 @@ body, button, input, select, textarea {
     width: 0px;
     padding: 0px; } }
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, h6 p {
   color: #212121; }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: 800; }
 
 p, input {
@@ -14268,6 +14268,10 @@ h4 {
 h5 {
   font-size: 16px;
   line-height: 24px; }
+
+h6 {
+  font-size: 12px;
+  line-height: 14px; }
 
 h1.eyebrow, h2.eyebrow, h3.eyebrow, h4.eyebrow, h5.eyebrow, h6.eyebrow {
   text-transform: uppercase; }
@@ -14347,6 +14351,7 @@ body {
     left: 0;
     width: 100%;
     padding: 0 60px;
+    background: #111a7c;
     height: 80px;
     -ms-flex-pack: justify;
     justify-content: space-between; }
@@ -14366,7 +14371,7 @@ body {
         justify-content: center;
         -ms-flex-align: center;
         align-items: center;
-        background: #1724A9;
+        background: #111a7c;
         border-radius: 50%;
         border: solid 2px white;
         width: 30px;
@@ -14443,10 +14448,8 @@ body {
     font-size: smaller; }
   .home-sitemap__help {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    bottom: 12px;
+    left: 0px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -15523,6 +15526,9 @@ body {
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none; }
+  .mdc-taxonomy-diagram__legend-headline {
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px); }
   .mdc-taxonomy-diagram__legend-item {
     display: -ms-flexbox;
     display: flex;

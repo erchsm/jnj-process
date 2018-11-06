@@ -6,7 +6,6 @@ import symptoms from '../data/symptoms-search';
 import homeProfileSetupData from '../data/home-profile-setup';
 
 import SearchBar from './SearchBar';
-import SelectBox from './SelectBox';
 
 export default class Switcher extends Component {
 

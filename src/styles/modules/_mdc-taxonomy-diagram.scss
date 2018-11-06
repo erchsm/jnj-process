@@ -91,6 +91,10 @@
 		}
 	}
 
+	&__legend-headline {
+		transform: translateY(-6px);
+	}
+
 	&__legend-item {
 		display: flex;
 		align-items: center;

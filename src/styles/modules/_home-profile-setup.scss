@@ -58,6 +58,7 @@
 		left: 0;
 		width: 100%;
 		padding: 0 60px;
+		background: darken($brand-blue, 10%);
 		height: 80px;
 		justify-content: space-between;
 
@@ -72,7 +73,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				background: $brand-blue;
+				background: darken($brand-blue, 10%);
 				border-radius: 50%;
 				border: solid 2px white;
 				width: 30px;

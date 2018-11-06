@@ -34679,12 +34679,18 @@ var HomeSitemap = function (_Component) {
 					useCollapseData: true,
 					transitionDuration: 600,
 					separation: { siblings: .3, nonSiblings: 200 },
-					nodeSize: { x: 240, y: 140 },
+					nodeSize: { x: 312, y: 140 },
 					textLayout: { textAnchor: "start", x: 18, y: 0 }
 				}),
 				_react2.default.createElement(
 					'div',
 					{ className: 'home-sitemap__help' },
+					_react2.default.createElement('i', { className: 'iconcss icon-click' }),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Click to expand'
+					),
 					_react2.default.createElement('i', { className: 'iconcss icon-scroll' }),
 					_react2.default.createElement(
 						'p',
@@ -34696,6 +34702,39 @@ var HomeSitemap = function (_Component) {
 						'p',
 						null,
 						'Drag to pan'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'mdc-taxonomy-diagram__legend' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'mdc-taxonomy-diagram__legend-headline' },
+						_react2.default.createElement(
+							'h6',
+							{ className: 'eyebrow' },
+							'Legend'
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'mdc-taxonomy-diagram__legend-item' },
+						_react2.default.createElement(
+							'h5',
+							null,
+							'Tree Node'
+						),
+						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: '#000' } })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'mdc-taxonomy-diagram__legend-item' },
+						_react2.default.createElement(
+							'h5',
+							null,
+							'Leaf Node'
+						),
+						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: '#FFF', border: 'solid 2px #000' } })
 					)
 				)
 			);
@@ -34709,224 +34748,503 @@ exports.default = HomeSitemap;
 
 },{"../data/home-sitemap":218,"classnames":4,"react":209,"react-d3-tree":49}],218:[function(require,module,exports){
 module.exports={
-	"name": "Home Page",
+	"name": "Home",
 	"attributes": {},
 	"children": [
 		{
-			"name": "Links",
+			"name": "Resources",
 			"attributes": {},
+			"_collapsed": true,
 			"children": [
 				{
-					"name": "My Favorites",
-					"attributes": {},
-					"children": []
-				},
-				{
-					"name": "Employee Resources",
+					"name": "Benefits & Compensation",
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
-						{ "name": "Arts and Culture Discounts" },
-						{ "name": "Talent For Good" },
-						{ "name": "ASKGS Portal" },
-						{ "name": "Center for Leadership & Learning" },
-						{ "name": "Compensation" },
-						{ "name": "Corporate Art Program" },
-						{ "name": "Corporate Payroll Calendar 2018" },
-						{ "name": "Corporate Payroll Calendar 2019" },
-						{ "name": "Diversity & Inclusion Portal" },
-						{ "name": "Employee Classified Ads" },
-						{ "name": "Employee Health & Wellbeing Resources" },
-						{ "name": "Enterprise Spend Optimization" },
-						{ "name": "For Your Benefit Website--U.S. & P.R." },
-						{ "name": "Healthy & Me" },
-						{ "name": "Lactation Support" },
-						{ "name": "Leadership Resource Center" },
-						{ "name": "Matching Gifts Program" },
-						{ "name": "OUR SOURCE®" },
+						{ "name": "MyStore" },
+						{ "name": "Global HR Portal" },
+						{ "name": "Healthy & Me™" },
+						{ "name": "New Vehicle Purchase Program" },
+						{ "name": "Global Health & Benefits" },
+						{ "name": "Your Benefits Resources" },
+						{ "name": "Your Equity Awards" },
+						{ "name": "Exercise Reimbursement" },
+					]
+				},
+				{
+					"name": "Business Intelligence",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "Regulatory Intel Portal" },
+						{ "name": "Malvern ORa" },
+						{ "name": "Media Monitoring/Retriever" },
+						{ "name": "AC Nielsen" },
+						{ "name": "iMedical Review" },
+					]
+				},
+				// {
+				// 	"name": "Catering & Cafeteria",
+				// 	"attributes": {},
+				// 	"_collapsed": true,
+				// 	"children": [
+				// 		{ "name": "Catering & Cafeteria -- U.S. & PR" },
+				// 	]
+				// },
+				{
+					"name": "Computing & Technology",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "Skype for Business" },
+						{ "name": "Guest WiFi Password Link" },
+						{ "name": "Outlook Web Access" },
+						{ "name": "IRIS" },
+						{ "name": "Touchpoint FAQ's" },
+						{ "name": "TrainR" },
+						// { "name": "My WebEx" }, //legacy
+						{ "name": "Global Service Desk" },
+					]
+				},
+				{
+					"name": "Collaboration Spaces",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "MR55" },
+						{ "name": "Office 365 Home" },
+						{ "name": "Hype" },
+						{ "name": "COSAT" },
+						{ "name": "Transparent Factory" },
+					]
+				},
+				// {
+				// 	"name": "Departments",
+				// 	"attributes": {},
+				// 	"_collapsed": true,
+				// 	"children": [
+				// 		{ "name": "CONNECT"},
+				// 		{ "name": "Janssen Supply Chain (Square)"},
+				// 		{ "name": "DOME - Department of Medical Education"},
+				// 		{ "name": "U.S. OTC Supply Chain"},
+				// 	]
+				// },
+				{
+					"name": "Legal, Quality & Compliance",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "ComplianceWire" },
+						{ "name": "EtQ Instinct" },
+						{ "name": "EtQ Symphony" },
+						{ "name": "Elims" },
+						{ "name": "Adaptiv (Ethicon)" },
+						{ "name": "Adaptiv (DePuy)" },
+						{ "name": "Auto Quality Record (AQR)" },
+						{ "name": "Social Media Central" },
+						{ "name": "DocuSphere (Synthes - U.S.)" },
+						{ "name": "EMA" },
+						{ "name": "Unity" },
+					]
+				},
+				{
+					"name": "Online Tools & Applications",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "Yammer"},
+						{ "name": "Fieldglass"},
+						{ "name": "DocSpace System"},
+						{ "name": "TrackWise ETS"},
+						{ "name": "JJEDS"},
+						{ "name": "JDE Production"},
+						{ "name": "COMPASS Enterprise Remote Access"},
+						{ "name": "trüVAULT Viewer"},
+						// { "name": "Common Document Repository (CDR)"},
+						// { "name": "Maximo 7.6 CMMS"},
+						// { "name": "EDM 2 Login"},
+						// { "name": "iDiscover"},
+						// { "name": "Windchill"},
+						// { "name": "EnterpriseOne"},
+						// { "name": "BWI CPDM"},
+						// { "name": "Instantis"},
+						// { "name": "Business Connect"},
+						// { "name": "Eris Direct Login"},
+						// { "name": "MyQumas"},
+						// { "name": "Demo Intranet Shop"},
+						// { "name": "Viper"},
+						// { "name": "PatentSafe"},
+						// { "name": "MES (EES Juarez)"},
+						// { "name": "Optimizer"},
+						// { "name": "iQlik"},
+						// { "name": "V-TMF"},
+						// { "name": "Enable"},
+						// { "name": "eTMF"},
+						// { "name": "DePuy Synthes Huddle"},
+						// { "name": "J-FLOW"},
+						// { "name": "iConnect"},
+						// { "name": "Compliance Builder"},
+						// { "name": "Digital Data Center"},
+						// { "name": "EZDOC"},
+						// { "name": "Tedis"},
+						// { "name": "Compliance Builder"},
+						// { "name": "Hubble Self-Service"},
+						// { "name": "ZA - CRS DIY Portal"},
+						// { "name": "iDis"},
+						// { "name": "RightFind"},
+						// { "name": "UCT (User Community Tool)"},
+						// { "name": "Citrix Environment (Kronos & E1)"},
+						// { "name": "Sodexo Service Portal (Nordics)"},
+					]
+				},
+				// {
+				// 	"name": "Online Resources",
+				// 	"attributes": {},
+				// 	"_collapsed": true,
+				// 	"children": [
+				// 		{ "name": "IT Shared Service (Moscow, RUS)" },
+				// 		{ "name": "Vacaville Commonly Used Links" },
+				// 		{ "name": "Malvern System Applications" },
+				// 		{ "name": "Puebla Intranet" },
+				// 		{ "name": "Kronos" },
+				// 		{ "name": "Schaffhausen Intranet" },
+				// 		{ "name": "Janssen Supply Chain (Square)" },
+				// 		{ "name": "Nordic Light" },
+				// 		{ "name": "Janssen Supply Chain Beerse/Olen" },
+				// 		{ "name": "SQUARE België" },
+				// 		{ "name": "Intranet (Poland)" },
+				// 		{ "name": "SQUARE België" },
+				// 		{ "name": "MyPAD" },
+				// 		{ "name": "NA Manufacturing" },
+				// 		{ "name": "Malvern System Applications" },
+				// 		{ "name": "Vacaville IT Links" },
+				// 		{ "name": "Campus Communications" },
+				// 		{ "name": "Octotelematics" },
+				// 		{ "name": "IT Shared Service (Moscow, RUS)" },
+				// 		{ "name": "Schaffhausen Intranet" },
+				// 	]
+				// },
+				{
+					"name": "Performace, Development & Recognition",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "ComplianceWire" },
 						{ "name": "SUMMIT" },
-						{ "name": "Volunteer Support Program" },
 						{ "name": "Workday" },
+						{ "name": "Trü" },
+						{ "name": "Encore" },
+						{ "name": "Janssen Sales Learning (JBI)" },
+						{ "name": "Learning @ Pharma R&D" },
+						{ "name": "Henry Stewart Talks" },
+						{ "name": "Bridges Program" },
+						{ "name": "Janssen Learn" },
 					]
 				},
 				{
-					"name": "Functional Portals",
+					"name": "Time & Attendance",
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
-						{ "name": "Global Corporate Affairs Portal"},
-						{ "name": "Global Finance"},
-						{ "name": "Global Health Services"},
-						{ "name": "Global HR Portal"},
-						{ "name": "Global Procurement"},
-						{ "name": "Global Services – The Learning EDGE"},
+						{ "name": "OUR SOURCE®" },
+						{ "name": "Kronos 6.3" },
+					]
+				},
+				{
+					"name": "Time, Travel & Expenses",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "Concur" },
+						{ "name": "OUR SOURCE®" },
+						{ "name": "Kronos" },
+						{ "name": "2018 Universal Calendar" },
+						{ "name": "Beacon (North America)" },
+						{ "name": "e-TIS" },
+						{ "name": "Global Travel & Entertainment" },
+						// { "name": "Ariba Spend Management" },
+						{ "name": "2018 Janssen Holiday Schedule (US)" },
+					]
+				},
+				{
+					"name": "New Hire & Job Changes",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+						{ "name": "My Career Opportunities" },
+						{ "name": "J&J Careers" },
+						{ "name": "Employee Referral Program" },
+						{ "name": "My Next Step" },
 						{ "name": "Hire.jnj.com"},
-						{ "name": "J&J Citizenship & Sustainability"},
-						{ "name": "J&J Design Portal"},
-						{ "name": "JJT Finance"},
 					]
 				},
 				{
-					"name": "J&J Corporate Resources",
+					"name": "Services & Discounts",
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
+						{ "name": "Verizon" },
+						{ "name": "Brooks Brothers" },
+						{ "name": "Technology Purchase Program" },
+						{ "name": "Sprint" },
+						{ "name": "Lojinha J&J" },
+						{ "name": "Plum Benefits" },
 					]
 				},
 				{
-					"name": "Locations & Campuses",
+					"name": "On-Site Services",
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
-						{ "name": "Cafeteria Menus - US" },
-						{ "name": "GS Bogota" },
-						{ "name": "GS Manila Home" },
-						{ "name": "GS Prague Home" },
-						{ "name": "GS Suzhou Home" },
-						{ "name": "GS Tampa Home" },
-						{ "name": "NYC Facilities Management, EH&S and Global Health & Wellness Contact List" },
-						{ "name": "NYC Facilities Work Request System" },
-						{ "name": "The Corporate Pulse" },
+						{ "name": "Condeco Room Booking Systems" },
+						{ "name": "FMsystems Interact Portal - Work Order Request" },
+						{ "name": "Catering & Cafeteria -- U.S. & PR" },
+						{ "name": "iVisitor" },
 					]
 				},
 				{
-					"name": "Our Company",
+					"name": "Finance & Procurement",
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
-						{ "name": "Code of Business Conduct" },
-						{ "name": "Credo Hotline" },
-						{ "name": "Jnj.com" },
-						{ "name": "News From Alex" },
-						{ "name": "Our Credo" },
+						{ "name": "ARAVO" },
+						{ "name": "Ariba" },
+						{ "name": "e-Marketplace" },
+						{ "name": "Janssen R&D Procurement Contract Request Form (CRF)" },
 					]
 				},
 				{
-					"name": "Sector Portals",
+					"name": "Security & Facilities",
 					"attributes": {},
 					"_collapsed": true,
 					"children": [
-						{ "name": "Medical Devices - Organization" },
-						{ "name": "Square" },
-						{ "name": "The Link" },
-						{ "name": "Touchpoint" },
-					]
-				},
-				{
-					"name": "Work Tools",
-					"attributes": {},
-					"_collapsed": true,
-					"children": [
-						{ "name": "Application Services Order Entry"},
-						{ "name": "Ariba Buyer"},
-						{ "name": "Concur"},
-						{ "name": "Corporate Identity"},
-						{ "name": "eMarketplace (open in Chrome)"},
-						{ "name": "Enterprise Stock Photography"},
-						{ "name": "Instantis"},
-						{ "name": "IRIS"},
-						{ "name": "JDE Login"},
-						{ "name": "Johnson & Johnson Diagnostic Tool for Recognition Submissions"},
-						{ "name": "Privacy"},
-						{ "name": "Pulse Links"},
-						{ "name": "SMART Desk"},
-						{ "name": "Taleo"},
+						{ "name": "iVisitor" },
 					]
 				},
 			],
-			"_collapsed": true
-		},
+},
+{
+	"name": "Campuses",
+	"attributes": {},
+	"_collapsed": true,
+	"children": [
+		{ "name": "Consumer" },
+		{ "name": "Medical Devices" },
+		{ "name": "Pharmaceuticals" },
+		{ "name": "Supply Chain" },
+	]
+},
+{
+	"name": "Organizations",
+	"attributes": {},
+	"_collapsed": true,
+	"children": [
+		{ "name": "Consumer" },
+		{ "name": "Medical Devices" },
+		{ "name": "Pharmaceuticals" },
+		{ "name": "Supply Chain" },
+	]
+},
+{
+	"name": "News",
+	"attributes": {},
+	"_collapsed": true,
+	"children": [
 		{
-			"name": "Talent For Good",
-			"attributes": {},
-			"children": []
-		},
-		{
-			"name": "News",
-			"attributes": {},
-			"children": []
-		},
-		{
-			"name": "Events",
-			"attributes": {},
-			"_collapsed": true,
-			"children": [
-				{
-					"name": "By Company / Franchise",
-					"_collapsed": true,
-					"children": [],
-				},
-				{
-					"name": "By Function",
-					"_collapsed": true,
-					"children": [],
-				},
-				{ 
-					"name": "By Location",
-					"_collapsed": true,
-					"children": [
-						{ "name": "Aguadilla, PRI" },
-						{ "name": "Albuquerque, NM" },
-						{ "name": "Amersfoort, NLD" },
-						{ "name": "Añasco, PRI" },
-						{ "name": "Asunción, PY" },
-						{ "name": "Athens, GA" },
-						{ "name": "Athens, GRC" },
-						{ "name": "Auckland, NZL" },
-						{ "name": "Baddi, IND" },
-						{ "name": "Bangkok, THA" },
-						{ "name": "Barcarena, PRT" },
-						{ "name": "Beerse, BEL" },
-						{ "name": "Beijing, CHN" },
-						{ "name": "Berlin, DEU" },
-						{ "name": "Bern, CHE" },
-						{ "name": "Birkerød, DNK" },
-						{ "name": "Bogota / LATAM Region" },
-						{ "name": "Bogotá, COL" },
-						{ "name": "Brazil Comercial" },
-						{ "name": "Brazil Industrial" },
-						{ "name": "..." },	
-					]
-				}
-			]		
-		},
-		{
-			"name": "Campuses",
-			"attributes": {},
+			"name": "By Company / Franchise",
 			"_collapsed": true,
 			"children": [
 				{ "name": "Consumer" },
-				{ "name": "Medical Devices" },
+				{ "name": "Consumer Medical" },
+				{ "name": "Corporate" },
+				{ "name": "Medical Devices - All" },
+				{ "name": "Medical Devices - Asp" },
+				{ "name": "Medical Devices - Acclarent" },
+				{ "name": "Medical Devices - BWI" },
+				{ "name": "Medical Devices - Cerenovus" },
+				{ "name": "Medical Devices - Depuy Synthes" },
+				{ "name": "Medical Devices - Ethicon" },
+				{ "name": "Medical Devices - Mentor" },
 				{ "name": "Pharmaceuticals" },
 				{ "name": "Supply Chain" },
-			]
+			],
 		},
 		{
-			"name": "Organizations",
-			"attributes": {},
+			"name": "By Function",
+			"_collapsed": true,
+			"children": [
+				{ "name": "Customer & Logistics Services" },
+				{ "name": "Design" },
+				{ "name": "Engineering & Property Services" },
+				{ "name": "Environment, Health & Safety" },
+				{ "name": "Finance" },
+				{ "name": "Global External Innovation" },
+				{ "name": "Global Services - Finance" },
+				{ "name": "Global Services - Human Resources" },
+				{ "name": "Global Services - Procurement" },
+				{ "name": "Global Services - Service Infrastructure" },
+				{ "name": "Global Corporate Affairs" },
+				{ "name": "Human Resources" },
+				{ "name": "Legal" },
+				{ "name": "Marketing" },
+				{ "name": "Office of the Chief Medical Officer" },
+				{ "name": "Procurement" },
+				{ "name": "Professional Education" },
+				{ "name": "Quality & Compliance" },
+				{ "name": "Regulatory Affairs" },
+				{ "name": "Research & Development" },
+				{ "name": "Sales" },
+				{ "name": "Sales Training" },
+				{ "name": "Strategy & Deployment" },
+				{ "name": "Technology" },
+			],
+		},
+		{ 
+			"name": "By Location",
+			"_collapsed": true,
+			"children": [
+				{ "name": "Aguadilla, PRI" },
+				{ "name": "Albuquerque, NM" },
+				{ "name": "Amersfoort, NLD" },
+				{ "name": "Añasco, PRI" },
+				{ "name": "Asunción, PY" },
+				{ "name": "Athens, GA" },
+				{ "name": "Athens, GRC" },
+				{ "name": "Auckland, NZL" },
+				{ "name": "Baddi, IND" },
+				{ "name": "Bangkok, THA" },
+				{ "name": "Barcarena, PRT" },
+				{ "name": "Beerse, BEL" },
+				{ "name": "Beijing, CHN" },
+				{ "name": "Berlin, DEU" },
+				{ "name": "Bern, CHE" },
+				{ "name": "Birkerød, DNK" },
+				{ "name": "Bogota / LATAM Region" },
+				{ "name": "Bogotá, COL" },
+				{ "name": "Brazil Comercial" },
+				{ "name": "Brazil Industrial" },
+				{ "name": "..." },	
+			]
+		}
+	]		
+},
+{
+	"name": "Events",
+	"attributes": {},
+	"_collapsed": true,
+	"children": [
+		{
+			"name": "By Company / Franchise",
 			"_collapsed": true,
 			"children": [
 				{ "name": "Consumer" },
-				{ "name": "Medical Devices" },
+				{ "name": "Consumer Medical" },
+				{ "name": "Corporate" },
+				{ "name": "Medical Devices - All" },
+				{ "name": "Medical Devices - Asp" },
+				{ "name": "Medical Devices - Acclarent" },
+				{ "name": "Medical Devices - BWI" },
+				{ "name": "Medical Devices - Cerenovus" },
+				{ "name": "Medical Devices - Depuy Synthes" },
+				{ "name": "Medical Devices - Ethicon" },
+				{ "name": "Medical Devices - Mentor" },
 				{ "name": "Pharmaceuticals" },
 				{ "name": "Supply Chain" },
+			],
+		},
+		{
+			"name": "By Function",
+			"_collapsed": true,
+			"children": [
+				{ "name": "Customer & Logistics Services" },
+				{ "name": "Design" },
+				{ "name": "Engineering & Property Services" },
+				{ "name": "Environment, Health & Safety" },
+				{ "name": "Finance" },
+				{ "name": "Global External Innovation" },
+				{ "name": "Global Services - Finance" },
+				{ "name": "Global Services - Human Resources" },
+				{ "name": "Global Services - Procurement" },
+				{ "name": "Global Services - Service Infrastructure" },
+				{ "name": "Global Corporate Affairs" },
+				{ "name": "Human Resources" },
+				{ "name": "Legal" },
+				{ "name": "Marketing" },
+				{ "name": "Office of the Chief Medical Officer" },
+				{ "name": "Procurement" },
+				{ "name": "Professional Education" },
+				{ "name": "Quality & Compliance" },
+				{ "name": "Regulatory Affairs" },
+				{ "name": "Research & Development" },
+				{ "name": "Sales" },
+				{ "name": "Sales Training" },
+				{ "name": "Strategy & Deployment" },
+				{ "name": "Technology" },
+			],
+		},
+		{ 
+			"name": "By Location",
+			"_collapsed": true,
+			"children": [
+				{ "name": "Aguadilla, PRI" },
+				{ "name": "Albuquerque, NM" },
+				{ "name": "Amersfoort, NLD" },
+				{ "name": "Añasco, PRI" },
+				{ "name": "Asunción, PY" },
+				{ "name": "Athens, GA" },
+				{ "name": "Athens, GRC" },
+				{ "name": "Auckland, NZL" },
+				{ "name": "Baddi, IND" },
+				{ "name": "Bangkok, THA" },
+				{ "name": "Barcarena, PRT" },
+				{ "name": "Beerse, BEL" },
+				{ "name": "Beijing, CHN" },
+				{ "name": "Berlin, DEU" },
+				{ "name": "Bern, CHE" },
+				{ "name": "Birkerød, DNK" },
+				{ "name": "Bogota / LATAM Region" },
+				{ "name": "Bogotá, COL" },
+				{ "name": "Brazil Comercial" },
+				{ "name": "Brazil Industrial" },
+				{ "name": "..." },	
 			]
-		},
-		{
-			"name": "Credo",
-			"attributes": {},
-			"children": []
-		},
-		{
-			"name": "Profile",
-			"attributes": {},
-			"children": []
-		},
-		{
-			"name": "Preferences",
-			"attributes": {},
-			"children": []
-		},
+		}
+	]		
+},
+{
+	"name": "Talent For Good",
+	"attributes": {},
+	"children": []
+},
+{
+	"name": "Credo",
+	"attributes": {},
+	"children": []
+},
+{
+	"name": "Profile",
+	"attributes": {
+	},
+	"children": []
+},
+{
+	"name": "Preferences",
+	"attributes": {},
+	"children": []
+},
+{
+	"name": "About",
+	"attributes": {
+		"Note": "About Home"
+	},
+	"children": []
+},
+{
+	"name": "Take the Tour",
+	"attributes": {
+	},
+	"children": []
+},
 		// {
 		// 	"name": "Privacy Policy",
 		// 	"attributes": {},
@@ -34939,6 +35257,79 @@ module.exports={
 		// },
 	]
 }
+
+/*
+{ "name": "Arts and Culture Discounts" },
+{ "name": "Talent For Good" },
+{ "name": "ASKGS Portal" },
+{ "name": "Center for Leadership & Learning" },
+{ "name": "Compensation" },
+{ "name": "Corporate Art Program" },
+{ "name": "Corporate Payroll Calendar 2018" },
+{ "name": "Corporate Payroll Calendar 2019" },
+{ "name": "Diversity & Inclusion Portal" },
+{ "name": "Employee Classified Ads" },
+{ "name": "Employee Health & Wellbeing Resources" },
+{ "name": "Enterprise Spend Optimization" },
+{ "name": "For Your Benefit Website--U.S. & P.R." },
+{ "name": "Healthy & Me" },
+{ "name": "Lactation Support" },
+{ "name": "Leadership Resource Center" },
+{ "name": "Matching Gifts Program" },
+{ "name": "OUR SOURCE®" },
+{ "name": "SUMMIT" },
+{ "name": "Volunteer Support Program" },
+{ "name": "Workday" },
+
+{ "name": "Global Corporate Affairs Portal"},
+{ "name": "Global Finance"},
+{ "name": "Global Health Services"},
+{ "name": "Global HR Portal"},
+{ "name": "Global Procurement"},
+{ "name": "Global Services – The Learning EDGE"},
+{ "name": "Hire.jnj.com"},
+{ "name": "J&J Citizenship & Sustainability"},
+{ "name": "J&J Design Portal"},
+{ "name": "JJT Finance"},
+
+
+{ "name": "Cafeteria Menus - US" },
+{ "name": "GS Bogota" },
+{ "name": "GS Manila Home" },
+{ "name": "GS Prague Home" },
+{ "name": "GS Suzhou Home" },
+{ "name": "GS Tampa Home" },
+{ "name": "NYC Facilities Management, EH&S and Global Health & Wellness Contact List" },
+{ "name": "NYC Facilities Work Request System" },
+{ "name": "The Corporate Pulse" },
+
+{ "name": "Code of Business Conduct" },
+{ "name": "Credo Hotline" },
+{ "name": "Jnj.com" },
+{ "name": "News From Alex" },
+{ "name": "Our Credo" },
+
+{ "name": "Medical Devices - Organization" },
+{ "name": "Square" },
+{ "name": "The Link" },
+{ "name": "Touchpoint" },
+
+{ "name": "Application Services Order Entry"},
+{ "name": "Ariba Buyer"},
+{ "name": "Concur"},
+{ "name": "Corporate Identity"},
+{ "name": "eMarketplace (open in Chrome)"},
+{ "name": "Enterprise Stock Photography"},
+{ "name": "Instantis"},
+{ "name": "IRIS"},
+{ "name": "JDE Login"},
+{ "name": "Johnson & Johnson Diagnostic Tool for Recognition Submissions"},
+{ "name": "Privacy"},
+{ "name": "Pulse Links"},
+{ "name": "SMART Desk"},
+{ "name": "Taleo"},
+
+*/
 },{}]},{},[216])
 
 //# sourceMappingURL=home-sitemap.js.map

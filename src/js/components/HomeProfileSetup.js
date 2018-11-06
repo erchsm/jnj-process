@@ -27,9 +27,11 @@ export default class HomeProfileSetup extends Component {
 				locations: null,
 				functions: null,
 			},
-			skills: {
+			accounts: {
 				yammer: false,
 				outlook: false,
+			},
+			skills: {
 			},
 			completed: {
 				"Welcome": true,
@@ -50,9 +52,9 @@ export default class HomeProfileSetup extends Component {
 					...prevState.completed,
 					"Accounts": true,
 				},
-				skills: {
-					...prevState.skills,
-					yammer: !prevState.skills.yammer,
+				accounts: {
+					...prevState.accounts,
+					yammer: !prevState.accounts.yammer,
 				}
 		}))
 	}
@@ -63,9 +65,9 @@ export default class HomeProfileSetup extends Component {
 					...prevState.completed,
 					"Accounts": true,
 				},
-				skills: {
-					...prevState.skills,
-					outlook: !prevState.skills.outlook,
+				accounts: {
+					...prevState.accounts,
+					outlook: !prevState.accounts.outlook,
 				}
 		}))
 	}
@@ -78,6 +80,19 @@ export default class HomeProfileSetup extends Component {
 			},
       preferences: { 
       	...this.state.preferences, 
+      	[filterType]: value 
+      },
+    }))
+  }
+
+  setPreferences = (filterType, value) => {
+    this.setState(prevState => ({
+    	completed: {
+					...prevState.completed,
+					"Skills": true,
+			},
+      preferences: { 
+
       	[filterType]: value 
       },
     }))
@@ -184,8 +199,8 @@ export default class HomeProfileSetup extends Component {
 					<section name="Accounts" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Sync your accounts.</h1>
 							<p>See what's happening on Yammer to share articles and events. Connect to your Outlook calendar to get a glimpse of your day.</p>
-							<Switch label={"Yammer"} value={this.state.skills.yammer} onChange={this.onChangeAccountsYammer} />
-							<Switch label={"Outlook"} value={this.state.skills.outlook} onChange={this.onChangeAccountsOutlook} />
+							<Switch label={"Yammer"} value={this.state.accounts.yammer} onChange={this.onChangeAccountsYammer} />
+							<Switch label={"Outlook"} value={this.state.accounts.outlook} onChange={this.onChangeAccountsOutlook} />
 					</section>
 
 					{/*<section name="Birthday" className={classNames({ 'moving': scroll.moving })}>
@@ -196,7 +211,7 @@ export default class HomeProfileSetup extends Component {
 					{<section name="Skills" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Add your skills.</h1>
 							<p>Search below for your personal and professional skills.</p>
-              <SearchBar placeholder="Skills (ex. Data Analytics)" searchData={homeProfileSetupData.skills} onClick={() => console.log()}/>
+              <SearchBar placeholder="Skills (ex. Data Analytics)" searchData={homeProfileSetupData.skills} onClick={this.addSkill}/>
 					</section>}
 
 				</Scroller>

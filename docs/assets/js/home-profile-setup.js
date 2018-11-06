@@ -46512,8 +46512,8 @@ var HomeProfileSetup = function (_Component) {
 					completed: _extends({}, prevState.completed, {
 						"Accounts": true
 					}),
-					skills: _extends({}, prevState.skills, {
-						yammer: !prevState.skills.yammer
+					accounts: _extends({}, prevState.accounts, {
+						yammer: !prevState.accounts.yammer
 					})
 				};
 			});
@@ -46525,8 +46525,8 @@ var HomeProfileSetup = function (_Component) {
 					completed: _extends({}, prevState.completed, {
 						"Accounts": true
 					}),
-					skills: _extends({}, prevState.skills, {
-						outlook: !prevState.skills.outlook
+					accounts: _extends({}, prevState.accounts, {
+						outlook: !prevState.accounts.outlook
 					})
 				};
 			});
@@ -46543,16 +46543,28 @@ var HomeProfileSetup = function (_Component) {
 			});
 		};
 
+		_this.setPreferences = function (filterType, value) {
+			_this.setState(function (prevState) {
+				return {
+					completed: _extends({}, prevState.completed, {
+						"Skills": true
+					}),
+					preferences: _defineProperty({}, filterType, value)
+				};
+			});
+		};
+
 		_this.state = {
 			preferences: {
 				franchises: null,
 				locations: null,
 				functions: null
 			},
-			skills: {
+			accounts: {
 				yammer: false,
 				outlook: false
 			},
+			skills: {},
 			completed: {
 				"Welcome": true,
 				"Preferences": false,
@@ -46694,8 +46706,8 @@ var HomeProfileSetup = function (_Component) {
 							null,
 							'See what\'s happening on Yammer to share articles and events. Connect to your Outlook calendar to get a glimpse of your day.'
 						),
-						_react2.default.createElement(_Switch2.default, { label: "Yammer", value: this.state.skills.yammer, onChange: this.onChangeAccountsYammer }),
-						_react2.default.createElement(_Switch2.default, { label: "Outlook", value: this.state.skills.outlook, onChange: this.onChangeAccountsOutlook })
+						_react2.default.createElement(_Switch2.default, { label: "Yammer", value: this.state.accounts.yammer, onChange: this.onChangeAccountsYammer }),
+						_react2.default.createElement(_Switch2.default, { label: "Outlook", value: this.state.accounts.outlook, onChange: this.onChangeAccountsOutlook })
 					),
 					_react2.default.createElement(
 						'section',
@@ -46710,9 +46722,7 @@ var HomeProfileSetup = function (_Component) {
 							null,
 							'Search below for your personal and professional skills.'
 						),
-						_react2.default.createElement(_SearchBar2.default, { placeholder: 'Skills (ex. Data Analytics)', searchData: _homeProfileSetup2.default.skills, onClick: function onClick() {
-								return console.log();
-							} })
+						_react2.default.createElement(_SearchBar2.default, { placeholder: 'Skills (ex. Data Analytics)', searchData: _homeProfileSetup2.default.skills, onClick: this.addSkill })
 					)
 				),
 				_react2.default.createElement(
