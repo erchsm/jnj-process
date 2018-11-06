@@ -34757,6 +34757,13 @@ module.exports={
 			"_collapsed": true,
 			"children": [
 				{
+					"name": "My Favorites",
+					"attributes": {},
+					"_collapsed": true,
+					"children": [
+					]
+				},
+				{
 					"name": "Benefits & Compensation",
 					"attributes": {},
 					"_collapsed": true,
@@ -35238,15 +35245,15 @@ module.exports={
 	"children": []
 },
 {
-	"name": "Preferences",
-	"attributes": {},
-	"children": []
-},
-{
 	"name": "About",
 	"attributes": {
 		"Note": "About Home"
 	},
+	"children": []
+},
+{
+	"name": "Preferences",
+	"attributes": {},
 	"children": []
 },
 {
