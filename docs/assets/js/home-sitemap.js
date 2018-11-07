@@ -34815,6 +34815,56 @@ module.exports={
 				// 		{ "name": "Catering & Cafeteria -- U.S. & PR" },
 				// 	]
 				// },
+								{
+					"name": "Online Tools & Applications",
+					"_collapsed": true,
+					"children": [
+						{ "name": "Sharepoint"},
+						{ "name": "Yammer"},
+						{ "name": "Fieldglass"},
+						{ "name": "DocSpace System"},
+						{ "name": "TrackWise ETS"},
+						{ "name": "JJEDS"},
+						{ "name": "JDE Production"},
+						{ "name": "COMPASS Enterprise Remote Access"},
+						{ "name": "trüVAULT Viewer"},
+						// { "name": "Common Document Repository (CDR)"},
+						// { "name": "Maximo 7.6 CMMS"},
+						// { "name": "EDM 2 Login"},
+						// { "name": "iDiscover"},
+						// { "name": "Windchill"},
+						// { "name": "EnterpriseOne"},
+						// { "name": "BWI CPDM"},
+						// { "name": "Instantis"},
+						// { "name": "Business Connect"},
+						// { "name": "Eris Direct Login"},
+						// { "name": "MyQumas"},
+						// { "name": "Demo Intranet Shop"},
+						// { "name": "Viper"},
+						// { "name": "PatentSafe"},
+						// { "name": "MES (EES Juarez)"},
+						// { "name": "Optimizer"},
+						// { "name": "iQlik"},
+						// { "name": "V-TMF"},
+						// { "name": "Enable"},
+						// { "name": "eTMF"},
+						// { "name": "DePuy Synthes Huddle"},
+						// { "name": "J-FLOW"},
+						// { "name": "iConnect"},
+						// { "name": "Compliance Builder"},
+						// { "name": "Digital Data Center"},
+						// { "name": "EZDOC"},
+						// { "name": "Tedis"},
+						// { "name": "Compliance Builder"},
+						// { "name": "Hubble Self-Service"},
+						// { "name": "ZA - CRS DIY Portal"},
+						// { "name": "iDis"},
+						// { "name": "RightFind"},
+						// { "name": "UCT (User Community Tool)"},
+						// { "name": "Citrix Environment (Kronos & E1)"},
+						// { "name": "Sodexo Service Portal (Nordics)"},
+					]
+				},
 				{
 					"name": "Computing & Technology",
 					"_collapsed": true,
@@ -34867,56 +34917,6 @@ module.exports={
 						{ "name": "Unity" },
 					]
 				},
-				{
-					"name": "Online Tools & Applications",
-					"_collapsed": true,
-					"children": [
-						{ "name": "Sharepoint"},
-						{ "name": "Yammer"},
-						{ "name": "Fieldglass"},
-						{ "name": "DocSpace System"},
-						{ "name": "TrackWise ETS"},
-						{ "name": "JJEDS"},
-						{ "name": "JDE Production"},
-						{ "name": "COMPASS Enterprise Remote Access"},
-						{ "name": "trüVAULT Viewer"},
-						// { "name": "Common Document Repository (CDR)"},
-						// { "name": "Maximo 7.6 CMMS"},
-						// { "name": "EDM 2 Login"},
-						// { "name": "iDiscover"},
-						// { "name": "Windchill"},
-						// { "name": "EnterpriseOne"},
-						// { "name": "BWI CPDM"},
-						// { "name": "Instantis"},
-						// { "name": "Business Connect"},
-						// { "name": "Eris Direct Login"},
-						// { "name": "MyQumas"},
-						// { "name": "Demo Intranet Shop"},
-						// { "name": "Viper"},
-						// { "name": "PatentSafe"},
-						// { "name": "MES (EES Juarez)"},
-						// { "name": "Optimizer"},
-						// { "name": "iQlik"},
-						// { "name": "V-TMF"},
-						// { "name": "Enable"},
-						// { "name": "eTMF"},
-						// { "name": "DePuy Synthes Huddle"},
-						// { "name": "J-FLOW"},
-						// { "name": "iConnect"},
-						// { "name": "Compliance Builder"},
-						// { "name": "Digital Data Center"},
-						// { "name": "EZDOC"},
-						// { "name": "Tedis"},
-						// { "name": "Compliance Builder"},
-						// { "name": "Hubble Self-Service"},
-						// { "name": "ZA - CRS DIY Portal"},
-						// { "name": "iDis"},
-						// { "name": "RightFind"},
-						// { "name": "UCT (User Community Tool)"},
-						// { "name": "Citrix Environment (Kronos & E1)"},
-						// { "name": "Sodexo Service Portal (Nordics)"},
-					]
-				},
 				// {
 				// 	"name": "Online Resources",
 				// 	"_collapsed": true,
@@ -34944,7 +34944,7 @@ module.exports={
 				// 	]
 				// },
 				{
-					"name": "Performace, Development & Recognition",
+					"name": "Performace, & Recognition",
 					"_collapsed": true,
 					"children": [
 						{ "name": "ComplianceWire" },
@@ -34968,6 +34968,17 @@ module.exports={
 				// 	]
 				// },
 				{
+					"name": "New Hire & Job Changes",
+					"_collapsed": true,
+					"children": [
+						{ "name": "My Career Opportunities" },
+						{ "name": "J&J Careers" },
+						{ "name": "Employee Referral Program" },
+						{ "name": "My Next Step" },
+						{ "name": "Hire.jnj.com"},
+					]
+				},
+				{
 					"name": "Time, Travel & Expenses",
 					"_collapsed": true,
 					"children": [
@@ -34980,17 +34991,6 @@ module.exports={
 						{ "name": "Global Travel & Entertainment" },
 						// { "name": "Ariba Spend Management" },
 						{ "name": "2018 Janssen Holiday Schedule (US)" },
-					]
-				},
-				{
-					"name": "New Hire & Job Changes",
-					"_collapsed": true,
-					"children": [
-						{ "name": "My Career Opportunities" },
-						{ "name": "J&J Careers" },
-						{ "name": "Employee Referral Program" },
-						{ "name": "My Next Step" },
-						{ "name": "Hire.jnj.com"},
 					]
 				},
 				{
@@ -35034,26 +35034,6 @@ module.exports={
 				// 	]
 				// },
 			],
-},
-{
-	"name": "Campuses",
-	"_collapsed": true,
-	"children": [
-		{ "name": "Consumer" },
-		{ "name": "Medical Devices" },
-		{ "name": "Pharmaceuticals" },
-		{ "name": "Supply Chain" },
-	]
-},
-{
-	"name": "Organizations",
-	"_collapsed": true,
-	"children": [
-		{ "name": "Consumer" },
-		{ "name": "Medical Devices" },
-		{ "name": "Pharmaceuticals" },
-		{ "name": "Supply Chain" },
-	]
 },
 {
 	"name": "News",
@@ -35218,6 +35198,26 @@ module.exports={
 	]		
 },
 {
+	"name": "Campuses",
+	"_collapsed": true,
+	"children": [
+		{ "name": "Consumer" },
+		{ "name": "Medical Devices" },
+		{ "name": "Pharmaceuticals" },
+		{ "name": "Supply Chain" },
+	]
+},
+{
+	"name": "Organizations",
+	"_collapsed": true,
+	"children": [
+		{ "name": "Consumer" },
+		{ "name": "Medical Devices" },
+		{ "name": "Pharmaceuticals" },
+		{ "name": "Supply Chain" },
+	]
+},
+{
 	"name": "Talent For Good",
 	"children": []
 },
@@ -35249,17 +35249,18 @@ module.exports={
 	},
 	"children": []
 },
-
-		// {
-		// 	"name": "Privacy Policy",
-		// 	"children": []
-		// },
-		// {
-		// 	"name": "Legal Notice",
-		// 	"children": []
-		// },
-	]
+]
 }
+
+// {
+// 	"name": "Privacy Policy",
+// 	"children": []
+// },
+// {
+// 	"name": "Legal Notice",
+// 	"children": []
+// },
+
 
 /*
 { "name": "Arts and Culture Discounts" },
