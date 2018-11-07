@@ -46543,13 +46543,13 @@ var HomeProfileSetup = function (_Component) {
 			});
 		};
 
-		_this.setPreferences = function (filterType, value) {
+		_this.addSkill = function (skill) {
 			_this.setState(function (prevState) {
 				return {
 					completed: _extends({}, prevState.completed, {
 						"Skills": true
 					}),
-					preferences: _defineProperty({}, filterType, value)
+					skills: _defineProperty({}, filterType, value)
 				};
 			});
 		};
@@ -46564,7 +46564,7 @@ var HomeProfileSetup = function (_Component) {
 				yammer: false,
 				outlook: false
 			},
-			skills: {},
+			skills: [],
 			completed: {
 				"Welcome": true,
 				"Preferences": false,

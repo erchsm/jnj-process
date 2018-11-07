@@ -16,6 +16,8 @@ export default class HomeSitemap extends Component {
 			width: 0,
 			height: 0,
 		}
+
+		this.addChildNumToLabel(homeSitemapData);
 	}
 
 	componentDidMount = () => {
@@ -30,16 +32,35 @@ export default class HomeSitemap extends Component {
 	updateWindowDimensions = () => {
 		this.setState({ width: window.innerWidth / 2, height: window.innerHeight / 2});
 	}
+
+	addChildNumToLabel = (data) => {
+		if (data.children && data.children.length > 0) {
+
+			data.name += ' (' + data.children.length + ')';
+
+			data.children.forEach((item) => {
+				return this.addChildNumToLabel(item);
+			});
+		} 
+	}
 	
 	render() {
+		const { cleanedData } = this.state;
+
 		const classnames = classNames({
 			"home-sitemap": true
 		});
 
+		// console.log(cleanedData);
 
-		
+		/*const data = homeSitemapData.map((item, index) =>
+			(item.children.length > 0) ? (item.name += '(' + item.children.length + ')' ) : null
+		)*/
+
+				
 		return (
 			<div className={classnames}>
+				{/*<h1>Home Sitemap</h1>*/}
 				<Tree 
 				data={homeSitemapData}
 				orientation={'horizontal'}
@@ -49,7 +70,7 @@ export default class HomeSitemap extends Component {
 				useCollapseData={true}
 				transitionDuration={600}
 				separation={{siblings: .3, nonSiblings: 200}}
-				nodeSize={{x: 312, y: 140}}
+				nodeSize={{x: 324, y: 140}}
 				textLayout={{textAnchor: "start", x: 18, y: 0 }}
 				/>
 				<div className='home-sitemap__help'>
@@ -65,10 +86,10 @@ export default class HomeSitemap extends Component {
 						<h6 className="eyebrow">Legend</h6>
 					</div>
 					<div className="mdc-taxonomy-diagram__legend-item">
-						<h5>Tree Node</h5><div className="mdc-taxonomy-diagram__legend-swatch" style={{backgroundColor: '#000'}}></div>
+						<h5>Parent Node</h5><div className="mdc-taxonomy-diagram__legend-swatch" style={{backgroundColor: '#000'}}></div>
 					</div>
 					<div className="mdc-taxonomy-diagram__legend-item">
-						<h5>Leaf Node</h5><div className="mdc-taxonomy-diagram__legend-swatch" style={{backgroundColor: '#FFF', border: 'solid 2px #000'}}></div>
+						<h5>Child Node</h5><div className="mdc-taxonomy-diagram__legend-swatch" style={{backgroundColor: '#FFF', border: 'solid 2px #000'}}></div>
 					</div>
 				</div>
 			</div>

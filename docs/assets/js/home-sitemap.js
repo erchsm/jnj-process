@@ -34653,19 +34653,41 @@ var HomeSitemap = function (_Component) {
 			_this.setState({ width: window.innerWidth / 2, height: window.innerHeight / 2 });
 		};
 
+		_this.addChildNumToLabel = function (data) {
+			if (data.children && data.children.length > 0) {
+
+				data.name += ' (' + data.children.length + ')';
+
+				data.children.forEach(function (item) {
+					return _this.addChildNumToLabel(item);
+				});
+			}
+		};
+
 		_this.state = {
 			width: 0,
 			height: 0
 		};
+
+		_this.addChildNumToLabel(_homeSitemap2.default);
 		return _this;
 	}
 
 	_createClass(HomeSitemap, [{
 		key: 'render',
 		value: function render() {
+			var cleanedData = this.state.cleanedData;
+
+
 			var classnames = (0, _classnames2.default)({
 				"home-sitemap": true
 			});
+
+			// console.log(cleanedData);
+
+			/*const data = homeSitemapData.map((item, index) =>
+   	(item.children.length > 0) ? (item.name += '(' + item.children.length + ')' ) : null
+   )*/
 
 			return _react2.default.createElement(
 				'div',
@@ -34679,7 +34701,7 @@ var HomeSitemap = function (_Component) {
 					useCollapseData: true,
 					transitionDuration: 600,
 					separation: { siblings: .3, nonSiblings: 200 },
-					nodeSize: { x: 312, y: 140 },
+					nodeSize: { x: 324, y: 140 },
 					textLayout: { textAnchor: "start", x: 18, y: 0 }
 				}),
 				_react2.default.createElement(
@@ -34722,7 +34744,7 @@ var HomeSitemap = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Tree Node'
+							'Parent Node'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: '#000' } })
 					),
@@ -34732,7 +34754,7 @@ var HomeSitemap = function (_Component) {
 						_react2.default.createElement(
 							'h5',
 							null,
-							'Leaf Node'
+							'Child Node'
 						),
 						_react2.default.createElement('div', { className: 'mdc-taxonomy-diagram__legend-swatch', style: { backgroundColor: '#FFF', border: 'solid 2px #000' } })
 					)
@@ -34749,23 +34771,19 @@ exports.default = HomeSitemap;
 },{"../data/home-sitemap":218,"classnames":4,"react":209,"react-d3-tree":49}],218:[function(require,module,exports){
 module.exports={
 	"name": "Home",
-	"attributes": {},
 	"children": [
 		{
 			"name": "Resources",
-			"attributes": {},
 			"_collapsed": true,
 			"children": [
 				{
 					"name": "My Favorites",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 					]
 				},
 				{
 					"name": "Benefits & Compensation",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "MyStore" },
@@ -34781,7 +34799,6 @@ module.exports={
 				},
 				{
 					"name": "Business Intelligence",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Regulatory Intel Portal" },
@@ -34793,7 +34810,6 @@ module.exports={
 				},
 				// {
 				// 	"name": "Catering & Cafeteria",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "Catering & Cafeteria -- U.S. & PR" },
@@ -34801,7 +34817,6 @@ module.exports={
 				// },
 				{
 					"name": "Computing & Technology",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Skype for Business" },
@@ -34816,7 +34831,6 @@ module.exports={
 				},
 				{
 					"name": "Collaboration Spaces",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "MR55" },
@@ -34828,7 +34842,6 @@ module.exports={
 				},
 				// {
 				// 	"name": "Departments",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "CONNECT"},
@@ -34839,7 +34852,6 @@ module.exports={
 				// },
 				{
 					"name": "Legal, Quality & Compliance",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "ComplianceWire" },
@@ -34857,7 +34869,6 @@ module.exports={
 				},
 				{
 					"name": "Online Tools & Applications",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Sharepoint"},
@@ -34908,7 +34919,6 @@ module.exports={
 				},
 				// {
 				// 	"name": "Online Resources",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "IT Shared Service (Moscow, RUS)" },
@@ -34935,7 +34945,6 @@ module.exports={
 				// },
 				{
 					"name": "Performace, Development & Recognition",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "ComplianceWire" },
@@ -34952,7 +34961,6 @@ module.exports={
 				},
 				// {
 				// 	"name": "Time & Attendance",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "OUR SOURCE®" },
@@ -34961,7 +34969,6 @@ module.exports={
 				// },
 				{
 					"name": "Time, Travel & Expenses",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Concur" },
@@ -34977,7 +34984,6 @@ module.exports={
 				},
 				{
 					"name": "New Hire & Job Changes",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "My Career Opportunities" },
@@ -34989,7 +34995,6 @@ module.exports={
 				},
 				{
 					"name": "Services & Discounts",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Verizon" },
@@ -35003,7 +35008,6 @@ module.exports={
 				},
 				{
 					"name": "On-Site Services",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Condeco Room Booking Systems" },
@@ -35014,7 +35018,6 @@ module.exports={
 				},
 				{
 					"name": "Finance & Procurement",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "ARAVO" },
@@ -35025,7 +35028,6 @@ module.exports={
 				},
 				// {
 				// 	"name": "Security & Facilities",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "iVisitor" },
@@ -35035,7 +35037,6 @@ module.exports={
 },
 {
 	"name": "Campuses",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{ "name": "Consumer" },
@@ -35046,7 +35047,6 @@ module.exports={
 },
 {
 	"name": "Organizations",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{ "name": "Consumer" },
@@ -35057,7 +35057,6 @@ module.exports={
 },
 {
 	"name": "News",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{
@@ -35139,7 +35138,6 @@ module.exports={
 },
 {
 	"name": "Events",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{
@@ -35221,12 +35219,10 @@ module.exports={
 },
 {
 	"name": "Talent For Good",
-	"attributes": {},
 	"children": []
 },
 {
 	"name": "Credo",
-	"attributes": {},
 	"children": []
 },
 {
@@ -35238,7 +35234,6 @@ module.exports={
 },
 {
 	"name": "Preferences",
-	"attributes": {},
 	"children": []
 },
 {
@@ -35257,12 +35252,10 @@ module.exports={
 
 		// {
 		// 	"name": "Privacy Policy",
-		// 	"attributes": {},
 		// 	"children": []
 		// },
 		// {
 		// 	"name": "Legal Notice",
-		// 	"attributes": {},
 		// 	"children": []
 		// },
 	]

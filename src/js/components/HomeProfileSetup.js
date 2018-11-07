@@ -31,8 +31,7 @@ export default class HomeProfileSetup extends Component {
 				yammer: false,
 				outlook: false,
 			},
-			skills: {
-			},
+			skills: [],
 			completed: {
 				"Welcome": true,
 				"Preferences": false,
@@ -85,14 +84,13 @@ export default class HomeProfileSetup extends Component {
     }))
   }
 
-  setPreferences = (filterType, value) => {
+  addSkill = (skill) => {
     this.setState(prevState => ({
     	completed: {
 					...prevState.completed,
 					"Skills": true,
 			},
-      preferences: { 
-
+      skills: { 
       	[filterType]: value 
       },
     }))

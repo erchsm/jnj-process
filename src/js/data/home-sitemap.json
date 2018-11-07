@@ -1,22 +1,18 @@
 {
 	"name": "Home",
-	"attributes": {},
 	"children": [
 		{
 			"name": "Resources",
-			"attributes": {},
 			"_collapsed": true,
 			"children": [
 				{
 					"name": "My Favorites",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 					]
 				},
 				{
 					"name": "Benefits & Compensation",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "MyStore" },
@@ -32,7 +28,6 @@
 				},
 				{
 					"name": "Business Intelligence",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Regulatory Intel Portal" },
@@ -44,7 +39,6 @@
 				},
 				// {
 				// 	"name": "Catering & Cafeteria",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "Catering & Cafeteria -- U.S. & PR" },
@@ -52,7 +46,6 @@
 				// },
 				{
 					"name": "Computing & Technology",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Skype for Business" },
@@ -67,7 +60,6 @@
 				},
 				{
 					"name": "Collaboration Spaces",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "MR55" },
@@ -79,7 +71,6 @@
 				},
 				// {
 				// 	"name": "Departments",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "CONNECT"},
@@ -90,7 +81,6 @@
 				// },
 				{
 					"name": "Legal, Quality & Compliance",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "ComplianceWire" },
@@ -108,7 +98,6 @@
 				},
 				{
 					"name": "Online Tools & Applications",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Sharepoint"},
@@ -159,7 +148,6 @@
 				},
 				// {
 				// 	"name": "Online Resources",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "IT Shared Service (Moscow, RUS)" },
@@ -186,7 +174,6 @@
 				// },
 				{
 					"name": "Performace, Development & Recognition",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "ComplianceWire" },
@@ -203,7 +190,6 @@
 				},
 				// {
 				// 	"name": "Time & Attendance",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "OUR SOURCE®" },
@@ -212,7 +198,6 @@
 				// },
 				{
 					"name": "Time, Travel & Expenses",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Concur" },
@@ -228,7 +213,6 @@
 				},
 				{
 					"name": "New Hire & Job Changes",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "My Career Opportunities" },
@@ -240,7 +224,6 @@
 				},
 				{
 					"name": "Services & Discounts",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Verizon" },
@@ -254,7 +237,6 @@
 				},
 				{
 					"name": "On-Site Services",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "Condeco Room Booking Systems" },
@@ -265,7 +247,6 @@
 				},
 				{
 					"name": "Finance & Procurement",
-					"attributes": {},
 					"_collapsed": true,
 					"children": [
 						{ "name": "ARAVO" },
@@ -276,7 +257,6 @@
 				},
 				// {
 				// 	"name": "Security & Facilities",
-				// 	"attributes": {},
 				// 	"_collapsed": true,
 				// 	"children": [
 				// 		{ "name": "iVisitor" },
@@ -286,7 +266,6 @@
 },
 {
 	"name": "Campuses",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{ "name": "Consumer" },
@@ -297,7 +276,6 @@
 },
 {
 	"name": "Organizations",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{ "name": "Consumer" },
@@ -308,7 +286,6 @@
 },
 {
 	"name": "News",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{
@@ -390,7 +367,6 @@
 },
 {
 	"name": "Events",
-	"attributes": {},
 	"_collapsed": true,
 	"children": [
 		{
@@ -472,12 +448,10 @@
 },
 {
 	"name": "Talent For Good",
-	"attributes": {},
 	"children": []
 },
 {
 	"name": "Credo",
-	"attributes": {},
 	"children": []
 },
 {
@@ -489,7 +463,6 @@
 },
 {
 	"name": "Preferences",
-	"attributes": {},
 	"children": []
 },
 {
@@ -508,12 +481,10 @@
 
 		// {
 		// 	"name": "Privacy Policy",
-		// 	"attributes": {},
 		// 	"children": []
 		// },
 		// {
 		// 	"name": "Legal Notice",
-		// 	"attributes": {},
 		// 	"children": []
 		// },
 	]

@@ -1,0 +1,56 @@
+.home-sitemap {
+	min-height: 100%;
+	min-width: 100%;
+	// background: linear-gradient(90deg,$brand-red,darken($brand-red, 2%));
+
+	.nodeNameBase {
+		fill: $brand-black;
+		stroke: none;
+		font-size: 14px;
+		font-weight: 500;
+	}
+
+	.nodeBase {
+		cursor: pointer;
+		fill: $brand-black;
+		stroke: $brand-black;
+		stroke-width: 2;
+	}
+
+	.leafNodeBase {
+		cursor: auto;
+		fill: white;
+	}
+
+	.linkBase {
+		stroke: rgba($brand-grey-dark, .25);
+	}
+
+	.nodeAttributesBase {
+		fill: $brand-grey-dark;
+		stroke: none;
+		font-size: 12px;
+		transform: translateY(-6px);
+	}
+
+	&__help {
+		position: absolute;
+		bottom: 12px;
+		left: 0px;
+		// transform: translateX(-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 48px;
+		pointer-events: none;
+
+		p, i {
+			color: $brand-grey-dark;
+		}
+
+		i {
+			font-size: 32px;
+			margin-left: 24px;
+		}
+	}
+}
