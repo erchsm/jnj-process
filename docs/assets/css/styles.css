@@ -14178,6 +14178,9 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-search-2:before {
   content: "\EA41"; }
 
+.icon-close-sm:before {
+  content: "\EA42"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -14354,7 +14357,6 @@ body {
     left: 0;
     width: 100%;
     padding: 0 60px;
-    background: #111a7c;
     height: 80px;
     -ms-flex-pack: justify;
     justify-content: space-between; }
@@ -14374,7 +14376,7 @@ body {
         justify-content: center;
         -ms-flex-align: center;
         align-items: center;
-        background: #111a7c;
+        background: #1724a9;
         border-radius: 50%;
         border: solid 2px white;
         width: 30px;
@@ -14419,13 +14421,45 @@ body {
     opacity: 1; } }
   .home-profile-setup .search-bar {
     opacity: 1; }
+    .home-profile-setup .search-bar .react-autosuggest__input {
+      border-width: 2px;
+      padding-left: 48px; }
+    .home-profile-setup .search-bar .react-autosuggest__suggestions-container {
+      position: absolute;
+      background: #1724A9;
+      border: solid 1px white; }
     .home-profile-setup .search-bar .react-autosuggest__section-title {
       display: none; }
     .home-profile-setup .search-bar i {
+      font-size: 40px;
       left: 0;
       right: auto; }
-    .home-profile-setup .search-bar input {
-      padding-left: 48px; }
+      .home-profile-setup .search-bar i.icon-search:before {
+        content: "\EA41"; }
+  .home-profile-setup .tags-wrapper .tag {
+    color: white;
+    border-width: 2px;
+    border-color: white;
+    background: transparent;
+    border-radius: 0;
+    font-size: 14px; }
+  @media screen and (max-width: 800px) {
+    .home-profile-setup .icon-home-logo {
+      top: 24px;
+      left: 24px; }
+    .home-profile-setup p {
+      margin-right: 0; }
+    .home-profile-setup section {
+      padding: 120px 24px; }
+      .home-profile-setup section .contents {
+        -ms-flex-direction: column;
+        flex-direction: column; }
+    .home-profile-setup .home-profile-setup__nav {
+      padding: 0; }
+    .home-profile-setup .home-profile-setup__nav-line-inner {
+      width: 40px; }
+    .home-profile-setup .home-profile-setup__nav-line-main {
+      width: 100%; } }
 
 .home-sitemap {
   min-height: 100%;
@@ -16101,6 +16135,27 @@ body {
     border: 1px solid #CA001B !important; }
     .switch--on .switch-toggle:before {
       left: 11px; }
+
+.tags-wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .tags-wrapper .tag {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    border: solid 1px;
+    padding: 18px 18px 18px 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    color: #212121; }
+    .tags-wrapper .tag span {
+      padding: 0 18px 0 12px; }
+    .tags-wrapper .tag i {
+      color: inherit; }
 
 /* Responsive */
 @media screen and (max-width: 800px) {

@@ -70,7 +70,7 @@ export default class HomeSitemap extends Component {
 				useCollapseData={true}
 				transitionDuration={600}
 				separation={{siblings: .3, nonSiblings: 200}}
-				nodeSize={{x: 324, y: 140}}
+				nodeSize={{x: 300, y: 140}}
 				textLayout={{textAnchor: "start", x: 18, y: 0 }}
 				/>
 				<div className='home-sitemap__help'>

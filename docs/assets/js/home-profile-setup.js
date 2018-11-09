@@ -46484,6 +46484,10 @@ var _ImageUpload = require('./ImageUpload');
 
 var _ImageUpload2 = _interopRequireDefault(_ImageUpload);
 
+var _Tag = require('./form/Tag');
+
+var _Tag2 = _interopRequireDefault(_Tag);
+
 var _homeProfileSetup = require('../data/home-profile-setup');
 
 var _homeProfileSetup2 = _interopRequireDefault(_homeProfileSetup);
@@ -46549,7 +46553,21 @@ var HomeProfileSetup = function (_Component) {
 					completed: _extends({}, prevState.completed, {
 						"Skills": true
 					}),
-					skills: _defineProperty({}, filterType, value)
+					skills: prevState.skills.concat(skill)
+				};
+			});
+		};
+
+		_this.removeSkill = function (index) {
+			console.log(index);
+			_this.setState(function (prevState) {
+				return {
+					completed: _extends({}, prevState.completed, {
+						"Skills": true
+					}),
+					skills: prevState.skills.filter(function (x, i) {
+						return i != index;
+					})
 				};
 			});
 		};
@@ -46586,7 +46604,6 @@ var HomeProfileSetup = function (_Component) {
 
 			var scroll = this.props.scroll;
 
-			// console.log(scroll);
 
 			var classnames = (0, _classnames2.default)({
 				"home-profile-setup": true
@@ -46722,7 +46739,16 @@ var HomeProfileSetup = function (_Component) {
 							null,
 							'Search below for your personal and professional skills.'
 						),
-						_react2.default.createElement(_SearchBar2.default, { placeholder: 'Skills (ex. Data Analytics)', searchData: _homeProfileSetup2.default.skills, onClick: this.addSkill })
+						_react2.default.createElement(_SearchBar2.default, { placeholder: 'Skills (ex. Data Analytics)', searchData: _homeProfileSetup2.default.skills, onClick: this.addSkill }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'tags-wrapper' },
+							this.state.skills.map(function (skill, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: skill.id, click: function click() {
+										return _this2.removeSkill(index);
+									} });
+							})
+						)
 					)
 				),
 				_react2.default.createElement(
@@ -46765,7 +46791,7 @@ var HomeProfileSetup = function (_Component) {
 
 exports.default = HomeProfileSetup;
 
-},{"../data/home-profile-setup":298,"./ImageUpload":293,"./SearchBar":294,"./form/MultiSelectBox":295,"./form/SelectBox":296,"./form/Switch":297,"classnames":5,"react":283,"react-autosuggest":48,"react-motion":191,"react-skroll":251}],293:[function(require,module,exports){
+},{"../data/home-profile-setup":299,"./ImageUpload":293,"./SearchBar":294,"./form/MultiSelectBox":295,"./form/SelectBox":296,"./form/Switch":297,"./form/Tag":298,"classnames":5,"react":283,"react-autosuggest":48,"react-motion":191,"react-skroll":251}],293:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -47862,6 +47888,72 @@ var Switch = function (_Component) {
 exports.default = Switch;
 
 },{"classnames":5,"react":283}],298:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Tag = function (_Component) {
+  _inherits(Tag, _Component);
+
+  function Tag() {
+    _classCallCheck(this, Tag);
+
+    return _possibleConstructorReturn(this, (Tag.__proto__ || Object.getPrototypeOf(Tag)).call(this));
+  }
+
+  _createClass(Tag, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          label = _props.label,
+          click = _props.click;
+
+
+      var classnames = (0, _classnames2.default)({
+        'tag': true
+      });
+
+      return _react2.default.createElement(
+        'div',
+        { className: classnames },
+        _react2.default.createElement(
+          'span',
+          null,
+          label
+        ),
+        _react2.default.createElement('i', { className: 'iconcss icon-close-sm', onClick: function onClick() {
+            return click();
+          } })
+      );
+    }
+  }]);
+
+  return Tag;
+}(_react.Component);
+
+exports.default = Tag;
+
+},{"classnames":5,"react":283}],299:[function(require,module,exports){
 module.exports={	
 	"skills": [
 		{

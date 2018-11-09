@@ -34701,7 +34701,7 @@ var HomeSitemap = function (_Component) {
 					useCollapseData: true,
 					transitionDuration: 600,
 					separation: { siblings: .3, nonSiblings: 200 },
-					nodeSize: { x: 324, y: 140 },
+					nodeSize: { x: 300, y: 140 },
 					textLayout: { textAnchor: "start", x: 18, y: 0 }
 				}),
 				_react2.default.createElement(
@@ -35238,6 +35238,12 @@ module.exports={
 },
 {
 	"name": "Take the Tour",
+	"attributes": {
+	},
+	"children": []
+},
+{
+	"name": "Help",
 	"attributes": {
 	},
 	"children": []

@@ -472,6 +472,12 @@
 	"children": []
 },
 {
+	"name": "Help",
+	"attributes": {
+	},
+	"children": []
+},
+{
 	"name": "Profile",
 	"attributes": {
 		"Note": "Does not appear in the nav."

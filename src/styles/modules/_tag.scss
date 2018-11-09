@@ -1,0 +1,25 @@
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  .tag {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: solid 1px;
+    padding: 18px 18px 18px 12px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    color: $brand-black;
+
+    span {
+      padding: 0 18px 0 12px;
+    }
+
+    i {
+      color: inherit;
+    }
+  }
+
+}
+

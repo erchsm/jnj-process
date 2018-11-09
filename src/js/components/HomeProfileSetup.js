@@ -12,6 +12,7 @@ import Switch from './form/Switch'
 
 import SearchBar from './SearchBar';
 import ImageUpload from './ImageUpload'
+import Tag from './form/Tag'
 
 
 import homeProfileSetupData from '../data/home-profile-setup'
@@ -90,16 +91,23 @@ export default class HomeProfileSetup extends Component {
 					...prevState.completed,
 					"Skills": true,
 			},
-      skills: { 
-      	[filterType]: value 
-      },
+      skills: prevState.skills.concat(skill)
+    }))
+  }
+
+  removeSkill = (index) => {
+  	console.log(index);
+    this.setState(prevState => ({
+    	completed: {
+					...prevState.completed,
+					"Skills": true,
+			},
+      skills: prevState.skills.filter((x,i) => i != index )
     }))
   }
 	
 	render() {
 		const { scroll } = this.props;
-
-		// console.log(scroll);
 
 		const classnames = classNames({
 			"home-profile-setup": true
@@ -138,7 +146,6 @@ export default class HomeProfileSetup extends Component {
 					<section name="Welcome" className={classNames({ 'moving': scroll.moving })}>
 						<h1>Welcome to Home, James.</h1>
 						<p>Home is where all Johnson & Johnson employees can connect to create a productive, united work environment. We're excited for you to join the community!</p>
-
 						{
 							scroll.children.filter((child) => child.name == 'Preferences').map((child, index) =>
 								<ScrollLink key={index} to={child.start} key={index}>	
@@ -210,6 +217,13 @@ export default class HomeProfileSetup extends Component {
 							<h1>Add your skills.</h1>
 							<p>Search below for your personal and professional skills.</p>
               <SearchBar placeholder="Skills (ex. Data Analytics)" searchData={homeProfileSetupData.skills} onClick={this.addSkill}/>
+              <div className="tags-wrapper">
+              {	
+								this.state.skills.map((skill, index) =>
+              		<Tag key={index} label={skill.id} click={() => this.removeSkill(index)} />
+              	)
+              }
+              </div>
 					</section>}
 
 				</Scroller>
