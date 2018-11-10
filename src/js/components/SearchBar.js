@@ -82,6 +82,9 @@ export default class SearchBar extends Component {
 
   onSuggestionSelected = (event, { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) => {
     this.props.onClick ? this.props.onClick(suggestion) : null;
+    this.setState({
+      value: ''
+    });
   };
 
   onSuggestionsClearRequested = () => {

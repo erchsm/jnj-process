@@ -24299,6 +24299,9 @@ var SearchBar = function (_Component) {
           method = _ref3.method;
 
       _this.props.onClick ? _this.props.onClick(suggestion) : null;
+      _this.setState({
+        value: ''
+      });
     };
 
     _this.onSuggestionsClearRequested = function () {

@@ -14422,17 +14422,21 @@ body {
   .home-profile-setup .search-bar {
     opacity: 1; }
     .home-profile-setup .search-bar .react-autosuggest__input {
-      border-width: 2px;
-      padding-left: 48px; }
+      border: solid 2px;
+      padding: 18px;
+      padding-left: 72px; }
     .home-profile-setup .search-bar .react-autosuggest__suggestions-container {
       position: absolute;
       background: #1724A9;
-      border: solid 1px white; }
+      border: solid 2px white;
+      top: 68px;
+      width: 100%; }
     .home-profile-setup .search-bar .react-autosuggest__section-title {
       display: none; }
     .home-profile-setup .search-bar i {
       font-size: 40px;
-      left: 0;
+      left: 18px;
+      top: 12px;
       right: auto; }
       .home-profile-setup .search-bar i.icon-search:before {
         content: "\EA41"; }
@@ -16157,7 +16161,7 @@ body {
     align-items: center;
     cursor: pointer;
     border: solid 1px;
-    padding: 18px 18px 18px 12px;
+    padding: 16px 18px 16px 12px;
     margin-right: 12px;
     margin-bottom: 12px;
     color: #212121; }

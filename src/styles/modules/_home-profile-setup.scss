@@ -148,14 +148,17 @@
 		opacity: 1;
 
 		.react-autosuggest__input {
-			border-width: 2px;
-			padding-left: 48px;
+			border: solid 2px;
+			padding: 18px;
+			padding-left: 72px;
 		}
 
 		.react-autosuggest__suggestions-container {
 			position: absolute;
 			background: $brand-blue;
-			border: solid 1px white;
+			border: solid 2px white;
+			top: 68px;
+			width: 100%;
 		}
 
 		.react-autosuggest__section-title {
@@ -164,7 +167,8 @@
 
 		i {
 			font-size: 40px;
-			left: 0;
+			left: 18px;
+			top: 12px;
 			right: auto;
 
 			&.icon-search:before {
