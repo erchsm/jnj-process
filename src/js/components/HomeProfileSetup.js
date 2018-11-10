@@ -183,13 +183,13 @@ export default class HomeProfileSetup extends Component {
 							</div>
 					</section>
 
-					{/*<section name="Photo" className={classNames({ 'moving': scroll.moving })}>
+					{<section name="Photo" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Put a face to your name.</h1>
 							<p>We’re connecting you with employees all over the world, adding your photo will put you in a room across the globe!</p>
 							<div className="contents">
 								<ImageUpload/>
 							</div>
-					</section>*/}
+					</section>}
 
 					{/*<section name="Bio" className={classNames({ 'moving': scroll.moving })}>
 						<h1>About your role.</h1>

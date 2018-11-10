@@ -14449,8 +14449,8 @@ body {
     font-size: 14px; }
   @media screen and (max-width: 800px) {
     .home-profile-setup .icon-home-logo {
-      top: 24px;
-      left: 24px;
+      top: 18px;
+      left: 18px;
       font-size: 8vw; }
     .home-profile-setup h1 {
       font-size: 12vw;
@@ -14460,7 +14460,7 @@ body {
       font-size: 5vw;
       margin-top: 2vh; }
     .home-profile-setup section {
-      padding: 18vh 24px; }
+      padding: 12vh 18px; }
       .home-profile-setup section .contents {
         margin-top: 1vh;
         -ms-flex-direction: column;

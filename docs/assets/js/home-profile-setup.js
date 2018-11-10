@@ -46712,6 +46712,25 @@ var HomeProfileSetup = function (_Component) {
 					),
 					_react2.default.createElement(
 						'section',
+						{ name: 'Photo', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Put a face to your name.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'We\u2019re connecting you with employees all over the world, adding your photo will put you in a room across the globe!'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'contents' },
+							_react2.default.createElement(_ImageUpload2.default, null)
+						)
+					),
+					_react2.default.createElement(
+						'section',
 						{ name: 'Accounts', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
 						_react2.default.createElement(
 							'h1',
