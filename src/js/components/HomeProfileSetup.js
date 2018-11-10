@@ -160,7 +160,7 @@ export default class HomeProfileSetup extends Component {
 
 					<section name="Preferences" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Tell us what you’re interested in.</h1>
-							<p>Select the companies, functions and locations you want to see withing your news and events. Pick as many as you like.</p>
+							<p>Select the topics you want to see within your news and events. Pick as many as you like.</p>
 							<div className="contents">
 								<SelectBox
 								value={this.state.preferences.franchises}

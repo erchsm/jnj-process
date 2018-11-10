@@ -46685,7 +46685,7 @@ var HomeProfileSetup = function (_Component) {
 						_react2.default.createElement(
 							'p',
 							null,
-							'Select the companies, functions and locations you want to see withing your news and events. Pick as many as you like.'
+							'Select the topics you want to see within your news and events. Pick as many as you like.'
 						),
 						_react2.default.createElement(
 							'div',
