@@ -193,7 +193,7 @@
 		.icon-home-logo {
 			top: 24px;
 			left: 24px;
-			font-size: 12vw;
+			font-size: 8vw;
 		}
 		h1 {
 			font-size: 12vw;
@@ -202,15 +202,18 @@
 		p {
 			margin-right: 0;
 			font-size: 5vw;
+			margin-top: 2vh;
 		}
 		section {
-			padding: 120px 24px;
+			padding: 18vh 24px;
 
 			.contents {
+				margin-top: 1vh;
 				flex-direction: column;
 			}
 		}
 		.home-profile-setup__nav {
+			height: 60px;
 			padding: 0;
 
 			span {

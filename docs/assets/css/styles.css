@@ -14451,19 +14451,22 @@ body {
     .home-profile-setup .icon-home-logo {
       top: 24px;
       left: 24px;
-      font-size: 12vw; }
+      font-size: 8vw; }
     .home-profile-setup h1 {
       font-size: 12vw;
       line-height: 1.1; }
     .home-profile-setup p {
       margin-right: 0;
-      font-size: 5vw; }
+      font-size: 5vw;
+      margin-top: 2vh; }
     .home-profile-setup section {
-      padding: 120px 24px; }
+      padding: 18vh 24px; }
       .home-profile-setup section .contents {
+        margin-top: 1vh;
         -ms-flex-direction: column;
         flex-direction: column; }
     .home-profile-setup .home-profile-setup__nav {
+      height: 60px;
       padding: 0; }
       .home-profile-setup .home-profile-setup__nav span {
         font-size: 4vw; }
