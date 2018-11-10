@@ -75,7 +75,7 @@
 				align-items: center;
 				background: darken($brand-blue, 0%);
 				border-radius: 50%;
-				border: solid 2px white;
+				border: solid 2px rgba(white, 1);
 				width: 30px;
 				height: 30px;
 				font-size: 24px;
@@ -84,7 +84,7 @@
 
 			span {
 				margin-top: 6px;
-				color: white;
+				color: rgba(white, 1);
 				font-weight: 500;
 			}
 
@@ -93,6 +93,14 @@
 					color: white;
 				}
 			}
+			// &.active {
+			// 	i {
+			// 		border: solid 2px white;
+			// 	}
+			// 	span {
+			// 		color: white;
+			// 	}
+			// }
 		}
 	}
 
@@ -181,9 +189,15 @@
 		.icon-home-logo {
 			top: 24px;
 			left: 24px;
+			font-size: 12vw;
+		}
+		h1 {
+			font-size: 12vw;
+			line-height: 1.1;
 		}
 		p {
 			margin-right: 0;
+			font-size: 5vw;
 		}
 		section {
 			padding: 120px 24px;
@@ -194,6 +208,14 @@
 		}
 		.home-profile-setup__nav {
 			padding: 0;
+
+			span {
+				font-size: 4vw;
+			}
+
+			li a {
+				width: 25vw;
+			}
 		}
 		.home-profile-setup__nav-line-inner {
 			width: 40px;

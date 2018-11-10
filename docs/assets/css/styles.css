@@ -14446,9 +14446,14 @@ body {
   @media screen and (max-width: 800px) {
     .home-profile-setup .icon-home-logo {
       top: 24px;
-      left: 24px; }
+      left: 24px;
+      font-size: 12vw; }
+    .home-profile-setup h1 {
+      font-size: 12vw;
+      line-height: 1.1; }
     .home-profile-setup p {
-      margin-right: 0; }
+      margin-right: 0;
+      font-size: 5vw; }
     .home-profile-setup section {
       padding: 120px 24px; }
       .home-profile-setup section .contents {
@@ -14456,6 +14461,10 @@ body {
         flex-direction: column; }
     .home-profile-setup .home-profile-setup__nav {
       padding: 0; }
+      .home-profile-setup .home-profile-setup__nav span {
+        font-size: 4vw; }
+      .home-profile-setup .home-profile-setup__nav li a {
+        width: 25vw; }
     .home-profile-setup .home-profile-setup__nav-line-inner {
       width: 40px; }
     .home-profile-setup .home-profile-setup__nav-line-main {

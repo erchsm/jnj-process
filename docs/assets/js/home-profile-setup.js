@@ -46769,7 +46769,7 @@ var HomeProfileSetup = function (_Component) {
 								_reactSkroll.ScrollLink,
 								{
 									key: index,
-									className: _this2.state.completed[child.name] ? 'completed' : '',
+									className: (0, _classnames2.default)({ 'completed': _this2.state.completed[child.name], 'active': child.active }),
 									to: child.start
 								},
 								_react2.default.createElement('i', { className: 'iconcss icon-checkmark' }),

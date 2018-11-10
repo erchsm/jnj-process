@@ -239,7 +239,7 @@ export default class HomeProfileSetup extends Component {
 							<li key={index}>
 								<ScrollLink
 									key={index}
-									className={this.state.completed[child.name] ? 'completed' : ''}
+									className={classNames({ 'completed': this.state.completed[child.name], 'active': child.active })}
 									to={child.start}
 									>	
 								 	<i className="iconcss icon-checkmark"></i>
