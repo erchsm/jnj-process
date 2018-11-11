@@ -1,34 +1,145 @@
-.field--multi-selectbox {
-  .field__label {
-    padding: 0 1px;
-  }
-  &.field__focused,
-  &.field__not-empty {
-    .field__label {
-      color: #999;
-      top: -14px;
-      font-weight: 300;
-    }
-  }
-  .is-focused {
-    .Select-control,
-    .Select-input {
-      height: 35px;
-    }
-  }
-  .has-value {
-    .Select-control,
-    .Select-input {
-      height: 36px;
-    }
-  }
-  input {
-    padding: 4px 0 12px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    letter-spacing: .42px;
-    line-height: 1.2;
-    color: white;
-  }
+.multiselectbox {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.btn {
+		display: none;
+	}
+
+	i {
+		position: absolute;
+		right: 0;
+		top: 12px;
+	}
+
+	label {
+		position: absolute;
+		transform-origin: top left;
+		transition: all $easing4 .3s;
+		top: 6px;
+		color: white;
+		transform: scale(1);
+		pointer-events: none;
+	}
+
+	.input-area {
+		background: transparent;
+		margin: 0;
+		border: none;
+		padding: 0;
+		height: 40px;
+		border-bottom: solid 1px white;
+
+		> div {
+			display: flex !important;
+			flex-wrap: wrap;
+			overflow: hidden;
+			height: 40px;
+			pointer-events: none;
+			position: absolute;
+
+			.tags {
+				background: transparent;
+				white-space: nowrap;
+				margin-left: 0;
+				padding-left: 0;
+				margin-right: 0;
+				padding-right: 0;
+
+				span {
+					pointer-events: none;
+					color: transparent;
+					position: relative;
+					margin-left: 3px;
+
+					&:after {
+						display: inline;
+						left: 0;
+						content: ',';
+						opacity: 0.6;
+						color: white;
+						position: absolute;
+					}
+				}
+
+				&:last-child {
+					span {
+						&:after {
+							opacity: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.input-box {
+		opacity: 0;
+		margin: 0;
+		padding: 0;
+		outline: none;
+		height: 100%;
+		color: white;
+		background: transparent;
+		border: none;
+	}
+
+	.option {
+		margin: 0;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		align-items: center;
+		font-size: 14px;
+		padding: 9px;
+
+		span {
+			display: block;
+			color: transparent;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			border: solid 1px white;
+			margin-right: 12px;
+		}
+
+		&.active {
+			span {
+				background: white;          
+			}
+		}
+
+		&:hover {
+			background: darken($brand-blue, 6%);
+		}
+	}
+
+	.option-area {
+		background: transparent;
+		margin: 0;
+		border-color: rgba(white, .8);
+		max-height: 235px;
+	}
+
+	&--focused {
+		.input-box {
+			opacity: 1;
+		}
+		.tags {
+			display: none;
+		}
+
+		i {
+			transform: scaleY(-1);
+		}
+	}
+
+	&--label-shrink {
+		label {
+			top: -12px;
+			transform: scale(0.7);
+		}
+	}
 }

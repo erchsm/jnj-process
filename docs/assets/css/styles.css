@@ -14340,8 +14340,8 @@ body {
     .home-profile-setup section .contents {
       display: -ms-flexbox;
       display: flex;
-      margin-top: 24px; }
-      .home-profile-setup section .contents .selectbox__wrapper {
+      margin-top: 40px; }
+      .home-profile-setup section .contents .selectbox__wrapper, .home-profile-setup section .contents .multiselectbox {
         margin-right: 24px; }
     .home-profile-setup section .mdc-button {
       margin-top: 40px;
@@ -15665,30 +15665,115 @@ body {
     .mdc-taxonomy-diagram .mdc-taxonomy-diagram__legend, .mdc-taxonomy-diagram .mdc-taxonomy-diagram__help {
       display: none; } }
 
-.field--multi-selectbox .field__label {
-  padding: 0 1px; }
-
-.field--multi-selectbox.field__focused .field__label, .field--multi-selectbox.field__not-empty .field__label {
-  color: #999;
-  top: -14px;
-  font-weight: 300; }
-
-.field--multi-selectbox .is-focused .Select-control,
-.field--multi-selectbox .is-focused .Select-input {
-  height: 35px; }
-
-.field--multi-selectbox .has-value .Select-control,
-.field--multi-selectbox .has-value .Select-input {
-  height: 36px; }
-
-.field--multi-selectbox input {
-  padding: 4px 0 12px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  letter-spacing: .42px;
-  line-height: 1.2;
-  color: white; }
+.multiselectbox {
+  position: relative;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .multiselectbox .btn {
+    display: none; }
+  .multiselectbox i {
+    position: absolute;
+    right: 0;
+    top: 12px; }
+  .multiselectbox label {
+    position: absolute;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
+    top: 6px;
+    color: white;
+    -ms-transform: scale(1);
+    transform: scale(1);
+    pointer-events: none; }
+  .multiselectbox .input-area {
+    background: transparent;
+    margin: 0;
+    border: none;
+    padding: 0;
+    height: 40px;
+    border-bottom: solid 1px white; }
+    .multiselectbox .input-area > div {
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      overflow: hidden;
+      height: 40px;
+      pointer-events: none;
+      position: absolute; }
+      .multiselectbox .input-area > div .tags {
+        background: transparent;
+        white-space: nowrap;
+        margin-left: 0;
+        padding-left: 0;
+        margin-right: 0;
+        padding-right: 0; }
+        .multiselectbox .input-area > div .tags span {
+          pointer-events: none;
+          color: transparent;
+          position: relative;
+          margin-left: 3px; }
+          .multiselectbox .input-area > div .tags span:after {
+            display: inline;
+            left: 0;
+            content: ',';
+            opacity: 0.6;
+            color: white;
+            position: absolute; }
+        .multiselectbox .input-area > div .tags:last-child span:after {
+          opacity: 0; }
+  .multiselectbox .input-box {
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    height: 100%;
+    color: white;
+    background: transparent;
+    border: none; }
+  .multiselectbox .option {
+    margin: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 9px; }
+    .multiselectbox .option span {
+      display: block;
+      color: transparent;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: solid 1px white;
+      margin-right: 12px; }
+    .multiselectbox .option.active span {
+      background: white; }
+    .multiselectbox .option:hover {
+      background: #131e8e; }
+  .multiselectbox .option-area {
+    background: transparent;
+    margin: 0;
+    border-color: rgba(255, 255, 255, 0.8);
+    max-height: 235px; }
+  .multiselectbox--focused .input-box {
+    opacity: 1; }
+  .multiselectbox--focused .tags {
+    display: none; }
+  .multiselectbox--focused i {
+    -ms-transform: scaleY(-1);
+    transform: scaleY(-1); }
+  .multiselectbox--label-shrink label {
+    top: -12px;
+    -ms-transform: scale(0.7);
+    transform: scale(0.7); }
 
 .search-bar {
   display: -ms-flexbox;

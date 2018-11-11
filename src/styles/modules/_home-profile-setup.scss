@@ -33,9 +33,9 @@
 
 		.contents {
 			display: flex;
-			margin-top: 24px;
+			margin-top: 40px;
 
-			.selectbox__wrapper {
+			.selectbox__wrapper, .multiselectbox {
 				margin-right: 24px;
 			}
 		}

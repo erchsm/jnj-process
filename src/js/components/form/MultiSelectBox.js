@@ -1,101 +1,79 @@
 import React, { Component, PropTypes } from 'react';
-import Select from 'react-select';
+import MultiSearchSelect from "react-search-multi-select";
 import classNames from 'classnames';
 
 
 export default class MultiSelectBox extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    }
-  }
-  
-  static propTypes = {
-    options: PropTypes.array,
-    value: PropTypes.any,
-    selectProps: PropTypes.object
-  };
+	constructor(props) {
+		super(props);
 
-  static defaultProps = {
-    selectProps: {},
-    onChange: () => {},
-    onStartEdit: () => {},
-    onStopEdit: () => {}
-  };
+		this.state = {
+			isFocused: false,
+			selected: [],
+		};
+	}
 
-  componentDidUpdate(prevProps) {
-    // Got kicked out
-    if (!prevProps.isLocked && this.props.isLocked) {
-      this.refs.input.blur();
-    }
-  }
+	stealFocus = () => {
+		this.setState({
+			isFocused: true,
+		})
+	}
 
-  componentWillUpdate(nextProps) {
-    // If the value changes from not me
-    if (nextProps.imEditing !== this.props.imEditing) {
-      this.setState({
-        value: ''
-      })
-    }
-  }
+	componentDidMount() {
+		document.addEventListener('mousedown', this.handleClickOutside);
+	}
 
-  onChange = (tags) => {
-    const newVal = tags.map(tag => tag.value);
-    this.setState({
-      value: newVal
-    });
-    this.props.onChange(newVal);
-  };
+	componentWillUnmount() {
+		document.removeEventListener('mousedown', this.handleClickOutside);
+	}
 
-  onFocus = (e) => {
-    this.setState({ focused: true });
-    this.props.onStartEdit();
-  };
+	handleClickOutside = (event) => {
+		(!this.refs.wrapper.contains(event.target)) ? (
+			this.setState({
+				isFocused: false
+			})
+			) : null;
+	}
 
-  onBlur = (e) => {
-    this.setState({ focused: false });
-    this.props.onStopEdit();
-  };
+	handleChange = (arr) => {
+		if (this.state.selected.length != arr.length) {
+			this.setState({
+				selected: arr,
+			});
+			this.props.onChange();
+		}
+	}
 
-  render() {
-    let { onChange, selectProps, isLocked, imEditing, editor, options } = this.props;
-    let value = editor && this.state.value ? this.state.value : this.props.value;
+	render() {
+		const { items, label } = this.props;
 
-    let classnames = classNames({
-      'field-text field--multi-selectbox': true,
-      'field__not-empty': Array.isArray(value) ? !!value.length : value,
-      'field__focused': this.state.focused
-    });
+		const classnames = classNames({
+			'multiselectbox': true,
+			'multiselectbox--focused': this.state.isFocused,
+			'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
+		});
 
-    return (
-      <div className={classnames}>
-        <label className="field__label">
-          {this.props.label }
-        </label>
-        <Select
-          multi={true}
-          onChange={this.onChange}
-          onBlur={this.onBlur}
-          onFocus={this.onFocus}
-          options={options.map(item => ({'value': item.title, 'label': item.title }))}
-          value={value}
-          disabled={isLocked}
-          {...selectProps}
-        />
-        <div className="field__error"></div>
-        <div className="field__help-text">{this.props.helpText}</div>
-        {
-          isLocked ?
-            <div className={"field__locked-msg theme-color-background-" + editor.colorProfile}>
-              <i className="fa fa-lock" ></i>
-              {editor.name} is current editing
-            </div>
-            :
-            ""
-        }
-      </div>
-    )
-  }
+		Array.prototype.forEach.call(document.getElementsByClassName('tags'), (item) => {
+		    console.log(item)
+		});
+
+		return (
+			<div className={classnames} onClick={this.stealFocus} ref="wrapper">
+				<MultiSearchSelect
+		    optionsContainerHeight={""} 
+		    primaryColor={""}
+        secondaryColor={""}
+        textColor={""}
+				searchable={true} 
+				showTags={true} 
+				multiSelect={true} 
+				width={'100%'}
+				onSelect={this.handleChange} 
+				options={items}/>
+				<i className="iconcss icon-caret-down-lg"></i>
+				<label>{label}</label>
+			</div>
+			);
+	}
 }

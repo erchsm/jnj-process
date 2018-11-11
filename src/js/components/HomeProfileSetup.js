@@ -24,7 +24,7 @@ export default class HomeProfileSetup extends Component {
 		
 		this.state = {
 			preferences: {
-				franchises: null,
+				franchises: [],
 				locations: null,
 				functions: null,
 			},
@@ -96,7 +96,6 @@ export default class HomeProfileSetup extends Component {
   }
 
   removeSkill = (index) => {
-  	console.log(index);
     this.setState(prevState => ({
     	completed: {
 					...prevState.completed,
@@ -128,8 +127,9 @@ export default class HomeProfileSetup extends Component {
 
 		const linePercentage = {
 			"Welcome": 0,
-			"Preferences": .33333333333,
-			"Accounts": .66666666666667,
+			"Preferences": .25,
+			"Photo": .5,
+			"Accounts": .75,
 			"Skills": 1,
 		}
 
@@ -160,9 +160,27 @@ export default class HomeProfileSetup extends Component {
 
 					<section name="Preferences" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Tell us what you’re interested in.</h1>
-							<p>Select the topics you want to see within your news and events. Pick as many as you like.</p>
+							<p>Select the companies, functions and locations you want to see within your news and events. Pick as many as you like.</p>
 							<div className="contents">
-								<SelectBox
+								<MultiSelectBox
+								value={this.state.preferences.franchises}
+								label="Company/Franchise *"
+								onChange={this.setPreferences.bind(this, 'franchise')}
+								items={homeProfileSetupData.franchises}
+								/>
+								<MultiSelectBox
+								value={this.state.preferences.functions}
+								label="Function *"
+								onChange={this.setPreferences.bind(this, 'function')}
+								items={homeProfileSetupData.functions}
+								/>
+								<MultiSelectBox
+								value={this.state.preferences.locations}
+								label="Location *"
+								onChange={this.setPreferences.bind(this, 'locations')}
+								items={homeProfileSetupData.locations}
+								/>
+								{/*<SelectBox
 								value={this.state.preferences.franchises}
 								label="Company/Franchise *"
 								onChange={this.setPreferences.bind(this, 'franchises')}
@@ -179,7 +197,7 @@ export default class HomeProfileSetup extends Component {
 								label="Location *"
 								onChange={this.setPreferences.bind(this, 'locations')}
 								items={homeProfileSetupData.locations}
-								/>
+								/>*/}
 							</div>
 					</section>
 
