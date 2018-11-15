@@ -48,7 +48,8 @@
 			flex-wrap: wrap;
 			overflow: hidden;
 			height: 40px;
-			width: 90%;
+			width: 100%;
+			padding-right: 10%;
 			pointer-events: none;
 			position: absolute;
 
@@ -91,7 +92,7 @@
 		padding: 0;
 		outline: none;
 		height: 100%;
-		width: 90%;
+		width: 100%;
 		color: white;
 		background: transparent;
 		border: none;

@@ -24903,7 +24903,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Item';
+    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
     lastId++;
     return '' + prefix + lastId;
