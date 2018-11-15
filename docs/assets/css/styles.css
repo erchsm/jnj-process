@@ -14346,10 +14346,14 @@ body {
         margin-right: 24px; }
     .home-profile-setup section .mdc-button {
       margin-top: 40px;
-      padding-left: 0;
-      font-size: 21px; }
+      font-size: 18px; }
       .home-profile-setup section .mdc-button i {
         font-size: 16px; }
+      .home-profile-setup section .mdc-button__text-link {
+        padding-left: 0; }
+      .home-profile-setup section .mdc-button:hover {
+        color: white;
+        border-color: white; }
   .home-profile-setup__nav {
     display: -ms-flexbox;
     display: flex;
@@ -15740,6 +15744,24 @@ body {
     padding: 0;
     height: 40px;
     border-bottom: solid 1px white; }
+    .multiselectbox .input-area :-ms-input-placeholder {
+      color: white;
+      opacity: 0.4; }
+    .multiselectbox .input-area ::placeholder {
+      color: white;
+      opacity: 0.4; }
+    .multiselectbox .input-area ::-webkit-input-placeholder {
+      color: white;
+      opacity: 0.4; }
+    .multiselectbox .input-area ::-moz-placeholder {
+      color: white;
+      opacity: 0.4; }
+    .multiselectbox .input-area :-ms-input-placeholder {
+      color: white;
+      opacity: 0.4; }
+    .multiselectbox .input-area :-moz-placeholder {
+      color: white;
+      opacity: 0.4; }
     .multiselectbox .input-area > div {
       display: -ms-flexbox !important;
       display: flex !important;
@@ -15779,24 +15801,6 @@ body {
     color: white;
     background: transparent;
     border: none; }
-  .multiselectbox input :-ms-input-placeholder {
-    color: white;
-    opacity: 1; }
-  .multiselectbox input ::placeholder {
-    color: white;
-    opacity: 1; }
-  .multiselectbox input ::-webkit-input-placeholder {
-    color: white;
-    opacity: 1; }
-  .multiselectbox input ::-moz-placeholder {
-    color: white;
-    opacity: 1; }
-  .multiselectbox input :-ms-input-placeholder {
-    color: white;
-    opacity: 1; }
-  .multiselectbox input :-moz-placeholder {
-    color: white;
-    opacity: 1; }
   .multiselectbox .option {
     margin: 0;
     display: -ms-flexbox;
@@ -15841,6 +15845,18 @@ body {
     transform: scale(0.7); }
   .multiselectbox--show-indicator .indicator {
     display: block; }
+  .multiselectbox--lg label {
+    font-size: 18px;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
+  .multiselectbox--lg .input-box {
+    font-size: 14px; }
+  .multiselectbox--lg .option {
+    font-size: 18px;
+    padding: 12px; }
+  .multiselectbox--lg .option-area {
+    max-height: 266px; }
+  .multiselectbox--lg.multiselectbox--label-shrink label {
+    top: -18px; }
 
 .search-bar {
   display: -ms-flexbox;
@@ -16268,7 +16284,8 @@ body {
   cursor: pointer; }
   .switch label {
     color: #D8D8D8;
-    cursor: pointer; }
+    cursor: pointer;
+    margin-right: 12px; }
     .field-wrapper--locked .switch label {
       color: #bbb; }
 
@@ -16279,14 +16296,13 @@ body {
   height: 32px;
   font-size: 14px;
   color: white;
-  background: #dddddd;
-  border: 2px solid #dddddd;
+  background: #fff;
+  border: 2px solid #fff;
   border-radius: 100px;
   position: relative;
-  transition: background cubic-bezier(0.19, 1, 0.22, 1) 0.6s, border cubic-bezier(0.19, 1, 0.22, 1) 0.6s;
-  margin-right: 10px; }
+  transition: background cubic-bezier(0.19, 1, 0.22, 1) 0.6s, border cubic-bezier(0.19, 1, 0.22, 1) 0.6s; }
   .switch-toggle span {
-    color: #888B8D;
+    color: #212121;
     position: absolute;
     top: 3px;
     left: 34px; }
@@ -16295,7 +16311,7 @@ body {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: #FFF;
+    background: #888B8D;
     position: absolute;
     left: 2px;
     top: 2px;
@@ -16307,7 +16323,8 @@ body {
       left: 12px;
       color: white; }
     .switch--on .switch-toggle:before {
-      left: 41px; }
+      left: 41px;
+      background: white; }
 
 .tags-wrapper {
   display: -ms-flexbox;

@@ -142,61 +142,75 @@ export default class HomeProfileSetup extends Component {
 				<i className="iconcss icon-home-logo"></i>
 				<Scroller>
 
-					<section name="Welcome" className={classNames({ 'moving': scroll.moving })}>
+					{/*<section name="Welcome" className={classNames({ 'moving': scroll.moving })}>
 						<h1>Welcome to Home, James.</h1>
 						<p>Home is where all Johnson & Johnson employees can connect to create a productive, united work environment. We're excited for you to join the community!</p>
 						{
 							scroll.children.filter((child) => child.name == 'Preferences').map((child, index) =>
 								<ScrollLink key={index} to={child.start} key={index}>	
-	 	              <button className="mdc-button mdc-button--text-link mdc-button--white">
-		 	              <span>Let’s get started</span>
-		 	              <i className="iconcss icon-arrow-right"></i>
-		 	            </button>
+									<button className="mdc-button mdc-button--text-link mdc-button--white">
+										<span>Let’s get started</span>
+										<i className="iconcss icon-arrow-right"></i>
+									</button>
 								</ScrollLink>
 							)
 						}
-					</section>
+					</section>*/}
 
 					<section name="Preferences" className={classNames({ 'moving': scroll.moving })}>
-							<h1>Tell us what you’re interested in.</h1>
-							<p>Select the companies, functions and locations you want to see within your news and events. Pick as many as you like.</p>
+							<h1>Welcome to Home, James.</h1>
+							<p>Connect with other Johnson & Johnson employees and create a positive and productive work environment. Select the topics you want to see within your news and events.</p>
+							{/*<h1>Tell us what you’re interested in.</h1>
+							<p>Select the companies, functions and locations you want to see within your news and events. Pick as many as you like.</p>*/}
 							<div className="contents">
 								<MultiSelectBox
+								isLarge
 								value={this.state.preferences.franchises}
 								label="Company/Franchise *"
 								onChange={this.setPreferences.bind(this, 'franchises')}
 								items={homeProfileSetupData.franchises}
 								/>
 								<MultiSelectBox
+								isLarge
 								value={this.state.preferences.functions}
 								label="Function *"
 								onChange={this.setPreferences.bind(this, 'functions')}
 								items={homeProfileSetupData.functions}
 								/>
 								<MultiSelectBox
+								isLarge
 								value={this.state.preferences.locations}
 								label="Location *"
 								onChange={this.setPreferences.bind(this, 'locations')}
 								items={homeProfileSetupData.locations}
 								/>
 							</div>
-								{<div className="tags-wrapper">
-		              {	
-										this.state.preferences.franchises.map((item, index) =>
-		              		<Tag key={index} label={item} />
-		              	)
-		              }
-		              {	
-										this.state.preferences.functions.map((item, index) =>
-		              		<Tag key={index} label={item} />
-		              	)
-		              }
-		              {	
-										this.state.preferences.locations.map((item, index) =>
-		              		<Tag key={index} label={item} />
-		              	)
-		              }
-	              </div>}
+							<div className="tags-wrapper">
+								{	
+									this.state.preferences.franchises.map((item, index) =>
+										<Tag key={index} label={item} />
+									)
+								}
+								{	
+									this.state.preferences.functions.map((item, index) =>
+										<Tag key={index} label={item} />
+									)
+								}
+								{	
+									this.state.preferences.locations.map((item, index) =>
+										<Tag key={index} label={item} />
+									)
+								}
+							</div>
+								{/*
+									scroll.children.filter((child) => child.name == 'Photo').map((child, index) =>
+										<ScrollLink key={index} to={child.start} key={index}>	
+											<button className="mdc-button mdc-button--secondary mdc-button--white">
+												<span>Continue to Home</span>
+											</button>
+										</ScrollLink>
+									)
+								*/}
 								{/*<SelectBox
 								value={this.state.preferences.franchises}
 								label="Company/Franchise *"

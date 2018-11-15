@@ -84,13 +84,14 @@ export default class MultiSelectBox extends Component {
 	}
 
 	render() {
-		const { items, label } = this.props;
+		const { items, label, isLarge } = this.props;
 
 		const classnames = classNames({
 			'multiselectbox': true,
 			'multiselectbox--focused': this.state.isFocused,
 			'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
 			'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0,
+			'multiselectbox--lg': isLarge,
 		});
 
 

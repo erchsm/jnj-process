@@ -43,11 +43,19 @@
 
 		.mdc-button {
 			margin-top: 40px;
-			padding-left: 0;
-			font-size: 21px;
+			font-size: 18px;
 
 			i {
 				font-size: 16px;
+			}
+
+			&__text-link {
+				padding-left: 0;
+			}
+
+			&:hover {
+				color: white;
+				border-color: white;
 			}
 		}
 	}

@@ -37586,7 +37586,7 @@ var HomeProfileSetup = function (_Component) {
 					null,
 					_react2.default.createElement(
 						'section',
-						{ name: 'Welcome', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+						{ name: 'Preferences', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
 						_react2.default.createElement(
 							'h1',
 							null,
@@ -37595,56 +37595,27 @@ var HomeProfileSetup = function (_Component) {
 						_react2.default.createElement(
 							'p',
 							null,
-							'Home is where all Johnson & Johnson employees can connect to create a productive, united work environment. We\'re excited for you to join the community!'
-						),
-						scroll.children.filter(function (child) {
-							return child.name == 'Preferences';
-						}).map(function (child, index) {
-							return _react2.default.createElement(
-								_reactSkroll.ScrollLink,
-								_defineProperty({ key: index, to: child.start }, 'key', index),
-								_react2.default.createElement(
-									'button',
-									{ className: 'mdc-button mdc-button--text-link mdc-button--white' },
-									_react2.default.createElement(
-										'span',
-										null,
-										'Let\u2019s get started'
-									),
-									_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
-								)
-							);
-						})
-					),
-					_react2.default.createElement(
-						'section',
-						{ name: 'Preferences', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
-						_react2.default.createElement(
-							'h1',
-							null,
-							'Tell us what you\u2019re interested in.'
-						),
-						_react2.default.createElement(
-							'p',
-							null,
-							'Select the companies, functions and locations you want to see within your news and events. Pick as many as you like.'
+							'Connect with other Johnson & Johnson employees and create a positive and productive work environment. Select the topics you want to see within your news and events.'
 						),
 						_react2.default.createElement(
 							'div',
 							{ className: 'contents' },
 							_react2.default.createElement(_MultiSelectBox2.default, {
+								isLarge: true,
 								value: this.state.preferences.franchises,
 								label: 'Company/Franchise *',
 								onChange: this.setPreferences.bind(this, 'franchises'),
 								items: _homeProfileSetup2.default.franchises
 							}),
 							_react2.default.createElement(_MultiSelectBox2.default, {
+								isLarge: true,
 								value: this.state.preferences.functions,
 								label: 'Function *',
 								onChange: this.setPreferences.bind(this, 'functions'),
 								items: _homeProfileSetup2.default.functions
 							}),
 							_react2.default.createElement(_MultiSelectBox2.default, {
+								isLarge: true,
 								value: this.state.preferences.locations,
 								label: 'Location *',
 								onChange: this.setPreferences.bind(this, 'locations'),
@@ -38229,14 +38200,16 @@ var MultiSelectBox = function (_Component) {
 		value: function render() {
 			var _props = this.props,
 			    items = _props.items,
-			    label = _props.label;
+			    label = _props.label,
+			    isLarge = _props.isLarge;
 
 
 			var classnames = (0, _classnames2.default)({
 				'multiselectbox': true,
 				'multiselectbox--focused': this.state.isFocused,
 				'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
-				'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0
+				'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0,
+				'multiselectbox--lg': isLarge
 			});
 
 			return _react2.default.createElement(
@@ -38870,6 +38843,11 @@ var Switch = function (_Component) {
           'div',
           { className: classnames, onClick: this.toggle },
           _react2.default.createElement(
+            'label',
+            null,
+            label
+          ),
+          _react2.default.createElement(
             'div',
             { className: 'switch-toggle' },
             _react2.default.createElement(
@@ -38877,11 +38855,6 @@ var Switch = function (_Component) {
               null,
               value === true ? 'On' : 'Off'
             )
-          ),
-          _react2.default.createElement(
-            'label',
-            null,
-            label
           )
         )
       );

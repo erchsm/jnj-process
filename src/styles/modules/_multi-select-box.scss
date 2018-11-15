@@ -43,6 +43,31 @@
 		height: 40px;
 		border-bottom: solid 1px white;
 
+		@mixin placeholder-style() {
+			color: white;
+			opacity: 0.4;
+		}
+
+		::placeholder {
+			@include placeholder-style();
+		}
+
+		::-webkit-input-placeholder {
+			@include placeholder-style();
+		}
+
+		::-moz-placeholder {
+			@include placeholder-style();
+		}
+
+		:-ms-input-placeholder {
+			@include placeholder-style();
+		}
+
+		:-moz-placeholder {
+			@include placeholder-style();
+		}
+
 		> div {
 			display: flex !important;
 			flex-wrap: wrap;
@@ -96,33 +121,6 @@
 		color: white;
 		background: transparent;
 		border: none;
-	}
-
-	input {
-		@mixin placeholder-style() {
-			color: white;
-			opacity: 1;
-		}
-
-		::placeholder {
-			@include placeholder-style();
-		}
-
-		::-webkit-input-placeholder {
-			@include placeholder-style();
-		}
-
-		::-moz-placeholder {
-			@include placeholder-style();
-		}
-
-		:-ms-input-placeholder {
-			@include placeholder-style();
-		}
-
-		:-moz-placeholder {
-			@include placeholder-style();
-		}
 	}
 
 	.option {
@@ -185,6 +183,28 @@
 	&--show-indicator {
 		.indicator {
 			display: block;
+		}
+	}
+
+	&--lg {
+		label {
+			font-size: 18px;
+			transition-timing-function: $easing2;
+		}
+		.input-box {
+			font-size: 14px;
+		}
+		.option {
+			font-size: 18px;
+			padding: 12px;
+		}
+		.option-area {
+			max-height: 266px;
+		}
+		&.multiselectbox--label-shrink {
+			label {
+				top: -18px;
+			}
 		}
 	}
 }
