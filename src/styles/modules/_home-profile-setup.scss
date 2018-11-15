@@ -41,9 +41,15 @@
 			}
 		}
 
+		.spacer {
+			flex: 1;
+		}
+
 		.mdc-button {
+			max-width: 240px;
 			margin-top: 40px;
 			font-size: 18px;
+			padding: 18px;
 
 			i {
 				font-size: 16px;

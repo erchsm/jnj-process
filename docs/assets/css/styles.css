@@ -14344,9 +14344,14 @@ body {
       margin-bottom: 24px; }
       .home-profile-setup section .contents .selectbox__wrapper, .home-profile-setup section .contents .multiselectbox {
         margin-right: 24px; }
+    .home-profile-setup section .spacer {
+      -ms-flex: 1;
+      flex: 1; }
     .home-profile-setup section .mdc-button {
+      max-width: 240px;
       margin-top: 40px;
-      font-size: 18px; }
+      font-size: 18px;
+      padding: 18px; }
       .home-profile-setup section .mdc-button i {
         font-size: 16px; }
       .home-profile-setup section .mdc-button__text-link {
@@ -15850,11 +15855,13 @@ body {
     transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1); }
   .multiselectbox--lg .input-box {
     font-size: 14px; }
+  .multiselectbox--lg i {
+    font-size: 18px; }
   .multiselectbox--lg .option {
     font-size: 18px;
     padding: 12px; }
   .multiselectbox--lg .option-area {
-    max-height: 266px; }
+    max-height: 220px; }
   .multiselectbox--lg.multiselectbox--label-shrink label {
     top: -18px; }
 

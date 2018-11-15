@@ -104,6 +104,15 @@ export default class HomeProfileSetup extends Component {
       skills: prevState.skills.filter((x,i) => i != index )
     }))
   }
+
+  removePreference = (filterType, index) => {
+    this.setState(prevState => ({
+    	preferences: {
+					...prevState.preferences,
+					[filterType]: prevState.preferences[filterType].filter((x,i) => i != index ),
+			},
+    }))
+  }
 	
 	render() {
 		const { scroll } = this.props;
@@ -140,7 +149,7 @@ export default class HomeProfileSetup extends Component {
 		return (
 			<div className={classnames}>
 				<i className="iconcss icon-home-logo"></i>
-				<Scroller>
+				{/*<Scroller>*/}
 
 					{/*<section name="Welcome" className={classNames({ 'moving': scroll.moving })}>
 						<h1>Welcome to Home, James.</h1>
@@ -188,29 +197,26 @@ export default class HomeProfileSetup extends Component {
 							<div className="tags-wrapper">
 								{	
 									this.state.preferences.franchises.map((item, index) =>
-										<Tag key={index} label={item} />
+										<Tag key={index} label={item} click={() => this.removePreference('franchises', index)}/>
 									)
 								}
 								{	
 									this.state.preferences.functions.map((item, index) =>
-										<Tag key={index} label={item} />
+										<Tag key={index} label={item} click={() => this.removePreference('functions', index)}/>
 									)
 								}
 								{	
 									this.state.preferences.locations.map((item, index) =>
-										<Tag key={index} label={item} />
+										<Tag key={index} label={item} click={() => this.removePreference('locations', index)}/>
 									)
 								}
 							</div>
-								{/*
-									scroll.children.filter((child) => child.name == 'Photo').map((child, index) =>
-										<ScrollLink key={index} to={child.start} key={index}>	
-											<button className="mdc-button mdc-button--secondary mdc-button--white">
-												<span>Continue to Home</span>
-											</button>
-										</ScrollLink>
-									)
-								*/}
+							<div className="spacer"></div>
+								{
+									<button className="mdc-button mdc-button--secondary mdc-button--white">
+										<span>Continue to Home</span>
+									</button>
+								}
 								{/*<SelectBox
 								value={this.state.preferences.franchises}
 								label="Company/Franchise *"
@@ -274,9 +280,9 @@ export default class HomeProfileSetup extends Component {
               </div>
 					</section>}
 
-				</Scroller>
+				{/*</Scroller>*/}
 
-				<ul className="home-profile-setup__nav">
+				{/*<ul className="home-profile-setup__nav">
 					<div className="home-profile-setup__nav-line">
 						<div className="home-profile-setup__nav-line-inner"></div>
 						<div className="home-profile-setup__nav-line-inner home-profile-setup__nav-line-main" style={lineAnimation}></div>
@@ -296,7 +302,7 @@ export default class HomeProfileSetup extends Component {
 							</li>
 						)
 					}
-				</ul>
+				</ul>*/}
 			</div>
 		)
 	}
