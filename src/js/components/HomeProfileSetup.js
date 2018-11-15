@@ -159,7 +159,7 @@ export default class HomeProfileSetup extends Component {
 
 					<section name="Preferences" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Welcome to Home, James.</h1>
-							<p>Connect with other Johnson & Johnson employees and create a positive and productive work environment. Select the topics you want to see within your news and events.</p>
+							<p>Connect with other Johnson & Johnson employees and create a positive and productive work environment. Get started by selecting the topics you want to see within your news and events.</p>
 							{/*<h1>Tell us what you’re interested in.</h1>
 							<p>Select the companies, functions and locations you want to see within your news and events. Pick as many as you like.</p>*/}
 							<div className="contents">

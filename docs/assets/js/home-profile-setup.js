@@ -37595,7 +37595,7 @@ var HomeProfileSetup = function (_Component) {
 						_react2.default.createElement(
 							'p',
 							null,
-							'Connect with other Johnson & Johnson employees and create a positive and productive work environment. Select the topics you want to see within your news and events.'
+							'Connect with other Johnson & Johnson employees and create a positive and productive work environment. Get started by selecting the topics you want to see within your news and events.'
 						),
 						_react2.default.createElement(
 							'div',
@@ -38133,6 +38133,7 @@ var MultiSelectBox = function (_Component) {
 					isFocused: false
 				});
 				_this.updateNumWrapping();
+				_this.props.onChange(_this.state.selected);
 			}
 		};
 

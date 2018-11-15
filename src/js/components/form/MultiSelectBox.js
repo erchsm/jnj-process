@@ -46,6 +46,7 @@ export default class MultiSelectBox extends Component {
 				isFocused: false
 			});
 			this.updateNumWrapping();
+			this.props.onChange(this.state.selected);
 		}
 	}
 
