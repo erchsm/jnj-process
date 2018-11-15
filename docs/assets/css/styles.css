@@ -14440,6 +14440,9 @@ body {
     .home-profile-setup .search-bar .react-autosuggest__container :-moz-placeholder {
       color: white;
       opacity: 0.4; }
+    .home-profile-setup .search-bar .react-autosuggest__suggestion--highlighted {
+      font-weight: normal;
+      background: #131e8e; }
     .home-profile-setup .search-bar .react-autosuggest__suggestions-container {
       position: absolute;
       background: #1724A9;
