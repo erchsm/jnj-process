@@ -37483,7 +37483,7 @@ var HomeProfileSetup = function (_Component) {
 			_this.setState(function (prevState) {
 				return {
 					completed: _extends({}, prevState.completed, {
-						"Preferences": true
+						"Preferences": prevState.preferences.franchises.length > 0 && prevState.preferences.locations.length > 0 && prevState.preferences.functions.length > 0
 					}),
 					preferences: _extends({}, prevState.preferences, _defineProperty({}, filterType, value))
 				};
