@@ -8,6 +8,17 @@
 		display: none;
 	}
 
+	.indicator {
+		position: absolute;
+		margin: 2px 0;
+    padding: 6px 0;
+    top: 2px;
+		color: white;
+		display: none;
+		pointer-events: none;
+		font-size: 14px;
+	}
+
 	i {
 		position: absolute;
 		right: 0;
@@ -37,16 +48,15 @@
 			flex-wrap: wrap;
 			overflow: hidden;
 			height: 40px;
+			width: 90%;
 			pointer-events: none;
 			position: absolute;
 
 			.tags {
 				background: transparent;
 				white-space: nowrap;
-				margin-left: 0;
-				padding-left: 0;
-				margin-right: 0;
-				padding-right: 0;
+				margin: 2px 0;
+				padding: 6px 0;
 
 				span {
 					pointer-events: none;
@@ -58,7 +68,7 @@
 						display: inline;
 						left: 0;
 						content: ',';
-						opacity: 0.6;
+						// opacity: 0.6;
 						color: white;
 						position: absolute;
 					}
@@ -81,9 +91,37 @@
 		padding: 0;
 		outline: none;
 		height: 100%;
+		width: 90%;
 		color: white;
 		background: transparent;
 		border: none;
+	}
+
+	input {
+		@mixin placeholder-style() {
+			color: white;
+			opacity: 1;
+		}
+
+		::placeholder {
+			@include placeholder-style();
+		}
+
+		::-webkit-input-placeholder {
+			@include placeholder-style();
+		}
+
+		::-moz-placeholder {
+			@include placeholder-style();
+		}
+
+		:-ms-input-placeholder {
+			@include placeholder-style();
+		}
+
+		:-moz-placeholder {
+			@include placeholder-style();
+		}
 	}
 
 	.option {
@@ -117,7 +155,9 @@
 	}
 
 	.option-area {
-		background: transparent;
+		position: absolute;
+		width: 100%;
+		background: darken($brand-blue, 2%);
 		margin: 0;
 		border-color: rgba(white, .8);
 		max-height: 235px;
@@ -130,7 +170,6 @@
 		.tags {
 			display: none;
 		}
-
 		i {
 			transform: scaleY(-1);
 		}
@@ -140,6 +179,11 @@
 		label {
 			top: -12px;
 			transform: scale(0.7);
+		}
+	}
+	&--show-indicator {
+		.indicator {
+			display: block;
 		}
 	}
 }

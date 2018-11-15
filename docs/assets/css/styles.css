@@ -14340,7 +14340,8 @@ body {
     .home-profile-setup section .contents {
       display: -ms-flexbox;
       display: flex;
-      margin-top: 40px; }
+      margin-top: 40px;
+      margin-bottom: 24px; }
       .home-profile-setup section .contents .selectbox__wrapper, .home-profile-setup section .contents .multiselectbox {
         margin-right: 24px; }
     .home-profile-setup section .mdc-button {
@@ -14425,6 +14426,24 @@ body {
       border: solid 2px;
       padding: 18px;
       padding-left: 72px; }
+      .home-profile-setup .search-bar .react-autosuggest__input :-ms-input-placeholder {
+        color: white;
+        opacity: 1; }
+      .home-profile-setup .search-bar .react-autosuggest__input ::placeholder {
+        color: white;
+        opacity: 1; }
+      .home-profile-setup .search-bar .react-autosuggest__input ::-webkit-input-placeholder {
+        color: white;
+        opacity: 1; }
+      .home-profile-setup .search-bar .react-autosuggest__input ::-moz-placeholder {
+        color: white;
+        opacity: 1; }
+      .home-profile-setup .search-bar .react-autosuggest__input :-ms-input-placeholder {
+        color: white;
+        opacity: 1; }
+      .home-profile-setup .search-bar .react-autosuggest__input :-moz-placeholder {
+        color: white;
+        opacity: 1; }
     .home-profile-setup .search-bar .react-autosuggest__suggestions-container {
       position: absolute;
       background: #1724A9;
@@ -14442,7 +14461,7 @@ body {
         content: "\EA41"; }
   .home-profile-setup .tags-wrapper .tag {
     color: white;
-    border-width: 2px;
+    border-width: 1px;
     border-color: white;
     background: transparent;
     border-radius: 0;
@@ -15674,6 +15693,15 @@ body {
   flex-direction: column; }
   .multiselectbox .btn {
     display: none; }
+  .multiselectbox .indicator {
+    position: absolute;
+    margin: 2px 0;
+    padding: 6px 0;
+    top: 2px;
+    color: white;
+    display: none;
+    pointer-events: none;
+    font-size: 14px; }
   .multiselectbox i {
     position: absolute;
     right: 0;
@@ -15702,15 +15730,14 @@ body {
       flex-wrap: wrap;
       overflow: hidden;
       height: 40px;
+      width: 90%;
       pointer-events: none;
       position: absolute; }
       .multiselectbox .input-area > div .tags {
         background: transparent;
         white-space: nowrap;
-        margin-left: 0;
-        padding-left: 0;
-        margin-right: 0;
-        padding-right: 0; }
+        margin: 2px 0;
+        padding: 6px 0; }
         .multiselectbox .input-area > div .tags span {
           pointer-events: none;
           color: transparent;
@@ -15720,7 +15747,6 @@ body {
             display: inline;
             left: 0;
             content: ',';
-            opacity: 0.6;
             color: white;
             position: absolute; }
         .multiselectbox .input-area > div .tags:last-child span:after {
@@ -15731,9 +15757,28 @@ body {
     padding: 0;
     outline: none;
     height: 100%;
+    width: 90%;
     color: white;
     background: transparent;
     border: none; }
+  .multiselectbox input :-ms-input-placeholder {
+    color: white;
+    opacity: 1; }
+  .multiselectbox input ::placeholder {
+    color: white;
+    opacity: 1; }
+  .multiselectbox input ::-webkit-input-placeholder {
+    color: white;
+    opacity: 1; }
+  .multiselectbox input ::-moz-placeholder {
+    color: white;
+    opacity: 1; }
+  .multiselectbox input :-ms-input-placeholder {
+    color: white;
+    opacity: 1; }
+  .multiselectbox input :-moz-placeholder {
+    color: white;
+    opacity: 1; }
   .multiselectbox .option {
     margin: 0;
     display: -ms-flexbox;
@@ -15759,7 +15804,9 @@ body {
     .multiselectbox .option:hover {
       background: #131e8e; }
   .multiselectbox .option-area {
-    background: transparent;
+    position: absolute;
+    width: 100%;
+    background: #1622a0;
     margin: 0;
     border-color: rgba(255, 255, 255, 0.8);
     max-height: 235px; }
@@ -15774,6 +15821,8 @@ body {
     top: -12px;
     -ms-transform: scale(0.7);
     transform: scale(0.7); }
+  .multiselectbox--show-indicator .indicator {
+    display: block; }
 
 .search-bar {
   display: -ms-flexbox;

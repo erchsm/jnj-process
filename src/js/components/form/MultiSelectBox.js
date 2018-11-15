@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from "react-dom";
 import MultiSearchSelect from "react-search-multi-select";
 import classNames from 'classnames';
+
+import newId from '../../services/newId';
 
 
 export default class MultiSelectBox extends Component {
@@ -9,6 +12,8 @@ export default class MultiSelectBox extends Component {
 		super(props);
 
 		this.state = {
+			numWrapping: 0,
+			indicatorLeft: 60,
 			isFocused: false,
 			selected: [],
 		};
@@ -17,7 +22,14 @@ export default class MultiSelectBox extends Component {
 	stealFocus = () => {
 		this.setState({
 			isFocused: true,
-		})
+		});
+		this.props.onChange(this.state.selected);
+		this.updateNumWrapping();
+	}
+
+	componentWillMount() {
+		this.tagsDom = ReactDOM.findDOMNode(this);
+		this.id = newId('multiselect-');
 	}
 
 	componentDidMount() {
@@ -29,20 +41,47 @@ export default class MultiSelectBox extends Component {
 	}
 
 	handleClickOutside = (event) => {
-		(!this.refs.wrapper.contains(event.target)) ? (
+		if (!this.refs.wrapper.contains(event.target)) {
 			this.setState({
 				isFocused: false
-			})
-			) : null;
+			});
+			this.updateNumWrapping();
+		}
 	}
 
-	handleChange = (arr) => {
-		if (this.state.selected.length != arr.length) {
+	handleChange = (value) => {
+		if (this.state.selected.length != value.length) {
 			this.setState({
-				selected: arr,
+				selected: value,
 			});
-			this.props.onChange();
 		}
+	}
+
+	/*removeElementsByClass = (className) => {
+		var elements = document.getElementsByClassName(className);
+		while (elements.length > 0){
+				elements[0].parentNode.removeChild(elements[0]);
+		}
+	}*/
+
+	updateNumWrapping = () => {
+		const tags = document.getElementById(this.id).getElementsByClassName('tags');
+		let firstTagPos = 0;
+
+		Array.prototype.every.call(tags, (item, index) => {
+			(index == 0) ? (firstTagPos = item.getBoundingClientRect().y) : null;
+
+			if (item.getBoundingClientRect().y > firstTagPos) {
+				const indicatorLeft = tags[index-1].getBoundingClientRect().x - item.parentNode.getBoundingClientRect().x + tags[index-1].getBoundingClientRect().width;
+				this.setState({
+					numWrapping: tags.length - index,
+					indicatorLeft: indicatorLeft,
+				})
+
+				return false;
+			}
+			else return true;
+		})
 	}
 
 	render() {
@@ -52,19 +91,30 @@ export default class MultiSelectBox extends Component {
 			'multiselectbox': true,
 			'multiselectbox--focused': this.state.isFocused,
 			'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
+			'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0,
 		});
 
-		Array.prototype.forEach.call(document.getElementsByClassName('tags'), (item) => {
-		    console.log(item)
-		});
+
+
+		// if (document.getElementById(this.id)) {
+			// const tags = document.getElementById(this.id).getElementsByClassName('tags');
+
+			// let firstTagPos = 0;
+
+			// this.removeElementsByClass('indicator', (() => this.generateIndicator(tags, firstTagPos)));
+
+			// console.log(tags);
+		// }
+
 
 		return (
-			<div className={classnames} onClick={this.stealFocus} ref="wrapper">
+		<div id={this.id} className={classnames} onClick={this.stealFocus} ref="wrapper">
 				<MultiSearchSelect
-		    optionsContainerHeight={""} 
-		    primaryColor={""}
-        secondaryColor={""}
-        textColor={""}
+				searchPlaceholder={"Type to search..."}
+				optionsContainerHeight={""} 
+				primaryColor={""}
+				secondaryColor={""}
+				textColor={""}
 				searchable={true} 
 				showTags={true} 
 				multiSelect={true} 
@@ -73,7 +123,8 @@ export default class MultiSelectBox extends Component {
 				options={items}/>
 				<i className="iconcss icon-caret-down-lg"></i>
 				<label>{label}</label>
+				<div style={{'left': this.state.indicatorLeft }} className="indicator">&nbsp;{this.state.numWrapping} +</div>
 			</div>
-			);
+		);
 	}
 }

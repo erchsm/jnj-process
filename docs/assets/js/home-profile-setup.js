@@ -37485,7 +37485,7 @@ var HomeProfileSetup = function (_Component) {
 					completed: _extends({}, prevState.completed, {
 						"Preferences": true
 					}),
-					preferences: _extends({}, _this.state.preferences, _defineProperty({}, filterType, value))
+					preferences: _extends({}, prevState.preferences, _defineProperty({}, filterType, value))
 				};
 			});
 		};
@@ -37517,8 +37517,8 @@ var HomeProfileSetup = function (_Component) {
 		_this.state = {
 			preferences: {
 				franchises: [],
-				locations: null,
-				functions: null
+				locations: [],
+				functions: []
 			},
 			accounts: {
 				yammer: false,
@@ -37636,13 +37636,13 @@ var HomeProfileSetup = function (_Component) {
 							_react2.default.createElement(_MultiSelectBox2.default, {
 								value: this.state.preferences.franchises,
 								label: 'Company/Franchise *',
-								onChange: this.setPreferences.bind(this, 'franchise'),
+								onChange: this.setPreferences.bind(this, 'franchises'),
 								items: _homeProfileSetup2.default.franchises
 							}),
 							_react2.default.createElement(_MultiSelectBox2.default, {
 								value: this.state.preferences.functions,
 								label: 'Function *',
-								onChange: this.setPreferences.bind(this, 'function'),
+								onChange: this.setPreferences.bind(this, 'functions'),
 								items: _homeProfileSetup2.default.functions
 							}),
 							_react2.default.createElement(_MultiSelectBox2.default, {
@@ -37650,6 +37650,19 @@ var HomeProfileSetup = function (_Component) {
 								label: 'Location *',
 								onChange: this.setPreferences.bind(this, 'locations'),
 								items: _homeProfileSetup2.default.locations
+							})
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'tags-wrapper' },
+							this.state.preferences.franchises.map(function (item, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: item });
+							}),
+							this.state.preferences.functions.map(function (item, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: item });
+							}),
+							this.state.preferences.locations.map(function (item, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: item });
 							})
 						)
 					),
@@ -38090,7 +38103,7 @@ var SearchBar = function (_Component) {
 exports.default = SearchBar;
 
 },{"classnames":1,"react":223,"react-autosuggest":38}],234:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -38098,17 +38111,25 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactSearchMultiSelect = require('react-search-multi-select');
+var _reactDom = require("react-dom");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactSearchMultiSelect = require("react-search-multi-select");
 
 var _reactSearchMultiSelect2 = _interopRequireDefault(_reactSearchMultiSelect);
 
-var _classnames = require('classnames');
+var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
+
+var _newId = require("../../services/newId");
+
+var _newId2 = _interopRequireDefault(_newId);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38130,24 +38151,49 @@ var MultiSelectBox = function (_Component) {
 			_this.setState({
 				isFocused: true
 			});
+			_this.props.onChange(_this.state.selected);
+			_this.updateNumWrapping();
 		};
 
 		_this.handleClickOutside = function (event) {
-			!_this.refs.wrapper.contains(event.target) ? _this.setState({
-				isFocused: false
-			}) : null;
-		};
-
-		_this.handleChange = function (arr) {
-			if (_this.state.selected.length != arr.length) {
+			if (!_this.refs.wrapper.contains(event.target)) {
 				_this.setState({
-					selected: arr
+					isFocused: false
 				});
-				_this.props.onChange();
+				_this.updateNumWrapping();
 			}
 		};
 
+		_this.handleChange = function (value) {
+			if (_this.state.selected.length != value.length) {
+				_this.setState({
+					selected: value
+				});
+			}
+		};
+
+		_this.updateNumWrapping = function () {
+			var tags = document.getElementById(_this.id).getElementsByClassName('tags');
+			var firstTagPos = 0;
+
+			Array.prototype.every.call(tags, function (item, index) {
+				index == 0 ? firstTagPos = item.getBoundingClientRect().y : null;
+
+				if (item.getBoundingClientRect().y > firstTagPos) {
+					var indicatorLeft = tags[index - 1].getBoundingClientRect().x - item.parentNode.getBoundingClientRect().x + tags[index - 1].getBoundingClientRect().width;
+					_this.setState({
+						numWrapping: tags.length - index,
+						indicatorLeft: indicatorLeft
+					});
+
+					return false;
+				} else return true;
+			});
+		};
+
 		_this.state = {
+			numWrapping: 0,
+			indicatorLeft: 60,
 			isFocused: false,
 			selected: []
 		};
@@ -38155,17 +38201,31 @@ var MultiSelectBox = function (_Component) {
 	}
 
 	_createClass(MultiSelectBox, [{
-		key: 'componentDidMount',
+		key: "componentWillMount",
+		value: function componentWillMount() {
+			this.tagsDom = _reactDom2.default.findDOMNode(this);
+			this.id = (0, _newId2.default)('multiselect-');
+		}
+	}, {
+		key: "componentDidMount",
 		value: function componentDidMount() {
 			document.addEventListener('mousedown', this.handleClickOutside);
 		}
 	}, {
-		key: 'componentWillUnmount',
+		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousedown', this.handleClickOutside);
 		}
+
+		/*removeElementsByClass = (className) => {
+  	var elements = document.getElementsByClassName(className);
+  	while (elements.length > 0){
+  			elements[0].parentNode.removeChild(elements[0]);
+  	}
+  }*/
+
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
 			var _props = this.props,
 			    items = _props.items,
@@ -38175,17 +38235,26 @@ var MultiSelectBox = function (_Component) {
 			var classnames = (0, _classnames2.default)({
 				'multiselectbox': true,
 				'multiselectbox--focused': this.state.isFocused,
-				'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0
+				'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
+				'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0
 			});
 
-			Array.prototype.forEach.call(document.getElementsByClassName('tags'), function (item) {
-				console.log(item);
-			});
+			// if (document.getElementById(this.id)) {
+			// const tags = document.getElementById(this.id).getElementsByClassName('tags');
+
+			// let firstTagPos = 0;
+
+			// this.removeElementsByClass('indicator', (() => this.generateIndicator(tags, firstTagPos)));
+
+			// console.log(tags);
+			// }
+
 
 			return _react2.default.createElement(
-				'div',
-				{ className: classnames, onClick: this.stealFocus, ref: 'wrapper' },
+				"div",
+				{ id: this.id, className: classnames, onClick: this.stealFocus, ref: "wrapper" },
 				_react2.default.createElement(_reactSearchMultiSelect2.default, {
+					searchPlaceholder: "Type to search...",
 					optionsContainerHeight: "",
 					primaryColor: "",
 					secondaryColor: "",
@@ -38196,11 +38265,18 @@ var MultiSelectBox = function (_Component) {
 					width: '100%',
 					onSelect: this.handleChange,
 					options: items }),
-				_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' }),
+				_react2.default.createElement("i", { className: "iconcss icon-caret-down-lg" }),
 				_react2.default.createElement(
-					'label',
+					"label",
 					null,
 					label
+				),
+				_react2.default.createElement(
+					"div",
+					{ style: { 'left': this.state.indicatorLeft }, className: "indicator" },
+					"\xA0",
+					this.state.numWrapping,
+					" +"
 				)
 			);
 		}
@@ -38211,7 +38287,7 @@ var MultiSelectBox = function (_Component) {
 
 exports.default = MultiSelectBox;
 
-},{"classnames":1,"react":223,"react-search-multi-select":186}],235:[function(require,module,exports){
+},{"../../services/newId":239,"classnames":1,"react":223,"react-dom":46,"react-search-multi-select":186}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38804,7 +38880,11 @@ var Switch = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: classnames, onClick: this.toggle },
-          _react2.default.createElement('div', { className: 'switch-toggle' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'switch-toggle' },
+            value === true ? 'On' : 'Off'
+          ),
           _react2.default.createElement(
             'label',
             null,
@@ -39213,6 +39293,22 @@ module.exports={
 		"Zug, CHE",
 	]
 }
+},{}],239:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    lastId++;
+    return '' + prefix + lastId;
+};
+
+var lastId = 0;
+
 },{}]},{},[230])
 
 //# sourceMappingURL=home-profile-setup.js.map
