@@ -126,10 +126,9 @@ export default class HomeProfileSetup extends Component {
 		// }
 
 		const linePercentage = {
-			"Welcome": 0,
-			"Preferences": .25,
-			"Photo": .5,
-			"Accounts": .75,
+			"Preferences": 0,
+			"Photo": .33333333,
+			"Accounts": .66666667,
 			"Skills": 1,
 		}
 
@@ -270,7 +269,7 @@ export default class HomeProfileSetup extends Component {
 						<div className="home-profile-setup__nav-line-inner"></div>
 					</div>
 					{
-						scroll.children.map((child, index) =>
+						scroll.children.filter((child) => child.name != 'Welcome').map((child, index) =>
 							<li key={index}>
 								<ScrollLink
 									key={index}

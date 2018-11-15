@@ -37567,10 +37567,9 @@ var HomeProfileSetup = function (_Component) {
 			// }
 
 			var linePercentage = {
-				"Welcome": 0,
-				"Preferences": .25,
-				"Photo": .5,
-				"Accounts": .75,
+				"Preferences": 0,
+				"Photo": .33333333,
+				"Accounts": .66666667,
 				"Skills": 1
 			};
 
@@ -37736,7 +37735,9 @@ var HomeProfileSetup = function (_Component) {
 						_react2.default.createElement('div', { className: 'home-profile-setup__nav-line-inner home-profile-setup__nav-line-main', style: lineAnimation }),
 						_react2.default.createElement('div', { className: 'home-profile-setup__nav-line-inner' })
 					),
-					scroll.children.map(function (child, index) {
+					scroll.children.filter(function (child) {
+						return child.name != 'Welcome';
+					}).map(function (child, index) {
 						return _react2.default.createElement(
 							'li',
 							{ key: index },
@@ -38185,7 +38186,6 @@ var MultiSelectBox = function (_Component) {
 						numWrapping: tags.length - index,
 						indicatorLeft: indicatorLeft
 					});
-
 					return false;
 				} else return true;
 			});
@@ -38238,17 +38238,6 @@ var MultiSelectBox = function (_Component) {
 				'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
 				'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0
 			});
-
-			// if (document.getElementById(this.id)) {
-			// const tags = document.getElementById(this.id).getElementsByClassName('tags');
-
-			// let firstTagPos = 0;
-
-			// this.removeElementsByClass('indicator', (() => this.generateIndicator(tags, firstTagPos)));
-
-			// console.log(tags);
-			// }
-
 
 			return _react2.default.createElement(
 				"div",
@@ -38883,7 +38872,11 @@ var Switch = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'switch-toggle' },
-            value === true ? 'On' : 'Off'
+            _react2.default.createElement(
+              'span',
+              null,
+              value === true ? 'On' : 'Off'
+            )
           ),
           _react2.default.createElement(
             'label',

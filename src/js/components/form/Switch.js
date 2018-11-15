@@ -31,7 +31,9 @@ export default class Switch extends Component {
     return (
       <div className="switch-wrapper">
         <div className={classnames} onClick={this.toggle}>
-        	<div className="switch-toggle">{(value === true) ? 'On' : 'Off'}</div>
+        	<div className="switch-toggle">
+            <span>{(value === true) ? 'On' : 'Off'}</span>
+          </div>
           <label>{label}</label>
         </div>
       </div>

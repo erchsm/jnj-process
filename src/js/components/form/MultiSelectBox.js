@@ -77,7 +77,6 @@ export default class MultiSelectBox extends Component {
 					numWrapping: tags.length - index,
 					indicatorLeft: indicatorLeft,
 				})
-
 				return false;
 			}
 			else return true;
@@ -93,18 +92,6 @@ export default class MultiSelectBox extends Component {
 			'multiselectbox--label-shrink': this.state.isFocused || this.state.selected.length > 0,
 			'multiselectbox--show-indicator': !this.state.isFocused && this.state.selected.length > 0 && this.state.numWrapping > 0,
 		});
-
-
-
-		// if (document.getElementById(this.id)) {
-			// const tags = document.getElementById(this.id).getElementsByClassName('tags');
-
-			// let firstTagPos = 0;
-
-			// this.removeElementsByClass('indicator', (() => this.generateIndicator(tags, firstTagPos)));
-
-			// console.log(tags);
-		// }
 
 
 		return (
