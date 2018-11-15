@@ -156,14 +156,17 @@
 			border: solid 2px;
 			padding: 18px;
 			padding-left: 72px;
+		}
+
+		input {
+			
+		}
+
+		.react-autosuggest__container {
 
 			@mixin placeholder-style() {
 				color: white;
-				opacity: 1;
-			}
-
-			::placeholder {
-				@include placeholder-style();
+				opacity: 0.4;
 			}
 
 			::-webkit-input-placeholder {
@@ -181,15 +184,13 @@
 			:-moz-placeholder {
 				@include placeholder-style();
 			}
-		}
 
-		input {
-			
 		}
 
 		.react-autosuggest__suggestions-container {
 			position: absolute;
 			background: $brand-blue;
+			color: white;
 			border: solid 2px white;
 			top: 68px;
 			width: 100%;
