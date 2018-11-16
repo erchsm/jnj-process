@@ -37658,65 +37658,6 @@ var HomeProfileSetup = function (_Component) {
 							'Continue to Home'
 						)
 					)
-				),
-				_react2.default.createElement(
-					'section',
-					{ name: 'Photo', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
-					_react2.default.createElement(
-						'h1',
-						null,
-						'Put a face to your name.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'We\u2019re connecting you with employees all over the world, adding your photo will put you in a room across the globe!'
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'contents' },
-						_react2.default.createElement(_ImageUpload2.default, null)
-					)
-				),
-				_react2.default.createElement(
-					'section',
-					{ name: 'Accounts', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
-					_react2.default.createElement(
-						'h1',
-						null,
-						'Sync your accounts.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'See what\'s happening on Yammer to share articles and events. Connect to your Outlook calendar to get a glimpse of your day.'
-					),
-					_react2.default.createElement(_Switch2.default, { label: "Yammer", value: this.state.accounts.yammer, onChange: this.onChangeAccountsYammer }),
-					_react2.default.createElement(_Switch2.default, { label: "Outlook", value: this.state.accounts.outlook, onChange: this.onChangeAccountsOutlook })
-				),
-				_react2.default.createElement(
-					'section',
-					{ name: 'Skills', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
-					_react2.default.createElement(
-						'h1',
-						null,
-						'Add your skills.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Search below for your personal and professional skills.'
-					),
-					_react2.default.createElement(_SearchBar2.default, { placeholder: 'Skills (ex. Data Analytics)', searchData: _homeProfileSetup2.default.skills, onClick: this.addSkill }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'tags-wrapper' },
-						this.state.skills.map(function (skill, index) {
-							return _react2.default.createElement(_Tag2.default, { key: index, label: skill.id, click: function click() {
-									return _this2.removeSkill(index);
-								} });
-						})
-					)
 				)
 			);
 		}

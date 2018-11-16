@@ -251,7 +251,11 @@
 			font-size: 8vw;
 		}
 		.multiselectbox {
-			margin-top: 1vh;
+			margin-top: 24px;
+
+			.option-area {
+				z-index: 1;
+			}
 		}
 		h1 {
 			font-size: 12vw;
