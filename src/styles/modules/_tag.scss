@@ -1,6 +1,8 @@
 .tags-wrapper {
   display: flex;
   flex-wrap: wrap;
+  max-height: 175px;
+  overflow-y: scroll;
 
   .tag {
     display: flex;

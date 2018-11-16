@@ -16339,7 +16339,9 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  max-height: 175px;
+  overflow-y: scroll; }
   .tags-wrapper .tag {
     display: -ms-flexbox;
     display: flex;
