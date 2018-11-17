@@ -79,7 +79,7 @@ $baseclass: home-nav;
 		width: 100%;
 		height: calc(100vh - 60px);
 		top: 60px;
-		background: rgba($brand-black, .12);
+		transition: all $easing2 0.6s;
 	}
 
 	&__panel {
@@ -178,6 +178,9 @@ $baseclass: home-nav;
 				}
 			}
 		}
+		.#{$baseclass}__main {
+			background: rgba($brand-black, .12);
+		}
 		.#{$baseclass}__panel--white {
 			transform: none;
 
@@ -214,6 +217,11 @@ $baseclass: home-nav;
 				}
 
 			}
+		}
+	}
+	@media screen and (max-width: $bp-medium) {
+		.#{$baseclass}__panel {
+			width: 100%;
 		}
 	}
 }
