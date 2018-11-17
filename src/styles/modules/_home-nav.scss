@@ -220,8 +220,17 @@ $baseclass: home-nav;
 		}
 	}
 	@media screen and (max-width: $bp-medium) {
+		.#{$baseclass}__topbar {
+			padding: 0 12px;
+		}
+		.tabbed-list__line-container {
+			padding: 0 12px;
+		}
 		.#{$baseclass}__panel {
 			width: 100%;
+			ul {
+				padding: 40px 12px 24px;
+			}
 		}
 	}
 }
