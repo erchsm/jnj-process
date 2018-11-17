@@ -213,7 +213,7 @@ export default class HomeProfileSetup extends Component {
 							</div>
 							<div className="spacer"></div>
 								{
-									<button className="mdc-button mdc-button--secondary mdc-button--white">
+									<button disabled={(this.state.completed.Preferences) ? false : true} className="mdc-button mdc-button--secondary mdc-button--white">
 										<span>Continue to Home</span>
 									</button>
 								}

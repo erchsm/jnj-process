@@ -37651,7 +37651,7 @@ var HomeProfileSetup = function (_Component) {
 					_react2.default.createElement('div', { className: 'spacer' }),
 					_react2.default.createElement(
 						'button',
-						{ className: 'mdc-button mdc-button--secondary mdc-button--white' },
+						{ disabled: this.state.completed.Preferences ? false : true, className: 'mdc-button mdc-button--secondary mdc-button--white' },
 						_react2.default.createElement(
 							'span',
 							null,

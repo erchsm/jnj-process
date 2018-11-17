@@ -21,7 +21,7 @@
 
 	section {
 		opacity: 1;
-		padding: 210px 60px 120px;
+	    padding: 180px 60px 100px;
 		display: flex;
 		flex-direction: column;
 		// justify-content: center;
@@ -62,6 +62,10 @@
 			&:hover {
 				color: white;
 				border-color: white;
+			}
+
+			&:disabled {
+				opacity: 0.6;
 			}
 		}
 	}
@@ -253,9 +257,6 @@
 		.multiselectbox {
 			margin-top: 24px;
 
-			.option-area {
-				z-index: 1;
-			}
 		}
 		h1 {
 			font-size: 12vw;
