@@ -1,0 +1,27 @@
+.tabbed-list {
+	&__header {
+		ul {
+			display: flex;
+			// padding: 0;
+
+			li {
+				text-align: center;
+				font-size: 14px;
+				// margin-right: 12px;
+				// padding-right: 24px;
+			}
+		}
+	}
+
+	&__line-container {
+		padding: 0 72px;
+		height: 4px;
+		background: rgba($brand-black, .12);
+	}
+
+	&__line {
+		height: 100%;
+		background: $brand-red;
+		transition: all $easing2 0.9s;
+	}
+}

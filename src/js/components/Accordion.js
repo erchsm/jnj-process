@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import newId from '../services/newid';
 
-export default class Accordion2 extends Component {
+export default class Accordion extends Component {
 
 	static propTypes = {
 	}

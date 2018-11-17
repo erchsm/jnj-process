@@ -40,6 +40,7 @@ module.exports = {
                 { input: 'mdc-taxonomy-diagram.js', output: 'mdc-taxonomy-diagram.js'},
                 { input: 'home-profile-setup.js', output: 'home-profile-setup.js'},
                 { input: 'home-sitemap.js', output: 'home-sitemap.js'},
+                { input: 'home-nav.js', output: 'home-nav.js'},
             ],
             extensions: ['js']
         },

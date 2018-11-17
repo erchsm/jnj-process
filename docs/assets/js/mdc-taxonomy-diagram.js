@@ -23327,13 +23327,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Accordion2 = function (_Component) {
-    _inherits(Accordion2, _Component);
+var Accordion = function (_Component) {
+    _inherits(Accordion, _Component);
 
-    function Accordion2(props) {
-        _classCallCheck(this, Accordion2);
+    function Accordion(props) {
+        _classCallCheck(this, Accordion);
 
-        var _this = _possibleConstructorReturn(this, (Accordion2.__proto__ || Object.getPrototypeOf(Accordion2)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Accordion.__proto__ || Object.getPrototypeOf(Accordion)).call(this, props));
 
         _this.componentDidMount = function () {};
 
@@ -23351,7 +23351,7 @@ var Accordion2 = function (_Component) {
         return _this;
     }
 
-    _createClass(Accordion2, [{
+    _createClass(Accordion, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
             this.id = (0, _newid2.default)('Accordion');
@@ -23414,11 +23414,11 @@ var Accordion2 = function (_Component) {
         }
     }]);
 
-    return Accordion2;
+    return Accordion;
 }(_react.Component);
 
-Accordion2.propTypes = {};
-exports.default = Accordion2;
+Accordion.propTypes = {};
+exports.default = Accordion;
 
 },{"../services/newid":212,"classnames":1,"react":198}],203:[function(require,module,exports){
 'use strict';
