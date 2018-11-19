@@ -114,7 +114,7 @@ export default class MultiSelectBox extends Component {
 				width={'100%'}
 				onSelect={this.handleChange} 
 				options={items}/>
-				<i className="iconcss icon-caret-down-lg" onClick={(this.state.isFocused) ? this.closeDropdown : null}></i>
+				<i className="iconcss icon-caret-down-lg"></i>
 				<label>{label}</label>
 				<div style={{'left': this.state.indicatorLeft }} className="indicator">&nbsp;{this.state.numWrapping} +</div>
 			</div>

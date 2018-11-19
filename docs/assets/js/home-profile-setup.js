@@ -38162,7 +38162,7 @@ var MultiSelectBox = function (_Component) {
 					width: '100%',
 					onSelect: this.handleChange,
 					options: items }),
-				_react2.default.createElement("i", { className: "iconcss icon-caret-down-lg", onClick: this.state.isFocused ? this.closeDropdown : null }),
+				_react2.default.createElement("i", { className: "iconcss icon-caret-down-lg" }),
 				_react2.default.createElement(
 					"label",
 					null,

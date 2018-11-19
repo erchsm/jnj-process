@@ -16002,6 +16002,7 @@ body {
     pointer-events: none;
     font-size: 14px; }
   .multiselectbox i {
+    pointer-events: none;
     position: absolute;
     right: 0;
     top: 12px; }
