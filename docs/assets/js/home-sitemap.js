@@ -34773,7 +34773,7 @@ module.exports={
 	"name": "Home",
 	"children": [
 		{
-			"name": "Resources",
+			"name": "Links",
 			"_collapsed": true,
 			"children": [
 				{

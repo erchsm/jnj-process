@@ -21413,15 +21413,6 @@ var HomeNav = function (_Component) {
 									_react2.default.createElement(
 										"h3",
 										null,
-										"Talent For Good"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"h3",
-										null,
 										"Credo"
 									)
 								),
