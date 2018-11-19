@@ -40,13 +40,17 @@ export default class MultiSelectBox extends Component {
 		document.removeEventListener('mousedown', this.handleClickOutside);
 	}
 
+	closeDropdown = () => {
+		this.setState({
+			isFocused: false
+		});
+		this.updateNumWrapping();
+		this.props.onChange(this.state.selected);
+	}
+
 	handleClickOutside = (event) => {
 		if (!this.refs.wrapper.contains(event.target)) {
-			this.setState({
-				isFocused: false
-			});
-			this.updateNumWrapping();
-			this.props.onChange(this.state.selected);
+			this.closeDropdown();
 		}
 	}
 
@@ -110,7 +114,7 @@ export default class MultiSelectBox extends Component {
 				width={'100%'}
 				onSelect={this.handleChange} 
 				options={items}/>
-				<i className="iconcss icon-caret-down-lg"></i>
+				<i className="iconcss icon-caret-down-lg" onClick={(this.state.isFocused) ? this.closeDropdown : null}></i>
 				<label>{label}</label>
 				<div style={{'left': this.state.indicatorLeft }} className="indicator">&nbsp;{this.state.numWrapping} +</div>
 			</div>

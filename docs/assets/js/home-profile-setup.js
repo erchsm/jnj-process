@@ -38057,13 +38057,17 @@ var MultiSelectBox = function (_Component) {
 			_this.updateNumWrapping();
 		};
 
+		_this.closeDropdown = function () {
+			_this.setState({
+				isFocused: false
+			});
+			_this.updateNumWrapping();
+			_this.props.onChange(_this.state.selected);
+		};
+
 		_this.handleClickOutside = function (event) {
 			if (!_this.refs.wrapper.contains(event.target)) {
-				_this.setState({
-					isFocused: false
-				});
-				_this.updateNumWrapping();
-				_this.props.onChange(_this.state.selected);
+				_this.closeDropdown();
 			}
 		};
 
@@ -38158,7 +38162,7 @@ var MultiSelectBox = function (_Component) {
 					width: '100%',
 					onSelect: this.handleChange,
 					options: items }),
-				_react2.default.createElement("i", { className: "iconcss icon-caret-down-lg" }),
+				_react2.default.createElement("i", { className: "iconcss icon-caret-down-lg", onClick: this.state.isFocused ? this.closeDropdown : null }),
 				_react2.default.createElement(
 					"label",
 					null,

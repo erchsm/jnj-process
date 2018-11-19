@@ -89,7 +89,7 @@ $baseclass: home-nav;
 		width: 480px;
 		right: 0;
 		height: 100%;
-		transition: transform $easing2 0.6s;
+		transition: transform $easing1 0.6s;
 		transform: translate3d(100%, 0,0);
 
 		h1, h2, h3, h4, h5, h6 {
@@ -188,10 +188,10 @@ $baseclass: home-nav;
 				opacity: 1;
 				transform: none;
 
-				transition: all $easing2 0.6s;
-				@for $i from 1 through 10 {
+				transition: all $easing1 0.6s;
+				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: 0.09s * $i;
+						transition-delay: 0.06s * $i;
 					}
 				}
 
@@ -209,10 +209,10 @@ $baseclass: home-nav;
 				opacity: 1;
 				transform: none;
 
-				transition: all $easing2 0.6s;
-				@for $i from 1 through 10 {
+				transition: all $easing1 0.6s;
+				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: 0.09s * $i;
+						transition-delay: 0.06s * $i;
 					}
 				}
 

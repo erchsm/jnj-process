@@ -21,7 +21,7 @@
 
 	section {
 		opacity: 1;
-	    padding: 180px 60px 100px;
+		padding: 180px 60px 100px;
 		display: flex;
 		flex-direction: column;
 		// justify-content: center;
@@ -269,11 +269,15 @@
 			margin-top: 2vh;
 		}
 		section {
+			height: auto;
 			padding: 12vh 18px;
 
 			.contents {
 				margin-top: 1vh;
 				flex-direction: column;
+			}
+			.spacer {
+				display: none;
 			}
 		}
 		.image-upload {
