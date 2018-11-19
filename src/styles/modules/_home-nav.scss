@@ -186,6 +186,7 @@ $baseclass: home-nav;
 	&__main {
 		position: absolute;
 		width: 100%;
+		z-index: 9999;
 		pointer-events: none;
 		height: calc(100vh - 60px);
 		top: 60px;
@@ -290,7 +291,7 @@ $baseclass: home-nav;
 			}
 		}
 		.#{$baseclass}__main {
-			background: rgba($brand-black, .12);
+			background: rgba($brand-black, .40);
 		}
 		.#{$baseclass}__panel--white {
 			transform: none;

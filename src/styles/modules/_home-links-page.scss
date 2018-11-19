@@ -1,0 +1,17 @@
+$baseclass: 'home-links-page';
+
+.#{$baseclass} {
+	position: relative;
+	margin: 0 72px;
+
+	&__sidebar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 25%;
+	}
+
+	&__links-container {
+		margin-left: 25%;
+	}
+}
