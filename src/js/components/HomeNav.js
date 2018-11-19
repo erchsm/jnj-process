@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classNames from "classnames";
 
 import TabbedList from "./TabbedList";
-
+import SearchBar from './SearchBar';
 
 export default class HomeNav extends Component {
 
@@ -67,10 +67,33 @@ export default class HomeNav extends Component {
 					<div className="home-nav__left">
 						<i className="iconcss icon-home-logo"></i>
 					</div>
-					<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
-						<div className="line"></div>
-						<div className="line"></div>
-						<div className="line"></div>
+					<div className="home-nav__right">
+						<div className="home-nav__items">
+							<div className="home-nav__item">
+								<h5 className="eyebrow">JNJ <span style={{color: '#417505'}}>140.00</span></h5>
+							</div>
+							<div className="home-nav__item">
+								<i className="iconcss icon-bell"></i>
+								<div className="notifications-marker"></div>
+							</div>
+							<div className="home-nav__item">
+								<img src="../assets/img/user-round.png"/>
+							</div>
+						</div>
+						<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
+							<div className="line"></div>
+							<div className="line"></div>
+							<div className="line"></div>
+						</div>
+					</div>
+				</div>
+				<div className="home-nav__topbar">
+					<div className="home-nav__left">
+		                <SearchBar iconName="icon-search-2" placeholder="Search for anything"/>
+					</div>
+					<div className="home-nav__right">
+						<i className="iconcss icon-chat"></i>
+						<p>Chat now</p>
 					</div>
 				</div>
 				<div className="home-nav__main">

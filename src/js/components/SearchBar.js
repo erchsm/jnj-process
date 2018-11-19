@@ -113,7 +113,7 @@ export default class SearchBar extends Component {
 
   render() {
     const { value, suggestions } = this.state;
-    const { placeholder, searchData } = this.props;
+    const { placeholder, searchData, iconName } = this.props;
 
     // console.log(searchData);
     // const importedData = searchData ? require('searchData') : titles;
@@ -144,7 +144,7 @@ export default class SearchBar extends Component {
         getSectionSuggestions={this.getSectionSuggestions}
         inputProps={inputProps} />
 
-        <i className="iconcss icon-search"></i>
+      <i className={iconName ? ("iconcss " + iconName) : ("iconcss icon-search")}></i>
       </div>
     );
   }

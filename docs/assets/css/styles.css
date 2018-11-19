@@ -14181,6 +14181,12 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-close-sm:before {
   content: "\EA42"; }
 
+.icon-bell:before {
+  content: "\EA43"; }
+
+.icon-chat:before {
+  content: "\EA44"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -14325,9 +14331,82 @@ body {
     min-width: 100%;
     background: white;
     border-bottom: solid 2px #D8D8D8; }
+    .home-nav__topbar:first-child {
+      border-color: #F4F4F4; }
   .home-nav__left {
     -ms-flex: 1;
     flex: 1; }
+  .home-nav__right, .home-nav__items {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
+  .home-nav .search-bar {
+    opacity: 1;
+    margin: 0; }
+    .home-nav .search-bar .react-autosuggest__container {
+      position: relative;
+      width: 100%; }
+      .home-nav .search-bar .react-autosuggest__container ::-webkit-input-placeholder {
+        opacity: 1;
+        color: #888B8D; }
+      .home-nav .search-bar .react-autosuggest__container ::-moz-placeholder {
+        opacity: 1;
+        color: #888B8D; }
+      .home-nav .search-bar .react-autosuggest__container :-ms-input-placeholder {
+        opacity: 1;
+        color: #888B8D; }
+      .home-nav .search-bar .react-autosuggest__container :-moz-placeholder {
+        opacity: 1;
+        color: #888B8D; }
+    .home-nav .search-bar .react-autosuggest__input {
+      padding-left: 60px;
+      font-size: 21px;
+      color: #212121; }
+    .home-nav .search-bar i {
+      color: #212121;
+      font-size: 40px;
+      right: auto;
+      left: 0;
+      top: 2px; }
+  .home-nav .icon-bell, .home-nav .icon-chat {
+    font-size: 32px;
+    color: #212121; }
+  .home-nav p {
+    font-size: 21px;
+    color: #888B8D;
+    min-width: 130px; }
+  .home-nav .icon-chat {
+    border-left: solid 1px #D8D8D8;
+    padding: 0 18px; }
+  .home-nav__item {
+    position: relative;
+    padding: 0 18px;
+    margin-right: 24px;
+    min-height: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    border-right: solid 1px #D8D8D8; }
+    .home-nav__item:not(:last-child) {
+      margin-right: 0; }
+    .home-nav__item:first-child {
+      padding-left: 0; }
+    .home-nav__item img {
+      height: 40px;
+      width: 40px;
+      border: solid 3px #D8D8D8;
+      border-radius: 50%; }
+    .home-nav__item .notifications-marker {
+      position: absolute;
+      background: #CA001B;
+      border: solid 2px white;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      top: -1px;
+      right: 15px; }
   .home-nav .icon-home-logo {
     color: #CA001B;
     font-size: 36px; }
@@ -14373,10 +14452,12 @@ body {
   .home-nav__main {
     position: absolute;
     width: 100%;
+    pointer-events: none;
     height: calc(100vh - 60px);
     top: 60px;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s; }
   .home-nav__panel {
+    pointer-events: auto;
     position: absolute;
     display: -ms-flexbox;
     display: flex;

@@ -24411,7 +24411,8 @@ var SearchBar = function (_Component) {
           suggestions = _state.suggestions;
       var _props = this.props,
           placeholder = _props.placeholder,
-          searchData = _props.searchData;
+          searchData = _props.searchData,
+          iconName = _props.iconName;
 
       // console.log(searchData);
       // const importedData = searchData ? require('searchData') : titles;
@@ -24442,7 +24443,7 @@ var SearchBar = function (_Component) {
           renderSectionTitle: this.renderSectionTitle,
           getSectionSuggestions: this.getSectionSuggestions,
           inputProps: inputProps }),
-        _react2.default.createElement('i', { className: 'iconcss icon-search' })
+        _react2.default.createElement('i', { className: iconName ? "iconcss " + iconName : "iconcss icon-search" })
       );
     }
   }]);
