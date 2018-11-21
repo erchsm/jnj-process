@@ -8,8 +8,8 @@ import { ScrollProvider, Scroller, ScrollLink } from 'react-skroll'
 
 import SearchBar from './SearchBar';
 
-import linksData from '../data/home-links-page'
-// import linksData from '../data/home-links-page-alt'
+// import linksData from '../data/home-links-page'
+import linksData from '../data/home-links-page-alt'
 
 
 export default class HomeLinksPage extends Component {
@@ -18,7 +18,6 @@ export default class HomeLinksPage extends Component {
 		
 		this.state = {
 			buckets: [
-				"My Favorites",
 				"Benefits & Compensation",
 				"Business Intelligence",
 				"Online Tools & Applications",
@@ -36,23 +35,37 @@ export default class HomeLinksPage extends Component {
 		}
 	}
 
-	toggleFavorite = (isFavorited) => {
-		this.setState(prevState => ({
-			linksData: {
-				...prevState.linksData,
-				"Accounts": true,
-			},
-		}))
+	toggleFavorite = (link, e) => {
+		if (!link.favorited) {
+			e.target.parentNode.parentNode.classList.remove('starAnimation');
+			e.target.parentNode.parentNode.classList.add('starAnimation');
+		} 
+
+		let allLinks = this.state.linksData;
+		const index = allLinks.indexOf(link);
+
+		link.favorited = !link.favorited;
+
+		allLinks[index] = link;
+
+		this.setState({
+			linksData: allLinks
+		})
+
+		// this.setState(prevState => ({
+		// 	linksData: (prevState.linksData.filter((l) => l.name != link.name).concat(link))
+		// }))
 	}
 
 	createCards = (links) => (
 		links.map((link, index) =>
 			<div className="card" key={index}>
 				<h5>
+					<div className="circles"></div>
 					<i 
-					onClick={() => this.toggleFavorite(link.favorited)}
+					onClick={(e) => this.toggleFavorite(link, e)}
 					className={classNames({ 
-						'iconcss icon-star-outline':  !link.favorited, 
+						'iconcss icon-star-outline': !link.favorited, 
 						'iconcss icon-star-fill': link.favorited,
 					})}>
 					</i>
@@ -83,10 +96,8 @@ export default class HomeLinksPage extends Component {
 
 		let favoritedLinks = [];
 
-		this.state.linksData.forEach((bucket) => {
-			bucket.links.forEach((link) => {
-				(link.favorited) ? favoritedLinks.push(link) : null;
-			});
+		this.state.linksData.forEach((link) => {
+			(link.favorited) ? favoritedLinks.push(link) : null;
 		});
 		
 		return (
@@ -99,10 +110,10 @@ export default class HomeLinksPage extends Component {
 							<hr/>
 						</section>
 						{
-							this.state.linksData.map((bucket, index) =>
-								<section name={bucket.title} key={index}>
-									<h4>{bucket.title}</h4>
-									{ this.createCards(bucket.links) }
+							this.state.buckets.map((bucket, index) =>
+								<section name={bucket} key={index}>
+									<h4>{bucket}</h4>
+									{ this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) }
 									<hr/>
 								</section>
 							)

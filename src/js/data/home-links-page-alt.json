@@ -135,7 +135,7 @@
 		},
 		{ 
 			"name": "Guest WiFi Password Link",
-			"favorited": true,
+			"favorited": false,
 			"buckets": ["Computing & Technology"],
 		},
 		{ 
