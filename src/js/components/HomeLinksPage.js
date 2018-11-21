@@ -9,6 +9,7 @@ import { ScrollProvider, Scroller, ScrollLink } from 'react-skroll'
 import SearchBar from './SearchBar';
 
 import linksData from '../data/home-links-page'
+// import linksData from '../data/home-links-page-alt'
 
 
 export default class HomeLinksPage extends Component {
@@ -16,8 +17,51 @@ export default class HomeLinksPage extends Component {
 		super(props);
 		
 		this.state = {
+			buckets: [
+				"My Favorites",
+				"Benefits & Compensation",
+				"Business Intelligence",
+				"Online Tools & Applications",
+				"Computing & Technology",
+				"Collaboration Spaces",
+				"Legal, Quality & Compliance",
+				"Performance & Recognition",
+				"Finance & Procurement",
+				"New Hire & Job Changes",
+				"Time, Travel &  Expenses",
+				"Services & Discounts",
+				"On-Site Services",
+			],
+			linksData: linksData.allLinks,
 		}
 	}
+
+	toggleFavorite = (isFavorited) => {
+		this.setState(prevState => ({
+			linksData: {
+				...prevState.linksData,
+				"Accounts": true,
+			},
+		}))
+	}
+
+	createCards = (links) => (
+		links.map((link, index) =>
+			<div className="card" key={index}>
+				<h5>
+					<i 
+					onClick={() => this.toggleFavorite(link.favorited)}
+					className={classNames({ 
+						'iconcss icon-star-outline':  !link.favorited, 
+						'iconcss icon-star-fill': link.favorited,
+					})}>
+					</i>
+					{link.name}
+				</h5>
+				<p>{link.description ? link.description : 'No description available.'}</p>
+			</div>
+		)
+	)
 
 	
 	render() {
@@ -26,9 +70,6 @@ export default class HomeLinksPage extends Component {
 		const classnames = classNames({
 			"home-links-page": true
 		});
-
-		let activeChild = scroll.children.filter((child) => child.active);
-		(activeChild.length > 0) ? (activeChild = activeChild.pop()) : null;
 
 		// const linePercentage = {
 		// 	"Welcome": 0.06,
@@ -40,33 +81,28 @@ export default class HomeLinksPage extends Component {
 		// 	"Birthday": .94,
 		// }
 
-		const linePercentage = {
-			"Preferences": 0,
-			"Photo": .33333333,
-			"Accounts": .66666667,
-			"Skills": 1,
-		}
+		let favoritedLinks = [];
 
-		const lineAnimation = {
-		    transform: 'scale3d(' + linePercentage[activeChild.name] + ', 1, 1)',
-	    }
-
+		this.state.linksData.forEach((bucket) => {
+			bucket.links.forEach((link) => {
+				(link.favorited) ? favoritedLinks.push(link) : null;
+			});
+		});
 		
 		return (
 			<div className={classnames}>
 				<div className="home-links-page__links-container">
 					<Scroller>
+						<section name="My Favorites">
+							<h4>My Favorites</h4>
+							{ this.createCards(favoritedLinks) }
+							<hr/>
+						</section>
 						{
-							linksData.allLinks.map((item, index) =>
-								<section name={item.title}>
-									<h4>{item.title}</h4>
-									{
-										item.links.map((link, index) =>
-											<div className="card">
-												<h5>{link.name}</h5>
-											</div>
-										)
-									}
+							this.state.linksData.map((bucket, index) =>
+								<section name={bucket.title} key={index}>
+									<h4>{bucket.title}</h4>
+									{ this.createCards(bucket.links) }
 									<hr/>
 								</section>
 							)
@@ -74,17 +110,17 @@ export default class HomeLinksPage extends Component {
 					</Scroller>
 				</div>
 				<div className="home-links-page__sidebar">
-					<h3>Links</h3>
+					<h4>Links</h4>
 					<ul>
 						{
 							scroll.children.map((child, index) =>
-								<li key={index}>
+								<li key={index} className={classNames({ 'active': child.active })}>
 									<ScrollLink
 										key={index}
-										className={classNames({ 'active': child.active })}
 										to={child.start}
 										>	
 										<span>{child.name}</span>
+										<div className="line"></div>
 									</ScrollLink>
 								</li>
 							)

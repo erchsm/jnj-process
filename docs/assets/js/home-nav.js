@@ -27015,6 +27015,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -27045,6 +27047,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// import linksData from '../data/home-links-page-alt'
+
+
 var HomeLinksPage = function (_Component) {
 	_inherits(HomeLinksPage, _Component);
 
@@ -27053,24 +27058,61 @@ var HomeLinksPage = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (HomeLinksPage.__proto__ || Object.getPrototypeOf(HomeLinksPage)).call(this, props));
 
-		_this.state = {};
+		_this.toggleFavorite = function (isFavorited) {
+			_this.setState(function (prevState) {
+				return {
+					linksData: _extends({}, prevState.linksData, {
+						"Accounts": true
+					})
+				};
+			});
+		};
+
+		_this.createCards = function (links) {
+			return links.map(function (link, index) {
+				return _react2.default.createElement(
+					'div',
+					{ className: 'card', key: index },
+					_react2.default.createElement(
+						'h5',
+						null,
+						_react2.default.createElement('i', {
+							onClick: function onClick() {
+								return _this.toggleFavorite(link.favorited);
+							},
+							className: (0, _classnames2.default)({
+								'iconcss icon-star-outline': !link.favorited,
+								'iconcss icon-star-fill': link.favorited
+							}) }),
+						link.name
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						link.description ? link.description : 'No description available.'
+					)
+				);
+			});
+		};
+
+		_this.state = {
+			buckets: ["My Favorites", "Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
+			linksData: _homeLinksPage2.default.allLinks
+		};
 		return _this;
 	}
 
 	_createClass(HomeLinksPage, [{
 		key: 'render',
 		value: function render() {
+			var _this2 = this;
+
 			var scroll = this.props.scroll;
 
 
 			var classnames = (0, _classnames2.default)({
 				"home-links-page": true
 			});
-
-			var activeChild = scroll.children.filter(function (child) {
-				return child.active;
-			});
-			activeChild.length > 0 ? activeChild = activeChild.pop() : null;
 
 			// const linePercentage = {
 			// 	"Welcome": 0.06,
@@ -27082,16 +27124,13 @@ var HomeLinksPage = function (_Component) {
 			// 	"Birthday": .94,
 			// }
 
-			var linePercentage = {
-				"Preferences": 0,
-				"Photo": .33333333,
-				"Accounts": .66666667,
-				"Skills": 1
-			};
+			var favoritedLinks = [];
 
-			var lineAnimation = {
-				transform: 'scale3d(' + linePercentage[activeChild.name] + ', 1, 1)'
-			};
+			this.state.linksData.forEach(function (bucket) {
+				bucket.links.forEach(function (link) {
+					link.favorited ? favoritedLinks.push(link) : null;
+				});
+			});
 
 			return _react2.default.createElement(
 				'div',
@@ -27102,26 +27141,27 @@ var HomeLinksPage = function (_Component) {
 					_react2.default.createElement(
 						_reactSkroll.Scroller,
 						null,
-						_homeLinksPage2.default.allLinks.map(function (item, index) {
+						_react2.default.createElement(
+							'section',
+							{ name: 'My Favorites' },
+							_react2.default.createElement(
+								'h4',
+								null,
+								'My Favorites'
+							),
+							this.createCards(favoritedLinks),
+							_react2.default.createElement('hr', null)
+						),
+						this.state.linksData.map(function (bucket, index) {
 							return _react2.default.createElement(
 								'section',
-								{ name: item.title },
+								{ name: bucket.title, key: index },
 								_react2.default.createElement(
 									'h4',
 									null,
-									item.title
+									bucket.title
 								),
-								item.links.map(function (link, index) {
-									return _react2.default.createElement(
-										'div',
-										{ className: 'card' },
-										_react2.default.createElement(
-											'h5',
-											null,
-											link.name
-										)
-									);
-								}),
+								_this2.createCards(bucket.links),
 								_react2.default.createElement('hr', null)
 							);
 						})
@@ -27131,7 +27171,7 @@ var HomeLinksPage = function (_Component) {
 					'div',
 					{ className: 'home-links-page__sidebar' },
 					_react2.default.createElement(
-						'h3',
+						'h4',
 						null,
 						'Links'
 					),
@@ -27141,19 +27181,19 @@ var HomeLinksPage = function (_Component) {
 						scroll.children.map(function (child, index) {
 							return _react2.default.createElement(
 								'li',
-								{ key: index },
+								{ key: index, className: (0, _classnames2.default)({ 'active': child.active }) },
 								_react2.default.createElement(
 									_reactSkroll.ScrollLink,
 									{
 										key: index,
-										className: (0, _classnames2.default)({ 'active': child.active }),
 										to: child.start
 									},
 									_react2.default.createElement(
 										'span',
 										null,
 										child.name
-									)
+									),
+									_react2.default.createElement('div', { className: 'line' })
 								)
 							);
 						})
@@ -27398,21 +27438,21 @@ var HomeNav = function (_Component) {
 										null,
 										"Credo"
 									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"h3",
-										null,
-										"About"
-									)
 								)
 							),
 							_react2.default.createElement("hr", null),
 							_react2.default.createElement(
 								"ul",
 								null,
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"h5",
+										null,
+										"About"
+									)
+								),
 								_react2.default.createElement(
 									"li",
 									null,
@@ -27849,92 +27889,303 @@ exports.default = TabbedList;
 module.exports={	
 	"allLinks": [
 		{
-			"title": "My Favorites",
-			"links": [
-				{ "name": "Yammer" },
-				{ "name": "AskGS" },
-				{ "name": "Fieldglass" },
-				{ "name": "Workday" },
-				{ "name": "Healthy & Me" },
-				{ "name": "DocSpace System" },
-				{ "name": "Concur Room Booking" },
-				{ "name": "Corporate Payroll Calendar" },
-				{ "name": "Exercise Reimbursement" },
-				{ "name": "Sharepoint"},
-				{ "name": "IRIS" },
-				{ "name": "Diversity & Inclusion at J&J" },
-				{ "name": "Our Credo" },
-				{ "name": "SUMMIT" },
-				{ "name": "For Your Benefit" },
-				{ "name": "ComplianceWire" },
-				{ "name": "JJEDS" },
-			]
-		},
-		{
 			"title": "Benefits & Compensation",
 			"links": [
-				{ "name": "Yammer" },
-				{ "name": "AskGS" },
-				{ "name": "Fieldglass" },
-				{ "name": "Workday" },
-				{ "name": "Healthy & Me" },
-				{ "name": "DocSpace System" },
-				{ "name": "Concur Room Booking" },
-				{ "name": "Corporate Payroll Calendar" },
-				{ "name": "Exercise Reimbursement" },
-				{ "name": "Sharepoint"},
-				{ "name": "IRIS" },
-				{ "name": "Diversity & Inclusion at J&J" },
-				{ "name": "Our Credo" },
-				{ "name": "SUMMIT" },
-				{ "name": "For Your Benefit" },
-				{ "name": "ComplianceWire" },
-				{ "name": "JJEDS" },
+				{ 
+					"name": "MyStore",
+					"favorited": false,
+				},
+				{ 
+					"name": "Global HR Portal",
+					"favorited": false,
+				},
+				{ 
+					"name": "Healthy & Me™",
+					"favorited": true,
+					"description": "The global health & wellness app, unique for all J&J employees offers resources, challenges and incentives.",
+				},
+				{ 
+					"name": "Global Health & Benefits",
+					"favorited": true,
+				},
+				{ 
+					"name": "Your Benefits Resources",
+					"favorited": false,
+				},
+				{ 
+					"name": "Your Equity Awards",
+					"favorited": false,
+				},
+				{ 
+					"name": "Exercise Reimbursement",
+					"favorited": false,
+				},
+				{ 
+					"name": "For Your Benefit Website",
+					"favorited": true,
+				},
+				{ 
+					"name": "HR Policies",
+					"favorited": false,
+				},
 			]
 		},
 		{ 
 			"title": "Business Intelligence",
-			"links": []
+			"links": [
+				{ 
+					"name": "Regulatory Intel Portal",
+					"favorited": false,
+				},
+				{ 
+					"name": "Malvern ORa",
+					"favorited": false,
+				},
+				{ 
+					"name": "Media Monitoring/Retriever",
+					"favorited": false,
+				},
+				{ 
+					"name": "AC Nielsen",
+					"favorited": false,
+				},
+				{ 
+					"name": "iMedical Review",
+					"favorited": false,
+				},
+			]
 		},
 		{ 
 			"title": "Online Tools & Applications",
-			"links": []
+			"links": [
+				{ 
+					"name": "Sharepoint",
+					"favorited": true,
+				},
+				{ 
+					"name": "Yammer",
+					"favorited": true,
+				},
+				{ 
+					"name": "Fieldglass",
+					"favorited": true,
+				},
+				{ 
+					"name": "DocSpace System",
+					"favorited": true,
+				},
+				{ 
+					"name": "TrackWise ETS",
+					"favorited": true,
+				},
+				{ 
+					"name": "JJEDS",
+					"favorited": true,
+				},
+				{ 
+					"name": "JDE Production",
+					"favorited": false,
+				},
+				{ 
+					"name": "COMPASS Enterprise Remote Access",
+					"favorited": false,
+				},
+				{ 
+					"name": "trüVAULT Viewer",
+					"favorited": false,
+				},
+			]
 		},
 		{ 
 			"title": "Computing & Technology",
-			"links": []
+			"links": [
+				{ 
+					"name": "Skype for Business",
+					"favorited": true,
+				},
+				{ 
+					"name": "Guest WiFi Password Link",
+					"favorited": true,
+				},
+				{ 
+					"name": "Outlook Web Access",
+					"favorited": false,
+				},
+				{ 
+					"name": "IRIS",
+					"favorited": false,
+				},
+				{ 
+					"name": "Touchpoint FAQ's",
+					"favorited": false,
+				},
+				{ 
+					"name": "TrainR",
+					"favorited": false,
+				},
+				{ 
+					"name": "Global Service Desk",
+					"favorited": false,
+				},
+			]
 		},
 		{ 
 			"title": "Collaboration Spaces",
-			"links": []
+			"links": [
+				{ 
+					"name": "MR55",
+					"favorited": false,
+				},
+				{ 
+					"name": "Office 365 Home",
+					"favorited": true,
+				},
+				{ 
+					"name": "Hype",
+					"favorited": false,
+				},
+				{ 
+					"name": "COSAT",
+					"favorited": false,
+				},
+				{ 
+					"name": "Transparent Factory",
+					"favorited": false,
+				},
+			]
 		},
 		{ 
 			"title": "Legal, Quality & Compliance",
-			"links": []
+			"links": [
+				{ 
+					"name": "ComplianceWire",
+					"favorited": true,
+				},
+				{ 
+					"name": "EtQ Instinct",
+					"favorited": false,
+				},
+				{ 
+					"name": "EtQ Symphony",
+					"favorited": false,
+				},
+				{ 
+					"name": "Elims",
+					"favorited": false,
+				},
+				{ 
+					"name": "Adaptiv (Ethicon)",
+					"favorited": false,
+				},
+				{ 
+					"name": "Adaptiv (DePuy)",
+					"favorited": false,
+				},
+				{ 
+					"name": "Auto Quality Record (AQR)",
+					"favorited": false,
+				},
+				{ 
+					"name": "Social Media Central",
+					"favorited": false,
+				},
+				{ 
+					"name": "DocuSphere (Synthes - U.S.)",
+					"favorited": false,
+				},
+				{ 
+					"name": "EMA",
+					"favorited": false,
+				},
+				{ 
+					"name": "Unity",
+					"favorited": false,
+				},
+			]
 		},
 		{ 
 			"title": "Performance & Recognition",
-			"links": []
+			"links": [
+				{ "name": "ComplianceWire" },
+				{ 
+					"name": "SUMMIT",
+					"favorited": true,
+					"description": "Enterprise learning management system.",
+				},
+				{ "name": "Workday" },
+				{ "name": "Trü" },
+				{ "name": "Encore" },
+				{ "name": "Janssen Sales Learning (JBI)" },
+				{ "name": "Learning @ Pharma R&D" },
+				{ "name": "Henry Stewart Talks" },
+				{ "name": "Bridges Program" },
+				{ "name": "Janssen Learn" },
+			]
 		},
 		{ 
 			"title": "Finance & Procurement",
-			"links": []
+			"links": [
+				{ "name": "ARAVO" },
+				{ 
+					"name": "Ariba",
+					"description": "Ariba Spend Management",
+				},
+				{ "name": "e-Marketplace" },
+				{ "name": "Janssen R&D Procurement Contract Request Form (CRF)" },
+			]
 		},
 		{ 
 			"title": "New Hire & Job Changes",
-			"links": []
+			"links": [
+				{ 
+					"name": "My Career Opportunities",
+				},
+				{ 
+					"name": "J&J Careers",
+				},
+				{ 
+					"name": "Employee Referral Program",
+				},
+				{ 
+					"name": "My Next Step",
+				},
+				{ 
+					"name": "Hire.jnj.com",
+				},	
+			]
 		},
 		{ 
 			"title": "Time, Travel &  Expenses",
-			"links": []
+			"links": [
+				{ "name": "Concur" },
+				{ "name": "OUR SOURCE®" },
+				{ "name": "Kronos" },
+				{ "name": "2018 Universal Calendar" },
+				{ "name": "Beacon (North America)" },
+				{ "name": "e-TIS" },
+				{ "name": "Global Travel & Entertainment" },
+				{ "name": "2018 Janssen Holiday Schedule (US)" },
+			]
 		},
 		{ 
 			"title": "Services & Discounts",
-			"links": []
+			"links": [
+				{ "name": "Verizon" },
+				{ "name": "Brooks Brothers" },
+				{ "name": "Technology Purchase Program" },
+				{ "name": "New Vehicle Purchase Program" },
+				{ "name": "Sprint" },
+				{ "name": "Plum Benefits" },
+			]
 		},
 		{ 
 			"title": "On-Site Services",
-			"links": []
+			"links": [
+				{ "name": "Condeco Room Booking Systems" },
+				{ "name": "FMsystems Interact Portal - Work Order Request" },
+				{ "name": "Catering & Cafeteria - U.S. & PR" },
+				{ "name": "iVisitor" },
+			]
 		},
 
 	]

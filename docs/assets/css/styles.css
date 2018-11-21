@@ -14187,6 +14187,12 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-chat:before {
   content: "\EA44"; }
 
+.icon-star-outline:before {
+  content: "\EA45"; }
+
+.icon-star-fill:before {
+  content: "\EA46"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -14321,14 +14327,83 @@ body {
 /* Modules */
 .home-links-page {
   position: relative;
-  margin: 0 72px; }
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  margin: 0 72px;
+  height: calc(100% - 120px); }
+  .home-links-page__sidebar, .home-links-page__links-container section {
+    padding-top: 24px; }
   .home-links-page__sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 25%; }
+    width: 20%; }
+    .home-links-page__sidebar ul {
+      margin-top: 24px; }
+    .home-links-page__sidebar li {
+      margin-bottom: 12px;
+      font-size: 14px; }
+      .home-links-page__sidebar li a {
+        color: #212121;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+      .home-links-page__sidebar li .line {
+        width: 100%;
+        height: 4px;
+        background: #CA001B;
+        transition: all 0.6s 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0); }
+      .home-links-page__sidebar li.active .line {
+        -ms-transform: scaleX(1);
+        transform: scaleX(1); }
+      .home-links-page__sidebar li.active ~ .active .line {
+        -ms-transform: scaleX(0);
+        transform: scaleX(0); }
   .home-links-page__links-container {
-    margin-left: 25%; }
+    width: 78%;
+    margin-left: 2%; }
+    .home-links-page__links-container h1, .home-links-page__links-container h2, .home-links-page__links-container h3, .home-links-page__links-container h4, .home-links-page__links-container h5, .home-links-page__links-container h6 {
+      width: 100%; }
+    .home-links-page__links-container section {
+      height: auto;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      .home-links-page__links-container section > h1, .home-links-page__links-container section > h2, .home-links-page__links-container section > h3, .home-links-page__links-container section > h4, .home-links-page__links-container section > h5, .home-links-page__links-container section > h6 {
+        margin-bottom: 18px; }
+      .home-links-page__links-container section hr {
+        width: 100%;
+        margin: 24px 0 12px;
+        background: #D8D8D8; }
+      .home-links-page__links-container section .card {
+        margin-bottom: 2%;
+        margin-right: 2%;
+        width: 32%;
+        padding: 18px 24px;
+        min-height: 140px;
+        box-shadow: none; }
+        .home-links-page__links-container section .card h5 {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: start;
+          align-items: flex-start;
+          line-height: 1.2;
+          margin-bottom: 18px; }
+        .home-links-page__links-container section .card p {
+          line-height: 1.3;
+          color: #63666A; }
+        .home-links-page__links-container section .card .icon-star-outline, .home-links-page__links-container section .card .icon-star-fill {
+          margin-top: 0px;
+          margin-right: 12px;
+          font-size: 18px; }
+        .home-links-page__links-container section .card .icon-star-fill {
+          color: #CA001B; }
+        .home-links-page__links-container section .card:nth-child(3n + 4) {
+          margin-right: 0; }
 
 .home-nav {
   position: relative; }
@@ -14381,7 +14456,7 @@ body {
       left: 0;
       top: 2px; }
   .home-nav .icon-bell, .home-nav .icon-chat {
-    font-size: 32px;
+    font-size: 30px;
     color: #212121; }
   .home-nav p {
     font-size: 21px;
@@ -14405,8 +14480,8 @@ body {
     .home-nav__item:first-child {
       padding-left: 0; }
     .home-nav__item img {
-      height: 40px;
-      width: 40px;
+      height: 38px;
+      width: 38px;
       border: solid 3px #D8D8D8;
       border-radius: 50%; }
     .home-nav__item .notifications-marker {
@@ -14447,7 +14522,7 @@ body {
   .home-nav__hamburger {
     display: -ms-flexbox;
     display: flex;
-    width: 28px;
+    width: 26px;
     height: 18px;
     cursor: pointer;
     -ms-flex-direction: column;

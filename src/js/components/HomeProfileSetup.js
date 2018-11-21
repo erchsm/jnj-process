@@ -48,71 +48,71 @@ export default class HomeProfileSetup extends Component {
 
 	onChangeAccountsYammer = () => {
 		this.setState(prevState => ({
-				completed: {
-					...prevState.completed,
-					"Accounts": true,
-				},
-				accounts: {
-					...prevState.accounts,
-					yammer: !prevState.accounts.yammer,
-				}
+			completed: {
+				...prevState.completed,
+				"Accounts": true,
+			},
+			accounts: {
+				...prevState.accounts,
+				yammer: !prevState.accounts.yammer,
+			}
 		}))
 	}
 
 	onChangeAccountsOutlook = () => {
 		this.setState(prevState => ({
-				completed: {
-					...prevState.completed,
-					"Accounts": true,
-				},
-				accounts: {
-					...prevState.accounts,
-					outlook: !prevState.accounts.outlook,
-				}
+			completed: {
+				...prevState.completed,
+				"Accounts": true,
+			},
+			accounts: {
+				...prevState.accounts,
+				outlook: !prevState.accounts.outlook,
+			}
 		}))
 	}
 
 	setPreferences = (filterType, value) => {
-    this.setState(prevState => ({
-    	completed: {
-					...prevState.completed,
-					"Preferences": (prevState.preferences.franchises.length > 0 && prevState.preferences.locations.length > 0 && prevState.preferences.functions.length > 0)
+		this.setState(prevState => ({
+			completed: {
+				...prevState.completed,
+				"Preferences": (prevState.preferences.franchises.length > 0 && prevState.preferences.locations.length > 0 && prevState.preferences.functions.length > 0)
 			},
-      preferences: { 
-      	...prevState.preferences, 
-      	[filterType]: value 
-      },
-    }))
-  }
+			preferences: { 
+				...prevState.preferences, 
+				[filterType]: value 
+			},
+		}))
+	}
 
-  addSkill = (skill) => {
-    this.setState(prevState => ({
-    	completed: {
+	addSkill = (skill) => {
+		this.setState(prevState => ({
+			completed: {
+				...prevState.completed,
+				"Skills": true,
+			},
+		  	skills: prevState.skills.concat(skill)
+		}))
+	}
+
+	removeSkill = (index) => {
+		this.setState(prevState => ({
+			completed: {
 					...prevState.completed,
 					"Skills": true,
 			},
-      skills: prevState.skills.concat(skill)
-    }))
-  }
+			skills: prevState.skills.filter((x,i) => i != index )
+		}))
+	 }
 
-  removeSkill = (index) => {
-    this.setState(prevState => ({
-    	completed: {
-					...prevState.completed,
-					"Skills": true,
+	removePreference = (filterType, index) => {
+		this.setState(prevState => ({
+			preferences: {
+				...prevState.preferences,
+				[filterType]: prevState.preferences[filterType].filter((x,i) => i != index ),
 			},
-      skills: prevState.skills.filter((x,i) => i != index )
-    }))
-  }
-
-  removePreference = (filterType, index) => {
-    this.setState(prevState => ({
-    	preferences: {
-					...prevState.preferences,
-					[filterType]: prevState.preferences[filterType].filter((x,i) => i != index ),
-			},
-    }))
-  }
+		}))
+	}
 	
 	render() {
 		const { scroll } = this.props;
@@ -142,8 +142,8 @@ export default class HomeProfileSetup extends Component {
 		}
 
 		const lineAnimation = {
-	    transform: 'scale3d(' + linePercentage[activeChild.name] + ', 1, 1)',
-    }
+			transform: 'scale3d(' + linePercentage[activeChild.name] + ', 1, 1)',
+		}
 
 		
 		return (
@@ -296,7 +296,7 @@ export default class HomeProfileSetup extends Component {
 									className={classNames({ 'completed': this.state.completed[child.name], 'active': child.active })}
 									to={child.start}
 									>	
-								 	<i className="iconcss icon-checkmark"></i>
+									<i className="iconcss icon-checkmark"></i>
 									<span>{child.name}</span>
 								</ScrollLink>
 							</li>

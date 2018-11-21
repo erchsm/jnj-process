@@ -107,10 +107,10 @@ export default class HomeNav extends Component {
 								<li><h3>Organizations</h3></li>
 								{/*<li><h3>Talent For Good</h3></li>*/}
 								<li><h3>Credo</h3></li>
-								<li><h3>About</h3></li>
 							</ul>
 							<hr/>
 							<ul>
+								<li><h5>About</h5></li>
 								<li><h5>Preferences</h5></li>
 								<li><h5>Take the tour</h5></li>
 								<li><h5>Help</h5></li>
