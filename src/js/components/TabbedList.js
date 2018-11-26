@@ -45,7 +45,12 @@ export default class TabbedList extends Component {
 
 	createListByIndex = (index) => (
 		this.props.data[index].content.map((item, i) => (
-			<li key={i}><h5>{item.name}</h5></li>
+			<li key={i} className={classNames({ "external": item.href })}>
+				<a href={item.href} target="_blank">
+					<h5>{item.name}</h5>
+					<i className="iconcss icon-arrow-right"></i>
+				</a>
+			</li>
 		))
 	)
 

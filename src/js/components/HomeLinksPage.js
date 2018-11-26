@@ -17,20 +17,51 @@ export default class HomeLinksPage extends Component {
 		super(props);
 		
 		this.state = {
-			buckets: [
-				"Benefits & Compensation",
-				"Business Intelligence",
-				"Online Tools & Applications",
-				"Computing & Technology",
-				"Collaboration Spaces",
-				"Legal, Quality & Compliance",
-				"Performance & Recognition",
-				"Finance & Procurement",
-				"New Hire & Job Changes",
-				"Time, Travel &  Expenses",
-				"Services & Discounts",
-				"On-Site Services",
-			],
+			buckets: {
+				forMe: [
+					"Benefits & Compensation",
+					"Business Intelligence",
+					"Online Tools & Applications",
+					"Computing & Technology",
+					"Collaboration Spaces",
+					"Legal, Quality & Compliance",
+					"Performance & Recognition",
+					"Finance & Procurement",
+					"New Hire & Job Changes",
+					"Time, Travel &  Expenses",
+					"Services & Discounts",
+					"On-Site Services",
+				],
+				alphabetical: [
+					"A",
+					"B",
+					"C",
+					"D",
+					"E",
+					"F",
+					"G",
+					"H",
+					"I",
+					"J",
+					"K",
+					"L",
+					"M",
+					"N",
+					"O",
+					"P",
+					"Q",
+					"R",
+					"S",
+					"T",
+					"U",
+					"V",
+					"W",
+					"X",
+					"Y",
+					"Z",
+					"#",
+				],
+			},	
 			linksData: linksData.allLinks,
 		}
 	}
@@ -110,7 +141,7 @@ export default class HomeLinksPage extends Component {
 							<hr/>
 						</section>
 						{
-							this.state.buckets.map((bucket, index) =>
+							this.state.buckets.forMe.map((bucket, index) =>
 								<section name={bucket} key={index}>
 									<h4>{bucket}</h4>
 									{ this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) }

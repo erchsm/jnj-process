@@ -27107,7 +27107,10 @@ var HomeLinksPage = function (_Component) {
 		};
 
 		_this.state = {
-			buckets: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
+			buckets: {
+				forMe: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
+				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
+			},
 			linksData: _homeLinksPageAlt2.default.allLinks
 		};
 		return _this;
@@ -27161,7 +27164,7 @@ var HomeLinksPage = function (_Component) {
 							this.createCards(favoritedLinks),
 							_react2.default.createElement('hr', null)
 						),
-						this.state.buckets.map(function (bucket, index) {
+						this.state.buckets.forMe.map(function (bucket, index) {
 							return _react2.default.createElement(
 								'section',
 								{ name: bucket, key: index },
@@ -27447,7 +27450,7 @@ var HomeNav = function (_Component) {
 									_react2.default.createElement(
 										"h3",
 										null,
-										"Credo"
+										"Our Credo"
 									)
 								)
 							),
@@ -27510,11 +27513,11 @@ var HomeNav = function (_Component) {
 								)
 							),
 							_react2.default.createElement(_TabbedList2.default, { tabWidth: 120, data: [{
-									title: 'Favorites',
-									content: [{ name: 'Yammer' }, { name: 'AskGS' }, { name: 'Fieldglass' }, { name: 'Workday' }, { name: 'Healthy & Me' }, { name: 'DocSpace System' }, { name: 'Concur Room Booking' }, { name: 'Corporate Payroll Calendar' }, { "name": "Exercise Reimbursement" }, { "name": "Sharepoint" }, { "name": "IRIS" }, { name: 'Diversity & Inclusion at J&J' }, { name: 'Our Credo' }, { name: 'SUMMIT' }, { name: 'For Your Benefit' }, { name: 'ComplianceWire' }, { name: 'JJEDS' }]
+									title: "Favorites",
+									content: [{ "name": "Concur", "href": "//concur.jnj.com" }, { "name": "AskGS", "href": "//askgs.jnj.com" }, { "name": "Fieldglass", "href": "//www.fieldglass.net/" }, { "name": "Workday", "href": "//jjworkday.com" }, { "name": "Healthy & Me", "href": "//jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/HealthyMe.aspx" }, { "name": "DocSpace System", "href": "external" }, { "name": "Concur Room Booking", "href": "external" }, { "name": "Corporate Payroll Calendar", "href": "external" }, { "name": "Exercise Reimbursement", "href": "external" }, { "name": "Sharepoint", "href": "//jnj.sharepoint.com" }, { "name": "IRIS", "href": "//iris.jnj.com" }, { "name": "Diversity & Inclusion at J&J", "href": "//jnj.sharepoint.com/sites/Dni/Pages/Index.aspx/home" }, { "name": "Our Credo", "href": "external" }, { "name": "SUMMIT", "href": "//jnj.csod.com" }, { "name": "For Your Benefit", "href": "external" }, { "name": "ComplianceWire", "href": "external" }, { "name": "JJEDS", "href": "external" }]
 								}, {
-									title: 'Categories',
-									content: [{ name: 'Benefits & Compensation' }, { name: 'Business Intelligence' }, { name: 'Online Tools & Applications' }, { name: 'Computing & Technology' }, { name: 'Collaboration Spaces' }, { name: 'Legal, Quality & Compliance' }, { name: 'Performance & Recognition' }, { name: 'Finance & Procurement' }, { name: 'New Hire & Job Changes' }, { name: 'Time, Travel &  Expenses' }, { name: 'Services & Discounts' }, { name: 'On-Site Services' }]
+									title: "By Category",
+									content: [{ "name": "Benefits & Compensation" }, { "name": "Business Intelligence" }, { "name": "Online Tools & Applications" }, { "name": "Computing & Technology" }, { "name": "Collaboration Spaces" }, { "name": "Legal, Quality & Compliance" }, { "name": "Performance & Recognition" }, { "name": "Finance & Procurement" }, { "name": "New Hire & Job Changes" }, { "name": "Time, Travel &  Expenses" }, { "name": "Services & Discounts" }, { "name": "On-Site Services" }]
 								}] })
 						)
 					)
@@ -27806,11 +27809,16 @@ var TabbedList = function (_Component) {
 			return _this.props.data[index].content.map(function (item, i) {
 				return _react2.default.createElement(
 					'li',
-					{ key: i },
+					{ key: i, className: (0, _classnames2.default)({ "external": item.href }) },
 					_react2.default.createElement(
-						'h5',
-						null,
-						item.name
+						'a',
+						{ href: item.href, target: '_blank' },
+						_react2.default.createElement(
+							'h5',
+							null,
+							item.name
+						),
+						_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
 					)
 				);
 			});

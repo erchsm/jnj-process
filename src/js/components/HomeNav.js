@@ -106,7 +106,7 @@ export default class HomeNav extends Component {
 								<li><h3>Campuses</h3></li>
 								<li><h3>Organizations</h3></li>
 								{/*<li><h3>Talent For Good</h3></li>*/}
-								<li><h3>Credo</h3></li>
+								<li><h3>Our Credo</h3></li>
 							</ul>
 							<hr/>
 							<ul>
@@ -122,42 +122,42 @@ export default class HomeNav extends Component {
 							</ul>
 							<TabbedList tabWidth={120} data={[
 								{ 
-									title: 'Favorites', 
+									title: "Favorites",
 									content: [
-										{ name: 'Yammer' },
-										{ name: 'AskGS' },
-										{ name: 'Fieldglass' },
-										{ name: 'Workday' },
-										{ name: 'Healthy & Me' },
-										{ name: 'DocSpace System' },
-										{ name: 'Concur Room Booking' },
-										{ name: 'Corporate Payroll Calendar' },
-										{ "name": "Exercise Reimbursement" },
-										{ "name": "Sharepoint"},
-										{ "name": "IRIS" },
-										{ name: 'Diversity & Inclusion at J&J' },
-										{ name: 'Our Credo' },
-										{ name: 'SUMMIT' },
-										{ name: 'For Your Benefit' },
-										{ name: 'ComplianceWire' },
-										{ name: 'JJEDS' },
+										{ "name": "Concur", "href": "//concur.jnj.com" },
+										{ "name": "AskGS", "href": "//askgs.jnj.com" },
+										{ "name": "Fieldglass", "href": "//www.fieldglass.net/" },
+										{ "name": "Workday", "href": "//jjworkday.com" },
+										{ "name": "Healthy & Me", "href": "//jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/HealthyMe.aspx" },
+										{ "name": "DocSpace System", "href": "external" },
+										{ "name": "Concur Room Booking", "href": "external" },
+										{ "name": "Corporate Payroll Calendar", "href": "external" },
+										{ "name": "Exercise Reimbursement", "href": "external" },
+										{ "name": "Sharepoint", "href": "//jnj.sharepoint.com" },
+										{ "name": "IRIS", "href": "//iris.jnj.com" },
+										{ "name": "Diversity & Inclusion at J&J", "href": "//jnj.sharepoint.com/sites/Dni/Pages/Index.aspx/home" },
+										{ "name": "Our Credo", "href": "external" },
+										{ "name": "SUMMIT", "href": "//jnj.csod.com" },
+										{ "name": "For Your Benefit", "href": "external" },
+										{ "name": "ComplianceWire", "href": "external" },
+										{ "name": "JJEDS", "href": "external" },
 									]
 								}, 
 								{ 
-									title: 'Categories', 
+									title: "By Category", 
 									content: [
-										{ name: 'Benefits & Compensation' },
-										{ name: 'Business Intelligence' },
-										{ name: 'Online Tools & Applications' },
-										{ name: 'Computing & Technology' },
-										{ name: 'Collaboration Spaces' },
-										{ name: 'Legal, Quality & Compliance' },
-										{ name: 'Performance & Recognition' },
-										{ name: 'Finance & Procurement' },
-										{ name: 'New Hire & Job Changes' },
-										{ name: 'Time, Travel &  Expenses' },
-										{ name: 'Services & Discounts' },
-										{ name: 'On-Site Services' },
+										{ "name": "Benefits & Compensation" },
+										{ "name": "Business Intelligence" },
+										{ "name": "Online Tools & Applications" },
+										{ "name": "Computing & Technology" },
+										{ "name": "Collaboration Spaces" },
+										{ "name": "Legal, Quality & Compliance" },
+										{ "name": "Performance & Recognition" },
+										{ "name": "Finance & Procurement" },
+										{ "name": "New Hire & Job Changes" },
+										{ "name": "Time, Travel &  Expenses" },
+										{ "name": "Services & Discounts" },
+										{ "name": "On-Site Services" },
 									]
 								}
 							]}/>

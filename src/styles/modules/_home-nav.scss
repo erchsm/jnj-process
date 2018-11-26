@@ -78,8 +78,8 @@ $baseclass: home-nav;
 	}
 
 	p {
-	    font-size: 21px;
-	    color: $brand-grey-dark;
+		font-size: 21px;
+		color: $brand-grey-dark;
 		min-width: 130px;
 	}
 
@@ -136,9 +136,13 @@ $baseclass: home-nav;
 		display: flex;
 		flex-direction: column;
 
+		i {
+			color: white;
+		}
+
 		&__header {
 			ul {
-				padding: 18px 72px;
+				padding: 0 72px;
 			}
 			li {
 				text-transform: uppercase;
@@ -163,6 +167,7 @@ $baseclass: home-nav;
 		&__content {
 			overflow-y: scroll;
 			height: 100%;
+			margin-right: 6px;
 		}
 	}
 
@@ -342,6 +347,12 @@ $baseclass: home-nav;
 			width: 100%;
 			ul {
 				padding: 40px 12px 24px;
+			}
+		}
+		.tabbed-list__header {
+			ul {
+				padding-top: 0;
+				padding-bottom: 0;
 			}
 		}
 	}
