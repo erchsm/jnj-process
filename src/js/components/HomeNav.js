@@ -53,7 +53,7 @@ export default class HomeNav extends Component {
 	}
 
 	createLinksContent = () => (
-		<div>
+		<div className="home-nav__panel home-nav__panel--blue">
 			<ul>
 				<li><a href="https://home.jnj.com/v2/#my-links" target="_blank"><h3>View All Links</h3></a></li>
 			</ul>
@@ -73,11 +73,15 @@ export default class HomeNav extends Component {
 				{ "name": "Sharepoint", "href": "//jnj.sharepoint.com" },
 				{ "name": "IRIS", "href": "//iris.jnj.com" },
 				{ "name": "Diversity & Inclusion at J&J", "href": "//jnj.sharepoint.com/sites/Dni/Pages/Index.aspx/home" },
-				{ "name": "Our Credo", "href": "//google.com" },
 				{ "name": "SUMMIT", "href": "//jnj.csod.com" },
+				{ "name": "Our Credo", "href": "//google.com" },
 				{ "name": "For Your Benefit", "href": "//google.com" },
 				{ "name": "ComplianceWire", "href": "//google.com" },
-				{ "name": "JJEDS", "href": "//google.com" },
+				{ "name": "Talent For Good", "href": "//google.com" },
+				{ "name": "Global HR Portal", "href": "//google.com" },
+				{ "name": "J&J Design Portal", "href": "//google.com" },
+				{ "name": "Hire.jnj.com", "href": "//google.com" },
+				{ "name": "Move.jnj.com", "href": "//google.com" },
 			]
 			}, 
 			{ 
@@ -102,12 +106,14 @@ export default class HomeNav extends Component {
 	)
 
 	createCampusesContent = () => (
-		<ul>
-			<li><h3>Consumer</h3></li>
-			<li><h3>Medical Devices</h3></li>
-			<li><h3>Pharmaceuticals</h3></li>
-			<li><h3>Supply Chain</h3></li>
-		</ul>
+		<div className="home-nav__panel home-nav__panel--blue">
+			<ul>
+				<li><h3>Consumer</h3></li>
+				<li><h3>Medical Devices</h3></li>
+				<li><h3>Pharmaceuticals</h3></li>
+				<li><h3>Supply Chain</h3></li>
+			</ul>
+		</div>
 	)
 
 
@@ -176,9 +182,7 @@ export default class HomeNav extends Component {
 								<li><a href="//iris.jnj.com" target="_blank"><h5>Help</h5></a></li>
 							</ul>
 						</div>
-						<div className="home-nav__panel home-nav__panel--blue">
-							{ (this.state.secondaryPanelType == 'links') ? this.createLinksContent() : this.createCampusesContent() }
-						</div>
+						{ (this.state.secondaryPanelType == 'links') ? this.createLinksContent() : this.createCampusesContent() }
 					</div>
 				</div>
 			</nav>
