@@ -169,7 +169,7 @@ export default class HomeNav extends Component {
 							<ul>
 								<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Links</h3></li>
 								<li><a href="//home.jnj.com/#my-news" target="_blank"><h3>News</h3></a></li>
-								<li><a href="//home.jnj.com/#my-events" target="_blank"><h3>Events</h3></a></li>
+								<li><a target="_blank"><h3>Events</h3></a></li>
 								<li onClick={() => this.openSecondaryPanel('campuses')}><h3 className={classNames({'active': secondaryPanelType == 'campuses' && secondaryPanelOpen })}>Campuses</h3></li>
 								<li onClick={() => this.openSecondaryPanel('organizations')}><h3 className={classNames({'active': secondaryPanelType == 'organizations' && secondaryPanelOpen })}>Organizations</h3></li>
 								<li><a href="//home.jnj.com/v2/#ourcredo" target="_blank"><h3>Our Credo</h3></a></li>

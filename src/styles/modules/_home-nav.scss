@@ -212,6 +212,7 @@ $baseclass: home-nav;
 		h1, h2, h3, h4, h5, h6 {
 			display: inline-block;
 			border-bottom: solid 4px transparent;
+			transition: border-color 0.3s $easing1;
 		}
 
 		h3 {
@@ -227,12 +228,6 @@ $baseclass: home-nav;
 			padding: 40px 72px 24px;
 		}
 
-		li {
-			// text-align: right;
-			cursor: pointer;
-			width: auto;
-		}
-
 		hr {
 			margin: 0;
 			height: 3px;
@@ -240,7 +235,10 @@ $baseclass: home-nav;
 
 		li {
 			opacity: 0;
-			transform: translate3d(50%, 0,0);
+			transform: translate3d(-36px, 0,0);
+			cursor: pointer;
+			transition: none;
+			width: auto;
 		}
 
 	}
@@ -249,7 +247,11 @@ $baseclass: home-nav;
 		background: white;
 
 		h1, h2, h3, h4, h5, h6 {
-			&:hover, &.active {
+			&:hover {
+				border-color: $brand-grey-light;
+			}
+			&.active {
+				// color: $brand-red;
 				border-color: $brand-red;
 			}
 		}
@@ -305,10 +307,10 @@ $baseclass: home-nav;
 				opacity: 1;
 				transform: none;
 
-				transition: all $easing1 0.6s;
+				transition: all $easing1 0.9s;
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: 0.06s * $i;
+						transition-delay: 0.09s * $i;
 					}
 				}
 
@@ -326,10 +328,10 @@ $baseclass: home-nav;
 				opacity: 1;
 				transform: none;
 
-				transition: all $easing1 0.6s;
+				transition: all $easing1 0.9s;
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: 0.06s * $i;
+						transition-delay: 0.09s * $i;
 					}
 				}
 

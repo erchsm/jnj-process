@@ -27506,7 +27506,7 @@ var HomeNav = function (_Component) {
 									null,
 									_react2.default.createElement(
 										"a",
-										{ href: "//home.jnj.com/#my-events", target: "_blank" },
+										{ target: "_blank" },
 										_react2.default.createElement(
 											"h3",
 											null,
