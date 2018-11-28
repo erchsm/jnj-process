@@ -16,6 +16,7 @@ export default class HomeNav extends Component {
 		this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
+			secondaryPanelType: 'links',
 		}
 	}
 
@@ -44,14 +45,74 @@ export default class HomeNav extends Component {
 		})
 	}
 	
-	openSecondaryPanel = () => {
+	openSecondaryPanel = (type) => {
 		this.setState({
-			secondaryPanelOpen: true
+			secondaryPanelOpen: true,
+			secondaryPanelType: type
 		})
 	}
 
+	createLinksContent = () => (
+		<div>
+			<ul>
+				<li><h3>View All Links</h3></li>
+			</ul>
+			<TabbedList tabWidth={120} data={[
+			{ 
+			title: "Favorites",
+			content: [
+				{ "name": "Concur", "href": "//concur.jnj.com" },
+				{ "name": "AskGS", "href": "//askgs.jnj.com" },
+				{ "name": "Fieldglass", "href": "//www.fieldglass.net/" },
+				{ "name": "Workday", "href": "//jjworkday.com" },
+				{ "name": "Healthy & Me", "href": "//jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/HealthyMe.aspx" },
+				{ "name": "DocSpace System", "href": "//google.com" },
+				{ "name": "Concur Room Booking", "href": "//google.com" },
+				{ "name": "Corporate Payroll Calendar", "href": "//google.com" },
+				{ "name": "Exercise Reimbursement", "href": "//google.com" },
+				{ "name": "Sharepoint", "href": "//jnj.sharepoint.com" },
+				{ "name": "IRIS", "href": "//iris.jnj.com" },
+				{ "name": "Diversity & Inclusion at J&J", "href": "//jnj.sharepoint.com/sites/Dni/Pages/Index.aspx/home" },
+				{ "name": "Our Credo", "href": "//google.com" },
+				{ "name": "SUMMIT", "href": "//jnj.csod.com" },
+				{ "name": "For Your Benefit", "href": "//google.com" },
+				{ "name": "ComplianceWire", "href": "//google.com" },
+				{ "name": "JJEDS", "href": "//google.com" },
+			]
+			}, 
+			{ 
+			title: "By Category", 
+			content: [
+				{ "name": "Benefits & Compensation" },
+				{ "name": "Business Intelligence" },
+				{ "name": "Online Tools & Applications" },
+				{ "name": "Computing & Technology" },
+				{ "name": "Collaboration Spaces" },
+				{ "name": "Legal, Quality & Compliance" },
+				{ "name": "Performance & Recognition" },
+				{ "name": "Finance & Procurement" },
+				{ "name": "New Hire & Job Changes" },
+				{ "name": "Time, Travel &  Expenses" },
+				{ "name": "Services & Discounts" },
+				{ "name": "On-Site Services" },
+			]
+			}
+			]}/>
+		</div>
+	)
+
+	createCampusesContent = () => (
+		<ul>
+			<li><h3>Consumer</h3></li>
+			<li><h3>Medical Devices</h3></li>
+			<li><h3>Pharmaceuticals</h3></li>
+			<li><h3>Supply Chain</h3></li>
+		</ul>
+	)
+
+
 	render() {
-		const { menuOpen, secondaryPanelOpen } = this.state;
+		const { menuOpen, secondaryPanelOpen, secondaryPanelType } = this.state;
 
 
 		const classnames = classNames({
@@ -100,12 +161,11 @@ export default class HomeNav extends Component {
 					<div ref="panels">
 						<div className="home-nav__panel home-nav__panel--white">
 							<ul>
-								<li onClick={this.openSecondaryPanel}><h3 className={classNames({'active': secondaryPanelOpen})}>Links</h3></li>
+								<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Links</h3></li>
 								<li><h3>News</h3></li>
 								<li><h3>Events</h3></li>
-								<li><h3>Campuses</h3></li>
+								<li onClick={() => this.openSecondaryPanel('campuses')}><h3>Campuses</h3></li>
 								<li><h3>Organizations</h3></li>
-								{/*<li><h3>Talent For Good</h3></li>*/}
 								<li><h3>Our Credo</h3></li>
 							</ul>
 							<hr/>
@@ -117,50 +177,7 @@ export default class HomeNav extends Component {
 							</ul>
 						</div>
 						<div className="home-nav__panel home-nav__panel--blue">
-							<ul>
-								<li><h3>View All Links</h3></li>
-							</ul>
-							<TabbedList tabWidth={120} data={[
-								{ 
-									title: "Favorites",
-									content: [
-										{ "name": "Concur", "href": "//concur.jnj.com" },
-										{ "name": "AskGS", "href": "//askgs.jnj.com" },
-										{ "name": "Fieldglass", "href": "//www.fieldglass.net/" },
-										{ "name": "Workday", "href": "//jjworkday.com" },
-										{ "name": "Healthy & Me", "href": "//jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/HealthyMe.aspx" },
-										{ "name": "DocSpace System", "href": "external" },
-										{ "name": "Concur Room Booking", "href": "external" },
-										{ "name": "Corporate Payroll Calendar", "href": "external" },
-										{ "name": "Exercise Reimbursement", "href": "external" },
-										{ "name": "Sharepoint", "href": "//jnj.sharepoint.com" },
-										{ "name": "IRIS", "href": "//iris.jnj.com" },
-										{ "name": "Diversity & Inclusion at J&J", "href": "//jnj.sharepoint.com/sites/Dni/Pages/Index.aspx/home" },
-										{ "name": "Our Credo", "href": "external" },
-										{ "name": "SUMMIT", "href": "//jnj.csod.com" },
-										{ "name": "For Your Benefit", "href": "external" },
-										{ "name": "ComplianceWire", "href": "external" },
-										{ "name": "JJEDS", "href": "external" },
-									]
-								}, 
-								{ 
-									title: "By Category", 
-									content: [
-										{ "name": "Benefits & Compensation" },
-										{ "name": "Business Intelligence" },
-										{ "name": "Online Tools & Applications" },
-										{ "name": "Computing & Technology" },
-										{ "name": "Collaboration Spaces" },
-										{ "name": "Legal, Quality & Compliance" },
-										{ "name": "Performance & Recognition" },
-										{ "name": "Finance & Procurement" },
-										{ "name": "New Hire & Job Changes" },
-										{ "name": "Time, Travel &  Expenses" },
-										{ "name": "Services & Discounts" },
-										{ "name": "On-Site Services" },
-									]
-								}
-							]}/>
+							{ (this.state.secondaryPanelType == 'links') ? this.createLinksContent() : this.createCampusesContent() }
 						</div>
 					</div>
 				</div>

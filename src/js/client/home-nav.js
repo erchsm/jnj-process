@@ -8,9 +8,9 @@ import HomeLinksPage from '../components/HomeLinksPage'
 render(
 	<div className="test-page">
 		<HomeNav/>
-		<ScrollProvider>  
+		{/*<ScrollProvider>  
 			<HomeLinksPage />
-		</ScrollProvider>
+		</ScrollProvider>*/}
 	</div>,
 	document.getElementById('root')
 )
