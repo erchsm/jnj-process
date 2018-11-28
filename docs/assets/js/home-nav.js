@@ -27292,9 +27292,13 @@ var HomeNav = function (_Component) {
 						"li",
 						null,
 						_react2.default.createElement(
-							"h3",
-							null,
-							"View All Links"
+							"a",
+							{ href: "https://home.jnj.com/v2/#my-links", target: "_blank" },
+							_react2.default.createElement(
+								"h3",
+								null,
+								"View All Links"
+							)
 						)
 					)
 				),
@@ -27484,18 +27488,26 @@ var HomeNav = function (_Component) {
 									"li",
 									null,
 									_react2.default.createElement(
-										"h3",
-										null,
-										"News"
+										"a",
+										{ href: "//home.jnj.com/#my-news", target: "_blank" },
+										_react2.default.createElement(
+											"h3",
+											null,
+											"News"
+										)
 									)
 								),
 								_react2.default.createElement(
 									"li",
 									null,
 									_react2.default.createElement(
-										"h3",
-										null,
-										"Events"
+										"a",
+										{ href: "//home.jnj.com/#my-events", target: "_blank" },
+										_react2.default.createElement(
+											"h3",
+											null,
+											"Events"
+										)
 									)
 								),
 								_react2.default.createElement(
@@ -27505,16 +27517,18 @@ var HomeNav = function (_Component) {
 										} },
 									_react2.default.createElement(
 										"h3",
-										null,
+										{ className: (0, _classnames2.default)({ 'active': secondaryPanelType == 'campuses' && secondaryPanelOpen }) },
 										"Campuses"
 									)
 								),
 								_react2.default.createElement(
 									"li",
-									null,
+									{ onClick: function onClick() {
+											return _this2.openSecondaryPanel('organizations');
+										} },
 									_react2.default.createElement(
 										"h3",
-										null,
+										{ className: (0, _classnames2.default)({ 'active': secondaryPanelType == 'organizations' && secondaryPanelOpen }) },
 										"Organizations"
 									)
 								),
@@ -27522,9 +27536,13 @@ var HomeNav = function (_Component) {
 									"li",
 									null,
 									_react2.default.createElement(
-										"h3",
-										null,
-										"Our Credo"
+										"a",
+										{ href: "//home.jnj.com/v2/#ourcredo", target: "_blank" },
+										_react2.default.createElement(
+											"h3",
+											null,
+											"Our Credo"
+										)
 									)
 								)
 							),
@@ -27536,18 +27554,26 @@ var HomeNav = function (_Component) {
 									"li",
 									null,
 									_react2.default.createElement(
-										"h5",
-										null,
-										"About"
+										"a",
+										{ href: "//jnj.sharepoint.com/teams/home", target: "_blank" },
+										_react2.default.createElement(
+											"h5",
+											null,
+											"About"
+										)
 									)
 								),
 								_react2.default.createElement(
 									"li",
 									null,
 									_react2.default.createElement(
-										"h5",
+										"a",
 										null,
-										"Preferences"
+										_react2.default.createElement(
+											"h5",
+											null,
+											"Preferences"
+										)
 									)
 								),
 								_react2.default.createElement(
@@ -27563,9 +27589,13 @@ var HomeNav = function (_Component) {
 									"li",
 									null,
 									_react2.default.createElement(
-										"h5",
-										null,
-										"Help"
+										"a",
+										{ href: "//iris.jnj.com", target: "_blank" },
+										_react2.default.createElement(
+											"h5",
+											null,
+											"Help"
+										)
 									)
 								)
 							)

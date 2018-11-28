@@ -55,7 +55,7 @@ export default class HomeNav extends Component {
 	createLinksContent = () => (
 		<div>
 			<ul>
-				<li><h3>View All Links</h3></li>
+				<li><a href="https://home.jnj.com/v2/#my-links" target="_blank"><h3>View All Links</h3></a></li>
 			</ul>
 			<TabbedList tabWidth={120} data={[
 			{ 
@@ -162,18 +162,18 @@ export default class HomeNav extends Component {
 						<div className="home-nav__panel home-nav__panel--white">
 							<ul>
 								<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Links</h3></li>
-								<li><h3>News</h3></li>
-								<li><h3>Events</h3></li>
-								<li onClick={() => this.openSecondaryPanel('campuses')}><h3>Campuses</h3></li>
-								<li><h3>Organizations</h3></li>
-								<li><h3>Our Credo</h3></li>
+								<li><a href="//home.jnj.com/#my-news" target="_blank"><h3>News</h3></a></li>
+								<li><a href="//home.jnj.com/#my-events" target="_blank"><h3>Events</h3></a></li>
+								<li onClick={() => this.openSecondaryPanel('campuses')}><h3 className={classNames({'active': secondaryPanelType == 'campuses' && secondaryPanelOpen })}>Campuses</h3></li>
+								<li onClick={() => this.openSecondaryPanel('organizations')}><h3 className={classNames({'active': secondaryPanelType == 'organizations' && secondaryPanelOpen })}>Organizations</h3></li>
+								<li><a href="//home.jnj.com/v2/#ourcredo" target="_blank"><h3>Our Credo</h3></a></li>
 							</ul>
 							<hr/>
 							<ul>
-								<li><h5>About</h5></li>
-								<li><h5>Preferences</h5></li>
+								<li><a href="//jnj.sharepoint.com/teams/home" target="_blank"><h5>About</h5></a></li>
+								<li><a><h5>Preferences</h5></a></li>
 								<li><h5>Take the tour</h5></li>
-								<li><h5>Help</h5></li>
+								<li><a href="//iris.jnj.com" target="_blank"><h5>Help</h5></a></li>
 							</ul>
 						</div>
 						<div className="home-nav__panel home-nav__panel--blue">
