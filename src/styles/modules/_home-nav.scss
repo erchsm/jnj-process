@@ -278,6 +278,10 @@ $baseclass: home-nav;
 			}
 		}
 
+		li {
+			transform: translate3d(24px, 0,0);
+		}
+
 		h5 {
 			margin-bottom: 24px;
 		}

@@ -14639,6 +14639,8 @@ body {
       color: white; }
       .home-nav__panel--blue h1:hover, .home-nav__panel--blue h2:hover, .home-nav__panel--blue h3:hover, .home-nav__panel--blue h4:hover, .home-nav__panel--blue h5:hover, .home-nav__panel--blue h6:hover {
         border-color: white; }
+    .home-nav__panel--blue li {
+      transform: translate3d(24px, 0, 0); }
     .home-nav__panel--blue h5 {
       margin-bottom: 24px; }
   .home-nav--menuOpen .home-nav__hamburger .line {
