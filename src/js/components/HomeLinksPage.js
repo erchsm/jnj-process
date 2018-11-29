@@ -153,7 +153,6 @@ export default class HomeLinksPage extends Component {
 				</div>
 				<div className="home-links-page__sidebar">
 					<h4>Links</h4>
-					
 					<ul>
 						{
 							scroll.children.map((child, index) =>

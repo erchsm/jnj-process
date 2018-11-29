@@ -17,6 +17,7 @@ export default class HomeNav extends Component {
 			menuOpen: false,
 			secondaryPanelOpen: false,
 			secondaryPanelType: 'links',
+			notificationsOpen: false,
 		}
 	}
 
@@ -42,6 +43,7 @@ export default class HomeNav extends Component {
 		this.setState({
 			menuOpen: !this.state.menuOpen,
 			secondaryPanelOpen: false,
+			notificationsOpen: false,
 		})
 	}
 	
@@ -49,6 +51,14 @@ export default class HomeNav extends Component {
 		this.setState({
 			secondaryPanelOpen: true,
 			secondaryPanelType: type
+		})
+	}
+
+	openNotifications = () => {
+		this.setState({
+			menuOpen: false,
+			secondaryPanelOpen: false,
+			notificationsOpen: true,
 		})
 	}
 
@@ -118,13 +128,14 @@ export default class HomeNav extends Component {
 
 
 	render() {
-		const { menuOpen, secondaryPanelOpen, secondaryPanelType } = this.state;
+		const { menuOpen, secondaryPanelOpen, secondaryPanelType, notificationsOpen } = this.state;
 
 
 		const classnames = classNames({
 			"home-nav": true,
 			"home-nav--menuOpen": menuOpen,
 			"home-nav--secondaryPanelOpen": secondaryPanelOpen,
+			"home-nav--notificationsOpen": notificationsOpen,
 		})
 
 
@@ -139,7 +150,7 @@ export default class HomeNav extends Component {
 							<div className="home-nav__item">
 								<h5 className="eyebrow">JNJ <span style={{color: '#417505'}}>140.00</span></h5>
 							</div>
-							<div className="home-nav__item">
+							<div className="home-nav__item" onClick={this.openNotifications}>
 								<i className="iconcss icon-bell"></i>
 								<div className="notifications-marker"></div>
 							</div>
@@ -161,6 +172,17 @@ export default class HomeNav extends Component {
 					<div className="home-nav__right">
 						<i className="iconcss icon-chat"></i>
 						<p>Chat now</p>
+					</div>
+				</div>
+				<div className="home-nav__notifications">
+					<div ref="notifications">
+						<h5 className="eyebrow">Notifications</h5>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-todo-check"></i><p>To do</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-concur"></i><p>Concur</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-calendar"></i><p>Calendar</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-yammer"></i><p>Yammer</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-workday"></i><p>Workday</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-plane"></i><p>Travel</p></div>
 					</div>
 				</div>
 				<div className="home-nav__main">

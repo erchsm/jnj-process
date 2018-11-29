@@ -27270,7 +27270,8 @@ var HomeNav = function (_Component) {
 		_this.toggleMenuOpen = function () {
 			_this.setState({
 				menuOpen: !_this.state.menuOpen,
-				secondaryPanelOpen: false
+				secondaryPanelOpen: false,
+				notificationsOpen: false
 			});
 		};
 
@@ -27278,6 +27279,14 @@ var HomeNav = function (_Component) {
 			_this.setState({
 				secondaryPanelOpen: true,
 				secondaryPanelType: type
+			});
+		};
+
+		_this.openNotifications = function () {
+			_this.setState({
+				menuOpen: false,
+				secondaryPanelOpen: false,
+				notificationsOpen: true
 			});
 		};
 
@@ -27362,7 +27371,8 @@ var HomeNav = function (_Component) {
 		_this.state = {
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			secondaryPanelType: 'links'
+			secondaryPanelType: 'links',
+			notificationsOpen: false
 		};
 		return _this;
 	}
@@ -27385,13 +27395,15 @@ var HomeNav = function (_Component) {
 			var _state = this.state,
 			    menuOpen = _state.menuOpen,
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
-			    secondaryPanelType = _state.secondaryPanelType;
+			    secondaryPanelType = _state.secondaryPanelType,
+			    notificationsOpen = _state.notificationsOpen;
 
 
 			var classnames = (0, _classnames2.default)({
 				"home-nav": true,
 				"home-nav--menuOpen": menuOpen,
-				"home-nav--secondaryPanelOpen": secondaryPanelOpen
+				"home-nav--secondaryPanelOpen": secondaryPanelOpen,
+				"home-nav--notificationsOpen": notificationsOpen
 			});
 
 			return _react2.default.createElement(
@@ -27427,7 +27439,7 @@ var HomeNav = function (_Component) {
 							),
 							_react2.default.createElement(
 								"div",
-								{ className: "home-nav__item" },
+								{ className: "home-nav__item", onClick: this.openNotifications },
 								_react2.default.createElement("i", { className: "iconcss icon-bell" }),
 								_react2.default.createElement("div", { className: "notifications-marker" })
 							),
@@ -27462,6 +27474,79 @@ var HomeNav = function (_Component) {
 							"p",
 							null,
 							"Chat now"
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "home-nav__notifications" },
+					_react2.default.createElement(
+						"div",
+						{ ref: "notifications" },
+						_react2.default.createElement(
+							"h5",
+							{ className: "eyebrow" },
+							"Notifications"
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "home-nav__notifications__row" },
+							_react2.default.createElement("i", { className: "iconcss icon-todo-check" }),
+							_react2.default.createElement(
+								"p",
+								null,
+								"To do"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "home-nav__notifications__row" },
+							_react2.default.createElement("i", { className: "iconcss icon-concur" }),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Concur"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "home-nav__notifications__row" },
+							_react2.default.createElement("i", { className: "iconcss icon-calendar" }),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Calendar"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "home-nav__notifications__row" },
+							_react2.default.createElement("i", { className: "iconcss icon-yammer" }),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Yammer"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "home-nav__notifications__row" },
+							_react2.default.createElement("i", { className: "iconcss icon-workday" }),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Workday"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "home-nav__notifications__row" },
+							_react2.default.createElement("i", { className: "iconcss icon-plane" }),
+							_react2.default.createElement(
+								"p",
+								null,
+								"Travel"
+							)
 						)
 					)
 				),

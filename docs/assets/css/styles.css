@@ -14193,6 +14193,24 @@ a.panel-block:hover, label.panel-block:hover {
 .icon-star-fill:before {
   content: "\EA46"; }
 
+.icon-todo-check:before {
+  content: "\EA47"; }
+
+.icon-concur:before {
+  content: "\EA48"; }
+
+.icon-yammer:before {
+  content: "\EA49"; }
+
+.icon-workday:before {
+  content: "\EA50"; }
+
+.icon-plane:before {
+  content: "\EA51"; }
+
+.icon-calendar:before {
+  content: "\EA52"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
@@ -14230,7 +14248,9 @@ a.panel-block:hover, label.panel-block:hover {
       width: 100%; }
 
 body, button, input, select, textarea {
-  font-family: "Circular Std"; }
+  font-family: "Circular Std";
+  -webkit-font-variant-ligatures: none;
+  font-variant-ligatures: none; }
 
 .title {
   font-weight: 800;
@@ -14499,6 +14519,8 @@ body {
       right: auto;
       left: 0;
       top: 2px; }
+  .home-nav .icon-bell {
+    cursor: pointer; }
   .home-nav .icon-bell, .home-nav .icon-chat {
     font-size: 30px;
     color: #212121; }
@@ -14582,6 +14604,52 @@ body {
       height: 2px;
       border-radius: 1px;
       width: 100%; }
+  .home-nav__notifications {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    z-index: 9999;
+    margin-top: -2px;
+    height: calc(100vh - 60px);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s; }
+    .home-nav__notifications > div {
+      position: absolute;
+      background: white;
+      width: 320px;
+      right: 196px;
+      top: 0;
+      border: solid 2px #F4F4F4; }
+    .home-nav__notifications h5 {
+      padding-left: 24px;
+      line-height: 40px;
+      border-bottom: solid 2px #F4F4F4; }
+  .home-nav__notifications__row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 60px;
+    padding: 0 24px;
+    border-bottom: solid 2px #F4F4F4; }
+    .home-nav__notifications__row p {
+      color: #212121;
+      margin-left: 24px;
+      font-size: 18px; }
+    .home-nav__notifications__row i {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      border: solid 1px #888B8D;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 28px;
+      color: #000099; }
   .home-nav__main {
     position: absolute;
     width: 100%;
@@ -14625,7 +14693,7 @@ body {
   .home-nav__panel--white {
     background: white; }
     .home-nav__panel--white h1:hover, .home-nav__panel--white h2:hover, .home-nav__panel--white h3:hover, .home-nav__panel--white h4:hover, .home-nav__panel--white h5:hover, .home-nav__panel--white h6:hover {
-      border-color: #D8D8D8; }
+      border-color: #CA001B; }
     .home-nav__panel--white h1.active, .home-nav__panel--white h2.active, .home-nav__panel--white h3.active, .home-nav__panel--white h4.active, .home-nav__panel--white h5.active, .home-nav__panel--white h6.active {
       border-color: #CA001B; }
     .home-nav__panel--white h5 {
@@ -14789,6 +14857,11 @@ body {
         transition-delay: 2.61s; }
       .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(30) {
         transition-delay: 2.7s; }
+  .home-nav--notificationsOpen .home-nav__notifications {
+    background: rgba(33, 33, 33, 0.4);
+    opacity: 1; }
+  .home-nav--notificationsOpen .icon-bell {
+    color: #CA001B; }
   @media screen and (max-width: 800px) {
     .home-nav .home-nav__topbar {
       padding: 0 12px; }

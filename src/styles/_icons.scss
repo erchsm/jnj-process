@@ -74,6 +74,12 @@
 .icon-chat:before { content: "\EA44" }
 .icon-star-outline:before { content: "\EA45" }
 .icon-star-fill:before { content: "\EA46" }
+.icon-todo-check:before { content: "\EA47" }
+.icon-concur:before { content: "\EA48" }
+.icon-yammer:before { content: "\EA49" }
+.icon-workday:before { content: "\EA50" }
+.icon-plane:before { content: "\EA51" }
+.icon-calendar:before { content: "\EA52" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {

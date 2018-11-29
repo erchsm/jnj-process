@@ -72,6 +72,10 @@ $baseclass: home-nav;
 		}
 	}
 
+	.icon-bell {
+		cursor: pointer;
+	}
+
 	.icon-bell, .icon-chat {
 		font-size: 30px;
 		color: $brand-black;
@@ -188,6 +192,60 @@ $baseclass: home-nav;
 		}
 	}
 
+	&__notifications {
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 60px;
+		width: 100%;
+		z-index: 9999;
+		margin-top: -2px;
+		height: calc(100vh - 60px);
+		transition: all $easing2 0.6s;
+
+		> div {
+			position: absolute;
+			background: white;
+			width: 320px;
+			right: 196px;
+			top: 0;
+			border: solid 2px $brand-grey-lightest;
+		}
+
+		h5 {
+			padding-left: 24px;
+			line-height: 40px;
+			// margin: 24px 0;
+			border-bottom: solid 2px $brand-grey-lightest;
+		}
+	}
+
+	&__notifications__row {
+		display: flex;
+		align-items: center;
+		height: 60px;
+		padding: 0 24px;
+		border-bottom: solid 2px $brand-grey-lightest;
+
+		p {
+			color: $brand-black;
+			margin-left: 24px;
+			font-size: 18px;
+		}
+
+		i {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: solid 1px $brand-grey-dark;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			font-size: 28px;
+			color: $brand-blue;
+		}
+	}
+
 	&__main {
 		position: absolute;
 		width: 100%;
@@ -240,7 +298,6 @@ $baseclass: home-nav;
 			transition: none;
 			width: auto;
 		}
-
 	}
 
 	&__panel--white {
@@ -248,7 +305,8 @@ $baseclass: home-nav;
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
-				border-color: $brand-grey-light;
+				border-color: $brand-red;
+				// border-color: $brand-grey-light;
 			}
 			&.active {
 				// color: $brand-red;
@@ -350,6 +408,15 @@ $baseclass: home-nav;
 				}
 
 			}
+		}
+	}
+	&--notificationsOpen {
+		.#{$baseclass}__notifications {
+			background: rgba($brand-black, .40);
+			opacity: 1;
+		}
+		.icon-bell {
+			color: $brand-red;
 		}
 	}
 	@media screen and (max-width: $bp-medium) {
