@@ -9,7 +9,7 @@ render(
 	<div className="test-page">
 		<HomeNav/>
 		<ScrollProvider>  
-			<HomeLinksPage />
+			<HomeLinksPage/>
 		</ScrollProvider>
 	</div>,
 	document.getElementById('root')

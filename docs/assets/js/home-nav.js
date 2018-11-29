@@ -27000,12 +27000,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactDom.render)(_react2.default.createElement(
 	'div',
 	{ className: 'test-page' },
-	_react2.default.createElement(_HomeNav2.default, null),
-	_react2.default.createElement(
-		_reactSkroll.ScrollProvider,
-		null,
-		_react2.default.createElement(_HomeLinksPage2.default, null)
-	)
+	_react2.default.createElement(_HomeNav2.default, null)
 ), document.getElementById('root'));
 
 },{"../components/HomeLinksPage":229,"../components/HomeNav":230,"react":221,"react-dom":45,"react-skroll":189}],229:[function(require,module,exports){
