@@ -253,6 +253,16 @@ $baseclass: home-nav;
 			&.active {
 				// color: $brand-red;
 				border-color: $brand-red;
+
+				// &:after {
+				// 	content: ""; 
+				// 	position: absolute;
+				// 	display: block; 
+				// 	margin: 0 auto; 
+				// 	width: 50%; 
+				// 	padding-top: 2px; 
+				// 	border-bottom: 4px solid $brand-red; 
+				// }
 			}
 		}
 
