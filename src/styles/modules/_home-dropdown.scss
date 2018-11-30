@@ -1,0 +1,54 @@
+.dropdown {
+	box-shadow: 0 4px 10px rgba(#7C4DFF, .2);
+    margin: 12px auto;
+	outline: none;
+	position: relative;
+	transition: box-shadow .1s linear;
+	width: 100%;
+
+	&__trigger {
+		border: 2px solid #2196F3;
+		border-radius: 5px;
+		cursor: pointer;
+		display: inline-block;
+		padding: 10px;
+		width: 100%;
+	}
+
+	&__content {
+		background: #fff;
+		border: 2px solid #2196F3;
+		border-radius: 0 0 5px 5px;
+		padding: 10px;
+		position: absolute;
+		width: 100%;
+	}
+
+	&__item {
+		padding: 10px;
+		transition: background .1s linear;
+
+		&:hover {
+			background: #2196F3;
+			color: #fff;
+			cursor: pointer;
+		}
+	}
+	
+	&.active {
+		box-shadow: 0 10px 30px rgba(#7C4DFF, .2);
+	}
+	
+	&:hover > .trigger,
+	&.active > .trigger {
+		background: #2196F3;
+		color: #fff;
+	}
+	
+	&.active > .trigger {
+		background: #2196F3;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+		color: #fff;
+	}
+}

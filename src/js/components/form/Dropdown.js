@@ -1,42 +1,59 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
 
-
 export default class Dropdown extends Component {
-
-	constructor() {
-		super();
+	
+	constructor(props) {
+		super(props);
+		this.state = {
+			expanded: false,
+			value: this.props.options[0]
+		};
 	}
-
-	selectOption(index) {
-		if (this.props.onChange) {
-			this.props.onChange(index);
-		}
+	
+	expand() {
+		this.setState({ expanded: true });
 	}
-
-	toggle = () => {
-		if (this.props.onChange) {
-			this.props.onChange(!this.props.value);
-		}
+	
+	collapse() {
+		this.setState({ expanded: false });
 	}
-
-	render() {
-		const { value, label } = this.props;
-		
-		const classnames = classNames({
-			'switch': true,
-			'switch--on': value === true
+	
+	handleItemClick(e) {
+		this.setState({
+			expanded: false,
+			value: e.target.innerText
 		});
+	}
+	
+	handleTriggerClick() {
+		this.setState({ expanded: !this.state.expanded });
+	}
+	
+	render() {
+		let dropdown = undefined;
 
-		return (
-			<div className="switch-wrapper">
-				<div className={classnames} onClick={this.toggle}>
-					<label>{label}</label>
-					<div className="switch-toggle">
-						<span>{(value === true) ? 'On' : 'Off'}</span>
-					</div>
+		if (this.state.expanded) {
+			dropdown = (
+				<div className="dropdown__content">
+				{
+					this.props.options.map(item => (
+						<div onClick={(e) => { this.handleItemClick(e); }} className="dropdown__item">{item}</div>
+					))
+				}
 				</div>
+			);
+		}
+		
+		return (
+			<div className={`dropdown ${this.state.expanded ? 'active' : ''}`}
+				tabIndex="0"
+				onBlur={() => { this.collapse(); }}>
+				<div className="dropdown__trigger" onClick={() => { this.handleTriggerClick(); }}>
+					{this.state.value}
+				</div>
+				{dropdown}
 			</div>
-		)
+		);
 	}
 }

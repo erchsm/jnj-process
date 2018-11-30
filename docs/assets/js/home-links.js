@@ -27037,9 +27037,9 @@ var _Dropdown = require('./form/Dropdown');
 
 var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
-var _homeLinksPageAlt = require('../data/home-links-page-alt');
+var _homeLinksPage = require('../data/home-links-page');
 
-var _homeLinksPageAlt2 = _interopRequireDefault(_homeLinksPageAlt);
+var _homeLinksPage2 = _interopRequireDefault(_homeLinksPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27048,9 +27048,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import linksData from '../data/home-links-page'
-
 
 var HomeLinksPage = function (_Component) {
 	_inherits(HomeLinksPage, _Component);
@@ -27115,7 +27112,7 @@ var HomeLinksPage = function (_Component) {
 				recommended: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
 			},
-			linksData: _homeLinksPageAlt2.default.allLinks
+			linksData: _homeLinksPage2.default.allLinks
 		};
 		return _this;
 	}
@@ -27193,7 +27190,7 @@ var HomeLinksPage = function (_Component) {
 						null,
 						'Links'
 					),
-					_react2.default.createElement(_Dropdown2.default, null),
+					_react2.default.createElement(_Dropdown2.default, { options: ['Recommended', 'My Recents', 'Alphabetical', 'Most Popular'] }),
 					_react2.default.createElement(
 						'ul',
 						null,
@@ -27227,7 +27224,7 @@ var HomeLinksPage = function (_Component) {
 
 exports.default = HomeLinksPage;
 
-},{"../data/home-links-page-alt":234,"./SearchBar":231,"./form/Dropdown":233,"classnames":1,"react":221,"react-motion":178,"react-skroll":189}],230:[function(require,module,exports){
+},{"../data/home-links-page":234,"./SearchBar":231,"./form/Dropdown":233,"classnames":1,"react":221,"react-motion":178,"react-skroll":189}],230:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28137,61 +28134,79 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Dropdown = function (_Component) {
 	_inherits(Dropdown, _Component);
 
-	function Dropdown() {
+	function Dropdown(props) {
 		_classCallCheck(this, Dropdown);
 
-		var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this));
+		var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this, props));
 
-		_this.toggle = function () {
-			if (_this.props.onChange) {
-				_this.props.onChange(!_this.props.value);
-			}
+		_this.state = {
+			expanded: false,
+			value: _this.props.options[0]
 		};
-
 		return _this;
 	}
 
 	_createClass(Dropdown, [{
-		key: 'selectOption',
-		value: function selectOption(index) {
-			if (this.props.onChange) {
-				this.props.onChange(index);
-			}
+		key: 'expand',
+		value: function expand() {
+			this.setState({ expanded: true });
+		}
+	}, {
+		key: 'collapse',
+		value: function collapse() {
+			this.setState({ expanded: false });
+		}
+	}, {
+		key: 'handleItemClick',
+		value: function handleItemClick(e) {
+			this.setState({
+				expanded: false,
+				value: e.target.innerText
+			});
+		}
+	}, {
+		key: 'handleTriggerClick',
+		value: function handleTriggerClick() {
+			this.setState({ expanded: !this.state.expanded });
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var _props = this.props,
-			    value = _props.value,
-			    label = _props.label;
+			var _this2 = this;
 
+			var dropdown = undefined;
 
-			var classnames = (0, _classnames2.default)({
-				'switch': true,
-				'switch--on': value === true
-			});
+			if (this.state.expanded) {
+				dropdown = _react2.default.createElement(
+					'div',
+					{ className: 'dropdown__content' },
+					this.props.options.map(function (item) {
+						return _react2.default.createElement(
+							'div',
+							{ onClick: function onClick(e) {
+									_this2.handleItemClick(e);
+								}, className: 'dropdown__item' },
+							item
+						);
+					})
+				);
+			}
 
 			return _react2.default.createElement(
 				'div',
-				{ className: 'switch-wrapper' },
+				{ className: 'dropdown ' + (this.state.expanded ? 'active' : ''),
+					tabIndex: '0',
+					onBlur: function onBlur() {
+						_this2.collapse();
+					} },
 				_react2.default.createElement(
 					'div',
-					{ className: classnames, onClick: this.toggle },
-					_react2.default.createElement(
-						'label',
-						null,
-						label
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'switch-toggle' },
-						_react2.default.createElement(
-							'span',
-							null,
-							value === true ? 'On' : 'Off'
-						)
-					)
-				)
+					{ className: 'dropdown__trigger', onClick: function onClick() {
+							_this2.handleTriggerClick();
+						} },
+					this.state.value
+				),
+				dropdown
 			);
 		}
 	}]);

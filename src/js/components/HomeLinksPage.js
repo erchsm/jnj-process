@@ -9,8 +9,7 @@ import { ScrollProvider, Scroller, ScrollLink } from 'react-skroll'
 import SearchBar from './SearchBar';
 import Dropdown from './form/Dropdown';
 
-// import linksData from '../data/home-links-page'
-import linksData from '../data/home-links-page-alt'
+import linksData from '../data/home-links-page'
 
 
 export default class HomeLinksPage extends Component {
@@ -154,7 +153,7 @@ export default class HomeLinksPage extends Component {
 				</div>
 				<div className="home-links-page__sidebar">
 					<h4>Links</h4>
-					<Dropdown/>
+					<Dropdown options={['Recommended', 'My Recents', 'Alphabetical', 'Most Popular']} />
 					<ul>
 						{
 							scroll.children.map((child, index) =>
