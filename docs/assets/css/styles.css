@@ -14465,9 +14465,9 @@ body {
         .home-links-page__links-container section .card:nth-child(3n + 4) {
           margin-right: 0; }
         .home-links-page__links-container section .card.starAnimation .icon-star-fill {
-          animation: star 0.8s ease-in; }
+          animation: star 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
         .home-links-page__links-container section .card.starAnimation .circles {
-          animation: circles 0.8s ease-in; }
+          animation: circles 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
 
 .home-nav {
   position: relative; }
@@ -14637,6 +14637,22 @@ body {
       color: #212121;
       margin-left: 24px;
       font-size: 18px; }
+    .home-nav__notifications__row .indicator-value {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+      align-items: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      background: #CA001B;
+      color: white;
+      width: 18px;
+      height: 18px;
+      margin-left: -9px;
+      margin-top: -27px;
+      border-radius: 50%; }
     .home-nav__notifications__row i {
       display: -ms-flexbox;
       display: flex;
@@ -14646,9 +14662,9 @@ body {
       justify-content: center;
       border: solid 1px #888B8D;
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 28px;
+      width: 36px;
+      height: 36px;
+      font-size: 24px;
       color: #000099; }
   .home-nav__main {
     position: absolute;

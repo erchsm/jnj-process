@@ -7,6 +7,7 @@ import { ScrollProvider, Scroller, ScrollLink } from 'react-skroll'
 
 
 import SearchBar from './SearchBar';
+import Dropdown from './form/Dropdown';
 
 // import linksData from '../data/home-links-page'
 import linksData from '../data/home-links-page-alt'
@@ -18,7 +19,7 @@ export default class HomeLinksPage extends Component {
 		
 		this.state = {
 			buckets: {
-				forMe: [
+				recommended: [
 					"Benefits & Compensation",
 					"Business Intelligence",
 					"Online Tools & Applications",
@@ -141,7 +142,7 @@ export default class HomeLinksPage extends Component {
 							<hr/>
 						</section>
 						{
-							this.state.buckets.forMe.map((bucket, index) =>
+							this.state.buckets.recommended.map((bucket, index) =>
 								<section name={bucket} key={index}>
 									<h4>{bucket}</h4>
 									{ this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) }
@@ -153,6 +154,7 @@ export default class HomeLinksPage extends Component {
 				</div>
 				<div className="home-links-page__sidebar">
 					<h4>Links</h4>
+					<Dropdown/>
 					<ul>
 						{
 							scroll.children.map((child, index) =>

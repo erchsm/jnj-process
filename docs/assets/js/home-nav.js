@@ -27028,6 +27028,10 @@ var _SearchBar = require('./SearchBar');
 
 var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
+var _Dropdown = require('./form/Dropdown');
+
+var _Dropdown2 = _interopRequireDefault(_Dropdown);
+
 var _homeLinksPageAlt = require('../data/home-links-page-alt');
 
 var _homeLinksPageAlt2 = _interopRequireDefault(_homeLinksPageAlt);
@@ -27103,7 +27107,7 @@ var HomeLinksPage = function (_Component) {
 
 		_this.state = {
 			buckets: {
-				forMe: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
+				recommended: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
 			},
 			linksData: _homeLinksPageAlt2.default.allLinks
@@ -27159,7 +27163,7 @@ var HomeLinksPage = function (_Component) {
 							this.createCards(favoritedLinks),
 							_react2.default.createElement('hr', null)
 						),
-						this.state.buckets.forMe.map(function (bucket, index) {
+						this.state.buckets.recommended.map(function (bucket, index) {
 							return _react2.default.createElement(
 								'section',
 								{ name: bucket, key: index },
@@ -27184,6 +27188,7 @@ var HomeLinksPage = function (_Component) {
 						null,
 						'Links'
 					),
+					_react2.default.createElement(_Dropdown2.default, null),
 					_react2.default.createElement(
 						'ul',
 						null,
@@ -27217,7 +27222,7 @@ var HomeLinksPage = function (_Component) {
 
 exports.default = HomeLinksPage;
 
-},{"../data/home-links-page-alt":233,"./SearchBar":231,"classnames":1,"react":221,"react-motion":178,"react-skroll":189}],230:[function(require,module,exports){
+},{"../data/home-links-page-alt":234,"./SearchBar":231,"./form/Dropdown":233,"classnames":1,"react":221,"react-motion":178,"react-skroll":189}],230:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27263,6 +27268,11 @@ var HomeNav = function (_Component) {
 				_this.setState({
 					menuOpen: false,
 					secondaryPanelOpen: false
+				});
+			}
+			if (!_this.refs.notifications.contains(event.target)) {
+				_this.setState({
+					notificationsOpen: false
 				});
 			}
 		};
@@ -27493,6 +27503,11 @@ var HomeNav = function (_Component) {
 							{ className: "home-nav__notifications__row" },
 							_react2.default.createElement("i", { className: "iconcss icon-todo-check" }),
 							_react2.default.createElement(
+								"div",
+								{ className: "indicator-value" },
+								"2"
+							),
+							_react2.default.createElement(
 								"p",
 								null,
 								"To do"
@@ -27502,6 +27517,11 @@ var HomeNav = function (_Component) {
 							"div",
 							{ className: "home-nav__notifications__row" },
 							_react2.default.createElement("i", { className: "iconcss icon-concur" }),
+							_react2.default.createElement(
+								"div",
+								{ className: "indicator-value" },
+								"2"
+							),
 							_react2.default.createElement(
 								"p",
 								null,
@@ -27523,6 +27543,11 @@ var HomeNav = function (_Component) {
 							{ className: "home-nav__notifications__row" },
 							_react2.default.createElement("i", { className: "iconcss icon-yammer" }),
 							_react2.default.createElement(
+								"div",
+								{ className: "indicator-value" },
+								"3"
+							),
+							_react2.default.createElement(
 								"p",
 								null,
 								"Yammer"
@@ -27532,6 +27557,11 @@ var HomeNav = function (_Component) {
 							"div",
 							{ className: "home-nav__notifications__row" },
 							_react2.default.createElement("i", { className: "iconcss icon-workday" }),
+							_react2.default.createElement(
+								"div",
+								{ className: "indicator-value" },
+								"31"
+							),
 							_react2.default.createElement(
 								"p",
 								null,
@@ -28074,7 +28104,99 @@ var TabbedList = function (_Component) {
 TabbedList.propTypes = {};
 exports.default = TabbedList;
 
-},{"../services/newid":234,"classnames":1,"react":221}],233:[function(require,module,exports){
+},{"../services/newid":235,"classnames":1,"react":221}],233:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Dropdown = function (_Component) {
+	_inherits(Dropdown, _Component);
+
+	function Dropdown() {
+		_classCallCheck(this, Dropdown);
+
+		var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this));
+
+		_this.toggle = function () {
+			if (_this.props.onChange) {
+				_this.props.onChange(!_this.props.value);
+			}
+		};
+
+		return _this;
+	}
+
+	_createClass(Dropdown, [{
+		key: 'selectOption',
+		value: function selectOption(index) {
+			if (this.props.onChange) {
+				this.props.onChange(index);
+			}
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _props = this.props,
+			    value = _props.value,
+			    label = _props.label;
+
+
+			var classnames = (0, _classnames2.default)({
+				'switch': true,
+				'switch--on': value === true
+			});
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'switch-wrapper' },
+				_react2.default.createElement(
+					'div',
+					{ className: classnames, onClick: this.toggle },
+					_react2.default.createElement(
+						'label',
+						null,
+						label
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'switch-toggle' },
+						_react2.default.createElement(
+							'span',
+							null,
+							value === true ? 'On' : 'Off'
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Dropdown;
+}(_react.Component);
+
+exports.default = Dropdown;
+
+},{"classnames":1,"react":221}],234:[function(require,module,exports){
 module.exports={	
 	"allLinks": [
 		//
@@ -28493,7 +28615,7 @@ module.exports={
 		},
 	]
 }
-},{}],234:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

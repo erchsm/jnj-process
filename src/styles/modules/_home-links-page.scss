@@ -173,10 +173,10 @@ $baseclass: 'home-links-page';
 
 				&.starAnimation {
 					.icon-star-fill {
-						animation: star 0.8s ease-in;
+						animation: star 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 					}
 					.circles {
-						animation: circles 0.8s ease-in;
+						animation: circles 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 					}
 				}
 			}

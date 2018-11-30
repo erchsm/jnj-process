@@ -36,6 +36,11 @@ export default class HomeNav extends Component {
 				secondaryPanelOpen: false,
 			});
 		}
+		if (!this.refs.notifications.contains(event.target)) {
+			this.setState({
+				notificationsOpen: false,
+			});
+		}
 	}
 
 
@@ -177,11 +182,11 @@ export default class HomeNav extends Component {
 				<div className="home-nav__notifications">
 					<div ref="notifications">
 						<h5 className="eyebrow">Notifications</h5>
-						<div className="home-nav__notifications__row"><i className="iconcss icon-todo-check"></i><p>To do</p></div>
-						<div className="home-nav__notifications__row"><i className="iconcss icon-concur"></i><p>Concur</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-todo-check"></i><div className="indicator-value">2</div><p>To do</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-concur"></i><div className="indicator-value">2</div><p>Concur</p></div>
 						<div className="home-nav__notifications__row"><i className="iconcss icon-calendar"></i><p>Calendar</p></div>
-						<div className="home-nav__notifications__row"><i className="iconcss icon-yammer"></i><p>Yammer</p></div>
-						<div className="home-nav__notifications__row"><i className="iconcss icon-workday"></i><p>Workday</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-yammer"></i><div className="indicator-value">3</div><p>Yammer</p></div>
+						<div className="home-nav__notifications__row"><i className="iconcss icon-workday"></i><div className="indicator-value">31</div><p>Workday</p></div>
 						<div className="home-nav__notifications__row"><i className="iconcss icon-plane"></i><p>Travel</p></div>
 					</div>
 				</div>
