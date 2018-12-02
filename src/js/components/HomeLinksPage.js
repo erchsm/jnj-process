@@ -62,6 +62,7 @@ export default class HomeLinksPage extends Component {
 					"#",
 				],
 			},	
+			selectedBucket: 'recommended',
 			linksData: linksData.allLinks,
 		}
 	}
@@ -88,6 +89,12 @@ export default class HomeLinksPage extends Component {
 		// }))
 	}
 
+	changeBucket = (bucket) => {
+		this.setState({
+			selectedBucket: bucket
+		})
+	}
+
 	createCards = (links) => (
 		links.map((link, index) =>
 			<div className="card" key={index}>
@@ -112,7 +119,8 @@ export default class HomeLinksPage extends Component {
 		const { scroll } = this.props;
 
 		const classnames = classNames({
-			"home-links-page": true
+			"home-links-page": true,
+			"home-links-page--alphabetical": this.state.selectedBucket == 'alphabetical',
 		});
 
 		// const linePercentage = {
@@ -133,27 +141,14 @@ export default class HomeLinksPage extends Component {
 		
 		return (
 			<div className={classnames}>
-				<div className="home-links-page__links-container">
-					<Scroller>
-						<section name="My Favorites">
-							<h4>My Favorites</h4>
-							{ this.createCards(favoritedLinks) }
-							<hr/>
-						</section>
-						{
-							this.state.buckets.recommended.map((bucket, index) =>
-								<section name={bucket} key={index}>
-									<h4>{bucket}</h4>
-									{ this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) }
-									<hr/>
-								</section>
-							)
-						}
-					</Scroller>
-				</div>
 				<div className="home-links-page__sidebar">
 					<h4>Links</h4>
-					<Dropdown options={['Recommended', 'My Recents', 'Alphabetical', 'Most Popular']} />
+					<Dropdown options={[
+						{ label: 'Recommended', click: () => this.changeBucket('recommended')},
+						{ label: 'My Recents' },
+						{ label: 'Alphabetical', click: () => this.changeBucket('alphabetical')},
+						{ label: 'Most Popular' },
+					]}/>
 					<ul>
 						{
 							scroll.children.map((child, index) =>
@@ -169,6 +164,32 @@ export default class HomeLinksPage extends Component {
 							)
 						}
 					</ul>
+				</div>
+				<div className="home-links-page__links-container">
+					<Scroller>
+						{ (this.state.selectedBucket == 'recommended') ? (
+							<section name="My Favorites">
+								<h4>My Favorites</h4>
+								{ this.createCards(favoritedLinks) }
+								<hr/>
+							</section>
+							) : null
+						}
+						{
+							this.state.buckets[this.state.selectedBucket].map((bucket, index) =>
+								<section name={bucket} key={index}>
+									<h4>{bucket}</h4>
+										{ 
+											(this.state.selectedBucket == 'recommended') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
+										}
+										{
+											(this.state.selectedBucket == 'alphabetical') ? this.createCards(this.state.linksData.filter((link) => link.name.startsWith(bucket))) : null
+										}
+									<hr/>
+								</section>
+							)
+						}
+					</Scroller>
 				</div>
 			</div>
 		)

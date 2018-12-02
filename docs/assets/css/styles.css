@@ -14411,8 +14411,6 @@ body {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
   margin: 0 60px 0 72px;
   height: calc(100% - 120px); }
   .home-links-page__sidebar, .home-links-page__links-container section {
@@ -14508,6 +14506,11 @@ body {
           animation: star 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
         .home-links-page__links-container section .card.starAnimation .circles {
           animation: circles 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+  .home-links-page--alphabetical .home-links-page__sidebar li {
+    line-height: 1;
+    margin-bottom: 0;
+    text-align: center;
+    width: 14px; }
 
 .home-nav {
   position: relative; }
@@ -14653,7 +14656,7 @@ body {
     z-index: 9999;
     margin-top: -2px;
     height: calc(100vh - 60px);
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s; }
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
     .home-nav__notifications > div {
       position: absolute;
       background: white;
@@ -14713,7 +14716,7 @@ body {
     pointer-events: none;
     height: calc(100vh - 60px);
     top: 60px;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.6s; }
+    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s; }
   .home-nav__panel {
     pointer-events: auto;
     position: absolute;

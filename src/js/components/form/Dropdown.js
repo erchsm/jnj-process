@@ -7,7 +7,7 @@ export default class Dropdown extends Component {
 		super(props);
 		this.state = {
 			expanded: false,
-			value: this.props.options[0]
+			value: this.props.options[0].label
 		};
 	}
 	
@@ -22,7 +22,7 @@ export default class Dropdown extends Component {
 	handleItemClick(e) {
 		this.setState({
 			expanded: false,
-			value: e.target.innerText
+			value: e.label
 		});
 	}
 	
@@ -33,17 +33,17 @@ export default class Dropdown extends Component {
 	render() {
 		let dropdown = undefined;
 
-		if (this.state.expanded) {
+		(this.state.expanded) ? (
 			dropdown = (
 				<div className="dropdown__content">
 				{
-					this.props.options.map(item => (
-						<div onClick={(e) => { this.handleItemClick(e); }} className="dropdown__item">{item}</div>
+					this.props.options.map((item, i) => (
+						<div key={i} onClick={() => { item.click(); this.handleItemClick(item);}} className="dropdown__item">{item.label}</div>
 					))
 				}
 				</div>
-			);
-		}
+			)
+		) : null;
 		
 		return (
 			<div className={`dropdown ${this.state.expanded ? 'active' : ''}`}

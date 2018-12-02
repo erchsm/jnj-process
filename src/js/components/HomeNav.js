@@ -36,7 +36,7 @@ export default class HomeNav extends Component {
 				secondaryPanelOpen: false,
 			});
 		}
-		if (!this.refs.notifications.contains(event.target)) {
+		if (!this.refs.notifications.contains(event.target) && !this.refs.bell.contains(event.target)) {
 			this.setState({
 				notificationsOpen: false,
 			});
@@ -59,11 +59,11 @@ export default class HomeNav extends Component {
 		})
 	}
 
-	openNotifications = () => {
+	toggleNotificationsOpen = () => {
 		this.setState({
 			menuOpen: false,
 			secondaryPanelOpen: false,
-			notificationsOpen: true,
+			notificationsOpen: !this.state.notificationsOpen,
 		})
 	}
 
@@ -155,7 +155,7 @@ export default class HomeNav extends Component {
 							<div className="home-nav__item">
 								<h5 className="eyebrow">JNJ <span style={{color: '#417505'}}>140.00</span></h5>
 							</div>
-							<div className="home-nav__item" onClick={this.openNotifications}>
+							<div ref="bell" className="home-nav__item" onClick={this.toggleNotificationsOpen}>
 								<i className="iconcss icon-bell"></i>
 								<div className="notifications-marker"></div>
 							</div>

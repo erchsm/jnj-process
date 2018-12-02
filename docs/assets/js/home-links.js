@@ -27079,6 +27079,12 @@ var HomeLinksPage = function (_Component) {
 			// }))
 		};
 
+		_this.changeBucket = function (bucket) {
+			_this.setState({
+				selectedBucket: bucket
+			});
+		};
+
 		_this.createCards = function (links) {
 			return links.map(function (link, index) {
 				return _react2.default.createElement(
@@ -27112,6 +27118,7 @@ var HomeLinksPage = function (_Component) {
 				recommended: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
 			},
+			selectedBucket: 'recommended',
 			linksData: _homeLinksPage2.default.allLinks
 		};
 		return _this;
@@ -27126,7 +27133,8 @@ var HomeLinksPage = function (_Component) {
 
 
 			var classnames = (0, _classnames2.default)({
-				"home-links-page": true
+				"home-links-page": true,
+				"home-links-page--alphabetical": this.state.selectedBucket == 'alphabetical'
 			});
 
 			// const linePercentage = {
@@ -27150,47 +27158,17 @@ var HomeLinksPage = function (_Component) {
 				{ className: classnames },
 				_react2.default.createElement(
 					'div',
-					{ className: 'home-links-page__links-container' },
-					_react2.default.createElement(
-						_reactSkroll.Scroller,
-						null,
-						_react2.default.createElement(
-							'section',
-							{ name: 'My Favorites' },
-							_react2.default.createElement(
-								'h4',
-								null,
-								'My Favorites'
-							),
-							this.createCards(favoritedLinks),
-							_react2.default.createElement('hr', null)
-						),
-						this.state.buckets.recommended.map(function (bucket, index) {
-							return _react2.default.createElement(
-								'section',
-								{ name: bucket, key: index },
-								_react2.default.createElement(
-									'h4',
-									null,
-									bucket
-								),
-								_this2.createCards(_this2.state.linksData.filter(function (link) {
-									return link.buckets.includes(bucket);
-								})),
-								_react2.default.createElement('hr', null)
-							);
-						})
-					)
-				),
-				_react2.default.createElement(
-					'div',
 					{ className: 'home-links-page__sidebar' },
 					_react2.default.createElement(
 						'h4',
 						null,
 						'Links'
 					),
-					_react2.default.createElement(_Dropdown2.default, { options: ['Recommended', 'My Recents', 'Alphabetical', 'Most Popular'] }),
+					_react2.default.createElement(_Dropdown2.default, { options: [{ label: 'Recommended', click: function click() {
+								return _this2.changeBucket('recommended');
+							} }, { label: 'My Recents' }, { label: 'Alphabetical', click: function click() {
+								return _this2.changeBucket('alphabetical');
+							} }, { label: 'Most Popular' }] }),
 					_react2.default.createElement(
 						'ul',
 						null,
@@ -27211,6 +27189,43 @@ var HomeLinksPage = function (_Component) {
 									),
 									_react2.default.createElement('div', { className: 'line' })
 								)
+							);
+						})
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'home-links-page__links-container' },
+					_react2.default.createElement(
+						_reactSkroll.Scroller,
+						null,
+						this.state.selectedBucket == 'recommended' ? _react2.default.createElement(
+							'section',
+							{ name: 'My Favorites' },
+							_react2.default.createElement(
+								'h4',
+								null,
+								'My Favorites'
+							),
+							this.createCards(favoritedLinks),
+							_react2.default.createElement('hr', null)
+						) : null,
+						this.state.buckets[this.state.selectedBucket].map(function (bucket, index) {
+							return _react2.default.createElement(
+								'section',
+								{ name: bucket, key: index },
+								_react2.default.createElement(
+									'h4',
+									null,
+									bucket
+								),
+								_this2.state.selectedBucket == 'recommended' ? _this2.createCards(_this2.state.linksData.filter(function (link) {
+									return link.buckets.includes(bucket);
+								})) : null,
+								_this2.state.selectedBucket == 'alphabetical' ? _this2.createCards(_this2.state.linksData.filter(function (link) {
+									return link.name.startsWith(bucket);
+								})) : null,
+								_react2.default.createElement('hr', null)
 							);
 						})
 					)
@@ -27272,7 +27287,7 @@ var HomeNav = function (_Component) {
 					secondaryPanelOpen: false
 				});
 			}
-			if (!_this.refs.notifications.contains(event.target)) {
+			if (!_this.refs.notifications.contains(event.target) && !_this.refs.bell.contains(event.target)) {
 				_this.setState({
 					notificationsOpen: false
 				});
@@ -27294,11 +27309,11 @@ var HomeNav = function (_Component) {
 			});
 		};
 
-		_this.openNotifications = function () {
+		_this.toggleNotificationsOpen = function () {
 			_this.setState({
 				menuOpen: false,
 				secondaryPanelOpen: false,
-				notificationsOpen: true
+				notificationsOpen: !_this.state.notificationsOpen
 			});
 		};
 
@@ -27451,7 +27466,7 @@ var HomeNav = function (_Component) {
 							),
 							_react2.default.createElement(
 								"div",
-								{ className: "home-nav__item", onClick: this.openNotifications },
+								{ ref: "bell", className: "home-nav__item", onClick: this.toggleNotificationsOpen },
 								_react2.default.createElement("i", { className: "iconcss icon-bell" }),
 								_react2.default.createElement("div", { className: "notifications-marker" })
 							),
@@ -28141,7 +28156,7 @@ var Dropdown = function (_Component) {
 
 		_this.state = {
 			expanded: false,
-			value: _this.props.options[0]
+			value: _this.props.options[0].label
 		};
 		return _this;
 	}
@@ -28161,7 +28176,7 @@ var Dropdown = function (_Component) {
 		value: function handleItemClick(e) {
 			this.setState({
 				expanded: false,
-				value: e.target.innerText
+				value: e.label
 			});
 		}
 	}, {
@@ -28176,21 +28191,19 @@ var Dropdown = function (_Component) {
 
 			var dropdown = undefined;
 
-			if (this.state.expanded) {
-				dropdown = _react2.default.createElement(
-					'div',
-					{ className: 'dropdown__content' },
-					this.props.options.map(function (item) {
-						return _react2.default.createElement(
-							'div',
-							{ onClick: function onClick(e) {
-									_this2.handleItemClick(e);
-								}, className: 'dropdown__item' },
-							item
-						);
-					})
-				);
-			}
+			this.state.expanded ? dropdown = _react2.default.createElement(
+				'div',
+				{ className: 'dropdown__content' },
+				this.props.options.map(function (item, i) {
+					return _react2.default.createElement(
+						'div',
+						{ key: i, onClick: function onClick() {
+								item.click();_this2.handleItemClick(item);
+							}, className: 'dropdown__item' },
+						item.label
+					);
+				})
+			) : null;
 
 			return _react2.default.createElement(
 				'div',
