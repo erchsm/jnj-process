@@ -18,15 +18,24 @@ export default class HomeNav extends Component {
 			secondaryPanelOpen: false,
 			secondaryPanelType: 'links',
 			notificationsOpen: false,
+			isMobile: window.innerWidth <= 800,
 		}
 	}
 
 	componentDidMount() {
 		document.addEventListener('mousedown', this.handleClickOutside);
+		window.addEventListener('resize', this.detectMobile);
 	}
 
 	componentWillUnmount() {
 		document.removeEventListener('mousedown', this.handleClickOutside);
+		window.removeEventListener('resize', this.detectMobile);
+	}
+
+	detectMobile = (event) => {
+		this.setState({
+			isMobile: window.innerWidth <= 800,
+		})
 	}
 
 	handleClickOutside = (event) => {
@@ -42,7 +51,6 @@ export default class HomeNav extends Component {
 			});
 		}
 	}
-
 
 	toggleMenuOpen = () => {
 		this.setState({
@@ -135,7 +143,6 @@ export default class HomeNav extends Component {
 	render() {
 		const { menuOpen, secondaryPanelOpen, secondaryPanelType, notificationsOpen } = this.state;
 
-
 		const classnames = classNames({
 			"home-nav": true,
 			"home-nav--menuOpen": menuOpen,
@@ -143,26 +150,36 @@ export default class HomeNav extends Component {
 			"home-nav--notificationsOpen": notificationsOpen,
 		})
 
-
 		return (
 			<nav className={classnames}>
-				<div className="home-nav__topbar">
+				<div className="home-nav__topbar" id="first-top-bar">
 					<div className="home-nav__left">
 						<i className="iconcss icon-home-logo"></i>
 					</div>
 					<div className="home-nav__right">
-						<div className="home-nav__items">
-							<div className="home-nav__item">
-								<h5 className="eyebrow">JNJ <span style={{color: '#417505'}}>140.00</span></h5>
+						{ (!this.state.isMobile) ? (
+							<div className="home-nav__items">
+								<div className="home-nav__item">
+									<h5 className="eyebrow">JNJ <span style={{color: '#417505'}}>140.00</span></h5>
+								</div>
+								<div ref="bell" className="home-nav__item" onClick={this.toggleNotificationsOpen}>
+									<i className="iconcss icon-bell"></i>
+									<div className="notifications-marker"></div>
+								</div>
+								<div className="home-nav__item">
+									<img src="../assets/img/user-round.png"/>
+								</div>
 							</div>
-							<div ref="bell" className="home-nav__item" onClick={this.toggleNotificationsOpen}>
-								<i className="iconcss icon-bell"></i>
-								<div className="notifications-marker"></div>
+						) : (
+							<div className="home-nav__items">
+								<div className="home-nav__item">
+									<i className="iconcss icon-search-2"></i>
+								</div>
+								<div className="home-nav__item">
+									<i className="iconcss icon-chat"></i>
+								</div>
 							</div>
-							<div className="home-nav__item">
-								<img src="../assets/img/user-round.png"/>
-							</div>
-						</div>
+						)}
 						<div ref="hamburger" className="home-nav__hamburger" onClick={this.toggleMenuOpen}>
 							<div className="line"></div>
 							<div className="line"></div>
@@ -170,9 +187,9 @@ export default class HomeNav extends Component {
 						</div>
 					</div>
 				</div>
-				<div className="home-nav__topbar">
+				<div className="home-nav__topbar" id="second-top-bar">
 					<div className="home-nav__left">
-		                <SearchBar iconName="icon-search-2" placeholder="Search for anything"/>
+						<SearchBar iconName="icon-search-2" placeholder="Search for anything"/>
 					</div>
 					<div className="home-nav__right">
 						<i className="iconcss icon-chat"></i>
@@ -194,6 +211,15 @@ export default class HomeNav extends Component {
 					<div ref="panels">
 						<div className="home-nav__panel home-nav__panel--white">
 							<ul>
+								{ (this.state.isMobile) ? (<ul className="home-nav__items">
+									<li className="home-nav__item">
+										<i className="iconcss icon-bell"></i>
+										<div className="notifications-marker"></div>
+									</li>
+									<li className="home-nav__item">
+										<img src="../assets/img/user-round.png"/>
+									</li>
+								</ul>) : null}
 								<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Links</h3></li>
 								<li><a href="//home.jnj.com/#my-news" target="_blank"><h3>News</h3></a></li>
 								<li><a target="_blank"><h3>Events</h3></a></li>

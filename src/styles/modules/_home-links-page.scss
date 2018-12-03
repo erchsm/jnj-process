@@ -71,7 +71,7 @@ $baseclass: 'home-links-page';
 				width: 100%;
 				height: 4px;
 				background: $brand-red;
-				transition: all 0.6s 0.2s $easing2;
+				transition: transform 0.6s 0.2s $easing2;
 				transform: scaleX(0);
 			}
 
@@ -187,9 +187,12 @@ $baseclass: 'home-links-page';
 		.#{$baseclass}__sidebar {
 			li {
 				line-height: 1;
-				margin-bottom: 0;
+				margin-bottom: 2px;
 				text-align: center;
 				width: 14px;
+			}
+			.line {
+				height: 3px;
 			}
 		}
 	}

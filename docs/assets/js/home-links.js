@@ -27083,6 +27083,7 @@ var HomeLinksPage = function (_Component) {
 			_this.setState({
 				selectedBucket: bucket
 			});
+			document.getElementsByClassName('home-links-page__links-container')[0].childNodes[0].scrollTo(0, 0);
 		};
 
 		_this.createCards = function (links) {
@@ -27116,6 +27117,7 @@ var HomeLinksPage = function (_Component) {
 		_this.state = {
 			buckets: {
 				recommended: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
+				myrecents: ["Today", "This Week", "Last Week", "This Month", "This Year"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
 			},
 			selectedBucket: 'recommended',
@@ -27164,24 +27166,25 @@ var HomeLinksPage = function (_Component) {
 						null,
 						'Links'
 					),
-					_react2.default.createElement(_Dropdown2.default, { options: [{ label: 'Recommended', click: function click() {
+					_react2.default.createElement(_Dropdown2.default, { label: 'Sort By', options: [{ label: 'Recommended', click: function click() {
 								return _this2.changeBucket('recommended');
-							} }, { label: 'My Recents' }, { label: 'Alphabetical', click: function click() {
+							} }, { label: 'My Recents', click: function click() {
+								return _this2.changeBucket('myrecents');
+							} }, { label: 'Alphabetical', click: function click() {
 								return _this2.changeBucket('alphabetical');
-							} }, { label: 'Most Popular' }] }),
+							} }, { label: 'Most Popular', click: function click() {
+								return _this2.changeBucket('mostpopular');
+							} }] }),
 					_react2.default.createElement(
 						'ul',
 						null,
-						scroll.children.map(function (child, index) {
+						scroll.children.map(function (child, i) {
 							return _react2.default.createElement(
 								'li',
-								{ key: index, className: (0, _classnames2.default)({ 'active': child.active }) },
+								{ key: i, className: (0, _classnames2.default)({ 'active': child.active }) },
 								_react2.default.createElement(
 									_reactSkroll.ScrollLink,
-									{
-										key: index,
-										to: child.start
-									},
+									{ to: child.start },
 									_react2.default.createElement(
 										'span',
 										null,
@@ -27279,6 +27282,12 @@ var HomeNav = function (_Component) {
 		_classCallCheck(this, HomeNav);
 
 		var _this = _possibleConstructorReturn(this, (HomeNav.__proto__ || Object.getPrototypeOf(HomeNav)).call(this, props));
+
+		_this.detectMobile = function (event) {
+			_this.setState({
+				isMobile: window.innerWidth <= 800
+			});
+		};
 
 		_this.handleClickOutside = function (event) {
 			if (!_this.refs.panels.contains(event.target) && !_this.refs.hamburger.contains(event.target)) {
@@ -27399,7 +27408,8 @@ var HomeNav = function (_Component) {
 			menuOpen: false,
 			secondaryPanelOpen: false,
 			secondaryPanelType: 'links',
-			notificationsOpen: false
+			notificationsOpen: false,
+			isMobile: window.innerWidth <= 800
 		};
 		return _this;
 	}
@@ -27408,11 +27418,13 @@ var HomeNav = function (_Component) {
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			document.addEventListener('mousedown', this.handleClickOutside);
+			window.addEventListener('resize', this.detectMobile);
 		}
 	}, {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {
 			document.removeEventListener('mousedown', this.handleClickOutside);
+			window.removeEventListener('resize', this.detectMobile);
 		}
 	}, {
 		key: "render",
@@ -27438,7 +27450,7 @@ var HomeNav = function (_Component) {
 				{ className: classnames },
 				_react2.default.createElement(
 					"div",
-					{ className: "home-nav__topbar" },
+					{ className: "home-nav__topbar", id: "first-top-bar" },
 					_react2.default.createElement(
 						"div",
 						{ className: "home-nav__left" },
@@ -27447,7 +27459,7 @@ var HomeNav = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "home-nav__right" },
-						_react2.default.createElement(
+						!this.state.isMobile ? _react2.default.createElement(
 							"div",
 							{ className: "home-nav__items" },
 							_react2.default.createElement(
@@ -27475,6 +27487,19 @@ var HomeNav = function (_Component) {
 								{ className: "home-nav__item" },
 								_react2.default.createElement("img", { src: "../assets/img/user-round.png" })
 							)
+						) : _react2.default.createElement(
+							"div",
+							{ className: "home-nav__items" },
+							_react2.default.createElement(
+								"div",
+								{ className: "home-nav__item" },
+								_react2.default.createElement("i", { className: "iconcss icon-search-2" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "home-nav__item" },
+								_react2.default.createElement("i", { className: "iconcss icon-chat" })
+							)
 						),
 						_react2.default.createElement(
 							"div",
@@ -27487,7 +27512,7 @@ var HomeNav = function (_Component) {
 				),
 				_react2.default.createElement(
 					"div",
-					{ className: "home-nav__topbar" },
+					{ className: "home-nav__topbar", id: "second-top-bar" },
 					_react2.default.createElement(
 						"div",
 						{ className: "home-nav__left" },
@@ -27609,6 +27634,21 @@ var HomeNav = function (_Component) {
 							_react2.default.createElement(
 								"ul",
 								null,
+								this.state.isMobile ? _react2.default.createElement(
+									"ul",
+									{ className: "home-nav__items" },
+									_react2.default.createElement(
+										"li",
+										{ className: "home-nav__item" },
+										_react2.default.createElement("i", { className: "iconcss icon-bell" }),
+										_react2.default.createElement("div", { className: "notifications-marker" })
+									),
+									_react2.default.createElement(
+										"li",
+										{ className: "home-nav__item" },
+										_react2.default.createElement("img", { src: "../assets/img/user-round.png" })
+									)
+								) : null,
 								_react2.default.createElement(
 									"li",
 									{ onClick: function onClick() {
@@ -28217,7 +28257,14 @@ var Dropdown = function (_Component) {
 					{ className: 'dropdown__trigger', onClick: function onClick() {
 							_this2.handleTriggerClick();
 						} },
-					this.state.value
+					_react2.default.createElement(
+						'label',
+						null,
+						this.props.label,
+						':\xA0'
+					),
+					this.state.value,
+					_react2.default.createElement('i', { className: 'iconcss icon-caret-down-lg' })
 				),
 				dropdown
 			);

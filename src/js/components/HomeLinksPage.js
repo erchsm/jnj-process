@@ -32,6 +32,13 @@ export default class HomeLinksPage extends Component {
 					"Services & Discounts",
 					"On-Site Services",
 				],
+				myrecents: [
+					"Today",
+					"This Week",
+					"Last Week",
+					"This Month",
+					"This Year",
+				],
 				alphabetical: [
 					"A",
 					"B",
@@ -92,7 +99,8 @@ export default class HomeLinksPage extends Component {
 	changeBucket = (bucket) => {
 		this.setState({
 			selectedBucket: bucket
-		})
+		});
+		document.getElementsByClassName('home-links-page__links-container')[0].childNodes[0].scrollTo(0,0);
 	}
 
 	createCards = (links) => (
@@ -143,20 +151,17 @@ export default class HomeLinksPage extends Component {
 			<div className={classnames}>
 				<div className="home-links-page__sidebar">
 					<h4>Links</h4>
-					<Dropdown options={[
+					<Dropdown label="Sort By" options={[
 						{ label: 'Recommended', click: () => this.changeBucket('recommended')},
-						{ label: 'My Recents' },
+						{ label: 'My Recents', click: () => this.changeBucket('myrecents')},
 						{ label: 'Alphabetical', click: () => this.changeBucket('alphabetical')},
-						{ label: 'Most Popular' },
+						{ label: 'Most Popular', click: () => this.changeBucket('mostpopular')},
 					]}/>
 					<ul>
 						{
-							scroll.children.map((child, index) =>
-								<li key={index} className={classNames({ 'active': child.active })}>
-									<ScrollLink
-										key={index}
-										to={child.start}
-										>	
+							scroll.children.map((child, i) =>
+								<li key={i} className={classNames({ 'active': child.active })}>
+									<ScrollLink to={child.start}>	
 										<span>{child.name}</span>
 										<div className="line"></div>
 									</ScrollLink>

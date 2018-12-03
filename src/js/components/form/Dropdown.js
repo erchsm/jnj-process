@@ -50,7 +50,9 @@ export default class Dropdown extends Component {
 				tabIndex="0"
 				onBlur={() => { this.collapse(); }}>
 				<div className="dropdown__trigger" onClick={() => { this.handleTriggerClick(); }}>
+					<label>{this.props.label}:&nbsp;</label>
 					{this.state.value}
+					<i className="iconcss icon-caret-down-lg"></i>
 				</div>
 				{dropdown}
 			</div>
