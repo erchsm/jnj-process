@@ -14953,6 +14953,11 @@ body {
         padding: 0; }
         .home-nav .home-nav__panel .home-nav__items .home-nav__item:last-child {
           border-right: none; }
+    .home-nav .home-nav__panel--white {
+      height: auto;
+      min-height: calc(100vh - 60px); }
+    .home-nav .home-nav__panel--blue {
+      height: calc(100vh - 60px); }
     .home-nav .tabbed-list__header ul {
       padding-top: 0;
       padding-bottom: 0; } }
