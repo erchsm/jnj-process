@@ -67,6 +67,12 @@ export default class HomeNav extends Component {
 		})
 	}
 
+	closeSecondaryPanel = () => {
+		this.setState({
+			secondaryPanelOpen: false,
+		})
+	}
+
 	toggleNotificationsOpen = () => {
 		this.setState({
 			menuOpen: false,
@@ -78,6 +84,7 @@ export default class HomeNav extends Component {
 	createLinksContent = () => (
 		<div className="home-nav__panel home-nav__panel--blue">
 			<ul>
+				{ (this.state.isMobile) ? (<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-long-left"></i></li>) : null}
 				<li><a href="https://home.jnj.com/v2/#my-links" target="_blank"><h3>View All Links</h3></a></li>
 			</ul>
 			<TabbedList tabWidth={120} data={[
@@ -212,7 +219,7 @@ export default class HomeNav extends Component {
 						<div className="home-nav__panel home-nav__panel--white">
 							<ul>
 								{ (this.state.isMobile) ? (<ul className="home-nav__items">
-									<li className="home-nav__item">
+									<li ref="bell" className="home-nav__item">
 										<i className="iconcss icon-bell"></i>
 										<div className="notifications-marker"></div>
 									</li>

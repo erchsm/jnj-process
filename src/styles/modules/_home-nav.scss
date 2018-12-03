@@ -1,5 +1,16 @@
 $baseclass: home-nav;
 
+@keyframes slideIn {
+	0% {
+		opacity: 0;
+		transform: translate3d(40px,0,0);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 .#{$baseclass} {
 	position: relative;
 
@@ -364,6 +375,12 @@ $baseclass: home-nav;
 			}
 		}
 
+		.icon-arrow-long-left {
+			font-size: 30px;
+			color: white;
+			transform: scaleY(-1);
+		}
+
 		li {
 			// transform: translate3d(24px, 0,0);
 		}
@@ -393,10 +410,10 @@ $baseclass: home-nav;
 
 		.#{$baseclass}__panel {
 			li {
-				transition: all $easing1 0.9s;
+				// transition: all $easing1 0.9s;
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
-						transition-delay: 0.09s * $i;
+						// transition-delay: 0.09s * $i;
 					}
 				}
 			}
@@ -406,8 +423,13 @@ $baseclass: home-nav;
 			transform: none;
 
 			li {
-				opacity: 1;
-				transform: none;
+				animation: slideIn 0.9s $easing1;
+				animation-fill-mode: forwards;
+				@for $i from 1 through 30 {
+					&:nth-child(#{$i}) {
+						animation-delay: 0.09s * $i;
+					}
+				}
 			}
 		}
 	}
@@ -420,8 +442,13 @@ $baseclass: home-nav;
 			transform: none;
 
 			li {
-				opacity: 1;
-				transform: none;
+				animation: slideIn 0.9s $easing1;
+				animation-fill-mode: forwards;
+				@for $i from 1 through 30 {
+					&:nth-child(#{$i}) {
+						animation-delay: 0.09s * $i;
+					}
+				}
 			}
 		}
 	}

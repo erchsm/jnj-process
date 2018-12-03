@@ -14518,6 +14518,14 @@ body {
   .home-links-page--alphabetical .home-links-page__sidebar .line {
     height: 3px; }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(40px, 0, 0); }
+  100% {
+    opacity: 1;
+    transform: none; } }
+
 .home-nav {
   position: relative; }
   .home-nav__topbar {
@@ -14773,6 +14781,11 @@ body {
       color: white; }
       .home-nav__panel--blue h1:hover, .home-nav__panel--blue h2:hover, .home-nav__panel--blue h3:hover, .home-nav__panel--blue h4:hover, .home-nav__panel--blue h5:hover, .home-nav__panel--blue h6:hover {
         border-color: white; }
+    .home-nav__panel--blue .icon-arrow-long-left {
+      font-size: 30px;
+      color: white;
+      -ms-transform: scaleY(-1);
+      transform: scaleY(-1); }
     .home-nav__panel--blue h5 {
       margin-bottom: 24px; }
   .home-nav--menuOpen .home-nav__hamburger .line {
@@ -14785,84 +14798,140 @@ body {
       transform: translate3d(0, -6px, 0) rotate(45deg); }
   .home-nav--menuOpen .home-nav__main {
     background: rgba(33, 33, 33, 0.4); }
-  .home-nav--menuOpen .home-nav__panel li {
-    transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(1) {
-      transition-delay: 0.09s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(2) {
-      transition-delay: 0.18s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(3) {
-      transition-delay: 0.27s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(4) {
-      transition-delay: 0.36s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(5) {
-      transition-delay: 0.45s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(6) {
-      transition-delay: 0.54s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(7) {
-      transition-delay: 0.63s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(8) {
-      transition-delay: 0.72s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(9) {
-      transition-delay: 0.81s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(10) {
-      transition-delay: 0.9s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(11) {
-      transition-delay: 0.99s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(12) {
-      transition-delay: 1.08s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(13) {
-      transition-delay: 1.17s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(14) {
-      transition-delay: 1.26s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(15) {
-      transition-delay: 1.35s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(16) {
-      transition-delay: 1.44s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(17) {
-      transition-delay: 1.53s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(18) {
-      transition-delay: 1.62s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(19) {
-      transition-delay: 1.71s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(20) {
-      transition-delay: 1.8s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(21) {
-      transition-delay: 1.89s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(22) {
-      transition-delay: 1.98s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(23) {
-      transition-delay: 2.07s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(24) {
-      transition-delay: 2.16s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(25) {
-      transition-delay: 2.25s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(26) {
-      transition-delay: 2.34s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(27) {
-      transition-delay: 2.43s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(28) {
-      transition-delay: 2.52s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(29) {
-      transition-delay: 2.61s; }
-    .home-nav--menuOpen .home-nav__panel li:nth-child(30) {
-      transition-delay: 2.7s; }
   .home-nav--menuOpen .home-nav__panel--white {
     -ms-transform: none;
     transform: none; }
     .home-nav--menuOpen .home-nav__panel--white li {
-      opacity: 1;
-      -ms-transform: none;
-      transform: none; }
+      animation: slideIn 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-fill-mode: forwards; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(1) {
+        animation-delay: 0.09s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(2) {
+        animation-delay: 0.18s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(3) {
+        animation-delay: 0.27s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(4) {
+        animation-delay: 0.36s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(5) {
+        animation-delay: 0.45s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(6) {
+        animation-delay: 0.54s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(7) {
+        animation-delay: 0.63s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(8) {
+        animation-delay: 0.72s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(9) {
+        animation-delay: 0.81s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(10) {
+        animation-delay: 0.9s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(11) {
+        animation-delay: 0.99s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(12) {
+        animation-delay: 1.08s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(13) {
+        animation-delay: 1.17s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(14) {
+        animation-delay: 1.26s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(15) {
+        animation-delay: 1.35s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(16) {
+        animation-delay: 1.44s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(17) {
+        animation-delay: 1.53s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(18) {
+        animation-delay: 1.62s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(19) {
+        animation-delay: 1.71s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(20) {
+        animation-delay: 1.8s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(21) {
+        animation-delay: 1.89s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(22) {
+        animation-delay: 1.98s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(23) {
+        animation-delay: 2.07s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(24) {
+        animation-delay: 2.16s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(25) {
+        animation-delay: 2.25s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(26) {
+        animation-delay: 2.34s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(27) {
+        animation-delay: 2.43s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(28) {
+        animation-delay: 2.52s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(29) {
+        animation-delay: 2.61s; }
+      .home-nav--menuOpen .home-nav__panel--white li:nth-child(30) {
+        animation-delay: 2.7s; }
   .home-nav--secondaryPanelOpen .home-nav__panel--white {
     transform: translate3d(-100%, 0, 0); }
   .home-nav--secondaryPanelOpen .home-nav__panel--blue {
     -ms-transform: none;
     transform: none; }
     .home-nav--secondaryPanelOpen .home-nav__panel--blue li {
-      opacity: 1;
-      -ms-transform: none;
-      transform: none; }
+      animation: slideIn 0.9s cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-fill-mode: forwards; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(1) {
+        animation-delay: 0.09s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(2) {
+        animation-delay: 0.18s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(3) {
+        animation-delay: 0.27s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(4) {
+        animation-delay: 0.36s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(5) {
+        animation-delay: 0.45s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(6) {
+        animation-delay: 0.54s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(7) {
+        animation-delay: 0.63s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(8) {
+        animation-delay: 0.72s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(9) {
+        animation-delay: 0.81s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(10) {
+        animation-delay: 0.9s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(11) {
+        animation-delay: 0.99s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(12) {
+        animation-delay: 1.08s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(13) {
+        animation-delay: 1.17s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(14) {
+        animation-delay: 1.26s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(15) {
+        animation-delay: 1.35s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(16) {
+        animation-delay: 1.44s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(17) {
+        animation-delay: 1.53s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(18) {
+        animation-delay: 1.62s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(19) {
+        animation-delay: 1.71s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(20) {
+        animation-delay: 1.8s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(21) {
+        animation-delay: 1.89s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(22) {
+        animation-delay: 1.98s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(23) {
+        animation-delay: 2.07s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(24) {
+        animation-delay: 2.16s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(25) {
+        animation-delay: 2.25s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(26) {
+        animation-delay: 2.34s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(27) {
+        animation-delay: 2.43s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(28) {
+        animation-delay: 2.52s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(29) {
+        animation-delay: 2.61s; }
+      .home-nav--secondaryPanelOpen .home-nav__panel--blue li:nth-child(30) {
+        animation-delay: 2.7s; }
   .home-nav--notificationsOpen .home-nav__notifications {
     background: rgba(33, 33, 33, 0.4);
     opacity: 1; }

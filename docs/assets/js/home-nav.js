@@ -27313,6 +27313,12 @@ var HomeNav = function (_Component) {
 			});
 		};
 
+		_this.closeSecondaryPanel = function () {
+			_this.setState({
+				secondaryPanelOpen: false
+			});
+		};
+
 		_this.toggleNotificationsOpen = function () {
 			_this.setState({
 				menuOpen: false,
@@ -27328,6 +27334,11 @@ var HomeNav = function (_Component) {
 				_react2.default.createElement(
 					"ul",
 					null,
+					_this.state.isMobile ? _react2.default.createElement(
+						"li",
+						{ onClick: _this.closeSecondaryPanel },
+						_react2.default.createElement("i", { className: "iconcss icon-arrow-long-left" })
+					) : null,
 					_react2.default.createElement(
 						"li",
 						null,
@@ -27634,7 +27645,7 @@ var HomeNav = function (_Component) {
 									{ className: "home-nav__items" },
 									_react2.default.createElement(
 										"li",
-										{ className: "home-nav__item" },
+										{ ref: "bell", className: "home-nav__item" },
 										_react2.default.createElement("i", { className: "iconcss icon-bell" }),
 										_react2.default.createElement("div", { className: "notifications-marker" })
 									),
