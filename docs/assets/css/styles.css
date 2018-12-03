@@ -14367,11 +14367,13 @@ body {
   .dropdown__content {
     background: #fff;
     border-radius: 0 0 5px 5px;
+    z-index: 1;
     position: absolute;
     top: 36px;
     width: 100%; }
   .dropdown__item {
     padding: 12px;
+    border-bottom: solid 2px #F4F4F4;
     transition: background .1s linear; }
     .dropdown__item:hover {
       background: #D8D8D8;
@@ -14459,6 +14461,8 @@ body {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       overflow: hidden; }
+      .home-links-page__links-container section.hidden {
+        display: none; }
       .home-links-page__links-container section > h1, .home-links-page__links-container section > h2, .home-links-page__links-container section > h3, .home-links-page__links-container section > h4, .home-links-page__links-container section > h5, .home-links-page__links-container section > h6 {
         margin-bottom: 18px; }
       .home-links-page__links-container section hr {

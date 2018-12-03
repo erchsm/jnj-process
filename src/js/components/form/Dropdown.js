@@ -11,27 +11,32 @@ export default class Dropdown extends Component {
 		};
 	}
 	
-	expand() {
+	expand = () => {
 		this.setState({ expanded: true });
 	}
 	
-	collapse() {
+	collapse = () => {
 		this.setState({ expanded: false });
 	}
 	
-	handleItemClick(e) {
+	handleItemClick = (e) => {
 		this.setState({
 			expanded: false,
 			value: e.label
 		});
 	}
 	
-	handleTriggerClick() {
+	handleTriggerClick = () => {
 		this.setState({ expanded: !this.state.expanded });
 	}
-	
+
 	render() {
 		let dropdown = undefined;
+
+		const classnames = classNames({
+			"dropdown": true,
+			"active": this.state.expanded,
+		});
 
 		(this.state.expanded) ? (
 			dropdown = (
@@ -46,10 +51,8 @@ export default class Dropdown extends Component {
 		) : null;
 		
 		return (
-			<div className={`dropdown ${this.state.expanded ? 'active' : ''}`}
-				tabIndex="0"
-				onBlur={() => { this.collapse(); }}>
-				<div className="dropdown__trigger" onClick={() => { this.handleTriggerClick(); }}>
+			<div className={classnames} tabIndex="0" onBlur={ this.collapse }>
+				<div className="dropdown__trigger" onClick={ this.handleTriggerClick }>
 					<label>{this.props.label}:&nbsp;</label>
 					{this.state.value}
 					<i className="iconcss icon-caret-down-lg"></i>

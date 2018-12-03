@@ -25,6 +25,7 @@
 	&__content {
 		background: #fff;
 		border-radius: 0 0 5px 5px;
+	    z-index: 1;
 		// padding: 10px;
 		position: absolute;
 		top: 36px;
@@ -33,11 +34,13 @@
 
 	&__item {
 		padding: 12px;
+		border-bottom: solid 2px $brand-grey-lightest;
 		transition: background .1s linear;
 
 		&:hover {
 			background: $brand-grey-light;
 			// color: #fff;
+			// font-weight: 500;
 			cursor: pointer;
 		}
 	}
