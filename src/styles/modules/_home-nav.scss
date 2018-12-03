@@ -323,8 +323,8 @@ $baseclass: home-nav;
 
 		h1, h2, h3, h4, h5, h6 {
 			&:hover {
-				border-color: $brand-red;
-				// border-color: $brand-grey-light;
+				// border-color: $brand-red;
+				border-color: $brand-grey-light;
 			}
 			&.active {
 				// color: $brand-red;
@@ -390,20 +390,24 @@ $baseclass: home-nav;
 		.#{$baseclass}__main {
 			background: rgba($brand-black, .40);
 		}
-		.#{$baseclass}__panel--white {
-			transform: none;
 
+		.#{$baseclass}__panel {
 			li {
-				opacity: 1;
-				transform: none;
-
 				transition: all $easing1 0.9s;
 				@for $i from 1 through 30 {
 					&:nth-child(#{$i}) {
 						transition-delay: 0.09s * $i;
 					}
 				}
+			}
+		}
 
+		.#{$baseclass}__panel--white {
+			transform: none;
+
+			li {
+				opacity: 1;
+				transform: none;
 			}
 		}
 	}
@@ -418,14 +422,6 @@ $baseclass: home-nav;
 			li {
 				opacity: 1;
 				transform: none;
-
-				transition: all $easing1 0.9s;
-				@for $i from 1 through 30 {
-					&:nth-child(#{$i}) {
-						transition-delay: 0.09s * $i;
-					}
-				}
-
 			}
 		}
 	}
