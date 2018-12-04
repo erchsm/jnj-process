@@ -138,6 +138,7 @@ export default class HomeNav extends Component {
 	createCampusesContent = () => (
 		<div className="home-nav__panel home-nav__panel--blue">
 			<ul>
+				{ (this.state.isMobile) ? (<li onClick={this.closeSecondaryPanel}><i className="iconcss icon-arrow-long-left"></i></li>) : null}
 				<li><h3>Consumer</h3></li>
 				<li><h3>Medical Devices</h3></li>
 				<li><h3>Pharmaceuticals</h3></li>

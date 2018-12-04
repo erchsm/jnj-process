@@ -31931,6 +31931,11 @@ var HomeNav = function (_Component) {
 				_react2.default.createElement(
 					"ul",
 					null,
+					_this.state.isMobile ? _react2.default.createElement(
+						"li",
+						{ onClick: _this.closeSecondaryPanel },
+						_react2.default.createElement("i", { className: "iconcss icon-arrow-long-left" })
+					) : null,
 					_react2.default.createElement(
 						"li",
 						null,
