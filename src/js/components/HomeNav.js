@@ -195,6 +195,7 @@ export default class HomeNav extends Component {
 						</div>
 					</div>
 				</div>
+				<hr/>
 				<div className="home-nav__topbar" id="second-top-bar">
 					<div className="home-nav__left">
 						<SearchBar iconName="icon-search-2" placeholder="Search for anything"/>
@@ -204,6 +205,7 @@ export default class HomeNav extends Component {
 						<p>Chat now</p>
 					</div>
 				</div>
+				<hr/>
 				<div className="home-nav__notifications">
 					<div ref="notifications">
 						<h5 className="eyebrow">Notifications</h5>

@@ -234,6 +234,7 @@
 			"favorited": true,
 			"buckets": ["Legal, Quality & Compliance", "Performance & Recognition"],
 			"daysSinceClick": 9,
+			// "tags": [ "New York, NY", "Design", "Medical Devices - Ethicon"]
 		},
 		{ 
 			"name": "EtQ Instinct",

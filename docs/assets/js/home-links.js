@@ -31788,7 +31788,6 @@ var HomeLinksPage = function (_Component) {
 								_this2.state.selectedBucket == 'myrecents' ? _this2.createCards(_this2.state.linksData.filter(function (link) {
 									return _this2.state.calendar[bucket].contains(_this2.moment().add(-1 * link.daysSinceClick, 'days'));
 								})) : null,
-								_this2.state.calendar[bucket] ? console.log(bucket, _this2.state.calendar[bucket]) : null,
 								_react2.default.createElement("hr", null)
 							);
 						})
@@ -32087,6 +32086,7 @@ var HomeNav = function (_Component) {
 						)
 					)
 				),
+				_react2.default.createElement("hr", null),
 				_react2.default.createElement(
 					"div",
 					{ className: "home-nav__topbar", id: "second-top-bar" },
@@ -32106,6 +32106,7 @@ var HomeNav = function (_Component) {
 						)
 					)
 				),
+				_react2.default.createElement("hr", null),
 				_react2.default.createElement(
 					"div",
 					{ className: "home-nav__notifications" },
@@ -33085,6 +33086,7 @@ module.exports={
 			"favorited": true,
 			"buckets": ["Legal, Quality & Compliance", "Performance & Recognition"],
 			"daysSinceClick": 9,
+			// "tags": [ "New York, NY", "Design", "Medical Devices - Ethicon"]
 		},
 		{ 
 			"name": "EtQ Instinct",

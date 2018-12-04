@@ -14531,7 +14531,21 @@ body {
     transform: none; } }
 
 .home-nav {
-  position: relative; }
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  align-items: center;
+  background: white; }
+  .home-nav hr {
+    margin: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #D8D8D8; }
+    .home-nav hr:first-of-type {
+      background: #F4F4F4; }
   .home-nav__topbar {
     display: -ms-flexbox;
     display: flex;
@@ -14539,9 +14553,8 @@ body {
     align-items: center;
     padding: 0 72px;
     height: 60px;
-    min-width: 100%;
-    background: white;
-    border-bottom: solid 2px #D8D8D8; }
+    width: 100%;
+    max-width: 1440px; }
     .home-nav__topbar:first-child {
       border-color: #F4F4F4; }
   .home-nav__left {
@@ -14757,11 +14770,10 @@ body {
     .home-nav__panel h5 {
       font-weight: 500;
       border-width: 3px; }
+    .home-nav__panel hr {
+      height: 3px; }
     .home-nav__panel ul {
       padding: 40px 72px 24px; }
-    .home-nav__panel hr {
-      margin: 0;
-      height: 3px; }
     .home-nav__panel li {
       opacity: 0;
       transform: translate3d(40px, 0, 0);
@@ -14769,7 +14781,8 @@ body {
       transition: none;
       width: auto; }
   .home-nav__panel--white {
-    background: white; }
+    background: white;
+    border-top: solid 2px #F4F4F4; }
     .home-nav__panel--white h1:hover, .home-nav__panel--white h2:hover, .home-nav__panel--white h3:hover, .home-nav__panel--white h4:hover, .home-nav__panel--white h5:hover, .home-nav__panel--white h6:hover {
       border-color: #D8D8D8; }
     .home-nav__panel--white h1.active, .home-nav__panel--white h2.active, .home-nav__panel--white h3.active, .home-nav__panel--white h4.active, .home-nav__panel--white h5.active, .home-nav__panel--white h6.active {
@@ -14792,6 +14805,11 @@ body {
       transform: scaleY(-1); }
     .home-nav__panel--blue h5 {
       margin-bottom: 24px; }
+    .home-nav__panel--blue:hover ::-webkit-scrollbar {
+      width: 6px; }
+    .home-nav__panel--blue:hover ::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 6px; }
   .home-nav--menuOpen .home-nav__hamburger .line {
     opacity: 0; }
     .home-nav--menuOpen .home-nav__hamburger .line:first-child {

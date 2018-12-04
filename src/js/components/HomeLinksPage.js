@@ -232,9 +232,9 @@ export default class HomeLinksPage extends Component {
 										{
 											(this.state.selectedBucket == 'myrecents') ? this.createCards(this.state.linksData.filter((link) => this.state.calendar[bucket].contains(this.moment().add(-1 * link.daysSinceClick, 'days')))) : null
 										}
-										{
+										{/*
 											(this.state.calendar[bucket]) ? console.log(bucket, this.state.calendar[bucket]) : null
-										}
+										*/}
 										{/*
 											(this.state.calendar[bucket]) ? console.log(this.moment().add(-1 * this.state.linksData[0].daysSinceClick, 'days')) : null
 										*/}
