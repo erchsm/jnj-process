@@ -14913,10 +14913,9 @@ body {
     .home-nav .tabbed-list__line-container {
       padding: 0 12px; }
     .home-nav .home-nav__panel {
-      width: 100%;
-      /*hr {
-				display: block;
-			}*/ }
+      width: 100%; }
+      .home-nav .home-nav__panel hr {
+        display: block; }
       .home-nav .home-nav__panel ul {
         padding: 24px 12px 24px; }
       .home-nav .home-nav__panel .home-nav__items {
