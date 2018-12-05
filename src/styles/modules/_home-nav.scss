@@ -505,6 +505,11 @@ $baseclass: home-nav;
 		.#{$baseclass}__topbar {
 			padding: 0 12px;
 		}
+		hr {
+			&:last-of-type {
+				display: none;
+			}
+		}
 		#second-top-bar {
 			display: none;
 		}
@@ -517,6 +522,9 @@ $baseclass: home-nav;
 		// }
 		.#{$baseclass}__panel {
 			width: 100%;
+			/*hr {
+				display: block;
+			}*/
 			ul {
 				padding: 24px 12px 24px;
 			}
@@ -535,6 +543,9 @@ $baseclass: home-nav;
 			height: auto;
 			min-height: calc(100vh - 60px);
 		}
+		.#{$baseclass}--menuOpen {
+			opacity: 0;
+		}
 		.#{$baseclass}__panel--blue {
 			height: calc(100vh - 60px);
 		}
@@ -542,6 +553,14 @@ $baseclass: home-nav;
 			ul {
 				padding-top: 0;
 				padding-bottom: 0;
+			}
+		}
+		&.#{$baseclass}--secondaryPanelOpen {
+			.#{$baseclass}__panel--white {
+				li {
+					transform: translate3d(-40px,0,0);
+					opacity: 0;
+				}
 			}
 		}
 	}

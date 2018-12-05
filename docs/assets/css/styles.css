@@ -14906,12 +14906,17 @@ body {
   @media screen and (max-width: 800px) {
     .home-nav .home-nav__topbar {
       padding: 0 12px; }
+    .home-nav hr:last-of-type {
+      display: none; }
     .home-nav #second-top-bar {
       display: none; }
     .home-nav .tabbed-list__line-container {
       padding: 0 12px; }
     .home-nav .home-nav__panel {
-      width: 100%; }
+      width: 100%;
+      /*hr {
+				display: block;
+			}*/ }
       .home-nav .home-nav__panel ul {
         padding: 24px 12px 24px; }
       .home-nav .home-nav__panel .home-nav__items {
@@ -14922,11 +14927,16 @@ body {
     .home-nav .home-nav__panel--white {
       height: auto;
       min-height: calc(100vh - 60px); }
+    .home-nav .home-nav--menuOpen {
+      opacity: 0; }
     .home-nav .home-nav__panel--blue {
       height: calc(100vh - 60px); }
     .home-nav .tabbed-list__header ul {
       padding-top: 0;
-      padding-bottom: 0; } }
+      padding-bottom: 0; }
+    .home-nav.home-nav--secondaryPanelOpen .home-nav__panel--white li {
+      transform: translate3d(-40px, 0, 0);
+      opacity: 0; } }
 
 .home-profile-setup {
   background: #000099;
