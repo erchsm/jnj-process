@@ -103,6 +103,7 @@
 		{ 
 			"name": "Yammer",
 			"favorited": true,
+			"description": "Yammer is an enterprise social networking service used for private communication within organizations. ",
 			"buckets": ["Online Tools & Applications"],
 			"daysSinceClick": 96,
 		},
@@ -234,7 +235,14 @@
 			"favorited": true,
 			"buckets": ["Legal, Quality & Compliance", "Performance & Recognition"],
 			"daysSinceClick": 9,
-			// "tags": [ "New York, NY", "Design", "Medical Devices - Ethicon"]
+			"tags": [ "New York, NY", "Design", "Medical Devices - Ethicon" ],
+		},
+		{ 
+			"name": "Msds",
+			"favorited": true,
+			"buckets": ["Supply Chain Tools"],
+			"daysSinceClick": 9,
+			"tags": [ "Marketing", "Supply Chain", "Legal" ],
 		},
 		{ 
 			"name": "EtQ Instinct",

@@ -31520,7 +31520,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 ), document.getElementById('root'));
 
 },{"../components/HomeLinksPage":231,"../components/HomeNav":232,"react":223,"react-dom":47,"react-skroll":191}],231:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -31528,33 +31528,33 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require("classnames");
+var _classnames = require('classnames');
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _moment = require("moment");
+var _moment = require('moment');
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _momentRange = require("moment-range");
+var _momentRange = require('moment-range');
 
-var _reactMotion = require("react-motion");
+var _reactMotion = require('react-motion');
 
-var _reactSkroll = require("react-skroll");
+var _reactSkroll = require('react-skroll');
 
-var _SearchBar = require("./SearchBar");
+var _SearchBar = require('./SearchBar');
 
 var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
-var _Dropdown = require("./form/Dropdown");
+var _Dropdown = require('./form/Dropdown');
 
 var _Dropdown2 = _interopRequireDefault(_Dropdown);
 
-var _homeLinksPage = require("../data/home-links-page");
+var _homeLinksPage = require('../data/home-links-page');
 
 var _homeLinksPage2 = _interopRequireDefault(_homeLinksPage);
 
@@ -31592,10 +31592,6 @@ var HomeLinksPage = function (_Component) {
 			_this.setState({
 				linksData: allLinks
 			});
-
-			// this.setState(prevState => ({
-			// 	linksData: (prevState.linksData.filter((l) => l.name != link.name).concat(link))
-			// }))
 		};
 
 		_this.updateLinkClickDate = function (link, e) {
@@ -31613,9 +31609,9 @@ var HomeLinksPage = function (_Component) {
 		};
 
 		_this.changeBucket = function (bucket) {
-			// this.forceUpdate();
 			_this.setState({
-				selectedBucket: bucket
+				selectedBucket: bucket,
+				scrollChildren: _this.props.scroll.children
 			});
 			document.getElementsByClassName('home-links-page__links-container')[0].childNodes[0].scrollTo(0, 1);
 		};
@@ -31623,13 +31619,13 @@ var HomeLinksPage = function (_Component) {
 		_this.createCards = function (links) {
 			return links.map(function (link, index) {
 				return _react2.default.createElement(
-					"div",
-					{ className: "card", key: index },
+					'div',
+					{ className: 'card', key: index },
 					_react2.default.createElement(
-						"h5",
+						'h5',
 						null,
-						_react2.default.createElement("div", { className: "circles" }),
-						_react2.default.createElement("i", {
+						_react2.default.createElement('div', { className: 'circles' }),
+						_react2.default.createElement('i', {
 							onClick: function onClick(e) {
 								return _this.toggleFavorite(link, e);
 							},
@@ -31640,7 +31636,7 @@ var HomeLinksPage = function (_Component) {
 						link.name
 					),
 					_react2.default.createElement(
-						"p",
+						'p',
 						null,
 						link.description ? link.description : 'No description available.'
 					)
@@ -31650,21 +31646,21 @@ var HomeLinksPage = function (_Component) {
 
 		_this.createScrollLinks = function () {
 			return _react2.default.createElement(
-				"ul",
+				'ul',
 				null,
 				_this.props.scroll.children.map(function (child, i) {
 					return _react2.default.createElement(
-						"li",
+						'li',
 						{ key: i, className: (0, _classnames2.default)({ 'active': child.active }) },
 						_react2.default.createElement(
 							_reactSkroll.ScrollLink,
 							{ to: child.start },
 							_react2.default.createElement(
-								"span",
+								'span',
 								null,
 								child.name
 							),
-							_react2.default.createElement("div", { className: "line" })
+							_react2.default.createElement('div', { className: 'line' })
 						)
 					);
 				})
@@ -31677,7 +31673,7 @@ var HomeLinksPage = function (_Component) {
 			buckets: {
 				recommended: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
 				myrecents: ["Today", "This Week", "Last Week", "This Month", "This Year"],
-				mostpopular: ["Most Popular"],
+				mostpopular: ["Benefits & Compensation", "Business Intelligence", "Online Tools & Applications", "Computing & Technology", "Collaboration Spaces", "Legal, Quality & Compliance", "Performance & Recognition", "Finance & Procurement", "New Hire & Job Changes", "Time, Travel &  Expenses", "Services & Discounts", "On-Site Services"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
 			},
 			selectedBucket: 'recommended',
@@ -31694,7 +31690,7 @@ var HomeLinksPage = function (_Component) {
 	}
 
 	_createClass(HomeLinksPage, [{
-		key: "render",
+		key: 'render',
 		value: function render() {
 			var _this2 = this;
 
@@ -31723,17 +31719,17 @@ var HomeLinksPage = function (_Component) {
 			});
 
 			return _react2.default.createElement(
-				"div",
+				'div',
 				{ className: classnames },
 				_react2.default.createElement(
-					"div",
-					{ className: "home-links-page__sidebar" },
+					'div',
+					{ className: 'home-links-page__sidebar' },
 					_react2.default.createElement(
-						"h4",
+						'h4',
 						null,
-						"Links"
+						'Links'
 					),
-					_react2.default.createElement(_Dropdown2.default, { label: "Sort by", options: [{ label: 'Recommended', click: function click() {
+					_react2.default.createElement(_Dropdown2.default, { label: 'Sort by', options: [{ label: 'Recommended', click: function click() {
 								return _this2.changeBucket('recommended');
 							} }, { label: 'My Recents', click: function click() {
 								return _this2.changeBucket('myrecents');
@@ -31745,25 +31741,25 @@ var HomeLinksPage = function (_Component) {
 					this.createScrollLinks()
 				),
 				_react2.default.createElement(
-					"div",
-					{ className: "home-links-page__links-container" },
+					'div',
+					{ className: 'home-links-page__links-container' },
 					_react2.default.createElement(
 						_reactSkroll.Scroller,
 						null,
 						this.state.selectedBucket == 'recommended' ? _react2.default.createElement(
-							"section",
-							{ name: "My Favorites" },
+							'section',
+							{ name: 'My Favorites' },
 							_react2.default.createElement(
-								"h4",
+								'h4',
 								null,
-								"My Favorites"
+								'My Favorites'
 							),
 							this.createCards(favoritedLinks),
-							_react2.default.createElement("hr", null)
+							_react2.default.createElement('hr', null)
 						) : null,
 						this.state.buckets[this.state.selectedBucket].map(function (bucket, index) {
 							return _react2.default.createElement(
-								"section",
+								'section',
 								{
 									name: bucket,
 									key: index,
@@ -31771,11 +31767,11 @@ var HomeLinksPage = function (_Component) {
 										'hidden': _this2.state.selectedBucket == 'recommended' && _this2.state.linksData.filter(function (link) {
 											return link.buckets.includes(bucket);
 										}).length == 0
-									}, "hidden", _this2.state.selectedBucket == 'alphabetical' && _this2.state.linksData.filter(function (link) {
+									}, 'hidden', _this2.state.selectedBucket == 'alphabetical' && _this2.state.linksData.filter(function (link) {
 										return link.name.startsWith(bucket);
 									}).length == 0)) },
 								_react2.default.createElement(
-									"h4",
+									'h4',
 									null,
 									bucket
 								),
@@ -31788,7 +31784,10 @@ var HomeLinksPage = function (_Component) {
 								_this2.state.selectedBucket == 'myrecents' ? _this2.createCards(_this2.state.linksData.filter(function (link) {
 									return _this2.state.calendar[bucket].contains(_this2.moment().add(-1 * link.daysSinceClick, 'days'));
 								})) : null,
-								_react2.default.createElement("hr", null)
+								_this2.state.selectedBucket == 'mostpopular' ? _this2.createCards(_this2.state.linksData.filter(function (link) {
+									return link.buckets.includes(bucket);
+								})) : null,
+								_react2.default.createElement('hr', null)
 							);
 						})
 					)
@@ -32955,6 +32954,7 @@ module.exports={
 		{ 
 			"name": "Yammer",
 			"favorited": true,
+			"description": "Yammer is an enterprise social networking service used for private communication within organizations. ",
 			"buckets": ["Online Tools & Applications"],
 			"daysSinceClick": 96,
 		},
@@ -33086,7 +33086,14 @@ module.exports={
 			"favorited": true,
 			"buckets": ["Legal, Quality & Compliance", "Performance & Recognition"],
 			"daysSinceClick": 9,
-			// "tags": [ "New York, NY", "Design", "Medical Devices - Ethicon"]
+			"tags": [ "New York, NY", "Design", "Medical Devices - Ethicon" ],
+		},
+		{ 
+			"name": "Msds",
+			"favorited": true,
+			"buckets": ["Supply Chain Tools"],
+			"daysSinceClick": 9,
+			"tags": [ "Marketing", "Supply Chain", "Legal" ],
 		},
 		{ 
 			"name": "EtQ Instinct",

@@ -14350,6 +14350,7 @@ body {
   outline: none;
   position: relative;
   transition: box-shadow .1s linear;
+  color: #212121;
   width: 100%; }
   .dropdown__trigger {
     height: 40px;
@@ -14360,7 +14361,7 @@ body {
     align-items: center;
     font-weight: 500; }
   .dropdown i {
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 3px; }
   .dropdown label {
     font-weight: 400; }
@@ -14417,7 +14418,11 @@ body {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 60px 0 72px;
+  max-width: 1440px;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 60px 0 72px;
   height: calc(100% - 120px); }
   .home-links-page__sidebar, .home-links-page__links-container section {
     padding-top: 24px; }

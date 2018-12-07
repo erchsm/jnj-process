@@ -40,7 +40,10 @@ $baseclass: 'home-links-page';
 	position: relative;
 	display: flex;
 	// flex-direction: row-reverse;
-	margin: 0 60px 0 72px;
+	max-width: 1440px;
+	justify-content: center;
+	margin: 0 auto;
+	padding: 0 60px 0 72px;
 	height: calc(100% - 120px);
 
 	&__sidebar, &__links-container section {
@@ -116,7 +119,7 @@ $baseclass: 'home-links-page';
 
 			hr {
 				width: 100%;
-			    margin: 24px 0 12px;
+				margin: 24px 0 12px;
 				background: $brand-grey-light;
 			}
 
