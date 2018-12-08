@@ -107,7 +107,7 @@ export default class HomeLinksPage extends Component {
 			console.log("end", arguments);
 		});
 
-		// scrollSpy.update();
+		scrollSpy.update();
 	}
 
 	componentWillUnmount() {
@@ -116,6 +116,7 @@ export default class HomeLinksPage extends Component {
 	}
 	
 	toggleFavorite = (link, e) => {
+		e.preventDefault();
 		if (!link.favorited) {
 			e.target.parentNode.parentNode.classList.remove('starAnimation');
 			e.target.parentNode.parentNode.classList.add('starAnimation');
@@ -134,7 +135,6 @@ export default class HomeLinksPage extends Component {
 	}
 
 	updateLinkClickDate = (link, e) => {
-
 		let allLinks = this.state.linksData;
 		const index = allLinks.indexOf(link);
 
@@ -156,7 +156,7 @@ export default class HomeLinksPage extends Component {
 
 	createCards = (links) => (
 		links.map((link, index) =>
-			<div className="card" key={index}>
+			<a href={(link.href) ? link.href : '#'} target="_blank" className="card" key={index}>
 				<h5>
 					<div className="circles"></div>
 					<i 
@@ -169,7 +169,7 @@ export default class HomeLinksPage extends Component {
 					{link.name}
 				</h5>
 				<p>{link.description ? link.description : 'No description available.'}</p>
-			</div>
+			</a>
 		)
 	)
 
@@ -182,8 +182,8 @@ export default class HomeLinksPage extends Component {
 						activeClass="active"
 						to={bucket}
 						spy={true}
-						smooth={true}
-						duration={300}
+						smooth="easeOutExpo"
+						duration={900}
 						offset={-144}
 						isDynamic={true}
 						containerId="scroll-container">

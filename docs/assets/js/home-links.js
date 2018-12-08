@@ -33617,6 +33617,7 @@ var HomeLinksPage = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (HomeLinksPage.__proto__ || Object.getPrototypeOf(HomeLinksPage)).call(this, props));
 
 		_this.toggleFavorite = function (link, e) {
+			e.preventDefault();
 			if (!link.favorited) {
 				e.target.parentNode.parentNode.classList.remove('starAnimation');
 				e.target.parentNode.parentNode.classList.add('starAnimation');
@@ -33635,7 +33636,6 @@ var HomeLinksPage = function (_Component) {
 		};
 
 		_this.updateLinkClickDate = function (link, e) {
-
 			var allLinks = _this.state.linksData;
 			var index = allLinks.indexOf(link);
 
@@ -33658,8 +33658,8 @@ var HomeLinksPage = function (_Component) {
 		_this.createCards = function (links) {
 			return links.map(function (link, index) {
 				return _react2.default.createElement(
-					'div',
-					{ className: 'card', key: index },
+					'a',
+					{ href: link.href ? link.href : '#', target: '_blank', className: 'card', key: index },
 					_react2.default.createElement(
 						'h5',
 						null,
@@ -33697,8 +33697,8 @@ var HomeLinksPage = function (_Component) {
 								activeClass: 'active',
 								to: bucket,
 								spy: true,
-								smooth: true,
-								duration: 300,
+								smooth: 'easeOutExpo',
+								duration: 900,
 								offset: -144,
 								isDynamic: true,
 								containerId: 'scroll-container' },
@@ -33747,7 +33747,7 @@ var HomeLinksPage = function (_Component) {
 				console.log("end", arguments);
 			});
 
-			// scrollSpy.update();
+			_reactScroll.scrollSpy.update();
 		}
 	}, {
 		key: 'componentWillUnmount',
@@ -35145,13 +35145,6 @@ module.exports={
 			"tags": [ "New York, NY", "Design", "Medical Devices - Ethicon" ],
 		},
 		{ 
-			"name": "Msds",
-			"favorited": true,
-			"buckets": ["Supply Chain Tools"],
-			"daysSinceClick": 9,
-			"tags": [ "Marketing", "Supply Chain", "Legal" ],
-		},
-		{ 
 			"name": "EtQ Instinct",
 			"favorited": false,
 			"buckets": ["Legal, Quality & Compliance"],
@@ -35217,9 +35210,10 @@ module.exports={
 		{ 
 			"name": "SUMMIT",
 			"favorited": true,
+			"href": "https://jnj.csod.com/LMS/catalog/Welcome.aspx",
 			"buckets": ["Performance & Recognition"],
 			"daysSinceClick": 63,
-			"description": "Enterprise learning management system.",
+			"description": "An enterprise learning management system.",
 		},
 		{ 
 			"name": "Workday",

@@ -240,13 +240,6 @@
 			"tags": [ "New York, NY", "Design", "Medical Devices - Ethicon" ],
 		},
 		{ 
-			"name": "Msds",
-			"favorited": true,
-			"buckets": ["Supply Chain Tools"],
-			"daysSinceClick": 9,
-			"tags": [ "Marketing", "Supply Chain", "Legal" ],
-		},
-		{ 
 			"name": "EtQ Instinct",
 			"favorited": false,
 			"buckets": ["Legal, Quality & Compliance"],
@@ -312,9 +305,10 @@
 		{ 
 			"name": "SUMMIT",
 			"favorited": true,
+			"href": "https://jnj.csod.com/LMS/catalog/Welcome.aspx",
 			"buckets": ["Performance & Recognition"],
 			"daysSinceClick": 63,
-			"description": "Enterprise learning management system.",
+			"description": "An enterprise learning management system.",
 		},
 		{ 
 			"name": "Workday",

@@ -14418,9 +14418,11 @@ body {
   position: relative;
   display: -ms-flexbox;
   display: flex;
-  max-width: 1440px;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-pack: center;
   justify-content: center;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 60px 0 72px;
   height: calc(100% - 120px); }
