@@ -97,6 +97,7 @@
 		{ 
 			"name": "Sharepoint",
 			"favorited": true,
+			"description": "Create rich digital experiences with forms, workflows, and custom apps for every device.",
 			"buckets": ["Online Tools & Applications"],
 			"daysSinceClick": 4,
 		},
@@ -155,6 +156,7 @@
 		{ 
 			"name": "Skype for Business",
 			"favorited": true,
+			"description": "Collaborate with anyone, anywhere, on any device.",
 			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 45,
 		},
@@ -358,12 +360,14 @@
 		// Finance & Procurement
 		//
 		{ 
-			"name": "ARAVO",
+			"name": "Aravo",
+			"description": "Risk management software to mitgate risk and monitor performance of vendors, contractors, and suppliers.",
 			"buckets": ["Finance & Procurement"],
 			"daysSinceClick": 19,
 		},
 		{ 
 			"name": "Ariba",
+			"description": "Manage suppliers, costs, and risks by making decisions anywhere in the world.",
 			"buckets": ["Finance & Procurement"],
 			"daysSinceClick": 93,
 			"description": "Ariba Spend Management",
@@ -504,6 +508,21 @@
 			"name": "iVisitor",
 			"buckets": "On-Site Services",
 			"daysSinceClick": 71,
+		},
+		{ 
+			"name": "A/V Request Form",
+			"buckets": "On-Site Services",
+			"daysSinceClick": 40,
+		},
+		{ 
+			"name": "Add Printer: How To",
+			"buckets": "On-Site Services",
+			"daysSinceClick": 24,
+		},
+		{ 
+			"name": "Audio Visual Support",
+			"buckets": "On-Site Services",
+			"daysSinceClick": 12,
 		},
 	]
 }

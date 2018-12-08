@@ -39,15 +39,14 @@ $baseclass: 'home-links-page';
 .#{$baseclass} {
 	position: relative;
 	display: flex;
-	// flex-direction: row-reverse;
 	max-width: 1440px;
 	justify-content: center;
 	margin: 0 auto;
 	padding: 0 60px 0 72px;
 	height: calc(100% - 120px);
 
-	&__sidebar, &__links-container section {
-		padding-top: 24px;
+	&__sidebar, &__links-container .scroll-section {
+		margin-top: 24px;
 	}
 
 	&__sidebar {
@@ -68,6 +67,17 @@ $baseclass: 'home-links-page';
 				color: $brand-black;
 				display: inline-flex;
 				flex-direction: column;
+
+				&.active {
+					.line {
+						transform: scaleX(1);
+					}
+					~.active {
+						.line {
+							transform: scaleX(0);
+						}
+					}
+				}
 			}
 
 			.line {
@@ -76,17 +86,6 @@ $baseclass: 'home-links-page';
 				background: $brand-red;
 				transition: transform 0.6s 0.2s $easing2;
 				transform: scaleX(0);
-			}
-
-			&.active {
-				.line {
-					transform: scaleX(1);
-				}
-				~.active {
-					.line {
-						transform: scaleX(0);
-					}
-				}
 			}
 		}
 	}
@@ -101,9 +100,12 @@ $baseclass: 'home-links-page';
 
 		> div {
 			padding-right: 12px;
+			height: 100%;
+			width: 100%;
+			overflow-y: auto;
 		}
 
-		section {
+		.scroll-section {
 			height: auto;
 			display: flex;
 			flex-wrap: wrap;

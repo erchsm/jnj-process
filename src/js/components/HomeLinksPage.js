@@ -3,9 +3,7 @@ import React, { Component, PropTypes } from 'react'
 import classNames from 'classnames'
 import Moment from 'moment'
 import { extendMoment } from 'moment-range'
-import { Motion, spring, presets } from 'react-motion'
-import { ScrollProvider, Scroller, ScrollLink } from 'react-skroll'
-
+import { Link, DirectLink, Element, Events, animateScroll, scrollSpy} from "react-scroll";
 
 import SearchBar from './SearchBar';
 import Dropdown from './form/Dropdown';
@@ -23,6 +21,7 @@ export default class HomeLinksPage extends Component {
 		this.state = {
 			buckets: {
 				recommended: [
+					"My Favorites",
 					"Benefits & Compensation",
 					"Business Intelligence",
 					"Online Tools & Applications",
@@ -99,6 +98,23 @@ export default class HomeLinksPage extends Component {
 		}
 	}
 
+	componentDidMount() {
+		Events.scrollEvent.register("begin", function() {
+			console.log("begin", arguments);
+		});
+
+		Events.scrollEvent.register("end", function() {
+			console.log("end", arguments);
+		});
+
+		// scrollSpy.update();
+	}
+
+	componentWillUnmount() {
+		Events.scrollEvent.remove("begin");
+		Events.scrollEvent.remove("end");
+	}
+	
 	toggleFavorite = (link, e) => {
 		if (!link.favorited) {
 			e.target.parentNode.parentNode.classList.remove('starAnimation');
@@ -134,7 +150,6 @@ export default class HomeLinksPage extends Component {
 	changeBucket = (bucket) => {
 		this.setState({
 			selectedBucket: bucket,
-			scrollChildren: this.props.scroll.children,
 		});
 		document.getElementsByClassName('home-links-page__links-container')[0].childNodes[0].scrollTo(0,1)
 	}
@@ -161,12 +176,20 @@ export default class HomeLinksPage extends Component {
 	createScrollLinks = () => (
 		<ul>
 			{ 
-				this.props.scroll.children.map((child, i) =>
-					<li key={i} className={classNames({ 'active': child.active })}>
-						<ScrollLink to={child.start}>	
-							<span>{child.name}</span>
+				this.state.buckets[this.state.selectedBucket].map((bucket, i) =>
+					<li key={i}>
+						<Link
+						activeClass="active"
+						to={bucket}
+						spy={true}
+						smooth={true}
+						duration={300}
+						offset={-144}
+						isDynamic={true}
+						containerId="scroll-container">
+							<span>{bucket}</span>
 							<div className="line"></div>
-						</ScrollLink>
+						</Link>
 					</li>
 				)
 			}
@@ -210,27 +233,23 @@ export default class HomeLinksPage extends Component {
 					{ this.createScrollLinks() }
 				</div>
 				<div className="home-links-page__links-container">
-					<Scroller>
-						{ (this.state.selectedBucket == 'recommended') ? (
-							<section name="My Favorites">
-								<h4>My Favorites</h4>
-								{ this.createCards(favoritedLinks) }
-								<hr/>
-							</section>
-							) : null
-						}
+					<div id="scroll-container">
 						{
 							this.state.buckets[this.state.selectedBucket].map((bucket, index) =>
-								<section 
+								<Element 
 									name={bucket} 
 									key={index} 
 									className={classNames({
-									 'hidden': this.state.selectedBucket == 'recommended' && this.state.linksData.filter((link) => link.buckets.includes(bucket)).length == 0 ,
-									 'hidden': this.state.selectedBucket == 'alphabetical' && this.state.linksData.filter((link) => link.name.startsWith(bucket)).length == 0 ,
+										'scroll-section': true,
+										// 'hidden': this.state.selectedBucket == 'recommended' && this.state.linksData.filter((link) => link.buckets.includes(bucket)).length == 0 ,
+										// 'hidden': this.state.selectedBucket == 'alphabetical' && this.state.linksData.filter((link) => link.name.startsWith(bucket)).length == 0 ,
 									})}>
 									<h4>{bucket}</h4>
 										{ 
-											(this.state.selectedBucket == 'recommended') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
+											(bucket == 'My Favorites') ? this.createCards(favoritedLinks) : null
+										}
+										{ 
+											(this.state.selectedBucket == 'recommended' && bucket != 'My Favorites') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
 										}
 										{
 											(this.state.selectedBucket == 'alphabetical') ? this.createCards(this.state.linksData.filter((link) => link.name.startsWith(bucket))) : null
@@ -242,10 +261,10 @@ export default class HomeLinksPage extends Component {
 											(this.state.selectedBucket == 'mostpopular') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
 										}
 									<hr/>
-								</section>
+								</Element>
 							)
 						}
-					</Scroller>
+					</div>
 				</div>
 			</div>
 		)
