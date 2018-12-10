@@ -258,7 +258,7 @@ export default class HomeLinksPage extends Component {
 											(this.state.selectedBucket == 'myrecents') ? this.createCards(this.state.linksData.filter((link) => this.state.calendar[bucket].contains(this.moment().add(-1 * link.daysSinceClick, 'days')))) : null
 										}
 										{
-											(this.state.selectedBucket == 'mostpopular') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
+											(this.state.selectedBucket == 'mostpopular') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket)).sort((a, b) => (b.popularity - a.popularity))) : null
 										}
 									<hr/>
 								</Element>
