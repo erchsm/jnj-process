@@ -196,6 +196,19 @@ export default class HomeLinksPage extends Component {
 		</ul>
 	)
 
+	onChangeSearch = (event) => {
+		this.setState({
+			searchValue: event.target.value
+		});
+	};
+
+	clearSearch = () => {
+		this.setState({
+			searchValue: ""
+		});
+	};
+
+
 	render() {
 		const { scroll } = this.props;
 
@@ -240,10 +253,23 @@ export default class HomeLinksPage extends Component {
 				<div className="home-links-page__links-container">
 					<div id="scroll-container">
 						<div className="search-row">
-							<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>
+							<div className="search-bar">
+								<input type="text" value={this.state.searchValue ? this.state.searchValue : ""} className="react-autosuggest__input" placeholder="Search for a link" onChange={this.onChangeSearch}/>
+								<i className="iconcss icon-search-2"></i>
+								<i onClick={this.clearSearch} className="iconcss icon-close-sm" style={(this.state.searchValue) ? null : {'display': 'none'}}></i>
+							</div>
+							{/*<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>*/}
 						</div>
 						{
-							this.state.buckets[this.state.selectedBucket].map((bucket, index) =>
+							(this.state.searchValue) ? (
+								<div className="scroll-section">
+									<h4>Search Results for “{this.state.searchValue}”</h4>
+									{
+										this.createCards(this.state.linksData.filter((link) => link.id.includes(this.state.searchValue)))
+									}
+									<hr/>
+								</div>
+							) : this.state.buckets[this.state.selectedBucket].map((bucket, index) =>
 								<Element 
 									name={bucket} 
 									key={index} 

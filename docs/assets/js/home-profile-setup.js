@@ -37793,7 +37793,7 @@ exports.default = ImageUpload;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -37819,188 +37819,188 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var SearchBar = function (_Component) {
-  _inherits(SearchBar, _Component);
+	_inherits(SearchBar, _Component);
 
-  function SearchBar() {
-    _classCallCheck(this, SearchBar);
+	function SearchBar() {
+		_classCallCheck(this, SearchBar);
 
-    var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this));
+		var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this));
 
-    _this.onChange = function (event, _ref) {
-      var newValue = _ref.newValue,
-          method = _ref.method;
+		_this.onChange = function (event, _ref) {
+			var newValue = _ref.newValue,
+			    method = _ref.method;
 
-      _this.setState({
-        value: newValue
-      });
-    };
+			_this.setState({
+				value: newValue
+			});
+		};
 
-    _this.onSuggestionsFetchRequested = function (_ref2) {
-      var value = _ref2.value;
+		_this.onSuggestionsFetchRequested = function (_ref2) {
+			var value = _ref2.value;
 
-      _this.setState({
-        suggestions: _this.getSuggestions(value)
-      });
-    };
+			_this.setState({
+				suggestions: _this.getSuggestions(value)
+			});
+		};
 
-    _this.onSuggestionSelected = function (event, _ref3) {
-      var suggestion = _ref3.suggestion,
-          suggestionValue = _ref3.suggestionValue,
-          suggestionIndex = _ref3.suggestionIndex,
-          sectionIndex = _ref3.sectionIndex,
-          method = _ref3.method;
+		_this.onSuggestionSelected = function (event, _ref3) {
+			var suggestion = _ref3.suggestion,
+			    suggestionValue = _ref3.suggestionValue,
+			    suggestionIndex = _ref3.suggestionIndex,
+			    sectionIndex = _ref3.sectionIndex,
+			    method = _ref3.method;
 
-      _this.props.onClick ? _this.props.onClick(suggestion) : null;
-      _this.setState({
-        value: ''
-      });
-    };
+			_this.props.onClick ? _this.props.onClick(suggestion) : null;
+			_this.setState({
+				value: ''
+			});
+		};
 
-    _this.onSuggestionsClearRequested = function () {
-      _this.setState({
-        suggestions: []
-      });
-    };
+		_this.onSuggestionsClearRequested = function () {
+			_this.setState({
+				suggestions: []
+			});
+		};
 
-    _this.openDropdown = function () {
-      _this.setState({
-        dropdownOpen: true
-      });
-    };
+		_this.openDropdown = function () {
+			_this.setState({
+				dropdownOpen: true
+			});
+		};
 
-    _this.openSearch = function () {
-      _this.setState({
-        searchOpen: true
-      });
-    };
+		_this.openSearch = function () {
+			_this.setState({
+				searchOpen: true
+			});
+		};
 
-    _this.togglePrompt = function (i) {
-      _this.setState({
-        showPrompt: !_this.state.showPrompt
-      });
-    };
+		_this.togglePrompt = function (i) {
+			_this.setState({
+				showPrompt: !_this.state.showPrompt
+			});
+		};
 
-    _this.state = {
-      dropdownOpen: false,
-      searchOpen: false,
-      value: '',
-      showPrompt: false,
-      suggestions: []
-    };
-    return _this;
-  }
+		_this.state = {
+			dropdownOpen: false,
+			searchOpen: false,
+			value: '',
+			showPrompt: false,
+			suggestions: []
+		};
+		return _this;
+	}
 
-  _createClass(SearchBar, [{
-    key: 'escapeRegexCharacters',
-    value: function escapeRegexCharacters(str) {
-      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-  }, {
-    key: 'getSuggestions',
-    value: function getSuggestions(value) {
-      var escapedValue = this.escapeRegexCharacters(value.trim());
+	_createClass(SearchBar, [{
+		key: 'escapeRegexCharacters',
+		value: function escapeRegexCharacters(str) {
+			return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+		}
+	}, {
+		key: 'getSuggestions',
+		value: function getSuggestions(value) {
+			var escapedValue = this.escapeRegexCharacters(value.trim());
 
-      if (escapedValue === '') {
-        return [];
-      }
+			if (escapedValue === '') {
+				return [];
+			}
 
-      var regex = new RegExp('^' + escapedValue, 'i');
+			var regex = new RegExp('^' + escapedValue, 'i');
 
-      return this.props.searchData.map(function (section) {
-        return {
-          title: section.title,
-          data: section.data.filter(function (item) {
-            return regex.test(item.id);
-          })
-        };
-      }).filter(function (section) {
-        return section.data.length > 0;
-      });
-    }
-  }, {
-    key: 'getSuggestionValue',
-    value: function getSuggestionValue(suggestion) {
-      return suggestion.id;
-    }
-  }, {
-    key: 'renderSuggestion',
-    value: function renderSuggestion(suggestion) {
-      return _react2.default.createElement(
-        'span',
-        null,
-        suggestion.id
-      );
-    }
-  }, {
-    key: 'renderSectionTitle',
-    value: function renderSectionTitle(section) {
-      return _react2.default.createElement(
-        'strong',
-        null,
-        section.title
-      );
-    }
-  }, {
-    key: 'getSectionSuggestions',
-    value: function getSectionSuggestions(section) {
-      return section.data;
-    }
+			return this.props.searchData.map(function (section) {
+				return {
+					title: section.title,
+					data: section.data.filter(function (item) {
+						return regex.test(item.id);
+					})
+				};
+			}).filter(function (section) {
+				return section.data.length > 0;
+			});
+		}
+	}, {
+		key: 'getSuggestionValue',
+		value: function getSuggestionValue(suggestion) {
+			return suggestion.id;
+		}
+	}, {
+		key: 'renderSuggestion',
+		value: function renderSuggestion(suggestion) {
+			return _react2.default.createElement(
+				'span',
+				null,
+				suggestion.id
+			);
+		}
+	}, {
+		key: 'renderSectionTitle',
+		value: function renderSectionTitle(section) {
+			return _react2.default.createElement(
+				'strong',
+				null,
+				section.title
+			);
+		}
+	}, {
+		key: 'getSectionSuggestions',
+		value: function getSectionSuggestions(section) {
+			return section.data;
+		}
 
-    // componentDidMount = () => {
-    //   window.addEventListener('mousedown', this.handleClickOutside);
-    // }
+		// componentDidMount = () => {
+		//   window.addEventListener('mousedown', this.handleClickOutside);
+		// }
 
-    // componentWillUnmount = () => {
-    //   window.removeEventListener('mousedown', this.handleClickOutside);
-    // }
+		// componentWillUnmount = () => {
+		//   window.removeEventListener('mousedown', this.handleClickOutside);
+		// }
 
 
-  }, {
-    key: 'render',
-    value: function render() {
-      var _state = this.state,
-          value = _state.value,
-          suggestions = _state.suggestions;
-      var _props = this.props,
-          placeholder = _props.placeholder,
-          searchData = _props.searchData,
-          iconName = _props.iconName;
+	}, {
+		key: 'render',
+		value: function render() {
+			var _state = this.state,
+			    value = _state.value,
+			    suggestions = _state.suggestions;
+			var _props = this.props,
+			    placeholder = _props.placeholder,
+			    searchData = _props.searchData,
+			    iconName = _props.iconName;
 
-      // console.log(searchData);
-      // const importedData = searchData ? require('searchData') : titles;
+			// console.log(searchData);
+			// const importedData = searchData ? require('searchData') : titles;
 
-      var inputProps = {
-        placeholder: placeholder ? placeholder : "Search Everything",
-        value: value,
-        onChange: this.onChange
-      };
+			var inputProps = {
+				placeholder: placeholder ? placeholder : "Search Everything",
+				value: value,
+				onChange: this.onChange
+			};
 
-      var classnames = (0, _classnames2.default)({
-        "search-bar": true,
-        "search-bar--show-dropdown": this.state.dropdownOpen,
-        "search-bar--show-search": this.state.searchOpen
-      });
+			var classnames = (0, _classnames2.default)({
+				"search-bar": true,
+				"search-bar--show-dropdown": this.state.dropdownOpen,
+				"search-bar--show-search": this.state.searchOpen
+			});
 
-      return _react2.default.createElement(
-        'div',
-        { ref: 'wrapper', className: classnames },
-        _react2.default.createElement(_reactAutosuggest2.default, {
-          multiSection: true,
-          suggestions: suggestions,
-          onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
-          onSuggestionsClearRequested: this.onSuggestionsClearRequested,
-          onSuggestionSelected: this.onSuggestionSelected,
-          getSuggestionValue: this.getSuggestionValue,
-          renderSuggestion: this.renderSuggestion,
-          renderSectionTitle: this.renderSectionTitle,
-          getSectionSuggestions: this.getSectionSuggestions,
-          inputProps: inputProps }),
-        _react2.default.createElement('i', { className: iconName ? "iconcss " + iconName : "iconcss icon-search" })
-      );
-    }
-  }]);
+			return _react2.default.createElement(
+				'div',
+				{ ref: 'wrapper', className: classnames },
+				_react2.default.createElement(_reactAutosuggest2.default, {
+					multiSection: true,
+					suggestions: suggestions,
+					onSuggestionsFetchRequested: this.onSuggestionsFetchRequested,
+					onSuggestionsClearRequested: this.onSuggestionsClearRequested,
+					onSuggestionSelected: this.onSuggestionSelected,
+					getSuggestionValue: this.getSuggestionValue,
+					renderSuggestion: this.renderSuggestion,
+					renderSectionTitle: this.renderSectionTitle,
+					getSectionSuggestions: this.getSectionSuggestions,
+					inputProps: inputProps }),
+				_react2.default.createElement('i', { className: iconName ? "iconcss " + iconName : "iconcss icon-search" })
+			);
+		}
+	}]);
 
-  return SearchBar;
+	return SearchBar;
 }(_react.Component);
 
 exports.default = SearchBar;

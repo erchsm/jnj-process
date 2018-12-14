@@ -14406,11 +14406,11 @@ body {
   0%, 18% {
     transform: scale3d(0, 0, 0); }
   44% {
-    transform: scale3d(1.25, 1.25, 1.25); }
+    transform: scale3d(1.24, 1.24, 1.24); }
   62% {
     transform: scale3d(1, 1, 1); }
   81% {
-    transform: scale3d(1.1, 1.1, 1.1); }
+    transform: scale3d(1.12, 1.12, 1.12); }
   100% {
     transform: scale3d(1, 1, 1); } }
 
@@ -14437,11 +14437,17 @@ body {
       font-size: 18px;
       color: #212121;
       border-color: #63666A;
-      padding-left: 40px; }
-    .home-links-page .search-row i {
+      padding: 9px 32px 9px 40px; }
+    .home-links-page .search-row .icon-search-2 {
       right: auto;
       left: 0;
       color: #212121; }
+    .home-links-page .search-row .icon-close-sm {
+      right: 6px;
+      font-size: 16px;
+      top: 14px;
+      color: #212121;
+      cursor: pointer; }
     .home-links-page .search-row .search-bar {
       width: 32%;
       margin: 24px 0 0 0;
@@ -14454,7 +14460,8 @@ body {
       width: 100%;
       max-height: 424px;
       overflow-y: scroll;
-      box-shadow: 0px 2px 12px rgba(33, 33, 33, 0.12); }
+      box-shadow: 0px 2px 12px rgba(33, 33, 33, 0.12);
+      border-radius: 0; }
     .home-links-page .search-row .react-autosuggest__suggestion {
       border-bottom: solid 1px #D8D8D8;
       padding: 12px; }

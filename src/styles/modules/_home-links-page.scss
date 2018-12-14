@@ -22,13 +22,13 @@ $baseclass: 'home-links-page';
 		transform: scale3d(0, 0, 0);
 	}
 	44% {
-		transform: scale3d(1.25, 1.25, 1.25);
+		transform: scale3d(1.24, 1.24, 1.24);
 	}
 	62% {
 		transform: scale3d(1, 1, 1);
 	}
 	81% {
-		transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.12, 1.12, 1.12);
 	}
 	100% {
 		transform: scale3d(1, 1, 1);
@@ -58,12 +58,19 @@ $baseclass: 'home-links-page';
 			font-size: 18px;
 			color: $brand-black;
 			border-color: $brand-grey-darkest;
-			padding-left: 40px;
+		    padding: 9px 32px 9px 40px;
 		}
-		i {
+		.icon-search-2 {
 			right: auto;
 			left: 0;
 			color: $brand-black;
+		}
+		.icon-close-sm {
+			right: 6px;
+			font-size: 16px;
+			top: 14px;
+			color: $brand-black;
+			cursor: pointer;
 		}
 		.search-bar {
 		    width: 32%;
@@ -72,6 +79,10 @@ $baseclass: 'home-links-page';
 			opacity: 1;
 		}
 		.react-autosuggest {
+			@mixin hover() {
+				font-weight: normal;
+				background: $brand-grey-light;
+			}
 			&__suggestions-container {
 				position: absolute;
 				background: white;
@@ -80,14 +91,14 @@ $baseclass: 'home-links-page';
 				max-height: 424px;
 			    overflow-y: scroll;
 				box-shadow: 0px 2px 12px rgba($brand-black, .12);
+				border-radius: 0;
 			}
 			&__suggestion {
 				border-bottom: solid 1px $brand-grey-light;
 				padding: 12px;
 
 				&:hover {
-					font-weight: normal;
-					background: $brand-grey-light;
+					@include hover();
 				}
 
 				&:last-child {
@@ -95,8 +106,7 @@ $baseclass: 'home-links-page';
 				}
 			}
 			&__suggestion--highlighted {
-				font-weight: normal;
-				background: $brand-grey-light;
+				@include hover();
 			}
 		}
 		
