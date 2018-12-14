@@ -22,18 +22,18 @@ export default class HomeLinksPage extends Component {
 			buckets: {
 				recommended: [
 					"My Favorites",
+					"Applications",
 					"Benefits & Compensation",
 					"Business Intelligence",
-					"Online Tools & Applications",
-					"Computing & Technology",
 					"Collaboration Spaces",
-					"Legal, Quality & Compliance",
-					"Performance & Recognition",
 					"Finance & Procurement",
+					"Legal, Quality & Compliance",
 					"New Hire & Job Changes",
-					"Time, Travel &  Expenses",
-					"Services & Discounts",
 					"On-Site Services",
+					"Performance & Recognition",
+					"Services & Discounts",
+					"Technology",
+					"Time, Travel &  Expenses",
 				],
 				myrecents: [
 					"Today",
@@ -45,8 +45,8 @@ export default class HomeLinksPage extends Component {
 				mostpopular: [
 					"Benefits & Compensation",
 					"Business Intelligence",
-					"Online Tools & Applications",
-					"Computing & Technology",
+					"Applications",
+					"Technology",
 					"Collaboration Spaces",
 					"Legal, Quality & Compliance",
 					"Performance & Recognition",
@@ -166,7 +166,7 @@ export default class HomeLinksPage extends Component {
 						'iconcss icon-star-fill': link.favorited,
 					})}>
 					</i>
-					{link.name}
+					{link.id}
 				</h5>
 				<p>{link.description ? link.description : 'No description available.'}</p>
 			</a>
@@ -219,6 +219,11 @@ export default class HomeLinksPage extends Component {
 		this.state.linksData.forEach((link) => {
 			(link.favorited) ? favoritedLinks.push(link) : null;
 		});
+
+		let searchData = [{
+			title: "Suggestions",
+			data: this.state.linksData,
+		}];
 		
 		return (
 			<div className={classnames}>
@@ -234,6 +239,9 @@ export default class HomeLinksPage extends Component {
 				</div>
 				<div className="home-links-page__links-container">
 					<div id="scroll-container">
+						<div className="search-row">
+							<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>
+						</div>
 						{
 							this.state.buckets[this.state.selectedBucket].map((bucket, index) =>
 								<Element 
@@ -242,7 +250,7 @@ export default class HomeLinksPage extends Component {
 									className={classNames({
 										'scroll-section': true,
 										// 'hidden': this.state.selectedBucket == 'recommended' && this.state.linksData.filter((link) => link.buckets.includes(bucket)).length == 0 ,
-										// 'hidden': this.state.selectedBucket == 'alphabetical' && this.state.linksData.filter((link) => link.name.startsWith(bucket)).length == 0 ,
+										// 'hidden': this.state.selectedBucket == 'alphabetical' && this.state.linksData.filter((link) => link.id.startsWith(bucket)).length == 0 ,
 									})}>
 									<h4>{bucket}</h4>
 										{ 
@@ -252,7 +260,7 @@ export default class HomeLinksPage extends Component {
 											(this.state.selectedBucket == 'recommended' && bucket != 'My Favorites') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
 										}
 										{
-											(this.state.selectedBucket == 'alphabetical') ? this.createCards(this.state.linksData.filter((link) => link.name.startsWith(bucket))) : null
+											(this.state.selectedBucket == 'alphabetical') ? this.createCards(this.state.linksData.filter((link) => link.id.startsWith(bucket))) : null
 										}
 										{
 											(this.state.selectedBucket == 'myrecents') ? this.createCards(this.state.linksData.filter((link) => this.state.calendar[bucket].contains(this.moment().add(-1 * link.daysSinceClick, 'days')))) : null

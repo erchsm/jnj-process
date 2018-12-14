@@ -3,7 +3,6 @@ import classNames from "classnames";
 
 import specialties from '../data/specialties-search';
 import symptoms from '../data/symptoms-search';
-import homeProfileSetupData from '../data/home-profile-setup';
 
 import SearchBar from './SearchBar';
 

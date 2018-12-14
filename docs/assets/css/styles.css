@@ -14428,6 +14428,42 @@ body {
   height: calc(100% - 120px); }
   .home-links-page__sidebar, .home-links-page__links-container .scroll-section {
     margin-top: 24px; }
+  .home-links-page .search-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+    .home-links-page .search-row input {
+      font-size: 18px;
+      color: #212121;
+      border-color: #63666A;
+      padding-left: 40px; }
+    .home-links-page .search-row i {
+      right: auto;
+      left: 0;
+      color: #212121; }
+    .home-links-page .search-row .search-bar {
+      width: 32%;
+      margin: 24px 0 0 0;
+      margin-left: 2%;
+      opacity: 1; }
+    .home-links-page .search-row .react-autosuggest__suggestions-container {
+      position: absolute;
+      background: white;
+      top: 42px;
+      width: 100%;
+      box-shadow: 0px 2px 12px rgba(33, 33, 33, 0.12); }
+    .home-links-page .search-row .react-autosuggest__suggestion {
+      border-bottom: solid 1px #D8D8D8;
+      padding: 12px; }
+      .home-links-page .search-row .react-autosuggest__suggestion:hover {
+        font-weight: normal;
+        background: #D8D8D8; }
+      .home-links-page .search-row .react-autosuggest__suggestion:last-child {
+        border-bottom: none; }
+    .home-links-page .search-row .react-autosuggest__suggestion--highlighted {
+      font-weight: normal;
+      background: #D8D8D8; }
   .home-links-page__sidebar {
     width: 20%; }
     .home-links-page__sidebar ul {
@@ -14471,6 +14507,8 @@ body {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       overflow: hidden; }
+      .home-links-page__links-container .scroll-section:nth-child(2) {
+        margin-top: 6px; }
       .home-links-page__links-container .scroll-section.hidden {
         display: none; }
       .home-links-page__links-container .scroll-section > h1, .home-links-page__links-container .scroll-section > h2, .home-links-page__links-container .scroll-section > h3, .home-links-page__links-container .scroll-section > h4, .home-links-page__links-container .scroll-section > h5, .home-links-page__links-container .scroll-section > h6 {
