@@ -33730,9 +33730,9 @@ var HomeLinksPage = function (_Component) {
 
 		_this.state = {
 			buckets: {
-				recommended: ["My Favorites", "Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Technology", "Time, Travel & Expenses", "Online Tools & Applications"],
+				recommended: ["My Favorites", "Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Computing & Technology", "Time, Travel & Expenses", "Online Tools & Applications"],
 				myrecents: ["Today", "This Week", "Last Week", "This Month", "This Year"],
-				mostpopular: ["Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Technology", "Time, Travel & Expenses", "Online Tools & Applications"],
+				mostpopular: ["Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Computing & Technology", "Time, Travel & Expenses", "Online Tools & Applications"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]
 			},
 			selectedBucket: 'recommended',
@@ -35217,56 +35217,56 @@ module.exports={
 			"daysSinceClick": 55,
 		},
 		//
-		// Technology
+		// Computing & Technology
 		//
 		{ 
 			"id": "Skype for Business",
 			"popularity": 98,
 			"favorited": true,
 			"description": "Collaborate with anyone, anywhere, on any device.",
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 45,
 		},
 		{ 
 			"id": "Guest WiFi Password Link",
 			"popularity": 84,
 			"favorited": false,
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 40,
 		},
 		{ 
 			"id": "Outlook Web Access",
 			"popularity": 24,
 			"favorited": false,
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 31,
 		},
 		{ 
 			"id": "IRIS",
 			"popularity": 94,
 			"favorited": false,
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 89,
 		},
 		{ 
 			"id": "Touchpoint FAQ's",
 			"popularity": 92,
 			"favorited": false,
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 93,
 		},
 		{ 
 			"id": "TrainR",
 			"popularity": 18,
 			"favorited": false,
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 87,
 		},
 		{ 
 			"id": "Global Service Desk",
 			"popularity": 15,
 			"favorited": false,
-			"buckets": ["Technology"],
+			"buckets": ["Computing & Technology"],
 			"daysSinceClick": 86,
 		},
 		//
@@ -35719,39 +35719,39 @@ module.exports={
 			"buckets": ["Collaboration Spaces"],
 			"favorited": false,
 		},
-		{
+		/*{
 			"href": "https://jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/default.aspx",
 			"id": "Employee Health & Wellbeing Resources",
 			"description": "Health and wellbeing services and resources for Johnson & Johnson employees",
 			"buckets": [],
 			"favorited": false,
-		},
+		},*/
 		{
 			"href": "https://jnj.sharepoint.com/teams/enterprisespendoptimization",
 			"id": "Enterprise Spend Optimization",
-			"description": "Provides visibility to our Spend Optimization enterprise guidelines, supporting tools/capabilities, success stories, future roadmap and links to Sectors/Functions choices.",
-			"buckets": [],
+			"description": "Provides visibility to our Spend Optimization enterprise guidelines.",
+			"buckets": ["Time, Travel & Expenses", "Benefits & Compensation", "Services & Discounts"],
 			"favorited": false,
 		},                
 		{
 			"href": "http://fyb.jnj.com",
-			"id": "For Your Benefit Website--U.S. & P.R. (use Chrome)",
-			"description": "Replaces Total Rewards & My Compensation",
-			"buckets": [],
+			"id": "For Your Benefit Website - U.S. & P.R.",
+			"description": "Benefits center for Johnson & Johnson employees. Run in Chrome.",
+			"buckets": ["Benefits & Compensation"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/HealthyMe.aspx",
 			"id": "Healthy & Me",
-			"description": "Information on Healthy & Me, the global health & wellness app – that is unique for all J&J employees - offering resources, challenges and incentives for participation",
-			"buckets": [],
+			"description": "Mobile platform that conveniently connects you to your everyday health and well-being.",
+			"buckets": ["Benefits & Compensation", "Collaboration Spaces"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Provider/Documents/Forms/AllItems.aspx?RootFolder=%2Fsites%2Fhrportal%2FEnglish%2FGlobalHealthAndBenefits%2FProvider%2FDocuments%2FEmployee%20Assistance%20Program%2FBreast%20Milk%20Shipping&FolderCTID=0x0120002E064306B4A7CC42B2656A30488E6E32&View=%7BD3831B63-1505-4408-979D-D8C74F829F4E%7D",
 			"id": "Lactation Support",
 			"description": "Information on global lactation rooms and breast milk shipping program.",
-			"buckets": [],
+			"buckets": ["Benefits & Compensation", "Collaboration Spaces"],
 			"favorited": false,
 		},
 		{
@@ -35765,7 +35765,7 @@ module.exports={
 			"href": "http://leadership.jnj.com/Pages/Home.aspx",
 			"id": "Leadership Resource Center",
 			"description": "Enterprise leader resource, providing content to support strategic dialogues with your organization(s).",
-			"buckets": [],
+			"buckets": ["Performance & Recognition", "Benefits & Compensation", "New Hire & Job Changes"],
 			"favorited": false,
 		},
 		{
