@@ -14406,11 +14406,11 @@ body {
   0%, 18% {
     transform: scale3d(0, 0, 0); }
   44% {
-    transform: scale3d(1.24, 1.24, 1.24); }
+    transform: scale3d(1.25, 1.25, 1.25); }
   62% {
     transform: scale3d(1, 1, 1); }
   81% {
-    transform: scale3d(1.12, 1.12, 1.12); }
+    transform: scale3d(1.1, 1.1, 1.1); }
   100% {
     transform: scale3d(1, 1, 1); } }
 
@@ -14497,6 +14497,8 @@ body {
         height: 4px;
         background: #CA001B;
         transition: transform 0.6s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+        -ms-transform-origin: left;
+        transform-origin: left;
         -ms-transform: scaleX(0);
         transform: scaleX(0); }
   .home-links-page__links-container {
@@ -14526,6 +14528,20 @@ body {
         width: 100%;
         margin: 24px 0 12px;
         background: #D8D8D8; }
+      .home-links-page__links-container .scroll-section .home-links-page__pagination {
+        width: 100%;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: left;
+        justify-content: left; }
+        .home-links-page__links-container .scroll-section .home-links-page__pagination a {
+          width: 32%; }
+        .home-links-page__links-container .scroll-section .home-links-page__pagination .mdc-button {
+          margin: 0 auto; }
+        .home-links-page__links-container .scroll-section .home-links-page__pagination hr {
+          margin: 6px 0 24px; }
       .home-links-page__links-container .scroll-section .card {
         margin-bottom: 2%;
         margin-right: 2%;
@@ -14568,16 +14584,19 @@ body {
         .home-links-page__links-container .scroll-section .card:nth-child(3n + 4) {
           margin-right: 0; }
         .home-links-page__links-container .scroll-section .card.starAnimation .icon-star-fill {
-          animation: star 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+          animation: star 0.9s ease-in; }
         .home-links-page__links-container .scroll-section .card.starAnimation .circles {
-          animation: circles 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+          animation: circles 0.9s ease-in; }
+  .home-links-page--alphabetical .home-links-page__sidebar ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 120px; }
   .home-links-page--alphabetical .home-links-page__sidebar li {
-    line-height: 1;
-    margin-bottom: 2px;
     text-align: center;
-    width: 14px; }
-  .home-links-page--alphabetical .home-links-page__sidebar .line {
-    height: 3px; }
+    width: 14px;
+    margin-right: 24px; }
 
 @keyframes slideIn {
   0% {

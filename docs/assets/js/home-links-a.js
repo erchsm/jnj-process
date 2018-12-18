@@ -33555,7 +33555,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _reactDom.render)(_react2.default.createElement(
 	'div',
 	{ className: 'test-page' },
-	_react2.default.createElement(_HomeNav2.default, null)
+	_react2.default.createElement(_HomeNav2.default, null),
+	_react2.default.createElement(
+		_reactSkroll.ScrollProvider,
+		null,
+		_react2.default.createElement(_HomeLinksPage2.default, { dropdownLabel: 'Sort By', hideSearch: true })
+	)
 ), document.getElementById('root'));
 
 },{"../components/HomeLinksPage":248,"../components/HomeNav":250,"react":240,"react-dom":48,"react-skroll":208}],248:[function(require,module,exports){
@@ -36225,4 +36230,4 @@ var lastId = 0;
 
 },{}]},{},[247])
 
-//# sourceMappingURL=home-nav.js.map
+//# sourceMappingURL=home-links-a.js.map

@@ -7,6 +7,7 @@ import { Link, DirectLink, Element, Events, animateScroll, scrollSpy} from "reac
 
 import SearchBar from './SearchBar';
 import Dropdown from './form/Dropdown';
+import HomeLinksPagination from './HomeLinksPagination';
 
 import linksData from '../data/home-links-page'
 
@@ -22,7 +23,6 @@ export default class HomeLinksPage extends Component {
 			buckets: {
 				recommended: [
 					"My Favorites",
-					"Applications",
 					"Benefits & Compensation",
 					"Business Intelligence",
 					"Collaboration Spaces",
@@ -33,7 +33,8 @@ export default class HomeLinksPage extends Component {
 					"Performance & Recognition",
 					"Services & Discounts",
 					"Technology",
-					"Time, Travel &  Expenses",
+					"Time, Travel & Expenses",
+					"Online Tools & Applications",
 				],
 				myrecents: [
 					"Today",
@@ -45,16 +46,16 @@ export default class HomeLinksPage extends Component {
 				mostpopular: [
 					"Benefits & Compensation",
 					"Business Intelligence",
-					"Applications",
-					"Technology",
 					"Collaboration Spaces",
-					"Legal, Quality & Compliance",
-					"Performance & Recognition",
 					"Finance & Procurement",
+					"Legal, Quality & Compliance",
 					"New Hire & Job Changes",
-					"Time, Travel &  Expenses",
-					"Services & Discounts",
 					"On-Site Services",
+					"Performance & Recognition",
+					"Services & Discounts",
+					"Technology",
+					"Time, Travel & Expenses",
+					"Online Tools & Applications",
 				],
 				alphabetical: [
 					"A",
@@ -154,9 +155,9 @@ export default class HomeLinksPage extends Component {
 		document.getElementsByClassName('home-links-page__links-container')[0].childNodes[0].scrollTo(0,1)
 	}
 
-	createCards = (links) => (
-		links.map((link, index) =>
-			<a href={(link.href) ? link.href : '#'} target="_blank" className="card" key={index}>
+	createCards = (links, willPaginate) => {
+		const cards = [links.map((link, i) =>
+			<a href={(link.href) ? link.href : '#'} target="_blank" className="card" key={i} style={i >= 9 && willPaginate ? {'display' : 'none'} : null}>
 				<h5>
 					<div className="circles"></div>
 					<i 
@@ -170,8 +171,9 @@ export default class HomeLinksPage extends Component {
 				</h5>
 				<p>{link.description ? link.description : 'No description available.'}</p>
 			</a>
-		)
-	)
+		), (links.length >= 9 && willPaginate ? <HomeLinksPagination links={links.splice(-1,10)}/> : null)]
+		return cards
+	}
 
 	createScrollLinks = () => (
 		<ul>
@@ -210,7 +212,7 @@ export default class HomeLinksPage extends Component {
 
 
 	render() {
-		const { scroll } = this.props;
+		const { hideSearch, dropdownLabel } = this.props;
 
 		const classnames = classNames({
 			"home-links-page": true,
@@ -242,7 +244,7 @@ export default class HomeLinksPage extends Component {
 			<div className={classnames}>
 				<div className="home-links-page__sidebar">
 					<h4>Links</h4>
-					<Dropdown label="Sort by" options={[
+					<Dropdown label={dropdownLabel || 'Sort By'} options={[
 						{ label: 'Recommended', click: () => this.changeBucket('recommended')},
 						{ label: 'My Recents', click: () => this.changeBucket('myrecents')},
 						{ label: 'Alphabetical', click: () => this.changeBucket('alphabetical')},
@@ -252,14 +254,16 @@ export default class HomeLinksPage extends Component {
 				</div>
 				<div className="home-links-page__links-container">
 					<div id="scroll-container">
-						<div className="search-row">
-							<div className="search-bar">
-								<input type="text" value={this.state.searchValue ? this.state.searchValue : ""} className="react-autosuggest__input" placeholder="Search for a link" onChange={this.onChangeSearch}/>
-								<i className="iconcss icon-search-2"></i>
-								<i onClick={this.clearSearch} className="iconcss icon-close-sm" style={(this.state.searchValue) ? null : {'display': 'none'}}></i>
-							</div>
-							{/*<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>*/}
-						</div>
+						{/*<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>*/}
+						{
+							(hideSearch) ? null : (<div className="search-row">
+								<div className="search-bar">
+									<input type="text" value={this.state.searchValue ? this.state.searchValue : ""} className="react-autosuggest__input" placeholder="Search for a link" onChange={this.onChangeSearch}/>
+									<i className="iconcss icon-search-2"></i>
+									<i onClick={this.clearSearch} className="iconcss icon-close-sm" style={(this.state.searchValue) ? null : {'display': 'none'}}></i>
+								</div>
+							</div>)
+						}
 						{
 							(this.state.searchValue) ? (
 								<div className="scroll-section">
@@ -280,19 +284,19 @@ export default class HomeLinksPage extends Component {
 									})}>
 									<h4>{bucket}</h4>
 										{ 
-											(bucket == 'My Favorites') ? this.createCards(favoritedLinks) : null
+											(bucket == 'My Favorites') ? this.createCards(favoritedLinks, false) : null
 										}
 										{ 
-											(this.state.selectedBucket == 'recommended' && bucket != 'My Favorites') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket))) : null
+											(this.state.selectedBucket == 'recommended' && bucket != 'My Favorites') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket)), true) : null
 										}
 										{
-											(this.state.selectedBucket == 'alphabetical') ? this.createCards(this.state.linksData.filter((link) => link.id.startsWith(bucket))) : null
+											(this.state.selectedBucket == 'alphabetical') ? this.createCards(this.state.linksData.filter((link) => link.id.startsWith(bucket)), true) : null
 										}
 										{
-											(this.state.selectedBucket == 'myrecents') ? this.createCards(this.state.linksData.filter((link) => this.state.calendar[bucket].contains(this.moment().add(-1 * link.daysSinceClick, 'days')))) : null
+											(this.state.selectedBucket == 'myrecents') ? this.createCards(this.state.linksData.filter((link) => this.state.calendar[bucket].contains(this.moment().add(-1 * link.daysSinceClick, 'days'))), true) : null
 										}
 										{
-											(this.state.selectedBucket == 'mostpopular') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket)).sort((a, b) => (b.popularity - a.popularity))) : null
+											(this.state.selectedBucket == 'mostpopular') ? this.createCards(this.state.linksData.filter((link) => link.buckets.includes(bucket)).sort((a, b) => (b.popularity - a.popularity)), true) : null
 										}
 									<hr/>
 								</Element>

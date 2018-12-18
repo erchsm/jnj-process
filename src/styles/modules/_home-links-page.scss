@@ -22,13 +22,13 @@ $baseclass: 'home-links-page';
 		transform: scale3d(0, 0, 0);
 	}
 	44% {
-		transform: scale3d(1.24, 1.24, 1.24);
+		transform: scale3d(1.25, 1.25, 1.25);
 	}
 	62% {
 		transform: scale3d(1, 1, 1);
 	}
 	81% {
-		transform: scale3d(1.12, 1.12, 1.12);
+		transform: scale3d(1.10, 1.10, 1.10);
 	}
 	100% {
 		transform: scale3d(1, 1, 1);
@@ -58,7 +58,7 @@ $baseclass: 'home-links-page';
 			font-size: 18px;
 			color: $brand-black;
 			border-color: $brand-grey-darkest;
-		    padding: 9px 32px 9px 40px;
+			padding: 9px 32px 9px 40px;
 		}
 		.icon-search-2 {
 			right: auto;
@@ -73,7 +73,7 @@ $baseclass: 'home-links-page';
 			cursor: pointer;
 		}
 		.search-bar {
-		    width: 32%;
+			width: 32%;
 			margin: 24px 0 0 0;
 			margin-left: 2%;
 			opacity: 1;
@@ -89,7 +89,7 @@ $baseclass: 'home-links-page';
 				top: 42px;
 				width: 100%;
 				max-height: 424px;
-			    overflow-y: scroll;
+				overflow-y: scroll;
 				box-shadow: 0px 2px 12px rgba($brand-black, .12);
 				border-radius: 0;
 			}
@@ -148,6 +148,7 @@ $baseclass: 'home-links-page';
 				height: 4px;
 				background: $brand-red;
 				transition: transform 0.6s 0.2s $easing2;
+				transform-origin: left;
 				transform: scaleX(0);
 			}
 		}
@@ -191,6 +192,25 @@ $baseclass: 'home-links-page';
 				margin: 24px 0 12px;
 				background: $brand-grey-light;
 			}
+
+			.#{$baseclass}__pagination {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: left;
+
+				a {
+					width: 32%;
+				}
+
+				.mdc-button {
+					margin: 0 auto;
+				}
+				hr {
+					margin: 6px 0 24px;
+				}			
+			}
+
 
 			.card {
 				margin-bottom: 2%;
@@ -249,10 +269,10 @@ $baseclass: 'home-links-page';
 
 				&.starAnimation {
 					.icon-star-fill {
-						animation: star 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+						animation: star 0.9s ease-in;
 					}
 					.circles {
-						animation: circles 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+						animation: circles 0.9s ease-in;
 					}
 				}
 			}
@@ -261,14 +281,20 @@ $baseclass: 'home-links-page';
 
 	&--alphabetical {
 		.#{$baseclass}__sidebar {
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				width: 120px;
+			}
 			li {
-				line-height: 1;
-				margin-bottom: 2px;
+				// line-height: 1;
+				// margin-bottom: 2px;
 				text-align: center;
 				width: 14px;
+				margin-right: 24px;
 			}
 			.line {
-				height: 3px;
+				// height: 3px;
 			}
 		}
 	}
