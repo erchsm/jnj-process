@@ -14560,6 +14560,10 @@ body {
           line-height: 1.2;
           margin-bottom: 18px; }
         .home-links-page__links-container .scroll-section .card p {
+          -webkit-user-select: all;
+          -moz-user-select: all;
+          -ms-user-select: all;
+          user-select: all;
           line-height: 1.3;
           color: #63666A; }
         .home-links-page__links-container .scroll-section .card .circles {

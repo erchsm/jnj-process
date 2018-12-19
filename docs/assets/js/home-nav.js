@@ -35083,24 +35083,26 @@ module.exports={
 			"href": "//jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Pages/NewHome.aspx",
 			"popularity": 86,
 			"favorited": false,
-			"description": "",
+			"description": "Hub for Global Health Services at J&J.",
 			"buckets": ["Benefits & Compensation"],
 			"daysSinceClick": 23,
 		},
 		{ 
 			"id": "Your Benefits Resources",
+			"href": "http://resources.hewitt.com/jnjbsc/",
 			"popularity": 100,
 			"favorited": false,
+			"description": "Information of your benefits.",
 			"buckets": ["Benefits & Compensation"],
 			"daysSinceClick": 13,
 		},
-		{ 
+		/*{ 
 			"id": "Your Equity Awards",
 			"popularity": 56,
 			"favorited": false,
 			"buckets": ["Benefits & Compensation"],
 			"daysSinceClick": 4,
-		},
+		},*/
 		{ 
 			"id": "Exercise Reimbursement",
 			"href": "https://fitbucksrewards.com/johnsonandjohnson",
@@ -35138,6 +35140,15 @@ module.exports={
 			"buckets": ["Business Intelligence"],
 			"daysSinceClick": 40,
 		},
+		// {
+		// 	"id": "AskGS Salesforce",
+		// 	"href": "//jnjgsportal.com/",
+		// 	"popularity": "40",
+		// 	"favorited": false,
+		// 	"description": "The web portal for global services.",
+		// 	"buckets": ["Business Intelligence"],
+		// 	"daysSinceClick": 40,
+		// },
 		{ 
 			"id": "Regulatory Intel Portal",
 			"popularity": 10,
@@ -35253,6 +35264,16 @@ module.exports={
 			"buckets": ["Legal, Quality & Compliance", "Online Tools & Applications"],
 			"daysSinceClick": 55,
 		},
+		{ 
+			"id": "Maximo",
+			"href": "//ecmms.jnj.com/maximo/webclient/login/login.jsp?appservauth=true",
+			"popularity": 2,
+			"favorited": false,
+			"description": "IBM Maximo is an enterprise asset management tool.",
+			"buckets": ["Online Tools & Applications"],
+			"daysSinceClick": 55,
+		},
+
 		//
 		// Computing & Technology
 		//
@@ -35314,6 +35335,24 @@ module.exports={
 		//
 		// Collaboration Spaces
 		//
+		{ 
+			"id": "Common Document Repository",
+			"href": "//cdr.jnj.com/CDR/LoginManager.jsp",
+			"popularity": 9,
+			"favorited": false,
+			"description": "An archive of employee data and documents.",
+			"buckets": ["Collaboration Spaces", "Online Tools & Applications"],
+			"daysSinceClick": 81,
+		},
+		{ 
+			"id": "Citrix XenApp",
+			"href": "//citrix.na.jnj.com/Citrix/XenApp/auth/login.aspx",
+			"popularity": 9,
+			"favorited": false,
+			"description": "A virtual meeting tool for meetings over 20 attendees.",
+			"buckets": ["Collaboration Spaces", "Online Tools & Applications"],
+			"daysSinceClick": 81,
+		},
 		{ 
 			"id": "MR55",
 			"popularity": 9,
