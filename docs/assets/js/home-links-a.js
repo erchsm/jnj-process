@@ -35060,17 +35060,17 @@ module.exports={
 			"href": "//jjmystore.com",
 			"popularity": 98,
 			"favorited": false,
-			"desciption": "J&J Mystore, the company store.",
+			"description": "The J&J company store. Find significant savings off retail prices.",
 			"buckets": ["Benefits & Compensation"],
 			"daysSinceClick": 92,
 		},
-		{ 
-			"id": "Global HR Portal",
-			"popularity": 79,
-			"favorited": false,
-			"buckets": ["Benefits & Compensation"],
-			"daysSinceClick": 10,
-		},
+		// { 
+		// 	"id": "Global HR Portal",
+		// 	"popularity": 79,
+		// 	"favorited": false,
+		// 	"buckets": ["Benefits & Compensation"],
+		// 	"daysSinceClick": 10,
+		// },
 		{ 
 			"id": "Healthy & Me™",
 			"popularity": 33,
@@ -35352,9 +35352,10 @@ module.exports={
 		},
 		{ 
 			"id": "Elims",
+			"href": "//elims.jnj.com/elims/logon.jsp",
 			"popularity": 50,
 			"favorited": false,
-			"buckets": ["Legal, Quality & Compliance"],
+			"buckets": ["Legal, Quality & Compliance", "Business Intelligence", "Online Tools & Applications"],
 			"daysSinceClick": 100,
 		},
 		{ 
