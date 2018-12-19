@@ -27,6 +27,8 @@ export default class HomeLinksPagination extends Component {
 		const classnames = classNames({
 			"home-links-page__pagination": true,
 		});
+
+		console.log(links);
 		
 		return (
 			<div className={classnames}>
@@ -37,7 +39,7 @@ export default class HomeLinksPagination extends Component {
 						[
 							<hr/>,
 							links.map((link, i) =>
-								<a href={(link.href) ? link.href : '#'} target="_blank" className="card" key={i}>
+								<a key={i} href={(link.href) ? link.href : '#'} target="_blank" className="card"key={i} >
 									<h5>
 										<div className="circles"></div>
 										<i onClick={(e) => clickStar(link, e)} className={classNames({ 
