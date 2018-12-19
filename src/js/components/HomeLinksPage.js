@@ -171,7 +171,7 @@ export default class HomeLinksPage extends Component {
 				</h5>
 				<p>{link.description ? link.description : 'No description available.'}</p>
 			</a>
-		), (links.length >= 9 && willPaginate ? <HomeLinksPagination links={links.splice(-1,10)}/> : null)]
+		), (links.length >= 9 && willPaginate ? <HomeLinksPagination links={links.slice(9,1000)} clickStar={this.toggleFavorite}/> : null)]
 		return cards
 	}
 
@@ -269,7 +269,7 @@ export default class HomeLinksPage extends Component {
 								<div className="scroll-section">
 									<h4>Search Results for “{this.state.searchValue}”</h4>
 									{
-										this.createCards(this.state.linksData.filter((link) => link.id.includes(this.state.searchValue)))
+										this.createCards(this.state.linksData.filter((link) => link.id.toLowerCase().includes(this.state.searchValue.toLowerCase())))
 									}
 									<hr/>
 								</div>

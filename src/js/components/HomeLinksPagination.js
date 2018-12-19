@@ -22,7 +22,7 @@ export default class HomeLinksPagination extends Component {
 
 
 	render() {
-		const { links } = this.props;
+		const { links, clickStar } = this.props;
 
 		const classnames = classNames({
 			"home-links-page__pagination": true,
@@ -40,7 +40,7 @@ export default class HomeLinksPagination extends Component {
 								<a href={(link.href) ? link.href : '#'} target="_blank" className="card" key={i}>
 									<h5>
 										<div className="circles"></div>
-										<i className={classNames({ 
+										<i onClick={(e) => clickStar(link, e)} className={classNames({ 
 											'iconcss icon-star-outline': !link.favorited, 
 											'iconcss icon-star-fill': link.favorited,
 										})}>

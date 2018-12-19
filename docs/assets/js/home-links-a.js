@@ -33684,7 +33684,7 @@ var HomeLinksPage = function (_Component) {
 						link.description ? link.description : 'No description available.'
 					)
 				);
-			}), links.length >= 9 && willPaginate ? _react2.default.createElement(_HomeLinksPagination2.default, { links: links.splice(-1, 10) }) : null];
+			}), links.length >= 9 && willPaginate ? _react2.default.createElement(_HomeLinksPagination2.default, { links: links.slice(9, 1000), clickStar: _this.toggleFavorite }) : null];
 			return cards;
 		};
 
@@ -33858,7 +33858,7 @@ var HomeLinksPage = function (_Component) {
 								'\u201D'
 							),
 							this.createCards(this.state.linksData.filter(function (link) {
-								return link.id.includes(_this2.state.searchValue);
+								return link.id.toLowerCase().includes(_this2.state.searchValue.toLowerCase());
 							})),
 							_react2.default.createElement('hr', null)
 						) : this.state.buckets[this.state.selectedBucket].map(function (bucket, index) {
@@ -33954,7 +33954,9 @@ var HomeLinksPagination = function (_Component) {
 	_createClass(HomeLinksPagination, [{
 		key: 'render',
 		value: function render() {
-			var links = this.props.links;
+			var _props = this.props,
+			    links = _props.links,
+			    clickStar = _props.clickStar;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -33976,7 +33978,9 @@ var HomeLinksPagination = function (_Component) {
 							'h5',
 							null,
 							_react2.default.createElement('div', { className: 'circles' }),
-							_react2.default.createElement('i', { className: (0, _classnames2.default)({
+							_react2.default.createElement('i', { onClick: function onClick(e) {
+									return clickStar(link, e);
+								}, className: (0, _classnames2.default)({
 									'iconcss icon-star-outline': !link.favorited,
 									'iconcss icon-star-fill': link.favorited
 								}) }),
@@ -35102,7 +35106,7 @@ module.exports={
 			"daysSinceClick": 22,
 		},
 		{ 
-			"id": "For Your Benefit Website",
+			"id": "For Your Benefit",
 			"popularity": 5,
 			"favorited": true,
 			"buckets": ["Benefits & Compensation"],
@@ -35112,7 +35116,9 @@ module.exports={
 			"id": "HR Policies",
 			"popularity": 77,
 			"favorited": false,
-			"buckets": ["Benefits & Compensation"],
+			"href": "jnj.sharepoint.com/sites/hrportal/English/PolicyHarmonization/Pages/Policies.aspx",
+			"description": "Employee Involvement & Volunteering.",
+			"buckets": ["Benefits & Compensation", "Performance & Recognition"],
 			"daysSinceClick": 51,
 		},
 		//
@@ -35319,9 +35325,9 @@ module.exports={
 			"id": "ComplianceWire",
 			"popularity": 34,
 			"favorited": true,
+			"description": "Enterprise regulatory and compliance training tool.",
 			"buckets": ["Legal, Quality & Compliance", "Performance & Recognition"],
 			"daysSinceClick": 9,
-			"tags": [ "New York, NY", "Design", "Medical Devices - Ethicon" ],
 		},
 		{ 
 			"id": "EtQ Instinct",
@@ -35538,7 +35544,7 @@ module.exports={
 			"daysSinceClick": 85,
 		},
 		{ 
-			"id": "2118 Universal Calendar",
+			"id": "2018 Universal Calendar",
 			"popularity": 53,
 			"buckets": ["Time, Travel & Expenses"],
 			"daysSinceClick": 86,
@@ -35574,12 +35580,14 @@ module.exports={
 			"id": "Verizon",
 			"popularity": 41,
 			"buckets": ["Services & Discounts"],
+			"description": "Monthly discounts on qualifying plans.",
 			"daysSinceClick": 3,
 		},
 		{ 
 			"id": "Brooks Brothers",
 			"popularity": 16,
 			"buckets": ["Services & Discounts"],
+			"description": "Savings on full-priced merchandise at Brooks Brothers U.S. and Canadian stores.",
 			"daysSinceClick": 33,
 		},
 		{ 
@@ -35592,6 +35600,7 @@ module.exports={
 			"id": "New Vehicle Purchase Program",
 			"popularity": 78,
 			"buckets": ["Services & Discounts"],
+			"description": "Full-time and part-time domestic employees of J&J may purchase new vehicles at discounted rates",
 			"daysSinceClick": 36,
 		},
 		{ 
@@ -35684,7 +35693,7 @@ module.exports={
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/hrportal/English/EnglishVar/5conversations/Pages/compensation.aspx",
-			"id": "Compensation",
+			"id": "Compensation Tools",
 			"description": "Learn about employee compensation tools, programs and trainings.",
 			"buckets": ["Performance & Recognition", "Benefits & Compensation"],
 			"favorited": false,
@@ -35698,15 +35707,15 @@ module.exports={
 		}, 
 		{
 			"href": "https://jnj.sharepoint.com/sites/pulse/SiteCollectionDocuments/2018%20Corporate%20Payroll%20Calendar.pdf",
-			"id": "Payroll Calendar 2018",
-			"description": "Calendar of yearly holidays (including floating holidays), salary pay dates and closing dates.",
+			"id": "2018 Corporate Payroll Calendar",
+			"description": "Calendar of yearly holidays, salary pay dates and closing dates.",
 			"buckets": ["Benefits & Compensation"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/:b:/r/teams/home/Shared%20Documents/Attachments/2019%20Corporate%20Payroll%20Universal%20Calendar.pdf?csf=1&e=pfegrU",
-			"id": "Payroll Calendar 2019",
-			"description": "Calendar of yearly holidays (including floating holidays), salary pay dates and closing dates.",
+			"id": "2019 Corporate Payroll Calendar",
+			"description": "Calendar of yearly holidays, salary pay dates and closing dates.",
 			"buckets": ["Benefits & Compensation"],
 			"favorited": false,
 		},
@@ -35762,8 +35771,8 @@ module.exports={
 		{
 			"href": "http://leadershipnavigator.jnj.com",
 			"id": "Leadership Navigator Resource Center",
-			"description": "Tools & resources for people leaders at J&J that can be used in 5 minutes or less – available in 10 languages.",
-			"buckets": [],
+			"description": "Tools & resources for people leaders at J&J.",
+			"buckets": ["Performance & Recognition"],
 			"favorited": false,
 		},
 		{
@@ -35777,103 +35786,96 @@ module.exports={
 			"href": "http://www.oursource.biz",
 			"id": "OUR SOURCE®",
 			"description": "Access and manage pay and tax statements, time off, organizational details and more.",
-			"buckets": [],
+			"buckets": ["Benefits & Compensation", "Time, Travel & Expenses", "New Hire & Job Changes"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/globalsecurity/PhysicalSecurity/Pages/MassNotification.aspx",
 			"id": "Send Word Now",
-			"description": "The system is used for two types of messages: urgent communications and crisis communications.",
-			"buckets": [],
-			"favorited": false,
-		},
-		{
-			"href": "https://jnj.csod.com/",
-			"id": "SUMMIT",
-			"description": "Enterprise learning management system.",
-			"buckets": [],
+			"description": "The system is used for urgent and crisis communications.",
+			"buckets": ["On-Site Services", "Collaboration Spaces", "Tools & Applications"],
 			"favorited": false,
 		},
 		{
 			"href": "https://home.jnj.com/#talent-for-good",
 			"id": "Talent For Good",
-			"description": "We are building the healthiest communities by empowering our employees around the world to combine their resources and resolve to make a positive and dramatic impact.",
-			"buckets": [],
+			"description": "Empowering employees to combine their resources and resolve to make a positive and dramatic impact.",
+			"buckets": ["Performance & Recognition", "Benefits & Compensation"],
 			"favorited": false,
 		},
-		{
-			"href": "https://sso.connect.pingidentity.com/sso/sp/initsso?saasid=03a53588-2533-440e-aa87-b3bdc9dd34f2&idpid=ddcf5a6c-22bf-4c98-8dcc-e4dc42a7e897",
-			"id": "U.S. Matching Gifts Program",
-			"description": "Make donations, request a match, track your giving history and request that new organizations be included in the program.",
-			"buckets": [],
-			"favorited": false,
-		},
+		// {
+		// 	"href": "https://sso.connect.pingidentity.com/sso/sp/initsso?saasid=03a53588-2533-440e-aa87-b3bdc9dd34f2&idpid=ddcf5a6c-22bf-4c98-8dcc-e4dc42a7e897",
+		// 	"id": "U.S. Matching Gifts Program",
+		// 	"description": "Make donations, request a match, track your giving history.",
+		// 	"buckets": [],
+		// 	"favorited": false,
+		// },
 		{
 			"href": "https://jnj.volunteermatch.org/campaign/campaign_detail.jsp?id=1114240&view=all",
 			"id": "Volunteer Support Program",
 			"description": "Johnson & Johnson's Volunteer Match Site.",
-			"buckets": [],
+			"buckets": ["Performance & Recognition", "Benefits & Compensation"],
 			"favorited": false,
 		},
 		{
 			"href": "http://jjworkday.com",
 			"id": "Workday",
-			"description": "Global tool for workforce and succession planning, talent development, performance management & compensation.",
-			"buckets": [],
+			"description": "Tool for workforce and succession planning, talent development & performance management.",
+			"buckets": ["Performance & Recognition", "Benefits & Compensation"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/teams/GlobalCorporateAffairs/SitePages/Home.aspx",
 			"id": "Global Corporate Affairs Portal",
 			"description": "Global Corporate Affairs (GCA) function portal",
-			"buckets": [],
+			"buckets": ["Online Tools & Applications", "Benefits & Compensation"],
 			"favorited": false,
 		}, 
 		{
 			"href": "http://globalfinance.jnj.com",
 			"id": "Global Finance",
 			"description": "Global Finance function portal.",
-			"buckets": [],
+			"buckets": ["Business Intelligence"],
 			"favorited": false,
 		},
 		{
 			"href": "http://globalhealthservices.jnj.com",
 			"id": "Global Health Services",
-			"description": "Global Health Services Portal for Employees and Global Health Services Professionals",
-			"buckets": [],
+			"description": "Global Health Services Portal for employees and Global Health Services professionals.",
+			"buckets": ["Online Tools & Applications"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/hrportal/English/EnglishVar/Pages/default.aspx",
 			"id": "Global HR Portal",
 			"description": "Human Resources policies, procedures and information for employees and managers.",
-			"buckets": [],
+			"buckets": ["Benefits & Compensation", "New Hire & Job Changes", "Performance & Recognition"],
 			"favorited": false,
 		},
 		{
 			"href": "http://procurementportal.jnj.com/",
 			"id": "Global Procurement",
-			"description": "Global Procurement function portal.",
-			"buckets": [],
+			"description": "The global procurement functional portal.",
+			"buckets": ["Finance & Procurement"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/teams/GlobalServicesOrganization",
 			"id": "Global Services/ESP Portal",
 			"description": "Learn about Global Services, who we are and what we do for J&J.",
-			"buckets": [],
+			"buckets": ["New Hire & Job Changes"],
 			"favorited": false,
 		},
 		{
 			"href": "https://hire.jnj.com",
 			"id": "Hire.jnj.com",
-			"description": "Hiring Managers seeking to bring new employees to their teams in North America (US, Canada and Puerto Rico) should begin at Hire.jnj.com.",
+			"description": "For hiring managers seeking to bring new employees to their teams. For US, Canada and Puerto Rico.",
 			"buckets": [],
 			"favorited": false,
 		},
 		{
 			"href": "http://www.jnj.com/caring/citizenship-sustainability",
-			"id": "J&J Citizenship &amp; Sustainability",
+			"id": "J&J Citizenship & Sustainability",
 			"description": "Our approach and stories about Citizenship and Sustainability.",
 			"buckets": [],
 			"favorited": false,
@@ -35889,26 +35891,26 @@ module.exports={
 			"href": "https://jnj.sharepoint.com/sites/LawCenter/lawcenter/Documents/Abbreviated%20WW%20Online%20Policy%20FINAL.pdf",
 			"id": "J&J Worldwide Online Policy",
 			"description": "",
-			"buckets": [],
+			"buckets": ["New Hire & Job Changes"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/OneIT/departments/itfinance/",
 			"id": "JJT Finance",
-			"description": "Johnson and Johnson Technology - Finance",
+			"description": "Finance department page for Johnson & Johnson Technology",
 			"buckets": [],
 			"favorited": false,
 		},
 		{
 			"href": "http://jjco.jnj.com/",
-			"id": "Johnson &amp; Johnson Clinical Operations (JJCO)",
+			"id": "Johnson & Johnson Clinical Operations (JJCO)",
 			"description": "JJCO workstream information, training and resources for cross-sector employees.",
 			"buckets": [],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/JJROPortal/Pages/Home.aspx",
-			"id": "Johnson &amp; Johnson Regulatory Operations (JJRO)",
+			"id": "Johnson & Johnson Regulatory Operations (JJRO)",
 			"description": "JJRO workstream information, training and resources for cross-sector employees.",
 			"buckets": [],
 			"favorited": false,
@@ -35923,8 +35925,8 @@ module.exports={
 		{
 			"href": "https://move.jnj.com",
 			"id": "Move.jnj.com",
-			"description": "Focused on the development of future leaders, Talent Mobility provides consultation on mobility assignment structuring, co-creates mobility strategies that align closely to business and talent needs, offers employee transition support, and ensures enterprise compliance management.",
-			"buckets": [],
+			"description": "For the development of future leaders. Offers employee job transition support.",
+			"buckets": [ "Legal, Quality & Compliance", "New Hire & Job Changes"],
 			"favorited": false,
 		},
 		{
@@ -35937,35 +35939,35 @@ module.exports={
 		{
 			"href": "https://jnj.sharepoint.com/teams/Re-Ignite",
 			"id": "Re-Ignite Program",
-			"description": "Re-Ignite provides a short-term “returnship” that is a pathway and training program for people who have left the workforce for a variety of reasons to return to their professional careers. Designed specifically for those in technical roles, Re-Ignite involves onboarding and paid on-the-job learning opportunities with support from mentors, technical peers, and program alumni at J&J.",
-			"buckets": [],
+			"description": "Onboarding and paid on-the-job learning opportunities for technical roles.",
+			"buckets": ["New Hire & Job Changes"],
 			"favorited": false,
 		},
 		{
 			"href": "http://gap.jnj.com",
-			"id": "Worldwide Government Affairs &amp; Policy",
-			"description": "Serving the Enterprise by working with stakeholders in shaping healthcare systems and promoting innovation",
-			"buckets": [],
+			"id": "Worldwide Government Affairs & Policy",
+			"description": "Serving the enterprise by working with stakeholders in shaping healthcare systems and promoting innovation.",
+			"buckets": ["Legal, Quality & Compliance"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/jjhccp/Pages/default.aspx",
-			"id": "J&J HCC &amp; Privacy",
-			"description": "",
-			"buckets": [],
+			"id": "J&J HCC & Privacy",
+			"description": "Health care compliance and privacy portal.",
+			"buckets": ["Legal, Quality & Compliance"],
 			"favorited": false,
 		},
 		{
 			"href": "http://lawcenter.jnj.com",
 			"id": "J&J Law Center",
 			"description": "Global repository for access to legal resources and policies that impact your work",
-			"buckets": [],
+			"buckets": ["Legal, Quality & Compliance"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/iMedicalportal/Pages/Organization.aspx?pillar=JSA-Org-News",
 			"id": "Janssen Scientific Affairs",
-			"description": "Janssen Scientific Affairs mission is to create the pre-eminent model of scientific excellence in the promotion of public health",
+			"description": "Our mission is to create the model of scientific excellence in the promotion of public health",
 			"buckets": [],
 			"favorited": false,
 		},
@@ -35979,7 +35981,7 @@ module.exports={
 		{
 			"href": "https://jnj.sharepoint.com/sites/JJSC-GCSP/departments/WWETO/EFMCOE/Global_Metrics/Pages/FacilitiesHelpDeskNorthAmerica.aspx",
 			"id": "Facilities Help Desk - North America",
-			"description": "Provides links to common facility services across the North America region. Services such as: Facility maintenance requests, Cafeteria/Catering services, Print services, Mail, Shipping/Receiving services, Asset Redeployment, Lab Instruments, Hazardous Waste, Audio/Visual, Telephone/LAN, and Ergo Assessments.",
+			"description": "Provides links to common facility services across the North America region.",
 			"buckets": [],
 			"favorited": false,
 		},
@@ -36020,7 +36022,7 @@ module.exports={
 		},
 		{
 			"href": "https://jnj.sharepoint.com/:p:/r/teams/home/Shared%20Documents/Attachments/NYC%20Facilities%20Management%20Contact%20List.pptx?d=w2582bda33a5f4e5aa9d5648e38b937c5&amp;csf=1&amp;e=ECjMYD",
-			"id": "NYC Facilities Management, EH&S and Global Health &amp; Wellness Contact List",
+			"id": "NYC Support Services Contact List",
 			"description": "Provides names of the support services functions for the NYC site",
 			"buckets": [],
 			"favorited": false,
@@ -36049,7 +36051,7 @@ module.exports={
 		{
 			"href": "https://www.jnj.com/code-of-business-conduct",
 			"id": "Code of Business Conduct",
-			"description": "Our Johnson &amp; Johnson Code of Business Conduct ensures that we hold ourselves and how we do business to a high standard, allowing us to fulfill our obligations to the many stakeholders we serve.",
+			"description": "The code ensures that we hold ourselves and how we do business to a high standard.",
 			"buckets": [],
 			"favorited": false,
 		},
@@ -36112,7 +36114,7 @@ module.exports={
 		{
 			"href": "https://jnj.appiancloud.com/suite/tempo/",
 			"id": "Application Services Order Entry",
-			"description": "Order Entry for Application Services currently in AS Service Catalog",
+			"description": "Order Entry for Application Services currently in the service catalog.",
 			"buckets": [],
 			"favorited": false,
 		},
@@ -36139,15 +36141,15 @@ module.exports={
 		},
 		{
 			"href": "https://jnjgsportal--c.na24.visual.force.com/apex/KnowledgeProxyRead?articleType=Job_Aid&amp;urlName=eMarketplace-Links-Global-English",
-			"id": "eMarketplace (open in Chrome)",
-			"description": "",
-			"buckets": [],
+			"id": "e-Marketplace",
+			"description": "Ariba's fulfillment marketplace. Run in Chrome.",
+			"buckets": ["Finance & Procurement"],
 			"favorited": false,
 		},
 		{
 			"href": "https://jnj.webdamdb.com",
 			"id": "Enterprise Stock Photography",
-			"description": "Enterprise Stock Photography Library to be used only by Employees of J&J, Contractors and Agencies doing work on behalf of J&J.",
+			"description": "The stock photography library for use by employees, contractors and agencies doing work on behalf of J&J.",
 			"buckets": [],
 			"favorited": false,
 		},
@@ -36174,8 +36176,8 @@ module.exports={
 		},
 		{
 			"href": "https://jnj.sharepoint.com/sites/hrportal/English/EnglishVar/comms/2018/02_8532-jj-law-recognition-tool/index.aspx",
-			"id": "Johnson &amp; Johnson Diagnostic Tool for Recognition Submissions",
-			"description": "Diagnostic tool to help determine whether we engage in a recognition submission, including principles and requirements for engagement in these recognition submissions.",
+			"id": "J&J Diagnostic Tool for Recognition Submissions",
+			"description": "For determining whether to engage in a recognition submission.",
 			"buckets": [],
 			"favorited": false,
 		},
