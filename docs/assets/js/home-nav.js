@@ -35052,8 +35052,10 @@ module.exports={
 		//
 		{ 
 			"id": "MyStore",
+			"href": "//jjmystore.com",
 			"popularity": 98,
 			"favorited": false,
+			"desciption": "J&J Mystore, the company store.",
 			"buckets": ["Benefits & Compensation"],
 			"daysSinceClick": 92,
 		},
@@ -35062,7 +35064,7 @@ module.exports={
 			"popularity": 79,
 			"favorited": false,
 			"buckets": ["Benefits & Compensation"],
-			"daysSinceClick": 1,
+			"daysSinceClick": 10,
 		},
 		{ 
 			"id": "Healthy & Me™",
@@ -35163,7 +35165,7 @@ module.exports={
 			"favorited": true,
 			"description": "Create rich digital experiences with forms, workflows, and custom apps for every device.",
 			"buckets": ["Online Tools & Applications"],
-			"daysSinceClick": 4,
+			"daysSinceClick": 1,
 		},
 		{ 
 			"id": "Yammer",
@@ -35171,14 +35173,15 @@ module.exports={
 			"favorited": true,
 			"description": "Yammer is an enterprise social networking service used for private communication within organizations. ",
 			"buckets": ["Online Tools & Applications"],
-			"daysSinceClick": 96,
+			"daysSinceClick": 1,
 		},
 		{ 
 			"id": "Fieldglass",
+			"href": "https://fieldglass.net",
 			"popularity": 79,
 			"favorited": true,
-			"buckets": ["Online Tools & Applications"],
-			"daysSinceClick": 5,
+			"buckets": ["Online Tools & Applications", "Time, Travel & Expenses"],
+			"daysSinceClick": 1,
 		},
 		{ 
 			"id": "DocSpace System",
@@ -35242,9 +35245,11 @@ module.exports={
 		},
 		{ 
 			"id": "Outlook Web Access",
+			"href": "//outlook.office.com/owa/?realm=its.jnj.com",
 			"popularity": 24,
 			"favorited": false,
-			"buckets": ["Computing & Technology"],
+			"description": "A web client for Outlook.",
+			"buckets": ["Computing & Technology", "Collaboration Spaces"],
 			"daysSinceClick": 31,
 		},
 		{ 
@@ -35287,9 +35292,11 @@ module.exports={
 		},
 		{ 
 			"id": "Office 365 Home",
+			"href": "https://www.office.com/?auth=2&home=1",
 			"popularity": 17,
 			"favorited": true,
-			"buckets": ["Collaboration Spaces"],
+			"description": "Login to access Microsoft Office 365 applications in the cloud.",
+			"buckets": ["Collaboration Spaces", "Computing & Technology"],
 			"daysSinceClick": 57,
 		},
 		{ 
@@ -35378,7 +35385,7 @@ module.exports={
 			"popularity": 70,
 			"favorited": false,
 			"buckets": ["Legal, Quality & Compliance"],
-			"daysSinceClick": 1,
+			"daysSinceClick": 6,
 		},
 		{ 
 			"id": "EMA",
