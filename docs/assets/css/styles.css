@@ -14628,6 +14628,7 @@ body {
         .home-links-page .home-links-page__sidebar ul {
           display: none; }
         .home-links-page .home-links-page__sidebar .dropdown {
+          z-index: 10;
           -ms-flex-pack: end;
           justify-content: flex-end;
           margin-top: 0; }
@@ -14638,8 +14639,15 @@ body {
       .home-links-page .home-links-page__links-container {
         margin: 0;
         width: 100%; }
+        .home-links-page .home-links-page__links-container > div {
+          padding-right: 0; }
         .home-links-page .home-links-page__links-container .scroll-section:nth-child(2) {
           margin-top: 72px; }
+        .home-links-page .home-links-page__links-container .scroll-section > h1, .home-links-page .home-links-page__links-container .scroll-section > h2, .home-links-page .home-links-page__links-container .scroll-section > h3, .home-links-page .home-links-page__links-container .scroll-section > h4, .home-links-page .home-links-page__links-container .scroll-section > h5, .home-links-page .home-links-page__links-container .scroll-section > h6 {
+          font-size: 16px;
+          text-transform: uppercase; }
+        .home-links-page .home-links-page__links-container .scroll-section .mdc-button {
+          width: 100%; }
         .home-links-page .home-links-page__links-container .scroll-section .card, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card {
           width: 100%;
           margin-right: 0;
@@ -14648,7 +14656,7 @@ body {
             -ms-transform: translate(6px, 3px) scale(0.34);
             transform: translate(6px, 3px) scale(0.34); }
           .home-links-page .home-links-page__links-container .scroll-section .card .icon-star-outline, .home-links-page .home-links-page__links-container .scroll-section .card .icon-star-fill, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card .icon-star-outline, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card .icon-star-fill {
-            margin-top: -6px;
+            margin-top: -2px;
             font-size: 24px; } }
 
 @keyframes slideIn {
