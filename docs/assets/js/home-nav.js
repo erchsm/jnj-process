@@ -33828,20 +33828,20 @@ var HomeLinksPage = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					{ className: 'home-links-page__links-container' },
+					hideSearch ? null : _react2.default.createElement(
+						'div',
+						{ className: 'search-row' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'search-bar' },
+							_react2.default.createElement('input', { type: 'text', value: this.state.searchValue ? this.state.searchValue : "", className: 'react-autosuggest__input', placeholder: 'Search for a link', onChange: this.onChangeSearch }),
+							_react2.default.createElement('i', { className: 'iconcss icon-search-2' }),
+							_react2.default.createElement('i', { onClick: this.clearSearch, className: 'iconcss icon-close-sm', style: this.state.searchValue ? null : { 'display': 'none' } })
+						)
+					),
 					_react2.default.createElement(
 						'div',
 						{ id: 'scroll-container' },
-						hideSearch ? null : _react2.default.createElement(
-							'div',
-							{ className: 'search-row' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'search-bar' },
-								_react2.default.createElement('input', { type: 'text', value: this.state.searchValue ? this.state.searchValue : "", className: 'react-autosuggest__input', placeholder: 'Search for a link', onChange: this.onChangeSearch }),
-								_react2.default.createElement('i', { className: 'iconcss icon-search-2' }),
-								_react2.default.createElement('i', { onClick: this.clearSearch, className: 'iconcss icon-close-sm', style: this.state.searchValue ? null : { 'display': 'none' } })
-							)
-						),
 						this.state.searchValue ? _react2.default.createElement(
 							'div',
 							{ className: 'scroll-section' },

@@ -57,6 +57,8 @@ $baseclass: 'home-links-page';
 .search-row {
 	display: flex;
 	justify-content: flex-end;
+    height: 42px;
+    margin-top: 24px;
 
 	input {
 		font-size: 18px;
@@ -78,7 +80,7 @@ $baseclass: 'home-links-page';
 	}
 	.search-bar {
 		width: 32%;
-		margin: 24px 0 0 0;
+		margin: 0;
 		margin-left: 2%;
 		opacity: 1;
 	}
@@ -179,7 +181,7 @@ $baseclass: 'home-links-page';
 			flex-wrap: wrap;
 			overflow: hidden;
 
-			&:nth-child(2) {
+			&:nth-child(1) {
 				margin-top: 6px;
 			}
 
@@ -319,14 +321,15 @@ $baseclass: 'home-links-page';
 		flex-direction: column;
 
 		.search-row {
-			position: fixed;
+			margin-top: 18px;
+			/*position: fixed;
 			width: calc(100% - 24px);
-			top: 120px;
+			top: 120px;*/
 
 			.search-bar {
 				width: 100%;
 				margin-left: 0;
-				margin-top: 18px;
+				// margin-top: 18px;
 			}			
 		}
 		
@@ -355,18 +358,27 @@ $baseclass: 'home-links-page';
 
 		.#{$baseclass}__links-container {
 			margin: 0;
-			margin-top: 72px;
+			// margin-top: 72px;
 			width: 100%;
 
-			.scroll-section {
+			#scroll-container {
+			    margin-top: 24px;
+			}
 
-				> div {
-					// height: 100vh;
-				}
+			.scroll-section {
 				.card, .#{$baseclass}__pagination .card {
 					width: 100%;
 					margin-right: 0;
 					margin-bottom: 12px;
+
+					.circles {
+					    transform: translate(6px, 3px) scale(0.34);
+					}
+
+					.icon-star-outline, .icon-star-fill {
+						margin-top: -4px;
+						font-size: 24px;
+					}
 				}
 			}
 		}
