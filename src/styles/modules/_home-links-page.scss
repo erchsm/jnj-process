@@ -357,14 +357,14 @@ $baseclass: 'home-links-page';
 
 		.#{$baseclass}__links-container {
 			margin: 0;
-			margin-top: 72px;
 			width: 100%;
 
 			.scroll-section {
 
-				> div {
-					// height: 100vh;
+				&:nth-child(2) {
+					margin-top: 72px;
 				}
+
 				.card, .#{$baseclass}__pagination .card {
 					width: 100%;
 					margin-right: 0;

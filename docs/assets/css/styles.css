@@ -14636,8 +14636,9 @@ body {
             padding: 18px 12px; }
       .home-links-page .home-links-page__links-container {
         margin: 0;
-        margin-top: 72px;
         width: 100%; }
+        .home-links-page .home-links-page__links-container .scroll-section:nth-child(2) {
+          margin-top: 72px; }
         .home-links-page .home-links-page__links-container .scroll-section .card, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card {
           width: 100%;
           margin-right: 0;
