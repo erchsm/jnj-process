@@ -14601,6 +14601,45 @@ body {
     text-align: center;
     width: 14px;
     margin-right: 24px; }
+  @media screen and (max-width: 800px) {
+    .home-links-page {
+      padding: 0 12px;
+      height: auto;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .home-links-page .search-row {
+        position: fixed;
+        width: 100%;
+        top: 120px; }
+        .home-links-page .search-row .search-bar {
+          width: 100%;
+          margin-left: 0;
+          margin-top: 18px; }
+      .home-links-page .home-links-page__sidebar {
+        width: 100%;
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around; }
+        .home-links-page .home-links-page__sidebar ul {
+          display: none; }
+        .home-links-page .home-links-page__sidebar .dropdown {
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          margin-top: 0; }
+          .home-links-page .home-links-page__sidebar .dropdown__content {
+            width: 200px; }
+          .home-links-page .home-links-page__sidebar .dropdown__item {
+            padding: 18px 12px; }
+      .home-links-page .home-links-page__links-container {
+        margin: 0;
+        margin-top: 72px;
+        width: 100%; }
+        .home-links-page .home-links-page__links-container .scroll-section .card, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 12px; } }
 
 @keyframes slideIn {
   0% {
@@ -17130,8 +17169,8 @@ body {
   h3 {
     font-size: 32px; }
   h4 {
-    font-size: 12px; }
+    font-size: 28px; }
   p {
-    font-size: 17px; } }
+    font-size: 16px; } }
 
 /*# sourceMappingURL=styles.css.map */
