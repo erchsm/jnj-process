@@ -14486,18 +14486,23 @@ body {
         display: -ms-inline-flexbox;
         display: inline-flex;
         -ms-flex-direction: column;
-        flex-direction: column; }
-        .home-links-page__sidebar li a.active .line {
-          -ms-transform: scaleX(1);
-          transform: scaleX(1); }
-        .home-links-page__sidebar li a.active ~ .active .line {
-          -ms-transform: scaleX(0);
-          transform: scaleX(0); }
+        flex-direction: column;
+        transition: all 0.3s 0.2s cubic-bezier(0.19, 1, 0.22, 1); }
+        .home-links-page__sidebar li a.active {
+          font-weight: 500; }
+          .home-links-page__sidebar li a.active .line {
+            -ms-transform: scaleX(1);
+            transform: scaleX(1); }
+          .home-links-page__sidebar li a.active ~ .active {
+            font-weight: normal; }
+            .home-links-page__sidebar li a.active ~ .active .line {
+              -ms-transform: scaleX(0);
+              transform: scaleX(0); }
       .home-links-page__sidebar li .line {
         width: 100%;
         height: 4px;
         background: #CA001B;
-        transition: transform 0.6s 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: transform 0.3s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
         -ms-transform-origin: left;
         transform-origin: left;
         -ms-transform: scaleX(0);
