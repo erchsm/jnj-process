@@ -14432,9 +14432,7 @@ body {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: end;
-    justify-content: flex-end;
-    height: 42px;
-    margin-top: 24px; }
+    justify-content: flex-end; }
     .home-links-page .search-row input {
       font-size: 18px;
       color: #212121;
@@ -14452,7 +14450,7 @@ body {
       cursor: pointer; }
     .home-links-page .search-row .search-bar {
       width: 32%;
-      margin: 0;
+      margin: 24px 0 0 0;
       margin-left: 2%;
       opacity: 1; }
     .home-links-page .search-row .react-autosuggest__suggestions-container {
@@ -14520,7 +14518,7 @@ body {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       overflow: hidden; }
-      .home-links-page__links-container .scroll-section:nth-child(1) {
+      .home-links-page__links-container .scroll-section:nth-child(2) {
         margin-top: 6px; }
       .home-links-page__links-container .scroll-section.hidden {
         display: none; }
@@ -14610,13 +14608,15 @@ body {
       -ms-flex-direction: column;
       flex-direction: column; }
       .home-links-page .search-row {
-        margin-top: 18px;
-        /*position: fixed;
-			width: calc(100% - 24px);
-			top: 120px;*/ }
+        position: fixed;
+        width: calc(100% - 24px);
+        top: 120px;
+        z-index: 9999;
+        background: #F3F3F3; }
         .home-links-page .search-row .search-bar {
           width: 100%;
-          margin-left: 0; }
+          margin-left: 0;
+          margin-top: 18px; }
       .home-links-page .home-links-page__sidebar {
         width: 100%;
         position: relative;
@@ -14636,9 +14636,8 @@ body {
             padding: 18px 12px; }
       .home-links-page .home-links-page__links-container {
         margin: 0;
+        margin-top: 72px;
         width: 100%; }
-        .home-links-page .home-links-page__links-container #scroll-container {
-          margin-top: 24px; }
         .home-links-page .home-links-page__links-container .scroll-section .card, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card {
           width: 100%;
           margin-right: 0;
@@ -14647,7 +14646,7 @@ body {
             -ms-transform: translate(6px, 3px) scale(0.34);
             transform: translate(6px, 3px) scale(0.34); }
           .home-links-page .home-links-page__links-container .scroll-section .card .icon-star-outline, .home-links-page .home-links-page__links-container .scroll-section .card .icon-star-fill, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card .icon-star-outline, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card .icon-star-fill {
-            margin-top: -4px;
+            margin-top: -6px;
             font-size: 24px; } }
 
 @keyframes slideIn {

@@ -253,7 +253,9 @@ export default class HomeLinksPage extends Component {
 					{ this.createScrollLinks() }
 				</div>
 				<div className="home-links-page__links-container">
-										{
+					<div id="scroll-container">
+						{/*<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>*/}
+						{
 							(hideSearch) ? null : (<div className="search-row">
 								<div className="search-bar">
 									<input type="text" value={this.state.searchValue ? this.state.searchValue : ""} className="react-autosuggest__input" placeholder="Search for a link" onChange={this.onChangeSearch}/>
@@ -262,9 +264,6 @@ export default class HomeLinksPage extends Component {
 								</div>
 							</div>)
 						}
-
-					<div id="scroll-container">
-						{/*<SearchBar iconName="icon-search-2" placeholder="Search for a link" searchData={searchData}/>*/}
 						{
 							(this.state.searchValue) ? (
 								<div className="scroll-section">
