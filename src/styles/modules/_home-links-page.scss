@@ -341,6 +341,7 @@ $baseclass: 'home-links-page';
 			position: relative;
 			display: flex;
 			justify-content: space-around;
+		    background: #f3f3f3;
 
 			ul {
 				display: none;
@@ -377,6 +378,7 @@ $baseclass: 'home-links-page';
 				> h1, > h2, > h3, > h4, > h5, > h6 {
 					font-size: 16px;
 				    text-transform: uppercase;
+				    margin-bottom: 12px;
 				}
 
 				.mdc-button {
@@ -387,6 +389,12 @@ $baseclass: 'home-links-page';
 					width: 100%;
 					margin-right: 0;
 					margin-bottom: 12px;
+
+					h1, h2, h3, h4, h5, h6 {
+						span {
+							margin-top: 2px;							
+						}
+					}
 
 					.circles {
 					    transform: translate(6px, 3px) scale(0.34);

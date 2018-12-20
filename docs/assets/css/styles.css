@@ -14629,7 +14629,8 @@ body {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-pack: distribute;
-        justify-content: space-around; }
+        justify-content: space-around;
+        background: #f3f3f3; }
         .home-links-page .home-links-page__sidebar ul {
           display: none; }
         .home-links-page .home-links-page__sidebar .dropdown {
@@ -14650,13 +14651,16 @@ body {
           margin-top: 72px; }
         .home-links-page .home-links-page__links-container .scroll-section > h1, .home-links-page .home-links-page__links-container .scroll-section > h2, .home-links-page .home-links-page__links-container .scroll-section > h3, .home-links-page .home-links-page__links-container .scroll-section > h4, .home-links-page .home-links-page__links-container .scroll-section > h5, .home-links-page .home-links-page__links-container .scroll-section > h6 {
           font-size: 16px;
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          margin-bottom: 12px; }
         .home-links-page .home-links-page__links-container .scroll-section .mdc-button {
           width: 100%; }
         .home-links-page .home-links-page__links-container .scroll-section .card, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card {
           width: 100%;
           margin-right: 0;
           margin-bottom: 12px; }
+          .home-links-page .home-links-page__links-container .scroll-section .card h1 span, .home-links-page .home-links-page__links-container .scroll-section .card h2 span, .home-links-page .home-links-page__links-container .scroll-section .card h3 span, .home-links-page .home-links-page__links-container .scroll-section .card h4 span, .home-links-page .home-links-page__links-container .scroll-section .card h5 span, .home-links-page .home-links-page__links-container .scroll-section .card h6 span, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card h1 span, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card h2 span, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card h3 span, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card h4 span, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card h5 span, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card h6 span {
+            margin-top: 2px; }
           .home-links-page .home-links-page__links-container .scroll-section .card .circles, .home-links-page .home-links-page__links-container .scroll-section .home-links-page__pagination .card .circles {
             -ms-transform: translate(6px, 3px) scale(0.34);
             transform: translate(6px, 3px) scale(0.34); }

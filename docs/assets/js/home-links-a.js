@@ -33676,7 +33676,11 @@ var HomeLinksPage = function (_Component) {
 								'iconcss icon-star-outline': !link.favorited,
 								'iconcss icon-star-fill': link.favorited
 							}) }),
-						link.id
+						_react2.default.createElement(
+							'span',
+							null,
+							link.id
+						)
 					),
 					_react2.default.createElement(
 						'p',
@@ -33988,7 +33992,11 @@ var HomeLinksPagination = function (_Component) {
 									'iconcss icon-star-outline': !link.favorited,
 									'iconcss icon-star-fill': link.favorited
 								}) }),
-							link.id
+							_react2.default.createElement(
+								'span',
+								null,
+								link.id
+							)
 						),
 						_react2.default.createElement(
 							'p',

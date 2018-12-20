@@ -47,7 +47,7 @@ export default class HomeLinksPagination extends Component {
 											'iconcss icon-star-fill': link.favorited,
 										})}>
 										</i>
-										{link.id}
+										<span>{link.id}</span>
 									</h5>
 									<p>{link.description ? link.description : 'No description available.'}</p>
 								</a>
