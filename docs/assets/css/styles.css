@@ -14321,7 +14321,8 @@ h1.eyebrow, h2.eyebrow, h3.eyebrow, h4.eyebrow, h5.eyebrow, h6.eyebrow {
   box-sizing: border-box; }
 
 body {
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
 
 .logo {
   margin-left: 0;
@@ -16668,6 +16669,7 @@ body {
   border: 1px solid transparent;
   border-bottom: solid 1px white;
   width: 100%;
+  border-radius: 0px;
   outline: none; }
 
 .react-autosuggest__input--focused {
