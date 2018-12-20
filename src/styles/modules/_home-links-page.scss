@@ -320,8 +320,9 @@ $baseclass: 'home-links-page';
 
 		.search-row {
 			position: fixed;
-			width: 100%;
+			width: calc(100% - 24px);
 			top: 120px;
+
 			.search-bar {
 				width: 100%;
 				margin-left: 0;
