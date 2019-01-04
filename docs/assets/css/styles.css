@@ -14841,24 +14841,31 @@ body {
       width: 320px;
       right: 196px;
       top: 0;
-      border: solid 2px #F4F4F4; }
+      border: solid 2px #F4F4F4;
+      pointer-events: auto; }
     .home-nav__notifications h5 {
       padding-left: 24px;
-      line-height: 40px;
+      line-height: 48px;
       border-bottom: solid 2px #F4F4F4; }
   .home-nav__notifications__row {
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
     align-items: center;
     height: 60px;
     padding: 0 24px;
-    border-bottom: solid 2px #F4F4F4; }
+    border-bottom: solid 2px #F4F4F4;
+    cursor: pointer; }
     .home-nav__notifications__row p {
       color: #212121;
       margin-left: 24px;
+      padding-left: 18px;
+      border-left: solid 2px #D8D8D8;
       font-size: 18px; }
     .home-nav__notifications__row .indicator-value {
+      position: absolute;
+      top: 0;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-align: center;
@@ -14871,8 +14878,8 @@ body {
       color: white;
       width: 18px;
       height: 18px;
-      margin-left: -9px;
-      margin-top: -27px;
+      margin-left: 24px;
+      margin-top: 3px;
       border-radius: 50%; }
     .home-nav__notifications__row i {
       display: -ms-flexbox;

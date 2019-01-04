@@ -73,7 +73,7 @@ module.exports = {
             extensions: ['scss','sass','css']
         },
         ejs: {
-            src: 'templates/**/*',
+            src: 'templates',
             dest: '.',
             extensions: ['ejs']
         },   
