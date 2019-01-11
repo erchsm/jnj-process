@@ -25317,7 +25317,7 @@ var Home = function (_Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				"div",
-				{ className: "column is-three-quarters top" },
+				{ className: "column is-two-thirds top" },
 				_react2.default.createElement(
 					"h1",
 					{ className: "title is-1" },
@@ -25329,7 +25329,7 @@ var Home = function (_Component) {
 					_react2.default.createElement(
 						"h4",
 						{ className: "title is-4", style: { color: "#3273DC", lineHeight: "1.75em" } },
-						"This site is dedicated to documenting the process for developing J&J sites like Home and Medical Devices. If you have any questions, please don't hesitate to ",
+						"This site is dedicated to documenting the process for designing J&J sites like Home and Medical Devices. If you have any questions, please don't hesitate to ",
 						_react2.default.createElement(
 							"a",
 							{ href: "mailto:ericsmithux@gmail.com?Subject=Hello%20there", target: "_blank" },
@@ -25916,7 +25916,7 @@ var Orders = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "column is-three-quarters top" },
+                { className: "column is-two-thirds top" },
                 _react2.default.createElement(
                     "h1",
                     { className: "title is-1" },
@@ -26363,12 +26363,12 @@ var Prototypes = function (_Component) {
 							_react2.default.createElement(
 								"h3",
 								{ className: "title is-3 is-spaced" },
-								"Homepage Companies Picker"
+								"Company Picker"
 							),
 							_react2.default.createElement(
 								"p",
 								{ className: "subtitle is-5" },
-								"Module for browsing all Medical Device Companies on the homepage."
+								"Module for browsing all companies on the homepage."
 							),
 							_react2.default.createElement("br", null),
 							_react2.default.createElement(
@@ -26438,7 +26438,7 @@ var Transations = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "column is-three-quarters top" },
+                { className: "column is-two-thirds top" },
                 _react2.default.createElement(
                     "h1",
                     { className: "title is-1" },

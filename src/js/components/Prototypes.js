@@ -143,8 +143,8 @@ export default class Prototypes extends Component {
 					</a>
 					<a href="../prototypes/mdc-companies-picker.html" className="tile is-parent" target="_blank">
 						<div className="tile is-child card">
-							<h3 className="title is-3 is-spaced">Homepage Companies Picker</h3>
-							<p className="subtitle is-5">Module for browsing all Medical Device Companies on the homepage.</p>
+							<h3 className="title is-3 is-spaced">Company Picker</h3>
+							<p className="subtitle is-5">Module for browsing all companies on the homepage.</p>
 							<br />
 							<span className="tag-container">
 								<span className="tag">MDC</span>

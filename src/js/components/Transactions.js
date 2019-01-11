@@ -13,7 +13,7 @@ export default class Transations extends Component {
 
 	render() {
         return (
-                <div className="column is-three-quarters top">
+                <div className="column is-two-thirds top">
 
 
                     <h1 className="title is-1">Accessibility</h1>
