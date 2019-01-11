@@ -22,10 +22,9 @@ export default class DashboardRouter extends Component {
             <div>
                 <Redirect from="/" to="/home" />
                 <Route path="/home" component={Home} />
-                <Route path="/orders" component={Orders}/>
+                <Route path="/accessibility" component={Orders}/>
                 <Route path="/prototypes" component={Prototypes}/>
-                <Route path="/prototypes/mdc-nav" component={MdcNav}/>
-                <Route path="/transactions" component={Transactions}/>
+                <Route path="/animation" component={Transactions}/>
             </div>
         );
     }

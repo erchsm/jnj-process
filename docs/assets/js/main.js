@@ -25154,7 +25154,7 @@ var Dashboard = function (_Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.NavLink,
-                                    { to: '/transactions' },
+                                    { to: '/accessibility' },
                                     _react2.default.createElement(
                                         'svg',
                                         { className: 'svg-inline--fa fa-universal-access fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'universal-access', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
@@ -25182,7 +25182,7 @@ var Dashboard = function (_Component) {
                                 null,
                                 _react2.default.createElement(
                                     _reactRouterDom.NavLink,
-                                    { to: '/orders' },
+                                    { to: '/animation' },
                                     _react2.default.createElement(
                                         'svg',
                                         { className: 'svg-inline--fa fa-magic fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'magic', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
@@ -25269,10 +25269,9 @@ var DashboardRouter = function (_Component) {
                 null,
                 _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
                 _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/orders', component: _Orders2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/accessibility', component: _Orders2.default }),
                 _react2.default.createElement(_reactRouter.Route, { path: '/prototypes', component: _Prototypes2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/prototypes/mdc-nav', component: _MdcNav2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/transactions', component: _Transactions2.default })
+                _react2.default.createElement(_reactRouter.Route, { path: '/animation', component: _Transactions2.default })
             );
         }
     }]);

@@ -27,8 +27,6 @@ export default class HomeLinksPagination extends Component {
 		const classnames = classNames({
 			"home-links-page__pagination": true,
 		});
-
-		console.log(links);
 		
 		return (
 			<div className={classnames}>

@@ -33964,8 +33964,6 @@ var HomeLinksPagination = function (_Component) {
 				"home-links-page__pagination": true
 			});
 
-			console.log(links);
-
 			return _react2.default.createElement(
 				'div',
 				{ className: classnames },
