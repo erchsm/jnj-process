@@ -240,7 +240,6 @@ $baseclass: home-nav;
 			right: 196px;
 			top: 0;
 			border: solid 2px $brand-grey-lightest;
-		    pointer-events: auto;
 		}
 
 		h5 {
@@ -503,6 +502,10 @@ $baseclass: home-nav;
 		.#{$baseclass}__notifications {
 			background: rgba($brand-black, .40);
 			opacity: 1;
+
+			> div {
+			    pointer-events: auto;
+			}
 		}
 		.icon-bell {
 			color: $brand-red;

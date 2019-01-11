@@ -14847,8 +14847,7 @@ hr {
       width: 320px;
       right: 196px;
       top: 0;
-      border: solid 2px #F4F4F4;
-      pointer-events: auto; }
+      border: solid 2px #F4F4F4; }
     .home-nav__notifications h5 {
       padding-left: 24px;
       line-height: 48px;
@@ -15060,6 +15059,8 @@ hr {
   .home-nav--notificationsOpen .home-nav__notifications {
     background: rgba(33, 33, 33, 0.4);
     opacity: 1; }
+    .home-nav--notificationsOpen .home-nav__notifications > div {
+      pointer-events: auto; }
   .home-nav--notificationsOpen .icon-bell {
     color: #CA001B; }
   @media screen and (max-width: 800px) {
