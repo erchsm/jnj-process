@@ -1,5 +1,6 @@
-import React, {Component} from 'react';
-import classNames from "classnames";
+import React, {Component} from 'react'
+import classNames from "classnames"
+import splitLetter from "../services/splitLetter"
 
 
 export default class MdcLogo extends Component {
@@ -20,7 +21,7 @@ export default class MdcLogo extends Component {
 
 
 		const classnames = classNames({
-			"mdc-logo": true
+			"jnj-process-logo": true
 		})
 
 		
@@ -37,32 +38,9 @@ export default class MdcLogo extends Component {
 						</g>
 					</g>
 				</svg>*/}
-				{<h3>Hold For Logo</h3>}
+				<h4>J&J Process</h4>
 				<h5>
-					<span>M</span>
-					<span>e</span>
-					<span>d</span>
-					<span>i</span>
-					<span>c</span>
-					<span>a</span>
-					<span>l</span>
-					<span> </span>                        
-					<span>D</span>
-					<span>e</span>
-					<span>v</span>
-					<span>i</span>
-					<span>c</span>
-					<span>e</span>
-					<span> </span>                        
-					<span>C</span>
-					<span>o</span>
-					<span>m</span>
-					<span>p</span>
-					<span>a</span>
-					<span>n</span>
-					<span>i</span>
-					<span>e</span>
-					<span>s</span>
+					{splitLetter(`Medical Devices + Home`)}
 				</h5>
 			</div>
 		);

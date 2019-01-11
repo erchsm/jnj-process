@@ -4,6 +4,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Oleo+Script");
 @import url("https://fonts.googleapis.com/css?family=Great+Vibes");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -14322,7 +14323,8 @@ h1.eyebrow, h2.eyebrow, h3.eyebrow, h4.eyebrow, h5.eyebrow, h6.eyebrow {
 
 body {
   -webkit-overflow-scrolling: touch;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; }
 
 .logo {
   margin-left: 0;
@@ -14335,6 +14337,9 @@ body {
   .logo img {
     width: 100%;
     max-width: 208px; }
+
+hr {
+  background: #e1e6eb; }
 
 .mdc-nav__hovermain {
   z-index: 9999; }
@@ -15388,6 +15393,20 @@ body {
     -o-object-fit: cover;
     object-fit: cover; }
 
+.jnj-process-logo img {
+  width: 180px; }
+
+.jnj-process-logo h4 {
+  color: #CA001B;
+  white-space: nowrap;
+  margin: 0; }
+
+.jnj-process-logo h5 {
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 1.5em;
+  color: #888B8D; }
+
 .mdc-accordion__header, .mdc-accordion__content {
   padding-right: 12px; }
 
@@ -16196,7 +16215,7 @@ body {
     background: white;
     width: 100%;
     top: 94px;
-    height: 72vh;
+    height: 480px;
     width: 80vw;
     right: 0;
     position: absolute;

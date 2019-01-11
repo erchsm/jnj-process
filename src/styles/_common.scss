@@ -9,7 +9,7 @@ html {
 body {
 	-webkit-overflow-scrolling: touch;
 	overflow-x: hidden;
-	// -webkit-font-smoothing: subpixel-antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
 .logo {
@@ -26,4 +26,8 @@ body {
 		max-width: 208px;
 		// margin-bottom: 30px;
 	}
+}
+
+hr {
+	background: darken(#e7ebef, 2%);
 }
