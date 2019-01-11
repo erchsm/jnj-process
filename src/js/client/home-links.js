@@ -9,7 +9,7 @@ render(
 	<div className="test-page">
 		<HomeNav/>
 		<ScrollProvider>  
-			<HomeLinksPage dropdownLabel={'Sort By'} hideSearch={false}/>
+			<HomeLinksPage dropdownLabel={'Sort By'} hideSearch={true}/>
 		</ScrollProvider>
 	</div>,
 	document.getElementById('root')

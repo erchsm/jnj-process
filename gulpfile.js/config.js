@@ -42,8 +42,6 @@ module.exports = {
                 { input: 'home-sitemap.js', output: 'home-sitemap.js'},
                 { input: 'home-nav.js', output: 'home-nav.js'},
                 { input: 'home-links.js', output: 'home-links.js'},
-                { input: 'home-links-a.js', output: 'home-links-a.js'},
-                { input: 'home-links-b.js', output: 'home-links-b.js'},
             ],
             extensions: ['js']
         },

@@ -33559,7 +33559,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	_react2.default.createElement(
 		_reactSkroll.ScrollProvider,
 		null,
-		_react2.default.createElement(_HomeLinksPage2.default, { dropdownLabel: 'Sort By', hideSearch: false })
+		_react2.default.createElement(_HomeLinksPage2.default, { dropdownLabel: 'Sort By', hideSearch: true })
 	)
 ), document.getElementById('root'));
 
