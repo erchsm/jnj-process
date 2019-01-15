@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {Route, Redirect} from 'react-router';
-import Home from './Home';
-import Orders from './Orders';
-import Transactions from './Transactions'
+import {Route, Redirect} from 'react-router'
+import Home from './Home'
+import Accessibility from './Accessibility'
+import Animation from './Animation'
 import Prototypes from './Prototypes'
-import MdcNav from './MdcNav'
 
 
 export default class DashboardRouter extends Component {
@@ -22,9 +21,9 @@ export default class DashboardRouter extends Component {
             <div>
                 <Redirect from="/" to="/home" />
                 <Route path="/home" component={Home} />
-                <Route path="/accessibility" component={Orders}/>
+                <Route path="/accessibility" component={Accessibility}/>
                 <Route path="/prototypes" component={Prototypes}/>
-                <Route path="/animation" component={Transactions}/>
+                <Route path="/animation" component={Animation}/>
             </div>
         );
     }

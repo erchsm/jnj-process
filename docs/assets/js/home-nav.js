@@ -35850,7 +35850,7 @@ module.exports={
 		{
 			"href": "//jnj.sharepoint.com/sites/hrportal/English/GlobalHealthAndBenefits/Employee/Pages/HealthyMe.aspx",
 			"id": "Healthy & Me",
-			"favorited": true,
+			"favorited": false,
 			"description": "Mobile platform that conveniently connects you to your everyday health and well-being.",
 			"buckets": ["Benefits & Compensation", "Collaboration Spaces"],
 		},

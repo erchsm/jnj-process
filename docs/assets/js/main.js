@@ -25920,7 +25920,7 @@ var Orders = function (_Component) {
                 _react2.default.createElement(
                     "h1",
                     { className: "title is-1" },
-                    "Animation"
+                    "Accesibility"
                 ),
                 _react2.default.createElement(
                     "div",
@@ -26442,7 +26442,7 @@ var Transations = function (_Component) {
                 _react2.default.createElement(
                     "h1",
                     { className: "title is-1" },
-                    "Accessibility"
+                    "Animations"
                 ),
                 _react2.default.createElement(
                     "div",

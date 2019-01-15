@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import DashboardRouter from './DashboardRouter';
-import JnjProcessLogo from './JnjProcessLogo';
+import JnjProcessLogo from '../components/JnjProcessLogo';
 import {NavLink} from 'react-router-dom';
 
 
