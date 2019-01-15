@@ -33734,7 +33734,7 @@ var HomeLinksPage = function (_Component) {
 
 		_this.state = {
 			buckets: {
-				recommended: ["My Favorites", "Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Computing & Technology", "Time, Travel & Expenses", "Online Tools & Applications"],
+				recommended: ["My Favorites", "Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Computing & Technology", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Time, Travel & Expenses", "Online Tools & Applications"],
 				myrecents: ["Today", "This Week", "Last Week", "This Month", "This Year"],
 				mostpopular: ["Benefits & Compensation", "Business Intelligence", "Collaboration Spaces", "Finance & Procurement", "Legal, Quality & Compliance", "New Hire & Job Changes", "On-Site Services", "Performance & Recognition", "Services & Discounts", "Computing & Technology", "Time, Travel & Expenses", "Online Tools & Applications"],
 				alphabetical: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "#"]

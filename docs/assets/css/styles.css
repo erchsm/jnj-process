@@ -14529,8 +14529,6 @@ hr {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       overflow: hidden; }
-      .home-links-page__links-container .scroll-section:nth-child(2) {
-        margin-top: 6px; }
       .home-links-page__links-container .scroll-section.hidden {
         display: none; }
       .home-links-page__links-container .scroll-section > h1, .home-links-page__links-container .scroll-section > h2, .home-links-page__links-container .scroll-section > h3, .home-links-page__links-container .scroll-section > h4, .home-links-page__links-container .scroll-section > h5, .home-links-page__links-container .scroll-section > h6 {
