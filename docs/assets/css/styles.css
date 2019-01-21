@@ -14446,7 +14446,7 @@ hr {
       padding-right: 18px; } }
 
 .article__title {
-  margin: 0 0 5px;
+  margin: 0 0 12px;
   font-size: 20px;
   font-family: "Circular Std", sans-serif;
   font-weight: 900;
@@ -14461,7 +14461,7 @@ hr {
       padding-right: 0; } }
 
 .article__headline {
-  margin: 0 0 10px;
+  margin: 0 0 18px;
   font-size: 14px;
   display: block; }
 
@@ -14503,7 +14503,7 @@ hr {
       display: block;
       position: absolute;
       top: 0;
-      padding-top: 70px;
+      padding-top: 80px;
       float: initial;
       margin-left: -5vw; } }
   @media (min-width: 1600px) {
@@ -17685,8 +17685,8 @@ hr {
 
 .tags-collapsable__wrapper {
   background-color: #F9F9F9;
-  padding: 20px 25px;
-  margin: 20px 0; }
+  padding: 24px;
+  margin: 36px 0; }
   .tags-collapsable__wrapper .tag {
     font-size: 14px;
     border-radius: 0; }

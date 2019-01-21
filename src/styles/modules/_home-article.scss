@@ -21,7 +21,7 @@ $article-social-width: 70px;
 }
 
 .article__title {
-  margin: 0 0 5px;
+  margin: 0 0 12px;
   font-size: 20px;
   font-family: $font-primary;
   font-weight: 900;
@@ -37,7 +37,7 @@ $article-social-width: 70px;
 }
 
 .article__headline {
-  margin: 0 0 10px;
+  margin: 0 0 18px;
   font-size: 14px;
   display: block;
 }
@@ -85,7 +85,7 @@ $article-social-width: 70px;
     display: block;
     position: absolute;
     top: 0;
-    padding-top: 70px;
+    padding-top: 80px;
     float: initial;
     margin-left: -5vw;
   }

@@ -9,7 +9,7 @@ import { StickyContainer, Sticky } from 'react-sticky'
 
 render(
 	<div className="test-page">
-		<HomeNav sticky/>
+		<HomeNav/>
 		<HomeArticle
 			body={articleData.body}
 			title={articleData.title}
