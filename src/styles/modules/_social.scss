@@ -2,10 +2,12 @@
   a {
     color: $brand-black;
     background-color: $brand-grey-lightest;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.3em;
     border-radius: 5rem;
-    font-size: 1.5rem;
-    display: inline-block;
+    font-size: 21px;
     width: 40px;
     height: 40px;
 

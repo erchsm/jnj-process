@@ -2,7 +2,9 @@
   background-color: $brand-white;
   padding: 20px 25px;
   margin: 20px 0;
+
   .tag {
+    font-size: 14px;
     border-radius: 0;
   }
 
@@ -14,7 +16,7 @@
 }
 
 .tags-collapsable__title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.25;
   color: $brand-red;

@@ -14,6 +14,10 @@ $article-social-width: 70px;
   @media (min-width: 1440px) {
     margin-left: calc(50% - 648px);
   }
+  @media (max-width: $bp-medium) {
+    padding-left: 12px;
+    padding-right: 18px;
+  }
 }
 
 .article__title {
