@@ -1,0 +1,134 @@
+.footer {
+  background-color: white;
+  width: 100%;
+  padding: 15px 0 50px;
+
+  @media (min-width: $bp-medium) {
+    border-top: 2px solid $brand-grey-light;
+    padding: 30px 0;
+  }
+  @media (min-width: $bp-desktop) {
+    padding: 10px 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media (min-width: $bp-small) {
+      padding: 0 30px;
+    }
+    @media (min-width: $bp-desktop) {
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (min-width: $bp-large) {
+      padding: 0 72px;
+    }
+  }
+}
+
+.footer__nav {
+  @media (min-width: $bp-medium) {
+    display: flex;
+    max-width: 760px;
+    flex: 1;
+  }
+}
+
+.footer__social-nav {
+  @media (min-width: $bp-medium) {
+    order: 2;
+    padding: 5px 20px;
+    border-left: 2px solid rgba($brand-black, .1);
+    border-right: 2px solid rgba($brand-black, .1);
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  a {
+    color: $brand-black;
+    background-color: $brand-grey-lightest;
+    padding: 0.3em;
+    border-radius: 5rem;
+    font-size: 1.5rem;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 1.3;
+
+    @media (min-width: $bp-medium) {
+      margin-right: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $brand-red;
+    }
+  }
+}
+
+.footer__menu {
+  padding: 40px 0 20px;
+
+  @media (min-width: $bp-medium) {
+    padding: 0 0 0 20px;
+    order: 3;
+    align-items: center;
+    display: flex;
+  }
+  a {
+    font-size: 14px;
+    color: $brand-black;
+    margin-right: 35px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.footer__logo {
+  font-size: 160px;
+  height: 54px;
+
+  color: $brand-red;
+  &:hover {
+    color: $brand-red;
+  }
+
+  @media (min-width: $bp-medium) {
+    padding: 0 20px 0 0;
+    order: 1;
+  }
+  @media (min-width: $bp-desktop) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.footer__register-mark {
+  color: $brand-black;
+  font-size: 14px;
+  margin: 20px 0;
+
+  @media (min-width: $bp-desktop) {
+    margin: 0;
+    align-items: center;
+    display: flex;
+  }
+  //@media (min-width: $bp-desktop) {
+  //  position: absolute;
+  //  right: 30px;
+  //  top: 0;
+  //  margin: 0;
+  //  padding-top: 13px;
+  //}
+}

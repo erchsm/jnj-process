@@ -24958,7 +24958,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
-var _App = require('../components/App');
+var _App = require('../components/routing/App');
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -24966,392 +24966,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
-},{"../components/App":231,"react":226,"react-dom":46}],231:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _AppRoute = require('./AppRoute');
-
-var _AppRoute2 = _interopRequireDefault(_AppRoute);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_Component) {
-	_inherits(App, _Component);
-
-	function App(props) {
-		_classCallCheck(this, App);
-
-		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-
-		_this.state = {};
-		return _this;
-	}
-
-	_createClass(App, [{
-		key: 'render',
-		value: function render() {
-			return _react2.default.createElement(_AppRoute2.default, null);
-		}
-	}]);
-
-	return App;
-}(_react.Component);
-
-exports.default = App;
-
-},{"./AppRoute":232,"react":226}],232:[function(require,module,exports){
-(function (process){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _createBrowserHistory = require('history/createBrowserHistory');
-
-var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
-
-var _createHashHistory = require('history/createHashHistory');
-
-var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
-
-var _Dashboard = require('./Dashboard');
-
-var _Dashboard2 = _interopRequireDefault(_Dashboard);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import Home from './Home';
-
-var AppRoute = function (_Component) {
-    _inherits(AppRoute, _Component);
-
-    function AppRoute(props) {
-        _classCallCheck(this, AppRoute);
-
-        return _possibleConstructorReturn(this, (AppRoute.__proto__ || Object.getPrototypeOf(AppRoute)).call(this, props));
-    }
-
-    _createClass(AppRoute, [{
-        key: 'render',
-        value: function render() {
-            var history = (0, _createBrowserHistory2.default)({ basename: process.env.PUBLIC_URL });
-            // const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
-
-            return _react2.default.createElement(
-                _reactRouter.Router,
-                { history: history },
-                _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Dashboard2.default })
-            );
-        }
-    }]);
-
-    return AppRoute;
-}(_react.Component);
-
-AppRoute.propTypes = {};
-exports.default = AppRoute;
-
-}).call(this,require('_process'))
-
-},{"./Dashboard":233,"_process":39,"history/createBrowserHistory":29,"history/createHashHistory":30,"react":226,"react-router":197}],233:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _DashboardRouter = require('./DashboardRouter');
-
-var _DashboardRouter2 = _interopRequireDefault(_DashboardRouter);
-
-var _JnjProcessLogo = require('./JnjProcessLogo');
-
-var _JnjProcessLogo2 = _interopRequireDefault(_JnjProcessLogo);
-
-var _reactRouterDom = require('react-router-dom');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Dashboard = function (_Component) {
-    _inherits(Dashboard, _Component);
-
-    function Dashboard(props) {
-        _classCallCheck(this, Dashboard);
-
-        return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).call(this, props));
-    }
-
-    _createClass(Dashboard, [{
-        key: 'render',
-        value: function render() {
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'columns', style: { margin: "0px" } },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'column is-one-fifth sidebar', style: { margin: '0px' } },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'title is-4 logo' },
-                        _react2.default.createElement(
-                            _reactRouterDom.NavLink,
-                            { to: '/home' },
-                            _react2.default.createElement(_JnjProcessLogo2.default, null)
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'aside',
-                        { className: 'menu' },
-                        _react2.default.createElement(
-                            'ul',
-                            { className: 'menu-list' },
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                _react2.default.createElement(
-                                    _reactRouterDom.NavLink,
-                                    { to: '/accessibility' },
-                                    _react2.default.createElement(
-                                        'svg',
-                                        { className: 'svg-inline--fa fa-universal-access fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'universal-access', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
-                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M256 48c114.953 0 208 93.029 208 208 0 114.953-93.029 208-208 208-114.953 0-208-93.029-208-208 0-114.953 93.029-208 208-208m0-40C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 56C149.961 64 64 149.961 64 256s85.961 192 192 192 192-85.961 192-192S362.039 64 256 64zm0 44c19.882 0 36 16.118 36 36s-16.118 36-36 36-36-16.118-36-36 16.118-36 36-36zm117.741 98.023c-28.712 6.779-55.511 12.748-82.14 15.807.851 101.023 12.306 123.052 25.037 155.621 3.617 9.26-.957 19.698-10.217 23.315-9.261 3.617-19.699-.957-23.316-10.217-8.705-22.308-17.086-40.636-22.261-78.549h-9.686c-5.167 37.851-13.534 56.208-22.262 78.549-3.615 9.255-14.05 13.836-23.315 10.217-9.26-3.617-13.834-14.056-10.217-23.315 12.713-32.541 24.185-54.541 25.037-155.621-26.629-3.058-53.428-9.027-82.141-15.807-8.6-2.031-13.926-10.648-11.895-19.249s10.647-13.926 19.249-11.895c96.686 22.829 124.283 22.783 220.775 0 8.599-2.03 17.218 3.294 19.249 11.895 2.029 8.601-3.297 17.219-11.897 19.249z' })
-                                    ),
-                                    '\xA0\xA0Accessibility'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                _react2.default.createElement(
-                                    _reactRouterDom.NavLink,
-                                    { to: '/prototypes' },
-                                    _react2.default.createElement(
-                                        'svg',
-                                        { className: 'svg-inline--fa fa-code fa-w-20', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'code', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 640 512', 'data-fa-i2svg': '' },
-                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z' })
-                                    ),
-                                    ' \xA0Prototypes'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                _react2.default.createElement(
-                                    _reactRouterDom.NavLink,
-                                    { to: '/animation' },
-                                    _react2.default.createElement(
-                                        'svg',
-                                        { className: 'svg-inline--fa fa-magic fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'magic', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
-                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M101.1 505L7 410.9c-9.4-9.4-9.4-24.6 0-33.9L377 7c9.4-9.4 24.6-9.4 33.9 0l94.1 94.1c9.4 9.4 9.4 24.6 0 33.9L135 505c-9.3 9.3-24.5 9.3-33.9 0zM304 159.2l48.8 48.8 89.9-89.9-48.8-48.8-89.9 89.9zM138.9 39.3l-11.7 23.8-26.2 3.8c-4.7.7-6.6 6.5-3.2 9.8l19 18.5-4.5 26.1c-.8 4.7 4.1 8.3 8.3 6.1L144 115l23.4 12.3c4.2 2.2 9.1-1.4 8.3-6.1l-4.5-26.1 19-18.5c3.4-3.3 1.5-9.1-3.2-9.8L160.8 63l-11.7-23.8c-2-4.1-8.1-4.1-10.2.1zm97.7-20.7l-7.8 15.8-17.5 2.6c-3.1.5-4.4 4.3-2.1 6.5l12.6 12.3-3 17.4c-.5 3.1 2.8 5.5 5.6 4L240 69l15.6 8.2c2.8 1.5 6.1-.9 5.6-4l-3-17.4 12.6-12.3c2.3-2.2 1-6.1-2.1-6.5l-17.5-2.5-7.8-15.8c-1.4-3-5.4-3-6.8-.1zm-192 0l-7.8 15.8L19.3 37c-3.1.5-4.4 4.3-2.1 6.5l12.6 12.3-3 17.4c-.5 3.1 2.8 5.5 5.6 4L48 69l15.6 8.2c2.8 1.5 6.1-.9 5.6-4l-3-17.4 12.6-12.3c2.3-2.2 1-6.1-2.1-6.5l-17.5-2.5-7.8-15.8c-1.4-3-5.4-3-6.8-.1zm416 223.5l-7.8 15.8-17.5 2.5c-3.1.5-4.4 4.3-2.1 6.5l12.6 12.3-3 17.4c-.5 3.1 2.8 5.5 5.6 4l15.6-8.2 15.6 8.2c2.8 1.5 6.1-.9 5.6-4l-3-17.4 12.6-12.3c2.3-2.2 1-6.1-2.1-6.5l-17.5-2.5-7.8-15.8c-1.4-2.8-5.4-2.8-6.8 0z' })
-                                    ),
-                                    ' \xA0\xA0Animation'
-                                )
-                            )
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    'section',
-                    null,
-                    _react2.default.createElement(_DashboardRouter2.default, null)
-                )
-            );
-        }
-    }]);
-
-    return Dashboard;
-}(_react.Component);
-
-Dashboard.propTypes = {};
-exports.default = Dashboard;
-
-},{"./DashboardRouter":234,"./JnjProcessLogo":236,"react":226,"react-router-dom":185}],234:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-var _Home = require('./Home');
-
-var _Home2 = _interopRequireDefault(_Home);
-
-var _Orders = require('./Orders');
-
-var _Orders2 = _interopRequireDefault(_Orders);
-
-var _Transactions = require('./Transactions');
-
-var _Transactions2 = _interopRequireDefault(_Transactions);
-
-var _Prototypes = require('./Prototypes');
-
-var _Prototypes2 = _interopRequireDefault(_Prototypes);
-
-var _MdcNav = require('./MdcNav');
-
-var _MdcNav2 = _interopRequireDefault(_MdcNav);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var DashboardRouter = function (_Component) {
-    _inherits(DashboardRouter, _Component);
-
-    function DashboardRouter(props) {
-        _classCallCheck(this, DashboardRouter);
-
-        return _possibleConstructorReturn(this, (DashboardRouter.__proto__ || Object.getPrototypeOf(DashboardRouter)).call(this, props));
-    }
-
-    _createClass(DashboardRouter, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/accessibility', component: _Orders2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/prototypes', component: _Prototypes2.default }),
-                _react2.default.createElement(_reactRouter.Route, { path: '/animation', component: _Transactions2.default })
-            );
-        }
-    }]);
-
-    return DashboardRouter;
-}(_react.Component);
-
-DashboardRouter.propTypes = {};
-exports.default = DashboardRouter;
-
-},{"./Home":235,"./MdcNav":238,"./Orders":239,"./Prototypes":240,"./Transactions":241,"react":226,"react-router":197}],235:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Home = function (_Component) {
-	_inherits(Home, _Component);
-
-	function Home(props) {
-		_classCallCheck(this, Home);
-
-		return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
-	}
-
-	_createClass(Home, [{
-		key: "render",
-		value: function render() {
-			return _react2.default.createElement(
-				"div",
-				{ className: "column is-two-thirds top" },
-				_react2.default.createElement(
-					"h1",
-					{ className: "title is-1" },
-					"Welcome \uD83D\uDC4B"
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "columns", style: { background: "white", padding: "50px" } },
-					_react2.default.createElement(
-						"h4",
-						{ className: "title is-4", style: { color: "#3273DC", lineHeight: "1.75em" } },
-						"This site is dedicated to documenting the process for designing J&J sites like Home and Medical Devices. If you have any questions, please don't hesitate to ",
-						_react2.default.createElement(
-							"a",
-							{ href: "mailto:ericsmithux@gmail.com?Subject=Hello%20there", target: "_blank" },
-							_react2.default.createElement(
-								"u",
-								null,
-								"reach out."
-							)
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return Home;
-}(_react.Component);
-
-Home.propTypes = {};
-exports.default = Home;
-
-},{"react":226}],236:[function(require,module,exports){
+},{"../components/routing/App":234,"react":226,"react-dom":46}],231:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25423,465 +25038,7 @@ var MdcLogo = function (_Component) {
 MdcLogo.propTypes = {};
 exports.default = MdcLogo;
 
-},{"../services/splitLetter":244,"classnames":1,"react":226}],237:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MdcLogo = function (_Component) {
-	_inherits(MdcLogo, _Component);
-
-	function MdcLogo(props) {
-		_classCallCheck(this, MdcLogo);
-
-		var _this = _possibleConstructorReturn(this, (MdcLogo.__proto__ || Object.getPrototypeOf(MdcLogo)).call(this, props));
-
-		_this.state = {};
-		return _this;
-	}
-
-	_createClass(MdcLogo, [{
-		key: "render",
-		value: function render() {
-
-			var classnames = (0, _classnames2.default)({
-				"mdc-logo": true
-			});
-
-			return _react2.default.createElement(
-				"div",
-				{ className: classnames },
-				_react2.default.createElement(
-					"h3",
-					null,
-					"Hold For Logo"
-				),
-				_react2.default.createElement(
-					"h5",
-					null,
-					_react2.default.createElement(
-						"span",
-						null,
-						"M"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"e"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"d"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"i"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"c"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"a"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"l"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						" "
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"D"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"e"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"v"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"i"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"c"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"e"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						" "
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"C"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"o"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"m"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"p"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"a"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"n"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"i"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"e"
-					),
-					_react2.default.createElement(
-						"span",
-						null,
-						"s"
-					)
-				)
-			);
-		}
-	}]);
-
-	return MdcLogo;
-}(_react.Component);
-
-MdcLogo.propTypes = {};
-exports.default = MdcLogo;
-
-},{"classnames":1,"react":226}],238:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classnames = require("classnames");
-
-var _classnames2 = _interopRequireDefault(_classnames);
-
-var _navItems = require("../data/nav-items");
-
-var _navItems2 = _interopRequireDefault(_navItems);
-
-var _specialtiesItems = require("../data/specialties-items");
-
-var _specialtiesItems2 = _interopRequireDefault(_specialtiesItems);
-
-var _MdcLogo = require("./MdcLogo");
-
-var _MdcLogo2 = _interopRequireDefault(_MdcLogo);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MdcNav = function (_Component) {
-	_inherits(MdcNav, _Component);
-
-	function MdcNav(props) {
-		_classCallCheck(this, MdcNav);
-
-		var _this = _possibleConstructorReturn(this, (MdcNav.__proto__ || Object.getPrototypeOf(MdcNav)).call(this, props));
-
-		_this.componentDidMount = function () {
-			document.addEventListener('scroll', _this.handleScroll);
-		};
-
-		_this.componentWillUnmount = function () {
-			document.removeEventListener('scroll', _this.handleScroll);
-		};
-
-		_this.handleScroll = function (event) {
-			var scrollTop = event.srcElement.body.scrollTop;
-
-			// this.setState({
-			//     isScrolledTop: scrollTop < 90
-			// });
-		};
-
-		_this.openTakeover = function (event) {
-			_this.setState({
-				takeoverOpen: true
-			});
-		};
-
-		_this.setIndexHovered = function (event) {
-			_this.setState({
-				indexHovered: _this.getChildIndex(event.target)
-			});
-		};
-
-		_this.closeTakeover = function (event) {
-			// setTimeout(() => {
-			_this.setState({
-				takeoverOpen: false
-			});
-			// }, 0);
-		};
-
-		_this.getChildIndex = function (elem) {
-			var i = 0;
-
-			while ((elem = elem.previousSibling) != null) {
-				i++;
-			}
-
-			return i;
-		};
-
-		_this.state = {
-			isScrolledTop: true,
-			takeoverOpen: false,
-			indexHovered: 0
-		};
-		return _this;
-	}
-
-	_createClass(MdcNav, [{
-		key: "render",
-		value: function render() {
-			var _this2 = this;
-
-			var _state = this.state,
-			    isScrolledTop = _state.isScrolledTop,
-			    takeoverOpen = _state.takeoverOpen,
-			    indexHovered = _state.indexHovered;
-
-
-			var classnames = (0, _classnames2.default)({
-				"mdc-nav": true,
-				"mdc-nav--takeover": takeoverOpen,
-				"mdc-nav--scrolled": !isScrolledTop
-			});
-
-			var navItems = _navItems2.default.data.map(function (item, i) {
-				return _react2.default.createElement(
-					"li",
-					{ key: i, onMouseOver: function onMouseOver(e) {
-							_this2.openTakeover(e);_this2.setIndexHovered(e);
-						}, onMouseOut: _this2.closeTakeover },
-					_react2.default.createElement(
-						"a",
-						null,
-						item.name
-					)
-				);
-			});
-
-			var specialtiesItems = _specialtiesItems2.default.data.map(function (item, i) {
-				return _react2.default.createElement(
-					"li",
-					{ key: i, className: i == 0 ? "overview-item" : "" },
-					item.name
-				);
-			});
-
-			var lineAnimation = {
-				transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)',
-				opacity: 1
-			};
-
-			return _react2.default.createElement(
-				"nav",
-				{ className: classnames },
-				_react2.default.createElement(
-					"div",
-					{ className: "mdc-nav__topbar" },
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__left" },
-						_react2.default.createElement(_MdcLogo2.default, null)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__center" },
-						_react2.default.createElement(
-							"ul",
-							null,
-							navItems
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__right" },
-						_react2.default.createElement("i", { className: "iconcss icon-search" }),
-						_react2.default.createElement("hr", null),
-						_react2.default.createElement(
-							"svg",
-							{ width: 33, height: 21 },
-							_react2.default.createElement(
-								"g",
-								{ fillRule: "nonzero", fill: "none" },
-								_react2.default.createElement("path", {
-									d: "M32.43 21H.57A.561.561 0 0 1 0 20.447V.553C0 .247.255 0 .569 0h31.862c.314 0 .569.247.569.553v19.894a.561.561 0 0 1-.57.553z",
-									fill: "#F5F5F5"
-								}),
-								_react2.default.createElement(
-									"g",
-									{ fill: "#FF4B55" },
-									_react2.default.createElement("path", { d: "M32.538 1.63H0V.57C0 .264.251.017.561.017h31.416c.31 0 .56.247.56.552V1.63zM0 6.468h32.538v1.613H0zM0 3.243h32.538v1.613H0zM32.538 11.306H.56A.556.556 0 0 1 0 10.755V9.694h32.538v1.612zM0 16.145h32.538v1.613H0zM31.977 20.983H.56A.556.556 0 0 1 0 20.43v-1.06h32.538v1.06a.556.556 0 0 1-.561.552zM0 12.919h32.538v1.613H0z" })
-								),
-								_react2.default.createElement("path", {
-									d: "M14.444 0H.556A.547.547 0 0 0 0 .538v9.924c0 .297.249.538.556.538h13.888c.307 0 .556-.24.556-.538V.538A.547.547 0 0 0 14.444 0z",
-									fill: "#41479B"
-								}),
-								_react2.default.createElement(
-									"g",
-									{ fill: "#F5F5F5" },
-									_react2.default.createElement("path", { d: "M1.54 1.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L1.5 1.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM1.54 3.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L1.5 3.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM1.54 5.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L1.5 5.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM1.54 7.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L1.5 7.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM1.54 9.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L1.5 9.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM3.54 2.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L3.5 2.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM3.54 4.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L3.5 4.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM3.54 6.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L3.5 6.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM3.54 8.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L3.5 8.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM4.54 1.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L4.5 1.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM4.54 3.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L4.5 3.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM4.54 5.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L4.5 5.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM4.54 7.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L4.5 7.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM4.54 9.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L4.5 9.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM6.54 2.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L6.5 2.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM6.54 4.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L6.5 4.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM6.54 6.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L6.5 6.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM6.54 8.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L6.5 8.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM7.54 1.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L7.5 1.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM7.54 3.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L7.5 3.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM7.54 5.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L7.5 5.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM7.54 7.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L7.5 7.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM7.54 9.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L7.5 9.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM9.54 2.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L9.5 2.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM9.54 4.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L9.5 4.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM9.54 6.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L9.5 6.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM9.54 8.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05L9.5 8.798l-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM10.54 1.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM10.54 3.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM10.54 5.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM10.54 7.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM10.54 9.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM12.54 2.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM12.54 4.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM12.54 6.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM12.54 8.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM13.54 1.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM13.54 3.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM13.54 5.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM13.54 7.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0zM13.54 9.03l.1.315.318.003c.04 0 .058.055.025.08l-.255.197.095.317c.013.04-.032.074-.065.05l-.258-.193-.258.192c-.033.025-.078-.008-.065-.05l.095-.316-.255-.197c-.033-.025-.016-.08.025-.08l.317-.003.1-.314a.042.042 0 0 1 .081 0z" })
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "mdc-nav__hoverbar" },
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__hoverlines" },
-						_react2.default.createElement("div", { style: takeoverOpen ? lineAnimation : null, className: "mdc-nav__hoverline" })
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "mdc-nav__hovermain", onMouseOver: this.openTakeover, onMouseOut: this.closeTakeover },
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__hovermainfeatured" },
-						_react2.default.createElement(
-							"h3",
-							null,
-							"Featured Content"
-						),
-						_react2.default.createElement(
-							"ul",
-							null,
-							_react2.default.createElement(
-								"li",
-								null,
-								"Laminoscopy"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Morter Breadfist"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Pentultimate Bigness"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Laminoscopy"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Morter Breadfist"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Pentultimate Bigness"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__hovermaincolumn" },
-						_react2.default.createElement(
-							"ul",
-							null,
-							specialtiesItems
-						)
-					)
-				)
-			);
-		}
-	}]);
-
-	return MdcNav;
-}(_react.Component);
-
-MdcNav.propTypes = {};
-exports.default = MdcNav;
-
-},{"../data/nav-items":242,"../data/specialties-items":243,"./MdcLogo":237,"classnames":1,"react":226}],239:[function(require,module,exports){
+},{"../services/splitLetter":246,"classnames":1,"react":226}],232:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25902,16 +25059,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Orders = function (_Component) {
-    _inherits(Orders, _Component);
+var Accessibility = function (_Component) {
+    _inherits(Accessibility, _Component);
 
-    function Orders(props) {
-        _classCallCheck(this, Orders);
+    function Accessibility(props) {
+        _classCallCheck(this, Accessibility);
 
-        return _possibleConstructorReturn(this, (Orders.__proto__ || Object.getPrototypeOf(Orders)).call(this, props));
+        return _possibleConstructorReturn(this, (Accessibility.__proto__ || Object.getPrototypeOf(Accessibility)).call(this, props));
     }
 
-    _createClass(Orders, [{
+    _createClass(Accessibility, [{
         key: "render",
         value: function render() {
             return _react2.default.createElement(
@@ -25920,7 +25077,7 @@ var Orders = function (_Component) {
                 _react2.default.createElement(
                     "h1",
                     { className: "title is-1" },
-                    "Accesibility"
+                    "Accessibility"
                 ),
                 _react2.default.createElement(
                     "div",
@@ -25935,13 +25092,917 @@ var Orders = function (_Component) {
         }
     }]);
 
-    return Orders;
+    return Accessibility;
 }(_react.Component);
 
-Orders.propTypes = {};
-exports.default = Orders;
+Accessibility.propTypes = {};
+exports.default = Accessibility;
 
-},{"react":226}],240:[function(require,module,exports){
+},{"react":226}],233:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Animation = function (_Component) {
+    _inherits(Animation, _Component);
+
+    function Animation(props) {
+        _classCallCheck(this, Animation);
+
+        return _possibleConstructorReturn(this, (Animation.__proto__ || Object.getPrototypeOf(Animation)).call(this, props));
+    }
+
+    _createClass(Animation, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "column is-two-thirds top" },
+                _react2.default.createElement(
+                    "h1",
+                    { className: "title is-1" },
+                    "Animation"
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "columns", style: { background: "white", padding: "50px" } },
+                    _react2.default.createElement(
+                        "h4",
+                        { className: "title is-4", style: { color: "#3273DC", lineHeight: "1.75em" } },
+                        "Coming Soon. Thank your for your patience!"
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Animation;
+}(_react.Component);
+
+Animation.propTypes = {};
+exports.default = Animation;
+
+},{"react":226}],234:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _AppRoute = require('./AppRoute');
+
+var _AppRoute2 = _interopRequireDefault(_AppRoute);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_Component) {
+	_inherits(App, _Component);
+
+	function App(props) {
+		_classCallCheck(this, App);
+
+		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+		_this.state = {};
+		return _this;
+	}
+
+	_createClass(App, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(_AppRoute2.default, null);
+		}
+	}]);
+
+	return App;
+}(_react.Component);
+
+exports.default = App;
+
+},{"./AppRoute":235,"react":226}],235:[function(require,module,exports){
+(function (process){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _createBrowserHistory = require('history/createBrowserHistory');
+
+var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
+
+var _createHashHistory = require('history/createHashHistory');
+
+var _createHashHistory2 = _interopRequireDefault(_createHashHistory);
+
+var _Dashboard = require('./Dashboard');
+
+var _Dashboard2 = _interopRequireDefault(_Dashboard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import Home from './Home';
+
+var AppRoute = function (_Component) {
+    _inherits(AppRoute, _Component);
+
+    function AppRoute(props) {
+        _classCallCheck(this, AppRoute);
+
+        return _possibleConstructorReturn(this, (AppRoute.__proto__ || Object.getPrototypeOf(AppRoute)).call(this, props));
+    }
+
+    _createClass(AppRoute, [{
+        key: 'render',
+        value: function render() {
+            var history = (0, _createBrowserHistory2.default)({ basename: process.env.PUBLIC_URL });
+            // const hashHistory = createHashHistory({ basename: process.env.PUBLIC_URL });
+
+            return _react2.default.createElement(
+                _reactRouter.Router,
+                { history: history },
+                _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Dashboard2.default })
+            );
+        }
+    }]);
+
+    return AppRoute;
+}(_react.Component);
+
+AppRoute.propTypes = {};
+exports.default = AppRoute;
+
+}).call(this,require('_process'))
+
+},{"./Dashboard":238,"_process":39,"history/createBrowserHistory":29,"history/createHashHistory":30,"react":226,"react-router":197}],236:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _colors = require('../../data/colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Colors = function (_Component) {
+  _inherits(Colors, _Component);
+
+  function Colors(props) {
+    _classCallCheck(this, Colors);
+
+    return _possibleConstructorReturn(this, (Colors.__proto__ || Object.getPrototypeOf(Colors)).call(this, props));
+  }
+
+  _createClass(Colors, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'colors__list' },
+        this.props.colors.map(function (color) {
+          return _react2.default.createElement(
+            'li',
+            { className: 'colors__list-item' },
+            _react2.default.createElement('span', {
+              className: 'colors__color-display',
+              style: { backgroundColor: color.code || color.backgroundColor }
+            }),
+            _react2.default.createElement(
+              'span',
+              { className: 'colors__color-name' },
+              color.name
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'colors__color-code' },
+              color.code
+            )
+          );
+        })
+      );
+    }
+  }]);
+
+  return Colors;
+}(_react.Component);
+
+Colors.propTypes = {};
+exports.default = Colors;
+
+},{"../../data/colors":244,"react":226}],237:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _colors = require('../../data/colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
+var _ColorList = require('./ColorList');
+
+var _ColorList2 = _interopRequireDefault(_ColorList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var COLOR_USAGE = [{
+  'backgroundColor': 'white',
+  'name': ''
+}, {
+  'backgroundColor': '#CA001B',
+  'name': ''
+}, {
+  'backgroundColor': '#000099',
+  'name': ''
+}, {
+  'backgroundColor': '#CF009E',
+  'name': ''
+}, {
+  'backgroundColor': '#63666A',
+  'name': ''
+}];
+
+var COLOR_SEQUENCE = [{
+  'backgroundColor': 'white',
+  'name': ''
+}, {
+  'backgroundColor': '#CA001B',
+  'name': ''
+}, {
+  'backgroundColor': '#000099',
+  'name': ''
+}, {
+  'backgroundColor': '#CF009E',
+  'name': ''
+}];
+
+var Colors = function (_Component) {
+  _inherits(Colors, _Component);
+
+  function Colors(props) {
+    _classCallCheck(this, Colors);
+
+    return _possibleConstructorReturn(this, (Colors.__proto__ || Object.getPrototypeOf(Colors)).call(this, props));
+  }
+
+  _createClass(Colors, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'colors__wrapper' },
+        _react2.default.createElement(
+          'div',
+          { className: 'colors__header-wrapper' },
+          _react2.default.createElement(
+            'div',
+            { className: 'colors__header column is-two-thirds top' },
+            _react2.default.createElement(
+              'h1',
+              { className: 'title is-1' },
+              'Colors'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Johnson & Johnson is vibrant and embraces a diversity of color. The globally connected world and its increase of screen-based technology has made color more vivid and powerful in building expression. Color is an important part of our visual expression; yet, the role of white is essential for Johnson & Johnson because it illuminates and creates clarity. The careful use and diligent application of color is required to maintain our global visual equity.'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null)
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'colors__body column is-two-thirds top' },
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Primary colors'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Our core color palette for use in all applications'
+          ),
+          _react2.default.createElement(_ColorList2.default, { colors: _colors2.default.PRIMARY }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Vibrant support for the Primary palette'
+          ),
+          _react2.default.createElement(_ColorList2.default, { colors: _colors2.default.VIBRANT }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h4',
+            null,
+            _react2.default.createElement(
+              'span',
+              null,
+              'Usage'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'White Dominance & Color Usage'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'colors__usage' },
+            _react2.default.createElement(_ColorList2.default, { colors: COLOR_USAGE })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Sequence'
+          ),
+          _react2.default.createElement(_ColorList2.default, { colors: COLOR_SEQUENCE }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h4',
+            null,
+            _react2.default.createElement(
+              'span',
+              null,
+              'Tone Usage'
+            )
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Our core color palette for under tone Usage'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'colors__tone-usage' },
+            _react2.default.createElement(_ColorList2.default, { colors: _colors2.default.TONE_BLUE }),
+            _react2.default.createElement(_ColorList2.default, { colors: _colors2.default.TONE_MAGENTA })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Accent Colors'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Accent colors are used in charts, graphs, infographics, and illustrations. The eight accent colors can be paired with primary and secondary colors.'
+          ),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Sequence'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Data visualization and illustration only'
+          ),
+          _react2.default.createElement(_ColorList2.default, { colors: _colors2.default.ACCENT_PRIMARY }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(_ColorList2.default, { colors: _colors2.default.ACCENT_SECONDARY }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null)
+        )
+      );
+    }
+  }]);
+
+  return Colors;
+}(_react.Component);
+
+Colors.propTypes = {};
+exports.default = Colors;
+
+},{"../../data/colors":244,"./ColorList":236,"react":226}],238:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _DashboardRouter = require('./DashboardRouter');
+
+var _DashboardRouter2 = _interopRequireDefault(_DashboardRouter);
+
+var _JnjProcessLogo = require('../JnjProcessLogo');
+
+var _JnjProcessLogo2 = _interopRequireDefault(_JnjProcessLogo);
+
+var _reactRouterDom = require('react-router-dom');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Dashboard = function (_Component) {
+    _inherits(Dashboard, _Component);
+
+    function Dashboard(props) {
+        _classCallCheck(this, Dashboard);
+
+        return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).call(this, props));
+    }
+
+    _createClass(Dashboard, [{
+        key: 'render',
+        value: function render() {
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'columns', style: { margin: "0px" } },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'column is-one-fifth sidebar', style: { margin: '0px' } },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'title is-4 logo' },
+                        _react2.default.createElement(
+                            _reactRouterDom.NavLink,
+                            { to: '/home' },
+                            _react2.default.createElement(_JnjProcessLogo2.default, null)
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'aside',
+                        { className: 'menu' },
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'menu-list' },
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement(
+                                    _reactRouterDom.NavLink,
+                                    { to: '/colors' },
+                                    _react2.default.createElement(
+                                        'svg',
+                                        { className: 'svg-inline--fa fa-tint fa-w-12', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'tint', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 384 512', 'data-fa-i2svg': '' },
+                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M192 512c-98.435 0-178.087-79.652-178.087-178.087 0-111.196 101.194-154.065 148.522-311.825 9.104-30.116 51.099-28.778 59.13 0 47.546 158.486 148.522 200.069 148.522 311.825C370.087 432.348 290.435 512 192 512zm-42.522-171.826c-1.509-5.533-9.447-5.532-10.956 0-9.223 29.425-27.913 37.645-27.913 58.435C110.609 417.13 125.478 432 144 432s33.391-14.87 33.391-33.391c0-20.839-18.673-28.956-27.913-58.435z' })
+                                    ),
+                                    ' \xA0\xA0Colors'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement(
+                                    _reactRouterDom.NavLink,
+                                    { to: '/typography' },
+                                    _react2.default.createElement(
+                                        'svg',
+                                        { 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'font', className: 'svg-inline--fa fa-font fa-w-12', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 448 512' },
+                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M152 416h-24.013l26.586-80.782H292.8L319.386 416H296c-8.837 0-16 7.163-16 16v32c0 8.837 7.163 16 16 16h136c8.837 0 16-7.163 16-16v-32c0-8.837-7.163-16-16-16h-26.739L275.495 42.746A16 16 0 0 0 260.382 32h-72.766a16 16 0 0 0-15.113 10.746L42.739 416H16c-8.837 0-16 7.163-16 16v32c0 8.837 7.163 16 16 16h136c8.837 0 16-7.163 16-16v-32c0-8.837-7.163-16-16-16zm64.353-271.778c4.348-15.216 6.61-28.156 7.586-34.644.839 6.521 2.939 19.476 7.727 34.706l41.335 124.006h-98.619l41.971-124.068z' })
+                                    ),
+                                    ' \xA0\xA0Typography'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement(
+                                    _reactRouterDom.NavLink,
+                                    { to: '/accessibility' },
+                                    _react2.default.createElement(
+                                        'svg',
+                                        { className: 'svg-inline--fa fa-universal-access fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'universal-access', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
+                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M256 48c114.953 0 208 93.029 208 208 0 114.953-93.029 208-208 208-114.953 0-208-93.029-208-208 0-114.953 93.029-208 208-208m0-40C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 56C149.961 64 64 149.961 64 256s85.961 192 192 192 192-85.961 192-192S362.039 64 256 64zm0 44c19.882 0 36 16.118 36 36s-16.118 36-36 36-36-16.118-36-36 16.118-36 36-36zm117.741 98.023c-28.712 6.779-55.511 12.748-82.14 15.807.851 101.023 12.306 123.052 25.037 155.621 3.617 9.26-.957 19.698-10.217 23.315-9.261 3.617-19.699-.957-23.316-10.217-8.705-22.308-17.086-40.636-22.261-78.549h-9.686c-5.167 37.851-13.534 56.208-22.262 78.549-3.615 9.255-14.05 13.836-23.315 10.217-9.26-3.617-13.834-14.056-10.217-23.315 12.713-32.541 24.185-54.541 25.037-155.621-26.629-3.058-53.428-9.027-82.141-15.807-8.6-2.031-13.926-10.648-11.895-19.249s10.647-13.926 19.249-11.895c96.686 22.829 124.283 22.783 220.775 0 8.599-2.03 17.218 3.294 19.249 11.895 2.029 8.601-3.297 17.219-11.897 19.249z' })
+                                    ),
+                                    '\xA0\xA0Accessibility'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement(
+                                    _reactRouterDom.NavLink,
+                                    { to: '/prototypes' },
+                                    _react2.default.createElement(
+                                        'svg',
+                                        { className: 'svg-inline--fa fa-code fa-w-20', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'code', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 640 512', 'data-fa-i2svg': '' },
+                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M278.9 511.5l-61-17.7c-6.4-1.8-10-8.5-8.2-14.9L346.2 8.7c1.8-6.4 8.5-10 14.9-8.2l61 17.7c6.4 1.8 10 8.5 8.2 14.9L293.8 503.3c-1.9 6.4-8.5 10.1-14.9 8.2zm-114-112.2l43.5-46.4c4.6-4.9 4.3-12.7-.8-17.2L117 256l90.6-79.7c5.1-4.5 5.5-12.3.8-17.2l-43.5-46.4c-4.5-4.8-12.1-5.1-17-.5L3.8 247.2c-5.1 4.7-5.1 12.8 0 17.5l144.1 135.1c4.9 4.6 12.5 4.4 17-.5zm327.2.6l144.1-135.1c5.1-4.7 5.1-12.8 0-17.5L492.1 112.1c-4.8-4.5-12.4-4.3-17 .5L431.6 159c-4.6 4.9-4.3 12.7.8 17.2L523 256l-90.6 79.7c-5.1 4.5-5.5 12.3-.8 17.2l43.5 46.4c4.5 4.9 12.1 5.1 17 .6z' })
+                                    ),
+                                    ' \xA0Prototypes'
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement(
+                                    _reactRouterDom.NavLink,
+                                    { to: '/animation' },
+                                    _react2.default.createElement(
+                                        'svg',
+                                        { className: 'svg-inline--fa fa-magic fa-w-16', 'aria-hidden': 'true', 'data-prefix': 'fas', 'data-icon': 'magic', role: 'img', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 512 512', 'data-fa-i2svg': '' },
+                                        _react2.default.createElement('path', { fill: 'currentColor', d: 'M101.1 505L7 410.9c-9.4-9.4-9.4-24.6 0-33.9L377 7c9.4-9.4 24.6-9.4 33.9 0l94.1 94.1c9.4 9.4 9.4 24.6 0 33.9L135 505c-9.3 9.3-24.5 9.3-33.9 0zM304 159.2l48.8 48.8 89.9-89.9-48.8-48.8-89.9 89.9zM138.9 39.3l-11.7 23.8-26.2 3.8c-4.7.7-6.6 6.5-3.2 9.8l19 18.5-4.5 26.1c-.8 4.7 4.1 8.3 8.3 6.1L144 115l23.4 12.3c4.2 2.2 9.1-1.4 8.3-6.1l-4.5-26.1 19-18.5c3.4-3.3 1.5-9.1-3.2-9.8L160.8 63l-11.7-23.8c-2-4.1-8.1-4.1-10.2.1zm97.7-20.7l-7.8 15.8-17.5 2.6c-3.1.5-4.4 4.3-2.1 6.5l12.6 12.3-3 17.4c-.5 3.1 2.8 5.5 5.6 4L240 69l15.6 8.2c2.8 1.5 6.1-.9 5.6-4l-3-17.4 12.6-12.3c2.3-2.2 1-6.1-2.1-6.5l-17.5-2.5-7.8-15.8c-1.4-3-5.4-3-6.8-.1zm-192 0l-7.8 15.8L19.3 37c-3.1.5-4.4 4.3-2.1 6.5l12.6 12.3-3 17.4c-.5 3.1 2.8 5.5 5.6 4L48 69l15.6 8.2c2.8 1.5 6.1-.9 5.6-4l-3-17.4 12.6-12.3c2.3-2.2 1-6.1-2.1-6.5l-17.5-2.5-7.8-15.8c-1.4-3-5.4-3-6.8-.1zm416 223.5l-7.8 15.8-17.5 2.5c-3.1.5-4.4 4.3-2.1 6.5l12.6 12.3-3 17.4c-.5 3.1 2.8 5.5 5.6 4l15.6-8.2 15.6 8.2c2.8 1.5 6.1-.9 5.6-4l-3-17.4 12.6-12.3c2.3-2.2 1-6.1-2.1-6.5l-17.5-2.5-7.8-15.8c-1.4-2.8-5.4-2.8-6.8 0z' })
+                                    ),
+                                    ' \xA0\xA0Animation'
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'section',
+                    null,
+                    _react2.default.createElement(_DashboardRouter2.default, null)
+                )
+            );
+        }
+    }]);
+
+    return Dashboard;
+}(_react.Component);
+
+Dashboard.propTypes = {};
+exports.default = Dashboard;
+
+},{"../JnjProcessLogo":231,"./DashboardRouter":239,"react":226,"react-router-dom":185}],239:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+var _Home = require('./Home');
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _Accessibility = require('./Accessibility');
+
+var _Accessibility2 = _interopRequireDefault(_Accessibility);
+
+var _Animation = require('./Animation');
+
+var _Animation2 = _interopRequireDefault(_Animation);
+
+var _Prototypes = require('./Prototypes');
+
+var _Prototypes2 = _interopRequireDefault(_Prototypes);
+
+var _Colors = require('./Colors');
+
+var _Colors2 = _interopRequireDefault(_Colors);
+
+var _Typography = require('./Typography');
+
+var _Typography2 = _interopRequireDefault(_Typography);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DashboardRouter = function (_Component) {
+    _inherits(DashboardRouter, _Component);
+
+    function DashboardRouter(props) {
+        _classCallCheck(this, DashboardRouter);
+
+        return _possibleConstructorReturn(this, (DashboardRouter.__proto__ || Object.getPrototypeOf(DashboardRouter)).call(this, props));
+    }
+
+    _createClass(DashboardRouter, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_reactRouter.Redirect, { from: '/', to: '/home' }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/home', component: _Home2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/typography', component: _Typography2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/accessibility', component: _Accessibility2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/prototypes', component: _Prototypes2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/animation', component: _Animation2.default }),
+                _react2.default.createElement(_reactRouter.Route, { path: '/colors', component: _Colors2.default })
+            );
+        }
+    }]);
+
+    return DashboardRouter;
+}(_react.Component);
+
+DashboardRouter.propTypes = {};
+exports.default = DashboardRouter;
+
+},{"./Accessibility":232,"./Animation":233,"./Colors":237,"./Home":241,"./Prototypes":242,"./Typography":243,"react":226,"react-router":197}],240:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _colors = require('../../data/colors');
+
+var _colors2 = _interopRequireDefault(_colors);
+
+var _ColorList = require('./ColorList');
+
+var _ColorList2 = _interopRequireDefault(_ColorList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var renderColors = function renderColors(colors) {
+  return _react2.default.createElement(
+    'ul',
+    { className: 'typography-guide__font-colors' },
+    colors.map(function (color) {
+      return _react2.default.createElement('li', {
+        className: 'typography-guide__font-colors-item',
+        style: { backgroundColor: color }
+      });
+    })
+  );
+};
+
+var FontTable = function (_Component) {
+  _inherits(FontTable, _Component);
+
+  function FontTable(props) {
+    _classCallCheck(this, FontTable);
+
+    return _possibleConstructorReturn(this, (FontTable.__proto__ || Object.getPrototypeOf(FontTable)).call(this, props));
+  }
+
+  _createClass(FontTable, [{
+    key: 'render',
+    value: function render() {
+      var fonts = this.props.fonts;
+      return _react2.default.createElement(
+        'table',
+        { className: 'typography-guide__table' },
+        _react2.default.createElement(
+          'thead',
+          null,
+          _react2.default.createElement(
+            'tr',
+            null,
+            _react2.default.createElement('th', null),
+            _react2.default.createElement(
+              'th',
+              null,
+              'Typeface'
+            ),
+            _react2.default.createElement(
+              'th',
+              null,
+              'Weight'
+            ),
+            _react2.default.createElement(
+              'th',
+              null,
+              'Size/Line Height'
+            ),
+            _react2.default.createElement(
+              'th',
+              null,
+              'Colors Applications'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'tbody',
+          null,
+          fonts.map(function (font, index) {
+            return _react2.default.createElement(
+              'tr',
+              {
+                key: 'font-' + index
+              },
+              _react2.default.createElement(
+                'td',
+                null,
+                _react2.default.createElement(
+                  'span',
+                  {
+                    style: {
+                      fontSize: font.fontSize,
+                      lineHeight: font.lineHeight,
+                      fontWeight: font.fontWeight
+                    }
+                  },
+                  font.name
+                )
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                font.typeface
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                font.weight
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                font.fontSize,
+                ' / ',
+                font.lineHeight
+              ),
+              _react2.default.createElement(
+                'td',
+                null,
+                renderColors(font.colors)
+              )
+            );
+          })
+        )
+      );
+    }
+  }]);
+
+  return FontTable;
+}(_react.Component);
+
+FontTable.propTypes = {};
+exports.default = FontTable;
+
+},{"../../data/colors":244,"./ColorList":236,"react":226}],241:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_Component) {
+	_inherits(Home, _Component);
+
+	function Home(props) {
+		_classCallCheck(this, Home);
+
+		return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+	}
+
+	_createClass(Home, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "column is-two-thirds top" },
+				_react2.default.createElement(
+					"h1",
+					{ className: "title is-1" },
+					"Welcome \uD83D\uDC4B"
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "columns", style: { background: "white", padding: "50px" } },
+					_react2.default.createElement(
+						"h4",
+						{ className: "title is-4", style: { color: "#3273DC", lineHeight: "1.75em" } },
+						"This site is dedicated to documenting the process for designing J&J sites like Home and Medical Devices. If you have any questions, please don't hesitate to ",
+						_react2.default.createElement(
+							"a",
+							{ href: "mailto:ericsmithux@gmail.com?Subject=Hello%20there", target: "_blank" },
+							_react2.default.createElement(
+								"u",
+								null,
+								"reach out."
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Home;
+}(_react.Component);
+
+Home.propTypes = {};
+exports.default = Home;
+
+},{"react":226}],242:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26142,6 +26203,76 @@ var Prototypes = function (_Component) {
 									"span",
 									{ className: "tag" },
 									"Animation"
+								)
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "tile is-ancestor" },
+					_react2.default.createElement(
+						"a",
+						{ href: "../prototypes/home-landing.html", className: "tile is-parent", target: "_blank" },
+						_react2.default.createElement(
+							"div",
+							{ className: "tile is-child card" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "title is-3 is-spaced" },
+								"Homepage"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "subtitle is-5" },
+								"Landing page and dashboard for Home."
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"span",
+								{ className: "tag-container" },
+								_react2.default.createElement(
+									"span",
+									{ className: "tag" },
+									"UI"
+								),
+								_react2.default.createElement(
+									"span",
+									{ className: "tag" },
+									"Homepage"
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"a",
+						{ href: "../prototypes/home-article.html", className: "tile is-parent", target: "_blank" },
+						_react2.default.createElement(
+							"div",
+							{ className: "tile is-child card" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "title is-3 is-spaced" },
+								"News Article"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "subtitle is-5" },
+								"Article reading experience for Home."
+							),
+							_react2.default.createElement("br", null),
+							_react2.default.createElement(
+								"span",
+								{ className: "tag-container" },
+								_react2.default.createElement(
+									"span",
+									{ className: "tag" },
+									"UI"
+								),
+								_react2.default.createElement(
+									"span",
+									{ className: "tag" },
+									"Article"
 								)
 							)
 						)
@@ -26403,18 +26534,26 @@ var Prototypes = function (_Component) {
 Prototypes.propTypes = {};
 exports.default = Prototypes;
 
-},{"react":226}],241:[function(require,module,exports){
-"use strict";
+},{"react":226}],243:[function(require,module,exports){
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _FontTable = require('./FontTable');
+
+var _FontTable2 = _interopRequireDefault(_FontTable);
+
+var _typography = require('../../data/typography');
+
+var _typography2 = _interopRequireDefault(_typography);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26424,174 +26563,726 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Transations = function (_Component) {
-    _inherits(Transations, _Component);
+var FontDisplay = function FontDisplay(_ref) {
+  var name = _ref.name,
+      _ref$className = _ref.className,
+      className = _ref$className === undefined ? '' : _ref$className;
+  return _react2.default.createElement(
+    'div',
+    {
+      className: 'typography-guides__font-display ' + className
+    },
+    _react2.default.createElement(
+      'span',
+      { className: 'typography-guides__font-display-name' },
+      name
+    ),
+    _react2.default.createElement(
+      'p',
+      {
+        className: 'typography-guides__font-display-alphabet'
+      },
+      _react2.default.createElement(
+        'span',
+        null,
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        'abcdefghijklmnopqrstuvwxyz 1234567890'
+      )
+    )
+  );
+};
 
-    function Transations(props) {
-        _classCallCheck(this, Transations);
+var Typography = function (_Component) {
+  _inherits(Typography, _Component);
 
-        return _possibleConstructorReturn(this, (Transations.__proto__ || Object.getPrototypeOf(Transations)).call(this, props));
-    }
+  function Typography(props) {
+    _classCallCheck(this, Typography);
 
-    _createClass(Transations, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "column is-two-thirds top" },
+    return _possibleConstructorReturn(this, (Typography.__proto__ || Object.getPrototypeOf(Typography)).call(this, props));
+  }
+
+  _createClass(Typography, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'colors__wrapper' },
+        _react2.default.createElement(
+          'div',
+          { className: 'colors__header-wrapper' },
+          _react2.default.createElement(
+            'div',
+            { className: 'colors__header column is-two-thirds top' },
+            _react2.default.createElement(
+              'h1',
+              { className: 'title is-1' },
+              'Typography'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Johnson & Johnson uses J&J Circular, a commercial typeface for all public applications. J&J Circular typeface family contains a range of weights\u2014Black, Medium, and Book. Black and Book are the primary styles utilized. The set includes circled numbers, standard Western and extended Latin accented characters. J&J Circular requires a license to be used.'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null)
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'typography-guide column is-two-thirds top' },
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Typeface'
+          ),
+          _react2.default.createElement('p', null),
+          _react2.default.createElement(
+            'ul',
+            { className: 'typography-guide__fonts-list' },
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(FontDisplay, {
+                name: 'J&J Circular Book',
+                className: 'typography-book'
+              })
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(FontDisplay, {
+                name: 'J&J Circular Bold',
+                className: 'typography-bold'
+              })
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(FontDisplay, {
+                name: 'J&J Circular Medium',
+                className: 'typography-medium'
+              })
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(FontDisplay, {
+                name: 'J&J Circular Black',
+                className: 'typography-black'
+              })
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Alternate Typeface'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'p',
+            null,
+            'Arial is the acceptable system substitute to our primary typeface and can be used with equal success for reports, presentations, emails, and other tasks. Arial is the go-to typeface for Johnson & Johnson internal desktop communications and Microsoft\xAE Office\xAE products like Word\xAE and PowerPoint\xAE.',
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            'License Arial is part of our standard MS Office\xAE package. No font licenses are required.'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'ul',
+            { className: 'typography-guide__fonts-list' },
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(FontDisplay, {
+                name: 'Arial Regular',
+                className: 'typography-arial-reg'
+              })
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(FontDisplay, {
+                name: 'Arial Bold',
+                className: 'typography-arial-bold'
+              })
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Desktop'
+          ),
+          _react2.default.createElement(_FontTable2.default, { fonts: _typography2.default.DESKTOP }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Tablet'
+          ),
+          _react2.default.createElement(_FontTable2.default, { fonts: _typography2.default.TABLET }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('hr', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Mobile'
+          ),
+          _react2.default.createElement(_FontTable2.default, { fonts: _typography2.default.MOBILE }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'Link Style'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'div',
+            { className: 'typography-guide__link-style' },
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: '#' },
+                'This'
+              ),
+              ' is a text link on light background.'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: '#', className: 'is-visited-link ' },
+                'This'
+              ),
+              ' is a visited link.'
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              'This is a that goes to an ',
+              _react2.default.createElement(
+                'span',
+                { className: 'is-external-link' },
                 _react2.default.createElement(
-                    "h1",
-                    { className: "title is-1" },
-                    "Animations"
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "columns", style: { background: "white", padding: "50px" } },
-                    _react2.default.createElement(
-                        "h4",
-                        { className: "title is-4", style: { color: "#3273DC", lineHeight: "1.75em" } },
-                        "Coming Soon. Thank your for your patience!"
-                    )
+                  'a',
+                  { href: '#' },
+                  'external resource'
                 )
-            );
-        }
-    }]);
+              ),
+              '.'
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'h2',
+            { className: 'title is-1' },
+            'List Style'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'typography-guide__link-style' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Bullet list'
+            ),
+            _react2.default.createElement(
+              'ul',
+              { className: 'typography-guide__bullet-list' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Bullet list item'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Bullet list item'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Bullet list item'
+              )
+            ),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Ordered list'
+            ),
+            _react2.default.createElement(
+              'ol',
+              { className: 'typography-guide__ordered-list' },
+              _react2.default.createElement(
+                'li',
+                null,
+                'Ordered list item'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Ordered list item'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Ordered list item'
+              )
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null)
+        )
+      );
+    }
+  }]);
 
-    return Transations;
+  return Typography;
 }(_react.Component);
 
-Transations.propTypes = {};
-exports.default = Transations;
+Typography.propTypes = {};
+exports.default = Typography;
 
-},{"react":226}],242:[function(require,module,exports){
+},{"../../data/typography":245,"./FontTable":240,"react":226}],244:[function(require,module,exports){
 module.exports={
-	data: [
-		{ 
-			name: 'Specialties',
-			data: [
-				{ name: 'Specialties Overview' },
-				{ name: 'Bariatric' },
-				{ name: 'Cardiology' },
-				{ name: 'Cardiac Electrophysiology' },
-				{ name: 'Colorectal' },
-				{ name: 'Craniomaxillofacial' },
-				{ name: 'Dermatology' },
-				{ name: 'Ear, Nose & Throat / Otolaryngology' },
-				{ name: 'Dermatology' },
-				{ name: 'Endocrinology' },
-				{ name: 'Gastric Surgery' },
-				{ name: 'General Surgery' },
-				{ name: 'Gynecological (GYN) Oncology ' },
-				{ name: 'Gynecology' },
-				{ name: 'Hepatobillary Surgery' },
-				{ name: 'Interventional Oncology' },
-				{ name: 'Neurovascular' },
-				{ 
-					name: 'Orthopaedic Surgery' ,
-					data: [
-						{ name: 'Anterior Cervical Discectomy and Fusion'},
-						{ name: 'Anterior cruciate ligament (ACL)/ Posterior cruciate ligament (PCL) Reconstruction'},
-						{ name: 'Anterior Lumbar Interbody Fusion (ALIF)'},
-						{ name: 'Arthrodesis'},
-						{ name: 'Arthroplasty'},
-						{ name: 'Arthroscopic Suprascapular Nerve Release '},
-						{ name: 'Biceps Tenodesis (Proximal Biceps Tenodesis)'},
-						{ name: 'Biceps Tenodesis'},
-						{ name: 'Cervical Laminoplasty'},
-						{ name: 'Cervical Revision Surgery'},
-						{ name: 'Deformity Correction'},
-						{ name: 'Deformity Correction for Adult Scoliosis'},
-						{ name: 'Deformity Correction for Neuromuscular Scoliosis'},
-						{ name: 'Deformity Correction for Thoracic Insufficiency Syndrome'},
-						{ name: 'Distraction Osteogenesis'},
-						{ name: 'Facet Fixation'},
-						{ name: 'Fracture Treatment'},
-						{ name: 'Fracture Treatment (Pediatric)'},
-						{ name: 'Fracture Treatment (Reconstruction)'},
-						{ name: 'Hand and Wrist Arthroscopy'},
-						{ name: 'Hemostasis'},
-						{ name: 'Hip Arthroscopy'},
-						{ name: 'Hip Arthroscopy (Labral Repair)'},
-						{ name: 'Hip Replacement'},
-						{ name: 'Hip Replacement (Anterior Approach)'},
-						{ name: 'Hyaluronic Injection'},
-						{ name: 'Knee Arthroplasty'},
-						{ name: 'Knee Cartilage Repair '},
-						{ name: 'Ligament Reconstruction'},
-						{ name: 'Medial and Lateral Collateral Ligament Reconstruction '},
-						{ name: 'Medial Patellofemoral Ligament Reconstruction'},
-						{ name: 'Meniscal Repair '},
-						{ name: 'Microdiscectomy and Decompression'},
-						{ name: 'Microdiscectomy and Decompression (Minimally Invasive Microdiscectomy and Decompression)'},
-						{ name: 'MIS Lateral Lumbar Interbody Fusion'},
-						{ name: 'MIS Transforaminal Lumbar Interbody Fusion (TLIF)'},
-						{ name: 'Non-surgical treatments'},
-						{ name: 'Posterior Cervical Spine Fusion'},
-						{ name: 'Posterior Lumbar Interbody Fusion (PLIF)'},
-						{ name: 'Posterior Lumbar Interbody Fusion (PLIF) Minimally Invasive Surgery (MIS)'},
-						{ name: 'Psoas Release'},
-						{ name: 'Rib Fracture Fixation'},
-						{ name: 'Shoulder Arthroscopy '},
-						{ name: 'Spondylolisthesis Correction'},
-						{ name: 'Sternal Fixation'},
-						{ name: 'Thoracolumbar Revision Surgery'},
-						{ name: 'Transforaminal Lumbar Interbody Fusion (TLIF)'},
-						{ name: 'Vertebral Body Augmentation'},
-						{ name: 'Vertebral Body Replacement'},
-						{ name: 'Vertebroplasty'}
-					]
-				},
-				{ name: 'Otolaryngology' },
-				{ name: 'Sports Medicine' },
-				{ name: 'Sterlization, Antisepsis' },
-				{ name: 'Thoracic Surgery' },
-				{ name: 'Trauma' },
-				{ name: 'Urogynecology' },
-				{ name: 'Urology' },
-				{ name: 'Vetinary' },
-				{ name: 'Vision' }
-			]
-		},
-		{ name: 'Products' },
-		{ name: 'Services' },
-		{ name: 'Companies' },
-		{ name: 'Support' },
-		{ name: 'About Us' }
-	]
+  "PRIMARY": [
+    {
+      "code": "#CA001B",
+      "name": "J&J Red"
+    },
+    {
+      "code": "#FFFFFF",
+      "name": "White"
+    },
+    {
+      "code": "#F3F3F3",
+      "name": "Ex Light Gray"
+    },
+    {
+      "code": "#D8D8D8",
+      "name": "Light Gray"
+    },
+    {
+      "code": "#888B8D",
+      "name": "Gray"
+    },
+    {
+      "code": "#63666A",
+      "name": "Dark Gray"
+    },
+    {
+      "code": "#212121",
+      "name": "Black"
+    }
+  ],
+  "VIBRANT": [
+    {
+      "code": "#000099",
+      "name": "J&J Blue"
+    },
+    {
+      "code": "#CF009E",
+      "name": "J&J Magenta"
+    }
+  ],
+  "TONE_BLUE": [
+    {
+      "code": "#0E0E69",
+      "name": "J&J Blue"
+    },
+    {
+      "code": "#000099",
+      "name": ""
+    }
+  ],
+  "TONE_MAGENTA": [
+    {
+      "code": "#8A0E6C",
+      "name": "J&J Magenta"
+    },
+    {
+      "code": "#CF009E",
+      "name": ""
+    }
+  ],
+  "ACCENT_PRIMARY": [
+    {
+      "code": "#FD5406",
+      "name": "Orange"
+    },
+    {
+      "code": "#FF7417",
+      "name": "Light Orange"
+    },
+    {
+      "code": "#F862C6",
+      "name": "Pink"
+    },
+    {
+      "code": "#6333C2",
+      "name": "Purple"
+    }
+  ],
+  "ACCENT_SECONDARY": [
+    {
+      "code": "#12C2E9",
+      "name": "Blue"
+    },
+    {
+      "code": "#009999",
+      "name": "Teal"
+    },
+    {
+      "code": "#006666",
+      "name": "Green"
+    },
+    {
+      "code": "#6AC14C",
+      "name": "Light Green"
+    }
+  ]
 }
-},{}],243:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 module.exports={
-	data: [
-		{ name: 'Specialties Overview' },
-		{ name: 'Bariatric' },
-		{ name: 'Cardiology' },
-		{ name: 'Cardiac Electrophysiology' },
-		{ name: 'Colorectal' },
-		{ name: 'Craniomaxillofacial' },
-		{ name: 'Dermatology' },
-		{ name: 'Ear, Nose & Throat / Otolaryngology' },
-		{ name: 'Dermatology' },
-		{ name: 'Endocrinology' },
-		{ name: 'Gastric Surgery' },
-		{ name: 'General Surgery' },
-		{ name: 'Gynecological (GYN) Oncology ' },
-		{ name: 'Gynecology' },
-		{ name: 'Hepatobillary Surgery' },
-		{ name: 'Interventional Oncology' },
-		{ name: 'Neurovascular' },
-		{ name: 'Orthopaedic Surgery' },
-		{ name: 'Otolaryngology' },
-		{ name: 'Sports Medicine' },
-		{ name: 'Sterlization, Antisepsis' },
-		{ name: 'Thoracic Surgery' },
-		{ name: 'Trauma' },
-		{ name: 'Urogynecology' },
-		{ name: 'Urology' },
-		{ name: 'Vetinary' },
-		{ name: 'Vision' }
-	]
+  "DESKTOP": [
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "60px",
+      "lineHeight": "60px",
+      "name": "Header 1",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "40px",
+      "lineHeight": "44px",
+      "name": "Header 2",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "30px",
+      "lineHeight": "36px",
+      "name": "Header 3",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "26px",
+      "lineHeight": "32px",
+      "name": "Header 4",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "24px",
+      "name": "Header 5",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "24px",
+      "lineHeight": "36px",
+      "name": "Subtitle",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "20px",
+      "lineHeight": "30px",
+      "name": "Subtitle small",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Body text",
+      "colors": [
+        "#212121"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Caption text",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    }
+  ],
+  "TABLET": [
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "32px",
+      "lineHeight": "36px",
+      "name": "Header 1",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "28px",
+      "lineHeight": "36px",
+      "name": "Header 2",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "22px",
+      "lineHeight": "36px",
+      "name": "Header 3",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "36px",
+      "name": "Header 4",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "30px",
+      "name": "Header 5",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Subtitle",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Subtitle small",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Body text",
+      "colors": [
+        "#212121"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Caption text",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    }
+  ],
+  "MOBILE": [
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "28px",
+      "lineHeight": "36px",
+      "name": "Header 1",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "36px",
+      "name": "Header 2",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "name": "Header 3",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "name": "Subtitle",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Body text",
+      "colors": [
+        "#212121"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Caption text",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    }
+  ]
 }
-},{}],244:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

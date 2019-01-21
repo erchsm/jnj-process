@@ -1,0 +1,53 @@
+.tags-collapsable__wrapper {
+  background-color: $brand-white;
+  padding: 20px 25px;
+  margin: 20px 0;
+  .tag {
+    border-radius: 0;
+  }
+
+  .tags-wrapper {
+    max-height: initial;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+}
+
+.tags-collapsable__title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: $brand-red;
+  font-family: $font-primary;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.tags-collapsable__show-more,
+.tags-collapsable__show-less,
+.tags-collapsable__show-more-number {
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 4px;
+  color: $brand-black;
+  font-family: $font-primary;
+  &:hover {
+    color: $brand-red;
+  }
+  .iconcss {
+    margin-left: 5px;
+    font-size: 20px;
+  }
+}
+.tags-collapsable__show-more-number {
+  line-height: 2.5;
+}
+.tags-collapsable__show-more {
+
+}
+.tags-collapsable__show-less {
+  .icon-caret-down-lg {
+    transform: rotate(180deg);
+    display: inline-block;
+  }
+}

@@ -7,13 +7,12 @@ var plumber = require('gulp-plumber');
 var notify = require("gulp-notify");
 var rename = require("gulp-rename");
 var task = config.tasks.ejs;
-
 var onError = function (err) {
   console.log(err);
 };
 
 gulp.task('ejs', function(){
-    return gulp.src(path.join(config.root.src, task.src, '*.ejs'))
+    return gulp.src(path.join(config.root.src, task.src, '**/*.ejs'))
     .pipe(plumber({
       errorHandler: onError
     }))

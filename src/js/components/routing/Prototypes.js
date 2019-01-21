@@ -71,6 +71,30 @@ export default class Prototypes extends Component {
 						</div>
 					</a>
 				</div>
+				<div className="tile is-ancestor">
+					<a href="../prototypes/home-landing.html" className="tile is-parent" target="_blank">
+						<div className="tile is-child card">
+							<h3 className="title is-3 is-spaced">Homepage</h3>
+							<p className="subtitle is-5">Landing page and dashboard for Home.</p>
+							<br />
+							<span className="tag-container">
+								<span className="tag">UI</span>
+								<span className="tag">Homepage</span>
+							</span>
+						</div>
+					</a>
+					<a href="../prototypes/home-article.html" className="tile is-parent" target="_blank">
+						<div className="tile is-child card">
+							<h3 className="title is-3 is-spaced">News Article</h3>
+							<p className="subtitle is-5">Article reading experience for Home.</p>
+							<br />
+							<span className="tag-container">
+								<span className="tag">UI</span>
+								<span className="tag">Article</span>
+							</span>
+						</div>
+					</a>
+				</div>
 
 				<hr/>
 

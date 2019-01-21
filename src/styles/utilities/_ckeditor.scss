@@ -1,0 +1,187 @@
+@mixin ckeditor() {
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  table {
+    border: none;
+    margin: 20px auto;
+
+    tbody, thead, tr, th, td {
+      border: none;
+    }
+
+    thead {
+      background: $brand-blue;
+
+      th {
+        position: relative;
+        color: $brand-grey-lightest;
+        font-size: 16px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.33;
+        font-family: $font-primary;
+        padding: .8rem 1.8rem;
+        letter-spacing: normal;
+
+        @media (min-width: $bp-medium) {
+          font-size: 18px;
+        }
+        &:nth-child(n + 2):before {
+          content: ' ';
+          background-color: $brand-grey-lightest;
+          display: block;
+          height: 60%;
+          width: 1px;
+          position: absolute;
+          left: 0;
+          top: 20%;
+        }
+      }
+    }
+
+    tbody td {
+      font-size: 14px;
+      line-height: 1.4;
+      color: $brand-black;
+      padding: .8rem 1.8rem;
+      font-family: $font-primary;
+
+      @media (min-width: $bp-medium) {
+        font-size: 16px;
+      }
+    }
+
+    tbody td:first-child {
+      font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #c8d7ff;
+    }
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  img {
+    width: auto !important;
+    max-width: 100%;
+    margin: 10px;
+  }
+
+  .figure {
+    margin: 10px;
+
+    img {
+      margin: 10px 0;
+    }
+
+    .figcaption {
+      width: auto !important;
+      margin: 0 0 10px;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.29;
+      letter-spacing: normal;
+      color: $brand-black;
+      display: block;
+      font-family: $font-primary;
+    }
+  }
+
+  p {
+    width: auto !important;
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: $brand-black;
+    display: block;
+    font-family: $font-primary;
+    @media (min-width: $bp-medium) {
+      font-size: 16px;
+    }
+  }
+
+  blockquote {
+    border-left: 5px solid $brand-red;
+    padding: .5em 1.5em 1em;
+    width: auto !important;
+    margin: 0 0 10px;
+
+    p {
+      width: auto !important;
+      font-size: 24px;
+      font-weight: 900;
+      font-stretch: normal;
+      line-height: 1.22;
+      letter-spacing: normal;
+      color: $brand-red;
+      font-style: normal;
+      font-family: $font-primary;
+
+      @media (min-width: $bp-small) {
+        font-size: 28px;
+      }
+      @media (min-width: $bp-medium) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  em strong,
+  strong em {
+    width: auto !important;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  a {
+    width: auto !important;
+    font-family: $font-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  p:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .picBox {
+    max-width: 100% !important;
+
+    &.full {
+      max-width: 100% !important;
+    }
+  }
+}
+
+.ckeditor {
+  @include ckeditor;
+}

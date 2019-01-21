@@ -1,0 +1,155 @@
+.typography-book {
+  font-family: $font-primary;
+  font-weight: 300;
+}
+
+.typography-bold {
+  font-family: $font-primary;
+  font-weight: 500;
+}
+
+.typography-medium {
+  font-family: $font-primary;
+  font-weight: 700;
+}
+
+.typography-black {
+  font-family: $font-primary;
+  font-weight: 900;
+}
+
+.typography-arial-reg {
+  font-family: 'Arial';
+}
+
+.typography-arial-bold {
+  font-family: 'Arial';
+  font-weight: 700;
+}
+
+.typography-guides__font-display {
+  color: $brand-black;
+  width: 600px;
+}
+
+.typography-guides__font-display-name {
+  margin-bottom: 7px;
+  display: block;
+}
+.typography-guides__font-display-alphabet {
+  font-size: 30px;
+  margin-bottom: 10px;
+  span {
+    display: block;
+    line-height: 1.2;
+  }
+}
+
+.typography-guide__fonts-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    margin: 0 20px 20px 0;
+  }
+}
+
+.typography-guide {
+  width: 100% !important;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 30px;
+  color: $brand-black;
+  font-weight: 500;
+}
+
+.typography-guide__table {
+  width: 100%;
+  color: $brand-black;
+
+  thead {
+    background-color: #dcdcdc;
+
+    th {
+      color: $brand-grey-dark;
+      font-weight: 700;
+      padding: 10px 40px 10px 0;
+    }
+  }
+
+  tbody {
+    td {
+      vertical-align: center;
+      padding: 20px 20px 20px 0;
+      border-bottom: 3px solid $brand-grey-light;
+    }
+  }
+
+  .typography-guide__font-colors {
+    display: flex;
+
+    li {
+      margin-right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.typography-guide__link-style {
+  a {
+    color: $brand-red;
+
+    &.is-visited-link {
+      color: $brand-grey-darkest;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .is-external-link {
+    color: $brand-red;
+
+    &:after {
+      @include iconcss();
+      content: "\EA58";
+      font-size: .8em;
+      margin-left: .3em;
+    }
+  }
+}
+
+.typography-guide__bullet-list {
+  counter-reset: item;
+
+  li {
+    display: block;
+
+    &:before {
+      vertical-align: middle;
+      font-size: .7em;
+      padding: 0 5px 0 3px;
+      content: "\2022";
+      counter-increment: item;
+      color: $brand-red;
+    }
+  }
+}
+
+.typography-guide__ordered-list {
+  counter-reset: item;
+
+  li {
+    display: block;
+
+    &:before {
+      padding: 0 5px 0 3px;
+      content: counter(item) ". ";
+      counter-increment: item;
+      color: $brand-red;
+    }
+  }
+
+}

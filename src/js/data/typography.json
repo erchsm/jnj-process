@@ -1,0 +1,311 @@
+{
+  "DESKTOP": [
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "60px",
+      "lineHeight": "60px",
+      "name": "Header 1",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "40px",
+      "lineHeight": "44px",
+      "name": "Header 2",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "30px",
+      "lineHeight": "36px",
+      "name": "Header 3",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "26px",
+      "lineHeight": "32px",
+      "name": "Header 4",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "24px",
+      "name": "Header 5",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "24px",
+      "lineHeight": "36px",
+      "name": "Subtitle",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "20px",
+      "lineHeight": "30px",
+      "name": "Subtitle small",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Body text",
+      "colors": [
+        "#212121"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Caption text",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    }
+  ],
+  "TABLET": [
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "32px",
+      "lineHeight": "36px",
+      "name": "Header 1",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "28px",
+      "lineHeight": "36px",
+      "name": "Header 2",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "22px",
+      "lineHeight": "36px",
+      "name": "Header 3",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "36px",
+      "name": "Header 4",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "30px",
+      "name": "Header 5",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Subtitle",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Subtitle small",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Body text",
+      "colors": [
+        "#212121"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Caption text",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    }
+  ],
+  "MOBILE": [
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "28px",
+      "lineHeight": "36px",
+      "name": "Header 1",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "20px",
+      "lineHeight": "36px",
+      "name": "Header 2",
+      "colors": [
+        "#212121",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "900",
+      "weight": "Black",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "name": "Header 3",
+      "colors": [
+        "#CA001B",
+        "#000099",
+        "#212121",
+        "#CF009E",
+        "white"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "18px",
+      "lineHeight": "24px",
+      "name": "Subtitle",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "16px",
+      "lineHeight": "24px",
+      "name": "Body text",
+      "colors": [
+        "#212121"
+      ]
+    },
+    {
+      "typeface": "J&J Circular",
+      "fontWeight": "",
+      "weight": "Book",
+      "fontSize": "14px",
+      "lineHeight": "20px",
+      "name": "Caption text",
+      "colors": [
+        "#212121",
+        "#63666a"
+      ]
+    }
+  ]
+}

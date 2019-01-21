@@ -1,0 +1,98 @@
+{
+  "PRIMARY": [
+    {
+      "code": "#CA001B",
+      "name": "J&J Red"
+    },
+    {
+      "code": "#FFFFFF",
+      "name": "White"
+    },
+    {
+      "code": "#F3F3F3",
+      "name": "Ex Light Gray"
+    },
+    {
+      "code": "#D8D8D8",
+      "name": "Light Gray"
+    },
+    {
+      "code": "#888B8D",
+      "name": "Gray"
+    },
+    {
+      "code": "#63666A",
+      "name": "Dark Gray"
+    },
+    {
+      "code": "#212121",
+      "name": "Black"
+    }
+  ],
+  "VIBRANT": [
+    {
+      "code": "#000099",
+      "name": "J&J Blue"
+    },
+    {
+      "code": "#CF009E",
+      "name": "J&J Magenta"
+    }
+  ],
+  "TONE_BLUE": [
+    {
+      "code": "#0E0E69",
+      "name": "J&J Blue"
+    },
+    {
+      "code": "#000099",
+      "name": ""
+    }
+  ],
+  "TONE_MAGENTA": [
+    {
+      "code": "#8A0E6C",
+      "name": "J&J Magenta"
+    },
+    {
+      "code": "#CF009E",
+      "name": ""
+    }
+  ],
+  "ACCENT_PRIMARY": [
+    {
+      "code": "#FD5406",
+      "name": "Orange"
+    },
+    {
+      "code": "#FF7417",
+      "name": "Light Orange"
+    },
+    {
+      "code": "#F862C6",
+      "name": "Pink"
+    },
+    {
+      "code": "#6333C2",
+      "name": "Purple"
+    }
+  ],
+  "ACCENT_SECONDARY": [
+    {
+      "code": "#12C2E9",
+      "name": "Blue"
+    },
+    {
+      "code": "#009999",
+      "name": "Teal"
+    },
+    {
+      "code": "#006666",
+      "name": "Green"
+    },
+    {
+      "code": "#6AC14C",
+      "name": "Light Green"
+    }
+  ]
+}
