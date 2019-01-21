@@ -37592,72 +37592,200 @@ var HomeProfileSetup = function (_Component) {
 				{ className: classnames },
 				_react2.default.createElement('i', { className: 'iconcss icon-home-logo' }),
 				_react2.default.createElement(
-					'section',
-					{ name: 'Preferences', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+					_reactSkroll.Scroller,
+					null,
 					_react2.default.createElement(
-						'h1',
-						null,
-						'Welcome to Home, James.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Connect with other Johnson & Johnson employees and create a positive and productive work environment. Get started by selecting the topics you want to see within your news and events.'
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'contents' },
-						_react2.default.createElement(_MultiSelectBox2.default, {
-							isLarge: true,
-							value: this.state.preferences.franchises,
-							label: 'Company/Franchise *',
-							onChange: this.setPreferences.bind(this, 'franchises'),
-							items: _homeProfileSetup2.default.franchises
-						}),
-						_react2.default.createElement(_MultiSelectBox2.default, {
-							isLarge: true,
-							value: this.state.preferences.functions,
-							label: 'Function *',
-							onChange: this.setPreferences.bind(this, 'functions'),
-							items: _homeProfileSetup2.default.functions
-						}),
-						_react2.default.createElement(_MultiSelectBox2.default, {
-							isLarge: true,
-							value: this.state.preferences.locations,
-							label: 'Location *',
-							onChange: this.setPreferences.bind(this, 'locations'),
-							items: _homeProfileSetup2.default.locations
-						})
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'tags-wrapper' },
-						this.state.preferences.franchises.map(function (item, index) {
-							return _react2.default.createElement(_Tag2.default, { key: index, label: item, click: function click() {
-									return _this2.removePreference('franchises', index);
-								} });
-						}),
-						this.state.preferences.functions.map(function (item, index) {
-							return _react2.default.createElement(_Tag2.default, { key: index, label: item, click: function click() {
-									return _this2.removePreference('functions', index);
-								} });
-						}),
-						this.state.preferences.locations.map(function (item, index) {
-							return _react2.default.createElement(_Tag2.default, { key: index, label: item, click: function click() {
-									return _this2.removePreference('locations', index);
-								} });
-						})
-					),
-					_react2.default.createElement('div', { className: 'spacer' }),
-					_react2.default.createElement(
-						'button',
-						{ disabled: this.state.completed.Preferences ? false : true, className: 'mdc-button mdc-button--secondary mdc-button--white' },
+						'section',
+						{ name: 'Welcome', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
 						_react2.default.createElement(
-							'span',
+							'h1',
 							null,
-							'Continue to Home'
+							'Welcome to Home, James.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'Home is where all Johnson & Johnson employees can connect to create a productive, united work environment. We\'re excited for you to join the community!'
+						),
+						scroll.children.filter(function (child) {
+							return child.name == 'Preferences';
+						}).map(function (child, index) {
+							return _react2.default.createElement(
+								_reactSkroll.ScrollLink,
+								_defineProperty({ key: index, to: child.start }, 'key', index),
+								_react2.default.createElement(
+									'button',
+									{ className: 'mdc-button mdc-button--text-link mdc-button--white' },
+									_react2.default.createElement(
+										'span',
+										null,
+										'Let\u2019s get started'
+									),
+									_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
+								)
+							);
+						})
+					),
+					_react2.default.createElement(
+						'section',
+						{ name: 'Preferences', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Welcome to Home, James.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'Connect with other Johnson & Johnson employees and create a positive and productive work environment. Get started by selecting the topics you want to see within your news and events.'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'contents' },
+							_react2.default.createElement(_MultiSelectBox2.default, {
+								isLarge: true,
+								value: this.state.preferences.franchises,
+								label: 'Company/Franchise *',
+								onChange: this.setPreferences.bind(this, 'franchises'),
+								items: _homeProfileSetup2.default.franchises
+							}),
+							_react2.default.createElement(_MultiSelectBox2.default, {
+								isLarge: true,
+								value: this.state.preferences.functions,
+								label: 'Function *',
+								onChange: this.setPreferences.bind(this, 'functions'),
+								items: _homeProfileSetup2.default.functions
+							}),
+							_react2.default.createElement(_MultiSelectBox2.default, {
+								isLarge: true,
+								value: this.state.preferences.locations,
+								label: 'Location *',
+								onChange: this.setPreferences.bind(this, 'locations'),
+								items: _homeProfileSetup2.default.locations
+							})
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'tags-wrapper' },
+							this.state.preferences.franchises.map(function (item, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: item, click: function click() {
+										return _this2.removePreference('franchises', index);
+									} });
+							}),
+							this.state.preferences.functions.map(function (item, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: item, click: function click() {
+										return _this2.removePreference('functions', index);
+									} });
+							}),
+							this.state.preferences.locations.map(function (item, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: item, click: function click() {
+										return _this2.removePreference('locations', index);
+									} });
+							})
+						),
+						_react2.default.createElement('div', { className: 'spacer' }),
+						_react2.default.createElement(
+							'button',
+							{ disabled: this.state.completed.Preferences ? false : true, className: 'mdc-button mdc-button--secondary mdc-button--white' },
+							_react2.default.createElement(
+								'span',
+								null,
+								'Continue to Home'
+							)
+						)
+					),
+					_react2.default.createElement(
+						'section',
+						{ name: 'Photo', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Put a face to your name.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'We\u2019re connecting you with employees all over the world, adding your photo will put you in a room across the globe!'
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'contents' },
+							_react2.default.createElement(_ImageUpload2.default, null)
+						)
+					),
+					_react2.default.createElement(
+						'section',
+						{ name: 'Accounts', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Sync your accounts.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'See what\'s happening on Yammer to share articles and events. Connect to your Outlook calendar to get a glimpse of your day.'
+						),
+						_react2.default.createElement(_Switch2.default, { label: "Yammer", value: this.state.accounts.yammer, onChange: this.onChangeAccountsYammer }),
+						_react2.default.createElement(_Switch2.default, { label: "Outlook", value: this.state.accounts.outlook, onChange: this.onChangeAccountsOutlook })
+					),
+					_react2.default.createElement(
+						'section',
+						{ name: 'Skills', className: (0, _classnames2.default)({ 'moving': scroll.moving }) },
+						_react2.default.createElement(
+							'h1',
+							null,
+							'Add your skills.'
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'Search below for your personal and professional skills.'
+						),
+						_react2.default.createElement(_SearchBar2.default, { placeholder: 'Skills (ex. Data Analytics)', searchData: _homeProfileSetup2.default.skills, onClick: this.addSkill }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'tags-wrapper' },
+							this.state.skills.map(function (skill, index) {
+								return _react2.default.createElement(_Tag2.default, { key: index, label: skill.id, click: function click() {
+										return _this2.removeSkill(index);
+									} });
+							})
 						)
 					)
+				),
+				_react2.default.createElement(
+					'ul',
+					{ className: 'home-profile-setup__nav' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'home-profile-setup__nav-line' },
+						_react2.default.createElement('div', { className: 'home-profile-setup__nav-line-inner' }),
+						_react2.default.createElement('div', { className: 'home-profile-setup__nav-line-inner home-profile-setup__nav-line-main', style: lineAnimation }),
+						_react2.default.createElement('div', { className: 'home-profile-setup__nav-line-inner' })
+					),
+					scroll.children.filter(function (child) {
+						return child.name != 'Welcome';
+					}).map(function (child, index) {
+						return _react2.default.createElement(
+							'li',
+							{ key: index },
+							_react2.default.createElement(
+								_reactSkroll.ScrollLink,
+								{
+									key: index,
+									className: (0, _classnames2.default)({ 'completed': _this2.state.completed[child.name], 'active': child.active }),
+									to: child.start
+								},
+								_react2.default.createElement('i', { className: 'iconcss icon-checkmark' }),
+								_react2.default.createElement(
+									'span',
+									null,
+									child.name
+								)
+							)
+						);
+					})
 				)
 			);
 		}
