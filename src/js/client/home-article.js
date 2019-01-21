@@ -4,10 +4,12 @@ import articleData from '../data/article';
 import HomeArticle from '../components/HomeArticle';
 import HomeNav from '../components/HomeNav'
 import HomeFooter from '../components/HomeFooter'
+import { StickyContainer, Sticky } from 'react-sticky'
+
 
 render(
 	<div className="test-page">
-		<HomeNav/>
+		<HomeNav sticky/>
 		<HomeArticle
 			body={articleData.body}
 			title={articleData.title}

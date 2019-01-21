@@ -23699,13 +23699,15 @@ var HomeNav = function (_Component) {
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    secondaryPanelType = _state.secondaryPanelType,
 			    notificationsOpen = _state.notificationsOpen;
+			var sticky = this.props.sticky;
 
 
 			var classnames = (0, _classnames2.default)({
 				"home-nav": true,
 				"home-nav--menuOpen": menuOpen,
 				"home-nav--secondaryPanelOpen": secondaryPanelOpen,
-				"home-nav--notificationsOpen": notificationsOpen
+				"home-nav--notificationsOpen": notificationsOpen,
+				"home-nav--sticky": sticky
 			});
 
 			return _react2.default.createElement(
@@ -24043,7 +24045,8 @@ var HomeNav = function (_Component) {
 						),
 						this.state.secondaryPanelType == 'links' ? this.createLinksContent() : this.createCampusesContent()
 					)
-				)
+				),
+				_react2.default.createElement("div", { style: { display: sticky ? 'block' : 'none', height: this.state.isMobile ? '60px' : '120px' } })
 			);
 		}
 	}]);

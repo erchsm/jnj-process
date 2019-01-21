@@ -49,6 +49,10 @@
     justify-content: space-between;
     flex: 1;
   }
+  @media (max-width: $bp-medium) {
+    display: flex;
+    justify-content: space-around;
+  }
   a {
     color: $brand-black;
     background-color: $brand-grey-lightest;

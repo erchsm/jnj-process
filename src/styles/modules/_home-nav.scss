@@ -429,6 +429,32 @@ $baseclass: home-nav;
 
 	}
 
+	&--sticky {
+		.#{$baseclass}__topbar, hr {
+			position: fixed;
+			width: 100vw;
+			@include zIndexCloser();
+		}
+		#first-top-bar, #second-top-bar {
+			height: 60px;
+			background: white;
+		}
+		#second-top-bar {
+			top: 60px;
+		}
+		hr {
+			@include zIndexClosest();
+			&:first-of-type {
+				top: 60px;
+			}
+			&:nth-of-type(2) {
+				top: 120px;
+			}
+		}
+
+	}
+
+
 	&--menuOpen {
 		.#{$baseclass}__hamburger {
 			.line {

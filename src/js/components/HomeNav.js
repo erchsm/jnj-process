@@ -150,12 +150,14 @@ export default class HomeNav extends Component {
 
 	render() {
 		const { menuOpen, secondaryPanelOpen, secondaryPanelType, notificationsOpen } = this.state;
+		const { sticky } = this.props;
 
 		const classnames = classNames({
 			"home-nav": true,
 			"home-nav--menuOpen": menuOpen,
 			"home-nav--secondaryPanelOpen": secondaryPanelOpen,
 			"home-nav--notificationsOpen": notificationsOpen,
+			"home-nav--sticky": sticky,
 		})
 
 		return (
@@ -248,6 +250,7 @@ export default class HomeNav extends Component {
 						{ (this.state.secondaryPanelType == 'links') ? this.createLinksContent() : this.createCampusesContent() }
 					</div>
 				</div>
+				<div style={{ display: sticky ? 'block' : 'none', height: this.state.isMobile ? '60px' : '120px' }}/>
 			</nav>
 		);
 	}

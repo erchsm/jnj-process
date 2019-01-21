@@ -24301,12 +24301,14 @@ var _HomeFooter = require('../components/HomeFooter');
 
 var _HomeFooter2 = _interopRequireDefault(_HomeFooter);
 
+var _reactSticky = require('react-sticky');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _reactDom.render)(_react2.default.createElement(
 	'div',
 	{ className: 'test-page' },
-	_react2.default.createElement(_HomeNav2.default, null),
+	_react2.default.createElement(_HomeNav2.default, { sticky: true }),
 	_react2.default.createElement(_HomeArticle2.default, {
 		body: _article2.default.body,
 		title: _article2.default.title,
@@ -24318,7 +24320,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	_react2.default.createElement(_HomeFooter2.default, null)
 ), document.getElementById('root'));
 
-},{"../components/HomeArticle":219,"../components/HomeFooter":220,"../components/HomeNav":221,"../data/article":227,"react":215,"react-dom":58}],219:[function(require,module,exports){
+},{"../components/HomeArticle":219,"../components/HomeFooter":220,"../components/HomeNav":221,"../data/article":227,"react":215,"react-dom":58,"react-sticky":187}],219:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24778,13 +24780,15 @@ var HomeNav = function (_Component) {
 			    secondaryPanelOpen = _state.secondaryPanelOpen,
 			    secondaryPanelType = _state.secondaryPanelType,
 			    notificationsOpen = _state.notificationsOpen;
+			var sticky = this.props.sticky;
 
 
 			var classnames = (0, _classnames2.default)({
 				"home-nav": true,
 				"home-nav--menuOpen": menuOpen,
 				"home-nav--secondaryPanelOpen": secondaryPanelOpen,
-				"home-nav--notificationsOpen": notificationsOpen
+				"home-nav--notificationsOpen": notificationsOpen,
+				"home-nav--sticky": sticky
 			});
 
 			return _react2.default.createElement(
@@ -25122,7 +25126,8 @@ var HomeNav = function (_Component) {
 						),
 						this.state.secondaryPanelType == 'links' ? this.createLinksContent() : this.createCampusesContent()
 					)
-				)
+				),
+				_react2.default.createElement("div", { style: { display: sticky ? 'block' : 'none', height: this.state.isMobile ? '60px' : '120px' } })
 			);
 		}
 	}]);
