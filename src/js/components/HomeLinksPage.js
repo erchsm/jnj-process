@@ -34,7 +34,7 @@ export default class HomeLinksPage extends Component {
 					"Services & Discounts",
 					"Computing & Technology",
 					"Time, Travel & Expenses",
-					"Online Tools & Applications",
+					"Tools & Applications",
 				],
 				myrecents: [
 					"Today",
@@ -55,7 +55,7 @@ export default class HomeLinksPage extends Component {
 					"Services & Discounts",
 					"Computing & Technology",
 					"Time, Travel & Expenses",
-					"Online Tools & Applications",
+					"Tools & Applications",
 				],
 				alphabetical: [
 					"A",
