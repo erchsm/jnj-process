@@ -23914,6 +23914,20 @@ var HomeNav = function (_Component) {
 										"li",
 										{ className: "home-nav__item" },
 										_react2.default.createElement("img", { src: "../assets/img/user-round.png" })
+									),
+									_react2.default.createElement(
+										"li",
+										{ className: "home-nav__item" },
+										_react2.default.createElement(
+											"h5",
+											{ className: "eyebrow" },
+											"JNJ ",
+											_react2.default.createElement(
+												"span",
+												{ style: { color: '#417505' } },
+												"140.00"
+											)
+										)
 									)
 								) : null,
 								_react2.default.createElement(

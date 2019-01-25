@@ -15387,6 +15387,9 @@ hr {
   @media screen and (max-width: 800px) {
     .home-nav .home-nav__topbar {
       padding: 0 12px; }
+    .home-nav .home-nav__item h5 {
+      font-weight: 800;
+      margin-bottom: 0; }
     .home-nav hr:last-of-type {
       display: none; }
     .home-nav #second-top-bar {

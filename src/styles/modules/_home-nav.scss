@@ -541,6 +541,12 @@ $baseclass: home-nav;
 		.#{$baseclass}__topbar {
 			padding: 0 12px;
 		}
+		.#{$baseclass}__item {
+			h5 {
+				font-weight: 800;
+				margin-bottom: 0;
+			}
+		}
 		hr {
 			&:last-of-type {
 				display: none;

@@ -231,6 +231,9 @@ export default class HomeNav extends Component {
 									<li className="home-nav__item">
 										<img src="../assets/img/user-round.png"/>
 									</li>
+									<li className="home-nav__item">
+										<h5 className="eyebrow">JNJ <span style={{color: '#417505'}}>140.00</span></h5>
+									</li>
 								</ul>) : null}
 								<li onClick={() => this.openSecondaryPanel('links')}><h3 className={classNames({'active': secondaryPanelType == 'links' && secondaryPanelOpen })}>Links</h3></li>
 								<li><a href="//home.jnj.com/#my-news" target="_blank"><h3>News</h3></a></li>
