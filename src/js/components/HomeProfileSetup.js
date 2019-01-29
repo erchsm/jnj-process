@@ -113,6 +113,15 @@ export default class HomeProfileSetup extends Component {
 			},
 		}))
 	}
+
+	completeField = (completed) => {
+		this.setState(prevState => ({
+			completed: {
+					...prevState.completed,
+					[completed]: true,
+			},
+		}))
+	}
 	
 	render() {
 		const { scroll } = this.props;
@@ -145,11 +154,11 @@ export default class HomeProfileSetup extends Component {
 			transform: 'scale3d(' + linePercentage[activeChild.name] + ', 1, 1)',
 		}
 
-		
+
 		return (
 			<div className={classnames}>
 				<i className="iconcss icon-home-logo"></i>
-				{/*<Scroller>*/}
+				<Scroller>
 
 					{/*<section name="Welcome" className={classNames({ 'moving': scroll.moving })}>
 						<h1>Welcome to Home, James.</h1>
@@ -211,7 +220,7 @@ export default class HomeProfileSetup extends Component {
 									)
 								}
 							</div>
-							<div className="spacer"></div>
+							{/*<div className="spacer"></div>*/}
 								{
 									<button disabled={(this.state.completed.Preferences) ? false : true} className="mdc-button mdc-button--secondary mdc-button--white">
 										<span>Continue to Home</span>
@@ -237,13 +246,13 @@ export default class HomeProfileSetup extends Component {
 								/>*/}
 					</section>
 
-					{/*<section name="Photo" className={classNames({ 'moving': scroll.moving })}>
+					{<section name="Photo" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Put a face to your name.</h1>
 							<p>We’re connecting you with employees all over the world, adding your photo will put you in a room across the globe!</p>
 							<div className="contents">
-								<ImageUpload/>
+								<ImageUpload onUpload={() => this.completeField("Photo") }/>
 							</div>
-					</section>*/}
+					</section>}
 
 					{/*<section name="Bio" className={classNames({ 'moving': scroll.moving })}>
 						<h1>About your role.</h1>
@@ -255,19 +264,19 @@ export default class HomeProfileSetup extends Component {
 							<p>There are many ways to connect at Johnson & Johnson. Let us know your preference.</p>
 					</section>*/}
 
-					{/*<section name="Accounts" className={classNames({ 'moving': scroll.moving })}>
+					{<section name="Accounts" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Sync your accounts.</h1>
 							<p>See what's happening on Yammer to share articles and events. Connect to your Outlook calendar to get a glimpse of your day.</p>
 							<Switch label={"Yammer"} value={this.state.accounts.yammer} onChange={this.onChangeAccountsYammer} />
 							<Switch label={"Outlook"} value={this.state.accounts.outlook} onChange={this.onChangeAccountsOutlook} />
-					</section>*/}
+					</section>}
 
 					{/*<section name="Birthday" className={classNames({ 'moving': scroll.moving })}>
 							<h1>Like cupcakes?</h1>
 							<p>Enter your birthday and let us know when to celebrate! </p>
 					</section>*/}
 
-					{/*<section name="Skills" className={classNames({ 'moving': scroll.moving })}>
+					{<section name="Skills" className={classNames({ 'moving': scroll.moving })}>
 						<h1>Add your skills.</h1>
 						<p>Search below for your personal and professional skills.</p>
 						<SearchBar placeholder="Skills (ex. Data Analytics)" searchData={homeProfileSetupData.skills} onClick={this.addSkill}/>
@@ -278,11 +287,11 @@ export default class HomeProfileSetup extends Component {
 						)
 						}
 						</div>
-					</section>*/}
+					</section>}
 
-				{/*</Scroller>*/}
+				</Scroller>
 
-				{/*<ul className="home-profile-setup__nav">
+				{<ul className="home-profile-setup__nav">
 					<div className="home-profile-setup__nav-line">
 						<div className="home-profile-setup__nav-line-inner"></div>
 						<div className="home-profile-setup__nav-line-inner home-profile-setup__nav-line-main" style={lineAnimation}></div>
@@ -302,7 +311,7 @@ export default class HomeProfileSetup extends Component {
 							</li>
 						)
 					}
-				</ul>*/}
+				</ul>}
 			</div>
 		)
 	}

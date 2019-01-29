@@ -44,13 +44,15 @@ export default class ImageUpload extends Component {
       "image-upload__bottom--uploaded": imagePreviewUrl,
     });
 
+    const { onUpload } = this.props;
+
     return (
       <div className="image-upload">
         <form onSubmit={(e)=>this._handleSubmit(e)}>
           <div className="imgPreview">
             {$imagePreview}
           </div>
-          <input className="fileInput" type="file" onChange={(e)=>this._handleImageChange(e)} />
+          <input className="fileInput" type="file" onChange={(e) => { this._handleImageChange(e); onUpload();}} />
           <div className={bottomBarClassname}>
             <i className="iconcss icon-camera"></i>
             <p>Upload an image</p>
