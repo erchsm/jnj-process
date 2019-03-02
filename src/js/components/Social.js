@@ -55,7 +55,7 @@ export default class Social extends Component {
 					'animating': this.state.articleUrlCopied,
 				})}>
 				<i className='iconcss icon-link-alt'></i>
-				<span className='social__like-amount'>
+				<span className='social__text'>
 					{this.state.articleUrlCopied ? 'Link copied' : ''}
 				</span>
 				<svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
@@ -74,7 +74,7 @@ export default class Social extends Component {
 				<div className="social__likes-counter">
 					+{ this.state.likesAmount - this.props.likesAmount }
 				</div>
-				<span className='social__like-amount'>
+				<span className='social__text'>
 					{this.state.likesAmount}
 				</span>
 				<div className="circle-wrap">

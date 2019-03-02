@@ -35,9 +35,9 @@ export default class Article extends Component {
 
 						<div className="grid">
 							<div className="grid__item grid__item--col-1 grid__item--hide-medium"/>
-							<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
+							<div className="grid__item grid__item--col-9 grid__item--col-12-desktop">
 								<h1 className='article__title'>{title}</h1>
-								<span className='article__headline'>By <span style={{ borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</span>&nbsp;&nbsp;|&nbsp;&nbsp;{timestamp}</span>
+								<span className='article__headline'>By <a style={{ color: `${palette("brand-black")}`, borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</a>&nbsp;&nbsp;|&nbsp;&nbsp;{timestamp}</span>
 							</div>
 						</div>
 
@@ -47,7 +47,7 @@ export default class Article extends Component {
 									<Social likesAmount={likesAmount}/>
 								</div>
 							</div>
-							<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
+							<div className="grid__item grid__item--col-9 grid__item--col-12-desktop">
 								<div className='article__media is-clearfix'>
 									<img {...this.props.heroImage} className='article__hero-img'/>
 									<div className='article__social-wrapper is-clearfix article__social-wrapper--static'>

@@ -24396,7 +24396,7 @@ var Article = function (_Component) {
 						_react2.default.createElement('div', { className: 'grid__item grid__item--col-1 grid__item--hide-medium' }),
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-12-desktop' },
 							_react2.default.createElement(
 								'h1',
 								{ className: 'article__title' },
@@ -24407,8 +24407,8 @@ var Article = function (_Component) {
 								{ className: 'article__headline' },
 								'By ',
 								_react2.default.createElement(
-									'span',
-									{ style: { borderBottom: 'solid 1px ' + (0, _palette2.default)("brand-grey-light") } },
+									'a',
+									{ style: { color: '' + (0, _palette2.default)("brand-black"), borderBottom: 'solid 1px ' + (0, _palette2.default)("brand-grey-light") } },
 									author
 								),
 								'\xA0\xA0|\xA0\xA0',
@@ -24430,7 +24430,7 @@ var Article = function (_Component) {
 						),
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-12-desktop' },
 							_react2.default.createElement(
 								'div',
 								{ className: 'article__media is-clearfix' },
@@ -25673,7 +25673,7 @@ var Social = function (_Component) {
 					_react2.default.createElement('i', { className: 'iconcss icon-link-alt' }),
 					_react2.default.createElement(
 						'span',
-						{ className: 'social__like-amount' },
+						{ className: 'social__text' },
 						this.state.articleUrlCopied ? 'Link copied' : ''
 					),
 					_react2.default.createElement(
@@ -25704,7 +25704,7 @@ var Social = function (_Component) {
 					),
 					_react2.default.createElement(
 						'span',
-						{ className: 'social__like-amount' },
+						{ className: 'social__text' },
 						this.state.likesAmount
 					),
 					_react2.default.createElement(
