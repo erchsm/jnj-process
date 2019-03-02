@@ -24312,10 +24312,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	_react2.default.createElement(_HomeArticle2.default, {
 		body: _article2.default.body,
 		title: _article2.default.title,
+		author: _article2.default.author,
 		heroImage: _article2.default.heroImage,
 		tags: _article2.default.tags,
 		likesAmount: _article2.default.likesAmount,
-		headline: _article2.default.headline
+		timestamp: _article2.default.timestamp
 	}),
 	_react2.default.createElement(_HomeFooter2.default, null)
 ), document.getElementById('root'));
@@ -24324,7 +24325,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -24349,6 +24350,10 @@ var _Social2 = _interopRequireDefault(_Social);
 
 var _reactSticky = require('react-sticky');
 
+var _palette = require('../services/palette');
+
+var _palette2 = _interopRequireDefault(_palette);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24358,97 +24363,116 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Article = function (_Component) {
-  _inherits(Article, _Component);
+	_inherits(Article, _Component);
 
-  function Article(props) {
-    _classCallCheck(this, Article);
+	function Article(props) {
+		_classCallCheck(this, Article);
 
-    return _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).call(this, props));
-  }
+		return _possibleConstructorReturn(this, (Article.__proto__ || Object.getPrototypeOf(Article)).call(this, props));
+	}
 
-  _createClass(Article, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+	_createClass(Article, [{
+		key: 'render',
+		value: function render() {
+			var _props = this.props,
+			    title = _props.title,
+			    body = _props.body,
+			    author = _props.author,
+			    heroImage = _props.heroImage,
+			    tags = _props.tags,
+			    likesAmount = _props.likesAmount,
+			    timestamp = _props.timestamp;
 
-      return _react2.default.createElement(
-        'main',
-        { className: 'article__background' },
-        _react2.default.createElement(
-          'div',
-          { className: 'article__wrapper' },
-          _react2.default.createElement(
-            _reactSticky.StickyContainer,
-            { style: { position: 'relative' } },
-            _react2.default.createElement(
-              'div',
-              { className: 'article__header-meta' },
-              _react2.default.createElement(
-                'h1',
-                { className: 'article__title' },
-                this.props.title
-              ),
-              _react2.default.createElement(
-                'span',
-                { className: 'article__headline' },
-                this.props.headline
-              )
-            ),
-            _react2.default.createElement(
-              _reactSticky.Sticky,
-              { disableCompensation: true },
-              function (_ref) {
-                var style = _ref.style;
-                return _react2.default.createElement(
-                  'div',
-                  {
-                    style: style,
-                    className: 'article__social-wrapper article__social-wrapper--sticky is-clearfix'
-                  },
-                  _react2.default.createElement(_Social2.default, { likesAmount: _this2.props.likesAmount })
-                );
-              }
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'article__media is-clearfix' },
-              _react2.default.createElement('img', _extends({}, this.props.heroImage, { className: 'article__hero-img' })),
-              _react2.default.createElement(
-                'div',
-                { className: 'article__social-wrapper is-clearfix article__social-wrapper--static' },
-                _react2.default.createElement(_Social2.default, { likesAmount: this.props.likesAmount })
-              )
-            ),
-            _react2.default.createElement('hr', { className: 'article__delimeter' }),
-            _react2.default.createElement('div', { className: 'article__body is-clearfix ckeditor', dangerouslySetInnerHTML: { __html: this.props.body } }),
-            _react2.default.createElement(
-              'div',
-              { className: 'article__tags-wrapper' },
-              _react2.default.createElement(_TagsCollapsable2.default, { tags: this.props.tags })
-            )
-          )
-        )
-      );
-    }
-  }]);
 
-  return Article;
+			return _react2.default.createElement(
+				'main',
+				{ className: 'article__background' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'article__wrapper' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'grid' },
+						_react2.default.createElement('div', { className: 'grid__item grid__item--col-1 grid__item--hide-medium' }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
+							_react2.default.createElement(
+								'h1',
+								{ className: 'article__title' },
+								title
+							),
+							_react2.default.createElement(
+								'span',
+								{ className: 'article__headline' },
+								'By ',
+								_react2.default.createElement(
+									'span',
+									{ style: { borderBottom: 'solid 1px ' + (0, _palette2.default)("brand-grey-light") } },
+									author
+								),
+								'\xA0\xA0|\xA0\xA0',
+								timestamp
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'grid' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-1 grid__item--hide-medium' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'article__social-wrapper article__social-wrapper--sticky' },
+								_react2.default.createElement(_Social2.default, { likesAmount: likesAmount })
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'grid__item grid__item--col-9 grid__item--col-12-medium' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'article__media is-clearfix' },
+								_react2.default.createElement('img', _extends({}, this.props.heroImage, { className: 'article__hero-img' })),
+								_react2.default.createElement(
+									'div',
+									{ className: 'article__social-wrapper is-clearfix article__social-wrapper--static' },
+									_react2.default.createElement(_Social2.default, { likesAmount: likesAmount })
+								)
+							),
+							_react2.default.createElement('hr', { className: 'article__delimeter' }),
+							_react2.default.createElement('div', { className: 'article__body is-clearfix ckeditor', dangerouslySetInnerHTML: { __html: body } }),
+							_react2.default.createElement(
+								'div',
+								{ className: 'article__tags-wrapper' },
+								_react2.default.createElement(_TagsCollapsable2.default, { tags: tags })
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Article;
 }(_react.Component);
 
 Article.propTypes = {
-  body: _propTypes2.default.string,
-  title: _propTypes2.default.string,
-  heroImage: _propTypes2.default.shape({
-    src: _propTypes2.default.string,
-    alt: _propTypes2.default.string
-  }),
-  tags: _propTypes2.default.arrayOf(_propTypes2.default.string),
-  likesAmount: _propTypes2.default.number,
-  headline: _propTypes2.default.string
+	body: _propTypes2.default.string,
+	title: _propTypes2.default.string,
+	author: _propTypes2.default.string,
+	heroImage: _propTypes2.default.shape({
+		src: _propTypes2.default.string,
+		alt: _propTypes2.default.string
+	}),
+	tags: _propTypes2.default.arrayOf(_propTypes2.default.string),
+	likesAmount: _propTypes2.default.number,
+	timestamp: _propTypes2.default.string
 };
 exports.default = Article;
 
-},{"./Social":224,"./TagsCollapsable":226,"prop-types":46,"react":215,"react-sticky":187}],220:[function(require,module,exports){
+},{"../services/palette":230,"./Social":224,"./TagsCollapsable":226,"prop-types":46,"react":215,"react-sticky":187}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25559,7 +25583,7 @@ exports.default = SearchBar;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25568,7 +25592,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -25577,58 +25607,132 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Social = function (_Component) {
-  _inherits(Social, _Component);
+	_inherits(Social, _Component);
 
-  function Social(props) {
-    _classCallCheck(this, Social);
+	function Social(props) {
+		_classCallCheck(this, Social);
 
-    return _possibleConstructorReturn(this, (Social.__proto__ || Object.getPrototypeOf(Social)).call(this, props));
-  }
+		var _this = _possibleConstructorReturn(this, (Social.__proto__ || Object.getPrototypeOf(Social)).call(this, props));
 
-  _createClass(Social, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'ul',
-        {
-          style: this.props.style,
-          className: 'social'
-        },
-        _react2.default.createElement(
-          'li',
-          { className: 'social__list-item' },
-          _react2.default.createElement('a', { href: '#', className: 'iconcss icon-yammer-logo social__yammer' })
-        ),
-        _react2.default.createElement(
-          'li',
-          { className: 'social__list-item' },
-          _react2.default.createElement('a', { href: '#', className: 'iconcss icon-mail social__email' })
-        ),
-        _react2.default.createElement(
-          'li',
-          { className: 'social__list-item' },
-          _react2.default.createElement('a', { href: '#', className: 'iconcss icon-link-alt social__share' })
-        ),
-        _react2.default.createElement(
-          'li',
-          { className: 'social__list-item' },
-          _react2.default.createElement('a', { href: '#', className: 'iconcss icon-like social__like' }),
-          _react2.default.createElement(
-            'span',
-            { className: 'social__like-amount' },
-            this.props.likesAmount
-          )
-        )
-      );
-    }
-  }]);
+		_this.incrementLikesAmount = function () {
+			_this.setState({
+				likesAmount: _this.state.likesAmount + 1,
+				hasBeenLiked: true,
+				likesAnimating: true
+			});
+			setTimeout(function () {
+				_this.setState({
+					likesAnimating: false
+				});
+			}, 900);
+		};
 
-  return Social;
+		_this.copyArticleUrl = function () {
+			_this.setState({
+				articleUrlCopied: true
+			});
+			setTimeout(function () {
+				_this.setState({
+					articleUrlCopied: false
+				});
+			}, 6000);
+		};
+
+		_this.state = {
+			likesAmount: _this.props.likesAmount,
+			hasBeenLiked: false,
+			likesAnimating: false,
+			articleUrlCopied: false
+		};
+		return _this;
+	}
+
+	_createClass(Social, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'ul',
+				{ style: this.props.style, className: 'social' },
+				_react2.default.createElement(
+					'li',
+					{ className: 'social__list-item' },
+					_react2.default.createElement('i', { className: 'iconcss icon-yammer-logo social__yammer' })
+				),
+				_react2.default.createElement(
+					'li',
+					{ className: 'social__list-item' },
+					_react2.default.createElement('i', { className: 'iconcss icon-mail social__email' })
+				),
+				_react2.default.createElement(
+					'li',
+					_defineProperty({ className: 'social__list-item', onClick: this.copyArticleUrl }, 'className', (0, _classnames2.default)({
+						'social__list-item': true,
+						'social__link': true,
+						'animating': this.state.articleUrlCopied
+					})),
+					_react2.default.createElement('i', { className: 'iconcss icon-link-alt' }),
+					_react2.default.createElement(
+						'span',
+						{ className: 'social__like-amount' },
+						this.state.articleUrlCopied ? 'Link copied' : ''
+					),
+					_react2.default.createElement(
+						'svg',
+						{ className: 'checkmark', xmlns: 'http://www.w3.org/2000/svg', viewBox: '0 0 52 52' },
+						_react2.default.createElement('circle', { className: 'checkmark__circle', cx: '26', cy: '26', r: '25', fill: 'none' }),
+						_react2.default.createElement('path', { className: 'checkmark__check', fill: 'none', d: 'M14.1 27.2l7.1 7.2 16.7-16.8' })
+					)
+				),
+				_react2.default.createElement(
+					'li',
+					{ onClick: this.incrementLikesAmount, className: (0, _classnames2.default)({
+							'social__list-item': true,
+							'social__share': true,
+							'animating': this.state.likesAnimating
+						}) },
+					_react2.default.createElement('i', { className: (0, _classnames2.default)({
+							'iconcss social__like': true,
+							'icon-like-outline': !this.state.hasBeenLiked,
+							'icon-like-fill': this.state.hasBeenLiked
+						})
+					}),
+					_react2.default.createElement(
+						'div',
+						{ className: 'social__likes-counter' },
+						'+',
+						this.state.likesAmount - this.props.likesAmount
+					),
+					_react2.default.createElement(
+						'span',
+						{ className: 'social__like-amount' },
+						this.state.likesAmount
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'circle-wrap' },
+						_react2.default.createElement('div', { className: 'circle-lg' })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'dots-wrap' },
+						_react2.default.createElement('div', { className: 'dot dot--t' }),
+						_react2.default.createElement('div', { className: 'dot dot--tr' }),
+						_react2.default.createElement('div', { className: 'dot dot--br' }),
+						_react2.default.createElement('div', { className: 'dot dot--b' }),
+						_react2.default.createElement('div', { className: 'dot dot--bl' }),
+						_react2.default.createElement('div', { className: 'dot dot--tl' })
+					)
+				)
+			);
+		}
+	}]);
+
+	return Social;
 }(_react.Component);
 
 exports.default = Social;
 
-},{"react":215}],225:[function(require,module,exports){
+},{"classnames":1,"react":215}],225:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25961,12 +26065,13 @@ exports.default = Home;
 },{"lodash/throttle":37,"react":215}],227:[function(require,module,exports){
 module.exports={
   "title" : "Wall Street Journal: Bringing Up Baby’s Market Share at J&J",
+  "author": "Siarhei Semashko",
   "heroImage": {
     "src": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c4.png",
     "alt": "hero image"
   },
   "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor</p><blockquote><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Pull qoute style.”</p></blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.</p><p><img alt=\"\" data-align=\"right\" src=\"../assets/img/fc9bbf35-91d1-423e-81e7-6485d61aaab9.jpg\" style=\"float: right; width: 304px; height: 301px;\"><strong>Lorem Ipsum Dolor Title</strong></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p><strong>Lorem Ipsum Dolor Title</strong></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width: 100%;\"><thead><tr><th scope=\"col\">&nbsp;</th><th scope=\"col\">Group A</th><th scope=\"col\">Group B</th></tr></thead><tbody><tr><td>Group one</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td></tr><tr><td>Group two</td><td>Lorem ipsum dolor sit amet elit copy about within this sectionLorem ipsum dolor sit amet elit copy about within this section</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td></tr><tr><td>Group three</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td></tr><tr><td>Group four</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td><td>Lorem ipsum dolor sit amet elit copy about within this section</td></tr></tbody></table><p>&nbsp;</p><p><strong>Lorem&nbsp;Ipsum&nbsp;Dolor Title</strong></p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium aenean pharetra magna ac placerat vestibulum. Quisque non tellus orci ac auctor augue. Ultrices dui sapien eget mi proin sed libero enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
-  "headline" : "2 months ago",
+  "timestamp" : "2 months ago",
   "tags" : [
     "J&J Global",
     "Consumer",
@@ -26057,6 +26162,32 @@ exports.default = function () {
 };
 
 var lastId = 0;
+
+},{}],230:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+exports.default = function (color) {
+	var palette = {
+		"brand-grey-lightest": "#F4F4F4",
+		"brand-grey-light": "#D8D8D8",
+		"brand-grey-dark": "#888B8D",
+		"brand-grey-darkest": "#63666A",
+		"brand-black": "#212121",
+
+		"brand-grey-blue": "#8A98A6",
+
+		"brand-blue": "#000099",
+		"brand-blue-alt": "#1724A9",
+		"brand-magenta": "#CC0099",
+		"brand-red": "#CA001B",
+		"brand-blue-light": "#F9FAFB"
+	};
+	return palette[color];
+};
 
 },{}]},{},[218])
 

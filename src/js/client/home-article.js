@@ -13,10 +13,11 @@ render(
 		<HomeArticle
 			body={articleData.body}
 			title={articleData.title}
+			author={articleData.author}
 			heroImage={articleData.heroImage}
 			tags={articleData.tags}
 			likesAmount={articleData.likesAmount}
-			headline={articleData.headline}
+			timestamp={articleData.timestamp}
 		/>
 		<HomeFooter />
 	</div>

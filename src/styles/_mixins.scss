@@ -1,7 +1,3 @@
-@mixin z-index-fullscreen($zindex) {
-	z-index: $zindex;
-}
-
 @mixin aspect-ratio($width, $height) {
 	position: relative;
 	&:before {
@@ -16,5 +12,61 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+	}
+}
+
+@mixin checkmark($color: $brand-green) {
+	@keyframes stroke {
+		100% {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	@keyframes scale {
+		0%, 100% {
+			transform: none;
+		}
+		50% {
+			transform: scale3d(1.2, 1.2, 1);
+		}
+	}
+
+	@keyframes fill {
+		100% {
+			box-shadow: inset 0px 0px 0px 30px;
+		}
+	}
+
+	.checkmark {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: none;
+		stroke-width: 2;
+		stroke: #fff;
+		left: 0;
+		top: 0;
+		color: $color;
+		stroke-miterlimit: 10;
+		box-shadow: inset 0px 0px 0px;
+		animation: fill .4s $easing1 .4s forwards, scale .4s $easing1 .9s;
+	}
+
+	.checkmark__circle {
+		stroke-dasharray: 166;
+		stroke-dashoffset: 166;
+		stroke-width: 2;
+		stroke-miterlimit: 10;
+		stroke: $color;
+		fill: none;
+		animation: stroke .6s $easing2 forwards;
+	}
+
+	.checkmark__check {
+		transform-origin: 50% 50%;
+		stroke-dasharray: 48;
+		stroke-dashoffset: 48;
+		animation: stroke .3s $easing2 .8s forwards;
 	}
 }

@@ -4,59 +4,68 @@ import TagsCollapsable from './TagsCollapsable'
 import Social from './Social'
 import { StickyContainer, Sticky } from 'react-sticky'
 
+import palette from '../services/palette'
+
 export default class Article extends Component {
 
-  static propTypes = {
-    body: PropTypes.string,
-    title: PropTypes.string,
-    heroImage: PropTypes.shape({
-      src: PropTypes.string,
-      alt: PropTypes.string
-    }),
-    tags: PropTypes.arrayOf(PropTypes.string),
-    likesAmount: PropTypes.number,
-    headline: PropTypes.string
-  }
+	static propTypes = {
+		body: PropTypes.string,
+		title: PropTypes.string,
+		author: PropTypes.string,
+		heroImage: PropTypes.shape({
+			src: PropTypes.string,
+			alt: PropTypes.string
+		}),
+		tags: PropTypes.arrayOf(PropTypes.string),
+		likesAmount: PropTypes.number,
+		timestamp: PropTypes.string
+	}
 
-  constructor (props) {
-    super(props)
-  }
+	constructor (props) {
+		super(props)
+	}
 
-  render () {
+	render () {
 
-    return (
-      <main className='article__background'>
-        <div className='article__wrapper'>
-          <StickyContainer style={{ position: 'relative' }}>
-            <div className='article__header-meta'>
-              <h1 className='article__title'>{this.props.title}</h1>
-              <span className='article__headline'>{this.props.headline}</span>
-            </div>
-            <Sticky disableCompensation>
-              {({ style }) => <div
-                style={style}
-                className='article__social-wrapper article__social-wrapper--sticky is-clearfix'
-              >
-                <Social likesAmount={this.props.likesAmount}/>
-              </div>}
-            </Sticky>
-            <div className='article__media is-clearfix'>
-              <img {...this.props.heroImage} className='article__hero-img'/>
-              <div className='article__social-wrapper is-clearfix article__social-wrapper--static'>
-                <Social likesAmount={this.props.likesAmount}/>
-              </div>
+		const { title, body, author, heroImage, tags, likesAmount, timestamp } = this.props;
 
-            </div>
-            <hr className='article__delimeter'/>
-            <div className='article__body is-clearfix ckeditor' dangerouslySetInnerHTML={{ __html: this.props.body }}>
-            </div>
-            <div className='article__tags-wrapper'>
-              <TagsCollapsable tags={this.props.tags}/>
-            </div>
-          </StickyContainer>
-        </div>
-      </main>
+		return (
+			<main className='article__background'>
+				<div className='article__wrapper'>
 
-    )
-  }
+						<div className="grid">
+							<div className="grid__item grid__item--col-1 grid__item--hide-medium"/>
+							<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
+								<h1 className='article__title'>{title}</h1>
+								<span className='article__headline'>By <span style={{ borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</span>&nbsp;&nbsp;|&nbsp;&nbsp;{timestamp}</span>
+							</div>
+						</div>
+
+						<div className="grid">
+							<div className="grid__item grid__item--col-1 grid__item--hide-medium">
+								<div className='article__social-wrapper article__social-wrapper--sticky'>
+									<Social likesAmount={likesAmount}/>
+								</div>
+							</div>
+							<div className="grid__item grid__item--col-9 grid__item--col-12-medium">
+								<div className='article__media is-clearfix'>
+									<img {...this.props.heroImage} className='article__hero-img'/>
+									<div className='article__social-wrapper is-clearfix article__social-wrapper--static'>
+										<Social likesAmount={likesAmount}/>
+									</div>
+								</div>
+
+								<hr className='article__delimeter'/>
+								<div className='article__body is-clearfix ckeditor' dangerouslySetInnerHTML={{ __html: body }}></div>
+								
+								<div className='article__tags-wrapper'>
+									<TagsCollapsable tags={tags}/>
+								</div>
+							</div>
+
+						</div>
+				</div>
+			</main>
+		)
+	}
 }

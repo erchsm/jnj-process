@@ -80,13 +80,14 @@
 .icon-workday:before { content: "\EA50" }
 .icon-plane:before { content: "\EA51" }
 .icon-calendar:before { content: "\EA52" }
-.icon-like:before { content: "\EA53" }
+.icon-like-outline:before { content: "\EA53" }
 .icon-link-alt:before { content: "\EA54" }
 .icon-link-alt-thin:before { content: "\EA55" }
 .icon-yammer-logo:before { content: "\EA56" }
 .icon-jnjlogo:before { content: "\EA57" }
 .icon-external-link:before { content: "\EA58" }
 .icon-view:before { content: "\EA59" }
+.icon-like-fill:before { content: "\EA60" }
 
 
 @mixin icon($icon, $font-size:false, $extend-base:true) {
