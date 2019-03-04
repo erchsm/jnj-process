@@ -24411,7 +24411,7 @@ var Article = function (_Component) {
 									{ style: { color: '' + (0, _palette2.default)("brand-black"), borderBottom: 'solid 1px ' + (0, _palette2.default)("brand-grey-light") } },
 									author
 								),
-								'\xA0\xA0|\xA0\xA0',
+								_react2.default.createElement('hr', null),
 								timestamp
 							)
 						)
@@ -25655,10 +25655,10 @@ var Social = function (_Component) {
 				{ style: this.props.style, className: 'social' },
 				_react2.default.createElement(
 					'li',
-					{ className: 'social__list-item' },
+					{ className: 'social__list-item social__yammer' },
 					_react2.default.createElement(
 						'a',
-						null,
+						{ id: 'yj-share-button' },
 						_react2.default.createElement('i', { className: 'iconcss icon-yammer-logo social__yammer' })
 					)
 				),
@@ -25667,7 +25667,7 @@ var Social = function (_Component) {
 					{ className: 'social__list-item' },
 					_react2.default.createElement(
 						'a',
-						null,
+						{ href: 'mailto:?subject=Check%20out%20this%20article%20on%20Home!&body=https%3A%2F%2Fhome.jnj.com%2Fv2%2F%23my-news-detail%2F159428' },
 						_react2.default.createElement('i', { className: 'iconcss icon-mail social__email' })
 					)
 				),

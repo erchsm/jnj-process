@@ -37,7 +37,7 @@ export default class Article extends Component {
 							<div className="grid__item grid__item--col-1 grid__item--hide-medium"/>
 							<div className="grid__item grid__item--col-9 grid__item--col-12-desktop">
 								<h1 className='article__title'>{title}</h1>
-								<span className='article__headline'>By <a style={{ color: `${palette("brand-black")}`, borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</a>&nbsp;&nbsp;|&nbsp;&nbsp;{timestamp}</span>
+								<span className='article__headline'>By <a style={{ color: `${palette("brand-black")}`, borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</a><hr/>{timestamp}</span>
 							</div>
 						</div>
 
