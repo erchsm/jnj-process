@@ -44,17 +44,17 @@ export default class Social extends Component {
 	render () {
 		return <ul style={this.props.style} className='social'>
 			<li className='social__list-item'>
-				<i className='iconcss icon-yammer-logo social__yammer'></i>
+				<a><i className='iconcss icon-yammer-logo social__yammer'></i></a>
 			</li>
 			<li className='social__list-item'>
-				<i className='iconcss icon-mail social__email'></i>
+				<a><i className='iconcss icon-mail social__email'></i></a>
 			</li>
 			<li className='social__list-item' onClick={ this.copyArticleUrl } className={classNames({
 					'social__list-item': true,
 					'social__link': true,
 					'animating': this.state.articleUrlCopied,
 				})}>
-				<i className='iconcss icon-link-alt'></i>
+				<a><i className='iconcss icon-link-alt'></i></a>
 				<span className='social__text'>
 					{this.state.articleUrlCopied ? 'Link copied' : ''}
 				</span>
@@ -62,33 +62,20 @@ export default class Social extends Component {
 			</li>
 			<li onClick={ this.incrementLikesAmount } className={classNames({
 					'social__list-item': true,
-					'social__share': true,
+					'social__like': true,
 					'animating': this.state.likesAnimating,
 				})}>
-				<i className={classNames({
-					'iconcss social__like': true,
+				<a><i className={classNames({
+					'iconcss': true,
 					'icon-like-outline': !this.state.hasBeenLiked,
 					'icon-like-fill': this.state.hasBeenLiked,
-				})}
-				></i>
+				})}></i></a>
 				<div className="social__likes-counter">
 					+{ this.state.likesAmount - this.props.likesAmount }
 				</div>
 				<span className='social__text'>
 					{this.state.likesAmount}
 				</span>
-				<div className="circle-wrap">
-					<div className="circle-lg"/>
-				</div>
-				<div className="dots-wrap">
-					<div className="dot dot--t"/>
-					<div className="dot dot--tr"/>
-					<div className="dot dot--br"/>
-					<div className="dot dot--b"/>
-					<div className="dot dot--bl"/>
-					<div className="dot dot--tl"/>
-				</div>
-
 			</li>
 		</ul>
 	}

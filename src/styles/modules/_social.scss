@@ -8,15 +8,22 @@
 }
 
 .social__list-item {
-	background-color: $brand-grey-lightest;
-	cursor: pointer;
 	position: relative;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	
+	a {
+		background-color: $brand-grey-lightest;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	i {
+		display: block;
+	}
 
 	&:hover {
 		i {
@@ -29,19 +36,29 @@
 		margin-bottom: 0;
 	}
 
+	.icon-like-fill {
+		animation: thumbsUp $easing3 $duration-longest;
+	}
+
+
 	&.animating {
 		&.social__link {
 			background-color: transparent;
-			
+
 			i {
 				opacity: 0;
+			}
+		}
+
+		&.social__like {
+			a {
+				animation: thumbsUp $easing3 $duration-medium;
 			}
 		}
 
 		.checkmark {
 			display: block;
 		}
-		// animation: thumbsUp $duration-short $easing3;
 
 		.social__likes-counter {
 			animation: likesCounter $duration-long $easing3;
@@ -57,7 +74,7 @@
 	text-align: center;
 	position: absolute;
 	bottom: -32px;
-	width: 32px;
+	width: 100%;
 	height: 32px;
 }
 
@@ -91,16 +108,12 @@
 	}
 }
 
-.icon-like-fill {
-	animation: thumbsUp $easing3 $duration-longest;
-}
-
 @keyframes likesCounter {
 	0% {
 		opacity: 0;
 		transform: translate3d(0,100%,0);
 	}
-	40%, 60% {
+	30%, 70% {
 		opacity: 1;
 		transform: translate3d(0,0,0);
 	}

@@ -25656,12 +25656,20 @@ var Social = function (_Component) {
 				_react2.default.createElement(
 					'li',
 					{ className: 'social__list-item' },
-					_react2.default.createElement('i', { className: 'iconcss icon-yammer-logo social__yammer' })
+					_react2.default.createElement(
+						'a',
+						null,
+						_react2.default.createElement('i', { className: 'iconcss icon-yammer-logo social__yammer' })
+					)
 				),
 				_react2.default.createElement(
 					'li',
 					{ className: 'social__list-item' },
-					_react2.default.createElement('i', { className: 'iconcss icon-mail social__email' })
+					_react2.default.createElement(
+						'a',
+						null,
+						_react2.default.createElement('i', { className: 'iconcss icon-mail social__email' })
+					)
 				),
 				_react2.default.createElement(
 					'li',
@@ -25670,7 +25678,11 @@ var Social = function (_Component) {
 						'social__link': true,
 						'animating': this.state.articleUrlCopied
 					})),
-					_react2.default.createElement('i', { className: 'iconcss icon-link-alt' }),
+					_react2.default.createElement(
+						'a',
+						null,
+						_react2.default.createElement('i', { className: 'iconcss icon-link-alt' })
+					),
 					_react2.default.createElement(
 						'span',
 						{ className: 'social__text' },
@@ -25687,15 +25699,18 @@ var Social = function (_Component) {
 					'li',
 					{ onClick: this.incrementLikesAmount, className: (0, _classnames2.default)({
 							'social__list-item': true,
-							'social__share': true,
+							'social__like': true,
 							'animating': this.state.likesAnimating
 						}) },
-					_react2.default.createElement('i', { className: (0, _classnames2.default)({
-							'iconcss social__like': true,
-							'icon-like-outline': !this.state.hasBeenLiked,
-							'icon-like-fill': this.state.hasBeenLiked
-						})
-					}),
+					_react2.default.createElement(
+						'a',
+						null,
+						_react2.default.createElement('i', { className: (0, _classnames2.default)({
+								'iconcss': true,
+								'icon-like-outline': !this.state.hasBeenLiked,
+								'icon-like-fill': this.state.hasBeenLiked
+							}) })
+					),
 					_react2.default.createElement(
 						'div',
 						{ className: 'social__likes-counter' },
@@ -25706,21 +25721,6 @@ var Social = function (_Component) {
 						'span',
 						{ className: 'social__text' },
 						this.state.likesAmount
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'circle-wrap' },
-						_react2.default.createElement('div', { className: 'circle-lg' })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'dots-wrap' },
-						_react2.default.createElement('div', { className: 'dot dot--t' }),
-						_react2.default.createElement('div', { className: 'dot dot--tr' }),
-						_react2.default.createElement('div', { className: 'dot dot--br' }),
-						_react2.default.createElement('div', { className: 'dot dot--b' }),
-						_react2.default.createElement('div', { className: 'dot dot--bl' }),
-						_react2.default.createElement('div', { className: 'dot dot--tl' })
 					)
 				)
 			);
