@@ -23,6 +23,8 @@ const routes = (
 		<Dashboard/>
 		<Switch>
 			<Route exact path="/" component={Landing}/>
+			<Route path="/jnj-process" component={Landing}/>
+			
 			<Route path="/colors" component={Colors}/>
 			<Route path="/typography" component={Typography}/>
 			<Route path="/animation" component={Animation}/>

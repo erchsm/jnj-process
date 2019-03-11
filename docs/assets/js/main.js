@@ -66606,6 +66606,7 @@ var routes = _react2.default.createElement(
 		_reactRouter.Switch,
 		null,
 		_react2.default.createElement(_reactRouter.Route, { exact: true, path: '/', component: _Landing2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/jnj-process', component: _Landing2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/colors', component: _Colors2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/typography', component: _Typography2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/animation', component: _Animation2.default }),
