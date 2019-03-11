@@ -30,7 +30,7 @@ $article-social-width: 70px;
 	font-size: 28px;
 	font-family: $font-primary;
 	font-weight: 900;
-	line-height: 1.14;
+	line-height: 1.2;
 	color: $brand-black;
 }
 
@@ -58,14 +58,20 @@ $article-social-width: 70px;
 		margin-top: 36px;
 		height: 72px;
 		justify-content: space-around;
+	}
+}
 
-		@media (min-width: $bp-medium) {
-			justify-content: space-evenly;
-		}
+.article__social-wrapper--static {
+	display: none;
+
+	.social {
+		height: 48px;
+		margin-bottom: 24px;
+		justify-content: space-evenly;			
 	}
 
-	@media (min-width: $bp-medium) {
-		display: none;
+	@media (max-width: $bp-medium) {
+		display: block;
 	}
 }
 
@@ -82,13 +88,12 @@ $article-social-width: 70px;
 		}
 	}
 
-	@media (min-width: $bp-medium) {
-		display: block;
+	@media (max-width: $bp-medium) {
+		display: none;
 	}
 }
 
 .article__hero-img {
-
 	@media (min-width: $bp-medium) {
 		max-width: calc(100% - #{$article-social-width});
 	}

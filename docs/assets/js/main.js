@@ -59897,7 +59897,7 @@ var Article = function (_Component) {
 						_react2.default.createElement('div', { className: 'grid__item grid__item--col-1 grid__item--hide-medium' }),
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-desktop' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-9-desktop grid__item--col-12-medium' },
 							_react2.default.createElement(
 								'h1',
 								{ className: 'article__title' },
@@ -59931,7 +59931,7 @@ var Article = function (_Component) {
 						),
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-desktop' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-11-desktop grid__item--col-12-medium' },
 							_react2.default.createElement(
 								'div',
 								{ className: 'article__media is-clearfix' },
