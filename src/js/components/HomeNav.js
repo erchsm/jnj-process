@@ -6,10 +6,6 @@ import SearchBar from './SearchBar';
 
 export default class HomeNav extends Component {
 
-	static propTypes = {
-	}
-
-
 	constructor(props) {
 		super(props);
 

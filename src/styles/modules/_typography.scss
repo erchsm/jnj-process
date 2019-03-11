@@ -3,12 +3,12 @@
   font-weight: 300;
 }
 
-.typography-bold {
+.typography-medium {
   font-family: $font-primary;
   font-weight: 500;
 }
 
-.typography-medium {
+.typography-bold {
   font-family: $font-primary;
   font-weight: 700;
 }
@@ -29,17 +29,20 @@
 
 .typography-guides__font-display {
   color: $brand-black;
-  width: 600px;
+  // width: 600px;
 }
 
 .typography-guides__font-display-name {
   margin-bottom: 7px;
   display: block;
 }
+
 .typography-guides__font-display-alphabet {
   font-size: 30px;
   margin-bottom: 10px;
+
   span {
+    word-break: break-word;
     display: block;
     line-height: 1.2;
   }
@@ -50,7 +53,9 @@
   flex-wrap: wrap;
 
   li {
-    margin: 0 20px 20px 0;
+    width: 50%;
+    padding-right: 100px;
+    margin-bottom: 24px;
   }
 }
 

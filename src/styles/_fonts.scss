@@ -34,3 +34,15 @@
 	url('../fonts/CircularStd/CircularStd-Medium.svg#codropsicons') format('svg');
 }
 
+@font-face {
+	font-family: 'Circular Std';
+	font-weight: 700;
+	font-style: normal;
+	src: url('../fonts/CircularStd/CircularStd-Bold.eot');
+	src: url('../fonts/CircularStd/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/CircularStd/CircularStd-Bold.woff2') format('woff2'), 
+	url('../fonts/CircularStd/CircularStd-Bold.woff') format('woff'), 
+	url('../fonts/CircularStd/CircularStd-Bold.ttf') format('truetype'),
+	url('../fonts/CircularStd/CircularStd-Bold.svg#codropsicons') format('svg');
+}
+

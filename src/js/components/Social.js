@@ -15,14 +15,18 @@ export default class Social extends Component {
 		}
 	}
 
+	componentWillMount() {
+	}
+
 
 	incrementLikesAmount = () => {
+		this.likesTimer ? clearTimeout(this.likesTimer) : null
 		this.setState({
 			likesAmount: this.state.likesAmount + 1,
 			hasBeenLiked: true,
 			likesAnimating: true,
 		})
-		setTimeout(() => {
+		this.likesTimer = setTimeout(() => {
 			this.setState({
 				likesAnimating: false 
 			})
@@ -56,7 +60,7 @@ export default class Social extends Component {
 				})}>
 				<a><i className='iconcss icon-link-alt'></i></a>
 				<span className='social__text'>
-					{this.state.articleUrlCopied ? 'Link copied' : ''}
+					{this.state.articleUrlCopied ? '' : ''}
 				</span>
 				<svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
 			</li>

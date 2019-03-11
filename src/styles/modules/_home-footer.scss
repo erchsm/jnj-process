@@ -40,19 +40,6 @@
 }
 
 .footer__social-nav {
-  @media (min-width: $bp-medium) {
-    order: 2;
-    padding: 6px 40px;
-    border-left: 2px solid rgba($brand-black, .1);
-    border-right: 2px solid rgba($brand-black, .1);
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-  }
-  @media (max-width: $bp-medium) {
-    display: flex;
-    justify-content: space-around;
-  }
   a {
     color: $brand-black;
     background-color: $brand-grey-lightest;
@@ -76,6 +63,24 @@
     }
     &:hover {
       color: $brand-red;
+    }
+  }
+
+  @media (min-width: $bp-medium) {
+    order: 2;
+    padding: 6px 40px;
+    border-left: 2px solid rgba($brand-black, .1);
+    border-right: 2px solid rgba($brand-black, .1);
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  @media (max-width: $bp-medium) {
+    display: flex;
+    justify-content: flex-start; 
+
+    a {
+      margin-right: 36px;
     }
   }
 }

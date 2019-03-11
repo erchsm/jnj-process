@@ -9,7 +9,7 @@ import Tree from 'react-d3-tree';
 
 
 export default class HomeSitemap extends Component {
-	constructor(props) {
+	constructor(props) {		
 		super(props);
 		
 		this.state = {
@@ -17,15 +17,20 @@ export default class HomeSitemap extends Component {
 			height: 0,
 		}
 
-		this.addChildNumToLabel(homeSitemapData);
+		this.addNumChildrenToLabel(homeSitemapData);
 	}
 
-	componentDidMount = () => {
-		this.updateWindowDimensions();
+	// componentDidUpdate() {
+	// }
+	componentWillMount() {
+	}
+
+	componentDidMount() {
+		this.updateWindowDimensions();		
 		window.addEventListener('resize', this.updateWindowDimensions);
 	}
 
-	componentWillUnmount = () => {
+	componentWillUnmount() {
 		window.removeEventListener('resize', this.updateWindowDimensions);
 	}
 
@@ -33,15 +38,17 @@ export default class HomeSitemap extends Component {
 		this.setState({ width: window.innerWidth / 2, height: window.innerHeight / 2});
 	}
 
-	addChildNumToLabel = (data) => {
+	addNumChildrenToLabel = (data) => {
 		if (data.children && data.children.length > 0) {
+			let tmpName = data.name.split('(')[0];
 
-			data.name += ' (' + data.children.length + ')';
+			data.name = tmpName + ' (' + data.children.length + ')';
 
 			data.children.forEach((item) => {
-				return this.addChildNumToLabel(item);
+				return this.addNumChildrenToLabel(item);
 			});
-		} 
+		}
+		return data
 	}
 	
 	render() {
@@ -50,8 +57,6 @@ export default class HomeSitemap extends Component {
 		const classnames = classNames({
 			"home-sitemap": true
 		});
-
-		// console.log(cleanedData);
 
 		/*const data = homeSitemapData.map((item, index) =>
 			(item.children.length > 0) ? (item.name += '(' + item.children.length + ')' ) : null

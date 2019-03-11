@@ -1,36 +1,30 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
+
 import HomeNewsBlock from './HomeNewsBlock'
 
 export default class HomeLandingPage extends Component {
 
-  static propTypes = {
-    body: PropTypes.string,
-    title: PropTypes.string,
-    heroImage: PropTypes.shape({
-      src: PropTypes.string,
-      alt: PropTypes.string
-    }),
-    tags: PropTypes.arrayOf(PropTypes.string),
-    likesAmount: PropTypes.number,
-    headline: PropTypes.string
-  }
+	constructor (props) {
+		super(props)
+	}
 
-  constructor (props) {
-    super(props)
-  }
+	render () {
 
-  render () {
+		const classnames = classNames({
+            "home-landing": true
+        });
 
-    return (
-      <main className='article__background'>
-        <div className='article__wrapper'>
-          <div className='col-m-4 col-t-8 col-d-8 col-hd-8 basic-box'>
-            <HomeNewsBlock news={this.props.news} />
-          </div>
-        </div>
-      </main>
-
-    )
-  }
+		return (
+			<main className={classnames}>
+				<div className="grid">
+					<div className="grid__item grid__item--col-8 grid__item--col-12-desktop">
+						<HomeNewsBlock news={this.props.news} />
+					</div>
+					<div className="grid__item grid__item--col-4"/>
+				</div>
+			</main>
+		)
+	}
 }

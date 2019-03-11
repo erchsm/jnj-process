@@ -1,12 +1,4 @@
-
-.colors__header-wrapper {
-  background-color: $brand-red;
-  color: white;
-  h1 {
-    color: white;
-  }
-}
-.colors__body {
+.colors__wrapper {
   color: $brand-grey-darkest;
   h2 {
     color: $brand-black;
@@ -48,10 +40,14 @@
 .colors__list {
   display: flex;
   flex-wrap: wrap;
+
+  &-item {
+    width: 14.285714286%;
+    margin-bottom: 18px;
+  }
 }
 
 .colors__color-display {
-  width: 160px;
   height: 80px;
   display: block;
 }

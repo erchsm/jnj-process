@@ -3,7 +3,7 @@ import classNames from "classnames"
 import splitLetter from "../services/splitLetter"
 
 
-export default class MdcLogo extends Component {
+export default class JnjProcessLogo extends Component {
 
 	static propTypes = {
 	}
@@ -11,9 +11,6 @@ export default class MdcLogo extends Component {
 
 	constructor(props) {
 		super(props);
-
-		this.state = {
-		}
 	}
 
 
@@ -38,7 +35,7 @@ export default class MdcLogo extends Component {
 						</g>
 					</g>
 				</svg>*/}
-				<h4>J&J Process</h4>
+				<h4>Digital Toolkit</h4>
 				<h5>
 					{splitLetter(`Medical Devices + Home`)}
 				</h5>

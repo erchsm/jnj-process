@@ -45,14 +45,13 @@
 		}
 	}
 
+	.card {
+		margin-right: 0;
+	}
+
 	h1 {
 		font-size: 48px;
 		line-height: 48px;
-	}
-	blockquote {
-		margin: 30px 0;
-		font-size: 28px;
-		transform: none;
 	}
 	h2 {
 		font-size: 32px;
@@ -66,6 +65,9 @@
 	}
 	h4 {
 		font-size: 28px;
+	}
+	blockquote {
+		font-size: 20px;
 	}
 	p {
 		font-size: 16px;

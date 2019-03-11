@@ -23,6 +23,7 @@
 		opacity: 1;
 		padding: 180px 60px 100px;
 		display: flex;
+		height: 100vh;
 		flex-direction: column;
 		// justify-content: center;
 
@@ -203,6 +204,10 @@
 				@include placeholder-style();
 			}
 
+		}
+
+		.react-autosuggest__suggestion {
+			line-height: 1.5;
 		}
 
 		.react-autosuggest__suggestion--highlighted {

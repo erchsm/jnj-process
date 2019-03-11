@@ -116,7 +116,7 @@ export default class MultiSelectBox extends Component {
 				options={items}/>
 				<i className="iconcss icon-caret-down-lg"></i>
 				<label>{label}</label>
-				<div style={{'left': this.state.indicatorLeft }} className="indicator">&nbsp;{this.state.numWrapping} +</div>
+				<div style={{ 'left': this.state.indicatorLeft }} className="indicator">&nbsp;{this.state.numWrapping} +</div>
 			</div>
 		);
 	}

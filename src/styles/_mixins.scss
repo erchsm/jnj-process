@@ -39,8 +39,8 @@
 
 	.checkmark {
 		position: absolute;
-		width: 30px;
-		height: 30px;
+		width: 32px;
+		height: 32px;
 		border-radius: 50%;
 		display: none;
 		stroke-width: 2;
@@ -50,23 +50,26 @@
 		color: $color;
 		stroke-miterlimit: 10;
 		box-shadow: inset 0px 0px 0px;
-		animation: fill .4s $easing1 .4s forwards, scale .4s $easing1 .9s;
-	}
+		animation: 
+		fill $duration-short $easing1 $duration-short forwards, 
+		scale $duration-short $easing4 $duration-longer;
 
-	.checkmark__circle {
-		stroke-dasharray: 166;
-		stroke-dashoffset: 166;
-		stroke-width: 2;
-		stroke-miterlimit: 10;
-		stroke: $color;
-		fill: none;
-		animation: stroke .6s $easing2 forwards;
-	}
+		&__circle {
+			stroke-dasharray: 166;
+			stroke-dashoffset: 166;
+			stroke-width: 2;
+			stroke-miterlimit: 10;
+			stroke: $color;
+			fill: none;
+			animation: stroke $duration-medium $easing3 forwards;
+		}
 
-	.checkmark__check {
-		transform-origin: 50% 50%;
-		stroke-dasharray: 48;
-		stroke-dashoffset: 48;
-		animation: stroke .3s $easing2 .8s forwards;
+		&__check {
+			transform-origin: 50% 50%;
+			stroke-dasharray: 48;
+			stroke-dashoffset: 48;
+			animation: stroke $duration-medium $easing3 $duration-long forwards;
+		}
+
 	}
 }

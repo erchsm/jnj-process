@@ -1,0 +1,73 @@
+$baseclass: jnj-process-header;
+
+@keyframes rise {
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.#{$baseclass} {
+	position: relative;
+	margin-bottom: 60px;
+
+	&__wrapper, &__small {
+		h1, h2, h3, h4, h5, p, blockquote {
+			color: white;
+			transition: all $easing2 $duration-medium;
+		}		
+	}
+
+	h1 {
+		transform-origin: left bottom;
+	}
+
+	&__wrapper {
+		background: $brand-red;
+		padding: 60px 0;
+	}
+
+	&__small {		
+		top: 0;
+		left: 0;
+		width: 100%;
+		min-height: 60px;
+		position: fixed;
+		background: $brand-red;
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		padding-left: 72px;
+		@include zIndexClose();
+
+		box-shadow: 0 2px 12px rgba($brand-black, .12);
+
+		h1, h2, h3, h4, h5, p {
+			overflow: hidden;
+			margin: 0;
+			font-weight: 500;
+			line-height: 1.2;
+
+			span {
+				white-space: pre;
+				display: inline-block;
+				opacity: 0;
+				transform: translateY(60px);
+				animation: rise $easing3 $duration-medium;
+				animation-fill-mode: forwards;
+
+				@for $i from 1 through 60 {
+					&:nth-child(#{$i}) {
+						animation-delay: (#{0.0 + ($i * 0.03)}s);
+					}
+				}
+			}
+		}
+	}
+
+	&--scrolled {
+		.#{$baseclass}__small {
+			// min-height: 52px;
+		}
+	}
+}

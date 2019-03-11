@@ -135,6 +135,7 @@ $baseclass: 'home-links-page';
 				display: inline-flex;
 				flex-direction: column;
 				transition: all 0.3s 0.3s $easing1;
+				line-height: 1.5;
 
 				&.active {
 					font-weight: 500;
@@ -142,8 +143,10 @@ $baseclass: 'home-links-page';
 					.line {
 						transform: scaleX(1);
 					}
+
 					~.active {
 						font-weight: normal;
+
 						.line {
 							transform: scaleX(0);
 						}
@@ -184,7 +187,7 @@ $baseclass: 'home-links-page';
 			overflow: hidden;
 
 			&:nth-child(2) {
-				margin-top: 6px;
+				// margin-top: 6px;
 			}
 
 			&.hidden {

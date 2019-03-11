@@ -21,6 +21,38 @@ export default class Article extends Component {
 		timestamp: PropTypes.string
 	}
 
+	componentDidMount() {
+		window.scrollTo(0, 0);
+
+		if (!document.getElementById('yammer-script') || !this.state.scriptAdded) {
+
+			const body: HTMLElement | null = document.body
+
+			const s1 = document.createElement('script')
+			s1.src = `https://s0.assets-yammer.com/assets/platform_social_buttons.min.js`
+			s1.id = 'yammer-script'
+
+			if (body) {
+				body.appendChild(s1)
+			}
+
+			setTimeout(function() {
+				const s2 = document.createElement('script')
+				const inlineScript = document.createTextNode("var options = { customButton : true, classSelector: 'social__yammer', defaultMessage: 'Check out this article on Home!', pageUrl: 'https://home.jnj.com/v2/#my-news-detail/159428' }; yam.platform.yammerShare(options);");
+				s2.appendChild(inlineScript);
+
+				if (body) {
+					body.appendChild(s2)
+				}
+			}, 1000);
+
+
+			this.setState({
+				'scriptAdded': true
+			});
+		}
+	}
+
 	constructor (props) {
 		super(props)
 	}

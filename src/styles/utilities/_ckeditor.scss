@@ -15,7 +15,7 @@
 
 	table {
 		border: none;
-		margin: 20px auto;
+		margin: 24px auto 36px;
 
 		tbody, thead, tr, th, td {
 			border: none;
@@ -28,7 +28,7 @@
 				position: relative;
 				color: $brand-grey-lightest;
 				font-size: 16px;
-				font-weight: 900;
+				font-weight: 800;
 				font-style: normal;
 				font-stretch: normal;
 				line-height: 1.33;
@@ -85,13 +85,22 @@
 
 	strong {
 		font-weight: bold;
+		margin-bottom: 12px;
+		display: inline-block;
 		color: $brand-black;
 	}
 
 	img {
 		width: auto !important;
 		max-width: 100%;
-		margin: 10px;
+		margin-bottom: 36px;
+		margin-left: 36px;
+
+		@media (max-width: $bp-medium) {
+			margin-left: 0;
+			height: auto !important;
+			width: 100% !important;
+		}
 	}
 
 	.figure {

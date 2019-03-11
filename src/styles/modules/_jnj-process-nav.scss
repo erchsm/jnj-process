@@ -1,0 +1,261 @@
+$baseclass: jnj-process-nav;
+
+.#{$baseclass} {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: white;
+
+
+	hr {
+		margin: 0;
+		height: 2px;
+		width: 100%;
+		background-color: $brand-grey-light;
+
+		&:first-of-type {
+			background: $brand-grey-lightest;
+		}
+	}
+
+	p {
+		font-size: 21px;
+		color: $brand-grey-dark;
+		min-width: 130px;
+	}
+
+	&__toggle {
+		position: fixed;
+		left: 18px;
+		top: 18px;
+		width: 28px;
+		height: 21px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 99999;
+		cursor: pointer;
+	}
+
+	.#{$baseclass}__toggle {
+		.#{$baseclass}__hamburger {
+			height: 18px;
+
+			.line {					
+				&:first-child, &:last-child {
+					opacity: 1;
+				}
+
+				&:first-child {
+					transform: translate3d(0,-6px,0);
+				}
+				&:last-child {
+					transform: translate3d(0,6px,0);
+				}
+			}
+		}
+	}
+
+	&__hamburger {
+		display: flex;
+		width: 100%;
+		height: auto;
+		flex-direction: column;
+		justify-content: center;
+
+		.line {
+			transition: transform $easing2 $duration-medium, background-color $easing2 $duration-medium;
+			background: white;
+			height: 2px;
+			// border-radius: 2px;
+			width: 100%;
+		}
+	}
+
+	&__main {
+		position: fixed;
+		width: 100%;
+		z-index: 9999;
+		pointer-events: none;
+		height: calc(100vh);
+		top: 0px;
+		transition: all $easing1 $duration-medium;
+	}
+
+	&__panel {
+		pointer-events: auto;
+		position: absolute;
+		width: 294px;
+		left: 0;
+		height: 100%;
+		overflow-y: scroll;
+		transition: transform $easing2 $duration-long;
+		transform: translate3d(-100%, 0,0);
+
+		h1, h2, h3, h4, h5, h6 {
+			display: inline;
+			border-bottom: solid 1px transparent;
+			transition: border-color 0.3s $easing1;
+			margin: 0;
+			padding-bottom: 2px;
+		}
+
+		a {
+			border: none;
+			font-weight: 500;
+			color: $brand-black;
+			position: relative;
+		}
+
+		hr {
+			height: 3px;
+		}
+
+		ul {
+			min-height: 100%;
+			height: auto;
+			// overflow-y: auto;
+			display: flex;
+			flex-direction: column;
+			padding: 40px 40px 24px;
+		}
+
+		li {
+			display: inline-flex;
+			align-items: center;
+			opacity: 0;
+			transform: translate3d(-50%, 0,0);
+			cursor: pointer;
+			transition: none;
+			width: auto;
+			margin-bottom: 24px;
+
+			a {
+				&.active {
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						width: 6px;
+						height: 6px;
+						right: -12px;
+						top: 6px;
+						background: $brand-grey-dark;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+
+	&__panel--white {
+		background: $brand-white;
+	}
+
+	&--toggleHidden {
+		.#{$baseclass}__toggle {
+			display: none;
+		}
+	}
+
+	&--menuOpen {
+		 .#{$baseclass}__toggle .#{$baseclass}__hamburger {
+			.line {
+				background: $brand-black;
+				opacity: 0;
+
+				&:first-child {
+					opacity: 1;
+					transform: translate3d(0,0px,0) rotate(45deg);
+				}
+				&:last-child {
+					opacity: 1;
+					transform: translate3d(0,-4px,0) rotate(135deg);
+				}
+			}
+		}
+		.#{$baseclass}__main {
+			cursor: pointer;
+			pointer-events: auto;
+			background: rgba($brand-black, .5);
+		}
+
+		.#{$baseclass}__panel {	
+			cursor: auto;
+			li {
+				transition: all $easing2 $duration-long;
+
+				@for $i from 1 through 30 {
+					&:nth-child(#{$i}) {
+						transition-delay: (#{0.0 + ($i * 0.09)}s);
+					}
+				}
+			}
+		}
+
+		.#{$baseclass}__panel--white {
+			transform: none;
+
+			li {
+				transform: none;
+				opacity: 1;
+			}
+		}
+	}
+
+
+	@media screen and (max-width: $bp-medium) {
+		.#{$baseclass}__toggle {
+			// top: 12px;
+			// width: 49px;
+		}
+		hr {
+			&:last-of-type {
+				display: none;
+			}
+		}
+		.tabbed-list__line-container {
+			padding: 0 12px;
+		}
+		.#{$baseclass}__panel {
+			width: 75%;
+			max-width: 294px;
+
+			hr {
+				display: block;
+			}
+			ul {
+				// padding: 60px 24px 24px;
+			}
+			.#{$baseclass}__items {
+				margin-bottom: 18px;
+				padding: 0;
+
+				.#{$baseclass}__item {
+					&:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+		.#{$baseclass}--menuOpen {
+			opacity: 0;
+		}
+		.tabbed-list__header {
+			ul {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+		&.#{$baseclass}--secondaryPanelOpen {
+			.#{$baseclass}__panel--white {
+				li {
+					// transform: translate3d(40px,0,0);
+					// opacity: 0;
+				}
+			}
+		}
+	}
+}

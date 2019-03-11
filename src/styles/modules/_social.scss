@@ -43,7 +43,9 @@
 
 	&.animating {
 		&.social__link {
-			background-color: transparent;
+			a {
+				background-color: transparent;				
+			}
 
 			i {
 				opacity: 0;

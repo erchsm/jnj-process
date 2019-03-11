@@ -1,104 +1,92 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-const renderTile = ({
-                      tags,
-                      title,
-                      date,
-                      likes,
-                      views,
-                      imgSrc
-                    }) => {
-  return (<div className='home-news__tile'>
-    <a className='home-news__img'>
-      <img src={imgSrc}/>
-    </a>
-    <div className='home-news__tile-meta'>
-      <span className='home-news__tile-tags'>{tags}</span>
-      <a className='home-news__tile-title'>{title}</a>
+import TextTruncate from 'react-text-truncate'
 
-      <span className='home-news__tile-date'>{date}</span>
-
-      <div className='home-news__tile-social'>
-        <ul>
-          <li>
-            <span className='iconcss icon-like'></span>
-            <span>{likes}</span>
-          </li>
-          <li>
-            <span className='iconcss icon-view'></span>
-            <span>{views}</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>)
-}
 
 export default class HomePage extends Component {
 
-  static propTypes = {
-    body: PropTypes.string,
-    title: PropTypes.string,
-    heroImage: PropTypes.shape({
-      src: PropTypes.string,
-      alt: PropTypes.string
-    }),
-    tags: PropTypes.arrayOf(PropTypes.string),
-    likesAmount: PropTypes.number,
-    headline: PropTypes.string
-  }
+	static propTypes = {
+		body: PropTypes.string,
+		title: PropTypes.string,
+		heroImage: PropTypes.shape({
+			src: PropTypes.string,
+			alt: PropTypes.string
+		}),
+		tags: PropTypes.arrayOf(PropTypes.string),
+		likesAmount: PropTypes.number,
+		headline: PropTypes.string
+	}
 
-  constructor (props) {
-    super(props)
-  }
+	createTileMetadata = (data) => (
+		<div className='home-news__tile-social'>
+			<ul>
+				<li>
+					<span className='home-news__tile-date'>{data.date}</span>
+				</li>
+				<li>
+					<i className='iconcss icon-like-outline'></i>
+					<span>{this.dataFormatter(data.likes)}</span>
+				</li>
+				<li>
+					<i className='iconcss icon-view'></i>
+					<span>{this.dataFormatter(data.views)}</span>
+				</li>
+			</ul>
+		</div>
+	)
 
-  render () {
-    const { news } = this.props
-    const hero = news.slice(0, 1)[0]
-    const tiles = news.slice(1, 4)
+	dataFormatter = (num) => (
+		num > 999 ? (num/1000).toFixed(1) + 'K' : num
+	)
 
-    return (<div>
-      <div className="home-news box-news box-full">
-        <div className='home-news__main-tile'>
-          <a className='home-news__main-img'>
-            <img src={hero.imgSrc}/>
-          </a>
-          <div className='home-news__tile-meta'>
-            <span className='home-news__tile-tags'>{hero.tags}</span>
-            <a className='home-news__tile-title'>{hero.title}</a>
+	constructor (props) {
+		super(props)
+	}
 
-            <span className='home-news__tile-date'>{hero.date}</span>
+	render () {
+		const { news } = this.props
+		const hero = news.slice(0, 1)[0]
+		const tiles = news.slice(1, 4)
 
-            <div className='home-news__tile-social'>
-              <ul>
-                <li>
-                  <span className='iconcss icon-like'></span>
-                  <span>{hero.likes}</span>
-                </li>
-                <li>
-                  <span className='iconcss icon-view'></span>
-                  <span>{hero.views}</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+		return (
+			<div>
+				<div className="home-news box-news box-full">
+					<div className='home-news__main-tile'>
+						<a className='home-news__main-img'>
+							<img src={hero.imgSrc}/>
+						</a>
+						<div className='home-news__tile-meta'>
+							<span className='home-news__tile-tags'>{hero.tags}</span>
+							<a className='home-news__tile-title'>{hero.title}</a>
 
-        <div className='home-news__secondary-tiles'>
-          <ul>
-            {tiles.map(tile => renderTile(tile))}
-          </ul>
-        </div>
+							{this.createTileMetadata(hero)}
+						</div>
+					</div>
 
-      </div>
-      <a
-        className="home-news__more-link"
-        href="#my-news"
-      >
-        All my news<span
-        className="iconcss icon-arrow-long-right"></span></a>
+					<div className='home-news__secondary-tiles'>
+						<ul>
+							{ tiles.map((tile, i) => (
+								<div className='home-news__tile' key={i}>
+									<a className='home-news__img'>
+										<img src={tile.imgSrc}/>
+									</a>
+									<div className='home-news__tile-meta'>
+										<span className='home-news__tile-tags'>{tile.tags}</span>
+										<a className='home-news__tile-title'>{tile.title}</a>
+										{this.createTileMetadata(tile)}
+									</div>
+								</div>
+							))}
+						</ul>
+					</div>
 
-    </div>)
-  }
+				</div>
+				<a className="home-news__more-link" href="#my-news">
+					<span>All my news</span>
+					<i className="iconcss icon-arrow-long-right"></i>
+				</a>
+			</div>
+		)
+	}
 }
