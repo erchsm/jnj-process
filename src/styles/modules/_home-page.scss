@@ -3,8 +3,12 @@
 	margin: 0 auto;
 	margin-top: 40px;
 
-
 	.home-news {
+		margin-right: 12px;
+	}
+
+
+	.home-news__tiles {
 		display: flex;
 		background: white;
 	}
@@ -101,7 +105,7 @@
 		overflow: hidden;
 
 		i {
-			font-size: 16px;
+			font-size: 18px;
 			margin-right: 3px;
 		}
 	}
@@ -141,6 +145,10 @@
 
 	@media screen and (max-width: $bp-medium) {
 		.home-news {
+			margin-right: 0;
+		}
+
+		.home-news__tiles {
 			flex-direction: column;
 		}
 

@@ -59440,7 +59440,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":248,"connected-react-router":13,"prop-types":65,"react":187}],212:[function(require,module,exports){
+},{"./routes":249,"connected-react-router":13,"prop-types":65,"react":187}],212:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59509,7 +59509,7 @@ var JnjProcessLogo = function (_Component) {
 JnjProcessLogo.propTypes = {};
 exports.default = JnjProcessLogo;
 
-},{"../services/splitLetter":264,"classnames":10,"react":187}],213:[function(require,module,exports){
+},{"../services/splitLetter":265,"classnames":10,"react":187}],213:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59571,7 +59571,7 @@ var render = function render() {
 
 render();
 
-},{"../App":211,"../reducers":245,"connected-react-router":13,"history":36,"react":187,"react-dom":81,"react-redux":108,"redux":188}],215:[function(require,module,exports){
+},{"../App":211,"../reducers":246,"connected-react-router":13,"history":36,"react":187,"react-dom":81,"react-redux":108,"redux":188}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59641,7 +59641,7 @@ var Colors = function (_Component) {
 Colors.propTypes = {};
 exports.default = Colors;
 
-},{"../data/colors":238,"react":187}],216:[function(require,module,exports){
+},{"../data/colors":239,"react":187}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59788,7 +59788,7 @@ var FontTable = function (_Component) {
 FontTable.propTypes = {};
 exports.default = FontTable;
 
-},{"../data/colors":238,"./ColorList":215,"react":187}],217:[function(require,module,exports){
+},{"../data/colors":239,"./ColorList":215,"react":187}],217:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59973,7 +59973,7 @@ Article.propTypes = {
 };
 exports.default = Article;
 
-},{"../services/palette":263,"./Social":230,"./TagsCollapsable":232,"prop-types":65,"react":187,"react-sticky":175}],218:[function(require,module,exports){
+},{"../services/palette":264,"./Social":231,"./TagsCollapsable":233,"prop-types":65,"react":187,"react-sticky":175}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60095,7 +60095,92 @@ var HomeFooter = function (_Component) {
 HomeFooter.propTypes = {};
 exports.default = HomeFooter;
 
-},{"../data/footer-items":239,"./MdcLogo":228,"classnames":10,"react":187}],219:[function(require,module,exports){
+},{"../data/footer-items":240,"./MdcLogo":229,"classnames":10,"react":187}],219:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeLandingCard = function (_Component) {
+	_inherits(HomeLandingCard, _Component);
+
+	function HomeLandingCard(props) {
+		_classCallCheck(this, HomeLandingCard);
+
+		return _possibleConstructorReturn(this, (HomeLandingCard.__proto__ || Object.getPrototypeOf(HomeLandingCard)).call(this, props));
+	}
+
+	_createClass(HomeLandingCard, [{
+		key: 'render',
+		value: function render() {
+			var _props = this.props,
+			    cardHeaderText = _props.cardHeaderText,
+			    cardCtaText = _props.cardCtaText,
+			    marginLeft = _props.marginLeft,
+			    marginRight = _props.marginRight;
+
+
+			var classnames = (0, _classnames2.default)({
+				"home-landing-card": true,
+				"home-landing-card--ml": marginLeft,
+				"home-landing-card--mr": marginRight
+			});
+
+			return _react2.default.createElement(
+				'div',
+				{ className: classnames },
+				cardHeaderText ? _react2.default.createElement(
+					'div',
+					{ className: 'home-landing-card__header' },
+					_react2.default.createElement(
+						'h5',
+						{ className: 'eyebrow' },
+						cardHeaderText
+					)
+				) : null,
+				this.props.children,
+				cardCtaText ? _react2.default.createElement(
+					'div',
+					{ className: 'home-landing-card__cta' },
+					_react2.default.createElement(
+						'p',
+						{ className: 'no-mb' },
+						cardCtaText
+					)
+				) : null
+			);
+		}
+	}]);
+
+	return HomeLandingCard;
+}(_react.Component);
+
+exports.default = HomeLandingCard;
+
+},{"classnames":10,"prop-types":65,"react":187}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60119,6 +60204,10 @@ var _classnames2 = _interopRequireDefault(_classnames);
 var _HomeNewsBlock = require('./HomeNewsBlock');
 
 var _HomeNewsBlock2 = _interopRequireDefault(_HomeNewsBlock);
+
+var _HomeLandingCard = require('./HomeLandingCard');
+
+var _HomeLandingCard2 = _interopRequireDefault(_HomeLandingCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60156,7 +60245,15 @@ var HomeLandingPage = function (_Component) {
 						{ className: 'grid__item grid__item--col-8 grid__item--col-12-desktop' },
 						_react2.default.createElement(_HomeNewsBlock2.default, { news: this.props.news })
 					),
-					_react2.default.createElement('div', { className: 'grid__item grid__item--col-4' })
+					_react2.default.createElement(
+						'div',
+						{ className: 'grid__item grid__item--col-4' },
+						_react2.default.createElement(
+							_HomeLandingCard2.default,
+							{ cardCtaText: "View Profile", marginLeft: true },
+							_react2.default.createElement('img', { src: '../assets/img/user-1x1.png' })
+						)
+					)
 				)
 			);
 		}
@@ -60167,7 +60264,7 @@ var HomeLandingPage = function (_Component) {
 
 exports.default = HomeLandingPage;
 
-},{"./HomeNewsBlock":223,"classnames":10,"prop-types":65,"react":187}],220:[function(require,module,exports){
+},{"./HomeLandingCard":219,"./HomeNewsBlock":224,"classnames":10,"prop-types":65,"react":187}],221:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60514,7 +60611,7 @@ var HomeLinksPage = function (_Component) {
 
 exports.default = HomeLinksPage;
 
-},{"../data/home-links-page":240,"./HomeLinksPagination":221,"./SearchBar":229,"./form/Dropdown":233,"classnames":10,"moment":56,"moment-range":55,"react":187,"react-scroll":150}],221:[function(require,module,exports){
+},{"../data/home-links-page":241,"./HomeLinksPagination":222,"./SearchBar":230,"./form/Dropdown":234,"classnames":10,"moment":56,"moment-range":55,"react":187,"react-scroll":150}],222:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60616,7 +60713,7 @@ var HomeLinksPagination = function (_Component) {
 
 exports.default = HomeLinksPagination;
 
-},{"classnames":10,"react":187}],222:[function(require,module,exports){
+},{"classnames":10,"react":187}],223:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -61197,7 +61294,7 @@ var HomeNav = function (_Component) {
 
 exports.default = HomeNav;
 
-},{"./SearchBar":229,"./TabbedList":231,"classnames":10,"react":187}],223:[function(require,module,exports){
+},{"./SearchBar":230,"./TabbedList":232,"classnames":10,"react":187}],224:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61293,10 +61390,10 @@ var HomeNewsBlock = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				null,
+				{ className: 'home-news' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'home-news box-news box-full' },
+					{ className: 'home-news__tiles' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'home-news__main-tile' },
@@ -61386,7 +61483,7 @@ HomeNewsBlock.propTypes = {
 };
 exports.default = HomeNewsBlock;
 
-},{"prop-types":65,"react":187,"react-text-truncate":176}],224:[function(require,module,exports){
+},{"prop-types":65,"react":187,"react-text-truncate":176}],225:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61778,7 +61875,7 @@ var HomeProfileSetup = function (_Component) {
 
 exports.default = HomeProfileSetup;
 
-},{"../data/home-profile-setup":242,"./ImageUpload":226,"./SearchBar":229,"./form/MultiSelectBox":234,"./form/Switch":235,"./form/Tag":236,"classnames":10,"react":187,"react-autosuggest":69,"react-motion":91,"react-skroll":168}],225:[function(require,module,exports){
+},{"../data/home-profile-setup":243,"./ImageUpload":227,"./SearchBar":230,"./form/MultiSelectBox":235,"./form/Switch":236,"./form/Tag":237,"classnames":10,"react":187,"react-autosuggest":69,"react-motion":91,"react-skroll":168}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61956,7 +62053,7 @@ var HomeSitemap = function (_Component) {
 
 exports.default = HomeSitemap;
 
-},{"../data/home-sitemap":243,"classnames":10,"react":187,"react-d3-tree":77}],226:[function(require,module,exports){
+},{"../data/home-sitemap":244,"classnames":10,"react":187,"react-d3-tree":77}],227:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62080,7 +62177,7 @@ var ImageUpload = function (_Component) {
 
 exports.default = ImageUpload;
 
-},{"classnames":10,"react":187,"react-autosuggest":69}],227:[function(require,module,exports){
+},{"classnames":10,"react":187,"react-autosuggest":69}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62140,9 +62237,9 @@ var JnjProcessHeader = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			document.addEventListener('keypress', this.handleScroll);
-			document.addEventListener('mousewheel', this.handleScroll);
-			document.addEventListener('touchmove', this.handleScroll);
+			document.addEventListener('scroll', this.handleScroll);
+			// document.addEventListener('mousewheel', this.handleScroll);
+			// document.addEventListener('touchmove', this.handleScroll);
 
 			setTimeout(function () {
 				_this2.handleScroll();
@@ -62151,9 +62248,9 @@ var JnjProcessHeader = function (_Component) {
 	}, {
 		key: 'componentWillUnmount',
 		value: function componentWillUnmount() {
-			document.removeEventListener('keypress', this.handleScroll);
-			document.removeEventListener('mousewheel', this.handleScroll);
-			document.removeEventListener('touchmove', this.handleScroll);
+			document.removeEventListener('scroll', this.handleScroll);
+			// document.removeEventListener('mousewheel', this.handleScroll);
+			// document.removeEventListener('touchmove', this.handleScroll);
 		}
 	}, {
 		key: 'render',
@@ -62169,9 +62266,11 @@ var JnjProcessHeader = function (_Component) {
 				"jnj-process-header--scrolled": this.state.isScrolled
 			});
 
+			var opacity = Math.min(Math.max(0, 1 - window.pageYOffset * 0.01), 1);
+
 			var style = {
-				transform: 'scale(' + Math.max(0, 1 - window.pageYOffset * 0.01) + ')',
-				opacity: Math.max(0, 1 - window.pageYOffset * 0.01)
+				transform: 'scale(' + Math.min(Math.max(0, 1 - window.pageYOffset * 0.01), 1) + ')',
+				opacity: opacity
 			};
 
 			return _react2.default.createElement(
@@ -62194,7 +62293,7 @@ var JnjProcessHeader = function (_Component) {
 							),
 							_react2.default.createElement(
 								'blockquote',
-								{ style: { opacity: Math.max(0, 1 - window.pageYOffset * 0.01) } },
+								{ style: { opacity: opacity } },
 								body
 							)
 						)
@@ -62218,7 +62317,7 @@ var JnjProcessHeader = function (_Component) {
 
 exports.default = JnjProcessHeader;
 
-},{"../services/splitLetter":264,"classnames":10,"react":187}],228:[function(require,module,exports){
+},{"../services/splitLetter":265,"classnames":10,"react":187}],229:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -62405,7 +62504,7 @@ var MdcLogo = function (_Component) {
 MdcLogo.propTypes = {};
 exports.default = MdcLogo;
 
-},{"classnames":10,"react":187}],229:[function(require,module,exports){
+},{"classnames":10,"react":187}],230:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62621,7 +62720,7 @@ var SearchBar = function (_Component) {
 
 exports.default = SearchBar;
 
-},{"classnames":10,"react":187,"react-autosuggest":69}],230:[function(require,module,exports){
+},{"classnames":10,"react":187,"react-autosuggest":69}],231:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62778,7 +62877,7 @@ var Social = function (_Component) {
 
 exports.default = Social;
 
-},{"classnames":10,"react":187}],231:[function(require,module,exports){
+},{"classnames":10,"react":187}],232:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62934,7 +63033,7 @@ var TabbedList = function (_Component) {
 TabbedList.propTypes = {};
 exports.default = TabbedList;
 
-},{"../services/newid":262,"classnames":10,"react":187}],232:[function(require,module,exports){
+},{"../services/newid":263,"classnames":10,"react":187}],233:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63109,7 +63208,7 @@ var TagsCollapsable = function (_Component) {
 TagsCollapsable.propTypes = {};
 exports.default = TagsCollapsable;
 
-},{"lodash/throttle":53,"react":187}],233:[function(require,module,exports){
+},{"lodash/throttle":53,"react":187}],234:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63219,7 +63318,7 @@ var Dropdown = function (_Component) {
 
 exports.default = Dropdown;
 
-},{"classnames":10,"react":187}],234:[function(require,module,exports){
+},{"classnames":10,"react":187}],235:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -63399,7 +63498,7 @@ var MultiSelectBox = function (_Component) {
 
 exports.default = MultiSelectBox;
 
-},{"../../services/newId":261,"classnames":10,"react":187,"react-dom":81,"react-search-multi-select":163}],235:[function(require,module,exports){
+},{"../../services/newId":262,"classnames":10,"react":187,"react-dom":81,"react-search-multi-select":163}],236:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63491,7 +63590,7 @@ var Switch = function (_Component) {
 
 exports.default = Switch;
 
-},{"classnames":10,"react":187}],236:[function(require,module,exports){
+},{"classnames":10,"react":187}],237:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63557,7 +63656,7 @@ var Tag = function (_Component) {
 
 exports.default = Tag;
 
-},{"classnames":10,"react":187}],237:[function(require,module,exports){
+},{"classnames":10,"react":187}],238:[function(require,module,exports){
 module.exports={
   "title" : "Wall Street Journal: Bringing Up Baby’s Market Share at J&J",
   "author": "Siarhei Semashko",
@@ -63594,7 +63693,7 @@ module.exports={
   "likesAmount": 25
 }
 
-},{}],238:[function(require,module,exports){
+},{}],239:[function(require,module,exports){
 module.exports={
   "PRIMARY": [
     {
@@ -63693,7 +63792,7 @@ module.exports={
     }
   ]
 }
-},{}],239:[function(require,module,exports){
+},{}],240:[function(require,module,exports){
 module.exports={
 	data: [
 		{ 
@@ -63756,7 +63855,7 @@ module.exports={
 		]}
 	]
 }
-},{}],240:[function(require,module,exports){
+},{}],241:[function(require,module,exports){
 module.exports={	
 	"allLinks": [
 		//
@@ -65009,14 +65108,14 @@ module.exports={
 
 	]
 }
-},{}],241:[function(require,module,exports){
+},{}],242:[function(require,module,exports){
 module.exports={
   "NEWS": [
     {
       "tags": "Consumer",
       "title": "Facts To Support Questions Around Johnson’s Baby Powder",
       "date": "3 days ago",
-      "likes": 128,
+      "likes": 866,
       "views": 1680,
       "imgSrc": "../assets/img/article1-16x9.png"
     },
@@ -65032,7 +65131,7 @@ module.exports={
       "tags": "New York, NY",
       "title": "Johnson & Johnson Launches an Africa Innovation Challenge",
       "date": "12 days ago",
-      "likes": 200,
+      "likes": 1300,
       "views": 1100,
       "imgSrc": "../assets/img/article3-1x1.png"
     },
@@ -65041,12 +65140,12 @@ module.exports={
       "title": "Health comes first: transforming the front lines of care",
       "date": "2 weeks ago",
       "likes": 100,
-      "views": 200,
+      "views": 500,
       "imgSrc": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c5.png"
     }
   ]
 }
-},{}],242:[function(require,module,exports){
+},{}],243:[function(require,module,exports){
 module.exports={	
 	"skills": [
 		{
@@ -65369,7 +65468,7 @@ module.exports={
 		"Zug, CHE",
 	]
 }
-},{}],243:[function(require,module,exports){
+},{}],244:[function(require,module,exports){
 module.exports={
 	"name": "Home",
 	"children": [
@@ -65941,7 +66040,7 @@ module.exports={
 { "name": "Taleo"},
 
 */
-},{}],244:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 module.exports={
   "DESKTOP": [
     {
@@ -66253,7 +66352,7 @@ module.exports={
     }
   ]
 }
-},{}],245:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66279,7 +66378,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./nav":246,"connected-react-router":13,"redux":188}],246:[function(require,module,exports){
+},{"./nav":247,"connected-react-router":13,"redux":188}],247:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66301,7 +66400,7 @@ var navReducer = function navReducer() {
 
 exports.default = navReducer;
 
-},{}],247:[function(require,module,exports){
+},{}],248:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66531,7 +66630,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Dashboard);
 
-},{"../Components/JnjProcessLogo":212,"classnames":10,"react":187,"react-redux":108,"react-router-dom":131}],248:[function(require,module,exports){
+},{"../Components/JnjProcessLogo":212,"classnames":10,"react":187,"react-redux":108,"react-router-dom":131}],249:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66623,7 +66722,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"./Dashboard":247,"./process-site/Accessibility":249,"./process-site/Animation":250,"./process-site/Colors":251,"./process-site/Landing":252,"./process-site/Prototypes":253,"./process-site/Typography":254,"./prototypes/HomeArticlePrototype":255,"./prototypes/HomeLandingPrototype":256,"./prototypes/HomeLinksPrototype":257,"./prototypes/HomeNavPrototype":258,"./prototypes/HomeProfileSetupPrototype":259,"./prototypes/HomeSitemapPrototype":260,"react":187,"react-router":143}],249:[function(require,module,exports){
+},{"./Dashboard":248,"./process-site/Accessibility":250,"./process-site/Animation":251,"./process-site/Colors":252,"./process-site/Landing":253,"./process-site/Prototypes":254,"./process-site/Typography":255,"./prototypes/HomeArticlePrototype":256,"./prototypes/HomeLandingPrototype":257,"./prototypes/HomeLinksPrototype":258,"./prototypes/HomeNavPrototype":259,"./prototypes/HomeProfileSetupPrototype":260,"./prototypes/HomeSitemapPrototype":261,"react":187,"react-router":143}],250:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66674,7 +66773,7 @@ var Accessibility = function (_Component) {
 Accessibility.propTypes = {};
 exports.default = Accessibility;
 
-},{"../../components/JnjProcessHeader":227,"react":187}],250:[function(require,module,exports){
+},{"../../components/JnjProcessHeader":228,"react":187}],251:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66725,7 +66824,7 @@ var Animation = function (_Component) {
 Animation.propTypes = {};
 exports.default = Animation;
 
-},{"../../components/JnjProcessHeader":227,"react":187}],251:[function(require,module,exports){
+},{"../../components/JnjProcessHeader":228,"react":187}],252:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -66933,7 +67032,7 @@ var Colors = function (_Component) {
 Colors.propTypes = {};
 exports.default = Colors;
 
-},{"../../components/ColorList":215,"../../components/JnjProcessHeader":227,"../../data/colors":238,"react":187}],252:[function(require,module,exports){
+},{"../../components/ColorList":215,"../../components/JnjProcessHeader":228,"../../data/colors":239,"react":187}],253:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67111,7 +67210,7 @@ var Landing = function (_Component) {
 Landing.propTypes = {};
 exports.default = Landing;
 
-},{"../../components/JnjProcessHeader":227,"react":187,"react-router-dom":131}],253:[function(require,module,exports){
+},{"../../components/JnjProcessHeader":228,"react":187,"react-router-dom":131}],254:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -67742,7 +67841,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Prototypes);
 
-},{"../../actions/nav":213,"../../components/JnjProcessHeader":227,"react":187,"react-redux":108,"react-router-dom":131}],254:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/JnjProcessHeader":228,"react":187,"react-redux":108,"react-router-dom":131}],255:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68069,7 +68168,7 @@ var Typography = function (_Component) {
 Typography.propTypes = {};
 exports.default = Typography;
 
-},{"../../components/FontTable":216,"../../components/JnjProcessHeader":227,"../../data/typography":244,"react":187}],255:[function(require,module,exports){
+},{"../../components/FontTable":216,"../../components/JnjProcessHeader":228,"../../data/typography":245,"react":187}],256:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68169,7 +68268,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeArticlePrototype);
 
-},{"../../actions/nav":213,"../../components/HomeArticle":217,"../../components/HomeFooter":218,"../../components/HomeNav":222,"../../data/article":237,"react":187,"react-dom":81,"react-redux":108}],256:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/HomeArticle":217,"../../components/HomeFooter":218,"../../components/HomeNav":223,"../../data/article":238,"react":187,"react-dom":81,"react-redux":108}],257:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -68259,7 +68358,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeLandingPrototype);
 
-},{"../../actions/nav":213,"../../components/HomeFooter":218,"../../components/HomeLandingPage":219,"../../components/HomeNav":222,"../../data/home-page":241,"react":187,"react-redux":108}],257:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/HomeFooter":218,"../../components/HomeLandingPage":220,"../../components/HomeNav":223,"../../data/home-page":242,"react":187,"react-redux":108}],258:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68349,7 +68448,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeLinksPrototype);
 
-},{"../../actions/nav":213,"../../components/HomeLinksPage":220,"../../components/HomeNav":222,"react":187,"react-redux":108,"react-skroll":168}],258:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/HomeLinksPage":221,"../../components/HomeNav":223,"react":187,"react-redux":108,"react-skroll":168}],259:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68427,7 +68526,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeNavPrototype);
 
-},{"../../actions/nav":213,"../../components/HomeNav":222,"react":187,"react-redux":108}],259:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/HomeNav":223,"react":187,"react-redux":108}],260:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68505,7 +68604,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeProfileSetupPrototype);
 
-},{"../../actions/nav":213,"../../components/HomeProfileSetup":224,"react":187,"react-redux":108,"react-skroll":168}],260:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/HomeProfileSetup":225,"react":187,"react-redux":108,"react-skroll":168}],261:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -68577,23 +68676,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeSitemapPrototype);
 
-},{"../../actions/nav":213,"../../components/HomeSitemap":225,"react":187,"react-redux":108}],261:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-exports.default = function () {
-    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-    lastId++;
-    return '' + prefix + lastId;
-};
-
-var lastId = 0;
-
-},{}],262:[function(require,module,exports){
+},{"../../actions/nav":213,"../../components/HomeSitemap":226,"react":187,"react-redux":108}],262:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68610,6 +68693,22 @@ exports.default = function () {
 var lastId = 0;
 
 },{}],263:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    lastId++;
+    return '' + prefix + lastId;
+};
+
+var lastId = 0;
+
+},{}],264:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -68635,7 +68734,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],264:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

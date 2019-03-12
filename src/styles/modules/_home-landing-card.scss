@@ -1,0 +1,15 @@
+.home-landing-card {
+	background: white;
+
+	&--ml {
+		margin-left: 12px;
+	}
+
+	&__cta {
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		height: 60px;
+		padding: 0 24px;
+	}
+}

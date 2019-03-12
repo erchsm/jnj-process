@@ -50,8 +50,8 @@ export default class HomeNewsBlock extends Component {
 		const tiles = news.slice(1, 4)
 
 		return (
-			<div>
-				<div className="home-news box-news box-full">
+			<div className="home-news">
+				<div className="home-news__tiles">
 					<div className='home-news__main-tile'>
 						<a className='home-news__main-img'>
 							<img src={hero.imgSrc}/>
@@ -80,7 +80,6 @@ export default class HomeNewsBlock extends Component {
 							))}
 						</ul>
 					</div>
-
 				</div>
 				<a className="home-news__more-link" href="#my-news">
 					<span>All my news</span>

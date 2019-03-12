@@ -19,9 +19,9 @@ export default class JnjProcessHeader extends Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener('keypress', this.handleScroll);
-		document.addEventListener('mousewheel', this.handleScroll);
-		document.addEventListener('touchmove', this.handleScroll);
+		document.addEventListener('scroll', this.handleScroll);
+		// document.addEventListener('mousewheel', this.handleScroll);
+		// document.addEventListener('touchmove', this.handleScroll);
 
 		setTimeout(() => {
 			this.handleScroll();
@@ -29,9 +29,9 @@ export default class JnjProcessHeader extends Component {
 	}
 
 	componentWillUnmount() {
-		document.removeEventListener('keypress', this.handleScroll);
-		document.removeEventListener('mousewheel', this.handleScroll);
-		document.removeEventListener('touchmove', this.handleScroll);
+		document.removeEventListener('scroll', this.handleScroll);
+		// document.removeEventListener('mousewheel', this.handleScroll);
+		// document.removeEventListener('touchmove', this.handleScroll);
 	}
 
 	handleScroll = (e) => {
@@ -50,9 +50,11 @@ export default class JnjProcessHeader extends Component {
 			"jnj-process-header--scrolled": this.state.isScrolled,
 		})
 
+		const opacity = Math.min(Math.max(0, (1 - (window.pageYOffset * 0.01))), 1)
+
 		const style = {
-			 transform: `scale(${Math.max(0, (1 - (window.pageYOffset * 0.01)))})`,
-			 opacity: Math.max(0, (1 - (window.pageYOffset * 0.01))),
+			 transform: `scale(${Math.min(Math.max(0, (1 - (window.pageYOffset * 0.01))), 1)})`,
+			 opacity: opacity,
 		}
 
 		return (
@@ -62,7 +64,7 @@ export default class JnjProcessHeader extends Component {
 						<div className="grid__item grid__item--col-1 grid__item--hide-medium"/>
 						<div className="grid__item grid__item--col-10 grid__item--col-12-medium">
 						<h1 style={style}>{title}</h1>
-							<blockquote style={{ opacity: Math.max(0, (1 - (window.pageYOffset * 0.01))) }}>{body}</blockquote>
+							<blockquote style={{ opacity: opacity }}>{body}</blockquote>
 						</div>
 					</div>
 					{ this.state.isScrolled ? (
