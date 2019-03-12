@@ -140,7 +140,7 @@ class Prototypes extends Component {
 						<NavLink to="/prototypes/home-links">
 							<div className="card">
 								<h3>Product Carousel</h3>
-								<p>Demonstrates the scrolling page experience on the companies page.</p>
+								<p>Scrolling page experience on the company page.</p>
 								<br />
 								<span className="tag-container">
 									<span className="tag">Scrolling</span>
@@ -172,7 +172,7 @@ class Prototypes extends Component {
 						<NavLink to="/prototypes/home-links">
 							<div className="card">
 								<h3>Homepage Flipper</h3>
-								<p>Interaction for flipping between the Patient and HCP Experience.</p>
+								<p>Interaction for choosing the Patient or HCP Experience.</p>
 								<br />
 								<span className="tag-container">
 									<span className="tag">UX</span>
@@ -186,7 +186,7 @@ class Prototypes extends Component {
 						<NavLink to="/prototypes/home-links">
 							<div className="card">
 								<h3>Taxonomy Diagram</h3>
-								<p>Consolidated our Content type Taxonomy into a single diagram.</p>
+								<p>A single content-type taxonomy diagram to rule them all.</p>
 								<br />
 								<span className="tag-container">
 									<span className="tag">Content Strategy</span>

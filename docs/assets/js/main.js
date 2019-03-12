@@ -67470,7 +67470,7 @@ var Prototypes = function (_Component) {
 								_react2.default.createElement(
 									'p',
 									null,
-									'Demonstrates the scrolling page experience on the companies page.'
+									'Scrolling page experience on the company page.'
 								),
 								_react2.default.createElement('br', null),
 								_react2.default.createElement(
@@ -67559,7 +67559,7 @@ var Prototypes = function (_Component) {
 								_react2.default.createElement(
 									'p',
 									null,
-									'Interaction for flipping between the Patient and HCP Experience.'
+									'Interaction for choosing the Patient or HCP Experience.'
 								),
 								_react2.default.createElement('br', null),
 								_react2.default.createElement(
@@ -67601,7 +67601,7 @@ var Prototypes = function (_Component) {
 								_react2.default.createElement(
 									'p',
 									null,
-									'Consolidated our Content type Taxonomy into a single diagram.'
+									'A single content-type taxonomy diagram to rule them all.'
 								),
 								_react2.default.createElement('br', null),
 								_react2.default.createElement(
