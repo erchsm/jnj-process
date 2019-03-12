@@ -61226,13 +61226,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var HomePage = function (_Component) {
-	_inherits(HomePage, _Component);
+var HomeNewsBlock = function (_Component) {
+	_inherits(HomeNewsBlock, _Component);
 
-	function HomePage(props) {
-		_classCallCheck(this, HomePage);
+	function HomeNewsBlock(props) {
+		_classCallCheck(this, HomeNewsBlock);
 
-		var _this = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (HomeNewsBlock.__proto__ || Object.getPrototypeOf(HomeNewsBlock)).call(this, props));
 
 		_this.createTileMetadata = function (data) {
 			return _react2.default.createElement(
@@ -61281,7 +61281,7 @@ var HomePage = function (_Component) {
 		return _this;
 	}
 
-	_createClass(HomePage, [{
+	_createClass(HomeNewsBlock, [{
 		key: 'render',
 		value: function render() {
 			var _this2 = this;
@@ -61370,10 +61370,10 @@ var HomePage = function (_Component) {
 		}
 	}]);
 
-	return HomePage;
+	return HomeNewsBlock;
 }(_react.Component);
 
-HomePage.propTypes = {
+HomeNewsBlock.propTypes = {
 	body: _propTypes2.default.string,
 	title: _propTypes2.default.string,
 	heroImage: _propTypes2.default.shape({
@@ -61384,7 +61384,7 @@ HomePage.propTypes = {
 	likesAmount: _propTypes2.default.number,
 	headline: _propTypes2.default.string
 };
-exports.default = HomePage;
+exports.default = HomeNewsBlock;
 
 },{"prop-types":65,"react":187,"react-text-truncate":176}],224:[function(require,module,exports){
 'use strict';

@@ -101,6 +101,9 @@ $article-social-width: 70px;
 		max-width: initial;
 		max-height: 50vh;
 	}
+	@media (max-width: $bp-medium) {
+		width: 100%;
+	}
 }
 
 .article__delimeter {

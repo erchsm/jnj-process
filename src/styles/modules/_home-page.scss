@@ -1,4 +1,6 @@
 .home-landing {
+	max-width: 1440px;
+	margin: 0 auto;
 	margin-top: 40px;
 
 
@@ -96,6 +98,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 
 		i {
 			font-size: 16px;
@@ -113,6 +116,9 @@
 		color: $brand-red;
 		margin-bottom: 6px;
 		display: block;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	.home-news__more-link {

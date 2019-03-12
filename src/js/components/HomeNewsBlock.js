@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import TextTruncate from 'react-text-truncate'
 
 
-export default class HomePage extends Component {
+export default class HomeNewsBlock extends Component {
 
 	static propTypes = {
 		body: PropTypes.string,
