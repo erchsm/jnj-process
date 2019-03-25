@@ -70,8 +70,8 @@ $height: 48px;
 	&.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-control-bar,
 	&.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
 	&.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
-		transition: all 0.9s $easing3;
-		transform: translateY($height);
+		transition: all 0.9s $easing3 !important;
+		transform: translateY($height) !important;
 	}
 
 	& .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal, 
@@ -81,7 +81,7 @@ $height: 48px;
 	& .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal, 
 	& .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal, 
 	& .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
-		height: $height;
+		height: $height !important;
 	}
 
 	.vjs-progress-control {

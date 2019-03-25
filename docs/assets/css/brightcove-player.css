@@ -89,9 +89,9 @@
 .video-js.vjs-has-started.vjs-playing.vjs-user-inactive:not(:hover) .vjs-control-bar,
 .video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar,
 .video-js.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar {
-  transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1);
-  -ms-transform: translateY(48px);
-  transform: translateY(48px); }
+  transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1) !important;
+  -ms-transform: translateY(48px) !important;
+  transform: translateY(48px) !important; }
 
 .video-js .vjs-volume-panel:hover .vjs-volume-control.vjs-volume-horizontal,
 .video-js .vjs-volume-panel:active .vjs-volume-control.vjs-volume-horizontal,
@@ -100,7 +100,7 @@
 .video-js .vjs-volume-panel .vjs-volume-control:active.vjs-volume-horizontal,
 .video-js .vjs-volume-panel .vjs-mute-control:hover ~ .vjs-volume-control.vjs-volume-horizontal,
 .video-js .vjs-volume-panel .vjs-volume-control.vjs-slider-active.vjs-volume-horizontal {
-  height: 48px; }
+  height: 48px !important; }
 
 .video-js .vjs-progress-control {
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important; }
