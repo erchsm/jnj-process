@@ -396,6 +396,18 @@ table {
 .icon-replay:before {
   content: "\EA63"; }
 
+.icon-volume-high:before {
+  content: "\EA64"; }
+
+.icon-volume-med:before {
+  content: "\EA65"; }
+
+.icon-volume-low:before {
+  content: "\EA66"; }
+
+.icon-volume-muted:before {
+  content: "\EA67"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
