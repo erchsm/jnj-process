@@ -34,7 +34,7 @@ $height: 48px;
 		line-height: $height;
 		padding: 0 ;
 	}
-	
+
 	.vjs-volume-bar {
 		margin: 21px 0.48em;
 	}
@@ -76,6 +76,7 @@ $height: 48px;
 		.vjs-has-started:not(:hover) .vjs-dock-text, .vjs-has-started:not(:hover) .vjs-dock-shelf {
 			transition: all 0.9s $easing3 !important;
 		}
+	}
 
 
 	// ICONOGRAPHY
@@ -100,6 +101,7 @@ $height: 48px;
 
 	.vjs-dock-text {
 		background: linear-gradient(rgba($brand-black, 0.8), rgba($brand-black, 0));
+		padding: 33px;
 
 		.vjs-dock-title, .vjs-dock-description {
 			font-family: $font-primary;
