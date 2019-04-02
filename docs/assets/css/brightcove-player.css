@@ -265,7 +265,9 @@
   .video-js button .vjs-has-started:not(:hover) .vjs-dock-text, .video-js button .vjs-has-started:not(:hover) .vjs-dock-shelf {
     transition: all 0.9s cubic-bezier(0.86, 0, 0.07, 1) !important; }
 
-.video-js .vjs-icon-play, .video-js .vjs-big-play-button, .video-js .vjs-icon-placeholder {
+.video-js .vjs-button .vjs-icon-play,
+.video-js .vjs-big-play-button .vjs-icon-placeholder,
+.video-js .vjs-icon-pause, .video-js .video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder {
   font-family: "icons";
   vertical-align: middle;
   line-height: 1;
@@ -277,6 +279,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.video-js .vjs-icon-play,
+.video-js .video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.video-js .video-js .vjs-play-control .vjs-icon-placeholder {
+  font-family: inherit; }
 
 .video-js .vjs-icon-play:before,
 .video-js .vjs-big-play-button .vjs-icon-placeholder:before,
@@ -304,6 +311,9 @@
 .video-js .vjs-progress-control {
   width: 100%;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) !important; }
+
+.video-js .vjs-load-progress {
+  background: rgba(33, 33, 33, 0.4); }
 
 .video-js.vjs-has-started.vjs-paused.vjs-user-active:not(:hover) .vjs-control-bar,
 .video-js.vjs-has-started.vjs-playing.vjs-user-active:not(:hover) .vjs-control-bar,
