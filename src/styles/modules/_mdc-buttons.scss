@@ -1,4 +1,6 @@
-.mdc-buttons {
+$baseclass: mdc-buttons;
+
+.#{$baseclass} {
 
 	&__grid {
 		display: flex;
@@ -132,6 +134,33 @@
 			i {
 				transform: translateX(9px);
 			}
+		}
+	}
+
+	&--text-link--reverse { 
+		i {
+			margin-left: 0;
+			margin-right: 9px;
+
+			&:before {
+				display: block;
+				transform: scaleX(-1);				
+			}
+		}
+		&:hover {
+			i {
+				transform: translateX(-9px);
+			}
+		}
+	}
+
+	&--blue {
+		background: transparent;
+		border-color: $brand-blue;
+		color: $brand-blue;
+
+		i {
+			color: $brand-blue;
 		}
 	}
 

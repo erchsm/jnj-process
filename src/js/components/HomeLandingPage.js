@@ -17,6 +17,8 @@ export default class HomeLandingPage extends Component {
             "home-landing": true
         });
 
+		const { news, profilePercentage } = this.props;
+
 		return (
 			<main className={classnames}>
 				<div className="grid">
@@ -26,6 +28,9 @@ export default class HomeLandingPage extends Component {
 					<div className="grid__item grid__item--col-4">
 						<HomeLandingCard cardCtaText={"View Profile"} marginLeft>
 							<img src="../assets/img/user-1x1.png"/>
+							<div className="progress-bar">
+								<div className="inner" style={{ transform: `scaleX(${ profilePercentage * 0.01 })` }}/>
+							</div>
 						</HomeLandingCard>
 					</div>
 				</div>

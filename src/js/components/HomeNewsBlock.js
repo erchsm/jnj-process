@@ -6,18 +6,6 @@ import TextTruncate from 'react-text-truncate'
 
 export default class HomeNewsBlock extends Component {
 
-	static propTypes = {
-		body: PropTypes.string,
-		title: PropTypes.string,
-		heroImage: PropTypes.shape({
-			src: PropTypes.string,
-			alt: PropTypes.string
-		}),
-		tags: PropTypes.arrayOf(PropTypes.string),
-		likesAmount: PropTypes.number,
-		headline: PropTypes.string
-	}
-
 	createTileMetadata = (data) => (
 		<div className='home-news__tile-social'>
 			<ul>
@@ -42,10 +30,29 @@ export default class HomeNewsBlock extends Component {
 
 	constructor (props) {
 		super(props)
+
+		this.state = {
+			news: this.props.news
+		}
+	}
+
+	componentWillMount () {
+		this.timer = setInterval(() => {
+			const hero = this.state.news.slice(0,1)[0]
+			const rest = this.state.news.slice(1, 4)
+
+			this.setState({
+				news: rest.concat(hero)
+			})
+		}, 6000);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.timer);
 	}
 
 	render () {
-		const { news } = this.props
+		const { news } = this.state
 		const hero = news.slice(0, 1)[0]
 		const tiles = news.slice(1, 4)
 
@@ -54,7 +61,7 @@ export default class HomeNewsBlock extends Component {
 				<div className="home-news__tiles">
 					<div className='home-news__main-tile'>
 						<a className='home-news__main-img'>
-							<img src={hero.imgSrc}/>
+							<img src={hero.imgSrc16x9}/>
 						</a>
 						<div className='home-news__tile-meta'>
 							<span className='home-news__tile-tags'>{hero.tags}</span>
@@ -69,7 +76,7 @@ export default class HomeNewsBlock extends Component {
 							{ tiles.map((tile, i) => (
 								<div className='home-news__tile' key={i}>
 									<a className='home-news__img'>
-										<img src={tile.imgSrc}/>
+										<img src={tile.imgSrc1x1}/>
 									</a>
 									<div className='home-news__tile-meta'>
 										<span className='home-news__tile-tags'>{tile.tags}</span>

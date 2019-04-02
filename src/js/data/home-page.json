@@ -6,7 +6,8 @@
       "date": "3 days ago",
       "likes": 866,
       "views": 1680,
-      "imgSrc": "../assets/img/article1-16x9.png"
+      "imgSrc16x9": "./assets/img/article1-16x9.png",
+      "imgSrc1x1": "./assets/img/article1-1x1.png"
     },
     {
       "tags": "Health",
@@ -14,7 +15,8 @@
       "date": "6 days ago",
       "likes": 46,
       "views": 200,
-      "imgSrc": "../assets/img/article2-1x1.png"
+      "imgSrc16x9": "./assets/img/article2-16x9.png",
+      "imgSrc1x1": "./assets/img/article2-1x1.png"
     },
     {
       "tags": "New York, NY",
@@ -22,7 +24,8 @@
       "date": "12 days ago",
       "likes": 1300,
       "views": 1100,
-      "imgSrc": "../assets/img/article3-1x1.png"
+      "imgSrc1x1": "./assets/img/article3-1x1.png",
+      "imgSrc16x9": "./assets/img/article3-16x9.png"
     },
     {
       "tags": "Research & Development",
@@ -30,7 +33,8 @@
       "date": "2 weeks ago",
       "likes": 100,
       "views": 500,
-      "imgSrc": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c5.png"
+      "imgSrc1x1": "./assets/img/article4-1x1.png",
+      "imgSrc16x9": "./assets/img/article4-16x9.png"
     }
   ]
 }

@@ -25,12 +25,12 @@
 
 .mdc-nav {
 	&__hovermain {
-		@include zIndex(9999);
+		@include zIndexCloser();
 	}
 	&__topbar {
-		@include zIndex(9999);
+		@include zIndexClose();
 	}
 	&__hoverbar {
-		@include zIndex(9999);
+		@include zIndexClosest();
 	}
 }

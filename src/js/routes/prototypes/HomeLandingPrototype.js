@@ -22,7 +22,7 @@ class HomeLandingPrototype extends Component {
 		return (
 			<div style={{ background: "#f3f3f3" }}>
 				<HomeNav/>
-				<HomeLandingPage news={homePageData.NEWS}/>
+				<HomeLandingPage news={homePageData.NEWS} profilePercentage={80}/>
 				<HomeFooter/>
 			</div>
 		);

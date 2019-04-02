@@ -199,6 +199,12 @@
 .icon-like-fill:before {
   content: "\EA60"; }
 
+.icon-play-outline:before {
+  content: "\EA61"; }
+
+.icon-pause:before {
+  content: "\EA62"; }
+
 @font-face {
   font-family: 'icons';
   font-weight: normal;
@@ -211,7 +217,13 @@
 .video-js .vjs-control-bar {
   height: 48px; }
 
+.video-js .vjs-icon-play,
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before,
+.video-js .vjs-play-control .vjs-icon-placeholder {
+  font-family: "icons"; }
+
 .video-js .vjs-control {
+  width: 60px;
   font-size: 14px;
   text-shadow: none !important; }
 
@@ -247,8 +259,8 @@
     position: absolute;
     margin-right: auto;
     transition: all 0.6s cubic-bezier(0.86, 0, 0.07, 1);
-    margin-left: .48em;
-    margin-bottom: .48em;
+    margin-left: 33px;
+    margin-bottom: 33px;
     margin-top: auto;
     border: solid 2px;
     width: 1.5em;
@@ -277,6 +289,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\EA18"; }
+
+.video-js .vjs-icon-pause:before,
+.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before {
+  font-family: "icons";
+  vertical-align: middle;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\EA62"; }
 
 .video-js .vjs-dock-text {
   background: linear-gradient(rgba(33, 33, 33, 0.8), rgba(33, 33, 33, 0)); }

@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
-import classNames from "classnames";
+import React, {Component} from 'react'
+import classNames from "classnames"
 
-import NavItems from "../data/nav-items";
-import SpecialtiesItems from "../data/specialties-items";
-import MdcLogo from "./MdcLogo";
+import NavItems from "../data/nav-items"
+import MdcLogo from "./MdcLogo"
+
+import palette from '../services/palette'
 
 
 export default class MdcNav extends Component {
-
-	static propTypes = {
-	}
-
 
 	constructor(props) {
 		super(props);
@@ -18,7 +15,11 @@ export default class MdcNav extends Component {
 		this.state = {
 			isScrolledTop: true,
 			takeoverOpen: false,
-			indexHovered: 0
+			indexHovered: 0,
+			takeoverData: {
+				data: []
+			},
+			showTakeoverNav: false,
 		}
 	}
 
@@ -45,32 +46,52 @@ export default class MdcNav extends Component {
 	}
 
 	setIndexHovered = (event) => {
+		const index = this.getChildIndex(event.target);
+
 		this.setState({
-			indexHovered: this.getChildIndex(event.target)
+			indexHovered: index,
+			takeoverData: NavItems.data[index],
+			showTakeoverNav: false,
 		});
 	}
 
+	setTakeoverData = (item) => {
+		this.setState({
+			takeoverData: item,
+		});
+		this.toggleTakeoverNavOpen();
+		this.refs.takeoverItems.scrollTo(0,0);
+	}
+
+	toggleTakeoverNavOpen = () => {
+		this.setState({
+			showTakeoverNav: !this.state.showTakeoverNav,
+		});
+	}
+
+	updateTakeoverNavigation = (name, data) => {
+		this.setState({
+			breadcrumbs2: name,
+			prevData: data,
+		})
+	}
+
 	closeTakeover = (event) => {
-		// setTimeout(() => {
-			this.setState({
-				takeoverOpen: false
-			});
-		// }, 0);
+		this.setState({
+			takeoverOpen: false
+		});
 	}
 
 	getChildIndex = (elem) => {
 		let i = 0;
 
-		while ((elem = elem.previousSibling) != null) {
-		  i++;
-		}
+		while ((elem = elem.previousSibling) != null) { i++; }
 
 		return i;
 	}
 
 	render() {
-		const { isScrolledTop, takeoverOpen, indexHovered } = this.state;
-
+		const { isScrolledTop, takeoverOpen, indexHovered, takeoverData, showTakeoverNav } = this.state;
 
 		const classnames = classNames({
 			"mdc-nav": true,
@@ -79,14 +100,17 @@ export default class MdcNav extends Component {
 		})
 
 		const navItems = NavItems.data.map((item, i) =>
-			<li key={i} onMouseOver={(e) => { this.openTakeover(e); this.setIndexHovered(e) }} onMouseOut={this.closeTakeover}>
+			<li key={i} onMouseOver={(e) => { this.openTakeover(e); this.setIndexHovered(e) }}>
 				<a>{item.name}</a>
 			</li>
 		);
 
-		const specialtiesItems = SpecialtiesItems.data.map((item, i) =>
-			<li key={i} className={ (i == 0) ? "overview-item" : ""}>
-				{item.name}
+		const takeoverItems = takeoverData.data.map((item, i) =>
+			<li key={i} className={ (i == 0) ? "overview-item" : "" }>
+				<button className="mdc-button mdc-button--text-link" onClick={() => { this.setTakeoverData(item); this.updateTakeoverNavigation(item.name, takeoverData); }}>
+					<span>{item.name}</span>
+					<i className="iconcss icon-arrow-right"/>
+				</button>
 			</li>
 		);
 
@@ -102,7 +126,7 @@ export default class MdcNav extends Component {
 						<MdcLogo/>
 					</div>
 					<div className="mdc-nav__center">
-						<ul>
+						<ul onMouseOut={this.closeTakeover}>
 							{navItems}
 						</ul>
 					</div>
@@ -129,7 +153,7 @@ export default class MdcNav extends Component {
 						  </svg>
 					</div>
 				</div>
-				<div className="mdc-nav__hoverbar">
+				<div className="mdc-nav__hoverbar" onMouseOver={ this.openTakeover }>
 					<div className="mdc-nav__hoverlines">
 						<div style={ (takeoverOpen) ? lineAnimation : null } className="mdc-nav__hoverline"></div>
 					</div>
@@ -146,13 +170,38 @@ export default class MdcNav extends Component {
 								<li>Pentultimate Bigness</li>
 							</ul>
 						</div>
-						<div className="mdc-nav__hovermaincolumn">
+						<div className="mdc-nav__hovermaincolumn" ref="takeoverItems">
+							{ showTakeoverNav ? <TakeoverNavigation breadcrumbs1={this.state.prevData.name} breadcrumbs2={this.state.breadcrumbs2} clickBack={() => { this.setTakeoverData(this.state.prevData); this.toggleTakeoverNavOpen(); }}/> : null}
 							<ul>
-								{ specialtiesItems }
+								{ takeoverItems }
 							</ul>
 						</div>
 					</div>
 			</nav>
+		);
+	}
+}
+
+class TakeoverNavigation extends Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		const { clickBack, breadcrumbs1, breadcrumbs2 } = this.props;
+
+		return (
+			<div className="mdc-nav__takeover-nav">
+				<button className="mdc-button mdc-button--text-link mdc-button--text-link--reverse mdc-button--blue" onClick={clickBack}>
+					<i className="iconcss icon-arrow-right"/>
+					<span>Back</span>
+				</button>
+				<span className="mdc-nav__takeover-nav__item">|</span>
+				<span style={{ color: palette("brand-blue"), cursor: "pointer" }} onClick={clickBack}>{breadcrumbs1}</span>
+				<span className="mdc-nav__takeover-nav__item"><i className="iconcss icon-caret-down-lg"/></span>
+				{breadcrumbs2}
+			</div>
 		);
 	}
 }

@@ -387,6 +387,12 @@ table {
 .icon-like-fill:before {
   content: "\EA60"; }
 
+.icon-play-outline:before {
+  content: "\EA61"; }
+
+.icon-pause:before {
+  content: "\EA62"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;

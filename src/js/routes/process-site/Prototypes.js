@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { connect } from "react-redux"
 
 import JnjProcessHeader from '../../components/JnjProcessHeader'
+// import TextLink from '../../components/form/TextLink'
 
 
 import { showNavToggle, hideNavToggle } from "../../actions/nav"
@@ -151,7 +152,7 @@ class Prototypes extends Component {
 						</NavLink>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<NavLink to="/prototypes/mdc-nav">
 							<div className="card">
 								<h3>Primary Navigation</h3>
 								<p>Interactions and Taxonomy for site navigation.</p>
@@ -183,7 +184,7 @@ class Prototypes extends Component {
 						</NavLink>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<NavLink to="/prototypes/mdc-taxonomy-diagram">
 							<div className="card">
 								<h3>Taxonomy Diagram</h3>
 								<p>A single content-type taxonomy diagram to rule them all.</p>

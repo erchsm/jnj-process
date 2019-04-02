@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, Redirect } from 'react-router'
 
 import Dashboard from './Dashboard'
 
@@ -16,6 +16,9 @@ import HomeLinksPrototype from './prototypes/HomeLinksPrototype'
 import HomeProfileSetupPrototype from './prototypes/HomeProfileSetupPrototype'
 import HomeSitemapPrototype from './prototypes/HomeSitemapPrototype'
 import HomeLandingPrototype from './prototypes/HomeLandingPrototype'
+
+import MdcNavPrototype from './prototypes/MdcNavPrototype'
+import MdcTaxonomyDiagramPrototype from './prototypes/MdcTaxonomyDiagramPrototype'
 
 
 const routes = (
@@ -37,6 +40,11 @@ const routes = (
 			<Route path="/prototypes/home-profile-setup" component={HomeProfileSetupPrototype}/>
 			<Route path="/prototypes/home-sitemap" component={HomeSitemapPrototype}/>
 			<Route path="/prototypes/home-landing" component={HomeLandingPrototype}/>
+
+			<Route path="/prototypes/mdc-nav" component={MdcNavPrototype}/>
+			<Route path="/prototypes/mdc-taxonomy-diagram" component={MdcTaxonomyDiagramPrototype}/>
+
+            <Redirect to="/" />
 		</Switch>
 	</div>
 )
