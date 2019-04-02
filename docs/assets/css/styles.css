@@ -393,6 +393,9 @@ table {
 .icon-pause:before {
   content: "\EA62"; }
 
+.icon-replay:before {
+  content: "\EA63"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
