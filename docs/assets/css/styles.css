@@ -408,6 +408,12 @@ table {
 .icon-volume-muted:before {
   content: "\EA67"; }
 
+.icon-expand:before {
+  content: "\EA68"; }
+
+.icon-collapse:before {
+  content: "\EA69"; }
+
 .grid {
   display: -ms-flexbox;
   display: flex;
