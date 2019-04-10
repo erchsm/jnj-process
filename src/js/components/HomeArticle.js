@@ -64,38 +64,36 @@ export default class Article extends Component {
 		return (
 			<main className='article__background'>
 				<div className='article__wrapper'>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-medium"/>
+						<div className="grid__item grid__item--col-9 grid__item--col-9-desktop grid__item--col-12-medium">
+							<h1 className='article__title'>{title}</h1>
+							<span className='article__headline'>By <a style={{ color: `${palette("brand-black")}`, borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</a><hr/>{timestamp}</span>
+						</div>
+					</div>
 
-						<div className="grid">
-							<div className="grid__item grid__item--col-1 grid__item--hide-medium"/>
-							<div className="grid__item grid__item--col-9 grid__item--col-9-desktop grid__item--col-12-medium">
-								<h1 className='article__title'>{title}</h1>
-								<span className='article__headline'>By <a style={{ color: `${palette("brand-black")}`, borderBottom: `solid 1px ${palette("brand-grey-light")}` }}>{author}</a><hr/>{timestamp}</span>
+					<div className="grid">
+						<div className="grid__item grid__item--col-1 grid__item--hide-medium">
+							<div className='article__social-wrapper article__social-wrapper--sticky'>
+								<Social likesAmount={likesAmount}/>
 							</div>
 						</div>
-
-						<div className="grid">
-							<div className="grid__item grid__item--col-1 grid__item--hide-medium">
-								<div className='article__social-wrapper article__social-wrapper--sticky'>
+						<div className="grid__item grid__item--col-9 grid__item--col-11-desktop grid__item--col-12-medium">
+							<div className='article__media is-clearfix'>
+								<img {...this.props.heroImage} className='article__hero-img'/>
+								<div className='article__social-wrapper is-clearfix article__social-wrapper--static'>
 									<Social likesAmount={likesAmount}/>
 								</div>
 							</div>
-							<div className="grid__item grid__item--col-9 grid__item--col-11-desktop grid__item--col-12-medium">
-								<div className='article__media is-clearfix'>
-									<img {...this.props.heroImage} className='article__hero-img'/>
-									<div className='article__social-wrapper is-clearfix article__social-wrapper--static'>
-										<Social likesAmount={likesAmount}/>
-									</div>
-								</div>
 
-								<hr className='article__delimeter'/>
-								<div className='article__body is-clearfix ckeditor' dangerouslySetInnerHTML={{ __html: body }}></div>
-								
-								<div className='article__tags-wrapper'>
-									<TagsCollapsable tags={tags}/>
-								</div>
+							<hr className='article__delimeter'/>
+							<div className='article__body is-clearfix ckeditor' dangerouslySetInnerHTML={{ __html: body }}></div>
+							
+							<div className='article__tags-wrapper'>
+								<TagsCollapsable tags={tags}/>
 							</div>
-
 						</div>
+					</div>
 				</div>
 			</main>
 		)

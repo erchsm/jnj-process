@@ -1902,7 +1902,7 @@ var _initialiseProps = function _initialiseProps() {
 };
 
 exports.default = Autosuggest;
-},{"./theme":11,"prop-types":7,"react":25,"react-autowhatever":17,"shallow-equal/arrays":33}],10:[function(require,module,exports){
+},{"./theme":11,"prop-types":7,"react":26,"react-autowhatever":17,"shallow-equal/arrays":34}],10:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./Autosuggest').default;
@@ -2402,7 +2402,7 @@ Autowhatever.defaultProps = {
   theme: defaultTheme
 };
 exports.default = Autowhatever;
-},{"./ItemsList":14,"./SectionTitle":15,"prop-types":7,"react":25,"react-themeable":21,"section-iterator":32}],13:[function(require,module,exports){
+},{"./ItemsList":14,"./SectionTitle":15,"prop-types":7,"react":26,"react-themeable":22,"section-iterator":33}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2542,7 +2542,7 @@ Item.propTypes = {
   onClick: _propTypes2.default.func
 };
 exports.default = Item;
-},{"./compareObjects":16,"prop-types":7,"react":25}],14:[function(require,module,exports){
+},{"./compareObjects":16,"prop-types":7,"react":26}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2672,7 +2672,7 @@ ItemsList.defaultProps = {
   sectionIndex: null
 };
 exports.default = ItemsList;
-},{"./Item":13,"./compareObjects":16,"prop-types":7,"react":25}],15:[function(require,module,exports){
+},{"./Item":13,"./compareObjects":16,"prop-types":7,"react":26}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2748,7 +2748,7 @@ SectionTitle.propTypes = {
   sectionKeyPrefix: _propTypes2.default.string.isRequired
 };
 exports.default = SectionTitle;
-},{"./compareObjects":16,"prop-types":7,"react":25}],16:[function(require,module,exports){
+},{"./compareObjects":16,"prop-types":7,"react":26}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23894,7 +23894,7 @@ module.exports = reactDom;
 
 }).call(this,require('_process'))
 
-},{"_process":3,"object-assign":2,"prop-types/checkPropTypes":4,"react":25,"scheduler":30,"scheduler/tracing":31}],19:[function(require,module,exports){
+},{"_process":3,"object-assign":2,"prop-types/checkPropTypes":4,"react":26,"scheduler":31,"scheduler/tracing":32}],19:[function(require,module,exports){
 /** @license React v16.8.3
  * react-dom.production.min.js
  *
@@ -24165,7 +24165,7 @@ x("38"):void 0;return Si(a,b,c,!1,d)},unmountComponentAtNode:function(a){Qi(a)?v
 X;X=!0;try{ki(a)}finally{(X=b)||W||Yh(1073741823,!1)}},__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{Events:[Ia,Ja,Ka,Ba.injectEventPluginsByName,pa,Qa,function(a){ya(a,Pa)},Eb,Fb,Dd,Da]}};function Ui(a,b){Qi(a)?void 0:x("299","unstable_createRoot");return new Pi(a,!0,null!=b&&!0===b.hydrate)}
 (function(a){var b=a.findFiberByHostInstance;return Te(n({},a,{overrideProps:null,currentDispatcherRef:Tb.ReactCurrentDispatcher,findHostInstanceByFiber:function(a){a=hd(a);return null===a?null:a.stateNode},findFiberByHostInstance:function(a){return b?b(a):null}}))})({findFiberByHostInstance:Ha,bundleType:0,version:"16.8.3",rendererPackageName:"react-dom"});var Wi={default:Vi},Xi=Wi&&Vi||Wi;module.exports=Xi.default||Xi;
 
-},{"object-assign":2,"react":25,"scheduler":30}],20:[function(require,module,exports){
+},{"object-assign":2,"react":26,"scheduler":31}],20:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -24209,6 +24209,357 @@ if (process.env.NODE_ENV === 'production') {
 }).call(this,require('_process'))
 
 },{"./cjs/react-dom.development.js":18,"./cjs/react-dom.production.min.js":19,"_process":3}],21:[function(require,module,exports){
+(function (global, factory) {
+  if (typeof define === "function" && define.amd) {
+    define(['module', 'exports', 'react', 'prop-types'], factory);
+  } else if (typeof exports !== "undefined") {
+    factory(module, exports, require('react'), require('prop-types'));
+  } else {
+    var mod = {
+      exports: {}
+    };
+    factory(mod, mod.exports, global.React, global.propTypes);
+    global.TextTruncate = mod.exports;
+  }
+})(this, function (module, exports, _react, _propTypes) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function _objectWithoutProperties(obj, keys) {
+    var target = {};
+
+    for (var i in obj) {
+      if (keys.indexOf(i) >= 0) continue;
+      if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+      target[i] = obj[i];
+    }
+
+    return target;
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _createClass = function () {
+    function defineProperties(target, props) {
+      for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+      }
+    }
+
+    return function (Constructor, protoProps, staticProps) {
+      if (protoProps) defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) defineProperties(Constructor, staticProps);
+      return Constructor;
+    };
+  }();
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var TextTruncate = function (_Component) {
+    _inherits(TextTruncate, _Component);
+
+    function TextTruncate() {
+      var _ref;
+
+      var _temp, _this, _ret;
+
+      _classCallCheck(this, TextTruncate);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TextTruncate.__proto__ || Object.getPrototypeOf(TextTruncate)).call.apply(_ref, [this].concat(args))), _this), _this.onResize = function () {
+        if (_this.rafId) {
+          window.cancelAnimationFrame(_this.rafId);
+        }
+        _this.rafId = window.requestAnimationFrame(_this.update.bind(_this));
+      }, _this.onToggled = function (truncated) {
+        typeof _this.props.onToggled === 'function' && setTimeout(function () {
+          return _this.props.onToggled(truncated);
+        }, 0);
+      }, _this.onTruncated = function () {
+        typeof _this.props.onTruncated === 'function' && setTimeout(function () {
+          return _this.props.onTruncated();
+        }, 0);
+      }, _this.onCalculated = function () {
+        typeof _this.props.onCalculated === 'function' && setTimeout(function () {
+          return _this.props.onCalculated();
+        }, 0);
+      }, _this.update = function () {
+        var style = window.getComputedStyle(_this.scope);
+        var font = [style['font-weight'], style['font-style'], style['font-size'], style['font-family'], style['letter-spacing']].join(' ');
+        _this.canvas.font = font;
+        _this.forceUpdate();
+      }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(TextTruncate, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        var canvas = document.createElement('canvas');
+        var docFragment = document.createDocumentFragment();
+        var style = window.getComputedStyle(this.scope);
+        var font = [style['font-weight'], style['font-style'], style['font-size'], style['font-family']].join(' ');
+
+        docFragment.appendChild(canvas);
+        this.canvas = canvas.getContext('2d');
+        this.canvas.font = font;
+        this.forceUpdate();
+        window.addEventListener('resize', this.onResize);
+      }
+    }, {
+      key: 'componentWillUnmount',
+      value: function componentWillUnmount() {
+        window.removeEventListener('resize', this.onResize);
+        if (this.rafId) {
+          window.cancelAnimationFrame(this.rafId);
+        }
+      }
+    }, {
+      key: 'measureWidth',
+      value: function measureWidth(text) {
+        return Math.ceil(this.canvas.measureText(text).width);
+      }
+    }, {
+      key: 'getRenderText',
+      value: function getRenderText() {
+        var _props = this.props,
+            containerClassName = _props.containerClassName,
+            element = _props.element,
+            line = _props.line,
+            onCalculated = _props.onCalculated,
+            onTruncated = _props.onTruncated,
+            text = _props.text,
+            textElement = _props.textElement,
+            textTruncateChild = _props.textTruncateChild,
+            truncateText = _props.truncateText,
+            maxCalculateTimes = _props.maxCalculateTimes,
+            props = _objectWithoutProperties(_props, ['containerClassName', 'element', 'line', 'onCalculated', 'onTruncated', 'text', 'textElement', 'textTruncateChild', 'truncateText', 'maxCalculateTimes']);
+
+        var scopeWidth = this.scope.getBoundingClientRect().width;
+
+        // return if display:none
+        if (scopeWidth === 0) {
+          return null;
+        }
+
+        // return if all of text can be displayed
+        if (scopeWidth >= this.measureWidth(text)) {
+          this.onToggled(false);
+          return (0, _react.createElement)(textElement, props, text);
+        }
+
+        var childText = '';
+        if (textTruncateChild && typeof textTruncateChild.type === 'string') {
+          var type = textTruncateChild.type;
+          if (type.indexOf('span') >= 0 || type.indexOf('a') >= 0) {
+            childText = textTruncateChild.props.children;
+          }
+        }
+
+        var currentPos = 1;
+        var maxTextLength = text.length;
+        var truncatedText = '';
+        var splitPos = 0;
+        var startPos = 0;
+        var displayLine = line;
+        var width = 0;
+        var lastIsEng = false;
+        var isPrevLineWithoutSpace = false;
+        var lastPos = 0;
+        var lastSpaceIndex = -1;
+        var ext = '';
+        var loopCnt = 0;
+
+        while (displayLine-- > 0) {
+          ext = displayLine ? '' : truncateText + (childText ? ' ' + childText : '');
+          while (currentPos <= maxTextLength) {
+            truncatedText = text.substr(startPos, currentPos);
+            width = this.measureWidth(truncatedText + ext);
+            if (width < scopeWidth) {
+              splitPos = text.indexOf(' ', currentPos + 1);
+              if (splitPos === -1) {
+                currentPos += 1;
+                lastIsEng = false;
+              } else {
+                lastIsEng = true;
+                currentPos = splitPos;
+              }
+            } else {
+              do {
+                if (loopCnt++ >= maxCalculateTimes) {
+                  break;
+                }
+                truncatedText = text.substr(startPos, currentPos);
+                if (!displayLine) {
+                  currentPos--;
+                }
+                if (truncatedText[truncatedText.length - 1] === ' ') {
+                  truncatedText = text.substr(startPos, currentPos - 1);
+                }
+                if (lastIsEng) {
+                  lastSpaceIndex = truncatedText.lastIndexOf(' ');
+                  if (lastSpaceIndex > -1) {
+                    currentPos = lastSpaceIndex;
+                    if (displayLine) {
+                      currentPos++;
+                    }
+                    truncatedText = text.substr(startPos, currentPos);
+                  } else {
+                    currentPos--;
+                    truncatedText = text.substr(startPos, currentPos);
+                  }
+                } else {
+                  currentPos--;
+                  truncatedText = text.substr(startPos, currentPos);
+                }
+                width = this.measureWidth(truncatedText + ext);
+              } while (width >= scopeWidth && truncatedText.length > 0);
+              startPos += currentPos;
+              break;
+            }
+          }
+
+          if (currentPos >= maxTextLength) {
+            startPos = maxTextLength;
+            break;
+          }
+
+          if (lastIsEng && !isPrevLineWithoutSpace && text.substr(lastPos, currentPos).indexOf(' ') === -1) {
+            isPrevLineWithoutSpace = text.substr(lastPos, currentPos).indexOf(' ') === -1;
+            displayLine--;
+          }
+          lastPos = currentPos + 1;
+        }
+
+        if (startPos === maxTextLength) {
+          this.onToggled(false);
+          return (0, _react.createElement)(textElement, props, text);
+        }
+
+        this.onTruncated();
+        this.onToggled(true);
+        return _react2.default.createElement(
+          'div',
+          props,
+          (0, _react.createElement)(textElement, props, text.substr(0, startPos) + truncateText + ' '),
+          textTruncateChild
+        );
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _this2 = this;
+
+        var _props2 = this.props,
+            element = _props2.element,
+            text = _props2.text,
+            _props2$style = _props2.style,
+            style = _props2$style === undefined ? {} : _props2$style,
+            containerClassName = _props2.containerClassName,
+            line = _props2.line,
+            onCalculated = _props2.onCalculated,
+            onTruncated = _props2.onTruncated,
+            textElement = _props2.textElement,
+            textTruncateChild = _props2.textTruncateChild,
+            truncateText = _props2.truncateText,
+            maxCalculateTimes = _props2.maxCalculateTimes,
+            props = _objectWithoutProperties(_props2, ['element', 'text', 'style', 'containerClassName', 'line', 'onCalculated', 'onTruncated', 'textElement', 'textTruncateChild', 'truncateText', 'maxCalculateTimes']);
+
+        var fontWeight = style.fontWeight,
+            fontStyle = style.fontStyle,
+            fontSize = style.fontSize,
+            fontFamily = style.fontFamily;
+
+
+        var renderText = this.scope && line ? this.getRenderText() : (0, _react.createElement)(textElement, props, text);;
+        var rootProps = {
+          ref: function ref(el) {
+            _this2.scope = el;
+          },
+          className: containerClassName,
+          style: { overflow: 'hidden', fontWeight: fontWeight, fontStyle: fontStyle, fontSize: fontSize, fontFamily: fontFamily }
+        };
+
+        this.scope && this.onCalculated();
+        return (0, _react.createElement)(element, rootProps, renderText);
+      }
+    }]);
+
+    return TextTruncate;
+  }(_react.Component);
+
+  TextTruncate.propTypes = {
+    containerClassName: _propTypes2.default.string,
+    element: _propTypes2.default.string,
+    line: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.bool]),
+    onCalculated: _propTypes2.default.func,
+    onTruncated: _propTypes2.default.func,
+    onToggled: _propTypes2.default.func,
+    text: _propTypes2.default.string,
+    textElement: _propTypes2.default.node,
+    textTruncateChild: _propTypes2.default.node,
+    truncateText: _propTypes2.default.string,
+    maxCalculateTimes: _propTypes2.default.number
+  };
+  TextTruncate.defaultProps = {
+    element: 'div',
+    line: 1,
+    text: '',
+    textElement: 'span',
+    truncateText: '…',
+    maxCalculateTimes: 10
+  };
+  exports.default = TextTruncate;
+  ;
+  module.exports = exports['default'];
+});
+
+},{"prop-types":7,"react":26}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -24251,7 +24602,7 @@ exports['default'] = function (input) {
 };
 
 module.exports = exports['default'];
-},{"object-assign":22}],22:[function(require,module,exports){
+},{"object-assign":23}],23:[function(require,module,exports){
 'use strict';
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
@@ -24292,7 +24643,7 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 (function (process){
 /** @license React v16.8.3
  * react.development.js
@@ -26198,7 +26549,7 @@ module.exports = react;
 
 }).call(this,require('_process'))
 
-},{"_process":3,"object-assign":2,"prop-types/checkPropTypes":4}],24:[function(require,module,exports){
+},{"_process":3,"object-assign":2,"prop-types/checkPropTypes":4}],25:[function(require,module,exports){
 /** @license React v16.8.3
  * react.production.min.js
  *
@@ -26225,7 +26576,7 @@ b,d){return W().useImperativeHandle(a,b,d)},useDebugValue:function(){},useLayout
 b){void 0!==b.ref&&(h=b.ref,f=J.current);void 0!==b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(e[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)e.children=d;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];e.children=l}return{$$typeof:p,type:a.type,key:g,ref:h,props:e,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.8.3",
 unstable_ConcurrentMode:x,unstable_Profiler:u,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentDispatcher:I,ReactCurrentOwner:J,assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default||Z;
 
-},{"object-assign":2}],25:[function(require,module,exports){
+},{"object-assign":2}],26:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26237,7 +26588,7 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/react.development.js":23,"./cjs/react.production.min.js":24,"_process":3}],26:[function(require,module,exports){
+},{"./cjs/react.development.js":24,"./cjs/react.production.min.js":25,"_process":3}],27:[function(require,module,exports){
 (function (process){
 /** @license React v0.13.3
  * scheduler-tracing.development.js
@@ -26665,7 +27016,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 }).call(this,require('_process'))
 
-},{"_process":3}],27:[function(require,module,exports){
+},{"_process":3}],28:[function(require,module,exports){
 /** @license React v0.13.3
  * scheduler-tracing.production.min.js
  *
@@ -26677,7 +27028,7 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 'use strict';Object.defineProperty(exports,"__esModule",{value:!0});var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unstable_clear=function(a){return a()};exports.unstable_getCurrent=function(){return null};exports.unstable_getThreadID=function(){return++b};exports.unstable_trace=function(a,d,c){return c()};exports.unstable_wrap=function(a){return a};exports.unstable_subscribe=function(){};exports.unstable_unsubscribe=function(){};
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 (function (process,global){
 /** @license React v0.13.3
  * scheduler.development.js
@@ -27381,7 +27732,7 @@ exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"_process":3}],29:[function(require,module,exports){
+},{"_process":3}],30:[function(require,module,exports){
 (function (global){
 /** @license React v0.13.3
  * scheduler.production.min.js
@@ -27407,7 +27758,7 @@ exports.unstable_shouldYield=function(){return!e&&(null!==d&&d.expirationTime<l|
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27419,7 +27770,7 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/scheduler.development.js":28,"./cjs/scheduler.production.min.js":29,"_process":3}],31:[function(require,module,exports){
+},{"./cjs/scheduler.development.js":29,"./cjs/scheduler.production.min.js":30,"_process":3}],32:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -27431,7 +27782,7 @@ if (process.env.NODE_ENV === 'production') {
 
 }).call(this,require('_process'))
 
-},{"./cjs/scheduler-tracing.development.js":26,"./cjs/scheduler-tracing.production.min.js":27,"_process":3}],32:[function(require,module,exports){
+},{"./cjs/scheduler-tracing.development.js":27,"./cjs/scheduler-tracing.production.min.js":28,"_process":3}],33:[function(require,module,exports){
 "use strict";
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -27543,7 +27894,7 @@ module.exports = function (_ref) {
   };
 };
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 module.exports = function shallowEqualArrays(arrA, arrB) {
   if (arrA === arrB) {
     return true;
@@ -27564,7 +27915,7 @@ module.exports = function shallowEqualArrays(arrA, arrB) {
   return true;
 };
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -27601,7 +27952,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 	_react2.default.createElement(_HomeFooter2.default, null)
 ), document.getElementById('root'));
 
-},{"../components/HomeFooter":35,"../components/HomeLandingPage":36,"../components/HomeNav":37,"../data/home-page":43,"react":25,"react-dom":20}],35:[function(require,module,exports){
+},{"../components/HomeFooter":36,"../components/HomeLandingPage":38,"../components/HomeNav":39,"../data/home-page":45,"react":26,"react-dom":20}],36:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27698,7 +28049,7 @@ var HomeFooter = function (_Component) {
               { className: 'footer__logo', href: '/#' },
               _react2.default.createElement(
                 'svg',
-                { width: '160px', height: '29px', viewBox: '0 0 160 29' },
+                { width: '200px', height: '36.25px', viewBox: '0 0 160 29' },
                 _react2.default.createElement(
                   'g',
                   { id: 'uEA57-jnjlogo', fill: '#CA100B', fillRule: 'nonzero' },
@@ -27723,11 +28074,11 @@ var HomeFooter = function (_Component) {
 HomeFooter.propTypes = {};
 exports.default = HomeFooter;
 
-},{"../data/footer-items":42,"./MdcLogo":39,"classnames":1,"react":25}],36:[function(require,module,exports){
+},{"../data/footer-items":44,"./MdcLogo":41,"classnames":1,"react":26}],37:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -27740,9 +28091,102 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var HomeLandingCard = function (_Component) {
+	_inherits(HomeLandingCard, _Component);
+
+	function HomeLandingCard(props) {
+		_classCallCheck(this, HomeLandingCard);
+
+		return _possibleConstructorReturn(this, (HomeLandingCard.__proto__ || Object.getPrototypeOf(HomeLandingCard)).call(this, props));
+	}
+
+	_createClass(HomeLandingCard, [{
+		key: 'render',
+		value: function render() {
+			var _props = this.props,
+			    cardHeaderText = _props.cardHeaderText,
+			    cardCtaText = _props.cardCtaText,
+			    marginLeft = _props.marginLeft,
+			    marginRight = _props.marginRight;
+
+
+			var classnames = (0, _classnames2.default)({
+				"home-landing-card": true,
+				"home-landing-card--ml": marginLeft,
+				"home-landing-card--mr": marginRight
+			});
+
+			return _react2.default.createElement(
+				'div',
+				{ className: classnames },
+				cardHeaderText ? _react2.default.createElement(
+					'div',
+					{ className: 'home-landing-card__header' },
+					_react2.default.createElement(
+						'h5',
+						{ className: 'eyebrow' },
+						cardHeaderText
+					)
+				) : null,
+				this.props.children,
+				cardCtaText ? _react2.default.createElement(
+					'div',
+					{ className: 'home-landing-card__cta' },
+					_react2.default.createElement(
+						'p',
+						{ className: 'no-mb' },
+						cardCtaText
+					)
+				) : null
+			);
+		}
+	}]);
+
+	return HomeLandingCard;
+}(_react.Component);
+
+exports.default = HomeLandingCard;
+
+},{"classnames":1,"prop-types":7,"react":26}],38:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
 var _HomeNewsBlock = require('./HomeNewsBlock');
 
 var _HomeNewsBlock2 = _interopRequireDefault(_HomeNewsBlock);
+
+var _HomeLandingCard = require('./HomeLandingCard');
+
+var _HomeLandingCard2 = _interopRequireDefault(_HomeLandingCard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27753,51 +28197,63 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var HomeLandingPage = function (_Component) {
-  _inherits(HomeLandingPage, _Component);
+	_inherits(HomeLandingPage, _Component);
 
-  function HomeLandingPage(props) {
-    _classCallCheck(this, HomeLandingPage);
+	function HomeLandingPage(props) {
+		_classCallCheck(this, HomeLandingPage);
 
-    return _possibleConstructorReturn(this, (HomeLandingPage.__proto__ || Object.getPrototypeOf(HomeLandingPage)).call(this, props));
-  }
+		return _possibleConstructorReturn(this, (HomeLandingPage.__proto__ || Object.getPrototypeOf(HomeLandingPage)).call(this, props));
+	}
 
-  _createClass(HomeLandingPage, [{
-    key: 'render',
-    value: function render() {
+	_createClass(HomeLandingPage, [{
+		key: 'render',
+		value: function render() {
 
-      return _react2.default.createElement(
-        'main',
-        { className: 'article__background' },
-        _react2.default.createElement(
-          'div',
-          { className: 'article__wrapper' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-m-4 col-t-8 col-d-8 col-hd-8 basic-box' },
-            _react2.default.createElement(_HomeNewsBlock2.default, { news: this.props.news })
-          )
-        )
-      );
-    }
-  }]);
+			var classnames = (0, _classnames2.default)({
+				"home-landing": true
+			});
 
-  return HomeLandingPage;
+			var _props = this.props,
+			    news = _props.news,
+			    profilePercentage = _props.profilePercentage;
+
+
+			return _react2.default.createElement(
+				'main',
+				{ className: classnames },
+				_react2.default.createElement(
+					'div',
+					{ className: 'grid' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'grid__item grid__item--col-8 grid__item--col-12-desktop' },
+						_react2.default.createElement(_HomeNewsBlock2.default, { news: this.props.news })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'grid__item grid__item--col-4' },
+						_react2.default.createElement(
+							_HomeLandingCard2.default,
+							{ cardCtaText: "View Profile", marginLeft: true },
+							_react2.default.createElement('img', { src: '../assets/img/user-1x1.png' }),
+							_react2.default.createElement(
+								'div',
+								{ className: 'progress-bar' },
+								_react2.default.createElement('div', { className: 'inner', style: { transform: 'scaleX(' + profilePercentage * 0.01 + ')' } })
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return HomeLandingPage;
 }(_react.Component);
 
-HomeLandingPage.propTypes = {
-  body: _propTypes2.default.string,
-  title: _propTypes2.default.string,
-  heroImage: _propTypes2.default.shape({
-    src: _propTypes2.default.string,
-    alt: _propTypes2.default.string
-  }),
-  tags: _propTypes2.default.arrayOf(_propTypes2.default.string),
-  likesAmount: _propTypes2.default.number,
-  headline: _propTypes2.default.string
-};
 exports.default = HomeLandingPage;
 
-},{"./HomeNewsBlock":38,"prop-types":7,"react":25}],37:[function(require,module,exports){
+},{"./HomeLandingCard":37,"./HomeNewsBlock":40,"classnames":1,"prop-types":7,"react":26}],39:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28376,14 +28832,13 @@ var HomeNav = function (_Component) {
 	return HomeNav;
 }(_react.Component);
 
-HomeNav.propTypes = {};
 exports.default = HomeNav;
 
-},{"./SearchBar":40,"./TabbedList":41,"classnames":1,"react":25}],38:[function(require,module,exports){
+},{"./SearchBar":42,"./TabbedList":43,"classnames":1,"react":26}],40:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -28396,6 +28851,10 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _reactTextTruncate = require('react-text-truncate');
+
+var _reactTextTruncate2 = _interopRequireDefault(_reactTextTruncate);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28404,194 +28863,178 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var renderTile = function renderTile(_ref) {
-  var tags = _ref.tags,
-      title = _ref.title,
-      date = _ref.date,
-      likes = _ref.likes,
-      views = _ref.views,
-      imgSrc = _ref.imgSrc;
+var HomeNewsBlock = function (_Component) {
+	_inherits(HomeNewsBlock, _Component);
 
-  return _react2.default.createElement(
-    'div',
-    { className: 'home-news__tile' },
-    _react2.default.createElement(
-      'a',
-      { className: 'home-news__img' },
-      _react2.default.createElement('img', { src: imgSrc })
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'home-news__tile-meta' },
-      _react2.default.createElement(
-        'span',
-        { className: 'home-news__tile-tags' },
-        tags
-      ),
-      _react2.default.createElement(
-        'a',
-        { className: 'home-news__tile-title' },
-        title
-      ),
-      _react2.default.createElement(
-        'span',
-        { className: 'home-news__tile-date' },
-        date
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'home-news__tile-social' },
-        _react2.default.createElement(
-          'ul',
-          null,
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement('span', { className: 'iconcss icon-like' }),
-            _react2.default.createElement(
-              'span',
-              null,
-              likes
-            )
-          ),
-          _react2.default.createElement(
-            'li',
-            null,
-            _react2.default.createElement('span', { className: 'iconcss icon-view' }),
-            _react2.default.createElement(
-              'span',
-              null,
-              views
-            )
-          )
-        )
-      )
-    )
-  );
-};
+	function HomeNewsBlock(props) {
+		_classCallCheck(this, HomeNewsBlock);
 
-var HomePage = function (_Component) {
-  _inherits(HomePage, _Component);
+		var _this = _possibleConstructorReturn(this, (HomeNewsBlock.__proto__ || Object.getPrototypeOf(HomeNewsBlock)).call(this, props));
 
-  function HomePage(props) {
-    _classCallCheck(this, HomePage);
+		_this.createTileMetadata = function (data) {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'home-news__tile-social' },
+				_react2.default.createElement(
+					'ul',
+					null,
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement(
+							'span',
+							{ className: 'home-news__tile-date' },
+							data.date
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement('i', { className: 'iconcss icon-like-outline' }),
+						_react2.default.createElement(
+							'span',
+							null,
+							_this.dataFormatter(data.likes)
+						)
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						_react2.default.createElement('i', { className: 'iconcss icon-view' }),
+						_react2.default.createElement(
+							'span',
+							null,
+							_this.dataFormatter(data.views)
+						)
+					)
+				)
+			);
+		};
 
-    return _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this, props));
-  }
+		_this.dataFormatter = function (num) {
+			return num > 999 ? (num / 1000).toFixed(1) + 'K' : num;
+		};
 
-  _createClass(HomePage, [{
-    key: 'render',
-    value: function render() {
-      var news = this.props.news;
+		_this.state = {
+			news: _this.props.news
+		};
+		return _this;
+	}
 
-      var hero = news.slice(0, 1)[0];
-      var tiles = news.slice(1, 4);
+	_createClass(HomeNewsBlock, [{
+		key: 'componentWillMount',
+		value: function componentWillMount() {
+			var _this2 = this;
 
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          { className: 'home-news box-news box-full' },
-          _react2.default.createElement(
-            'div',
-            { className: 'home-news__main-tile' },
-            _react2.default.createElement(
-              'a',
-              { className: 'home-news__main-img' },
-              _react2.default.createElement('img', { src: hero.imgSrc })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'home-news__tile-meta' },
-              _react2.default.createElement(
-                'span',
-                { className: 'home-news__tile-tags' },
-                hero.tags
-              ),
-              _react2.default.createElement(
-                'a',
-                { className: 'home-news__tile-title' },
-                hero.title
-              ),
-              _react2.default.createElement(
-                'span',
-                { className: 'home-news__tile-date' },
-                hero.date
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'home-news__tile-social' },
-                _react2.default.createElement(
-                  'ul',
-                  null,
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('span', { className: 'iconcss icon-like' }),
-                    _react2.default.createElement(
-                      'span',
-                      null,
-                      hero.likes
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('span', { className: 'iconcss icon-view' }),
-                    _react2.default.createElement(
-                      'span',
-                      null,
-                      hero.views
-                    )
-                  )
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'home-news__secondary-tiles' },
-            _react2.default.createElement(
-              'ul',
-              null,
-              tiles.map(function (tile) {
-                return renderTile(tile);
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'a',
-          {
-            className: 'home-news__more-link',
-            href: '#my-news'
-          },
-          'All my news',
-          _react2.default.createElement('span', {
-            className: 'iconcss icon-arrow-long-right' })
-        )
-      );
-    }
-  }]);
+			this.timer = setInterval(function () {
+				var hero = _this2.state.news.slice(0, 1)[0];
+				var rest = _this2.state.news.slice(1, 4);
 
-  return HomePage;
+				_this2.setState({
+					news: rest.concat(hero)
+				});
+			}, 6000);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			clearInterval(this.timer);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this3 = this;
+
+			var news = this.state.news;
+
+			var hero = news.slice(0, 1)[0];
+			var tiles = news.slice(1, 4);
+
+			return _react2.default.createElement(
+				'div',
+				{ className: 'home-news' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'home-news__tiles' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'home-news__main-tile' },
+						_react2.default.createElement(
+							'a',
+							{ className: 'home-news__main-img' },
+							_react2.default.createElement('img', { src: hero.imgSrc16x9 })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'home-news__tile-meta' },
+							_react2.default.createElement(
+								'span',
+								{ className: 'home-news__tile-tags' },
+								hero.tags
+							),
+							_react2.default.createElement(
+								'a',
+								{ className: 'home-news__tile-title' },
+								hero.title
+							),
+							this.createTileMetadata(hero)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'home-news__secondary-tiles' },
+						_react2.default.createElement(
+							'ul',
+							null,
+							tiles.map(function (tile, i) {
+								return _react2.default.createElement(
+									'div',
+									{ className: 'home-news__tile', key: i },
+									_react2.default.createElement(
+										'a',
+										{ className: 'home-news__img' },
+										_react2.default.createElement('img', { src: tile.imgSrc1x1 })
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'home-news__tile-meta' },
+										_react2.default.createElement(
+											'span',
+											{ className: 'home-news__tile-tags' },
+											tile.tags
+										),
+										_react2.default.createElement(
+											'a',
+											{ className: 'home-news__tile-title' },
+											tile.title
+										),
+										_this3.createTileMetadata(tile)
+									)
+								);
+							})
+						)
+					)
+				),
+				_react2.default.createElement(
+					'a',
+					{ className: 'home-news__more-link', href: '#my-news' },
+					_react2.default.createElement(
+						'span',
+						null,
+						'All my news'
+					),
+					_react2.default.createElement('i', { className: 'iconcss icon-arrow-long-right' })
+				)
+			);
+		}
+	}]);
+
+	return HomeNewsBlock;
 }(_react.Component);
 
-HomePage.propTypes = {
-  body: _propTypes2.default.string,
-  title: _propTypes2.default.string,
-  heroImage: _propTypes2.default.shape({
-    src: _propTypes2.default.string,
-    alt: _propTypes2.default.string
-  }),
-  tags: _propTypes2.default.arrayOf(_propTypes2.default.string),
-  likesAmount: _propTypes2.default.number,
-  headline: _propTypes2.default.string
-};
-exports.default = HomePage;
+exports.default = HomeNewsBlock;
 
-},{"prop-types":7,"react":25}],39:[function(require,module,exports){
+},{"prop-types":7,"react":26,"react-text-truncate":21}],41:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28778,7 +29221,7 @@ var MdcLogo = function (_Component) {
 MdcLogo.propTypes = {};
 exports.default = MdcLogo;
 
-},{"classnames":1,"react":25}],40:[function(require,module,exports){
+},{"classnames":1,"react":26}],42:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28994,7 +29437,7 @@ var SearchBar = function (_Component) {
 
 exports.default = SearchBar;
 
-},{"classnames":1,"react":25,"react-autosuggest":10}],41:[function(require,module,exports){
+},{"classnames":1,"react":26,"react-autosuggest":10}],43:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29150,7 +29593,7 @@ var TabbedList = function (_Component) {
 TabbedList.propTypes = {};
 exports.default = TabbedList;
 
-},{"../services/newid":44,"classnames":1,"react":25}],42:[function(require,module,exports){
+},{"../services/newid":46,"classnames":1,"react":26}],44:[function(require,module,exports){
 module.exports={
 	data: [
 		{ 
@@ -29213,44 +29656,48 @@ module.exports={
 		]}
 	]
 }
-},{}],43:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 module.exports={
   "NEWS": [
     {
-      "tags": "Medical",
-      "title": "Health comes first: transforming the front lines of care",
+      "tags": "Consumer",
+      "title": "Facts To Support Questions Around Johnson’s Baby Powder",
       "date": "3 days ago",
-      "likes": 100,
-      "views": 200,
-      "imgSrc": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c4.png"
+      "likes": 866,
+      "views": 1680,
+      "imgSrc16x9": "./assets/img/article1-16x9.png",
+      "imgSrc1x1": "./assets/img/article1-1x1.png"
     },
     {
-      "tags": "Medical",
-      "title": "Health comes first: transforming the front lines of care",
-      "date": "3 days ago",
-      "likes": 100,
+      "tags": "Health",
+      "title": "New Global Exercise Benefit for the World’s Healthiest Workforce",
+      "date": "6 days ago",
+      "likes": 46,
       "views": 200,
-      "imgSrc": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c5.png"
+      "imgSrc16x9": "./assets/img/article2-16x9.png",
+      "imgSrc1x1": "./assets/img/article2-1x1.png"
     },
     {
-      "tags": "Medical",
-      "title": "Health comes first: transforming the front lines of care",
-      "date": "3 days ago",
-      "likes": 100,
-      "views": 200,
-      "imgSrc": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c5.png"
+      "tags": "New York, NY",
+      "title": "Johnson & Johnson Launches an Africa Innovation Challenge",
+      "date": "12 days ago",
+      "likes": 1300,
+      "views": 1100,
+      "imgSrc1x1": "./assets/img/article3-1x1.png",
+      "imgSrc16x9": "./assets/img/article3-16x9.png"
     },
     {
-      "tags": "Medical",
+      "tags": "Research & Development",
       "title": "Health comes first: transforming the front lines of care",
-      "date": "3 days ago",
+      "date": "2 weeks ago",
       "likes": 100,
-      "views": 200,
-      "imgSrc": "../assets/img/0bf38047-e6ef-47f3-bb5b-7165a21094c5.png"
+      "views": 500,
+      "imgSrc1x1": "./assets/img/article4-1x1.png",
+      "imgSrc16x9": "./assets/img/article4-16x9.png"
     }
   ]
 }
-},{}],44:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29266,6 +29713,6 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}]},{},[34])
+},{}]},{},[35])
 
 //# sourceMappingURL=home-landing.js.map

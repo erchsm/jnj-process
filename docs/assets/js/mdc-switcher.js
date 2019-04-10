@@ -28088,13 +28088,13 @@ var _navItems = require("../data/nav-items");
 
 var _navItems2 = _interopRequireDefault(_navItems);
 
-var _specialtiesItems = require("../data/specialties-items");
-
-var _specialtiesItems2 = _interopRequireDefault(_specialtiesItems);
-
 var _MdcLogo = require("./MdcLogo");
 
 var _MdcLogo2 = _interopRequireDefault(_MdcLogo);
+
+var _palette = require("../services/palette");
+
+var _palette2 = _interopRequireDefault(_palette);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28135,17 +28135,40 @@ var MdcNav = function (_Component) {
 		};
 
 		_this.setIndexHovered = function (event) {
+			var index = _this.getChildIndex(event.target);
+
 			_this.setState({
-				indexHovered: _this.getChildIndex(event.target)
+				indexHovered: index,
+				takeoverData: _navItems2.default.data[index],
+				showTakeoverNav: false
+			});
+		};
+
+		_this.setTakeoverData = function (item) {
+			_this.setState({
+				takeoverData: item
+			});
+			_this.toggleTakeoverNavOpen();
+			_this.refs.takeoverItems.scrollTo(0, 0);
+		};
+
+		_this.toggleTakeoverNavOpen = function () {
+			_this.setState({
+				showTakeoverNav: !_this.state.showTakeoverNav
+			});
+		};
+
+		_this.updateTakeoverNavigation = function (name, data) {
+			_this.setState({
+				breadcrumbs2: name,
+				prevData: data
 			});
 		};
 
 		_this.closeTakeover = function (event) {
-			// setTimeout(() => {
 			_this.setState({
 				takeoverOpen: false
 			});
-			// }, 0);
 		};
 
 		_this.getChildIndex = function (elem) {
@@ -28161,7 +28184,11 @@ var MdcNav = function (_Component) {
 		_this.state = {
 			isScrolledTop: true,
 			takeoverOpen: false,
-			indexHovered: 0
+			indexHovered: 0,
+			takeoverData: {
+				data: []
+			},
+			showTakeoverNav: false
 		};
 		return _this;
 	}
@@ -28174,7 +28201,9 @@ var MdcNav = function (_Component) {
 			var _state = this.state,
 			    isScrolledTop = _state.isScrolledTop,
 			    takeoverOpen = _state.takeoverOpen,
-			    indexHovered = _state.indexHovered;
+			    indexHovered = _state.indexHovered,
+			    takeoverData = _state.takeoverData,
+			    showTakeoverNav = _state.showTakeoverNav;
 
 
 			var classnames = (0, _classnames2.default)({
@@ -28188,7 +28217,7 @@ var MdcNav = function (_Component) {
 					"li",
 					{ key: i, onMouseOver: function onMouseOver(e) {
 							_this2.openTakeover(e);_this2.setIndexHovered(e);
-						}, onMouseOut: _this2.closeTakeover },
+						} },
 					_react2.default.createElement(
 						"a",
 						null,
@@ -28197,16 +28226,27 @@ var MdcNav = function (_Component) {
 				);
 			});
 
-			var specialtiesItems = _specialtiesItems2.default.data.map(function (item, i) {
+			var takeoverItems = takeoverData.data.map(function (item, i) {
 				return _react2.default.createElement(
 					"li",
 					{ key: i, className: i == 0 ? "overview-item" : "" },
-					item.name
+					_react2.default.createElement(
+						"button",
+						{ className: "mdc-button mdc-button--text-link", onClick: function onClick() {
+								_this2.setTakeoverData(item);_this2.updateTakeoverNavigation(item.name, takeoverData);
+							} },
+						_react2.default.createElement(
+							"span",
+							null,
+							item.name
+						),
+						_react2.default.createElement("i", { className: "iconcss icon-arrow-right" })
+					)
 				);
 			});
 
 			var lineAnimation = {
-				transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)',
+				transform: 'translate3d(' + 120 * (indexHovered + 0) + 'px, 0, 0)',
 				opacity: 1
 			};
 
@@ -28226,7 +28266,7 @@ var MdcNav = function (_Component) {
 						{ className: "mdc-nav__center" },
 						_react2.default.createElement(
 							"ul",
-							null,
+							{ onMouseOut: this.closeTakeover },
 							navItems
 						)
 					),
@@ -28265,7 +28305,7 @@ var MdcNav = function (_Component) {
 				),
 				_react2.default.createElement(
 					"div",
-					{ className: "mdc-nav__hoverbar" },
+					{ className: "mdc-nav__hoverbar", onMouseOver: this.openTakeover },
 					_react2.default.createElement(
 						"div",
 						{ className: "mdc-nav__hoverlines" },
@@ -28277,54 +28317,14 @@ var MdcNav = function (_Component) {
 					{ className: "mdc-nav__hovermain", onMouseOver: this.openTakeover, onMouseOut: this.closeTakeover },
 					_react2.default.createElement(
 						"div",
-						{ className: "mdc-nav__hovermainfeatured" },
-						_react2.default.createElement(
-							"h3",
-							null,
-							"Featured Content"
-						),
+						{ className: "mdc-nav__hovermaincolumn", ref: "takeoverItems" },
+						showTakeoverNav ? _react2.default.createElement(TakeoverNavigation, { breadcrumbs1: this.state.prevData.name, breadcrumbs2: this.state.breadcrumbs2, clickBack: function clickBack() {
+								_this2.setTakeoverData(_this2.state.prevData);_this2.toggleTakeoverNavOpen();
+							} }) : null,
 						_react2.default.createElement(
 							"ul",
 							null,
-							_react2.default.createElement(
-								"li",
-								null,
-								"Laminoscopy"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Morter Breadfist"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Pentultimate Bigness"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Laminoscopy"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Morter Breadfist"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Pentultimate Bigness"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__hovermaincolumn" },
-						_react2.default.createElement(
-							"ul",
-							null,
-							specialtiesItems
+							takeoverItems
 						)
 					)
 				)
@@ -28335,10 +28335,63 @@ var MdcNav = function (_Component) {
 	return MdcNav;
 }(_react.Component);
 
-MdcNav.propTypes = {};
 exports.default = MdcNav;
 
-},{"../data/nav-items":41,"../data/specialties-items":42,"./MdcLogo":36,"classnames":1,"react":25}],38:[function(require,module,exports){
+var TakeoverNavigation = function (_Component2) {
+	_inherits(TakeoverNavigation, _Component2);
+
+	function TakeoverNavigation(props) {
+		_classCallCheck(this, TakeoverNavigation);
+
+		return _possibleConstructorReturn(this, (TakeoverNavigation.__proto__ || Object.getPrototypeOf(TakeoverNavigation)).call(this, props));
+	}
+
+	_createClass(TakeoverNavigation, [{
+		key: "render",
+		value: function render() {
+			var _props = this.props,
+			    clickBack = _props.clickBack,
+			    breadcrumbs1 = _props.breadcrumbs1,
+			    breadcrumbs2 = _props.breadcrumbs2;
+
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "mdc-nav__takeover-nav" },
+				_react2.default.createElement(
+					"button",
+					{ className: "mdc-button mdc-button--text-link mdc-button--text-link--reverse mdc-button--blue", onClick: clickBack },
+					_react2.default.createElement("i", { className: "iconcss icon-arrow-right" }),
+					_react2.default.createElement(
+						"span",
+						null,
+						"Back"
+					)
+				),
+				_react2.default.createElement(
+					"span",
+					{ className: "mdc-nav__takeover-nav__item" },
+					"|"
+				),
+				_react2.default.createElement(
+					"span",
+					{ style: { color: (0, _palette2.default)("brand-blue"), cursor: "pointer" }, onClick: clickBack },
+					breadcrumbs1
+				),
+				_react2.default.createElement(
+					"span",
+					{ className: "mdc-nav__takeover-nav__item" },
+					_react2.default.createElement("i", { className: "iconcss icon-caret-down-lg" })
+				),
+				breadcrumbs2
+			);
+		}
+	}]);
+
+	return TakeoverNavigation;
+}(_react.Component);
+
+},{"../data/nav-items":41,"../services/palette":44,"./MdcLogo":36,"classnames":1,"react":25}],38:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28528,7 +28581,7 @@ var Switcher = function (_Component) {
 Switcher.propTypes = {};
 exports.default = Switcher;
 
-},{"../data/specialties-search":43,"../data/symptoms-search":44,"./SearchBar":39,"classnames":1,"react":25}],39:[function(require,module,exports){
+},{"../data/specialties-search":42,"../data/symptoms-search":43,"./SearchBar":39,"classnames":1,"react":25}],39:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28809,133 +28862,299 @@ module.exports={
 }
 },{}],41:[function(require,module,exports){
 module.exports={
-	data: [
+	"data": [
 		{ 
-			name: 'Specialties',
-			data: [
-				{ name: 'Specialties Overview' },
-				{ name: 'Bariatric' },
-				{ name: 'Cardiology' },
-				{ name: 'Cardiac Electrophysiology' },
-				{ name: 'Colorectal' },
-				{ name: 'Craniomaxillofacial' },
-				{ name: 'Dermatology' },
-				{ name: 'Ear, Nose & Throat / Otolaryngology' },
-				{ name: 'Dermatology' },
-				{ name: 'Endocrinology' },
-				{ name: 'Gastric Surgery' },
-				{ name: 'General Surgery' },
-				{ name: 'Gynecological (GYN) Oncology ' },
-				{ name: 'Gynecology' },
-				{ name: 'Hepatobillary Surgery' },
-				{ name: 'Interventional Oncology' },
-				{ name: 'Neurovascular' },
+			"name": "Specialties",
+			"data": [
+				{ "name": "Specialties Overview" },
 				{ 
-					name: 'Orthopaedic Surgery' ,
-					data: [
-						{ name: 'Anterior Cervical Discectomy and Fusion'},
-						{ name: 'Anterior cruciate ligament (ACL)/ Posterior cruciate ligament (PCL) Reconstruction'},
-						{ name: 'Anterior Lumbar Interbody Fusion (ALIF)'},
-						{ name: 'Arthrodesis'},
-						{ name: 'Arthroplasty'},
-						{ name: 'Arthroscopic Suprascapular Nerve Release '},
-						{ name: 'Biceps Tenodesis (Proximal Biceps Tenodesis)'},
-						{ name: 'Biceps Tenodesis'},
-						{ name: 'Cervical Laminoplasty'},
-						{ name: 'Cervical Revision Surgery'},
-						{ name: 'Deformity Correction'},
-						{ name: 'Deformity Correction for Adult Scoliosis'},
-						{ name: 'Deformity Correction for Neuromuscular Scoliosis'},
-						{ name: 'Deformity Correction for Thoracic Insufficiency Syndrome'},
-						{ name: 'Distraction Osteogenesis'},
-						{ name: 'Facet Fixation'},
-						{ name: 'Fracture Treatment'},
-						{ name: 'Fracture Treatment (Pediatric)'},
-						{ name: 'Fracture Treatment (Reconstruction)'},
-						{ name: 'Hand and Wrist Arthroscopy'},
-						{ name: 'Hemostasis'},
-						{ name: 'Hip Arthroscopy'},
-						{ name: 'Hip Arthroscopy (Labral Repair)'},
-						{ name: 'Hip Replacement'},
-						{ name: 'Hip Replacement (Anterior Approach)'},
-						{ name: 'Hyaluronic Injection'},
-						{ name: 'Knee Arthroplasty'},
-						{ name: 'Knee Cartilage Repair '},
-						{ name: 'Ligament Reconstruction'},
-						{ name: 'Medial and Lateral Collateral Ligament Reconstruction '},
-						{ name: 'Medial Patellofemoral Ligament Reconstruction'},
-						{ name: 'Meniscal Repair '},
-						{ name: 'Microdiscectomy and Decompression'},
-						{ name: 'Microdiscectomy and Decompression (Minimally Invasive Microdiscectomy and Decompression)'},
-						{ name: 'MIS Lateral Lumbar Interbody Fusion'},
-						{ name: 'MIS Transforaminal Lumbar Interbody Fusion (TLIF)'},
-						{ name: 'Non-surgical treatments'},
-						{ name: 'Posterior Cervical Spine Fusion'},
-						{ name: 'Posterior Lumbar Interbody Fusion (PLIF)'},
-						{ name: 'Posterior Lumbar Interbody Fusion (PLIF) Minimally Invasive Surgery (MIS)'},
-						{ name: 'Psoas Release'},
-						{ name: 'Rib Fracture Fixation'},
-						{ name: 'Shoulder Arthroscopy '},
-						{ name: 'Spondylolisthesis Correction'},
-						{ name: 'Sternal Fixation'},
-						{ name: 'Thoracolumbar Revision Surgery'},
-						{ name: 'Transforaminal Lumbar Interbody Fusion (TLIF)'},
-						{ name: 'Vertebral Body Augmentation'},
-						{ name: 'Vertebral Body Replacement'},
-						{ name: 'Vertebroplasty'}
+					"name": "Bariatric",
+					"data": [
+						{ "name": "Bariatric Overview" },
+						{ "name": "LAP Gastric Bypass" },
+						{ "name": "LAP Sleeve Gastrectomy" },
+						{ "name": "Revisional Surgery" },
 					]
 				},
-				{ name: 'Otolaryngology' },
-				{ name: 'Sports Medicine' },
-				{ name: 'Sterlization, Antisepsis' },
-				{ name: 'Thoracic Surgery' },
-				{ name: 'Trauma' },
-				{ name: 'Urogynecology' },
-				{ name: 'Urology' },
-				{ name: 'Vetinary' },
-				{ name: 'Vision' }
+				{ "name": "Cardiology" },
+				{ "name": "Cardiac Electrophysiology" },
+				{ "name": "Colorectal" },
+				{ "name": "Craniomaxillofacial" },
+				{ "name": "Dermatology" },
+				{ "name": "Ear, Nose & Throat / Otolaryngology" },
+				{ "name": "Dermatology" },
+				{ "name": "Endocrinology" },
+				{ "name": "Gastric Surgery" },
+				{ "name": "General Surgery" },
+				{ "name": "Gynecological (GYN) Oncology " },
+				{ "name": "Gynecology" },
+				{ "name": "Hepatobillary Surgery" },
+				{ "name": "Interventional Oncology" },
+				{ "name": "Neurovascular" },
+				{ 
+					"name": "Orthopaedic Surgery" ,
+					"data": [
+						{ "name": "Orthopaedic Surgery Overview" },
+						{ "name": "Anterior Cervical Discectomy and Fusion"},
+						{ "name": "Anterior cruciate ligament (ACL)/ Posterior cruciate ligament (PCL) Reconstruction"},
+						{ "name": "Anterior Lumbar Interbody Fusion (ALIF)"},
+						{ "name": "Arthrodesis"},
+						{ "name": "Arthroplasty"},
+						{ "name": "Arthroscopic Suprascapular Nerve Release "},
+						{ "name": "Biceps Tenodesis (Proximal Biceps Tenodesis)"},
+						{ "name": "Biceps Tenodesis"},
+						{ "name": "Cervical Laminoplasty"},
+						{ "name": "Cervical Revision Surgery"},
+						{ "name": "Deformity Correction"},
+						{ "name": "Deformity Correction for Adult Scoliosis"},
+						{ "name": "Deformity Correction for Neuromuscular Scoliosis"},
+						{ "name": "Deformity Correction for Thoracic Insufficiency Syndrome"},
+						{ "name": "Distraction Osteogenesis"},
+						{ "name": "Facet Fixation"},
+						{ "name": "Fracture Treatment"},
+						{ "name": "Fracture Treatment (Pediatric)"},
+						{ "name": "Fracture Treatment (Reconstruction)"},
+						{ "name": "Hand and Wrist Arthroscopy"},
+						{ "name": "Hemostasis"},
+						{ "name": "Hip Arthroscopy"},
+						{ "name": "Hip Arthroscopy (Labral Repair)"},
+						{ "name": "Hip Replacement"},
+						{ "name": "Hip Replacement (Anterior Approach)"},
+						{ "name": "Hyaluronic Injection"},
+						{ "name": "Knee Arthroplasty"},
+						{ "name": "Knee Cartilage Repair "},
+						{ "name": "Ligament Reconstruction"},
+						{ "name": "Medial and Lateral Collateral Ligament Reconstruction "},
+						{ "name": "Medial Patellofemoral Ligament Reconstruction"},
+						{ "name": "Meniscal Repair "},
+						{ "name": "Microdiscectomy and Decompression"},
+						{ "name": "Microdiscectomy and Decompression (Minimally Invasive Microdiscectomy and Decompression)"},
+						{ "name": "MIS Lateral Lumbar Interbody Fusion"},
+						{ "name": "MIS Transforaminal Lumbar Interbody Fusion (TLIF)"},
+						{ "name": "Non-surgical treatments"},
+						{ "name": "Posterior Cervical Spine Fusion"},
+						{ "name": "Posterior Lumbar Interbody Fusion (PLIF)"},
+						{ "name": "Posterior Lumbar Interbody Fusion (PLIF) Minimally Invasive Surgery (MIS)"},
+						{ "name": "Psoas Release"},
+						{ "name": "Rib Fracture Fixation"},
+						{ "name": "Shoulder Arthroscopy "},
+						{ "name": "Spondylolisthesis Correction"},
+						{ "name": "Sternal Fixation"},
+						{ "name": "Thoracolumbar Revision Surgery"},
+						{ "name": "Transforaminal Lumbar Interbody Fusion (TLIF)"},
+						{ "name": "Vertebral Body Augmentation"},
+						{ "name": "Vertebral Body Replacement"},
+						{ "name": "Vertebroplasty"}
+					]
+				},
+				{ "name": "Otolaryngology" },
+				{ "name": "Sports Medicine" },
+				{ "name": "Sterlization, Antisepsis" },
+				{ "name": "Thoracic Surgery" },
+				{ "name": "Trauma" },
+				{ "name": "Urogynecology" },
+				{ "name": "Urology" },
+				{ "name": "Vetinary" },
+				{ "name": "Vision" }
 			]
 		},
-		{ name: 'Products' },
-		{ name: 'Services' },
-		{ name: 'Companies' },
-		{ name: 'Support' },
-		{ name: 'About Us' }
+		{ 
+			"name": "Products",
+			"data": [
+				{ "name": "Products Overview" },
+				{ "name": "Ablation" },
+				{ "name": "Absorption" },
+				{ 
+					"name" : "Access",
+					"data" : [
+						{ "name" : "Access Overview" },
+						{ "name" : "INSIGHT® Access Retractor System" },
+						{ "name" : "SPOTLIGHT® Access System" },
+						{ "name" : "ENDOPATH BASX® Trocars" },
+						{ "name" : "ENDOPATH DEXTRUS® Minimally Invasive Access System" },
+						{ "name" : "ENDOPATH Non-Shielded Trocar" },
+						{ "name" : "ENDOPATH Surgical Thoracic Trocar Sleeve with Rounded Tip Obturator" },
+						{ "name" : "ENDOPATH XCEL® Trocars" },
+						{ "name" : "ENDOPATH XCEL® Trocars with OPTIVIEW® Technology" },
+						{ "name" : "ENDOPATH® Mini Bladeless Trocar" },
+						{ "name" : "FLEXIPATH® Trocars" },
+						{ "name" : "Insufflation Needles" },
+					]
+				},
+				{ "name": "Adjunctive Hemostats" },
+				{ "name": "Alignment" },
+				{ "name": "Augmentation" },
+				{ "name": "Catheter" },
+				{ "name": "Clamp" },
+				{ "name": "Closure" },
+				{ "name": "Coagulation" },
+				{ "name": "Compression" },
+				{ "name": "Contraction" },
+				{ "name": "Coverage" },
+				{ "name": "Cutter" },
+				{ "name": "Diagnosis" },
+				{ "name": "Dilation" },
+				{ "name": "Distraction" },
+				{ "name": "Drill" },
+				{ "name": "Excision" },
+				{ "name": "Filler" },
+				{ "name": "Fixation" },
+				{ "name": "Fusion" },
+				{ "name": "Implant" },
+				{ "name": "Inflation" },
+				{ "name": "Intervention" },
+				{ "name": "Isolation" },
+				{ "name": "Mapping system" },
+				{ "name": "Perforation" },
+				{ "name": "Protection" },
+				{ "name": "Reconstruction" },
+				{ "name": "Repair" },
+				{ "name": "Retrieval" },
+				{ "name": "Spacer" },
+				{ "name": "Stabilization" },
+				{ "name": "Veterinary Graft" },
+				{ "name": "Visualization" },
+				{ "name": "Wound Closure" },
+				{ 
+					"name" : "Plates and Screws",
+					"data" : [
+						{ "name": "Plates and Screws Overview" },
+						{ "name" : "1.25mm Plate Reduction Wires" },
+						{ "name" : "1.5 mm Headless Compression Screw" },
+						{ "name" : "1.5mm LCP® Modular Mini Fragment System" },
+						{ "name" : "1.5mm LCP® System" },
+						{ "name" : "2.4 mm and 3.0 mm Headless Compression Screws" },
+						{ "name" : "2.4 mm Variable Angle LCP® Distal Radius Sterile Kit" },
+						{ "name" : "2.4 mm/2.7 mm Locking Foot Module" },
+						{ "name" : "2.0 mm LCP Distal Ulna Plate" },
+						{ "name" : "2.4mm LCP® Distal Radius System" },
+						{ "name" : "3.5 mm LCP Posteromedial Proximal Tibia Plate" },
+						{ "name" : "3.5 mm LCP Proximal Humerus Plate" },
+						{ "name" : "3.5 mm LCP Proximal Tibia Plate" },
+						{ "name" : "3.5mm Cannulated Screw" },
+						{ "name" : "3.5mm LCP® Anterolateral Distal Tibia Plates" },
+						{ "name" : "3.5mm LCP® Hook Plate" },
+						{ "name" : "3.5mm LCP® Low Bend Medial Distal Tibia Plate" },
+						{ "name" : "3.5mm LCP® Low Bend Medial Distal Tibia Plate: Aiming Instruments" },
+						{ "name" : "3.5mm LCP® Medial Distal Tibia Plate" },
+						{ "name" : "3.5mm LCP® Medial Distal Tibia Plate, without tab" },
+						{ "name" : "3.5mm LCP® Periarticular Proximal Humerus Plate" },
+						{ "name" : "3.5mm LCP® Pilon Plate" },
+						{ "name" : "3.5mm LCP® Superior Clavicle Plate" },
+						{ "name" : "3.5mm LCP® Superior-Anterior Clavicle Plate" },
+						{ "name" : "3.5mm Locking Attachment Plate" },
+						{ "name" : "3.5mm Low Profile Pelvic System" },
+						{ "name" : "3.5mm or 4.5mm Curved Locking Compression Plate (LCP)" },
+						{ "name" : "3.5mm Quadrilateral Surface Plate" },
+						{ "name" : "3.5mm VA LCP® Proximal Tibia Plate" },
+						{ "name" : "3.5mm, 4.5mm Locking Compression Plate (LCP)" },
+						{ "name" : "4.0mm Cannulated Screw" },
+						{ "name" : "4.5 mm and 6.5 mm Headless Compression Screws" },
+						{ "name" : "4.5mm VA-LCP Curved Condylar Plate" },
+						{ "name" : "6.5mm Midfoot Fusion Bolt" },
+						{ "name" : "6.5mm or 7.3mm Cannulated Screws" },
+						{ "name" : "Craniofacial Modular Fixation System" },
+						{ "name" : "Craniomaxillofacial (CMF) surgery Distractor" },
+						{ "name" : "Double/Triple Pelvic Osteotomy Plates" },
+						{ "name" : "Hydroxyapatite Coated Schanz Screw" },
+						{ "name" : "Large Fragment System" },
+						{ "name" : "LCP Anterior Ankle Arthrodesis Plate" },
+						{ "name" : "LCP Dia-Meta Volar Distal Radius Plate" },
+						{ "name" : "LCP Distal Femur Plate" },
+						{ "name" : "LCP Periprosthetic System" },
+						{ "name" : "LCP Wrist Fusion Plates" },
+						{ "name" : "LISS for Distal Femur" },
+						{ "name" : "Locking Calcaneal Plate" },
+						{ "name" : "Locking Reconstruction and Mini Plate System" },
+						{ "name" : "MATRIX COMBO Plating Set" },
+						{ "name" : "MATRIX MIDFACE Orbital Plates" },
+						{ "name" : "MATRIX MIDFACE Plating System" },
+						{ "name" : "MATRIX ORTHOGNATHIC™ Plating System" },
+						{ "name" : "MatrixMANDIBLE Preformed Reconstruction Plates" },
+						{ "name" : "MatrixMANDIBLE™ Plating System" },
+						{ "name" : "Mini Fragment System" },
+						{ "name" : "Modular Foot System" },
+						{ "name" : "Modular Hand System" },
+						{ "name" : "Modular Mini Fragment LCP System" },
+						{ "name" : "NANO Case" },
+						{ "name" : "Pancarpal Arthrodesis Plates" },
+						{ "name" : "Pediatric LCP Plate System" },
+						{ "name" : "Percutaneous Guiding System" },
+						{ "name" : "Small Fragment LCP" },
+						{ "name" : "Small Fragment System" },
+						{ "name" : "The Orthopedic Cable System" },
+						{ "name" : "Tibial Plateau Leveling Osteotomy (TPLO)" },
+						{ "name" : "Tibial Tuberosity Advancement (TTA) System" },
+						{ "name" : "TomoFix Lateral Distal Femur Plate" },
+						{ "name" : "TomoFix Lateral High Tibia Plate" },
+						{ "name" : "TomoFix Medial Distal Femur Plate" },
+						{ "name" : "TomoFix Medial High Tibia Plate" },
+						{ "name" : "Trochanteric Reattachment Device" },
+						{ "name" : "Variable Angle Locking Hand System" },
+						{ "name" : "2.7mm LCP® Ulna Osteotomy System" },
+						{ "name" : "2.7mm/3.5mm VA-LCP® Anterior Clavicle Plate" },
+						{ "name" : "2.7mm/3.5mm Variable Angle LCP® Ankle Trauma (Orthopaedic) System" },
+						{ "name" : "2.7mm/3.5mm Variable Angle LCP® Elbow System" },
+						{ "name" : "3.5 mm and 4.5 mm Curved Locking Compression Plate (LCP)" },
+						{ "name" : "2.4mm/2.7mm Variable Angle LCP® Forefoot/Midfoot System" },
+						{ "name" : "2.7 mm/3.5 mm LCP Distal Fibula Plate System" },
+						{ "name" : "2.4mm Variable Angle Locking Intercarpal Fusion System" },
+						{ "name" : "2.4mm LCP® Volar Column Distal Radius Plates" },
+						{ "name" : "2.4mm Variable Angle LCP® Dorsal Distal Radius Plate" },
+						{ "name" : "2.4mm Variable Angle LCP® Volar Extra-Articular Distal Radius Plate" },
+						{ "name" : "2.4mm Variable Angle LCP® Volar Rim Distal Radius System" },
+					]
+				},
+			]
+},
+{ 
+	"name": "Services",
+	"data": [
+		{ "name": "Services Overview" },
+		{ "name": "CareAdvantage" },
+		{ "name": "Reprocessing" },
 	]
+},
+{ 
+	"name": "Companies",
+	"data": [
+		{ "name": "Companies Overview" },
+		{ "name": "Acclarent" },
+		{ "name": "Biosense Webster" },
+		{ "name": "Cerenovus" },
+		{ "name": "Ethicon" },
+		{ "name": "Depuy Synthes" },
+		{ "name": "Mentor" },
+	]
+},
+{ 
+	"name": "Support",
+	"data": [
+		{ "name": "Support Overview" },
+		{ "name": "Contact Us" },
+		{ "name": "Customer Service" },
+		{ "name": "Education Resources" },
+		{ "name": "Patient Services" },
+		{ "name": "Reimbursement" },
+		{ "name": "Media Resources" },
+		{ "name": "Compliance Resources" },
+	]
+},
+{ 
+	"name": "About Us",
+	"data": [
+		{ "name": "About Us Overview" },
+		{ "name": "Our Credo" },
+		{ "name": "Who We Are" },
+		{ "name": "News & Events" },
+		{ "name": "Careers" },
+		{ "name": "Investor Information" },
+		{ "name": "Press Release" },
+	]
+}
+]
 }
 },{}],42:[function(require,module,exports){
-module.exports={
-	data: [
-		{ name: 'Specialties Overview' },
-		{ name: 'Bariatric' },
-		{ name: 'Cardiology' },
-		{ name: 'Cardiac Electrophysiology' },
-		{ name: 'Colorectal' },
-		{ name: 'Craniomaxillofacial' },
-		{ name: 'Dermatology' },
-		{ name: 'Ear, Nose & Throat / Otolaryngology' },
-		{ name: 'Dermatology' },
-		{ name: 'Endocrinology' },
-		{ name: 'Gastric Surgery' },
-		{ name: 'General Surgery' },
-		{ name: 'Gynecological (GYN) Oncology ' },
-		{ name: 'Gynecology' },
-		{ name: 'Hepatobillary Surgery' },
-		{ name: 'Interventional Oncology' },
-		{ name: 'Neurovascular' },
-		{ name: 'Orthopaedic Surgery' },
-		{ name: 'Otolaryngology' },
-		{ name: 'Sports Medicine' },
-		{ name: 'Sterlization, Antisepsis' },
-		{ name: 'Thoracic Surgery' },
-		{ name: 'Trauma' },
-		{ name: 'Urogynecology' },
-		{ name: 'Urology' },
-		{ name: 'Vetinary' },
-		{ name: 'Vision' }
-	]
-}
-},{}],43:[function(require,module,exports){
 module.exports={
   groups: [
     {
@@ -28971,7 +29190,7 @@ module.exports={
   ]
 }
 
-},{}],44:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 module.exports={
   groups: [
     {
@@ -29006,6 +29225,32 @@ module.exports={
     }
   ]
 }
+
+},{}],44:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+exports.default = function (color) {
+	var palette = {
+		"brand-grey-lightest": "#F4F4F4",
+		"brand-grey-light": "#D8D8D8",
+		"brand-grey-dark": "#888B8D",
+		"brand-grey-darkest": "#63666A",
+		"brand-black": "#212121",
+
+		"brand-grey-blue": "#8A98A6",
+
+		"brand-blue": "#000099",
+		"brand-blue-alt": "#1724A9",
+		"brand-magenta": "#CC0099",
+		"brand-red": "#CA001B",
+		"brand-blue-light": "#F9FAFB"
+	};
+	return palette[color];
+};
 
 },{}]},{},[34])
 

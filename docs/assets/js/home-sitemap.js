@@ -38948,28 +38948,21 @@ var HomeSitemap = function (_Component) {
 
 		var _this = _possibleConstructorReturn(this, (HomeSitemap.__proto__ || Object.getPrototypeOf(HomeSitemap)).call(this, props));
 
-		_this.componentDidMount = function () {
-			_this.updateWindowDimensions();
-			window.addEventListener('resize', _this.updateWindowDimensions);
-		};
-
-		_this.componentWillUnmount = function () {
-			window.removeEventListener('resize', _this.updateWindowDimensions);
-		};
-
 		_this.updateWindowDimensions = function () {
 			_this.setState({ width: window.innerWidth / 2, height: window.innerHeight / 2 });
 		};
 
-		_this.addChildNumToLabel = function (data) {
+		_this.addNumChildrenToLabel = function (data) {
 			if (data.children && data.children.length > 0) {
+				var tmpName = data.name.split('(')[0];
 
-				data.name += ' (' + data.children.length + ')';
+				data.name = tmpName + ' (' + data.children.length + ')';
 
 				data.children.forEach(function (item) {
-					return _this.addChildNumToLabel(item);
+					return _this.addNumChildrenToLabel(item);
 				});
 			}
+			return data;
 		};
 
 		_this.state = {
@@ -38977,11 +38970,29 @@ var HomeSitemap = function (_Component) {
 			height: 0
 		};
 
-		_this.addChildNumToLabel(_homeSitemap2.default);
+		_this.addNumChildrenToLabel(_homeSitemap2.default);
 		return _this;
 	}
 
+	// componentDidUpdate() {
+	// }
+
+
 	_createClass(HomeSitemap, [{
+		key: 'componentWillMount',
+		value: function componentWillMount() {}
+	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.updateWindowDimensions();
+			window.addEventListener('resize', this.updateWindowDimensions);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			window.removeEventListener('resize', this.updateWindowDimensions);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			var cleanedData = this.state.cleanedData;
@@ -38990,8 +39001,6 @@ var HomeSitemap = function (_Component) {
 			var classnames = (0, _classnames2.default)({
 				"home-sitemap": true
 			});
-
-			// console.log(cleanedData);
 
 			/*const data = homeSitemapData.map((item, index) =>
    	(item.children.length > 0) ? (item.name += '(' + item.children.length + ')' ) : null

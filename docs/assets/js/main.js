@@ -61928,15 +61928,6 @@ var HomeProfileSetup = function (_Component) {
 										return _this2.removePreference('locations', index);
 									} });
 							})
-						),
-						_react2.default.createElement(
-							'button',
-							{ disabled: this.state.completed.Preferences ? false : true, className: 'mdc-button mdc-button--secondary mdc-button--white' },
-							_react2.default.createElement(
-								'span',
-								null,
-								'Continue to Home'
-							)
 						)
 					),
 					_react2.default.createElement(
@@ -62851,7 +62842,7 @@ var MdcNav = function (_Component) {
 			});
 
 			var lineAnimation = {
-				transform: 'translate3d(' + 140 * (indexHovered + 0) + 'px, 0, 0)',
+				transform: 'translate3d(' + 120 * (indexHovered + 0) + 'px, 0, 0)',
 				opacity: 1
 			};
 
@@ -62920,49 +62911,6 @@ var MdcNav = function (_Component) {
 				_react2.default.createElement(
 					"div",
 					{ className: "mdc-nav__hovermain", onMouseOver: this.openTakeover, onMouseOut: this.closeTakeover },
-					_react2.default.createElement(
-						"div",
-						{ className: "mdc-nav__hovermainfeatured" },
-						_react2.default.createElement(
-							"h3",
-							null,
-							"Featured Content"
-						),
-						_react2.default.createElement(
-							"ul",
-							null,
-							_react2.default.createElement(
-								"li",
-								null,
-								"Laminoscopy"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Morter Breadfist"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Pentultimate Bigness"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Laminoscopy"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Morter Breadfist"
-							),
-							_react2.default.createElement(
-								"li",
-								null,
-								"Pentultimate Bigness"
-							)
-						)
-					),
 					_react2.default.createElement(
 						"div",
 						{ className: "mdc-nav__hovermaincolumn", ref: "takeoverItems" },
@@ -67158,6 +67106,8 @@ module.exports={
 			"name": "Products",
 			"data": [
 				{ "name": "Products Overview" },
+				{ "name": "Ablation" },
+				{ "name": "Absorption" },
 				{ 
 					"name" : "Access",
 					"data" : [
@@ -67175,64 +67125,40 @@ module.exports={
 						{ "name" : "Insufflation Needles" },
 					]
 				},
-				{ "name" : "Accessory" },
-				{ "name" : "ACL Reconstruction" },
-				{ "name" : "Adjunctive Hemostasts" },
-				{ "name" : "Alignment" },
-				{ "name" : "Aneurysm clip" },
-				{ "name" : "Anterior Cervical Discectomy and Fusion" },
-				{ "name" : "Arthroscopic Equipment Solutions" },
-				{ "name" : "Balloon Catheters" },
-				{ "name" : "Balloon sinuplasty" },
-				{ "name" : "Biocomposite material" },
-				{ "name" : "Biomaterials" },
-				{ "name" : "Bipolar forceps" },
-				{ "name" : "Breast implant" },
-				{ "name" : "Cable" },
-				{ "name" : "Capital Equipment" },
-				{ "name" : "Catheter" },
-				{ "name" : "Catheter handles" },
-				{ "name" : "Cervical" },
-				{ "name" : "Chest Wall Closure and Fixation Products" },
-				{ "name" : "Chondral Defect" },
-				{ "name" : "Clamps" },
-				{ "name" : "Cranial Solutions" },
-				{ "name" : "Craniotomy kit" },
-				{ "name" : "Deformity" },
-				{ "name" : "Distraction Osteogenesis" },
-				{ "name" : "Early Intervention" },
-				{ "name" : "Electrosurgery bipolar forceps" },
-				{ "name" : "Embolic system" },
-				{ "name" : "Energy Sealing and Dissecting" },
-				{ "name" : "Ethmoid punch" },
-				{ "name" : "Eustachian tube dilation" },
-				{ "name" : "External Fixation" },
-				{ "name" : "Finishing coils" },
-				{ "name" : "Fixation System" },
-				{ "name" : "Generator" },
-				{ "name" : "Graft Preparation" },
-				{ "name" : "Guidewire" },
-				{ "name" : "Guiding Catheters" },
-				{ "name" : "Hernia Mesh and Fixation" },
-				{ "name" : "Hip Reconstruction" },
-				{ "name" : "Instability Implants" },
-				{ "name" : "Instruments" },
-				{ "name" : "Interbody" },
-				{ "name" : "Internal Fixation" },
-				{ "name" : "Intramedullary Nails" },
-				{ "name" : "Ligation" },
-				{ "name" : "Lumbar Degenerative" },
-				{ "name" : "Meniscal Repair" },
-				{ "name" : "Microwave Ablation" },
-				{ "name" : "Minimally Invasive surgery (MIS)" },
-				{ "name" : "Monitoring system" },
-				{ "name" : "Neuro" },
-				{ "name" : "Neurodisposables" },
-				{ "name" : "Nitinol basket" },
-				{ "name" : "Nitinol Compression Implants" },
-				{ "name" : "Other Devices" },
-				{ "name" : "Patties and strips" },
-				{ "name" : "Perforator" },
+				{ "name": "Adjunctive Hemostats" },
+				{ "name": "Alignment" },
+				{ "name": "Augmentation" },
+				{ "name": "Catheter" },
+				{ "name": "Clamp" },
+				{ "name": "Closure" },
+				{ "name": "Coagulation" },
+				{ "name": "Compression" },
+				{ "name": "Contraction" },
+				{ "name": "Coverage" },
+				{ "name": "Cutter" },
+				{ "name": "Diagnosis" },
+				{ "name": "Dilation" },
+				{ "name": "Distraction" },
+				{ "name": "Drill" },
+				{ "name": "Excision" },
+				{ "name": "Filler" },
+				{ "name": "Fixation" },
+				{ "name": "Fusion" },
+				{ "name": "Implant" },
+				{ "name": "Inflation" },
+				{ "name": "Intervention" },
+				{ "name": "Isolation" },
+				{ "name": "Mapping system" },
+				{ "name": "Perforation" },
+				{ "name": "Protection" },
+				{ "name": "Reconstruction" },
+				{ "name": "Repair" },
+				{ "name": "Retrieval" },
+				{ "name": "Spacer" },
+				{ "name": "Stabilization" },
+				{ "name": "Veterinary Graft" },
+				{ "name": "Visualization" },
+				{ "name": "Wound Closure" },
 				{ 
 					"name" : "Plates and Screws",
 					"data" : [
@@ -67322,27 +67248,8 @@ module.exports={
 						{ "name" : "2.4mm Variable Angle LCP® Volar Extra-Articular Distal Radius Plate" },
 						{ "name" : "2.4mm Variable Angle LCP® Volar Rim Distal Radius System" },
 					]
-},
-{ "name" : "Plates and Screws (Mandible/Midface)" },
-{ "name" : "Power Tools" },
-{ "name" : "Primary Knees" },
-{ "name" : "Revision Knees" },
-{ "name" : "Rotator Cuff" },
-{ "name" : "Shoulder Instrumentation" },
-{ "name" : "Shoulder Reconstruction" },
-{ "name" : "Small Joints" },
-{ "name" : "Software" },
-{ "name" : "Sponge" },
-{ "name" : "Surgical Stapling" },
-{ "name" : "Suture Management" },
-{ "name" : "Thoracolumbar" },
-{ "name" : "Transducer" },
-{ "name" : "Uterine and Pelvic" },
-{ "name" : "Valve or shunt" },
-{ "name" : "Vascular Access and Infection Control" },
-{ "name" : "Vertebral Body Augmentation" },
-{ "name" : "Wound Closure" },
-]
+				},
+			]
 },
 { 
 	"name": "Services",

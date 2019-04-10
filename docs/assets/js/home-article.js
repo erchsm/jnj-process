@@ -28673,6 +28673,40 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Article = function (_Component) {
 	_inherits(Article, _Component);
 
+	_createClass(Article, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			window.scrollTo(0, 0);
+
+			if (!document.getElementById('yammer-script') || !this.state.scriptAdded) {
+
+				var body = document.body;
+
+				var s1 = document.createElement('script');
+				s1.src = 'https://s0.assets-yammer.com/assets/platform_social_buttons.min.js';
+				s1.id = 'yammer-script';
+
+				if (body) {
+					body.appendChild(s1);
+				}
+
+				setTimeout(function () {
+					var s2 = document.createElement('script');
+					var inlineScript = document.createTextNode("var options = { customButton : true, classSelector: 'social__yammer', defaultMessage: 'Check out this article on Home!', pageUrl: 'https://home.jnj.com/v2/#my-news-detail/159428' }; yam.platform.yammerShare(options);");
+					s2.appendChild(inlineScript);
+
+					if (body) {
+						body.appendChild(s2);
+					}
+				}, 1000);
+
+				this.setState({
+					'scriptAdded': true
+				});
+			}
+		}
+	}]);
+
 	function Article(props) {
 		_classCallCheck(this, Article);
 
@@ -28704,7 +28738,7 @@ var Article = function (_Component) {
 						_react2.default.createElement('div', { className: 'grid__item grid__item--col-1 grid__item--hide-medium' }),
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-desktop' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-9-desktop grid__item--col-12-medium' },
 							_react2.default.createElement(
 								'h1',
 								{ className: 'article__title' },
@@ -28738,7 +28772,7 @@ var Article = function (_Component) {
 						),
 						_react2.default.createElement(
 							'div',
-							{ className: 'grid__item grid__item--col-9 grid__item--col-12-desktop' },
+							{ className: 'grid__item grid__item--col-9 grid__item--col-11-desktop grid__item--col-12-medium' },
 							_react2.default.createElement(
 								'div',
 								{ className: 'article__media is-clearfix' },
@@ -28877,7 +28911,7 @@ var HomeFooter = function (_Component) {
               { className: 'footer__logo', href: '/#' },
               _react2.default.createElement(
                 'svg',
-                { width: '160px', height: '29px', viewBox: '0 0 160 29' },
+                { width: '200px', height: '36.25px', viewBox: '0 0 160 29' },
                 _react2.default.createElement(
                   'g',
                   { id: 'uEA57-jnjlogo', fill: '#CA100B', fillRule: 'nonzero' },
@@ -29481,7 +29515,6 @@ var HomeNav = function (_Component) {
 	return HomeNav;
 }(_react.Component);
 
-HomeNav.propTypes = {};
 exports.default = HomeNav;
 
 },{"./SearchBar":57,"./TabbedList":59,"classnames":1,"react":43}],56:[function(require,module,exports){
@@ -30204,7 +30237,7 @@ exports.default = TabbedList;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -30228,147 +30261,148 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var WIDTH_THRESHOLD = 50;
 
 var TagsCollapsable = function (_Component) {
-  _inherits(TagsCollapsable, _Component);
+	_inherits(TagsCollapsable, _Component);
 
-  function TagsCollapsable(props) {
-    _classCallCheck(this, TagsCollapsable);
+	function TagsCollapsable(props) {
+		_classCallCheck(this, TagsCollapsable);
 
-    var _this = _possibleConstructorReturn(this, (TagsCollapsable.__proto__ || Object.getPrototypeOf(TagsCollapsable)).call(this, props));
+		var _this = _possibleConstructorReturn(this, (TagsCollapsable.__proto__ || Object.getPrototypeOf(TagsCollapsable)).call(this, props));
 
-    _this.state = {
-      isOpened: false,
-      showMoreNumber: 0
-    };
+		_this.state = {
+			isOpened: false,
+			showMoreNumber: 0
+		};
 
-    _this.tagWidths = [];
+		_this.tagWidths = [];
 
-    _this.getWidths = function () {
-      var elem = _this.tagsRef;
-      var nodes = elem.children;
-      var widths = [];
-      for (var i = 0; i < nodes.length; i++) {
-        widths.push(nodes[i].offsetWidth);
-      }
-      return widths;
-    };
+		_this.getWidths = function () {
+			var elem = _this.tagsRef;
+			var nodes = elem.children;
+			var widths = [];
 
-    _this.toggle = function (e) {
-      _this.setState({
-        isOpened: !_this.state.isOpened
-      });
-      e.preventDefault();
-    };
+			for (var i = 0; i < nodes.length; i++) {
+				widths.push(nodes[i].offsetWidth);
+			}
+			return widths;
+		};
 
-    _this.updateDimensions = (0, _throttle2.default)(function () {
-      var wrapperWidth = _this.tagsRef.offsetWidth - WIDTH_THRESHOLD;
-      var elementsWidth = 0;
-      for (var i = 0; i < _this.tagWidths.length; i++) {
-        var nextWidth = elementsWidth + _this.tagWidths[i];
-        if (nextWidth > wrapperWidth) {
-          _this.setState({
-            showMoreNumber: _this.tagWidths.length - i
-          });
-          break;
-        }
-        elementsWidth = nextWidth;
-      }
-    }, 500);
-    return _this;
-  }
+		_this.toggle = function (e) {
+			_this.setState({
+				isOpened: !_this.state.isOpened
+			});
+			e.preventDefault();
+		};
 
-  _createClass(TagsCollapsable, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.tagWidths = this.getWidths();
-      this.updateDimensions();
-      window.addEventListener('resize', this.updateDimensions);
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      window.removeEventListener('resize', this.updateDimensions);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+		_this.updateDimensions = (0, _throttle2.default)(function () {
+			var wrapperWidth = _this.tagsRef.offsetWidth - WIDTH_THRESHOLD;
+			var elementsWidth = 0;
 
-      var _state = this.state,
-          showMoreNumber = _state.showMoreNumber,
-          isOpened = _state.isOpened;
+			for (var i = 0; i < _this.tagWidths.length; i++) {
+				var nextWidth = elementsWidth + _this.tagWidths[i];
 
-      var maxVisibleIndex = this.props.tags.length - showMoreNumber - 1;
-      var tags = this.props.tags.map(function (tag, index) {
-        return _react2.default.createElement(
-          'li',
-          {
-            className: 'tags-collapsable__list-item ' + (!isOpened && index > maxVisibleIndex && 'is-hidden'),
-            key: 'tag-' + index
-          },
-          _react2.default.createElement(
-            'a',
-            { href: '#', className: 'tag' },
-            _react2.default.createElement(
-              'span',
-              null,
-              tag
-            )
-          )
-        );
-      });
+				if (nextWidth > wrapperWidth) {
+					_this.setState({
+						showMoreNumber: _this.tagWidths.length - i
+					});
+					break;
+				}
 
-      return tags.length ? _react2.default.createElement(
-        'div',
-        { className: 'tags-collapsable__wrapper' },
-        _react2.default.createElement(
-          'div',
-          { className: 'tags-collapsable__title' },
-          'Related to this Article'
-        ),
-        _react2.default.createElement(
-          'ul',
-          {
-            className: 'tags-collapsable__list tags-wrapper',
-            ref: function ref(_ref) {
-              return _this2.tagsRef = _ref;
-            }
-          },
-          tags,
-          showMoreNumber > 0 && !isOpened ? _react2.default.createElement(
-            'li',
-            { key: 'tag-show-more-number' },
-            _react2.default.createElement(
-              'a',
-              { onClick: this.toggle, className: 'tags-collapsable__show-more-number' },
-              showMoreNumber,
-              '+'
-            )
-          ) : null
-        ),
-        showMoreNumber > 0 ? !isOpened ? _react2.default.createElement(
-          'a',
-          { onClick: this.toggle, className: 'tags-collapsable__show-more' },
-          _react2.default.createElement(
-            'span',
-            { className: 'tags-collapsable__more-text' },
-            'Show All Topics'
-          ),
-          _react2.default.createElement('span', { className: 'iconcss icon-caret-down-lg' })
-        ) : _react2.default.createElement(
-          'a',
-          { onClick: this.toggle, className: 'tags-collapsable__show-less' },
-          _react2.default.createElement(
-            'span',
-            { className: 'tags-collapsable__more-text' },
-            'Show Less Topics'
-          ),
-          _react2.default.createElement('span', { className: 'iconcss icon-caret-down-lg' })
-        ) : null
-      ) : null;
-    }
-  }]);
+				elementsWidth = nextWidth;
+			}
+		}, 500);
+		return _this;
+	}
 
-  return TagsCollapsable;
+	_createClass(TagsCollapsable, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.tagWidths = this.getWidths();
+			this.updateDimensions();
+			window.addEventListener('resize', this.updateDimensions);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			window.removeEventListener('resize', this.updateDimensions);
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			var _state = this.state,
+			    showMoreNumber = _state.showMoreNumber,
+			    isOpened = _state.isOpened;
+
+			var maxVisibleIndex = this.props.tags.length - showMoreNumber - 1;
+			var tags = this.props.tags.map(function (tag, index) {
+				return _react2.default.createElement(
+					'li',
+					{
+						className: 'tags-collapsable__list-item ' + (!isOpened && index > maxVisibleIndex && 'is-hidden'),
+						key: 'tag-' + index
+					},
+					_react2.default.createElement(
+						'a',
+						{ className: 'tag' },
+						_react2.default.createElement(
+							'span',
+							null,
+							tag
+						)
+					)
+				);
+			});
+
+			return tags.length ? _react2.default.createElement(
+				'div',
+				{ className: 'tags-collapsable__wrapper' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'tags-collapsable__title' },
+					'Related to this Article'
+				),
+				_react2.default.createElement(
+					'ul',
+					{ className: 'tags-collapsable__list tags-wrapper', ref: function ref(_ref) {
+							return _this2.tagsRef = _ref;
+						} },
+					tags,
+					showMoreNumber > 0 && !isOpened ? _react2.default.createElement(
+						'li',
+						{ key: 'tag-show-more-number' },
+						_react2.default.createElement(
+							'a',
+							{ onClick: this.toggle, className: 'tags-collapsable__show-more-number' },
+							showMoreNumber,
+							'+'
+						)
+					) : null
+				),
+				showMoreNumber > 0 ? !isOpened ? _react2.default.createElement(
+					'a',
+					{ onClick: this.toggle, className: 'tags-collapsable__show-more' },
+					_react2.default.createElement(
+						'span',
+						{ className: 'tags-collapsable__more-text' },
+						'Show All Topics'
+					),
+					_react2.default.createElement('span', { className: 'iconcss icon-caret-down-lg' })
+				) : _react2.default.createElement(
+					'a',
+					{ onClick: this.toggle, className: 'tags-collapsable__show-less' },
+					_react2.default.createElement(
+						'span',
+						{ className: 'tags-collapsable__more-text' },
+						'Show Less Topics'
+					),
+					_react2.default.createElement('span', { className: 'iconcss icon-caret-down-lg' })
+				) : null
+			) : null;
+		}
+	}]);
+
+	return TagsCollapsable;
 }(_react.Component);
 
 TagsCollapsable.propTypes = {};

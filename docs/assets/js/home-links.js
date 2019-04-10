@@ -38899,7 +38899,6 @@ var HomeNav = function (_Component) {
 	return HomeNav;
 }(_react.Component);
 
-HomeNav.propTypes = {};
 exports.default = HomeNav;
 
 },{"./SearchBar":85,"./TabbedList":86,"classnames":1,"react":68}],85:[function(require,module,exports){
