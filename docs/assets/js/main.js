@@ -62735,7 +62735,7 @@ var MdcNav = function (_Component) {
 
 			_this.setState({
 				indexHovered: index,
-				takeoverData: _navItems2.default.data[index],
+				takeoverData: _navItems2.default.hcp[index],
 				showTakeoverNav: false
 			});
 		};
@@ -62808,7 +62808,7 @@ var MdcNav = function (_Component) {
 				"mdc-nav--scrolled": !isScrolledTop
 			});
 
-			var navItems = _navItems2.default.data.map(function (item, i) {
+			var navItems = _navItems2.default.hcp.map(function (item, i) {
 				return _react2.default.createElement(
 					"li",
 					{ key: i, onMouseOver: function onMouseOver(e) {
@@ -62843,7 +62843,7 @@ var MdcNav = function (_Component) {
 
 			var lineAnimation = {
 				transform: 'translate3d(' + 120 * (indexHovered + 0) + 'px, 0, 0)',
-				opacity: 1
+				opacity: takeoverOpen ? 1 : 0
 			};
 
 			return _react2.default.createElement(
@@ -62905,12 +62905,56 @@ var MdcNav = function (_Component) {
 					_react2.default.createElement(
 						"div",
 						{ className: "mdc-nav__hoverlines" },
-						_react2.default.createElement("div", { style: takeoverOpen ? lineAnimation : null, className: "mdc-nav__hoverline" })
+						_react2.default.createElement("div", { style: lineAnimation, className: "mdc-nav__hoverline" })
 					)
 				),
 				_react2.default.createElement(
 					"div",
 					{ className: "mdc-nav__hovermain", onMouseOver: this.openTakeover, onMouseOut: this.closeTakeover },
+					_react2.default.createElement(
+						"div",
+						{ className: "mdc-nav__hovermainfeatured" },
+						_react2.default.createElement(
+							"h3",
+							null,
+							"Featured ",
+							takeoverData.name
+						),
+						_react2.default.createElement(
+							"ul",
+							null,
+							_react2.default.createElement(
+								"li",
+								null,
+								"Laminoscopy"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								"Morter Breadfist"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								"Pentultimate Bigness"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								"Laminoscopy"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								"Morter Breadfist"
+							),
+							_react2.default.createElement(
+								"li",
+								null,
+								"Pentultimate Bigness"
+							)
+						)
+					),
 					_react2.default.createElement(
 						"div",
 						{ className: "mdc-nav__hovermaincolumn", ref: "takeoverItems" },
@@ -67006,7 +67050,7 @@ module.exports={
 */
 },{}],250:[function(require,module,exports){
 module.exports={
-	"data": [
+	"hcp": [
 		{ 
 			"name": "Specialties",
 			"data": [
@@ -67250,53 +67294,95 @@ module.exports={
 					]
 				},
 			]
-},
-{ 
-	"name": "Services",
-	"data": [
-		{ "name": "Services Overview" },
-		{ "name": "CareAdvantage" },
-		{ "name": "Reprocessing" },
+		},
+		{ 
+			"name": "Services",
+			"data": [
+				{ "name": "Services Overview" },
+				{ "name": "CareAdvantage" },
+				{ "name": "Reprocessing" },
+			]
+		},
+		{ 
+			"name": "Companies",
+			"data": [
+				{ "name": "Companies Overview" },
+				{ "name": "Acclarent" },
+				{ "name": "Biosense Webster" },
+				{ "name": "Cerenovus" },
+				{ "name": "Ethicon" },
+				{ "name": "Depuy Synthes" },
+				{ "name": "Mentor" },
+			]
+		},
+		{ 
+			"name": "Support",
+			"data": [
+				{ "name": "Support Overview" },
+				{ "name": "Contact Us" },
+				{ "name": "Customer Service" },
+				{ "name": "Education Resources" },
+				{ "name": "Patient Services" },
+				{ "name": "Reimbursement" },
+				{ "name": "Media Resources" },
+				{ "name": "Compliance Resources" },
+			]
+		},
+		{ 
+			"name": "About Us",
+			"data": [
+				{ "name": "About Us Overview" },
+				{ "name": "Our Credo" },
+				{ "name": "Who We Are" },
+				{ "name": "News & Events" },
+				{ "name": "Careers" },
+				{ "name": "Investor Information" },
+				{ "name": "Press Release" },
+			]
+		}
+	],
+	"patient": [
+		{
+			"name": "Conditions",
+			"data": [
+				{ "name": "Conditions Overview" },
+				{ "name": "Abnormal Bleeding " },
+				{ "name": "ACL Instabilty" },
+				{ "name": "Aneurysm " },
+				{ "name": "Anterior Cruciate Ligament (ACL) Injuries" },
+				{ "name": "Apical Vaginal and Uterine Prolapse" },
+				{ "name": "Arteriovenous Malformations (AVMs)" },
+				{ "name": "Cardiac Arrhythmia" },
+				{ "name": "Degenerative Disc Disease (DDD)" },
+				{ "name": "Ethmoid Sinusitis" },
+				{ "name": "Eustachian Tube Dysfunction (ETD)" },
+				{ "name": "FCL Instability" },
+				{ "name": "Femoral Neck Fractures" },
+				{ "name": "Fractures" },
+				{ "name": "General Orthopaedic" },
+				{ "name": "Fractures" },
+				{ "name": "General Orthopaedic" },
+				{ "name": "Hepatobiliary Health Risk" },
+				{ "name": "Hip Instability " },
+				{ "name": "Hydrocephalus" },
+				{ "name": "Instability" },
+				{ "name": "Knee" },
+				{ "name": "Neurovascular Conditions" },
+				{ "name": "Osteoarthritis" },
+				{ "name": "Radiological Imaging" },
+				{ "name": "Repair of Musculoskeletal Defects" },
+				{ "name": "Sinusitis" },
+				{ "name": "Small Bone Fractures" },
+				{ "name": "Spinal Injuries" },
+				{ "name": "Temporary Support" },
+				{ "name": "Thoracic Insufficiency Syndrome (TIS)" },
+				{ "name": "Thrombus/blood clot" },
+				{ "name": "Trauma" },
+				{ "name": "Tumors" },
+				{ "name": "Wrist Instability" },
+			]
+		}
 	]
-},
-{ 
-	"name": "Companies",
-	"data": [
-		{ "name": "Companies Overview" },
-		{ "name": "Acclarent" },
-		{ "name": "Biosense Webster" },
-		{ "name": "Cerenovus" },
-		{ "name": "Ethicon" },
-		{ "name": "Depuy Synthes" },
-		{ "name": "Mentor" },
-	]
-},
-{ 
-	"name": "Support",
-	"data": [
-		{ "name": "Support Overview" },
-		{ "name": "Contact Us" },
-		{ "name": "Customer Service" },
-		{ "name": "Education Resources" },
-		{ "name": "Patient Services" },
-		{ "name": "Reimbursement" },
-		{ "name": "Media Resources" },
-		{ "name": "Compliance Resources" },
-	]
-},
-{ 
-	"name": "About Us",
-	"data": [
-		{ "name": "About Us Overview" },
-		{ "name": "Our Credo" },
-		{ "name": "Who We Are" },
-		{ "name": "News & Events" },
-		{ "name": "Careers" },
-		{ "name": "Investor Information" },
-		{ "name": "Press Release" },
-	]
-}
-]
 }
 },{}],251:[function(require,module,exports){
 module.exports={

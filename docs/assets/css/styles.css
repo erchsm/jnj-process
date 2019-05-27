@@ -3317,7 +3317,6 @@ a {
     background: #CA001B;
     height: 4px;
     width: 120px;
-    transform: translate3d(-120px, 0, 0);
     opacity: 0;
     transition: transform 0.9s cubic-bezier(0.19, 1, 0.22, 1); }
   .mdc-nav__hoverlines {
@@ -3334,7 +3333,9 @@ a {
     -ms-flex-align: center;
     align-items: center;
     height: 90px;
-    min-width: 100%;
+    padding: 0 60px;
+    max-width: 1440px;
+    width: 100%;
     background: white;
     -ms-transform-origin: top;
     transform-origin: top;
@@ -3349,7 +3350,7 @@ a {
     align-items: center;
     height: 100%; }
   .mdc-nav__left {
-    width: 240px;
+    width: 165px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -3362,7 +3363,9 @@ a {
     flex: 1; }
   .mdc-nav__right {
     transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
-    width: 240px; }
+    width: 165px;
+    -ms-flex-pack: flex-end\;;
+    justify-content: flex-end\;; }
   .mdc-nav .icon-search {
     font-size: 24px;
     color: #212121; }
@@ -3381,7 +3384,7 @@ a {
     -ms-flex-pack: center;
     justify-content: center;
     height: 100%;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     font-weight: 800;
     color: #212121;
@@ -3406,7 +3409,7 @@ a {
     top: 94px;
     height: 520px;
     width: 80vw;
-    right: 0;
+    right: 10vw;
     position: absolute;
     display: -ms-flexbox;
     display: flex;
@@ -3428,14 +3431,14 @@ a {
       width: auto;
       -ms-flex-pack: start;
       justify-content: flex-start;
-      font-size: 18px;
-      padding: 12px 18px;
+      padding: 12px 24px;
       margin: 0 0 3px 0; }
       .mdc-nav__hovermaincolumn li i {
         opacity: 0; }
       .mdc-nav__hovermaincolumn li .mdc-button {
         text-align: left;
         padding: 0;
+        font-size: 18px;
         font-weight: 400; }
         .mdc-nav__hovermaincolumn li .mdc-button:hover i {
           opacity: 1; }
@@ -3471,13 +3474,13 @@ a {
     width: 280px;
     height: auto;
     margin: 24px 18px;
-    padding: 18px 32px;
+    padding: 24px 40px;
     border-radius: 2px; }
     .mdc-nav__hovermainfeatured h3, .mdc-nav__hovermainfeatured li {
       color: #888B8D; }
     .mdc-nav__hovermainfeatured h3 {
       text-transform: uppercase;
-      font-size: 14px;
+      font-size: 16px;
       margin: 0; }
     .mdc-nav__hovermainfeatured li {
       height: auto;
@@ -3485,8 +3488,8 @@ a {
       -ms-flex-pack: start;
       justify-content: flex-start;
       font-weight: normal;
-      margin: 18px 0;
-      font-size: 16px; }
+      margin: 24px 0;
+      font-size: 18px; }
 
 .mdc-switcher {
   display: -ms-flexbox;
