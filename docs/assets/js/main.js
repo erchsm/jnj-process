@@ -62730,16 +62730,6 @@ var MdcNav = function (_Component) {
 			});
 		};
 
-		_this.setIndexHovered = function (event) {
-			var index = _this.getChildIndex(event.target);
-
-			_this.setState({
-				indexHovered: index,
-				takeoverData: _navItems2.default.hcp[index],
-				showTakeoverNav: false
-			});
-		};
-
 		_this.setTakeoverData = function (item) {
 			_this.setState({
 				takeoverData: item
@@ -62764,6 +62754,16 @@ var MdcNav = function (_Component) {
 		_this.closeTakeover = function (event) {
 			_this.setState({
 				takeoverOpen: false
+			});
+		};
+
+		_this.setIndexHovered = function (event) {
+			var index = _this.getChildIndex(event.target);
+
+			_this.setState({
+				indexHovered: index,
+				takeoverData: _navItems2.default.hcp[index],
+				showTakeoverNav: false
 			});
 		};
 

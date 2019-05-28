@@ -1508,7 +1508,7 @@ a {
       font-weight: 500;
       border-width: 3px; }
     .home-nav__panel hr {
-      height: 3px; }
+      min-height: 3px; }
     .home-nav__panel ul {
       padding: 40px 72px 24px; }
     .home-nav__panel li {

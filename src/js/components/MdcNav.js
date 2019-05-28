@@ -45,16 +45,6 @@ export default class MdcNav extends Component {
 		});
 	}
 
-	setIndexHovered = (event) => {
-		const index = this.getChildIndex(event.target);
-
-		this.setState({
-			indexHovered: index,
-			takeoverData: NavItems.data[index],
-			showTakeoverNav: false,
-		});
-	}
-
 	setTakeoverData = (item) => {
 		this.setState({
 			takeoverData: item,
@@ -82,6 +72,16 @@ export default class MdcNav extends Component {
 		});
 	}
 
+	setIndexHovered = (event) => {
+		const index = this.getChildIndex(event.target);
+
+		this.setState({
+			indexHovered: index,
+			takeoverData: NavItems.hcp[index],
+			showTakeoverNav: false,
+		});
+	}
+
 	getChildIndex = (elem) => {
 		let i = 0;
 
@@ -99,7 +99,7 @@ export default class MdcNav extends Component {
 			"mdc-nav--scrolled": !isScrolledTop
 		})
 
-		const navItems = NavItems.data.map((item, i) =>
+		const navItems = NavItems.hcp.map((item, i) =>
 			<li key={i} onMouseOver={(e) => { this.openTakeover(e); this.setIndexHovered(e) }}>
 				<a>{item.name}</a>
 			</li>
@@ -116,7 +116,7 @@ export default class MdcNav extends Component {
 
 		const lineAnimation = {
 			transform: 'translate3d(' + 120 * (indexHovered + 0) + 'px, 0, 0)',
-			opacity: 1
+			opacity: (takeoverOpen ? 1 : 0)
 		}
 
 		return (
@@ -155,12 +155,12 @@ export default class MdcNav extends Component {
 				</div>
 				<div className="mdc-nav__hoverbar" onMouseOver={ this.openTakeover }>
 					<div className="mdc-nav__hoverlines">
-						<div style={ (takeoverOpen) ? lineAnimation : null } className="mdc-nav__hoverline"></div>
+						<div style={ lineAnimation } className="mdc-nav__hoverline"></div>
 					</div>
 				</div>
 					<div className="mdc-nav__hovermain" onMouseOver={ this.openTakeover } onMouseOut={this.closeTakeover}>
-						{/*<div className="mdc-nav__hovermainfeatured">
-							<h3>Featured Content</h3>
+						{<div className="mdc-nav__hovermainfeatured">
+							<h3>Featured {takeoverData.name}</h3>
 							<ul>
 								<li>Laminoscopy</li>
 								<li>Morter Breadfist</li>
@@ -169,7 +169,7 @@ export default class MdcNav extends Component {
 								<li>Morter Breadfist</li>
 								<li>Pentultimate Bigness</li>
 							</ul>
-						</div>*/}
+						</div>}
 						<div className="mdc-nav__hovermaincolumn" ref="takeoverItems">
 							{ showTakeoverNav ? <TakeoverNavigation breadcrumbs1={this.state.prevData.name} breadcrumbs2={this.state.breadcrumbs2} clickBack={() => { this.setTakeoverData(this.state.prevData); this.toggleTakeoverNavOpen(); }}/> : null}
 							<ul>

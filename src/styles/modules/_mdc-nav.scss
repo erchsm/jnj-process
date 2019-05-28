@@ -55,7 +55,7 @@ $baseclass: mdc-nav;
 		background: $brand-red;
 		height: 4px;
 		width: $item-width;
-		transform: translate3d(-($item-width),0,0);
+		// transform: translate3d(-($item-width),0,0);
 		opacity: 0;
 		transition: transform 0.9s $easing2;
 	}
@@ -72,7 +72,9 @@ $baseclass: mdc-nav;
 		flex-direction: row;
 		align-items: center;
 		height: 90px;
-		min-width: 100%;
+		padding: 0 60px;
+		max-width: 1440px;
+		width: 100%;
 		background: white;
 		transform-origin: top;
 		transition: all 0.9s 0s $easing2;
@@ -87,7 +89,7 @@ $baseclass: mdc-nav;
 	}
 
 	&__left {
-		width: 240px;
+		width: 165px;
 		display: flex;
 		flex-direction: column;
 		// align-items: center;
@@ -124,7 +126,8 @@ $baseclass: mdc-nav;
 	}
 	&__right {
 		transition: all 0.9s $easing2;
-		width: 240px;
+		width: 165px;
+		justify-content: flex-end\;
 	}
 	.icon-search {
 		font-size: 24px;
@@ -143,7 +146,7 @@ $baseclass: mdc-nav;
 		align-items: center;
 		justify-content: center;
 		height: 100%;
-		font-size: 14px;
+		font-size: 16px;
 		cursor: pointer;
 		font-weight: 800;
 		color: $brand-black;
@@ -174,7 +177,7 @@ $baseclass: mdc-nav;
 		top: 94px;
 		height: 520px;
 		width: 80vw;
-		right: 0;
+		right: 10vw;
 		position: absolute;
 		display: flex;
 		flex-direction: row-reverse;
@@ -195,8 +198,7 @@ $baseclass: mdc-nav;
 			height: auto;
 			width: auto;
 			justify-content: flex-start;
-			font-size: 18px;
-			padding: 12px 18px;
+			padding: 12px 24px;
 			margin: 0 0 3px 0;
 
 			i {
@@ -206,6 +208,7 @@ $baseclass: mdc-nav;
 			.mdc-button {
 				text-align: left;
 				padding: 0;
+				font-size: 18px;
 				font-weight: 400;
 
 				&:hover {
@@ -258,7 +261,7 @@ $baseclass: mdc-nav;
 		width: 280px;
 		height: auto;
 		margin: 24px 18px;
-		padding: 18px 32px;
+		padding: 24px 40px;
 		border-radius: 2px;
 
 		h3, li {
@@ -268,7 +271,7 @@ $baseclass: mdc-nav;
 		h3 {
 			// font-weight: bold;
 			text-transform: uppercase;
-			font-size: 14px;
+			font-size: 16px;
 			margin: 0;
 		}
 		li {
@@ -276,8 +279,8 @@ $baseclass: mdc-nav;
 			width: auto;
 			justify-content: flex-start;
 			font-weight: normal;
-			margin: 18px 0;
-			font-size: 16px;
+			margin: 24px 0;
+			font-size: 18px;
 		}
 	}
 }
