@@ -6,6 +6,7 @@ import symptoms from '../data/symptoms-search';
 
 import SearchBar from './SearchBar';
 
+
 export default class MdcFlipper extends Component {
 
 	constructor(props) {
@@ -72,7 +73,7 @@ export default class MdcFlipper extends Component {
 				<section className="grid">
 					<h1 className="medium grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
 				</section>
-				<div className="grid mdc-switcher__tile-container">
+				<div className="grid mdc-switcher__tile-container" id="flipper">
 					<div className="mdc-switcher__tiles grid__item grid__item--col-12">
 						<div className="mdc-switcher__tile">
 							<i className="iconcss icon-hcp"></i>                

@@ -30,7 +30,8 @@
 
 	&__tile-container {
 		position: relative;
-		transform: translateY(-60px);
+		transform: translateY(-120px);
+		padding-top: 60px;
 	}
 
 	&__tiles {

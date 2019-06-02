@@ -27713,7 +27713,7 @@ var MdcFlipper = function (_Component) {
 				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'grid mdc-switcher__tile-container' },
+					{ className: 'grid mdc-switcher__tile-container', id: 'flipper' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'mdc-switcher__tiles grid__item grid__item--col-12' },
