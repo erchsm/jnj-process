@@ -19,6 +19,7 @@ import HomeLandingPrototype from './prototypes/HomeLandingPrototype'
 
 import MdcNavPrototype from './prototypes/MdcNavPrototype'
 import MdcTaxonomyDiagramPrototype from './prototypes/MdcTaxonomyDiagramPrototype'
+import MdcFlipperPrototype from './prototypes/MdcFlipperPrototype'
 
 
 const routes = (
@@ -42,6 +43,7 @@ const routes = (
 			<Route path="/prototypes/home-landing" component={HomeLandingPrototype}/>
 
 			<Route path="/prototypes/mdc-nav" component={MdcNavPrototype}/>
+			<Route path="/prototypes/mdc-flipper" component={MdcFlipperPrototype}/>
 			<Route path="/prototypes/mdc-taxonomy-diagram" component={MdcTaxonomyDiagramPrototype}/>
 
             <Redirect to="/" />

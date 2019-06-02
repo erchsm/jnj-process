@@ -28563,12 +28563,12 @@ var Switcher = function (_Component) {
                             _react2.default.createElement('i', { className: 'iconcss icon-hcp' }),
                             _react2.default.createElement(
                                 'h2',
-                                null,
+                                { className: 'no-mb' },
                                 'I\u2019m a'
                             ),
                             _react2.default.createElement(
                                 'h1',
-                                { className: 'medium' },
+                                { className: 'no-mb' },
                                 'Healthcare ',
                                 _react2.default.createElement('br', null),
                                 'Professional'
@@ -28591,12 +28591,12 @@ var Switcher = function (_Component) {
                             _react2.default.createElement('i', { className: 'iconcss icon-patient' }),
                             _react2.default.createElement(
                                 'h2',
-                                null,
+                                { className: 'no-mb' },
                                 'I\u2019m a'
                             ),
                             _react2.default.createElement(
                                 'h1',
-                                { className: 'medium' },
+                                { className: 'no-mb' },
                                 'Patient',
                                 _react2.default.createElement('br', null),
                                 _react2.default.createElement('br', null)

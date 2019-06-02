@@ -194,6 +194,14 @@ $baseclass: mdc-nav;
 		overflow: hidden;
 		overflow-y: scroll;
 
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		// &::-webkit-scrollbar-track {
+		//     margin: 24px 0 24px;
+		// }
+
 		li {
 			height: auto;
 			width: auto;
@@ -231,7 +239,7 @@ $baseclass: mdc-nav;
 	&__takeover-nav {
 		display: flex;
 		align-items: center;
-		padding: 0 0 18px 18px;
+		padding: 0 0 18px 24px;
 
 		.mdc-button {
 			padding: 0;
@@ -257,30 +265,28 @@ $baseclass: mdc-nav;
 	&__hovermainfeatured {
 		display: flex;
 		flex-direction: column;
-		background: $brand-blue-light;
+		background: $brand-tan;
 		width: 280px;
 		height: auto;
 		margin: 24px 18px;
-		padding: 24px 40px;
+		padding: 40px;
 		border-radius: 2px;
 
-		h3, li {
+		h5, li {
 			color: $brand-grey-dark;
 		}
 
-		h3 {
-			// font-weight: bold;
-			text-transform: uppercase;
-			font-size: 16px;
-			margin: 0;
+		ul {
+			margin-top: 12px;
 		}
+
 		li {
 			height: auto;
 			width: auto;
 			justify-content: flex-start;
 			font-weight: normal;
 			margin: 24px 0;
-			font-size: 18px;
+			// font-size: 18px;
 		}
 	}
 }

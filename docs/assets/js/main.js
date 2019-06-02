@@ -59465,7 +59465,7 @@ App.propTypes = {
 
 exports.default = App;
 
-},{"./routes":262,"connected-react-router":13,"prop-types":65,"react":188}],213:[function(require,module,exports){
+},{"./routes":266,"connected-react-router":13,"prop-types":65,"react":188}],213:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -59534,7 +59534,7 @@ var JnjProcessLogo = function (_Component) {
 JnjProcessLogo.propTypes = {};
 exports.default = JnjProcessLogo;
 
-},{"../services/splitLetter":280,"classnames":10,"react":188}],214:[function(require,module,exports){
+},{"../services/splitLetter":285,"classnames":10,"react":188}],214:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59596,7 +59596,7 @@ var render = function render() {
 
 render();
 
-},{"../App":212,"../reducers":259,"connected-react-router":13,"history":36,"react":188,"react-dom":81,"react-redux":108,"redux":189}],216:[function(require,module,exports){
+},{"../App":212,"../reducers":263,"connected-react-router":13,"history":36,"react":188,"react-dom":81,"react-redux":108,"redux":189}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59718,7 +59718,7 @@ var Accordion = function (_Component) {
 Accordion.propTypes = {};
 exports.default = Accordion;
 
-},{"../services/newid":278,"classnames":10,"react":188}],217:[function(require,module,exports){
+},{"../services/newid":283,"classnames":10,"react":188}],217:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59788,7 +59788,7 @@ var Colors = function (_Component) {
 Colors.propTypes = {};
 exports.default = Colors;
 
-},{"../data/colors":244,"react":188}],218:[function(require,module,exports){
+},{"../data/colors":246,"react":188}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -59935,7 +59935,7 @@ var FontTable = function (_Component) {
 FontTable.propTypes = {};
 exports.default = FontTable;
 
-},{"../data/colors":244,"./ColorList":217,"react":188}],219:[function(require,module,exports){
+},{"../data/colors":246,"./ColorList":217,"react":188}],219:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60120,7 +60120,7 @@ Article.propTypes = {
 };
 exports.default = Article;
 
-},{"../services/palette":279,"./Social":235,"./TagsCollapsable":237,"prop-types":65,"react":188,"react-sticky":175}],220:[function(require,module,exports){
+},{"../services/palette":284,"./Social":237,"./TagsCollapsable":239,"prop-types":65,"react":188,"react-sticky":175}],220:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60242,7 +60242,7 @@ var HomeFooter = function (_Component) {
 HomeFooter.propTypes = {};
 exports.default = HomeFooter;
 
-},{"../data/footer-items":245,"./MdcLogo":231,"classnames":10,"react":188}],221:[function(require,module,exports){
+},{"../data/footer-items":247,"./MdcLogo":233,"classnames":10,"react":188}],221:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -60768,7 +60768,7 @@ var HomeLinksPage = function (_Component) {
 
 exports.default = HomeLinksPage;
 
-},{"../data/home-links-page":246,"./HomeLinksPagination":224,"./SearchBar":234,"./form/Dropdown":238,"classnames":10,"moment":56,"moment-range":55,"react":188,"react-scroll":150}],224:[function(require,module,exports){
+},{"../data/home-links-page":248,"./HomeLinksPagination":224,"./SearchBar":236,"./form/Dropdown":240,"classnames":10,"moment":56,"moment-range":55,"react":188,"react-scroll":150}],224:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -61451,7 +61451,7 @@ var HomeNav = function (_Component) {
 
 exports.default = HomeNav;
 
-},{"./SearchBar":234,"./TabbedList":236,"classnames":10,"react":188}],226:[function(require,module,exports){
+},{"./SearchBar":236,"./TabbedList":238,"classnames":10,"react":188}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62034,7 +62034,7 @@ var HomeProfileSetup = function (_Component) {
 
 exports.default = HomeProfileSetup;
 
-},{"../data/home-profile-setup":248,"./ImageUpload":229,"./SearchBar":234,"./form/MultiSelectBox":239,"./form/Switch":240,"./form/Tag":241,"classnames":10,"react":188,"react-autosuggest":69,"react-motion":91,"react-skroll":168}],228:[function(require,module,exports){
+},{"../data/home-profile-setup":250,"./ImageUpload":229,"./SearchBar":236,"./form/MultiSelectBox":241,"./form/Switch":242,"./form/Tag":243,"classnames":10,"react":188,"react-autosuggest":69,"react-motion":91,"react-skroll":168}],228:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62212,7 +62212,7 @@ var HomeSitemap = function (_Component) {
 
 exports.default = HomeSitemap;
 
-},{"../data/home-sitemap":249,"classnames":10,"react":188,"react-d3-tree":77}],229:[function(require,module,exports){
+},{"../data/home-sitemap":251,"classnames":10,"react":188,"react-d3-tree":77}],229:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -62476,7 +62476,481 @@ var JnjProcessHeader = function (_Component) {
 
 exports.default = JnjProcessHeader;
 
-},{"../services/splitLetter":280,"classnames":10,"react":188}],231:[function(require,module,exports){
+},{"../services/splitLetter":285,"classnames":10,"react":188}],231:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require('classnames');
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _specialtiesSearch = require('../data/specialties-search');
+
+var _specialtiesSearch2 = _interopRequireDefault(_specialtiesSearch);
+
+var _symptomsSearch = require('../data/symptoms-search');
+
+var _symptomsSearch2 = _interopRequireDefault(_symptomsSearch);
+
+var _SearchBar = require('./SearchBar');
+
+var _SearchBar2 = _interopRequireDefault(_SearchBar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MdcFlipper = function (_Component) {
+	_inherits(MdcFlipper, _Component);
+
+	function MdcFlipper(props) {
+		_classCallCheck(this, MdcFlipper);
+
+		var _this = _possibleConstructorReturn(this, (MdcFlipper.__proto__ || Object.getPrototypeOf(MdcFlipper)).call(this, props));
+
+		_this.componentDidMount = function () {
+			document.addEventListener('scroll', _this.handleScroll);
+		};
+
+		_this.componentWillUnmount = function () {
+			document.removeEventListener('scroll', _this.handleScroll);
+		};
+
+		_this.handleScroll = function (event) {
+			var scrollTop = event.srcElement.body.scrollTop;
+
+			// this.setState({
+			//     isScrolledTop: scrollTop < 90
+			// });
+		};
+
+		_this.openTakeover = function (event) {
+			_this.setState({
+				takeoverOpen: true
+			});
+		};
+
+		_this.setIndexHovered = function (event) {
+			_this.setState({
+				indexHovered: _this.getChildIndex(event.target)
+			});
+		};
+
+		_this.closeTakeover = function (event) {
+			// setTimeout(() => {
+			_this.setState({
+				takeoverOpen: false
+			});
+			// }, 0);
+		};
+
+		_this.getChildIndex = function (elem) {
+			var i = 0;
+
+			while ((elem = elem.previousSibling) != null) {
+				i++;
+			}
+
+			return i;
+		};
+
+		return _this;
+	}
+
+	_createClass(MdcFlipper, [{
+		key: 'render',
+		value: function render() {
+			// const { driftSrc } = this.state;
+
+
+			var classnames = (0, _classnames2.default)({
+				"mdc-switcher": true
+			});
+
+			return _react2.default.createElement(
+				'div',
+				{ className: classnames },
+				_react2.default.createElement(
+					'section',
+					{ className: 'grid' },
+					_react2.default.createElement(
+						'h1',
+						{ className: 'medium grid__item grid__item--col-7' },
+						'Welcome to the New Johnson & Johnson Medical Device Companies.'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'grid mdc-switcher__tile-container' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'mdc-switcher__tiles grid__item grid__item--col-12' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'mdc-switcher__tile' },
+							_react2.default.createElement('i', { className: 'iconcss icon-hcp' }),
+							_react2.default.createElement(
+								'h2',
+								{ className: 'no-mb' },
+								'I\u2019m a'
+							),
+							_react2.default.createElement(
+								'h1',
+								{ className: 'no-mb' },
+								'Healthcare ',
+								_react2.default.createElement('br', null),
+								'Professional'
+							),
+							_react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For A Specialty', searchData: _specialtiesSearch2.default.groups }),
+							_react2.default.createElement(
+								'button',
+								{ className: 'mdc-button mdc-button--text-link' },
+								_react2.default.createElement(
+									'span',
+									null,
+									'Continue to HCP Home'
+								),
+								_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'mdc-switcher__tile' },
+							_react2.default.createElement('i', { className: 'iconcss icon-patient' }),
+							_react2.default.createElement(
+								'h2',
+								{ className: 'no-mb' },
+								'I\u2019m a'
+							),
+							_react2.default.createElement(
+								'h1',
+								{ className: 'no-mb' },
+								'Patient',
+								_react2.default.createElement('br', null),
+								_react2.default.createElement('br', null)
+							),
+							_react2.default.createElement(_SearchBar2.default, { placeholder: 'Search For Your Symptoms', searchData: _symptomsSearch2.default.groups }),
+							_react2.default.createElement(
+								'button',
+								{ className: 'mdc-button mdc-button--text-link' },
+								_react2.default.createElement(
+									'span',
+									null,
+									'Continue to Patients Home'
+								),
+								_react2.default.createElement('i', { className: 'iconcss icon-arrow-right' })
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return MdcFlipper;
+}(_react.Component);
+
+exports.default = MdcFlipper;
+
+},{"../data/specialties-search":253,"../data/symptoms-search":254,"./SearchBar":236,"classnames":10,"react":188}],232:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _classnames = require("classnames");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _footerItems = require("../data/footer-items");
+
+var _footerItems2 = _interopRequireDefault(_footerItems);
+
+var _MdcLogo = require("./MdcLogo");
+
+var _MdcLogo2 = _interopRequireDefault(_MdcLogo);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MdcNav = function (_Component) {
+    _inherits(MdcNav, _Component);
+
+    function MdcNav(props) {
+        _classCallCheck(this, MdcNav);
+
+        var _this = _possibleConstructorReturn(this, (MdcNav.__proto__ || Object.getPrototypeOf(MdcNav)).call(this, props));
+
+        _this.componentDidMount = function () {
+            document.addEventListener('scroll', _this.handleScroll);
+        };
+
+        _this.componentWillUnmount = function () {
+            document.removeEventListener('scroll', _this.handleScroll);
+        };
+
+        _this.handleScroll = function (event) {
+            var scrollTop = event.srcElement.body.scrollTop;
+
+            // this.setState({
+            //     isScrolledTop: scrollTop < 90
+            // });
+        };
+
+        _this.openTakeover = function (event) {
+            _this.setState({
+                takeoverOpen: true
+            });
+        };
+
+        _this.setIndexHovered = function (event) {
+            _this.setState({
+                indexHovered: _this.getChildIndex(event.target)
+            });
+        };
+
+        _this.closeTakeover = function (event) {
+            // setTimeout(() => {
+            _this.setState({
+                takeoverOpen: false
+            });
+            // }, 0);
+        };
+
+        _this.getChildIndex = function (elem) {
+            var i = 0;
+
+            while ((elem = elem.previousSibling) != null) {
+                i++;
+            }
+
+            return i;
+        };
+
+        _this.getFooterItems = function (i) {
+            return _footerItems2.default.data[i].data.map(function (item, i) {
+                return _react2.default.createElement(
+                    "li",
+                    { key: i },
+                    _react2.default.createElement(
+                        "a",
+                        null,
+                        item.name
+                    )
+                );
+            });
+        };
+
+        _this.state = {
+            isScrolledTop: true,
+            takeoverOpen: false,
+            indexHovered: 0
+        };
+        return _this;
+    }
+
+    _createClass(MdcNav, [{
+        key: "render",
+        value: function render() {
+            var _state = this.state,
+                isScrolledTop = _state.isScrolledTop,
+                takeoverOpen = _state.takeoverOpen,
+                indexHovered = _state.indexHovered;
+
+
+            var classnames = (0, _classnames2.default)({
+                "mdc-footer": true
+            });
+
+            var footerItems0 = this.getFooterItems(0);
+            var footerItems1 = this.getFooterItems(1);
+            var footerItems2 = this.getFooterItems(2);
+            var footerItems3 = this.getFooterItems(3);
+
+            var footerItemsLinks = this.getFooterItems(5);
+
+            return _react2.default.createElement(
+                "nav",
+                { className: classnames },
+                _react2.default.createElement(
+                    "div",
+                    { className: "grid mdc-footer__top" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "grid__item grid__item--col-2" },
+                        _react2.default.createElement(_MdcLogo2.default, null)
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "grid__item grid__item--col-8 mdc-footer__main" },
+                        _react2.default.createElement(
+                            "div",
+                            null,
+                            _react2.default.createElement(
+                                "h5",
+                                null,
+                                _footerItems2.default.data[0].name
+                            ),
+                            _react2.default.createElement(
+                                "ul",
+                                null,
+                                footerItems0
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            null,
+                            _react2.default.createElement(
+                                "h5",
+                                null,
+                                _footerItems2.default.data[1].name
+                            ),
+                            _react2.default.createElement(
+                                "ul",
+                                null,
+                                footerItems1
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            null,
+                            _react2.default.createElement(
+                                "h5",
+                                null,
+                                _footerItems2.default.data[2].name
+                            ),
+                            _react2.default.createElement(
+                                "ul",
+                                null,
+                                footerItems2
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            null,
+                            _react2.default.createElement(
+                                "h5",
+                                null,
+                                _footerItems2.default.data[3].name
+                            ),
+                            _react2.default.createElement(
+                                "ul",
+                                null,
+                                footerItems3
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "grid__item grid__item--col-2" },
+                        _react2.default.createElement(
+                            "h5",
+                            null,
+                            _footerItems2.default.data[4].name
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "mdc-share" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "mdc-share-item" },
+                                _react2.default.createElement("i", { className: "iconcss icon-linkedin" })
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "mdc-share-item" },
+                                _react2.default.createElement("i", { className: "iconcss icon-facebook" })
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "mdc-share-item" },
+                                _react2.default.createElement("i", { className: "iconcss icon-twitter" })
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "mdc-share-item" },
+                                _react2.default.createElement("i", { className: "iconcss icon-youtube" })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            _footerItems2.default.data[4].data[0].name
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "grid mdc-footer__bottom" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "grid__item grid__item--col-8" },
+                        _react2.default.createElement(
+                            "ul",
+                            { className: "mdc-footer__links" },
+                            footerItemsLinks
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "grid__item grid__item--col-2" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "mdc-footer__location" },
+                            _react2.default.createElement("img", { src: "../assets/img/united-states.svg" }),
+                            _react2.default.createElement(
+                                "p",
+                                { className: "no-mb" },
+                                "English (United States)"
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "grid__item grid__item--col-2" },
+                        _react2.default.createElement(
+                            "p",
+                            null,
+                            "All contents \xA9 Copyright Johnson & Johnson Services, Inc.1997-2017. All Rights Reserved."
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return MdcNav;
+}(_react.Component);
+
+MdcNav.propTypes = {};
+exports.default = MdcNav;
+
+},{"../data/footer-items":247,"./MdcLogo":233,"classnames":10,"react":188}],233:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -62663,7 +63137,7 @@ var MdcLogo = function (_Component) {
 MdcLogo.propTypes = {};
 exports.default = MdcLogo;
 
-},{"classnames":10,"react":188}],232:[function(require,module,exports){
+},{"classnames":10,"react":188}],234:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -62828,9 +63302,9 @@ var MdcNav = function (_Component) {
 					{ key: i, className: i == 0 ? "overview-item" : "" },
 					_react2.default.createElement(
 						"button",
-						{ className: "mdc-button mdc-button--text-link", onClick: function onClick() {
+						{ className: "mdc-button mdc-button--text-link", onClick: item.data ? function () {
 								_this2.setTakeoverData(item);_this2.updateTakeoverNavigation(item.name, takeoverData);
-							} },
+							} : null },
 						_react2.default.createElement(
 							"span",
 							null,
@@ -62915,8 +63389,8 @@ var MdcNav = function (_Component) {
 						"div",
 						{ className: "mdc-nav__hovermainfeatured" },
 						_react2.default.createElement(
-							"h3",
-							null,
+							"h5",
+							{ className: "eyebrow" },
 							"Featured ",
 							takeoverData.name
 						),
@@ -63031,7 +63505,7 @@ var TakeoverNavigation = function (_Component2) {
 	return TakeoverNavigation;
 }(_react.Component);
 
-},{"../data/nav-items":250,"../services/palette":279,"./MdcLogo":231,"classnames":10,"react":188}],233:[function(require,module,exports){
+},{"../data/nav-items":252,"../services/palette":284,"./MdcLogo":233,"classnames":10,"react":188}],235:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63441,7 +63915,7 @@ var MdcTaxonomyDiagram = function (_Component) {
 MdcTaxonomyDiagram.propTypes = {};
 exports.default = MdcTaxonomyDiagram;
 
-},{"../data/taxonomy/anatomy.json":251,"../data/taxonomy/conditions.json":252,"../data/taxonomy/content-types.json":253,"../data/taxonomy/procedures.json":254,"../data/taxonomy/product-families.json":255,"../data/taxonomy/products.json":256,"../data/taxonomy/specialties.json":257,"./Accordion":216,"./SearchBar":234,"classnames":10,"react":188,"react-vis-force/dist/react-vis-force.min.js":185}],234:[function(require,module,exports){
+},{"../data/taxonomy/anatomy.json":255,"../data/taxonomy/conditions.json":256,"../data/taxonomy/content-types.json":257,"../data/taxonomy/procedures.json":258,"../data/taxonomy/product-families.json":259,"../data/taxonomy/products.json":260,"../data/taxonomy/specialties.json":261,"./Accordion":216,"./SearchBar":236,"classnames":10,"react":188,"react-vis-force/dist/react-vis-force.min.js":185}],236:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63657,7 +64131,7 @@ var SearchBar = function (_Component) {
 
 exports.default = SearchBar;
 
-},{"classnames":10,"react":188,"react-autosuggest":69}],235:[function(require,module,exports){
+},{"classnames":10,"react":188,"react-autosuggest":69}],237:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63814,7 +64288,7 @@ var Social = function (_Component) {
 
 exports.default = Social;
 
-},{"classnames":10,"react":188}],236:[function(require,module,exports){
+},{"classnames":10,"react":188}],238:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -63970,7 +64444,7 @@ var TabbedList = function (_Component) {
 TabbedList.propTypes = {};
 exports.default = TabbedList;
 
-},{"../services/newid":278,"classnames":10,"react":188}],237:[function(require,module,exports){
+},{"../services/newid":283,"classnames":10,"react":188}],239:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64145,7 +64619,7 @@ var TagsCollapsable = function (_Component) {
 TagsCollapsable.propTypes = {};
 exports.default = TagsCollapsable;
 
-},{"lodash/throttle":53,"react":188}],238:[function(require,module,exports){
+},{"lodash/throttle":53,"react":188}],240:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64255,7 +64729,7 @@ var Dropdown = function (_Component) {
 
 exports.default = Dropdown;
 
-},{"classnames":10,"react":188}],239:[function(require,module,exports){
+},{"classnames":10,"react":188}],241:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -64435,7 +64909,7 @@ var MultiSelectBox = function (_Component) {
 
 exports.default = MultiSelectBox;
 
-},{"../../services/newId":277,"classnames":10,"react":188,"react-dom":81,"react-search-multi-select":163}],240:[function(require,module,exports){
+},{"../../services/newId":282,"classnames":10,"react":188,"react-dom":81,"react-search-multi-select":163}],242:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64527,7 +65001,7 @@ var Switch = function (_Component) {
 
 exports.default = Switch;
 
-},{"classnames":10,"react":188}],241:[function(require,module,exports){
+},{"classnames":10,"react":188}],243:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64593,7 +65067,7 @@ var Tag = function (_Component) {
 
 exports.default = Tag;
 
-},{"classnames":10,"react":188}],242:[function(require,module,exports){
+},{"classnames":10,"react":188}],244:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -64660,7 +65134,7 @@ var TextLink = function (_Component) {
 
 exports.default = TextLink;
 
-},{"classnames":10,"react":188}],243:[function(require,module,exports){
+},{"classnames":10,"react":188}],245:[function(require,module,exports){
 module.exports={
   "title" : "Wall Street Journal: Bringing Up Baby’s Market Share at J&J",
   "author": "Siarhei Semashko",
@@ -64697,7 +65171,7 @@ module.exports={
   "likesAmount": 25
 }
 
-},{}],244:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 module.exports={
   "PRIMARY": [
     {
@@ -64796,7 +65270,7 @@ module.exports={
     }
   ]
 }
-},{}],245:[function(require,module,exports){
+},{}],247:[function(require,module,exports){
 module.exports={
 	data: [
 		{ 
@@ -64859,7 +65333,7 @@ module.exports={
 		]}
 	]
 }
-},{}],246:[function(require,module,exports){
+},{}],248:[function(require,module,exports){
 module.exports={	
 	"allLinks": [
 		//
@@ -66112,7 +66586,7 @@ module.exports={
 
 	]
 }
-},{}],247:[function(require,module,exports){
+},{}],249:[function(require,module,exports){
 module.exports={
   "NEWS": [
     {
@@ -66153,7 +66627,7 @@ module.exports={
     }
   ]
 }
-},{}],248:[function(require,module,exports){
+},{}],250:[function(require,module,exports){
 module.exports={	
 	"skills": [
 		{
@@ -66476,7 +66950,7 @@ module.exports={
 		"Zug, CHE",
 	]
 }
-},{}],249:[function(require,module,exports){
+},{}],251:[function(require,module,exports){
 module.exports={
 	"name": "Home",
 	"children": [
@@ -67048,7 +67522,7 @@ module.exports={
 { "name": "Taleo"},
 
 */
-},{}],250:[function(require,module,exports){
+},{}],252:[function(require,module,exports){
 module.exports={
 	"hcp": [
 		{ 
@@ -67061,10 +67535,20 @@ module.exports={
 						{ "name": "Bariatric Overview" },
 						{ "name": "LAP Gastric Bypass" },
 						{ "name": "LAP Sleeve Gastrectomy" },
-						{ "name": "Revisional Surgery" },
+						{ "name": "Revisional Surgery" }
 					]
 				},
-				{ "name": "Cardiology" },
+				{ 
+					"name": "Cardiology",
+					"data": [
+						{ "name": "Cardiology Overview" },
+						{ "name" : "Angioplasty" },
+						{ "name" : "Atherectomy" },
+						{ "name" : "Embolic Protection" },
+						{ "name" : "Percutaneous Valve Repair" },
+						{ "name" : "Balloon Angioplasty" }
+					]
+				},
 				{ "name": "Cardiac Electrophysiology" },
 				{ "name": "Colorectal" },
 				{ "name": "Craniomaxillofacial" },
@@ -67080,9 +67564,9 @@ module.exports={
 				{ "name": "Interventional Oncology" },
 				{ "name": "Neurovascular" },
 				{ 
-					"name": "Orthopaedic Surgery" ,
+					"name": "Orthopaedic" ,
 					"data": [
-						{ "name": "Orthopaedic Surgery Overview" },
+						{ "name": "Orthopaedic Overview" },
 						{ "name": "Anterior Cervical Discectomy and Fusion"},
 						{ "name": "Anterior cruciate ligament (ACL)/ Posterior cruciate ligament (PCL) Reconstruction"},
 						{ "name": "Anterior Lumbar Interbody Fusion (ALIF)"},
@@ -67150,8 +67634,16 @@ module.exports={
 			"name": "Products",
 			"data": [
 				{ "name": "Products Overview" },
-				{ "name": "Ablation" },
-				{ "name": "Absorption" },
+				{ 
+					"name": "Ablation",
+					"data": [
+						{ "name" : "NEUWAVE™ Microwave Ablation System" },
+						{ "name" : "VAPR VUE® Radiofrequency System" },
+						{ "name" : "VAPR® Suction Electrodes" },
+						{ "name" : "VAPR® TRIPOLAR Electrode" },
+						{ "name" : "VAPR VUE® Radiofrequency System " }
+					]
+				},
 				{ 
 					"name" : "Access",
 					"data" : [
@@ -67166,7 +67658,7 @@ module.exports={
 						{ "name" : "ENDOPATH XCEL® Trocars with OPTIVIEW® Technology" },
 						{ "name" : "ENDOPATH® Mini Bladeless Trocar" },
 						{ "name" : "FLEXIPATH® Trocars" },
-						{ "name" : "Insufflation Needles" },
+						{ "name" : "Insufflation Needles" }
 					]
 				},
 				{ "name": "Adjunctive Hemostats" },
@@ -67384,7 +67876,79 @@ module.exports={
 		}
 	]
 }
-},{}],251:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
+module.exports={
+  groups: [
+    {
+      title: 'Specialties',
+      data: [
+        { "id": "Bariatric" },
+        { "id": "Cardiology" },
+        { "id": "Cardiac Electrophysiology" },
+        { "id": "Colorectal" },
+        { "id": "Craniomaxillofacial" },
+        { "id": "Dermatology" },
+        { "id": "Ear, Nose & Throat / Otolaryngology" },
+        { "id": "Dermatology" },
+        { "id": "Endocrinology" },
+        { "id": "Gastric Surgery" },
+        { "id": "General Surgery" },
+        { "id": "Gynecology" },
+        { "id": "Hepatobillary Surgery" },
+        { "id": "Interventional Oncology" },
+        { "id": "Neurovascular" },
+        { "id": "Orthopaedic Surgery" },
+        { "id": "Otolaryngology" },
+        { "id": "Sports Medicine" },
+        { "id": "Sterlization, Antisepsis" },
+        { "id": "Thoracic Surgery" },
+        { "id": "Trauma" },
+        { "id": "Urogynecology" },
+        { "id": "Urology" },
+        { "id": "Vetinary" },
+        { "id": "Vision" },
+      ]
+    }
+  ]
+}
+
+},{}],254:[function(require,module,exports){
+module.exports={
+  groups: [
+    {
+      title: 'Symptoms',
+      data: [
+        { "id": "Abdominal Pains" },
+        { "id": "Back Ache" },
+        { "id": "Bloating" },
+        { "id": "Bruising" },
+        { "id": "Cough" },
+        { "id": "Diarrhea" },
+        { "id": "Difficulty Breathing" },
+        { "id": "Difficulty Swallowing" },
+        { "id": "Fever" },
+        { "id": "Headache" },
+        { "id": "Hiccups" },
+        { "id": "Intense Fatigue or Weakness" },
+        { "id": "Jaundice" },
+        { "id": "Joint Pain" },
+        { "id": "Loss of Appetite" },
+        { "id": "Muscles or Joints" },
+        { "id": "Nausea Vomiting" },
+        { "id": "Neck Rigidity" },
+        { "id": "Stiffness"},
+        { "id": "Sore Throat or Swallowing" },
+        { "id": "Chest Pain" },
+        { "id": "Unexplained Bleedings" },
+        { "id": "Rash" },
+        { "id": "Red Eyes" },
+        { "id": "Other Symptoms" }
+      ]
+    }
+  ]
+}
+
+},{}],255:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -67588,7 +68152,7 @@ module.exports={
 		},
 	]
 }
-},{}],252:[function(require,module,exports){
+},{}],256:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -67697,7 +68261,7 @@ module.exports={
 		},
 	]
 }
-},{}],253:[function(require,module,exports){
+},{}],257:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -67774,7 +68338,7 @@ module.exports={
 		},
 	]
 }
-},{}],254:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -67841,7 +68405,7 @@ module.exports={
 	"links": [
 	]
 }
-},{}],255:[function(require,module,exports){
+},{}],259:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -67908,7 +68472,7 @@ module.exports={
 		},
 	]
 }
-},{}],256:[function(require,module,exports){
+},{}],260:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -68175,7 +68739,7 @@ module.exports={
 		},
 	]
 }
-},{}],257:[function(require,module,exports){
+},{}],261:[function(require,module,exports){
 module.exports={
 	"nodes": [
 		{
@@ -68234,7 +68798,7 @@ module.exports={
 		},
 	]
 }
-},{}],258:[function(require,module,exports){
+},{}],262:[function(require,module,exports){
 module.exports={
   "DESKTOP": [
     {
@@ -68546,7 +69110,7 @@ module.exports={
     }
   ]
 }
-},{}],259:[function(require,module,exports){
+},{}],263:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68572,7 +69136,7 @@ var rootReducer = function rootReducer(history) {
 
 exports.default = rootReducer;
 
-},{"./nav":260,"connected-react-router":13,"redux":189}],260:[function(require,module,exports){
+},{"./nav":264,"connected-react-router":13,"redux":189}],264:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68594,7 +69158,7 @@ var navReducer = function navReducer() {
 
 exports.default = navReducer;
 
-},{}],261:[function(require,module,exports){
+},{}],265:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68824,7 +69388,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Dashboard);
 
-},{"../Components/JnjProcessLogo":213,"classnames":10,"react":188,"react-redux":108,"react-router-dom":131}],262:[function(require,module,exports){
+},{"../Components/JnjProcessLogo":213,"classnames":10,"react":188,"react-redux":108,"react-router-dom":131}],266:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68897,6 +69461,10 @@ var _MdcTaxonomyDiagramPrototype = require('./prototypes/MdcTaxonomyDiagramProto
 
 var _MdcTaxonomyDiagramPrototype2 = _interopRequireDefault(_MdcTaxonomyDiagramPrototype);
 
+var _MdcFlipperPrototype = require('./prototypes/MdcFlipperPrototype');
+
+var _MdcFlipperPrototype2 = _interopRequireDefault(_MdcFlipperPrototype);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var routes = _react2.default.createElement(
@@ -68920,6 +69488,7 @@ var routes = _react2.default.createElement(
 		_react2.default.createElement(_reactRouter.Route, { path: '/prototypes/home-sitemap', component: _HomeSitemapPrototype2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/prototypes/home-landing', component: _HomeLandingPrototype2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/prototypes/mdc-nav', component: _MdcNavPrototype2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: '/prototypes/mdc-flipper', component: _MdcFlipperPrototype2.default }),
 		_react2.default.createElement(_reactRouter.Route, { path: '/prototypes/mdc-taxonomy-diagram', component: _MdcTaxonomyDiagramPrototype2.default }),
 		_react2.default.createElement(_reactRouter.Redirect, { to: '/' })
 	)
@@ -68927,7 +69496,7 @@ var routes = _react2.default.createElement(
 
 exports.default = routes;
 
-},{"./Dashboard":261,"./process-site/Accessibility":263,"./process-site/Animation":264,"./process-site/Colors":265,"./process-site/Landing":266,"./process-site/Prototypes":267,"./process-site/Typography":268,"./prototypes/HomeArticlePrototype":269,"./prototypes/HomeLandingPrototype":270,"./prototypes/HomeLinksPrototype":271,"./prototypes/HomeNavPrototype":272,"./prototypes/HomeProfileSetupPrototype":273,"./prototypes/HomeSitemapPrototype":274,"./prototypes/MdcNavPrototype":275,"./prototypes/MdcTaxonomyDiagramPrototype":276,"react":188,"react-router":143}],263:[function(require,module,exports){
+},{"./Dashboard":265,"./process-site/Accessibility":267,"./process-site/Animation":268,"./process-site/Colors":269,"./process-site/Landing":270,"./process-site/Prototypes":271,"./process-site/Typography":272,"./prototypes/HomeArticlePrototype":273,"./prototypes/HomeLandingPrototype":274,"./prototypes/HomeLinksPrototype":275,"./prototypes/HomeNavPrototype":276,"./prototypes/HomeProfileSetupPrototype":277,"./prototypes/HomeSitemapPrototype":278,"./prototypes/MdcFlipperPrototype":279,"./prototypes/MdcNavPrototype":280,"./prototypes/MdcTaxonomyDiagramPrototype":281,"react":188,"react-router":143}],267:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -68978,7 +69547,7 @@ var Accessibility = function (_Component) {
 Accessibility.propTypes = {};
 exports.default = Accessibility;
 
-},{"../../components/JnjProcessHeader":230,"react":188}],264:[function(require,module,exports){
+},{"../../components/JnjProcessHeader":230,"react":188}],268:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -69029,7 +69598,7 @@ var Animation = function (_Component) {
 Animation.propTypes = {};
 exports.default = Animation;
 
-},{"../../components/JnjProcessHeader":230,"react":188}],265:[function(require,module,exports){
+},{"../../components/JnjProcessHeader":230,"react":188}],269:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -69237,7 +69806,7 @@ var Colors = function (_Component) {
 Colors.propTypes = {};
 exports.default = Colors;
 
-},{"../../components/ColorList":217,"../../components/JnjProcessHeader":230,"../../data/colors":244,"react":188}],266:[function(require,module,exports){
+},{"../../components/ColorList":217,"../../components/JnjProcessHeader":230,"../../data/colors":246,"react":188}],270:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -69424,7 +69993,7 @@ var Landing = function (_Component) {
 Landing.propTypes = {};
 exports.default = Landing;
 
-},{"../../components/JnjProcessHeader":230,"../../components/form/TextLink":242,"react":188,"react-router-dom":131}],267:[function(require,module,exports){
+},{"../../components/JnjProcessHeader":230,"../../components/form/TextLink":244,"react":188,"react-router-dom":131}],271:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -70057,7 +70626,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Prototypes);
 
-},{"../../actions/nav":214,"../../components/JnjProcessHeader":230,"react":188,"react-redux":108,"react-router-dom":131}],268:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/JnjProcessHeader":230,"react":188,"react-redux":108,"react-router-dom":131}],272:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -70384,7 +70953,7 @@ var Typography = function (_Component) {
 Typography.propTypes = {};
 exports.default = Typography;
 
-},{"../../components/FontTable":218,"../../components/JnjProcessHeader":230,"../../data/typography":258,"react":188}],269:[function(require,module,exports){
+},{"../../components/FontTable":218,"../../components/JnjProcessHeader":230,"../../data/typography":262,"react":188}],273:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -70484,7 +71053,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeArticlePrototype);
 
-},{"../../actions/nav":214,"../../components/HomeArticle":219,"../../components/HomeFooter":220,"../../components/HomeNav":225,"../../data/article":243,"react":188,"react-dom":81,"react-redux":108}],270:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/HomeArticle":219,"../../components/HomeFooter":220,"../../components/HomeNav":225,"../../data/article":245,"react":188,"react-dom":81,"react-redux":108}],274:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70574,7 +71143,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeLandingPrototype);
 
-},{"../../actions/nav":214,"../../components/HomeFooter":220,"../../components/HomeLandingPage":222,"../../components/HomeNav":225,"../../data/home-page":247,"react":188,"react-redux":108}],271:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/HomeFooter":220,"../../components/HomeLandingPage":222,"../../components/HomeNav":225,"../../data/home-page":249,"react":188,"react-redux":108}],275:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -70664,7 +71233,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeLinksPrototype);
 
-},{"../../actions/nav":214,"../../components/HomeLinksPage":223,"../../components/HomeNav":225,"react":188,"react-redux":108,"react-skroll":168}],272:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/HomeLinksPage":223,"../../components/HomeNav":225,"react":188,"react-redux":108,"react-skroll":168}],276:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -70742,7 +71311,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeNavPrototype);
 
-},{"../../actions/nav":214,"../../components/HomeNav":225,"react":188,"react-redux":108}],273:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/HomeNav":225,"react":188,"react-redux":108}],277:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -70820,7 +71389,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeProfileSetupPrototype);
 
-},{"../../actions/nav":214,"../../components/HomeProfileSetup":227,"react":188,"react-redux":108,"react-skroll":168}],274:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/HomeProfileSetup":227,"react":188,"react-redux":108,"react-skroll":168}],278:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70892,7 +71461,93 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeSitemapPrototype);
 
-},{"../../actions/nav":214,"../../components/HomeSitemap":228,"react":188,"react-redux":108}],275:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/HomeSitemap":228,"react":188,"react-redux":108}],279:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = require("react-redux");
+
+var _nav = require("../../actions/nav");
+
+var _MdcNav = require("../../components/MdcNav");
+
+var _MdcNav2 = _interopRequireDefault(_MdcNav);
+
+var _MdcFlipper = require("../../components/MdcFlipper");
+
+var _MdcFlipper2 = _interopRequireDefault(_MdcFlipper);
+
+var _MdcFooter = require("../../components/MdcFooter");
+
+var _MdcFooter2 = _interopRequireDefault(_MdcFooter);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MdcFlipperPrototype = function (_Component) {
+	_inherits(MdcFlipperPrototype, _Component);
+
+	function MdcFlipperPrototype(props) {
+		_classCallCheck(this, MdcFlipperPrototype);
+
+		return _possibleConstructorReturn(this, (MdcFlipperPrototype.__proto__ || Object.getPrototypeOf(MdcFlipperPrototype)).call(this, props));
+	}
+
+	_createClass(MdcFlipperPrototype, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.props.hideNavToggle();
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(_MdcNav2.default, null),
+				_react2.default.createElement(_MdcFlipper2.default, null),
+				_react2.default.createElement(_MdcFooter2.default, null)
+			);
+		}
+	}]);
+
+	return MdcFlipperPrototype;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(state) {
+	return {
+		nav: state.nav
+	};
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+	return {
+		showNavToggle: function showNavToggle() {
+			return dispatch((0, _nav.showNavToggle)());
+		},
+		hideNavToggle: function hideNavToggle() {
+			return dispatch((0, _nav.hideNavToggle)());
+		}
+	};
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MdcFlipperPrototype);
+
+},{"../../actions/nav":214,"../../components/MdcFlipper":231,"../../components/MdcFooter":232,"../../components/MdcNav":234,"react":188,"react-redux":108}],280:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -70964,7 +71619,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MdcNavPrototype);
 
-},{"../../actions/nav":214,"../../components/MdcNav":232,"react":188,"react-redux":108}],276:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/MdcNav":234,"react":188,"react-redux":108}],281:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71036,7 +71691,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(MdcTaxonomyDiagramPrototype);
 
-},{"../../actions/nav":214,"../../components/MdcTaxonomyDiagram":233,"react":188,"react-redux":108}],277:[function(require,module,exports){
+},{"../../actions/nav":214,"../../components/MdcTaxonomyDiagram":235,"react":188,"react-redux":108}],282:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -71052,7 +71707,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],278:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -71068,7 +71723,7 @@ exports.default = function () {
 
 var lastId = 0;
 
-},{}],279:[function(require,module,exports){
+},{}],284:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -71094,7 +71749,7 @@ exports.default = function (color) {
 	return palette[color];
 };
 
-},{}],280:[function(require,module,exports){
+},{}],285:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

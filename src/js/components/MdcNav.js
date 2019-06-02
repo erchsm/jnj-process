@@ -107,7 +107,7 @@ export default class MdcNav extends Component {
 
 		const takeoverItems = takeoverData.data.map((item, i) =>
 			<li key={i} className={ (i == 0) ? "overview-item" : "" }>
-				<button className="mdc-button mdc-button--text-link" onClick={() => { this.setTakeoverData(item); this.updateTakeoverNavigation(item.name, takeoverData); }}>
+				<button className="mdc-button mdc-button--text-link" onClick={item.data ? (() => { this.setTakeoverData(item); this.updateTakeoverNavigation(item.name, takeoverData); }) : null }>
 					<span>{item.name}</span>
 					<i className="iconcss icon-arrow-right"/>
 				</button>
@@ -160,7 +160,7 @@ export default class MdcNav extends Component {
 				</div>
 					<div className="mdc-nav__hovermain" onMouseOver={ this.openTakeover } onMouseOut={this.closeTakeover}>
 						{<div className="mdc-nav__hovermainfeatured">
-							<h3>Featured {takeoverData.name}</h3>
+							<h5 className="eyebrow">Featured {takeoverData.name}</h5>
 							<ul>
 								<li>Laminoscopy</li>
 								<li>Morter Breadfist</li>

@@ -10,10 +10,20 @@
 						{ "name": "Bariatric Overview" },
 						{ "name": "LAP Gastric Bypass" },
 						{ "name": "LAP Sleeve Gastrectomy" },
-						{ "name": "Revisional Surgery" },
+						{ "name": "Revisional Surgery" }
 					]
 				},
-				{ "name": "Cardiology" },
+				{ 
+					"name": "Cardiology",
+					"data": [
+						{ "name": "Cardiology Overview" },
+						{ "name" : "Angioplasty" },
+						{ "name" : "Atherectomy" },
+						{ "name" : "Embolic Protection" },
+						{ "name" : "Percutaneous Valve Repair" },
+						{ "name" : "Balloon Angioplasty" }
+					]
+				},
 				{ "name": "Cardiac Electrophysiology" },
 				{ "name": "Colorectal" },
 				{ "name": "Craniomaxillofacial" },
@@ -29,9 +39,9 @@
 				{ "name": "Interventional Oncology" },
 				{ "name": "Neurovascular" },
 				{ 
-					"name": "Orthopaedic Surgery" ,
+					"name": "Orthopaedic" ,
 					"data": [
-						{ "name": "Orthopaedic Surgery Overview" },
+						{ "name": "Orthopaedic Overview" },
 						{ "name": "Anterior Cervical Discectomy and Fusion"},
 						{ "name": "Anterior cruciate ligament (ACL)/ Posterior cruciate ligament (PCL) Reconstruction"},
 						{ "name": "Anterior Lumbar Interbody Fusion (ALIF)"},
@@ -99,8 +109,16 @@
 			"name": "Products",
 			"data": [
 				{ "name": "Products Overview" },
-				{ "name": "Ablation" },
-				{ "name": "Absorption" },
+				{ 
+					"name": "Ablation",
+					"data": [
+						{ "name" : "NEUWAVE™ Microwave Ablation System" },
+						{ "name" : "VAPR VUE® Radiofrequency System" },
+						{ "name" : "VAPR® Suction Electrodes" },
+						{ "name" : "VAPR® TRIPOLAR Electrode" },
+						{ "name" : "VAPR VUE® Radiofrequency System " }
+					]
+				},
 				{ 
 					"name" : "Access",
 					"data" : [
@@ -115,7 +133,7 @@
 						{ "name" : "ENDOPATH XCEL® Trocars with OPTIVIEW® Technology" },
 						{ "name" : "ENDOPATH® Mini Bladeless Trocar" },
 						{ "name" : "FLEXIPATH® Trocars" },
-						{ "name" : "Insufflation Needles" },
+						{ "name" : "Insufflation Needles" }
 					]
 				},
 				{ "name": "Adjunctive Hemostats" },

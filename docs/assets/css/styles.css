@@ -2738,8 +2738,8 @@ a {
     .mdc-button--text-link:hover span {
       border-color: #D8D8D8; }
     .mdc-button--text-link:hover i {
-      -ms-transform: translateX(9px);
-      transform: translateX(9px); }
+      -ms-transform: translateX(6px);
+      transform: translateX(6px); }
   .mdc-button--text-link--reverse i {
     margin-left: 0;
     margin-right: 9px; }
@@ -2748,8 +2748,8 @@ a {
       -ms-transform: scaleX(-1);
       transform: scaleX(-1); }
   .mdc-button--text-link--reverse:hover i {
-    -ms-transform: translateX(-9px);
-    transform: translateX(-9px); }
+    -ms-transform: translateX(-3px);
+    transform: translateX(-3px); }
   .mdc-button--blue {
     background: transparent;
     border-color: #000099;
@@ -3426,6 +3426,8 @@ a {
     padding: 24px 48px;
     overflow: hidden;
     overflow-y: scroll; }
+    .mdc-nav__hovermaincolumn::-webkit-scrollbar {
+      display: none; }
     .mdc-nav__hovermaincolumn li {
       height: auto;
       width: auto;
@@ -3451,7 +3453,7 @@ a {
     display: flex;
     -ms-flex-align: center;
     align-items: center;
-    padding: 0 0 18px 18px; }
+    padding: 0 0 18px 24px; }
     .mdc-nav__takeover-nav .mdc-button {
       padding: 0; }
       .mdc-nav__takeover-nav .mdc-button span {
@@ -3470,26 +3472,23 @@ a {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: column;
-    background: #F9FAFB;
+    background: #F5F5F2;
     width: 280px;
     height: auto;
     margin: 24px 18px;
-    padding: 24px 40px;
+    padding: 40px;
     border-radius: 2px; }
-    .mdc-nav__hovermainfeatured h3, .mdc-nav__hovermainfeatured li {
+    .mdc-nav__hovermainfeatured h5, .mdc-nav__hovermainfeatured li {
       color: #888B8D; }
-    .mdc-nav__hovermainfeatured h3 {
-      text-transform: uppercase;
-      font-size: 16px;
-      margin: 0; }
+    .mdc-nav__hovermainfeatured ul {
+      margin-top: 12px; }
     .mdc-nav__hovermainfeatured li {
       height: auto;
       width: auto;
       -ms-flex-pack: start;
       justify-content: flex-start;
       font-weight: normal;
-      margin: 24px 0;
-      font-size: 18px; }
+      margin: 24px 0; }
 
 .mdc-switcher {
   display: -ms-flexbox;

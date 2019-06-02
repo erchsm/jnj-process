@@ -166,7 +166,7 @@ export default class MdcNav extends Component {
                     <div className="grid__item grid__item--col-2">
                         <div className="mdc-footer__location">
                             <img src="../assets/img/united-states.svg"></img>
-                            <p>English (United States)</p>
+                            <p className="no-mb">English (United States)</p>
                         </div>
                     </div>
                     <div className="grid__item grid__item--col-2">

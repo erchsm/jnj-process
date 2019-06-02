@@ -25349,9 +25349,9 @@ var MdcNav = function (_Component) {
 					{ key: i, className: i == 0 ? "overview-item" : "" },
 					_react2.default.createElement(
 						"button",
-						{ className: "mdc-button mdc-button--text-link", onClick: function onClick() {
+						{ className: "mdc-button mdc-button--text-link", onClick: item.data ? function () {
 								_this2.setTakeoverData(item);_this2.updateTakeoverNavigation(item.name, takeoverData);
-							} },
+							} : null },
 						_react2.default.createElement(
 							"span",
 							null,
@@ -25436,8 +25436,8 @@ var MdcNav = function (_Component) {
 						"div",
 						{ className: "mdc-nav__hovermainfeatured" },
 						_react2.default.createElement(
-							"h3",
-							null,
+							"h5",
+							{ className: "eyebrow" },
 							"Featured ",
 							takeoverData.name
 						),
@@ -25565,10 +25565,20 @@ module.exports={
 						{ "name": "Bariatric Overview" },
 						{ "name": "LAP Gastric Bypass" },
 						{ "name": "LAP Sleeve Gastrectomy" },
-						{ "name": "Revisional Surgery" },
+						{ "name": "Revisional Surgery" }
 					]
 				},
-				{ "name": "Cardiology" },
+				{ 
+					"name": "Cardiology",
+					"data": [
+						{ "name": "Cardiology Overview" },
+						{ "name" : "Angioplasty" },
+						{ "name" : "Atherectomy" },
+						{ "name" : "Embolic Protection" },
+						{ "name" : "Percutaneous Valve Repair" },
+						{ "name" : "Balloon Angioplasty" }
+					]
+				},
 				{ "name": "Cardiac Electrophysiology" },
 				{ "name": "Colorectal" },
 				{ "name": "Craniomaxillofacial" },
@@ -25584,9 +25594,9 @@ module.exports={
 				{ "name": "Interventional Oncology" },
 				{ "name": "Neurovascular" },
 				{ 
-					"name": "Orthopaedic Surgery" ,
+					"name": "Orthopaedic" ,
 					"data": [
-						{ "name": "Orthopaedic Surgery Overview" },
+						{ "name": "Orthopaedic Overview" },
 						{ "name": "Anterior Cervical Discectomy and Fusion"},
 						{ "name": "Anterior cruciate ligament (ACL)/ Posterior cruciate ligament (PCL) Reconstruction"},
 						{ "name": "Anterior Lumbar Interbody Fusion (ALIF)"},
@@ -25654,8 +25664,16 @@ module.exports={
 			"name": "Products",
 			"data": [
 				{ "name": "Products Overview" },
-				{ "name": "Ablation" },
-				{ "name": "Absorption" },
+				{ 
+					"name": "Ablation",
+					"data": [
+						{ "name" : "NEUWAVE™ Microwave Ablation System" },
+						{ "name" : "VAPR VUE® Radiofrequency System" },
+						{ "name" : "VAPR® Suction Electrodes" },
+						{ "name" : "VAPR® TRIPOLAR Electrode" },
+						{ "name" : "VAPR VUE® Radiofrequency System " }
+					]
+				},
 				{ 
 					"name" : "Access",
 					"data" : [
@@ -25670,7 +25688,7 @@ module.exports={
 						{ "name" : "ENDOPATH XCEL® Trocars with OPTIVIEW® Technology" },
 						{ "name" : "ENDOPATH® Mini Bladeless Trocar" },
 						{ "name" : "FLEXIPATH® Trocars" },
-						{ "name" : "Insufflation Needles" },
+						{ "name" : "Insufflation Needles" }
 					]
 				},
 				{ "name": "Adjunctive Hemostats" },
