@@ -1,0 +1,109 @@
+.page-nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+}
+
+.page-nav input {
+	display: none;
+}
+
+.page-nav > input + label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	width: 40px;
+	background: #404040;
+	color: white;
+	border: 1px solid #1a1a1a;
+    border-left: none;
+    border-top: none;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.page-nav > input + label:after {
+	content: '\2630';
+	display: block;
+}
+
+
+.page-nav .page-nav__takeover,
+.page-nav .page-nav__takeover .page-nav__drawer {
+	transition: all 0.6s cubic-bezier(.19,1,.22,1);
+}
+
+.page-nav .page-nav__takeover {
+	position: absolute;
+	width: 260px;
+	display: flex;
+	background-color: #2b2b2b;
+	transform: translate3d(-320px,0,0);
+	top: 0;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow-y: scroll;
+	height: 100vh;
+}
+
+.page-nav .page-nav__takeover h4 {
+	padding: 18px;
+	margin: 0;
+	margin-bottom: 18px;
+	padding-top: 60px;
+	color: #A6A6A6;
+	background-color: #4A4A4A;
+	border-bottom: 1px solid #212121;
+}
+
+.page-nav .page-nav__takeover a,
+.page-nav .page-nav__takeover label {
+	color: #A6A6A6;
+	text-decoration: none;
+	background-color: #4A4A4A;
+	padding: 12px 18px;
+	margin: 0;
+	border: 1px solid #212121;
+	border-bottom: none;
+	border-right: none;
+	font-weight: normal;
+	display: block;
+	cursor: pointer;
+	position: relative;
+}
+
+.page-nav .page-nav__takeover label:after {
+	font-family: "Icons";
+	content: '\EA16';
+	position: absolute;
+	right: 18px;
+}
+
+.page-nav .page-nav__takeover .page-nav__drawer {
+	display: none;
+}
+
+.page-nav .page-nav__takeover .page-nav__drawer a {
+	background-color: #2b2b2b;
+}
+
+.page-nav > input:checked + label + .page-nav__takeover {
+	transform: translate3d(0,0,0);
+}
+
+.page-nav > input:checked + label:after {
+	content: '\2573';
+}
+
+.page-nav .page-nav__takeover input:checked + label:after {
+	content: '\EA17';
+}
+
+.page-nav .page-nav__takeover input:checked + label + .page-nav__drawer {
+	display: block;
+}
