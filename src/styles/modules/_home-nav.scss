@@ -525,19 +525,27 @@ $baseclass: home-nav;
 			}
 		}
 	}
+
 	&--notificationsOpen {
 		.#{$baseclass}__notifications {
 			background: rgba($brand-black, .40);
 			opacity: 1;
 
 			> div {
-			    pointer-events: auto;
+				pointer-events: auto;
 			}
 		}
 		.icon-bell {
 			color: $brand-red;
 		}
 	}
+
+	@media screen and (max-width: $bp-desktop) {
+		.#{$baseclass}__topbar {
+			padding: 0 40px;
+		}
+	}
+
 	@media screen and (max-width: $bp-medium) {
 		.#{$baseclass}__topbar {
 			padding: 0 12px;

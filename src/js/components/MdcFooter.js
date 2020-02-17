@@ -92,85 +92,89 @@ export default class MdcNav extends Component {
 
         return (
             <nav className={classnames}>
-                <div className="grid mdc-footer__top">
-                    <div className="grid__item grid__item--col-2">
-                        <MdcLogo/>
-                    </div>
-                    {/*<div className="grid__item grid__item--col-2">
-                        <h5>{FooterItems.data[0].name}</h5>
-                        <ul>
-                            {footerItems0}
-                        </ul>
-                    </div>
-                    <div className="grid__item grid__item--col-2">
-                        <h5>{FooterItems.data[1].name}</h5>
-                        <ul>
-                            {footerItems1}
-                        </ul>
-                    </div>
-                    <div className="grid__item grid__item--col-2">
-                        <h5>{FooterItems.data[2].name}</h5>
-                        <ul>
-                            {footerItems2}
-                        </ul>
-                    </div>
-                    <div className="grid__item grid__item--col-2">
-                        <h5>{FooterItems.data[0].name}</h5>
-                        <ul>
-                            {footerItems0}
-                        </ul>
-                    </div>*/}
-                    <div className="grid__item grid__item--col-8 mdc-footer__main">
-                        <div>
+                <div className="mdc-footer__top">
+                    <div className="grid">
+                        <div className="grid__item grid__item--col-2">
+                            <MdcLogo/>
+                        </div>
+                        {/*<div className="grid__item grid__item--col-2">
                             <h5>{FooterItems.data[0].name}</h5>
                             <ul>
                                 {footerItems0}
                             </ul>
                         </div>
-                        <div>
+                        <div className="grid__item grid__item--col-2">
                             <h5>{FooterItems.data[1].name}</h5>
                             <ul>
                                 {footerItems1}
                             </ul>
                         </div>
-                        <div>
+                        <div className="grid__item grid__item--col-2">
                             <h5>{FooterItems.data[2].name}</h5>
                             <ul>
                                 {footerItems2}
                             </ul>
                         </div>
-                        <div>
-                            <h5>{FooterItems.data[3].name}</h5>
+                        <div className="grid__item grid__item--col-2">
+                            <h5>{FooterItems.data[0].name}</h5>
                             <ul>
-                                {footerItems3}
+                                {footerItems0}
                             </ul>
+                        </div>*/}
+                        <div className="grid__item grid__item--col-8 mdc-footer__main">
+                            <div>
+                                <h5>{FooterItems.data[0].name}</h5>
+                                <ul>
+                                    {footerItems0}
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>{FooterItems.data[1].name}</h5>
+                                <ul>
+                                    {footerItems1}
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>{FooterItems.data[2].name}</h5>
+                                <ul>
+                                    {footerItems2}
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>{FooterItems.data[3].name}</h5>
+                                <ul>
+                                    {footerItems3}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className="grid__item grid__item--col-2">
-                        <h5>{FooterItems.data[4].name}</h5>
-                        <div className="mdc-share">
-                            <div className="mdc-share-item"><i className="iconcss icon-linkedin"></i></div>
-                            <div className="mdc-share-item"><i className="iconcss icon-facebook"></i></div>
-                            <div className="mdc-share-item"><i className="iconcss icon-twitter"></i></div>
-                            <div className="mdc-share-item"><i className="iconcss icon-youtube"></i></div>
+                        <div className="grid__item grid__item--col-2">
+                            <h5>{FooterItems.data[4].name}</h5>
+                            <div className="mdc-share">
+                                <div className="mdc-share-item"><i className="iconcss icon-linkedin"></i></div>
+                                <div className="mdc-share-item"><i className="iconcss icon-facebook"></i></div>
+                                <div className="mdc-share-item"><i className="iconcss icon-twitter"></i></div>
+                                <div className="mdc-share-item"><i className="iconcss icon-youtube"></i></div>
+                            </div>
+                            <p>{FooterItems.data[4].data[0].name}</p>
                         </div>
-                        <p>{FooterItems.data[4].data[0].name}</p>
                     </div>
                 </div>
-                <div className="grid mdc-footer__bottom">
-                    <div className="grid__item grid__item--col-8">
-                        <ul className="mdc-footer__links">
-                            {footerItemsLinks}
-                        </ul>
-                    </div>
-                    <div className="grid__item grid__item--col-2">
-                        <div className="mdc-footer__location">
-                            <img src="../assets/img/united-states.svg"></img>
-                            <p className="no-mb">English (United States)</p>
+                <div className="mdc-footer__bottom">
+                    <div className="grid">
+                        <div className="grid__item grid__item--col-8">
+                            <ul className="mdc-footer__links">
+                                {footerItemsLinks}
+                            </ul>
                         </div>
-                    </div>
-                    <div className="grid__item grid__item--col-2">
-                        <p>All contents © Copyright Johnson & Johnson Services, Inc.1997-2017. All Rights Reserved.</p>
+                        <div className="grid__item grid__item--col-2">
+                            <div className="mdc-footer__location">
+                                <img src="../assets/img/united-states.svg"></img>
+                                <p className="no-mb">English (United States)</p>
+                            </div>
+                        </div>
+                        <div className="grid__item grid__item--col-2">
+                            <p>All contents © Copyright Johnson & Johnson Services, Inc.1997-2017. All Rights Reserved.</p>
+                        </div>
                     </div>
                 </div>
            </nav>

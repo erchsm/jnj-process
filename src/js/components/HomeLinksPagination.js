@@ -37,7 +37,7 @@ export default class HomeLinksPagination extends Component {
 						[
 							<hr/>,
 							links.map((link, i) =>
-								<a key={i} href={(link.href) ? link.href : '#'} target="_blank" className="card"key={i} >
+								<a key={i} href={(link.href) ? link.href : '#'} target="_blank" className="card">
 									<h5>
 										<div className="circles"></div>
 										<i onClick={(e) => clickStar(link, e)} className={classNames({ 

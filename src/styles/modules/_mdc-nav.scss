@@ -1,4 +1,18 @@
-$item-width: 120px;
+$num-items: 6;
+
+@mixin applyItemWidth($width) {
+	.#{$baseclass}__hoverline {
+		width: $width;
+	}
+
+	.#{$baseclass}__hoverlines {
+		width: $width * $num-items;
+	}
+
+	li {
+		min-width: $width;
+	}
+}
 
 $baseclass: mdc-nav;
 
@@ -30,8 +44,12 @@ $baseclass: mdc-nav;
 		.#{$baseclass}__hoverline {
 			transform: none;
 		}
-		.#{$baseclass}__hovermain {
+		.#{$baseclass}__hoveroverlay {
 			opacity: 1;
+		}
+		.#{$baseclass}__hovermain {
+			transform: none;
+			transition: transform $duration-long $easing3;
 			pointer-events: auto;
 		}
 
@@ -47,22 +65,22 @@ $baseclass: mdc-nav;
 		width: 100%;
 		background: white;
 		transition: all 0.9s 0.9s $easing2;
-		box-shadow: 0 -6px 0px 6px white;
+		// box-shadow: 0 -6px 0px 6px white;
+		border-bottom: solid 1px $brand-grey-lightest;
 		// transform: translateY(1px);
 	}
 
 	&__hoverline {
 		background: $brand-red;
 		height: 4px;
-		width: $item-width;
-		// transform: translate3d(-($item-width),0,0);
+		// width: $item-width;
 		opacity: 0;
 		transition: transform 0.9s $easing2;
 	}
 
 	&__hoverlines {
 		display: flex;
-		width: $item-width * 6;
+		// width: $item-width * 6;
 		display: flex;
 	}
 
@@ -78,7 +96,7 @@ $baseclass: mdc-nav;
 		background: white;
 		transform-origin: top;
 		transition: all 0.9s 0s $easing2;
-		box-shadow: 0 2px 24px 0 rgba($brand-black, .09);
+		// box-shadow: 0 2px 24px 0 rgba($brand-black, .09);
 	}
 
 	&__left, &__center ul, &__right {
@@ -88,11 +106,15 @@ $baseclass: mdc-nav;
 		height: 100%;
 	}
 
+	&__left, &__right {
+		width: 165px;
+	}
+
 	&__left {
 		width: 165px;
 		display: flex;
-		flex-direction: column;
-		// align-items: center;
+		// flex-direction: column;
+		justify-content: flex-start;
 		text-align: center;
 
 		// img {
@@ -126,8 +148,6 @@ $baseclass: mdc-nav;
 	}
 	&__right {
 		transition: all 0.9s $easing2;
-		width: 165px;
-		justify-content: flex-end\;
 	}
 	.icon-search {
 		font-size: 24px;
@@ -141,7 +161,7 @@ $baseclass: mdc-nav;
 		height: 30px;
 	}
 	li {
-		min-width: $item-width;
+		// min-width: $item-width;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -151,7 +171,7 @@ $baseclass: mdc-nav;
 		font-weight: 800;
 		color: $brand-black;
 		// letter-spacing: -0.06em;
-		transition: all 0.9s $easing2;
+		// transition: all 0.9s $easing2;
 
 		a {
 			transition: all 0.9s $easing2;
@@ -171,6 +191,18 @@ $baseclass: mdc-nav;
 			}
 		}
 	}
+	&__hoveroverlay {
+		pointer-events: none;
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		transition: opacity $duration-medium $easing1;
+		opacity: 0;
+		background: rgba($brand-black, .6);
+	}
+
 	&__hovermain {
 		background: white;
 		width: 100%;
@@ -181,10 +213,9 @@ $baseclass: mdc-nav;
 		position: absolute;
 		display: flex;
 		flex-direction: row-reverse;
-		transition: all 0.9s $easing2;
-		opacity: 0;
+		transform: translate3d(0,-100%,0);
+		transition: transform $duration-long $easing4;
 		pointer-events: none;
-		border-top: solid 1px $brand-grey-lightest;
 		box-shadow: 0 2px 24px 0 rgba($brand-black, .09), inset 0 2px 24px rgba(white, 1);
 	}
 
@@ -288,5 +319,34 @@ $baseclass: mdc-nav;
 			margin: 24px 0;
 			// font-size: 18px;
 		}
+	}
+
+	$item-width: 120px;
+	@include applyItemWidth($item-width);
+
+	@media screen and (max-width: $bp-desktop) {
+		.#{$baseclass}__topbar {
+			padding: 0 24px;
+		}
+
+		&__left, &__right {
+			width: 144px;
+		}
+
+		hr {
+			margin: 0 18px;
+		}
+
+		&__hovermain {
+			width: 95vw;
+			right: 2.5vw;
+		}
+
+		li {
+			font-size: 15px;
+		}
+
+		$item-width: 102px;
+		@include applyItemWidth($item-width);
 	}
 }

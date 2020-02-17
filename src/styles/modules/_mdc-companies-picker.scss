@@ -34,6 +34,9 @@ $animation2: fadeInRight 1.2s $easing2;
 	display: flex;
 	justify-content: center;
 
+	img {
+		width: 100%;
+	}
 
 	> div {
 		flex: 1;

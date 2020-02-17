@@ -172,6 +172,16 @@
 		:-moz-placeholder {
 			@include placeholder-style();
 		}
+	}
+
+	@media screen and (max-width: $bp-desktop) {
+		&__tile {
+			padding: 40px;
+		}
+		&__tile-container {
+			transform: translateY(-96px);
+			padding-top: 48px;
+		}
 
 	}
 }

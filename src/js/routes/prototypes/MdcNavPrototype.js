@@ -1,9 +1,10 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import { connect } from "react-redux"
 
 import { showNavToggle, hideNavToggle } from "../../actions/nav"
 
 import MdcNav from '../../components/MdcNav'
+import MdcFooter from '../../components/MdcFooter'
 
 class MdcNavPrototype extends Component {
 
@@ -17,7 +18,11 @@ class MdcNavPrototype extends Component {
 
 	render() {
 		return (
-			<MdcNav/>
+			<Fragment>
+				<MdcNav/>
+				<div style={{ minHeight: '480px', background: '#FFFFFF'}}/>
+				<MdcFooter/>
+			</Fragment>
 		);
 	}
 }

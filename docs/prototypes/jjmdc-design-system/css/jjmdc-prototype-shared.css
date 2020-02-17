@@ -21080,67 +21080,67 @@ html.w-mod-js *[data-ix="mobile-nav-search-initial"] {
 
 @font-face {
   font-family: 'Icons';
-  src: url('../fonts/icons.ttf') format('truetype');
+  src: url('../fonts/icons.ttf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-BoldItalic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-Book.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-BookItalic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-BlackItalic.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-MediumItalic.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-LightItalic.otf') format('opentype');
   font-weight: 300;
   font-style: italic;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'J&J Circular';
-  src: url('../images/') format('opentype');
+  src: url('../fonts/JJ-Circular-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
 }

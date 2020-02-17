@@ -12,8 +12,4 @@ const App = ({ history }) => {
 	)
 }
 
-App.propTypes = {
-	history: PropTypes.object,
-}
-
 export default App

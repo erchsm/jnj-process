@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 
-.mdc-logo {
+$baseclass: mdc-logo;
+
+.#{$baseclass} {
 	img {
 		width: 180px;
 	}
@@ -19,4 +21,13 @@
 		line-height: 1.5em;
 		color: $brand-grey-dark;
 	}	
+
+	@media screen and (max-width: $bp-desktop) {
+		h3 {
+			font-size: 32px;
+		}
+		h5 {
+			font-size: 9px;
+		}
+	}
 }

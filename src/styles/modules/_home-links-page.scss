@@ -321,6 +321,15 @@ $baseclass: 'home-links-page';
 		}
 	}
 
+	@media screen and (max-width: $bp-desktop) {
+		padding: 0 24px 0 40px;
+
+		&__links-container {
+			margin-left: 0;
+		}
+	}
+
+
 	@media screen and (max-width: $bp-medium) {
 		padding: 0 12px;
 		height: auto;
@@ -330,8 +339,8 @@ $baseclass: 'home-links-page';
 			position: fixed;
 			width: calc(100% - 24px);
 			top: 120px;
-		    z-index: 9;
-		    background: #F3F3F3;
+			z-index: 9;
+			background: #F3F3F3;
 
 			.search-bar {
 				width: 100%;
@@ -345,7 +354,7 @@ $baseclass: 'home-links-page';
 			position: relative;
 			display: flex;
 			justify-content: space-around;
-		    background: #f3f3f3;
+			background: #f3f3f3;
 
 			ul {
 				display: none;
@@ -381,12 +390,12 @@ $baseclass: 'home-links-page';
 
 				> h1, > h2, > h3, > h4, > h5, > h6 {
 					font-size: 16px;
-				    text-transform: uppercase;
-				    margin-bottom: 12px;
+					text-transform: uppercase;
+					margin-bottom: 12px;
 				}
 
 				.mdc-button {
-				    width: 100%;
+					width: 100%;
 				}
 
 				.card, .#{$baseclass}__pagination .card {
@@ -401,7 +410,7 @@ $baseclass: 'home-links-page';
 					}
 
 					.circles {
-					    transform: translate(6px, 3px) scale(0.34);
+						transform: translate(6px, 3px) scale(0.34);
 					}
 
 					.icon-star-outline, .icon-star-fill {

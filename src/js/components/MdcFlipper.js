@@ -73,25 +73,27 @@ export default class MdcFlipper extends Component {
 				<section className="grid">
 					<h1 className="medium grid__item grid__item--col-7">Welcome to the New Johnson & Johnson Medical Device Companies.</h1>              
 				</section>
-				<div className="grid mdc-switcher__tile-container" id="flipper">
-					<div className="mdc-switcher__tiles grid__item grid__item--col-12">
-						<div className="mdc-switcher__tile">
-							<i className="iconcss icon-hcp"></i>                
-							<h2 className="no-mb">I’m a</h2>
-							<h1 className="no-mb">
-								Healthcare <br/>Professional 
-							</h1>
-							<SearchBar placeholder="Search For A Specialty" searchData={specialties.groups}/>
-							<button className="mdc-button mdc-button--text-link"><span>Continue to HCP Home</span><i className="iconcss icon-arrow-right"></i></button>
-						</div>
-						<div className="mdc-switcher__tile">
-							<i className="iconcss icon-patient"></i>
-							<h2 className="no-mb">I’m a</h2>
-							<h1 className="no-mb">
-								Patient<br/><br/>
-							</h1>
-							{<SearchBar placeholder="Search For Your Symptoms" searchData={symptoms.groups}/>}
-							<button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
+				<div className="mdc-switcher__tile-container" id="flipper">
+					<div className="grid">
+						<div className="mdc-switcher__tiles grid__item grid__item--col-12">
+							<div className="mdc-switcher__tile">
+								<i className="iconcss icon-hcp"></i>                
+								<h2 className="no-mb">I’m a</h2>
+								<h1 className="no-mb">
+									Healthcare <br/>Professional 
+								</h1>
+								<SearchBar placeholder="Search For A Specialty" searchData={specialties.groups}/>
+								<button className="mdc-button mdc-button--text-link"><span>Continue to HCP Home</span><i className="iconcss icon-arrow-right"></i></button>
+							</div>
+							<div className="mdc-switcher__tile">
+								<i className="iconcss icon-patient"></i>
+								<h2 className="no-mb">I’m a</h2>
+								<h1 className="no-mb">
+									Patient<br/><br/>
+								</h1>
+								{<SearchBar placeholder="Search For Your Symptoms" searchData={symptoms.groups}/>}
+								<button className="mdc-button mdc-button--text-link"><span>Continue to Patients Home</span><i className="iconcss icon-arrow-right"></i></button>
+							</div>
 						</div>
 					</div>
 				</div>

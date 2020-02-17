@@ -2,13 +2,13 @@ import React from 'react'
 import { render } from 'react-dom'
 
 import MdcNav from '../components/MdcNav'
-import MdcCompaniesPicker from '../components/MdcCompaniesPicker'
+import MdcCompanyPicker from '../components/MdcCompanyPicker'
 import MdcFooter from '../components/MdcFooter'
 
 render(
 	<div className="test-page">
 		<MdcNav/>
-		<MdcCompaniesPicker/>
+		<MdcCompanyPicker/>
 		<MdcFooter/>
 	</div>,
 	document.getElementById('root')

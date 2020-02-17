@@ -36,7 +36,7 @@ class Prototypes extends Component {
 				<div className="grid">
 					<div className="grid__item grid__item--col-1 grid__item--col-1-desktop grid__item--hide-medium"/>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-nav">
+						<NavLink to="/home-nav">
 							<div className="card">
 								<h3>Primary Navigation</h3>
 								<p>Demonstrates the Home primary navigation with animation.</p>
@@ -50,7 +50,7 @@ class Prototypes extends Component {
 						</NavLink>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<NavLink to="/home-links">
 							<div className="card">
 								<h3>Links Page</h3>
 								<p>Demonstrates the scrolling links page with sticky anchor links.</p>
@@ -68,7 +68,7 @@ class Prototypes extends Component {
 				<div className="grid">
 					<div className="grid__item grid__item--col-1 grid__item--col-1-desktop grid__item--hide-medium"/>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-profile-setup">
+						<NavLink to="/home-profile-setup">
 							<div className="card">
 								<h3>New User Setup</h3>
 								<p>Onboarding experience for new users of Home.</p>
@@ -82,7 +82,7 @@ class Prototypes extends Component {
 						</NavLink>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-sitemap">
+						<NavLink to="/home-sitemap">
 							<div className="card">
 								<h3>Sitemap</h3>
 								<p>Interactive sitemap for Home.</p>
@@ -100,7 +100,7 @@ class Prototypes extends Component {
 				<div className="grid">
 					<div className="grid__item grid__item--col-1 grid__item--col-1-desktop grid__item--hide-medium"/>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-landing">
+						<NavLink to="/home-landing">
 							<div className="card">
 								<h3>Homepage</h3>
 								<p>Landing page and dashboard for Home.</p>
@@ -113,7 +113,7 @@ class Prototypes extends Component {
 						</NavLink>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-article">
+						<NavLink to="/home-article">
 							<div className="card">
 								<h3>News Article</h3>
 								<p>Article reading experience for Home.</p>
@@ -138,21 +138,21 @@ class Prototypes extends Component {
 				<div className="grid">
 					<div className="grid__item grid__item--col-1 grid__item--col-1-desktop grid__item--hide-medium"/>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<a href="/prototypes/jjmdc-design-system/index.html" target="_blank">
 							<div className="card">
-								<h3>Product Carousel</h3>
-								<p>Scrolling page experience on the company page.</p>
+								<h3>Full Design System</h3>
+								<p>All buttons, cards, page modules, page templates and more.</p>
 								<br />
 								<span className="tag-container">
-									<span className="tag">Scrolling</span>
-									<span className="tag">Parallax</span>
-									<span className="tag">Greensock</span>
+									<span className="tag">Design System</span>
+									{/*<span className="tag">Parallax</span>
+									<span className="tag">Greensock</span>*/}
 								</span>
 							</div>
-						</NavLink>
+						</a>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/mdc-nav">
+						<NavLink to="/mdc-nav">
 							<div className="card">
 								<h3>Primary Navigation</h3>
 								<p>Interactions and Taxonomy for site navigation.</p>
@@ -170,7 +170,7 @@ class Prototypes extends Component {
 				<div className="grid">
 					<div className="grid__item grid__item--col-1 grid__item--col-1-desktop grid__item--hide-medium"/>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<NavLink to="/mdc-flipper">
 							<div className="card">
 								<h3>Homepage Flipper</h3>
 								<p>Interaction for choosing the Patient or HCP Experience.</p>
@@ -184,7 +184,7 @@ class Prototypes extends Component {
 						</NavLink>
 					</div>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/mdc-taxonomy-diagram">
+						<NavLink to="/mdc-taxonomy-diagram">
 							<div className="card">
 								<h3>Taxonomy Diagram</h3>
 								<p>A single content-type taxonomy diagram to rule them all.</p>
@@ -202,7 +202,7 @@ class Prototypes extends Component {
 				<div className="grid">
 					<div className="grid__item grid__item--col-1 grid__item--col-1-desktop grid__item--hide-medium"/>
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<NavLink to="/mdc-buttons">
 							<div className="card">
 								<h3>MDC Buttons</h3>
 								<p>Comprehensive list of button styles with hover states.</p>
@@ -217,7 +217,7 @@ class Prototypes extends Component {
 					</div>
 
 					<div className="grid__item grid__item--col-5 grid__item--col-12-medium">
-						<NavLink to="/prototypes/home-links">
+						<NavLink to="/mdc-company-picker">
 							<div className="card">
 								<h3>Company Picker</h3>
 								<p>Module for browsing all companies on the homepage.</p>

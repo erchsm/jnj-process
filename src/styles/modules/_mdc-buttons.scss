@@ -58,6 +58,19 @@ $baseclass: mdc-buttons;
 			}
 		}
 	}
+
+	@media screen and (max-width: $bp-desktop) {
+
+		&__tile {
+			width: 48.5%;
+			height: 380px;
+			margin-bottom: 0;
+
+			&:nth-child(2n-1) {
+				margin-right: 0;
+			}
+		}
+	}
 }
 
 .mdc-button {

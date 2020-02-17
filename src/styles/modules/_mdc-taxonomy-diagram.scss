@@ -31,7 +31,7 @@
 
 
 		.search-bar {
-		    margin: 18px 0;
+			margin: 18px 0;
 			opacity: 1;
 
 			i {
@@ -180,6 +180,12 @@
 	&--popoutOpen {
 		.mdc-taxonomy-diagram__popout {
 			transform: translate3d(0,0,0);			
+		}
+	}
+
+	@media screen and (max-width: $bp-desktop) {
+		.mdc-taxonomy-diagram__popout {
+			width: 33%;
 		}
 	}
 

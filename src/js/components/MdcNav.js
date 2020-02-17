@@ -114,13 +114,41 @@ export default class MdcNav extends Component {
 			</li>
 		);
 
+		const itemWidth = (() => {
+			if (window.innerWidth > 1100)
+				return 120
+			else 
+				return 102
+		})()
+
 		const lineAnimation = {
-			transform: 'translate3d(' + 120 * (indexHovered + 0) + 'px, 0, 0)',
+			transform: 'translate3d(' + itemWidth * (indexHovered + 0) + 'px, 0, 0)',
 			opacity: (takeoverOpen ? 1 : 0)
 		}
 
 		return (
 			<nav className={classnames}>
+				<div className="mdc-nav__hoveroverlay"/>
+				<div className="mdc-nav__hovermain" onMouseOver={ this.openTakeover } onMouseOut={this.closeTakeover}>
+					{<div className="mdc-nav__hovermainfeatured">
+						<h5 className="eyebrow">Featured {takeoverData.name}</h5>
+						<ul>
+							<li>Laminoscopy</li>
+							<li>Morter Breadfist</li>
+							<li>Pentultimate Bigness</li>
+							<li>Laminoscopy</li>
+							<li>Morter Breadfist</li>
+							<li>Pentultimate Bigness</li>
+						</ul>
+					</div>}
+					<div className="mdc-nav__hovermaincolumn" ref="takeoverItems">
+						{ showTakeoverNav ? <TakeoverNavigation breadcrumbs1={this.state.prevData.name} breadcrumbs2={this.state.breadcrumbs2} clickBack={() => { this.setTakeoverData(this.state.prevData); this.toggleTakeoverNavOpen(); }}/> : null}
+						<ul>
+							{ takeoverItems }
+						</ul>
+					</div>
+				</div>
+
 				<div className="mdc-nav__topbar">
 					<div className="mdc-nav__left">
 						<MdcLogo/>
@@ -158,25 +186,6 @@ export default class MdcNav extends Component {
 						<div style={ lineAnimation } className="mdc-nav__hoverline"></div>
 					</div>
 				</div>
-					<div className="mdc-nav__hovermain" onMouseOver={ this.openTakeover } onMouseOut={this.closeTakeover}>
-						{<div className="mdc-nav__hovermainfeatured">
-							<h5 className="eyebrow">Featured {takeoverData.name}</h5>
-							<ul>
-								<li>Laminoscopy</li>
-								<li>Morter Breadfist</li>
-								<li>Pentultimate Bigness</li>
-								<li>Laminoscopy</li>
-								<li>Morter Breadfist</li>
-								<li>Pentultimate Bigness</li>
-							</ul>
-						</div>}
-						<div className="mdc-nav__hovermaincolumn" ref="takeoverItems">
-							{ showTakeoverNav ? <TakeoverNavigation breadcrumbs1={this.state.prevData.name} breadcrumbs2={this.state.breadcrumbs2} clickBack={() => { this.setTakeoverData(this.state.prevData); this.toggleTakeoverNavOpen(); }}/> : null}
-							<ul>
-								{ takeoverItems }
-							</ul>
-						</div>
-					</div>
 			</nav>
 		);
 	}

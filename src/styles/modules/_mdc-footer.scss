@@ -10,11 +10,11 @@ $share-bg-color: #211D1E;
 	}
 
 	&__top, &__bottom {
-		padding: 60px 60px 40px;
+		padding: 60px 0 40px;
 	}
 
 	&__bottom {
-		padding: 32px 60px;
+		padding: 30px 0 24px;
 		border-top: solid 1px $brand-grey-light;
 	}
 
@@ -84,15 +84,15 @@ $share-bg-color: #211D1E;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
-		width: 140px;
+		// width: 140px;
 		// align-items: center;
 
-		h5 {
-			font-size: 8px;
-			line-height: 1.5em;
-			text-transform: uppercase;
-			color: $brand-grey-dark;
-		}
+		// h5 {
+		// 	font-size: 8px;
+		// 	line-height: 1.5em;
+		// 	text-transform: uppercase;
+		// 	color: $brand-grey-dark;
+		// }
 	}
 
 	&__top {
@@ -116,14 +116,15 @@ $share-bg-color: #211D1E;
 
 		.mdc-share {
 			display: flex;
-			// justify-content: space-between;
+			justify-content: space-between;
+			max-width: 168px;
 			margin: 24px 0 40px;
 
 			.mdc-share-item {
 				background: $share-bg-color;
 				color: white;
 				border-radius: 50%;
-				margin-right: 18px;
+				// margin-right: 18px;
 				font-size: 12px;
 				display: flex;
 				align-items: center;

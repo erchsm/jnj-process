@@ -20,6 +20,8 @@ import HomeLandingPrototype from './prototypes/HomeLandingPrototype'
 import MdcNavPrototype from './prototypes/MdcNavPrototype'
 import MdcTaxonomyDiagramPrototype from './prototypes/MdcTaxonomyDiagramPrototype'
 import MdcFlipperPrototype from './prototypes/MdcFlipperPrototype'
+import MdcCompanyPickerPrototype from './prototypes/MdcCompanyPickerPrototype'
+import MdcButtonsPrototype from './prototypes/MdcButtonsPrototype'
 
 
 const routes = (
@@ -35,18 +37,20 @@ const routes = (
 			<Route path="/accessibility" component={Accessibility}/>
 			<Route exact path="/prototypes" component={Prototypes}/>
 
-			<Route path="/prototypes/home-nav" component={HomeNavPrototype}/>
-			<Route path="/prototypes/home-article" component={HomeArticlePrototype}/>
-			<Route path="/prototypes/home-links" component={HomeLinksPrototype}/>
-			<Route path="/prototypes/home-profile-setup" component={HomeProfileSetupPrototype}/>
-			<Route path="/prototypes/home-sitemap" component={HomeSitemapPrototype}/>
-			<Route path="/prototypes/home-landing" component={HomeLandingPrototype}/>
+			<Route exact strict path="/home-nav" component={HomeNavPrototype}/>
+			<Route exact strict path="/home-article" component={HomeArticlePrototype}/>
+			<Route exact strict path="/home-links" component={HomeLinksPrototype}/>
+			<Route exact strict path="/home-profile-setup" component={HomeProfileSetupPrototype}/>
+			<Route exact strict path="/home-sitemap" component={HomeSitemapPrototype}/>
+			<Route exact strict path="/home-landing" component={HomeLandingPrototype}/>
 
-			<Route path="/prototypes/mdc-nav" component={MdcNavPrototype}/>
-			<Route path="/prototypes/mdc-flipper" component={MdcFlipperPrototype}/>
-			<Route path="/prototypes/mdc-taxonomy-diagram" component={MdcTaxonomyDiagramPrototype}/>
+			<Route exact strict path="/mdc-nav" component={MdcNavPrototype}/>
+			<Route exact strict path="/mdc-flipper" component={MdcFlipperPrototype}/>
+			<Route exact strict path="/mdc-taxonomy-diagram" component={MdcTaxonomyDiagramPrototype}/>
+			<Route exact strict path="/mdc-button" component={MdcTaxonomyDiagramPrototype}/>
+			<Route exact strict path="/mdc-company-picker" component={MdcCompanyPickerPrototype}/>
+			<Route exact strict path="/mdc-buttons" component={MdcButtonsPrototype}/>
 
-            <Redirect to="/" />
 		</Switch>
 	</div>
 )
